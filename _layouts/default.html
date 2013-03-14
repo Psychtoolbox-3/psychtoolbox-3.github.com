@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<title>{{ site.title }}{% if page.title %} - {{ page.title }}{% endif %}</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel=stylesheet href="{{ site.url }}/stylesheets/styles.css">
+<link rel=stylesheet href="{{ site.url }}/stylesheets/pygment_trac.css">
+<link rel=alternate title="PTB News" type=application/atom+xml href="{{ site.url }}/news.atom">
+<link rel=icon type=image/x-icon href="{{ site.url }}/favicon.ico">
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+{% if site.google_analytics %}
+<!-- google analytics async -->
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '{{ site.google_analytics.account }}']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+{% endif %}
+
+<div class=wrapper>
+
+<aside>
+  <h1>Psychtoolbox-3</h1>
+
+  <p>Psychophysics Toolbox Version 3 (PTB-3) is a free set of <a href="http://www.mathworks.com">Matlab</a> and 
+  <a href="http://www.octave.org">GNU Octave</a> functions for vision and neuroscience research. It makes it easy to synthesize
+  and show accurately controlled visual and auditory stimuli and interact with the observer.</p> 
+
+  <nav>
+  <ul>
+    <li><small>Getting started</small>
+    <ul>
+      <li><a href="{{ site.url }}/overview">Overview</a></li>
+      <li><a href="{{ site.url }}/versions">Versions</a></li>
+      <li><a href="{{ site.url }}/requirements">System Requirements</a></li>
+      <li><a href="{{ site.url }}/download">Download</a></li>
+    </ul>
+    </li>
+  </ul>
+  <ul>
+    <li><small>Getting help</small>
+    <ul>
+      <li><a href="{{ site.url }}/tutorial">Tutorial</a></li>
+      <li><a href="http://docs.psychtoolbox.org">Function Reference</a></li>
+      <li><a href="{{ site.url }}/FAQ">FAQ</a></li>
+      <li><a href="{{ site.url }}/forum">Forum</a></li>
+    </ul>
+    </li>
+  </ul>
+  <ul>
+    <li><small>On GitHub</small>
+    <ul>
+      <li><a href="https://github.com/Psychtoolbox-3/Psychtoolbox-3/wiki">Wiki</a></li>
+      <li><a href="https://github.com/Psychtoolbox-3/Psychtoolbox-3/issues">Bugs &amp; Feature requests</a></li>
+      <li><a href="https://github.com/Psychtoolbox-3/Psychtoolbox-3">Git repository</a></li>
+    </ul>
+    </li>
+  </ul>
+  </nav>
+
+  <ul class=buttons>
+    <li><a href="http://tech.groups.yahoo.com/group/psychtoolbox">Support <strong>Forum</strong></a></li>
+    <li><a href="https://raw.github.com/towolf/Psychtoolbox-3/master/Psychtoolbox/DownloadPsychtoolbox.m">Automatic <strong>Installer</strong></a></li>
+    <li><a href="https://github.com/towolf/Psychtoolbox-3/tarball/master">Download PTB<strong>TAR Ball</strong></a></li>
+    <li><a href="https://github.com/towolf/Psychtoolbox-3">View On <strong>GitHub</strong></a></li>
+  </ul>
+</aside>
+
+<section id="content">
+
+{{ content }}
+
+</section>
+<footer>
+  <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a><br>
+            Last updated on <time datetime="{{ site.time | date: '%Y-%m-%d' }}">{{ site.time | date: '%B %d, %Y' }}</time></small></p>  
+</footer>
+</div>
+<script src="javascripts/scale.fix.js"></script>
