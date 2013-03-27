@@ -6,7 +6,7 @@ Overview
 --------
 
 Psychtoolbox interfaces between Matlab or Octave and the computer hardware. The PTB core routines provide access to the
-display frame buffer and color lookup table, allow synchronization with the vertical retrace, support sub-millisecond
+display frame buffer and color lookup table, reliably synchronize with the vertical screen retrace, support sub-millisecond
 timing, expose raw OpenGL commands, support video playback and capture as well as low-latency audio, and facilitate the collection of observer responses. Ancillary routines support common needs like color space
 transformations and the QUEST threshold seeking algorithm.
 
