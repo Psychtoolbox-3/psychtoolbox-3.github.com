@@ -1,12 +1,11 @@
 ---
 layout: post
-title: PTB beta “Rotten Apples” release 2012-6-1 (Start of Psychtoolbox 3.0.10)
+title: PTB beta “Rotten Apples” release 2012-06-01 (Start of Psychtoolbox 3.0.10)
 category: news
 author: kleinerm
 ---
 
-Psychtoolbox-3/Psychtoolbox-3@92809a33 at
-[GitHub](https://github.com/Psychtoolbox-3/Psychtoolbox-3)
+[Psychtoolbox-3/Psychtoolbox-3@92809a33][commit] at [GitHub](https://github.com/Psychtoolbox-3/Psychtoolbox-3)
 
 “Rotten Apples” starts the new Psychtoolbox Version 3.0.10 series.
 
@@ -121,3 +120,5 @@ against the machine during software development.
 
 Absolutely no thanks to various unknown people working at Apple and
 Mathworks for reasons too many and too horrifying to mention.
+
+[commit]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/commit/92809a33
