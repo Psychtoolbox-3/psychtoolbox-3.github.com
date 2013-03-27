@@ -6,7 +6,7 @@ author: kleinerm
 ---
 
 [Psychtoolbox-3/Psychtoolbox-3@759f023b][commit] at [GitHub](https://github.com/Psychtoolbox-3/Psychtoolbox-3)
-tag: PTB\_Beta-3.0.10.20121009
+tag: `PTB_Beta-3.0.10.20121009`
 
 This is mostly a bug-fix release to deal with various operating system and
 graphics driver bugs discovered after the last release.

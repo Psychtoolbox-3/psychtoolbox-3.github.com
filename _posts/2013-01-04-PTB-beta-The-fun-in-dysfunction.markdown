@@ -6,7 +6,7 @@ author: kleinerm
 ---
 
 [Psychtoolbox-3/Psychtoolbox-3@89ac3a06][commit] at [GitHub](https://github.com/Psychtoolbox-3/Psychtoolbox-3)
-tag: PTB\_Beta-2013-01-04\_V3.0.10
+tag: `PTB_Beta-2013-01-04\_V3.0.10`
 
 Release Highlights:
 -------------------
