@@ -8,9 +8,6 @@ author: kleinerm
 [Psychtoolbox-3/Psychtoolbox-3@89ac3a06][commit] at [GitHub](https://github.com/Psychtoolbox-3/Psychtoolbox-3)
 tag: `PTB_Beta-2013-01-04\_V3.0.10`
 
-Release Highlights:
--------------------
-
 All systems:
 ------------
 
@@ -29,26 +26,30 @@ All systems:
   window on the screen. Psychtoolbox will pretend your window is only the size
   of `clientRect`, but at `Screen('Flip')` time it will upscale or downscale your
   stimulus image to the true size of the window, applying linear or better
-  filtering for this zoom. Why would you want to do that? Typical flat panels
-  and projectors only work optimally at their native resolution. All other
-  resolutions usually cause at least funny timing problems or sometimes visual
-  artifacts with dynamic stimuli. This option allows you to transfer a script
-  written for visual stimulation on, e.g., a CRT monitor or a panel on a
-  certain resolution, to a different experimental setup which has a different
-  native display resolution with minimal modifications to the script in case
-  your script made assumptions about the display resolution in use. It would be
-  especially useful if you worked in a place where some equipment is badly
-  maintained and tends to break down in the middle of data collection, so it
-  needs to be swapped with incompatible equipment of different native
-  resolution. This release still misses the high-level setup code in
-  `PsychImaging()` to access and configure this feature in convenient ways, so
-  the panel fitter may not work well or need some tinkering when used together
-  with some advanced features, e.g., some stereo display modes or high
-  precision display modes which use a unusual display geometry themselves. This
-  will be fixed in a future release. For standard bread & butter rescaling it
-  works well. Of course it is still better to choose your resolutions wisely or
-  write your code resolution independent if possible, as the scaling comes at
-  some cost of another millisecond or two spent on rescaling in the gpu.
+  filtering for this zoom.
+  
+  Why would you want to do that? 
+  
+  Typical flat panels and projectors only work optimally at their native
+  resolution. All other resolutions usually cause at least funny timing
+  problems or sometimes visual artifacts with dynamic stimuli. This option
+  allows you to transfer a script written for visual stimulation on, e.g., a
+  CRT monitor or a panel on a certain resolution, to a different experimental
+  setup which has a different native display resolution with minimal
+  modifications to the script in case your script made assumptions about the
+  display resolution in use. It would be especially useful if you worked in a
+  place where some equipment is badly maintained and tends to break down in the
+  middle of data collection, so it needs to be swapped with incompatible
+  equipment of different native resolution. This release still misses the
+  high-level setup code in `PsychImaging()` to access and configure this
+  feature in convenient ways, so the panel fitter may not work well or need
+  some tinkering when used together with some advanced features, e.g., some
+  stereo display modes or high precision display modes which use a unusual
+  display geometry themselves. This will be fixed in a future release. For
+  standard bread & butter rescaling it works well. Of course it is still better
+  to choose your resolutions wisely or write your code resolution independent
+  if possible, as the scaling comes at some cost of another millisecond or two
+  spent on rescaling in the gpu.
 
 * Small fixes to PsychKinectCore and to PsychHID.
 

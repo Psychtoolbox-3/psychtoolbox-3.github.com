@@ -11,9 +11,6 @@ tag: `PTB_Beta-3.0.10.20121111`
 This is mostly a bug-fix release, but it also improves `GetChar` support on
 some platforms.
 
-Release Highlights:
--------------------
-
 All systems:
 ------------
 
