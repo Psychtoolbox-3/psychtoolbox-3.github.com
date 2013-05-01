@@ -10,6 +10,39 @@ category: getting-started
 {:toc #toc}
 {::options auto_ids="true" toc_levels="2..3"/}
 
+
+
+Short version
+-------------
+
+-   Operating system:
+
+    GNU Linux is recommended. Also works on Apple Mac OS X (Intel) and Microsoft
+    Windows (Intel).
+
+-   Runtime environment:
+
+    Matlab Version 7.4 R2007a or later, also GNU Octave version 3.2 or later on
+    Linux and 3.6 on OS X.
+
+-   A cautious migration to 64-bit versions of Matlab and Octave is
+    recommended, especially for users of OS X.
+
+-   Graphics card:
+
+    Recommended are any OpenGL 2.1 or better capable GPUs from AMD or NVidia.
+    Modern Intel HD-Series graphics cards should work for moderately complex
+    workloads. More recent OpenGL-3/4 GPUs may expose additional useful
+    features. The absolute minimum requirement is OpenGL-1.2 support, but
+    functionality will be limited with such old GPUs. 
+
+-   Sound card:
+
+    On Linux and OS X, any card supported by the operating system should work
+    well. On Windows, an ASIO capable audio card is absolutely required for
+    research grade timing precision and low-latency.
+
+
 Operating systems
 -----------------
 
@@ -46,22 +79,23 @@ performance and flexibility.
 Psychtoolbox is also being developed and tested under Apple Mac OS X.
 Supported are
 
--   32-bit Matlab R2007a and later
--   32-Bit Octave 3.2.x on 10.4.11 “Tiger” and later.
--   64-Bit Matlab on 10.5.8 and later
+-   64-bit Matlab on OS X 10.5.8 and later
+-   64-bit Octave 3.6 and later on OS X 10.4.11 “Tiger” and later.
+-   32-bit Matlab R2007a and later (end of life)
 
-    *However, using OS X 10.6 “Snow Leopard” or later together with 64-Bit
-     Matlab is recommended for full functionality.*
+    **Using OS X 10.6 “Snow Leopard” or later together with 64-bit
+     Matlab is recommended for full functionality.**
 
 Exhaustive compatibility tests have been run on 10.4.11, 10.5.8 and 10.6.2 with
-32-Bit Matlab R2007a and 32-Bit Octave 3.2.3, and some testing by the
-developers has been performed on 10.5.8 with 64-Bit Matlab R2010b and on 10.6.8
-and 10.7.4 with 64-Bit Matlab R2012a. Regular testing currently happens on
-10.4.11 “Tiger” with 32-Bit Matlab R2007a and 32-Bit Octave 3.2.3 and on 10.7.4
-“Lion” with 64-Bit Matlab R2012a, but most OSX versions should work reasonably
-well for many tasks, according to user reports.
+32-bit Matlab R2007a, and some testing by the developers has been performed on
+10.5.8 with 64-bit Matlab R2010b and on 10.6.8, and 10.7.4 with 64-bit Matlab
+R2012a.
 
-The current toolbox releases are not supported under OSX 10.3 or earlier
+Regular testing currently only happens on 10.7 “Lion” with 32-bit Matlab
+R2007a, 64-Bit Octave 3.6, and with 64-bit Matlab R2012a, but most OS X
+versions should work reasonably well for many tasks, according to user reports.
+
+The current toolbox releases are not supported under OS X 10.3 or earlier
 anymore. The last version that worked on 10.3 can be downloaded by
 specifying the special `flavor` parameter `Psychtoolbox-3.0.8-PreTiger`
 in our `DownloadLegacyPsychtoolbox` legacy downloader script.
@@ -81,17 +115,18 @@ operating system. Please install the Psychtoolbox kernel driver to
 resolve these issues (see [PsychtoolboxKernelDriver][docs-kerneldriver] or 
 `>> help PsychtoolboxKernelDriver`).
 
+*32-Bit Matlab support and support for OS X 10.4 and 10.5 will be time limited.
+It will get likely removed sometime in the year 2013.*
+
 ### Windows
 
--   Matlab 7.4 (32-bit) or later
--   Octave 3.2.4 (32-bit)
+-   Matlab 32-bit or 64-bit, release 7.4 or later
 
-**64-bit support**: Running under Matlab or Octave in 64 bit mode is not
-yet supported on MS-Windows (cf. [Runtime environment support](#runtime-environment-support)).
+    External requirements: Microsoft C runtime and GStreamer
 
-If you choose to use Matlab, you may need to install [Microsoft Visual C
-runtime libraries][c++ runtime] to make it work, specifically
-`vcredist_x86.exe`. The installer should give you instructions on how to do
+If you choose to use Matlab, you may need to install Microsoft Visual C runtime
+libraries to make it work, specifically `vcredist_x86.exe` or
+`vcredist_x64.exe`. The installer should give you instructions on how to do
 that if necessary.
 
 Psychtoolbox-3 runs under Microsoft Windows XP, as well as Windows Vista
@@ -115,56 +150,32 @@ stimulus presentation or for tasks with a need for high visual timing
 precision. For some caveats with respect to Vista and later see [our FAQ
 entry about Vista and Windows-7][faqvista].
 
-All in all you are off worse with Vista or Windows-7 instead of XP with
-Psychtoolbox, so there is no reason to switch to it. Vista and Windows 7
-seem to provide less performance than XP while at the same time posing
-higher hardware requirements.
-
-Runtime environment support
----------------------------
-
-Matlab versions prior to version 7.4 are no longer supported by current PTB
-version 3.0.10. Our installer will redirect you to an old and outdated
-version 3.0.9 of PTB whose basic functions may still work with older
-versions if you use a pre-V7.4 Matlab, but in case of any trouble or
-bugs, you will be on your own with such an ancient Matlab version.
-
-If necessary, a 64-bit Matlab installation with installed 32-bit
-compatibility support can be run in a 32-bit mode by starting it with a
-command line switch. **`matlab.exe -win32`** will start 32 bit Matlab on
-Windows, **`matlab -glnx86`** will start 32 bit Matlab on Linux.
-
-Installation of a 32-bit Matlab in parallel to a 64-bit Matlab is
-optional, so you may need to run your Matlab installation disk again if
-the 32-bit mode is not immediately functional on your 64-bit system. We
-hope to provide 64-bit support on MS-Windows for Psychtoolbox by the end
-of 2012, but we can’t make any guarantees about the progress of 64-bit
-support.
+All in all you are worse off with Vista or Windows-7 than with XP, so there is
+no reason to switch to it. Vista and Windows 7 seem to provide less performance
+than XP while at the same time posing higher hardware requirements.
 
 Additional software
 -------------------
 
 #### Multimedia engines: Apple Quicktime vs. GStreamer
 
-On **32-Bit Mac OS X** Psychtoolbox requires Quicktime 7 for movie
+On **32-bit Mac OS X** Psychtoolbox uses Quicktime 7 for movie
 playback, movie creation, video capture and recording. Quicktime is
-installed on any OS X system by default. We recommend staying
-up-to-date with the latest releases for best performance and for
-security reasons.
+installed on any OS X system by default (but can use GStreamer also).
 
-On **64-Bit OS X**, GStreamer is mandatory, Quicktime is no longer
+On **64-bit OS X**, GStreamer is mandatory, Quicktime is no longer
 supported.
 
 On **Linux** you need GStreamer for these operations, but GStreamer is
 a de-facto standard component that ships with all modern Linux distributions.
 
-On **Windows** you can choose between the installation of Apple Quicktime 7 or
-the [open-source GStreamer Multimedia framework][gstreamer].
+On **Windows** you must install the [open-source GStreamer Multimedia
+framework][gstreamer]. The way we have to link to the GStreamer libraries
+requires GStreamer to be installed even if you don’t intend to use the
+multimedia features.
 
 See [GStreamer][docs-gstreamer] (or `>> help GStreamer`) for installation
-instructions for the different systems. We intend to switch completely to
-GStreamer and deprecate Quicktime support. Windows users are encouraged to
-give GStreamer a try while it is still optional.
+instructions for the different systems.
 
 There have so far been two reports that the most recent Quicktime versions
 do not work well – or at all – with 64-bit versions of the Windows
@@ -176,22 +187,8 @@ For video capture support on Windows you will normally use the
 GStreamer video capture engine. This should provide reasonable video
 capture support with most video devices on Windows. Linux has
 excellent video capture support thanks to the GStreamer libraries.
-On 32-Bit OS X, we still have to rely on Apple’s Quicktime, but
+On 32-bit OS X, we still have to rely on Apple’s Quicktime, but
 intend to replace it with GStreamer in the future.
-
-For video capture support on Windows with the alternative, Mac OS
-compatible, Quicktime Sequencegrabber engine, you would need to
-install a Quicktime video digitizer component. The free [WinVDIG][vdig1]
-is known to work for USB webcams and standard consumer DV cameras
-with Firewire connectors and Psychtoolbox has been tested with some
-version of that plugin. Another (untested) option is the [VDIG from
-AbstractPlane][vdig2], which costs a small amount of money, but
-presumably comes with commercial support. Please note that Quicktime
-video capture capabilities on MS-Windows are very basic and limited,
-probably only useable for projects with low demands, so there isn’t
-any real reason to prefer this over use of GStreamer. This option
-will likely get removed when we deprecate Quicktime support for
-Windows.
 
 Basic hardware requirements
 ---------------------------
@@ -201,7 +198,7 @@ Basic hardware requirements
     bit GNU/Linux.
 
 -   Intel Macs: Any Intel-based Macintosh computer that is capable of
-    running OSX 10.4 “Tiger” or later, or 32/64 Bit GNU/Linux.
+    running OS X 10.4 “Tiger” or later, or 32/64 Bit GNU/Linux.
 
 -   The Psychtoolbox distributed by the Debian project also supports
     other processor architectures, e.g., PowerPC, ARM, MIPS, Sun
@@ -231,20 +228,21 @@ from the NVidia Quadro series and ATI FireGL / FirePro line of cards are
 technically state-of-the-art and Psychtoolbox can take full advantage of
 their features.
 
-The latest generation of integrated Intel HD graphics cards, e.g., Intel
-HD 2000, HD 3000, as found in many modern “Intel Core” processors,
-provide decent functionality, accuracy and performance for not too
-demanding tasks. They are OpenGL 3 and Direct3D 10 compliant. Numeric
-precision is on par with recent NVidia or AMD cards for most (but not
-all) accuracy tests that have been executed on a Intel HD-3000 under OSX
-10.7.4 “Lion”. Absolute graphics performance is of course significantly
-lower than that of current discrete NVidia or AMD cards.
+The latest generation of integrated Intel HD graphics cards, e.g., Intel HD
+2000, HD 3000, as found in many modern “Intel Core” processors, provide decent
+functionality, accuracy and performance for not too demanding tasks. They are
+OpenGL-3 / Direct3D-10 compliant. Numeric precision is on par with recent
+NVidia or AMD cards for most (but not all) accuracy tests that have been
+executed on a Intel HD-3000 under OS X 10.7.4 Lion. Absolute graphics
+performance is of course significantly lower than that of current discrete
+NVidia or AMD cards. But for not too demanding visual stimulation paradigms,
+these cards are now somewhat suitable.
 
 Older Intel graphics cards are problematic for all but the most trivial visual
 stimulation tasks: While the Intel GMA X3100 series cards and similar are also
 Direct3D 10 compliant in theory, in practice they suffer from limitations.
 Users of Intel-based Macs should be aware that some Macs (e.g., old Intel
-MacBook) use a *built-in Intel GMA* graphics adaptor. The GPUs of the GMA-950
+Mac Book) use a *built-in Intel GMA* graphics adaptor. The GPUs of the GMA-950
 series are known to have *very low graphics performance* and a *very restricted
 feature set*. They are cheap and sub-standard by any definition. See [this
 Wikipedia article][gma950] for further information.
@@ -267,11 +265,11 @@ and the likelihood of graphics driver bugs to be lower. While separate
 cards may work, we do not guarantee this and do not provide any support
 for troubleshooting. Note that stereo work may benefit from the display
 synchrony provided by some of the dual-head cards. Synchrony is usually
-hard to achieve with separate cards. We also recommend to avoid Mac OSX
+hard to achieve with separate cards. We also recommend to avoid Mac OS X
 for dual display real-time stimulus presentation, as Apple seems to be
 mostly incapable of and uninterested in implementing decent support for
 high performance, tear-free dual display support. For static stimuli or
-use as a control monitor, OSX may be good enough.
+use as a control monitor, OS X may be good enough.
 
   [linux-install]: {{site.url}}/download#Linux
   [neurodebian]: http://neuro.debian.net
