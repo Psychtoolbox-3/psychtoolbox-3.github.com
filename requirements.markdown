@@ -15,20 +15,20 @@ category: getting-started
 Short version
 -------------
 
--   Operating system:
+-   *Operating system:*
 
     GNU Linux is recommended. Also works on Apple Mac OS X (Intel) and Microsoft
     Windows (Intel).
 
--   Runtime environment:
+-   *Runtime environment:*
 
     Matlab Version 7.4 R2007a or later, also GNU Octave version 3.2 or later on
     Linux and 3.6 on OS X.
 
--   A cautious migration to 64-bit versions of Matlab and Octave is
+    A cautious migration to 64-bit versions of Matlab and Octave is
     recommended, especially for users of OS X.
 
--   Graphics card:
+-   *Graphics card:*
 
     Recommended are any OpenGL 2.1 or better capable GPUs from AMD or NVidia.
     Modern Intel HD-Series graphics cards should work for moderately complex
@@ -36,7 +36,7 @@ Short version
     features. The absolute minimum requirement is OpenGL-1.2 support, but
     functionality will be limited with such old GPUs. 
 
--   Sound card:
+-   *Sound card:*
 
     On Linux and OS X, any card supported by the operating system should work
     well. On Windows, an ASIO capable audio card is absolutely required for
