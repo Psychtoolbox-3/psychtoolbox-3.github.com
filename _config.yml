@@ -3,14 +3,14 @@ url: http://psychtoolbox-3.github.io
 safe: false
 # permalink: pretty
 pygments: true
-markdown: kramdown
-
-kramdown:
-  auto_ids: false
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..5
-  use_coderay: false
+# markdown: kramdown
+# 
+# kramdown:
+#   auto_ids: false
+#   footnote_nr: 1
+#   entity_output: as_char
+#   toc_levels: 1..5
+#   use_coderay: false
 
 # rdiscount:
 #   extensions: [smart, generate_toc]
