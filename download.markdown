@@ -65,8 +65,9 @@ Requirements][requirements].
 
     -  [Subversion][svnmac] (Look for “Binaries for Mac OS X”).
 
-    Skip this step on OS X 10.5 Leopard or later, as Subversion (`svn`) is
-    already installed on your system by default.
+    Skip this step on OS X 10.5 Leopard or later iff you have Apple's XCode
+    development tools installed, as Subversion (`svn`) is then already
+    installed on your system by default.
 
 2.  Download the **[Psychtoolbox installer][installer] to your desktop**. 
 
@@ -127,14 +128,25 @@ be found under [UsingPsychtoolboxOnLinux][using-on-linux].
 
 2.  Download the **[Psychtoolbox installer][installer] to your desktop**. 
 
-3.  Open the **My Computer** icon (it is either on the desktop or in the
-    Start Menu).
+3.  Open the **My Computer** icon (it is either on the desktop or in the Start
+    Menu).
 4.  Double-click on the **C: drive** icon.
-5.  Create a new folder called `toolbox`. This assumes you want to
-    install into the `toolbox` folder.
-6.  Move the Psychtoolbox installer (`DownloadPsychtoolbox`) from the
-    Desktop to the new `toolbox` folder.
-7.  Open Matlab and type the following in the command window:
+5.  Create a new folder called `toolbox`. This assumes you want to install into
+    the `toolbox` folder.
+6.  Move the Psychtoolbox installer (`DownloadPsychtoolbox`) from the Desktop
+    to the new `toolbox` folder.
+7.  If you intend to use the 64-Bit Psychtoolbox for 64-Bit Matlab, you must
+    install the 64-Bit GStreamer SDK from
+    [[http://docs.gstreamer.com/display/GstSDK/Installing+on+Windows
+    www.gstreamer.com]], otherwise Psychtoolbox will not work and the
+    installation will abort.
+8.  You also need to install the Microsoft Runtime Libraries for MSVC 2010. You
+    can find installers for these at Microsoft’s site beforehand. Otherwise
+    when our installer aborted half-ways, follow the instructions it prints to
+    the console.
+9.  Open Matlab as administrative user (for Windows 7, right-click Matlab
+    shortcut and Run As Administrator) and type the following in the command
+    window:
 
         >> cd C:\toolbox
         >> DownloadPsychtoolbox('C:\toolbox')
@@ -231,27 +243,26 @@ This can mean two things:
     Your institution might route all web traffic trough a local proxy
     server, which can interfere with the operation of Subversion because it
     also uses HTTP to check-out the Psychtoolbox from the repository.
-    See FaqDownloadFails to learn how to teach svn to use your institutions
+    See FaqDownloadFails to learn how to teach svn to use your institution’s
     proxy.
   </dd>
 </dl>
 
+
+If the updater fails with a message like ...
+
+    svn: E155036: Please see the 'svn upgrade' command 
+    svn: E155036: Working copy '/opt/MATLAB/R2011b/toolbox/Psychtoolbox' is too old (format 10, created by Subversion 1.6) 
+
+... then open a terminal window, `cd` into the Psychtoolbox folder and then run
+the command `svn upgrade`. Then rerun the `UpdatePsychtoolbox` command.
+
+Alternatively, if you haven't made any modifications to your Psychtoolbox
+folder, simply rerun `DownloadPsychtoolbox` to install a fresh copy of
+Psychtoolbox.
+
 *If everything else fails, contact the Psychtoolbox [forum][forum] with a
 description of what you tried.*
-
-On Microsoft Windows, if the download itself succeeds, but then the
-installer aborts with some error message about `WaitSecs` and other mex
-files not working, and asks you to install some Visual C++ 2005 SP1
-security update runtime library, you’ll need to download and install
-that on your system. You’ll likely need administrator privileges to do
-so. It is important to download the runtime libraries for Visual C++
-2005 Service Pack 1 (SP1), not just for Visual C++ 2005 !!! [Last time
-we checked, this link pointed to the right download location.][c++ runtime] It is
-crucial that your operating system is up to date with the latest service
-packs, bug fixes and security fixes from Microsoft for this to work. A
-reboot may or may not be required but it never hurts. It is also very
-important to **not use the ‘unsupported’ flavor of Psychtoolbox!**
-‘unsupported’ does not support Matlab V7.4 and later on Windows.
 
 ### Subversion {#subversion}
 
