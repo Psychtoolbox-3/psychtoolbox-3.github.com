@@ -152,10 +152,10 @@ extra effort. However, mapping of some special or exotic keys may be
 incomplete, so you should probably avoid those keys for portable
 scripts.
 
-```matlab
+~~~ matlab
 % Add this at top of new scripts for maximum portability due to unified names on all systems
 KbName('UnifyKeyNames');
-```
+~~~ 
 
 ### `SetMouse`, `GetMouse`, `ShowCursor`, `HideCursor`, `GetSecs`
 
@@ -186,10 +186,10 @@ Use the `MaxPriority` function to query maximum allowable priority
 levels for realtime scheduling (`help MaxPriority`) in order to
 keep your code portable.
 
-```matlab
+~~~ matlab
 % Select maximum allowable realtime priority for current operating system
 Priority(MaxPriority);
-```
+~~~ 
 
 `WaitSecs` accepts values with microsecond precision. The robustness and
 accuracy of the *real waiting time* compared to the *requested
