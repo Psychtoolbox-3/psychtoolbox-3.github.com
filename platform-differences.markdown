@@ -65,13 +65,13 @@ function. We provide some simple joystick support for Windows via
 ### Eyelink toolbox
 
 A functional implementation of the Eyelink toolbox is included in the
-Psychhardware folder of PTB for all operating systems. It is reported to
+`PsychHardware` folder of PTB for all operating systems. It is reported to
 work well, although it's not polished yet, e.g., the documentation and
 some of the demos are not yet updated and cleaned in all parts. You must
 install the runtime libraries from SR - Research on your system for this
 to work. They come bundled with your Eyelink and are also downloadable
 from their website. As of October 2012, there seems to be no support for
-Eyelink on 64-Bit Windows systems, ie., Eyelink will not work with
+Eyelink on 64-Bit Windows systems, i.e., Eyelink will not work with
 64-Bit Matlab. This limitation is imposed on us by SR-Research's lack of
 support.
 
@@ -79,12 +79,12 @@ support.
 
 Sound output via the old and deprecated `Snd` command is currently
 implemented as a wrapper around the `PsychPortAudio` driver for decent
-cross-platform compatibility. However use of Snd is deprecated for all
+cross-platform compatibility. However use of `Snd` is deprecated for all
 but the most simple use cases, e.g., providing simple auditory feedback
 to a subject. For research grade auditory stimulation, use
 `PsychPortAudio` directly, or you will be doomed! 
 
-<PsychPortAudio link>
+<http://PsychPortAudio-link>
 
 ### OpenGL for Matlab/Octave support MOGL
 
