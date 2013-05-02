@@ -93,10 +93,15 @@ code, pre {
   font-size: 110%;
 }
 
+pre code {
+  font-size: 14px;
+}
+
 h1 code, h2 code, h3 code, h4 code {
   border: 1px solid #eaeaea;
   background-color: #f8f8f8;
   border-radius: 3px;
+  color: #333;
 }
 
 pre {
