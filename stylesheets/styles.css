@@ -93,7 +93,7 @@ code, pre {
   font-size: 110%;
 }
 
-h1 code, h2, code, h3 code, h4 code {
+h1 code, h2 code, h3 code, h4 code {
   border: 1px solid #eaeaea;
   background-color: #f8f8f8;
   border-radius: 3px;
