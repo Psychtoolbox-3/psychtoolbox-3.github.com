@@ -440,40 +440,60 @@ Standard `Screen` subfunctions and their requirements
     windows: `GL_ARB_texture_rectangle` or `GL_EXT_texture_rectangle` or
     `GL_NV_texture_rectangle`.
 
-    -   Everything on IntelMacs, everything on PowerMacs except ATI Rage,
-        Rage 128 or Rage Pro. NVidia Geforce2 and later on Windows/Linux.
-        Intel GMA 945.
+    -   Everything on IntelMacs, everything on PowerMacs except ATI Rage,
+        Rage 128 or Rage Pro. NVidia Geforce2 and later on Windows/Linux.
+        Intel GMA 945.
 
 -   Support for fast drawing of 3D geometry in MOGL:
     `GL_EXT_draw_range_elements`.
 
-    -   All OS X hardware. Most PC hardware.
+    -   All OS X hardware. Most PC hardware.
 
 -   Support for `Screen('Flip', ..., clearmode)` command with
     `clearmode=1` (don't clear after Flip): At least one AUX buffer for
     mono displays, two AUX buffers for stereo displays.
 
--   Well supported on OS X on PowerPC, faulty on OS X IntelMac, unsupported on most Windows and Linux systems, especially with ATI hardware. Alternatively if your hardware support the PTB imaging pipeline, you'll get this feature very efficiently for free.
+-   Well supported on OS X on PowerPC, faulty on OS
+    X IntelMac, unsupported on most Windows and Linux systems, especially with ATI hardware. Alternatively if your hardware support the PTB imaging pipeline, you'll get this feature very efficiently for free.
+
+
 
 -   Support for different stereo display methods (`stereomode` flag in
     `Screen('OpenWindow', ...)`:
 
-    -   Frame sequential stereo for shutter glasses: Blue line syncing method supported on all OS X hardware except ATI Rage and Intel chips. On Windows, only expensive professional line hardware is supported (ATI FireGL series and NVidia Quadro series). Linux can be extended in various ways to support commodity hardware in addition to the professional line hardware, and to support very special setups, e.g., high performance render clusters.
+    -   Frame sequential stereo for shutter glasses: Blue line syncing method
+        supported on all OS X hardware except ATI Rage and Intel chips. On
+        Windows, only expensive professional line hardware is supported (ATI
+        FireGL series and NVidia Quadro series). Linux can be extended in
+        various ways to support commodity hardware in addition to the
+        professional line hardware, and to support very special setups, e.g.,
+        high performance render clusters.
 
-    -   Vertical split screen stereo (modes 2 and 3): Supported on OS X PowerPC on all hardware. All other platforms need support for the PTB imaging pipeline for this to work.
+    -   Vertical split screen stereo (modes 2 and 3): Supported on OS X PowerPC
+        on all hardware. All other platforms need support for the PTB imaging
+        pipeline for this to work.
 
-    -   Dualview stereo for free fusion, cross fusion, haploscopes and dual display systems: Works on all hardware and OS, either via cheap display splitter hardware [like the Matrox DualHead2Go](http://www.matrox.com/graphics) or via dual display (dual head) graphics cards.
+    -   Dualview stereo for free fusion, cross fusion, haploscopes and dual
+        display systems: Works on all hardware and OS, either via cheap display
+        splitter hardware [like the Matrox
+        DualHead2Go](http://www.matrox.com/graphics) or via dual display (dual
+        head) graphics cards.
 
-    -   Anaglyph stereo: Basic support (without automatic gain correction, desaturation or color to luminance conversion) works on all systems. Advanced anaglyph stereo with automatic color to luminance conversion, desaturation and gain correction is only supported on hardware that supports the PTB imaging pipeline.
+    -   Anaglyph stereo: Basic support (without automatic gain correction,
+        desaturation or color to luminance conversion) works on all systems.
+        Advanced anaglyph stereo with automatic color to luminance conversion,
+        desaturation and gain correction is only supported on hardware that
+        supports the PTB imaging pipeline.
 
--   Other algorithms: Need basic support for PTB imaging pipeline.
+-   Other algorithms: Need basic support for PTB imaging pipeline.
 
 -   Support for full scene anti-aliasing (`multisample` parameter of
     `Screen('OpenWindow', ...)`): Needs `GL_ARB_multisample` with at
     least 1 multisample buffer (See constants `Max Sample Buffers` and
     `Max Samples`, bigger is better.
 
-    -   Supported on most ATI and NVidia hardware, not supported on Intel onboard graphics, e.g., GMA 950 of MacMini, IntelMac or MacBook.
+    -   Supported on most ATI and NVidia hardware, not supported on Intel
+        onboard graphics, e.g., GMA 950 of MacMini, IntelMac or MacBook.
 
 -   Support for fast Offscreen windows: Needs support for basic imaging
     pipeline.
