@@ -70,7 +70,7 @@ Psychtoolbox-2:
 
 Good luck programming.
 
-Mario Kleiner, David Brainard, Denis Pelli, Chris Broussard, and Roy Han
+Mario Kleiner, David Brainard, Denis Pelli, Chris Broussard, Tobias Wolf, Diederick Niehorster
 
 [The Developers](developers)
 
