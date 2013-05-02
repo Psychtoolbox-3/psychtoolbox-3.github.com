@@ -6,11 +6,13 @@ pygments: true
 markdown: kramdown
 
 kramdown:
-  auto_ids: false
-  footnote_nr: 1
-  entity_output: as_char
+  auto_ids: true
   toc_levels: 1..5
-  use_coderay: true
+  use_coderay: false
+
+# redcarpet:
+#     extensions: ["no_intra_emphasis", "fenced_code_blocks", "strikethrough", "autolink",
+#                  "tables", "with_toc_data", "space_after_headers", "superscript"]
 
 # rdiscount:
 #   extensions: [smart, generate_toc]
