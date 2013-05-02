@@ -123,7 +123,7 @@ The `Fonts` command for flexible query and handling of character fonts
 *only exists on Mac OS X* with no plans to ever implement it on
 Windows or Linux.
 
-### `ListenChar,` `CharAvail,` `GetChar,` `FlushEvents`
+### `ListenChar`, `CharAvail`, `GetChar`, `FlushEvents`
 
 In Matlabs regular GUI mode, functions for character input are
 implemented as a Java class via Matlabs built-in Java virtual machine
