@@ -4,18 +4,18 @@ title: Useful Links
 category: getting-started
 ---
 
-## Directly related to Psychtoolbox-3
+### Directly related to Psychtoolbox-3
 
 -   [Talk slides of Psychtoolbox presentation, given at ECVP 2007 Arezzo](http://psychtoolbox-3.googlecode.com/svn/trunk/Psychtoolbox/PsychDocumentation/Psychtoolbox3-Slides.pdf)
 
-## GNU Octave, a Matlab alternative
+### GNU Octave, a Matlab alternative
 
 -   [Latest Octave packages for Ubuntu Linux](https://launchpad.net/~octave/+archive/stable/+packages)
 -   [The current status of Octave as of 2012](http://planet.octave.org/octconf2012/status.pdf)
 -   [Introduction to Octave as of 2012](http://planet.octave.org/octconf2012/what-is-octave.pdf)
 -   [More Octave presentations from OctConf 2012](http://jordi.inversethought.com/blog/octconf-2012-report/)
 
-## Other Software Packages
+### Other Software Packages
 
 #### Visual stimulus presentation software:
 
@@ -51,7 +51,7 @@ category: getting-started
 -   [Website with special drivers for use with NVidia graphics cards on Laptops.](http://LaptopVideo2Go.com/)
 -   [GPUCapsViewer graphics card diagnostic utility for WindowsXP and Vista.](http://www.ozone3d.net/gpu_caps_viewer/)
 
-## Interesting Technical Documentation on the Web
+### Interesting Technical Documentation on the Web
 
 #### Sound under Linux:
 
@@ -61,7 +61,7 @@ category: getting-started
 
 #### Graphics card technology:
 
-[PyMol-Wiki page on different options and setup tips for 3D display hardware - Also applies to Psychtoolbox](http://pymolwiki.org/index.php/Stereo_3D_Display_Options)
+-   [PyMol-Wiki page on different options and setup tips for 3D display hardware - Also applies to Psychtoolbox](http://pymolwiki.org/index.php/Stereo_3D_Display_Options)
 
 #### Hardware tests (graphics and other) and technical articles about hardware
 
@@ -69,7 +69,12 @@ category: getting-started
 
 -   [ATI-Whitepaper: The AVIVO display engine of ATI Radeon X1000, FireGL V7300 and later models](http://www.ati.com/technology/avivo/pdf/Avivo_Display_Engine_Whitepaper_v2_final.pdf)
 
-This whitepaper from ATI covers the video output capabilities of their current graphics cards. It explains their 10 bit framebuffers and DACs, gamma- and color-correction, video scalers and support for different display devices. This is supported on MS-Windows and Linux with some of their pro hardware, and on Linux and Mac OS/X on some consumer graphics cards via special Psychtoolbox functions (see section `Native10BitFramebuffer` in `help PsychImaging`).
+    This whitepaper from ATI covers the video output capabilities of their current
+    graphics cards. It explains their 10 bit framebuffers and DACs, gamma- and
+    color-correction, video scalers and support for different display devices. This
+    is supported on MS-Windows and Linux with some of their pro hardware, and on
+    Linux and Mac OS/X on some consumer graphics cards via special Psychtoolbox
+    functions (see section `Native10BitFramebuffer` in `help PsychImaging`).
 
 -   [Jenny Read's notes on setting up a stereo psychophysics rig under MS-Windows](http://www.staff.ncl.ac.uk/j.c.a.read/index.php?location=research&sub=labsetup)
 
