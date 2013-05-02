@@ -224,7 +224,7 @@ ul#toc li {
   line-height: 2;
 }
 
-ul#toc ul li {
+ul#toc ul li, ul#toc ul li code {
   font-size: 75%;
 }
 
