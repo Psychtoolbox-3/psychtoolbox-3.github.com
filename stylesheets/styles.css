@@ -101,6 +101,8 @@ h1 code, h2 code, h3 code, h4 code {
   border: 1px solid #eaeaea;
   background-color: #f8f8f8;
   border-radius: 3px;
+  padding: 0 5px;
+  margin: 0 2px;
   color: #333;
 }
 
