@@ -12,6 +12,7 @@ Matlab or Octave installed, start it up and read on.
 
 * Will be replaced with the ToC
 {:toc #toc}
+{::options auto_ids="false" toc_levels="1..4"/}
 
 Preliminaries
 -------------

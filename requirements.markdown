@@ -11,7 +11,6 @@ category: getting-started
 {::options auto_ids="true" toc_levels="2..3"/}
 
 
-
 Short version
 -------------
 
