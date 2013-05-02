@@ -6,7 +6,7 @@ category: getting-started
 
 ### Directly related to Psychtoolbox-3
 
--   [Talk slides of Psychtoolbox presentation, given at ECVP 2007 Arezzo](http://psychtoolbox-3.googlecode.com/svn/trunk/Psychtoolbox/PsychDocumentation/Psychtoolbox3-Slides.pdf)
+-   [Talk slides of Psychtoolbox presentation, given at ECVP 2007 Arezzo](https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/Psychtoolbox3-Slides.pdf)
 
 ### GNU Octave, a Matlab alternative
 

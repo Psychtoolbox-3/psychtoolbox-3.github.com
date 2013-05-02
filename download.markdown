@@ -311,7 +311,7 @@ function instead of `DownloadLegacyPsychtoolbox`.
   [debianrepo]: http://packages.debian.org/search?keywords=Psychtoolbox
   [ubunturepo]: http://packages.ubuntu.com/search?keywords=Psychtoolbox
 
-  [arezzo]: http://psychtoolbox-3.googlecode.com/svn/trunk/Psychtoolbox/PsychDocumentation/Psychtoolbox3-Slides.pdf
+  [arezzo]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/Psychtoolbox3-Slides.pdf
 
   [docs-download]: http://docs.psychtoolbox.org/DownloadPsychtoolbox
   [docs-setup]: http://docs.psychtoolbox.org/SetupPsychtoolbox

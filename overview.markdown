@@ -79,7 +79,7 @@ Mario Kleiner, David Brainard, Denis Pelli, Chris Broussard, and Roy Han
     PTB registration stats here
 
  [docs-demos]: http://docs.psychtoolbox.org/PsychDemos
- [arezzo]: http://psychtoolbox-3.googlecode.com/svn/trunk/Psychtoolbox/PsychDocumentation/Psychtoolbox3-Slides.pdf
+ [arezzo]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/Psychtoolbox3-Slides.pdf
  [forum]: {{ site.url }}/forum
 
  *[C or Pascal]: Presumably, this blurb was written 15 years ago
