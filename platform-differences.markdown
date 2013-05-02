@@ -17,6 +17,11 @@ you.
 time slightly outdated). It always refers to the state of the current beta
 flavor of PTB.*
 
+###### Contents
+
+* Will be replaced with the ToC
+{:toc}
+
 ## Status of different core features and how to handle differences
 
 ### Matlab M-File functions
