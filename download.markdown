@@ -8,7 +8,7 @@ In order to install and use the Psychtoolbox, *you must already have
 Matlab or Octave installed on your computer*. If you already have
 Matlab or Octave installed, start it up and read on.
 
-###### Contents {#contents}
+##### Contents {#contents}
 
 * Will be replaced with the ToC
 {:toc #toc}
@@ -91,8 +91,8 @@ Psychtoolbox for Linux has been packaged and is available in the
 following repositories:
 
 -   [NeuroDebian][neurodebian]
--   [Debian testing/unstable][debianrepo]
--   [Ubuntu 12.10 quantal][ubunturepo]
+-   [Debian archive][debianrepo]
+-   [Ubuntu archive][ubunturepo]
 
 NeuroDebian provides installation instructions on its website. _The packages
  from these sources only ship with GNU Octave support, hence the
@@ -308,7 +308,7 @@ function instead of `DownloadLegacyPsychtoolbox`.
 
   [neurodebian]: http://neuro.debian.net/
   [debianrepo]: http://packages.debian.org/search?keywords=Psychtoolbox
-  [ubunturepo]: http://packages.ubuntu.com/search?keywords=psychtoolbox
+  [ubunturepo]: http://packages.ubuntu.com/search?keywords=Psychtoolbox
 
   [arezzo]: http://psychtoolbox-3.googlecode.com/svn/trunk/Psychtoolbox/PsychDocumentation/Psychtoolbox3-Slides.pdf
 

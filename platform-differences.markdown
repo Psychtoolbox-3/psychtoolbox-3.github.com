@@ -17,7 +17,7 @@ you.
 time slightly outdated). It always refers to the state of the current beta
 flavor of PTB.*
 
-###### Contents
+##### Contents
 
 * Will be replaced with the ToC
 {:toc #toc}
