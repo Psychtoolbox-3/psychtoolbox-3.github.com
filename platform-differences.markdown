@@ -158,7 +158,8 @@ incomplete, so you should probably avoid those keys for portable
 scripts.
 
 {% highlight matlab %}
-% Add this at top of new scripts for maximum portability due to unified names on all systems
+% Add this at top of new scripts for maximum portability
+% It unifies the names for keyboard keys across systems
 KbName('UnifyKeyNames');
 {% endhighlight %}
 
@@ -192,7 +193,8 @@ levels for realtime scheduling (`help MaxPriority`) in order to
 keep your code portable.
 
 {% highlight matlab %}
-% Select maximum allowable realtime priority for current operating system
+% Select maximum allowable realtime priority
+% for current operating system
 Priority(MaxPriority);
 {% endhighlight %}
 
