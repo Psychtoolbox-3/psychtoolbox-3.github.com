@@ -253,8 +253,8 @@ based applications like Psychtoolbox. Even the products that nominally
 claim to support hardware accelerated OpenGL, have a pretty limited
 feature set and performance.
 
-[# More detailed information and recommendations for graphics
-hardware#][gfxhw]
+[In depth: More detailed information and recommendations for graphics
+hardware][gfxhw]
 
 For dual-display work (e.g., binocular stereo stimulation), we strongly
 recommend using dual-head or multi-head graphics adapters (i.e., *one*
@@ -281,4 +281,5 @@ use as a control monitor, OS X may be good enough.
   [vdig1]: http://www.eden.net.nz/7/20071008
   [vdig2]: http://www.abstractplane.com/products/vdig.jsp
   [gma950]: http://en.wikipedia.org/wiki/GMA_950
-  [gfxhw]: http://psychtoolbox.org/GraphicsHardwareRequirements
+  [gfxhw]: {{site.url}}/graphics-requirements
+
