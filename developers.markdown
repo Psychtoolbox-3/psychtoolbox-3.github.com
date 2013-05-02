@@ -17,8 +17,8 @@ assistant at the Max Planck Institute in Tübingen.
 
 Our email addresses are below.  Please contact us if you would like to help out.
 
-Mario Kleiner: <mario.kleiner@tuebingen.mpg.de>
-David Brainard: <brainard@psych.upenn.edu>
-Denis Pelli: <denis.pelli@nyu.edu>
-Christopher Broussard: <chrg@sas.upenn.edu>
-Tobias Wolf: <towolf@tuebingen.mpg.de>
+-   David Brainard: <brainard@psych.upenn.edu>
+-   Mario Kleiner: <mario.kleiner@tuebingen.mpg.de>
+-   Denis Pelli: <denis.pelli@nyu.edu>
+-   Christopher Broussard: <chrg@sas.upenn.edu>
+-   Tobias Wolf: <towolf@tuebingen.mpg.de>
