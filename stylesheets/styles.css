@@ -36,7 +36,7 @@ article {
   margin: 0 0 40px;
 }
 
-article h1, article h1 code, article h2, article h2 code {
+article h1, article h2 {
   margin: 0 0 10px;
   font-size: 18px;
   font-weight: 700;
@@ -90,6 +90,7 @@ blockquote {
 code, pre {
   font-family: "Ubuntu Mono", monospace;
   color: #333;
+  font-size: 110%;
 }
 
 pre {
