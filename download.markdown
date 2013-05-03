@@ -137,10 +137,8 @@ be found under [UsingPsychtoolboxOnLinux][using-on-linux].
 6.  Move the Psychtoolbox installer (`DownloadPsychtoolbox`) from the Desktop
     to the new `toolbox` folder.
 7.  If you intend to use the 64-Bit Psychtoolbox for 64-Bit Matlab, you must
-    install the 64-Bit GStreamer SDK from
-    [[http://docs.gstreamer.com/display/GstSDK/Installing+on+Windows
-    www.gstreamer.com]], otherwise Psychtoolbox will not work and the
-    installation will abort.
+    install the 64-Bit GStreamer SDK from [gstreamer.com][gstreamer-sdk],
+    otherwise Psychtoolbox will not work and the installation will abort.
 8.  You also need to install the Microsoft Runtime Libraries for MSVC 2010. You
     can find installers for these at Microsoft’s site beforehand. Otherwise
     when our installer aborted half-ways, follow the instructions it prints to
@@ -306,6 +304,7 @@ function instead of `DownloadLegacyPsychtoolbox`.
   [svnwin]: http://www.sliksvn.com/en/download
   [svnmac]: http://www.collab.net/downloads/subversion
   [installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadPsychtoolbox.m
+  [gstreamer-sdk]: http://docs.gstreamer.com/display/GstSDK/Installing+on+Windows
 
   [neurodebian]: http://neuro.debian.net/
   [debianrepo]: http://packages.debian.org/search?keywords=Psychtoolbox
