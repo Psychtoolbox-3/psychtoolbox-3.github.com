@@ -91,10 +91,7 @@ want to know more, see [DownloadPsychtoolbox][docs-download] (or
 Psychtoolbox for Linux has been packaged and is available in the
 following repositories:
 
--   [NeuroDebian][neurodebian]
-
-    (packages [`octave-psychtoolbox-3`][nd-octave] or [`matlab-psychtoolbox-3-nonfree`][nd-matlab])
-
+-   [NeuroDebian][neurodebian] ([Octave][nd-octave] or [Matlab][nd-matlab])
 -   [Debian archive][debianrepo] (package `octave-psychtoolbox-3`)
 -   [Ubuntu archive][ubunturepo] (package [`octave-psychtoolbox-3`](apt:octave-psychtoolbox-3))
 
@@ -102,8 +99,9 @@ NeuroDebian provides installation instructions on its website.
 
 _The packages in the main Debian and Ubuntu archives still only ship with GNU
 Octave support, hence the package to install is_ **`octave-psychtoolbox-3`**.
+
 Use the script `DownloadAdditionsForNeuroDebian` after the package installation
-to post-install the Matlab versions of the binary MEX routines as well.
+to post-install our Matlab versions of the binary MEX routines as well.
 
 The advantage of the above repositories is that third-party dependencies
 are automatically installed by the package manager.
