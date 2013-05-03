@@ -300,7 +300,7 @@ function instead of `DownloadLegacyPsychtoolbox`.
   [requirements]: {{ site.url }}/requirements
   [forum]: {{ site.url }}/forum
   [versions]: {{ site.url }}/versions
-  [using-on-linux]: UsingPsychtoolboxOnLinux
+  [using-on-linux]: {{ site.url }}/linux
 
   [svnwin]: http://www.sliksvn.com/en/download
   [svnmac]: http://www.collab.net/downloads/subversion
