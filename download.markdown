@@ -91,7 +91,10 @@ want to know more, see [DownloadPsychtoolbox][docs-download] (or
 Psychtoolbox for Linux has been packaged and is available in the
 following repositories:
 
--   [NeuroDebian][neurodebian] (packages [`octave-psychtoolbox-3`][nd-octave] or [`matlab-psychtoolbox-3-nonfree`][nd-matlab])
+-   [NeuroDebian][neurodebian]
+
+    (packages [`octave-psychtoolbox-3`][nd-octave] or [`matlab-psychtoolbox-3-nonfree`][nd-matlab])
+
 -   [Debian archive][debianrepo] (package `octave-psychtoolbox-3`)
 -   [Ubuntu archive][ubunturepo] (package [`octave-psychtoolbox-3`](apt:octave-psychtoolbox-3))
 
