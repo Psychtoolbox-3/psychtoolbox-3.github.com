@@ -64,9 +64,16 @@ access to neuroscience-related software on the Debian and Ubuntu Linux
 distributions. The NeuroDebian APT archives include a Psychtoolbox snapshot
 release, which has been packaged to be ready-to-use with GNU Octave.
 
-The [`DownloadAdditionsForNeuroDebian`][additions] script allows you to use these
-packages with Matlab as well. For more, see the [Linux installation
-instructions][linux-install].
+Recently NeuroDebian has begun to curate open-source packages [for Matlab as
+well][neurodebian-matlab], and since provides two sets of packages, one for
+Octave and one for Matlab.
+
+As an older home-spun solution, the
+[`DownloadAdditionsForNeuroDebian`][additions] script allows you to
+automatically download our compiles for Matlab on top of the NeuroDebian Octave
+package.
+
+For details on these options, see the [Linux installation instructions][linux-install].
 
 We generally recommend Linux as the operating system of choice for
 demanding experimental setups, which require the highest timing
@@ -272,6 +279,7 @@ use as a control monitor, OS X may be good enough.
 
   [linux-install]: {{site.url}}/download#Linux
   [neurodebian]: http://neuro.debian.net
+  [neurodebian-matlab]: http://neuro.debian.net/proj_matlab.html
   [additions]: http://docs.psychtoolbox.org/DownloadAdditionsForNeuroDebian
   [gstreamer]: http://gstreamer.freedesktop.org
   [docs-gstreamer]: http://docs.psychtoolbox.org/Gstreamer
