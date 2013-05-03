@@ -99,7 +99,6 @@ NeuroDebian provides installation instructions on its website.
 
 _The packages in the main Debian and Ubuntu archives still only ship with GNU
 Octave support, hence the package to install is_ **`octave-psychtoolbox-3`**.
-
 Use the script `DownloadAdditionsForNeuroDebian` after the package installation
 to post-install our Matlab versions of the binary MEX routines as well.
 
