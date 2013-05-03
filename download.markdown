@@ -309,7 +309,7 @@ function instead of `DownloadLegacyPsychtoolbox`.
 
   [neurodebian]: http://neuro.debian.net/
   [nd-octave]: http://neuro.debian.net/pkgs/octave-psychtoolbox-3.html
-  [nd-matlab]: http://neuro.debian.net/pkgs/matlab-psychtoolbox-3-nonfree.html
+  [nd-matlab]: http://neuro.debian.net/pkgs/matlab-psychtoolbox-3.html
   [debianrepo]: http://packages.debian.org/search?keywords=Psychtoolbox
   [ubunturepo]: http://packages.ubuntu.com/search?keywords=Psychtoolbox
 
