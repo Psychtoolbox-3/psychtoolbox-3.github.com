@@ -119,8 +119,8 @@ directory.
 
           >> DownloadPsychtoolbox('/home/foo/toolbox')
 
-Additional tips for installing and using Psychtoolbox on Linux can
-be found under [UsingPsychtoolboxOnLinux][using-on-linux].
+[Additional tips][using-on-linux] for installing and using Psychtoolbox on
+Linux.
 
 #### Windows {#Windows}
 
