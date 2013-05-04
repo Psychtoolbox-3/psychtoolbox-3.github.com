@@ -247,7 +247,7 @@ feature set and performance.
 [In depth: More detailed information and recommendations for graphics
 hardware][gfxhw]
 
-For dual-display work (e.g., binocular stereo stimulation), we strognly
+For dual-display work (e.g., binocular stereo stimulation), we strongly
 recommend using dual-head or multi-head graphics adapters (i.e., *one*
 card with two or more output connectors) instead of multiple separate
 adapters. We expect dual/multi-head single-card performance to be higher
