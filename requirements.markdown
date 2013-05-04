@@ -50,7 +50,7 @@ Operating systems
 GNU/Linux is fully supported on Intel compatible PCs and Apple Macintosh
 computers under
 
--  Matlab 7.4 (32-bit and 64-bit), or later
+-  Matlab 7.4 R2007a (32-bit and 64-bit), or later
 -  GNU Octave 3.2 (32-bit and 64-bit), or later
 
 Psychtoolbox should run well on any recent Linux distribution. Testing
@@ -85,24 +85,24 @@ performance and flexibility.
 Psychtoolbox is also being developed and tested under Apple Mac OS X.
 Supported are
 
--   64-bit Matlab on OS X 10.5.8 and later
--   64-bit Octave 3.6 and later on OS X 10.4.11 “Tiger” and later.
--   32-bit Matlab R2007a and later (end of life)
+-   64-bit Matlab on OS X 10.6 "Snow Leopard" and later
+-   64-bit Octave 3.6 and later on OS X 10.6 "Snow Leopard" and later
 
-    **Using OS X 10.6 “Snow Leopard” or later together with 64-bit
-     Matlab is recommended for full functionality.**
+Compatibility tests have been run on OS X 10.6.8, and 10.7.4 with 64-bit
+Matlab R2012a and on 10.7.4 with 64-Bit Octave 3.6.
 
-Exhaustive compatibility tests have been run on 10.4.11, 10.5.8 and 10.6.2 with
-32-bit Matlab R2007a, and some testing by the developers has been performed on
-10.5.8 with 64-bit Matlab R2010b and on 10.6.8, and 10.7.4 with 64-bit Matlab
-R2012a.
+Regular testing currently only happens on the latest version of 10.7
+“Lion” with 64-Bit Octave 3.6, and with 64-bit Matlab R2012a, but more
+recent OS X versions should work reasonably well for many tasks, according
+to user reports.
 
-Regular testing currently only happens on 10.7 “Lion” with 32-bit Matlab
-R2007a, 64-Bit Octave 3.6, and with 64-bit Matlab R2012a, but most OS X
-versions should work reasonably well for many tasks, according to user reports.
+The current toolbox version 3.0.11 releases are not supported under OS X 10.5
+or earlier anymore. The last version that worked on OS X 10.4 and 10.5 and
+with 32-Bit versions of Matlab was v3.0.10. It can be downloaded by specifying
+the special `flavor` parameter `Psychtoolbox-3.0.10` in our `DownloadPsychtoolbox`
+downloader script.
 
-The current toolbox releases are not supported under OS X 10.3 or earlier
-anymore. The last version that worked on 10.3 can be downloaded by
+The last version that worked on 10.3 can be downloaded by
 specifying the special `flavor` parameter `Psychtoolbox-3.0.8-PreTiger`
 in our `DownloadLegacyPsychtoolbox` legacy downloader script.
 
@@ -115,18 +115,15 @@ Leopard” seem to be relatively unproblematic in use, i.e., most of the
 many operating system bugs we found now have workarounds implemented in
 Psychtoolbox. 10.5 “Leopard” was a rather buggy operating system,
 especially for multi-display stimulus presentation and stereoscopic
-stimulus presentation. 10.7 “Lion” mostly has restrictions in the
-precision for visual stimulus timestamping due to various bugs in the
+stimulus presentation. 10.7 “Lion” and later mostly has restrictions in
+the precision for visual stimulus timestamping due to various bugs in the
 operating system. Please install the Psychtoolbox kernel driver to
 resolve these issues (see [PsychtoolboxKernelDriver][docs-kerneldriver] or 
 `>> help PsychtoolboxKernelDriver`).
 
-*32-Bit Matlab support and support for OS X 10.4 and 10.5 will be time limited.
-It will get likely removed sometime in the year 2013.*
-
 ### Windows
 
--   Matlab 32-bit or 64-bit, release 7.4 or later
+-   Matlab 32-bit or 64-bit, release 7.4 R2007a or later
 
     External requirements: Microsoft C runtime and GStreamer
 
@@ -135,8 +132,8 @@ libraries to make it work, specifically `vcredist_x86.exe` or
 `vcredist_x64.exe`. The installer should give you instructions on how to do
 that if necessary.
 
-Psychtoolbox-3 runs under Microsoft Windows XP, as well as Windows Vista
-and Windows 7.
+Psychtoolbox-3 runs under Microsoft Windows XP, Windows Vista, Windows 7
+and Windows 8.
 
 We do aim to keep the toolbox working under these and future versions of
 Windows, but full support for all features is a lower priority for us
@@ -154,57 +151,45 @@ timing trouble so far.
 We cannot however recommend Window 7 at all for dual-display stereo
 stimulus presentation or for tasks with a need for high visual timing
 precision. For some caveats with respect to Vista and later see [our FAQ
-entry about Vista and Windows-7][faqvista].
+entry about Vista and Windows-7][faqvista]. These problems may be even worse
+with Windows 8, although no systematic testing has been performed by us so far.
 
-All in all you are worse off with Vista or Windows-7 than with XP, so there is
-no reason to switch to it. Vista and Windows 7 seem to provide less performance
+All in all you are worse off with Vista and later than with XP, so there is
+no reason to switch to it. Those systems seem to provide less performance
 than XP while at the same time posing higher hardware requirements.
 
 Additional software
 -------------------
 
-#### Multimedia engines: Apple Quicktime vs. GStreamer
+#### Multimedia engine: GStreamer required
 
-On **32-bit Mac OS X** Psychtoolbox uses Quicktime 7 for movie
-playback, movie creation, video capture and recording. Quicktime is
-installed on any OS X system by default (but can use GStreamer also).
+On **64-bit OS X**, installation of GStreamer is mandatory, Quicktime
+is no longer supported.
 
-On **64-bit OS X**, GStreamer is mandatory, Quicktime is no longer
-supported.
-
-On **Linux** you need GStreamer for these operations, but GStreamer is
+On **Linux** you also need GStreamer for these operations, but GStreamer is
 a de-facto standard component that ships with all modern Linux distributions.
 
-On **Windows** you must install the [open-source GStreamer Multimedia
-framework][gstreamer]. The way we have to link to the GStreamer libraries
-requires GStreamer to be installed even if you don’t intend to use the
-multimedia features.
+On **Windows** you must install [GStreamer][gstreamer]. The way we have to
+link to the GStreamer libraries requires GStreamer to be installed even if
+you don’t intend to use the multimedia features.
 
 See [GStreamer][docs-gstreamer] (or `>> help GStreamer`) for installation
 instructions for the different systems.
 
-There have so far been two reports that the most recent Quicktime versions
-do not work well – or at all – with 64-bit versions of the Windows
-operating system. Quicktime version 7.1.6 is known to work without trouble
-on 64-bit Windows though. At least on 32-bit versions of Windows-7,
-Quicktime version 7.6.5 is known to work correctly.
-
-For video capture support on Windows you will normally use the
-GStreamer video capture engine. This should provide reasonable video
-capture support with most video devices on Windows. Linux has
-excellent video capture support thanks to the GStreamer libraries.
-On 32-bit OS X, we still have to rely on Apple’s Quicktime, but
-intend to replace it with GStreamer in the future.
+On **32-bit Mac OS X** legacy Psychtoolbox 3.0.10 used Quicktime 7 for
+movie playback, movie creation, video capture and recording. Quicktime is
+installed on any OS X system by default. Psychtoolbox was able to also
+optionally use GStreamer.
 
 Basic hardware requirements
 ---------------------------
 
 -   Intel PCs: Any Intel-compatible PC that is capable of running the
-    32/64-bit versions of Microsoft Windows XP/Vista/Windows-7 or 32/64
-    bit GNU/Linux.
+    32/64-bit versions of Microsoft Windows XP/Vista/Windows-7/Windows-8
+    or 32/64 bit GNU/Linux.
 
 -   Intel Macs: Any Intel-based Macintosh computer that is capable of
-    running OS X 10.4 “Tiger” or later, or 32/64 Bit GNU/Linux.
+    running OS X 10.6 “Snow Leopard” or later, or 32/64 Bit GNU/Linux.
 
 -   The Psychtoolbox distributed by the Debian project also supports
     other processor architectures, e.g., PowerPC, ARM, MIPS, Sun
@@ -219,20 +204,19 @@ drawing and use of the more advanced features requires recent graphics
 hardware.
 
 In general, you should not try to skimp on the GPU, as performance of
-your stimulus script and the types of stimuli you can create with ease
-will depend much more on the horse power and features of your GPU than
-on the performance of your CPU.
+your stimulus script and the types of visual stimuli you can create with
+ease will depend much more on the horse power and features of your GPU
+than on the performance of your CPU.
 
 If you want to use all Psychtoolbox features at full performance and
 precision, make sure to get a recent Direct3D 10 or 11 capable (a.k.a.
-OpenGL 3 or 4 capable, a.k.a. ShaderModel 4 or 5 compliant) graphics
-card from NVidia or AMD/ATI. Almost all cards of the NVidia GeForce 8
-series and later (e.g., 8600, 8800, 9600, 9800, GTX 280 etc.), as well
-as all cards of the AMD/ATI Radeon HD series and later (HD 2400, 2600,
-3000 series, 4000 series, etc.) and their corresponding counterparts
-from the NVidia Quadro series and ATI FireGL / FirePro line of cards are
-technically state-of-the-art and Psychtoolbox can take full advantage of
-their features.
+OpenGL 3 or 4 capable) graphics card from NVidia or AMD/ATI. Almost all
+cards of the NVidia GeForce 8 series and later (e.g., 8600, 8800, 9600,
+9800, GTX 280 etc.), as well as all cards of the AMD/ATI Radeon HD series
+and later (HD 2400, 2600, 3000 series, 4000 series, etc.) and their corresponding
+counterparts from the NVidia Quadro series and ATI FireGL / FirePro line
+of cards are technically state-of-the-art and Psychtoolbox can take full
+advantage of their features.
 
 The latest generation of integrated Intel HD graphics cards, e.g., Intel HD
 2000, HD 3000, as found in many modern “Intel Core” processors, provide decent
@@ -263,7 +247,7 @@ feature set and performance.
 [In depth: More detailed information and recommendations for graphics
 hardware][gfxhw]
 
-For dual-display work (e.g., binocular stereo stimulation), we strongly
+For dual-display work (e.g., binocular stereo stimulation), we strognly
 recommend using dual-head or multi-head graphics adapters (i.e., *one*
 card with two or more output connectors) instead of multiple separate
 adapters. We expect dual/multi-head single-card performance to be higher
@@ -286,8 +270,6 @@ use as a control monitor, OS X may be good enough.
   [docs-kerneldriver]: http://docs.psychtoolbox.org/PsychtoolboxKernelDriver
   [c++ runtime]: http://www.microsoft.com/downloads/details.aspx?familyid=766A6AF7-EC73-40FF-B072-9112BAB119C2&displaylang=en#filelist
   [faqvista]: http://psychtoolbox.org/FaqVista
-  [vdig1]: http://www.eden.net.nz/7/20071008
-  [vdig2]: http://www.abstractplane.com/products/vdig.jsp
   [gma950]: http://en.wikipedia.org/wiki/GMA_950
   [gfxhw]: {{site.url}}/graphics-requirements
 
