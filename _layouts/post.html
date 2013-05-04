@@ -4,7 +4,10 @@ layout: default
 <article>
 <header>
   <h1>{{ page.title }}</h1>
-  <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %d, %Y' }}</time>
+  <p>
+    <a href="http://github.com/{{ post.author }}" class="author">{{ post.author }}</a>
+    <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%B %d, %Y' }}</time>
+  </p>
 </header>
 
 {{ content }}
