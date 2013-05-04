@@ -32,6 +32,10 @@ aside h1 {
   font-size: 28px;
 }
 
+aside h1 a {
+  color: #222;
+}
+
 article {
   margin: 0 0 40px;
 }
