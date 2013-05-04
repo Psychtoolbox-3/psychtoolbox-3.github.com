@@ -83,5 +83,5 @@ Mario Kleiner, David Brainard, Denis Pelli, Chris Broussard, Tobias Wolf, Dieder
  [forum]: {{ site.url }}/forum
 
  *[C or Pascal]: Presumably, this blurb was written 15 years ago
- *[BASIC]: ditto
+ *[BASIC]: make that 20
  *[forum]: Actually a mailing list
