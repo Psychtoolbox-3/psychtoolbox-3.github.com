@@ -21,7 +21,7 @@ flavor of PTB.*
 
 * Will be replaced with the ToC
 {:toc #toc}
-{::options toc_levels="3..4"/}
+{::options auto_ids="true" toc_levels="3..4"/}
 
 ## Status of different core features and how to handle differences
 

@@ -6,7 +6,7 @@ pygments: true
 markdown: kramdown
 
 kramdown:
-  auto_ids: true
+  auto_ids: false
   toc_levels: 1..5
   use_coderay: false
 
