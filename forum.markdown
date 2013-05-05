@@ -62,8 +62,7 @@ Read below how you can assist us in helping you effectively ...
 <!-- Google Groups iframe -->
 <iframe id="forum_embed"
   src="javascript:void(0)"
-  frameborder="0"
-  style="width:100%;height:700px;min-width:600px;overflow-y:hidden;">
+  style="width:100%;height:700px;min-width:600px;overflow:hidden;border:none;">
 </iframe>
 <script type="text/javascript">
   document.getElementById('forum_embed').src =
