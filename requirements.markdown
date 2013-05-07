@@ -22,7 +22,7 @@ Short version
 -   *Runtime environment:*
 
     Matlab Version 7.4 R2007a or later, also GNU Octave version 3.2 or later on
-    Linux and 3.6 on OS X.
+    Linux and Octave version 3.6 on OS X.
 
     A cautious migration to 64-bit versions of Matlab and Octave is
     recommended, especially for users of OS X.
@@ -57,7 +57,8 @@ Psychtoolbox should run well on any recent Linux distribution. Testing
 and development however occurs mainly on the most recent Ubuntu Linux
 releases.
 
-It is recommended to keep up with the latest distribution releases.
+It is recommended to keep up with the latest distribution releases or to stick
+to the latest long-term support (LTS) Ubuntu release.
 
 The [NeuroDebian project][neurodebian] is an effort to provide convenient
 access to neuroscience-related software on the Debian and Ubuntu Linux
@@ -97,7 +98,7 @@ recent OS X versions should work reasonably well for many tasks, according
 to user reports.
 
 The current toolbox version 3.0.11 releases are not supported under OS X 10.5
-or earlier anymore. The last version that worked on OS X 10.4 and 10.5 and
+or earlier anymore. The last version that worked on OS X 10.4 and 10.5 and also
 with 32-Bit versions of Matlab was v3.0.10. It can be downloaded by specifying
 the special `flavor` parameter `Psychtoolbox-3.0.10` in our `DownloadPsychtoolbox`
 downloader script.
@@ -163,8 +164,9 @@ Additional software
 
 #### Multimedia engine: GStreamer required
 
-On **64-bit OS X**, installation of GStreamer is mandatory, Quicktime
-is no longer supported.
+On **64-bit OS X**, installation of GStreamer is mandatory for movie playback,
+movie recording, video capture and video recording. Quicktime is no longer
+supported.
 
 On **Linux** you also need GStreamer for these operations, but GStreamer is
 a de-facto standard component that ships with all modern Linux distributions.
@@ -176,7 +178,7 @@ you don’t intend to use the multimedia features.
 See [GStreamer][docs-gstreamer] (or `>> help GStreamer`) for installation
 instructions for the different systems.
 
-On **32-bit Mac OS X** legacy Psychtoolbox 3.0.10 used Quicktime 7 for
+On **32-bit Mac OS X** legacy Psychtoolbox 3.0.10 used Apple Quicktime 7 for
 movie playback, movie creation, video capture and recording. Quicktime is
 installed on any OS X system by default. Psychtoolbox was able to also
 optionally use GStreamer.
@@ -189,7 +191,7 @@ Basic hardware requirements
     or 32/64 bit GNU/Linux.
 
 -   Intel Macs: Any Intel-based Macintosh computer that is capable of
-    running OS X 10.6 “Snow Leopard” or later, or 32/64 Bit GNU/Linux.
+    running 64-Bit OS X 10.6 “Snow Leopard” or later, or 32/64 Bit GNU/Linux.
 
 -   The Psychtoolbox distributed by the Debian project also supports
     other processor architectures, e.g., PowerPC, ARM, MIPS, Sun
@@ -201,7 +203,8 @@ Graphics hardware requirements
 Basic Psychtoolbox functions should work on any OpenGL 1.2 capable
 graphics card with at least 16 MB of video ram (VRAM). Fast stimulus
 drawing and use of the more advanced features requires recent graphics
-hardware.
+hardware. However, we do recommend at least OpenGL 2.1 capable graphics
+hardware for full functionality and good performance.
 
 In general, you should not try to skimp on the GPU, as performance of
 your stimulus script and the types of visual stimuli you can create with
