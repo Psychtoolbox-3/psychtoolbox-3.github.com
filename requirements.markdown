@@ -35,6 +35,10 @@ Short version
     features. The absolute minimum requirement is OpenGL-1.2 support, but
     functionality will be limited with such old GPUs. 
 
+    Do not buy PC laptops with hybrid-graphics, e.g., with NVidia Optimus
+    technology! Their graphics timing behaviour will likely be wrong and there
+    is no known way to fix this in software.
+
 -   *Sound card:*
 
     On Linux and OS X, any card supported by the operating system should work
