@@ -62,13 +62,15 @@ Read below how you can assist us in helping you effectively ...
 <!-- Google Groups iframe -->
 <iframe id="forum_embed"
   src="javascript:void(0)"
-  style="width:100%;height:700px;min-width:600px;overflow:hidden;border:none;">
+  scrolling="no"
+  frameborder="0"
+  width="900"
+  height="700">
 </iframe>
 <script type="text/javascript">
   document.getElementById('forum_embed').src =
-     'http://groups.google.com/forum/embed/?place=forum/psychtoolbox-discuss'
-     + '&showsearch=true&showpopout=false&showtabs=false'
-     + '&hideforumtitle=true&hl=en&fragments=false'
+     'https://groups.google.com/forum/embed/?place=forum/psychtoolbox-discuss'
+     + '&showsearch=true&showpopout=true&showtabs=false'
      + '&parenturl=' + encodeURIComponent(window.location.href);
 </script>
 <script>
