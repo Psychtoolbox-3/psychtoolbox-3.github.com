@@ -25,7 +25,7 @@ Read below how you can assist us in helping you effectively ...
 > 
 > Please try to find out if similar questions have been asked before.
 > 
-> **If you still have a question**, try posting it on the forum.  Bug reports and
+> **If you still have a question**, try posting it on the forum. Bug reports and
 > feature requests can be posted on the forum. When you post a question, try to
 > include all relevant information 
 > 
