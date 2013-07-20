@@ -1,8 +1,8 @@
 title: Psychtoolbox-3
 url: http://psychtoolbox-3.github.io
-# safe: false
-# permalink: pretty
-# pygments: true
+safe: false
+permalink: pretty
+pygments: true
 markdown: kramdown
 
 kramdown:
