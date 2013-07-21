@@ -1,88 +1,46 @@
 <!DOCTYPE html>
-<title>{{ site.name }}{% if page.title %} - {{ page.title }}{% endif %}</title>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width, initial-scale=1, user-scalable=no">
-<link rel=stylesheet href="/stylesheets/styles.css">
-<link rel=stylesheet href="/stylesheets/pygment_trac.css">
-<link rel=alternate title="PTB News" type=application/atom+xml href="/news.atom">
-<link rel=icon type=image/x-icon href="/favicon.ico">
-<!--[if lt IE 9]>
-<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-{% if site.google_analytics %}
-<!-- google analytics async -->
-<script>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '{{ site.google_analytics.account }}']);
-  _gaq.push(['_trackPageview']);
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-{% endif %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
 
-<div class=wrapper>
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/syntax.css">
 
-<aside>
-  <h1><a href=/>Psychtoolbox-3</a></h1>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css">
 
-  <p>Psychophysics Toolbox Version 3 (PTB-3) is a free set of <a href="http://www.mathworks.com">Matlab</a> and 
-  <a href=http://www.octave.org>GNU Octave</a> functions for vision and neuroscience research. It makes it easy to synthesize
-  and show accurately controlled visual and auditory stimuli and interact with the observer.</p> 
+    </head>
+    <body>
 
-  <nav>
-  <ul>
-    <li><small>Getting started</small>
-    <ul>
-      <li><a href=/overview>Overview</a></li>
-      <li><a href=/versions>Versions</a></li>
-      <li><a href=/requirements>System Requirements</a></li>
-      <li><a href=/download>Download</a></li>
-    </ul>
-    </li>
-  </ul>
-  <ul>
-    <li><small>Getting help</small>
-    <ul>
-      <li><a href=/tutorial>Tutorial</a></li>
-      <li><a href=http://docs.psychtoolbox.org>Function Reference</a></li>
-      <li><a href=https://github.com/Psychtoolbox-3/psychtoolbox-3.github.com/wiki/FAQ>FAQ</a></li>
-      <li><a href=/forum>Forum</a></li>
-    </ul>
-    </li>
-  </ul>
-  <ul>
-    <li><small>On GitHub</small>
-    <ul>
-      <li><a href=https://github.com/Psychtoolbox-3/psychtoolbox-3.github.com/wiki>Wiki</a></li>
-      <li><a href=https://github.com/Psychtoolbox-3/Psychtoolbox-3/issues>Bugs &amp; Feature requests</a></li>
-      <li><a href=https://github.com/Psychtoolbox-3/Psychtoolbox-3>Git repository</a></li>
-    </ul>
-    </li>
-  </ul>
-  </nav>
+        <div class="container">
+          <div class="site">
+            <div class="header">
+              <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+              <a class="extra" href="/">home</a>
+            </div>
 
-  <ul class=buttons>
-    <li><a href=http://tech.groups.yahoo.com/group/psychtoolbox>Support <strong>Forum</strong></a></li>
-    <li><a href=https://raw.github.com/towolf/Psychtoolbox-3/master/Psychtoolbox/DownloadPsychtoolbox.m>Automatic <strong>Installer</strong></a></li>
-    <li><a href=https://github.com/towolf/Psychtoolbox-3/tarball/master>Download PTB<strong>TAR Ball</strong></a></li>
-    <li><a href=https://github.com/towolf/Psychtoolbox-3>View On <strong>GitHub</strong></a></li>
-  </ul>
-</aside>
+                {{ content }}
 
-<section id=content>
+            <div class="footer">
+              <div class="contact">
+                <p>
+                  Your Name<br />
+                  What You Are<br />
+                  your@email.com
+                </p>
+              </div>
+              <div class="contact">
+                <p>
+                  <a href="http://github.com/yourusername/">github.com/yourusername</a><br />
+                  <a href="http://twitter.com/yourusername/">twitter.com/yourusername</a><br />
+                </p>
+              </div>
+            </div>
+          </div>
+        </div> <!-- /container -->
 
-{{ content }}
-
-</section>
-<footer>
-  <p> <a href="https://github.com/psychtoolbox-3/psychtoolbox-3.github.com/edit/master{{page.url|replace:".html",".markdown"}}">
-    edit and fork this page on GitHub
-  </a>
-  </p>
-  <p>Last updated on <time datetime="{{ site.time | date: '%Y-%m-%d' }}">{{ site.time | date: '%B %d, %Y' }}</time></p>  
-</footer>
-</div>
-<script src=javascripts/scale.fix.js></script>
+    </body>
+</html>
