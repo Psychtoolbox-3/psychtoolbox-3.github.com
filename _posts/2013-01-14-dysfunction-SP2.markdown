@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PTB beta “The fun in dysfunction” SP2 release 2013-1-14
-category: news
+categories: news
 author: kleinerm
 ---
 

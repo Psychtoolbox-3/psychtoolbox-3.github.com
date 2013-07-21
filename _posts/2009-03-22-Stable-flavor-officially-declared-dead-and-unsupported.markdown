@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Stable is dead! Long live beta!
-category: news
+categories: news
 author: kleinerm
 ---
 

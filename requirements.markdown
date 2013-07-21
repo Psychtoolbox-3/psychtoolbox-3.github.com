@@ -1,7 +1,7 @@
 ---
 layout: page
 title: System Requirements
-category: getting-started
+categories: getting-started
 ---
 
 #### Contents

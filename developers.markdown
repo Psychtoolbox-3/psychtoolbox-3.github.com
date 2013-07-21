@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Current Active Developers
-category: dive-in
+categories: dive-in
 ---
 
 We welcome anyone to help develop the Psychtoolbox. At present, Mario Kleiner

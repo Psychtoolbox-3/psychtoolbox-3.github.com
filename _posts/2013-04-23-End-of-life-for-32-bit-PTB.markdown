@@ -1,7 +1,7 @@
 ---
 layout: post
 title: End of life for 32-Bit PTB for OS X, and OS X 10.4, 10.5
-category: news
+categories: news
 author: kleinerm
 ---
 

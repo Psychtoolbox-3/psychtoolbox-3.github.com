@@ -1,7 +1,7 @@
 ---
 layout: page
 title: History, Credits, License, Citing
-category: getting-started
+categories: getting-started
 ---
 
 History and Credits

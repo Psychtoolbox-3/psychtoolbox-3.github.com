@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PTB beta “Rotten Apples” release 2012-06-01 (Start of Psychtoolbox 3.0.10)
-category: news
+categories: news
 author: kleinerm
 ---
 

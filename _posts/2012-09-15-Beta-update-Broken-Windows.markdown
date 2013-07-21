@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PTB beta “Broken Windows” release 2012-09-15
-category: news
+categories: news
 author: kleinerm
 ---
 

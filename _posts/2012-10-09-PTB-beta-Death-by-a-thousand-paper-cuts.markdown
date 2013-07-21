@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PTB beta “Death by a thousand paper cuts” release 2012-10-09
-category: news
+categories: news
 author: kleinerm
 ---
 

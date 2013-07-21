@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Differences between PTB-3 versions for OS X, Windows and Linux
-category: getting-started
+categories: getting-started
 ---
 
 The implementations of Psychtoolbox-3 for Microsoft Windows and GNU/Linux are

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PTB beta “Arrested Development” released 11.01.2010, Mario takes a break from development
-category: news
+categories: news
 author: kleinerm
 ---
 

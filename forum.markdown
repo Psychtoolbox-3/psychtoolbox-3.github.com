@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Psychtoolbox Forum
-category: getting-help
+categories: getting-help
 ---
 
 The Psychtoolbox user community is quite active. The forum has ca. 2,000

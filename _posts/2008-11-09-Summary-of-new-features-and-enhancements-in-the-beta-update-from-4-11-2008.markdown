@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Psychtoolbox beta update from 2008-11-4 (SVN Revision 1151)
-category: news
+categories: news
 author: kleinerm
 ---
 

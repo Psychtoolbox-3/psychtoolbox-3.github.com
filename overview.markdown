@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Overview
-category: getting-started
+categories: getting-started
 ---
 
 The attraction of using computer displays for visual psychophysics is that they

@@ -17,13 +17,13 @@ on the back end. The current version supports Matlab 7.x and Octave 3.2.x on Mac
 Psychtoolbox News
 -----------------
 
-{% for post in site.categories.news %}
-<article class="post">
+{% for post in site.posts %}
+<article class=post>
     <header>
-      <h1><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h1>
+      <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
       <p>
         <a href="http://github.com/{{ post.author }}" class="author">{{ post.author }}</a>
-        <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%B %d, %Y' }}</time>
+        <time datetime="{{ post.date | date_to_string }}">{{ post.date | date: '%B %d, %Y' }}</time>
       </p>
     </header>
 

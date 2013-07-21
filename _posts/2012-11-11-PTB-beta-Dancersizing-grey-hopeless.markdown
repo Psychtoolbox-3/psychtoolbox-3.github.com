@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PTB beta “Dancersizing, Grey & Hopeless” release 2012-11-11
-category: news
+categories: news
 author: kleinerm
 ---
 

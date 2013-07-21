@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PTB beta released 4.9.2010 (SVN Revision 1783)
-category: news
+categories: news
 author: kleinerm
 ---
 

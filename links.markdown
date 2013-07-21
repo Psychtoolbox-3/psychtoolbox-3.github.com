@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Useful Links
-category: getting-started
+categories: getting-started
 ---
 
 ### Directly related to Psychtoolbox-3

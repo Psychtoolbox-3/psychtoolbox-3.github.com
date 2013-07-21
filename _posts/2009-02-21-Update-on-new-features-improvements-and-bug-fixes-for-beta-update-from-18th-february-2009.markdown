@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Psychtoolbox beta updates up to and including the update from 2009-02-18 (SVN Revision 1245)
-category: news
+categories: news
 author: kleinerm
 ---
 

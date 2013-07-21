@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Contributing to the Psychtoolbox website
-category: dive-in
+categories: dive-in
 ---
 
 We welcome user contributions and improvements to this website.

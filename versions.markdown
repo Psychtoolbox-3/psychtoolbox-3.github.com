@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Flavors and Versions
-category: getting-started
+categories: getting-started
 ---
 
 Historically, users could choose among two different branches of Psychtoolbox-3: `beta` and `stable`.

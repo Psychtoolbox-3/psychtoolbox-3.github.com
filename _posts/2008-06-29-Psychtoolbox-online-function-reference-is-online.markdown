@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Online function reference available
-category: news
+categories: news
 author: kleinerm
 ---
 

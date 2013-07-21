@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Using PTB on Linux
-category: getting-started
+categories: getting-started
 ---
 
 **GNU/Linux is the recommended operating system of choice for demanding

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PTB beta release 2011-12-7 (SVN Revision 2386)
-category: news
+categories: news
 author: kleinerm
 ---
 

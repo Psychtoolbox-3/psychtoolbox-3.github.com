@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Download, Installation, and Update
-category: getting-started
+categories: getting-started
 ---
 
 In order to install and use the Psychtoolbox, *you must already have

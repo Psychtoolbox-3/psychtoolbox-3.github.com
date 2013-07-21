@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PTB beta release 2012-1-12 (SVN Revision 2434)
-category: news
+categories: news
 author: kleinerm
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Graphics hardware requirements and recommendations
-category: getting-started
+categories: getting-started
 ---
 
 #### Contents

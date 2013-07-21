@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Psychtoolbox beta update from 2008-06-09 (SVN Revision 1064)
-category: news
+categories: news
 author: kleinerm
 ---
 

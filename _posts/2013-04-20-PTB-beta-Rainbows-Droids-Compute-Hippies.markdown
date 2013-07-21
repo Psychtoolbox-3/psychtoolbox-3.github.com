@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PTB beta “Rainbows, Droids & Compute Hippies!” release 2013-04-20
-category: news
+categories: news
 author: kleinerm
 ---
 
