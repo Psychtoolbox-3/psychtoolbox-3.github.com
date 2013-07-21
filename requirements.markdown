@@ -7,8 +7,6 @@ categories: getting-started
 #### Contents
 
 -  TOC be here
-{:toc #toc}
-{::options auto_ids="true" toc_levels="2..3"/}
 
 
 Short version
@@ -268,7 +266,7 @@ mostly incapable of and uninterested in implementing decent support for
 high performance, tear-free dual display support. For static stimuli or
 use as a control monitor, OS X may be good enough.
 
-  [linux-install]: {{site.url}}/download#Linux
+  [linux-install]: /download#Linux
   [neurodebian]: http://neuro.debian.net
   [neurodebian-matlab]: http://neuro.debian.net/proj_matlab.html
   [additions]: http://docs.psychtoolbox.org/DownloadAdditionsForNeuroDebian
@@ -278,5 +276,5 @@ use as a control monitor, OS X may be good enough.
   [c++ runtime]: http://www.microsoft.com/downloads/details.aspx?familyid=766A6AF7-EC73-40FF-B072-9112BAB119C2&displaylang=en#filelist
   [faqvista]: http://psychtoolbox.org/FaqVista
   [gma950]: http://en.wikipedia.org/wiki/GMA_950
-  [gfxhw]: {{site.url}}/graphics-requirements
+  [gfxhw]: /graphics-requirements
 
