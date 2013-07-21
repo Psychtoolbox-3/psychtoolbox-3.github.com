@@ -99,7 +99,7 @@ To work around these problems, it is often sufficient to delete or move all
 that showed up in the MEX file loading errors.
 
 
-[1]: {{ site.url }}/download#linux
+[1]: /download#linux
 [2]: http://neuro.debian.net
 [3]: http://docs.psychtoolbox.org/DownloadAdditionsForNeuroDebian
 [4]: http://www.ubuntu.com/

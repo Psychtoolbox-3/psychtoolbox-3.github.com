@@ -80,7 +80,7 @@ Mario Kleiner, David Brainard, Denis Pelli, Chris Broussard, Tobias Wolf, Dieder
 
  [docs-demos]: http://docs.psychtoolbox.org/PsychDemos
  [arezzo]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/Psychtoolbox3-Slides.pdf
- [forum]: {{ site.url }}/forum
+ [forum]: /forum
 
  *[C or Pascal]: Presumably, this blurb was written 15 years ago
  *[BASIC]: make that 20

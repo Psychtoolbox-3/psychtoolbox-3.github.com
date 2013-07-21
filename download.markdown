@@ -297,10 +297,10 @@ of older versions can be found at the bottom of the page found
 [here][versions]. Version 3.0.10 and later use the `DownloadPsychtoolbox`
 function instead of `DownloadLegacyPsychtoolbox`.
 
-  [requirements]: {{ site.url }}/requirements
-  [forum]: {{ site.url }}/forum
-  [versions]: {{ site.url }}/versions
-  [using-on-linux]: {{ site.url }}/linux
+  [requirements]: /requirements
+  [forum]: /forum
+  [versions]: /versions
+  [using-on-linux]: /linux
 
   [svnwin]: http://www.sliksvn.com/en/download
   [svnmac]: http://www.collab.net/downloads/subversion
