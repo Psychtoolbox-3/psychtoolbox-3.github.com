@@ -74,7 +74,7 @@ Mario Kleiner, David Brainard, Denis Pelli, Chris Broussard, Tobias Wolf, Dieder
 
 [The Developers](developers)
 
----
+* * *
 
     PTB registration stats here
 

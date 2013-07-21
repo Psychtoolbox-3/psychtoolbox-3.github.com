@@ -13,7 +13,7 @@ pitfalls, or reports about hardware.
 To improve the website itself please click the "Edit and fork this page" below
 and send us a pull request with your changes.
 
----
+* * *
 
 When you get (or just see) a particularly helpful answer on the forum,
 we'll all be grateful if you would add it to the [Psychtoolbox FAQ](###FAQ)
