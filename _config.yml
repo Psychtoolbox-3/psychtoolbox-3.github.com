@@ -1,2 +1,9 @@
 name: Psychtoolbox-3
 url: http://psychtoolbox-3.github.io
+
+markdown: kramdown
+
+kramdown:
+  auto_ids: false
+  toc_levels: 1..5
+  use_coderay: false
