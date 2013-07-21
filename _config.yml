@@ -2,7 +2,7 @@ name: Psychtoolbox-3
 url: http://psychtoolbox-3.github.io
 permalink: pretty
 pygments: false
-markdown: kramdown
+markdown: redcarpet
 
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "strikethrough", "autolink",
