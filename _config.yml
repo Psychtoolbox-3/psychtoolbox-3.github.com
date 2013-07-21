@@ -1,14 +1,16 @@
 name: Psychtoolbox-3
 url: http://psychtoolbox-3.github.io
 permalink: pretty
-pygments: true
+pygments: false
 markdown: kramdown
 
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "strikethrough", "autolink",
                   "tables", "with_toc_data", "space_after_headers", "superscript"]
-
-
+kramdown:
+  auto_ids: false
+  toc_levels: 1..5
+  use_coderay: true
 rdiscount:
   extensions: [smart, generate_toc]
   toc_token: "{:toc}"
