@@ -87,17 +87,17 @@
 </div>
 <script src=/javascripts/scale.fix.js></script>
 <script>
-  (function () {
+  (function() {
     var langRe = /\blang(?:uage)?-([\w.]+)(?!\S)/;
-    var codeblocks = document.getElementsByTagName("code");
+    var codeblocks = document.getElementsByTagName('code');
     for (var i = 0; i < codeblocks.length; i++) {
-      if (codeblocks[i].className.match(langRe) && codeblocks[i].parentNode.nodeName.toLowerCase() === "pre") {
-        codeblocks[i].parentNode.classList.add("prettyprint");
-        if (codeblocks[i].classList.contains('language-matlab') {
-          codeblocks[i].parentNode.classList.add("light");
+      if (codeblocks[i].className.match(langRe) && codeblocks[i].parentNode.nodeName.toLowerCase() === 'pre') {
+        codeblocks[i].parentNode.classList.add('prettyprint');
+        if (codeblocks[i].classList.contains('language-matlab')) {
+          codeblocks[i].parentNode.classList.add('light');
         }
       }
     }
-  })()
+  })();
 </script>
 <script src=https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=matlab&lang=r&skin=doxy>></script>
