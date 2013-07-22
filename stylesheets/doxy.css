@@ -1,0 +1,112 @@
+@media screen {
+	/* plain text: #000; */
+	.language-matlab .pln { color: #000000; }
+	/* strings: #080; #800000; */
+	.language-matlab .str { color: #A020F0; }
+	/* keywords: #00008B; */
+	.language-matlab .kwd { color: #0000FF; }
+	/* comments: #808080; */
+	.language-matlab .com { color: #228B22; }
+	/* types: #606; */
+	.language-matlab .typ { color: #000000; font-weight: bold; }
+	/* literals: #066; #000; */
+	.language-matlab .lit { color: #800000; }
+	/* punctuation: #660; */
+	.language-matlab .pun { color: #000000; }
+	/* tag: #008; */
+	.language-matlab .tag { color: #000000; }
+	/* identifiers */
+	.language-matlab .ident { color: #000000; }
+	/* special variables/constants: darkblue */
+	.language-matlab .const { color: #00008B; }
+	/* core functions: #2B91AF; #004444; #444400; #440044; */
+	.language-matlab .fun { color: #2B91AF; }
+	/* toolbox functions: #2B91AF; #004444; #444400; #440044; */
+	.language-matlab .fun_tbx { color: #2B91AF; }
+	/* system commands */
+	.language-matlab .syscmd { color: #B28C00; }
+	/* code output */
+	.language-matlab .codeoutput { color: #666666; }
+	/* error messages */
+	.language-matlab .err { color: #E60000; }
+	/* warning messages */
+	.language-matlab .wrn { color: #FF6400; }
+	/* transpose operator */
+	.language-matlab .transpose { color: #000000; }
+	/* line continuation */
+	.language-matlab .linecont { color: #0000FF; }
+	/* unterminated strings */
+	.language-matlab .untermstring { color: #B20000; }
+
+/* Doxy dark theme for bash */
+.language-bash { 
+  font-weight: bold;
+}
+
+.language-bash .str { color: #fec243; } /* string  - eggyolk gold */
+.language-bash .kwd { color: #8470FF; } /* keyword - light slate blue */
+.language-bash .com { color: #32cd32; font-style: italic; } /* comment - green */
+.language-bash .typ { color: #6ecbcc; } /* type - turq green */
+.language-bash .lit { color: #d06; } /* literal - cherry red */
+.language-bash .pun { color: #8B8970;  } /* punctuation - lemon chiffon4  */
+.language-bash .pln { color: #f0f0f0; } /* plaintext - white */
+.language-bash .tag { color: #9c9cff; } /* html/xml tag  (bluey)  */
+.language-bash .htm { color: #dda0dd; } /* html tag  light purply*/
+.language-bash .xsl { color: #d0a0d0; } /* xslt tag  light purply*/
+.language-bash .atn { color: #46eeee; font-weight: normal;} /* html/xml attribute name  - lt turquoise */
+.language-bash .atv { color: #EEB4B4; } /* html/xml attribute value - rosy brown2 */
+.language-bash .dec { color: #3387CC; } /* decimal - blue */
+
+}
+a {
+  text-decoration: none;
+}
+
+pre.prettyprint, code.prettyprint {
+  font-family: 'Ubuntu Mono';
+  font-size: 9pt;
+  background-color: #0f0f0f;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  border-radius: 8px;
+}  /*  background is black (well, just a tad less dark )  */
+
+pre.prettyprint {
+  width: 95%;
+  margin: 1em auto;
+  padding: 1em;
+  white-space: pre;
+}
+
+pre.prettyprint a, code.prettyprint a {
+   text-decoration:none;
+}
+/* Specify class=linenums on a pre to get line numbering; line numbers themselves are the same color as punctuation */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #8B8970; } /* IE indents via margin-left */
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 { }
+
+pre.prettyprint::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+pre.prettyprint::-webkit-scrollbar-track {
+	background-color: rgba(113,112,107,0.3);
+	-webkit-border-radius: 0 0 8px 8px;
+}
+pre.prettyprint::-webkit-scrollbar-thumb:vertical {
+	background-color: rgba(0,0,0,.2);
+	-webkit-border-radius: 0 0 8px 8px;
+}
+pre.prettyprint::-webkit-scrollbar-thumb:vertical:hover,
+pre.prettyprint::-webkit-scrollbar-thumb:horizontal:hover {
+	background: grey;
+}
+pre.prettyprint::-webkit-scrollbar-thumb:horizontal {
+	background-color: rgba(255,255,255,.3);
+	-webkit-border-radius: 0 0 8px 8px;
+}
