@@ -86,4 +86,13 @@
 </footer>
 </div>
 <script src=/javascripts/scale.fix.js></script>
+<script>
+  var langRe = /\blang(?:uage)?-([\w.]+)(?!\S)/;
+  var pres = document.getElementsByTagName("pre");
+  for (var i = 0; i < pres.length; i++) {
+    if (pres[i].className.match(langRe)) {
+      pres[i].classList.add("prettyprint");
+    }
+  }
+</script>
 <script src=https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=doxy></script>
