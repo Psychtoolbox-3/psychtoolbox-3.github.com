@@ -72,12 +72,13 @@ pre.prettyprint, code.prettyprint {
   -ms-border-radius: 8px;
   -khtml-border-radius: 8px;
   border-radius: 8px;
+  border: none !important;
 }  /*  background is black (well, just a tad less dark )  */
 
 pre.prettyprint {
   width: 95%;
   margin: 1em auto;
-  padding: 1em;
+  padding: 1em !important;
   white-space: pre;
 }
 
