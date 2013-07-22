@@ -91,7 +91,7 @@
     var langRe = /\blang(?:uage)?-([\w.]+)(?!\S)/;
     var codeblocks = document.getElementsByTagName("code");
     for (var i = 0; i < codeblocks.length; i++) {
-      if (codeblocks[i].className.match(langRe) && codeblocks.parentNode.nodeName.toLowerCase() === "pre") {
+      if (codeblocks[i].className.match(langRe) && codeblocks[i].parentNode.nodeName.toLowerCase() === "pre") {
         codeblocks[i].parentNode.classList.add("prettyprint");
       }
     }
