@@ -109,7 +109,7 @@ h1 code, h2 code, h3 code, h4 code {
   color: #333;
 }
 
-pre {
+pre, .prettyprint.light {
   padding: 8px 15px;
   background: #f8f8f8;  
   border-radius: 5px;
@@ -288,8 +288,8 @@ pre.prettyprint::-webkit-scrollbar-thumb:horizontal {
 	-webkit-border-radius: 0 0 8px 8px;
 }
 pre.prettyprint {
-  white-space: pre;
-  overflow-x: auto;
+  white-space: pre !important;
+  overflow-x: auto !important;
 }
 
 @media screen {
