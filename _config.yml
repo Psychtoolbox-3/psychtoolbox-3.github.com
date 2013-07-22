@@ -2,7 +2,7 @@ name: Psychtoolbox-3
 url: http://psychtoolbox-3.github.io
 permalink: pretty
 pygments: false
-markdown: redcarpet
+markdown: kramdown
 
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "strikethrough", "autolink",
@@ -14,6 +14,7 @@ kramdown:
   toc_levels: 1..5
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   use_coderay: false
+
 rdiscount:
   extensions: [smart, generate_toc]
   toc_token: "{:toc}"
