@@ -175,17 +175,19 @@ General setup for PTB and Matlab on Ubuntu 11.04 64-bit:
 -   install low-latency kernel (some info found here -
     <https://help.ubuntu.com/community/UbuntuStudio/RealTimeKernel>)
 
-    ~~~ bash
+    ~~~ 
     sudo add-apt-repository ppa:abogani/ppa
     sudo apt-get update
     sudo apt-get install linux-lowlatency
     ~~~
+    {:.prettyprint .lang-bash}
 
 -   Install subversion:
 
-    ~~~ bash
+    ~~~ 
     sudo apt-get install subversion
     ~~~
+    {:.prettyprint .lang-bash}
 
 -   Install Matlab 64-bit (2010b was used for these instructions)
 
@@ -193,7 +195,7 @@ General setup for PTB and Matlab on Ubuntu 11.04 64-bit:
 
 -   Need to fix a few things in matlab for PTB to work
 
-    ~~~ bash
+    ~~~ 
     cd $MATLABROOT/sys/os/glnxa64/
     sudo mv libstdc++.so.6.0.10 old_libstdc++.so.6.0.10
     sudo mv libstdc++.so.6 old_libstdc++.so.6
@@ -202,12 +204,14 @@ General setup for PTB and Matlab on Ubuntu 11.04 64-bit:
     sudo mv libdc1394.so.22.1.0 old_libdc1394.so.22.1.0
     sudo apt-get install libdc1394-22
     ~~~
+    {:.prettyprint .lang-bash}
 
 -   Finally, solve a Matlab issue specific to Ubuntu 11.04:
 
-    ~~~ bash
+    ~~~ 
     sudo ln -s /lib64/x86_64-linux-gnu/libc-2.13.so /lib64/libc.so.6
     ~~~
+    {:.prettyprint .lang-bash}
 
 -   Alternatively, you could use NeuroDebian install of
     octave-psychtoolbox-3 (http://neuro.debian.net), but you may still
@@ -220,16 +224,18 @@ This is an example based on setting this up on my `rig2display` machine.
 
 -   Use `gtf` to generate a modeline:
 
-    ~~~ bash
+    ~~~ 
     gtf 1024 768 100
     ~~~
+    {:.prettyprint .lang-bash}
 
     This is the output of that command on an example machine:
 
-    ~~~ bash
+    ~~~ 
       # 1024x768 @ 100.00 Hz (GTF) hsync: 81.40 kHz; pclk: 113.31 MHz
       Modeline "1024x768_100.00"  113.31  1024 1096 1208 1392  768 769 772 814  -HSync +Vsync
     ~~~
+    {:.prettyprint .lang-bash}
 
     `cvt` is another program that works basically the same way
 
@@ -241,21 +247,23 @@ This is an example based on setting this up on my `rig2display` machine.
 
 -   Copy that modeline to make 3 commands:
 
-    ~~~ bash
+    ~~~ 
     xrandr --newmode "1024x768_100.00"  113.31  1024 1096 1208 1392  768 769 772 814  -HSync +Vsync
     xrandr --addmode CRT1 "1024x768_100.00"
     xrandr --output CRT1 --mode "1024x768_100.00"
     ~~~
+    {:.prettyprint .lang-bash}
 
 -   Paste these into the file `/etc/gmd/Init/Defaults` just above the
     `/sbin/initctl` command. So mine looks like:
 
-    ~~~ bash
+    ~~~ 
     xrandr --newmode "1024x768_100.00"  113.31  1024 1096 1208 1392  768 769 772 814  -HSync +Vsync
     xrandr --addmode CRT1 "1024x768_100.00"
     xrandr --output CRT1 --mode "1024x768_100.00"
     /sbin/initctl -q emit login-session-start DISPLAY_MANAGER=gdm
     ~~~
+    {:.prettyprint .lang-bash}
 
 -   Could also do this by modifying xorg.conf but that looks like a
     headache, and this works
