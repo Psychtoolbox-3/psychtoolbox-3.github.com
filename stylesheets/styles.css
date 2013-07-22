@@ -292,6 +292,47 @@ pre.prettyprint {
   overflow-x: auto;
 }
 
+@media screen {
+	/* plain text: #000; */
+	.language-matlab .pln { color: #000000; }
+	/* strings: #080; #800000; */
+	.language-matlab .str { color: #A020F0; }
+	/* keywords: #00008B; */
+	.language-matlab .kwd { color: #0000FF; }
+	/* comments: #808080; */
+	.language-matlab .com { color: #228B22; }
+	/* types: #606; */
+	.language-matlab .typ { color: #000000; font-weight: bold; }
+	/* literals: #066; #000; */
+	.language-matlab .lit { color: #800000; }
+	/* punctuation: #660; */
+	.language-matlab .pun { color: #000000; }
+	/* tag: #008; */
+	.language-matlab .tag { color: #000000; }
+	/* identifiers */
+	.language-matlab .ident { color: #000000; }
+	/* special variables/constants: darkblue */
+	.language-matlab .const { color: #00008B; }
+	/* core functions: #2B91AF; #004444; #444400; #440044; */
+	.language-matlab .fun { color: #2B91AF; }
+	/* toolbox functions: #2B91AF; #004444; #444400; #440044; */
+	.language-matlab .fun_tbx { color: #2B91AF; }
+	/* system commands */
+	.language-matlab .syscmd { color: #B28C00; }
+	/* code output */
+	.language-matlab .codeoutput { color: #666666; }
+	/* error messages */
+	.language-matlab .err { color: #E60000; }
+	/* warning messages */
+	.language-matlab .wrn { color: #FF6400; }
+	/* transpose operator */
+	.language-matlab .transpose { color: #000000; }
+	/* line continuation */
+	.language-matlab .linecont { color: #0000FF; }
+	/* unterminated strings */
+	.language-matlab .untermstring { color: #B20000; }
+}
+
 @media print, screen and (max-width: 1024px) {
   
   div.wrapper {
