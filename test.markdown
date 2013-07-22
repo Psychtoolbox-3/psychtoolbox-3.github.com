@@ -1,9 +1,10 @@
 ---
 layout: page
-title: test matlab code boxes
 author: towolf
 category: site
 ---
+
+
 
 MATLAB test code box
 --------------------
@@ -42,6 +43,9 @@ RestoreCluts;
 
 return;
 ~~~
+
+- - - - - - - - - - - - -
+
 
 Bash test code box
 ------------------
