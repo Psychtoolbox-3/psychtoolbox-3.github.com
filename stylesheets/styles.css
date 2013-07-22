@@ -112,7 +112,7 @@ h1 code, h2 code, h3 code, h4 code {
 pre, .prettyprint.light {
   padding: 8px 15px;
   background: #f8f8f8;  
-  border-radius: 5px;
+  border-radius: 8px;
   border: 1px solid #e5e5e5;
   overflow-x: auto;
 }
