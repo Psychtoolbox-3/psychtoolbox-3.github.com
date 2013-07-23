@@ -109,7 +109,7 @@ h1 code, h2 code, h3 code, h4 code {
   color: #333;
 }
 
-pre, .prettyprint.light {
+pre {
   padding: 8px 15px;
   background: #f8f8f8;  
   border-radius: 8px;

@@ -82,6 +82,10 @@ pre.prettyprint {
   white-space: pre;
 }
 
+.prettyprint.light {
+  background: #FCFCDC;  
+}
+
 pre.prettyprint a, code.prettyprint a {
    text-decoration:none;
 }
