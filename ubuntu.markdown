@@ -2,6 +2,7 @@
 layout: page
 title: Using Psychophysics Toolbox on Ubuntu
 categories: getting-started
+nachricht: Hallo Ingmar
 ---
 
 The most recent beta release (since V3.0.9 revision 2191) contains
