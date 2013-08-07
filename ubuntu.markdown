@@ -2,7 +2,6 @@
 layout: page
 title: Using Psychophysics Toolbox on Ubuntu
 categories: getting-started
-nachricht: Hallo Ingmar
 ---
 
 The most recent beta release (since V3.0.9 revision 2191) contains
@@ -263,4 +262,54 @@ This is an example based on setting this up on my `rig2display` machine.
 
 -   `lspci` will tell you the name of the graphics card and other system
     info if you need it
+
+Linux PTB3 - Multi-GPU HOWTO
+------------------
+This HOWTO assumes that you want to use separate GPU/Display for desktop work and visual stimulation which
+shall be driven at different resolutions and refresh rates. PTB is assumed to be already installed.
+
+-   Connect each display to its corresponding graphics card (Desktop display => GPU 0 / primary GPU; Stimulation
+    display => GPU 1 / secondary GPU)
+
+-   Set up the X-Server either by manually editing X-org.conf (https://wiki.ubuntu.com/X/Config) or if you
+    are using proprietary(ATI, NVidia) graphics drivers by using the respective GUIs (ATI Catalyst Control 
+    Center or NVidia X Server Settings): (1) Assign separate X-Screens to each GPU (Desktop Screen = X-Screen0;
+    Stimulation Screen = X-Screen1) (2) Make sure Xinerame mode is disabled (3) Set the appropriate resolutions 
+    and refresh rates (4) Save changes to X-org.conf and quit the editor (5) Restart your X-Server with one of 
+    the following commands depending on your desktop environment 
+    ~~~ bash
+    sudo restart lightdm OR gdm OR kdm    
+    ~~~
+
+-   If everything worked, your designated desktop display should now display the Ubuntu desktop, while the stimulus
+    display is plain white without any UI elements and can't be accessed with the mouse pointer.
+> NOTE: When using Ubuntu 12.04 and the GNOME classic desktop environment, you might encounter the strange behavior
+described here (https://bugs.launchpad.net/ubuntu/+source/gnome-panel/+bug/1083811). To solve the problem simply follow 
+the instructions provided on launchpad and obtain a recent version of gnome-panel.
+
+-   Now, open Matlab/Octave and run ScreenTest to check for problems in your setup. Most likely, it will tell you that
+    on multi-GPU systems high precision timestamping / low level acess is restricted to one GPU/Screen and which it
+    selected by default. Very likely, it's GPU0 which shows your desktop.
+
+-   To set up the secondary GPU for high-precision time-stamping, you need to manually tell PTB which GPU is responsible
+    for which Screen and which of these it shall use for low-level access.
+    ~~~ bash
+    >> clear Screen
+    >> Screen('Preference','ScreenToHead', 1, 0, 0); % Maps X-Screen 1 to RandR-CRTC 0 and GPU-CRTC 0
+    >> PsychTweak('UseGPUIndex', 1);                 % Use GPU 1 for low-level access
+    >> Now your code ... i.e. ScreenTest
+    ~~
+
+-   Now, run ScreenTest again and check if the appropriate GPU is used. Keep in mind that your destop display might now
+    give you the big exclamation mark during the test, because low-level access has been explicitly disabled for it.
+
+    
+
+
+    
+
+
+    
+
+
 
