@@ -274,11 +274,11 @@ shall be driven at different resolutions and refresh rates. PTB is assumed to be
 -   Set up the X-Server either by manually editing X-org.conf (https://wiki.ubuntu.com/X/Config) or if you
     are using proprietary(ATI, NVidia) graphics drivers by using the respective GUIs (ATI Catalyst Control 
     Center or NVidia X Server Settings): (1) Assign separate X-Screens to each GPU (Desktop Screen = X-Screen0;
-    Stimulation Screen = X-Screen1) (2) Make sure Xinerame mode is disabled (3) Set the appropriate resolutions 
+    Stimulation Screen = X-Screen1) (2) Make sure Xinerama mode is disabled (3) Set the appropriate resolutions 
     and refresh rates (4) Save changes to X-org.conf and quit the editor (5) Restart your X-Server with one of 
-    the following commands depending on your desktop environment 
+    the following commands depending on your desktop environment:
     ~~~ bash
-    sudo restart lightdm OR gdm OR kdm    
+    $ sudo restart lightdm OR gdm OR kdm    
     ~~~
 
 -   If everything worked, your designated desktop display should now display the Ubuntu desktop, while the stimulus
