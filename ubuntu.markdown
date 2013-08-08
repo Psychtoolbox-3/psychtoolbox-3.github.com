@@ -295,10 +295,10 @@ the instructions provided on launchpad and obtain a recent version of gnome-pane
     for which Screen and which of these it shall use for low-level access.
     ~~~ bash
     >> clear Screen
-    >> Screen('Preference','ScreenToHead', 1, 0, 0); % Maps X-Screen 1 to RandR-CRTC 0 and GPU-CRTC 0
     >> PsychTweak('UseGPUIndex', 1);                 % Use GPU 1 for low-level access
-    >> Now your code ... i.e. ScreenTest
-    ~~
+    >> Screen('Preference','ScreenToHead', 1, 0, 0); % Maps X-Screen 1 to RandR-CRTC 0 and GPU-CRTC 0
+    >> NowYourCode ... i.e. ScreenTest
+    ~~~
 
 -   Now, run ScreenTest again and check if the appropriate GPU is used. Keep in mind that your destop display might now
     give you the big exclamation mark during the test, because low-level access has been explicitly disabled for it.
