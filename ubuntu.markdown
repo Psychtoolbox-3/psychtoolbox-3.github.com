@@ -281,8 +281,9 @@ shall be driven at different resolutions and refresh rates. PTB is assumed to be
     $ sudo restart lightdm OR gdm OR kdm    
     ~~~
 
--   If everything worked, your designated desktop display should now display the Ubuntu desktop, while the stimulus
-    display is plain white without any UI elements and can't be accessed with the mouse pointer.
+-   If everything worked, your designated desktop display should now display the Ubuntu desktop background, while the 
+    stimulus display is plain white and can't be accessed with the mouse pointer. The stimulus screen will,
+    however, contain the gnome panels at the top and bottom.
 > NOTE: When using Ubuntu 12.04 and the GNOME classic desktop environment, you might encounter the strange behavior
 described here (https://bugs.launchpad.net/ubuntu/+source/gnome-panel/+bug/1083811). To solve the problem simply follow 
 the instructions provided on launchpad and obtain a recent version of gnome-panel.
