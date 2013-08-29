@@ -66,6 +66,10 @@ Requirements][requirements].
 
     -  [Subversion][svnmac] (Look for “Binaries for Mac OS X”).
 
+    **Mac OS X Mountain Lion** user can install the Command Line Tools from
+    
+    -  <https://developer.apple.com/downloads>
+
     Skip this step on OS X 10.5 Leopard or later iff you have Apple's XCode
     development tools installed, as Subversion (`svn`) is then already
     installed on your system by default.
