@@ -66,7 +66,7 @@ Requirements][requirements].
 
     -  [Subversion][svnmac] (Look for “Binaries for Mac OS X”).
 
-    **Mac OS X Mountain Lion** user can install the Command Line Tools from
+    **Mac OS X Mountain Lion** users can install the Command Line Tools from
     
     -  <https://developer.apple.com/downloads>
 
