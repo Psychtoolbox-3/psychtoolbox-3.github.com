@@ -37,6 +37,10 @@ Psychtoolbox News
 </article>
 {% endfor %}
 
+### [All News on one page](news)
+
+---
+
 {% for post in site.posts offset: 4 %}
 <article class="post abbrev">
     <header>
