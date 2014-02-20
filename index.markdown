@@ -22,7 +22,7 @@ OSX, Linux and Windows.
 Psychtoolbox News
 -----------------
 
-{% for post in site.posts limit: 5 %}
+{% for post in site.posts limit: 3 %}
 <article class="post">
     <header>
       <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
@@ -37,7 +37,7 @@ Psychtoolbox News
 </article>
 {% endfor %}
 
-{% for post in site.posts %}
+{% for post in site.posts offset: 4 %}
 <article class="post">
     <header>
       <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
