@@ -1,0 +1,12 @@
+---
+layout: post
+title: PTB BETA "Stadtmusikanten"
+categories: news
+author: kleinerm
+---
+
+-   ECVP2013 demos and tutorial slides PDF file added.
+-   New function `PsychDefaultSetup` for normalized color range by default.
+-   Some new demos, e.g., `SimpleSoundScheduleDemo`.
+-   `PsychColorimetric` improvements by David Brainard.
+-   Minor fixes and improvements here and there.

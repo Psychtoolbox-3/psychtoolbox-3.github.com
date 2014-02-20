@@ -1,0 +1,21 @@
+---
+layout: post
+title: PTB BETA RELEASE "Sex, Lies and Video"
+categories: news
+author: kleinerm
+---
+
+-   OSX 10.9 Mavericks compatibility fixes. E.g., for AppNap protection, visual
+    timing fixes, other brokeness fixes.
+-   Rewrite of OSX `FontInfo` and `DrawText` renderer for higher startup speed and
+    compatibility and future proofing.
+-   Add new supported GPU's from AMD.
+-   Minor bug fixes for OSX, Windows, Linux, e.g., `IOPort`, `Eyelink`, `PsychHID`
+    KbQueues.
+-   General improvements to video capture and video recording, e.g., for DV
+    cameras.
+-   DC1394 based Firewire video recording support, high bit depths capture
+    support, various other bells and whistles.
+-   DC1394 based Firewire multi-camera synchronized video capture/recording.
+-   Staircase procedure improvements by Diederick Niehorster.
+-   `PsychColorimetric` routines improved by David Brainard.

@@ -1,0 +1,8 @@
+---
+layout: post
+title: PTB BETA RELEASE "Rainbows, Droids & Compute Hippies!" SP9
+categories: news
+author: kleinerm
+---
+
+  - Fix regression in imaging pipeline + multisample depth renderbuffer setup.

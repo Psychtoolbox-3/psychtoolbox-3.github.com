@@ -1,0 +1,20 @@
+---
+layout: post
+title: PTB BETA RELEASE "Rainbows, Droids & Compute Hippies!" SP8 - Final
+categories: news
+author: kleinerm
+---
+
+Final 3.0.10 series release update:
+
+-   Reduce verbosity of PsychHID's libusb debug output to "silence" on Linux by
+    default.
+-   Add proper psychtoolbox udev rules for MCC DAQ operations on Linux without
+    root.
+-   Verify Daq toolbox works mostly with MCC USB-DAQ 1408FS, disable obsolete
+    warnings.
+-   Try to make DaqAInScan work with 1408FS on 64-Bit OSX -- unsuccesfull.
+-   Small fixes & improvements to Daq toolbox.
+-   Screen for 32-Bit Matlab on OSX final recompile to sync up with beta.
+
+This is the branch point for the 3.0.10 branch.

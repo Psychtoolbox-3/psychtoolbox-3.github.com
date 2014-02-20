@@ -1,0 +1,16 @@
+---
+layout: post
+title: PTB BETA RELEASE "Hammertime!" SP2 - "Flowerpower"
+categories: news
+author: kleinerm
+---
+
+-   Cool new SuperShapeDemo by Joana Leitao.
+-   Display rotation support in `PanelFitter`, as shown by `PanelFitterDemo`.
+-   Make `DrawText` on Linux multi-x-screen capable and even faster than
+    before.
+-   Make `BitsPlusImagingPipelineTest` a little bit more lenient.
+-   Improve display locking on Linux, and various micro-optimizations.
+-   Remove beamposition timestamping support for Intel gpu's on OSX and Linux.
+-   Small improvements to Daq toolbox and other stuff.
+-   Disable mex files for OSX versions before 10.6 Snow Leopard.

@@ -1,0 +1,38 @@
+---
+layout: post
+title: PTB BETA RELEASE "Rainbows, Droids & Compute Hippies!" SP4, SP5, SP6, SP7
+categories: news
+author: kleinerm
+---
+
+
+### PTB_Beta-2013-05-14_V3.0.10
+
+PTB BETA RELEASE "Rainbows, Droids & Compute Hippies!" SP7
+
+* `moglcore` build fix for NeuroDebian et al.
+
+### PTB_Beta-2013-05-13-R2_V3.0.10
+
+PTB BETA RELEASE "Rainbows, Droids & Compute Hippies!" SP6
+
+-   A fix provided by zacklb for a regression introduced in new Java setup
+    code.
+
+### PTB_Beta-2013-05-13_V3.0.10
+
+PTB BETA RELEASE "Rainbows, Droids & Compute Hippies!" SP5
+
+-   Fix octave short-circuit operator warnings by fixing all M-Files.
+-   Factor out Java classpath Matlab setup into one function.
+-   Update a few `Datapixx` mex files.
+-   Fix a PR-705 toolbox bug (zacklb).
+-   Tiny other stuff.
+
+### PTB_Beta-2013-05-08_V3.0.10
+
+PTB BETA "Rainbows, Droids & Compute Hippies" SP-4
+
+Fixes to DAQ toolbox, PR-xxx toolboxes, `Screen()`,
+online documentation and help, display calibration
+and other small bits.
