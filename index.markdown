@@ -27,7 +27,5 @@ Psychtoolbox News
       </p>
     </header>
 
-{{ post.content }}
-
 </article>
 {% endfor %}
