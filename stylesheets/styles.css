@@ -50,7 +50,7 @@ article h1, article h2 {
   font-weight: 700;
 }
 
-article h1 a {
+article h1 a, h3.abbrev {
   color: #39c;
 }
 

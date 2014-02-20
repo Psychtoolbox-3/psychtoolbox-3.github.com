@@ -37,7 +37,8 @@ Psychtoolbox News
 </article>
 {% endfor %}
 
-### [All News on one page](news)
+      
+<h3 class=abbrev><a href=/news>News Archive</a></h3>
 
 ---
 
