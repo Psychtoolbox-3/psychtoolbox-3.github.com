@@ -38,7 +38,7 @@ Psychtoolbox News
 {% endfor %}
 
       
-<h3 class=abbrev><a href=/news>News Archive</a></h3>
+<h3 class=abbrev><a href="/news">News Archive</a></h3>
 
 ---
 
