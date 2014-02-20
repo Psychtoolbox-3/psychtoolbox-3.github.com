@@ -38,8 +38,10 @@ Psychtoolbox News
 {% endfor %}
 
       
-<h3 class=abbrev><a href="/news">News Archive</a></h3>
+### [News Archive](news)
+{: .abbrev}
 
+---
 
 {% for post in site.posts offset: 4 %}
 <article class="post abbrev">
