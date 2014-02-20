@@ -38,7 +38,7 @@ Psychtoolbox News
 {% endfor %}
 
 {% for post in site.posts offset: 4 %}
-<article class="post">
+<article class="post abbrev">
     <header>
       <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
       <p>

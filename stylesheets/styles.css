@@ -40,6 +40,10 @@ article {
   margin: 0 0 40px;
 }
 
+article.abbrev {
+  margin: 0 0 10px;
+}
+
 article h1, article h2 {
   margin: 0 0 10px;
   font-size: 18px;
