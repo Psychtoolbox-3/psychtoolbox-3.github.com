@@ -40,7 +40,6 @@ Psychtoolbox News
       
 <h3 class=abbrev><a href="/news">News Archive</a></h3>
 
----
 
 {% for post in site.posts offset: 4 %}
 <article class="post abbrev">
