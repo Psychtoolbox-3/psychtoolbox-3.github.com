@@ -102,8 +102,8 @@ start the 3.0.12 series. It contains the following more notable improvements:
     causes random crashes at the end of experiment sessions on some setups for
     some users.
 
--   `PsychImaging` - add convenience setup function for dual-display stereo mode
-    10. See `ImagingStereoDemo` for the simplified setup for stereomode 10.
+-   `PsychImaging` - add convenience setup function for dual-display stereo mode 10.
+    See `ImagingStereoDemo` for the simplified setup for stereomode 10.
 
 -   `PsychImaging` - Improve 10 bpc framebuffer setup: Do not disable dithering
     on digital output by default, but leave decision to OS, with option to
