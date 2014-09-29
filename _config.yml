@@ -4,9 +4,9 @@ permalink: pretty
 pygments: false
 markdown: kramdown
 
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "strikethrough", "autolink",
-                  "tables", "with_toc_data", "space_after_headers", "superscript"]
+gems:
+  - jekyll-sitemap
+
 kramdown:
   auto_ids: true
   footnote_nr: 1
@@ -14,10 +14,6 @@ kramdown:
   toc_levels: 1..5
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   use_coderay: false
-
-rdiscount:
-  extensions: [smart, generate_toc]
-  toc_token: "{:toc}"
 
 google_analytics:
   account: UA-6031251-4
