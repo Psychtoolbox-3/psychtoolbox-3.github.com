@@ -19,5 +19,5 @@ rdiscount:
   extensions: [smart, generate_toc]
   toc_token: "{:toc}"
 
-# google_analytics:
-#   account: UA-XXXXX-X
+google_analytics:
+  account: UA-6031251-4
