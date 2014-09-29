@@ -182,8 +182,8 @@ A PDF file with the presentation slides of an introduction into
 Psychtoolbox-3 and the differences to Psychtoolbox-2: [Talk slides of
 Psychtoolbox presentation, given at ECVP 2007 Arezzo][arezzo]
 
-Installation without Download
------------------------------
+Installation without Download {#without-download}
+-------------------------------------------------
 
 If you already have downloaded a copy of the Psychtoolbox folder onto a
 local computer and want to replicate that installation onto other
@@ -196,6 +196,11 @@ directory to the copied Psychtoolbox folder (`cd` command) and then type
 your copied local Psychtoolbox folder for use with Matlab or Octave,
 just as our installers would do. This procedure can save some download
 time.
+
+If you cannot install the Subversion client `svn` you can also download 
+the ZIP file comprising the whole project. Running `SetupPsychtoolbox`
+from the `Psychtoolbox` sub-folder from the extracted ZIP will add PTB
+to your MATLAB path.
 
 Staying Up-to-Date {#upgrading}
 -------------------------------
