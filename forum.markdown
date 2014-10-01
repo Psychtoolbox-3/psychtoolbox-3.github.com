@@ -47,42 +47,9 @@ Read below how you can assist us in helping you effectively ...
 > grateful if you would copy it to the [FAQ section](faq) on our Wiki to preserve it for posterity.  You may want to
 > edit it down to the relevant bits. With time we will incorporate and cross-reference these texts elsewhere in the
 > project.
-{: #notice style="display:none"}
-
-<p style="display:inline;">
-<span id="readmore" role="button" onclick="toggleDiv();">
-   Expand this notice »
-</span>
-</p>
 
   [docs-demos]: http://docs.psychtoolbox.org/PsychDemos
   [docs-documentation]: http://docs.psychtoolbox.org/PsychDocumentation
 
 
-<!-- Google Groups iframe -->
-<iframe id="forum_embed"
-  src="javascript:void(0)"
-  scrolling="no"
-  frameborder="0"
-  width="900"
-  height="700">
-</iframe>
-<script type="text/javascript">
-  document.getElementById('forum_embed').src =
-     'http://groups.google.com/forum/embed/?place=forum/psychtoolbox-discuss'
-     + '&showsearch=true&showpopout=true&showtabs=false'
-     + '&parenturl=' + encodeURIComponent(window.location.href);
-</script>
-<script>
-function toggleDiv(){
-    if (document.getElementById('notice').style.display == 'none') {
-        document.getElementById('notice').style.display = 'block';
-        document.getElementById('readmore').style.display = 'inline';
-        document.getElementById('readmore').innerText = 'Collapse this notice «';
-    } else {
-        document.getElementById('notice').style.display = 'none';
-        document.getElementById('readmore').style.display = 'inline';
-        document.getElementById('readmore').innerText = 'Expand this notice »';
-    }
-}
-</script>
+
