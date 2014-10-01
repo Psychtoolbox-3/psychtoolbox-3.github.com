@@ -48,8 +48,11 @@ Read below how you can assist us in helping you effectively ...
 > edit it down to the relevant bits. With time we will incorporate and cross-reference these texts elsewhere in the
 > project.
 
+**[Continue to Support Forum][forum]**
+
   [docs-demos]: http://docs.psychtoolbox.org/PsychDemos
   [docs-documentation]: http://docs.psychtoolbox.org/PsychDocumentation
+  [forum]: https://groups.yahoo.com/neo/groups/psychtoolbox/conversations/topics
 
 
 
