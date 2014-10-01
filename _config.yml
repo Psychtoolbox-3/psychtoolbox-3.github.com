@@ -15,7 +15,7 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   # smart_quotes:  ["apos", "apos", "ldquo", "rdquo"]
   use_coderay: false
-  input: GFM
+  # input: GFM
 
 google_analytics:
   account: UA-6031251-4
