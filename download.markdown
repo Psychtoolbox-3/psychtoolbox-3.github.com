@@ -303,8 +303,8 @@ providing their name instead of ‘current’ or ‘unsupported’. E.g., to
 download Psychtoolbox-3.0.6 you would run
 `DownloadLegacyPsychtoolbox([], [], [], 'Psychtoolbox-3.0.6')`. A list
 of older versions can be found at the bottom of the page found
-[here][versions]. Version 3.0.10 and later use the `DownloadPsychtoolbox`
-function instead of `DownloadLegacyPsychtoolbox`.
+[here][versions]. Version 3.0.10 and later use the [`DownloadPsychtoolbox`][installer]
+function instead of [`DownloadLegacyPsychtoolbox`][legacy-installer].
 
   [requirements]: /requirements
   [forum]: /forum
@@ -314,6 +314,7 @@ function instead of `DownloadLegacyPsychtoolbox`.
   [svnwin]: http://www.sliksvn.com/en/download
   [svnmac]: http://www.collab.net/downloads/subversion
   [installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadPsychtoolbox.m
+  [legacy-installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadLegacyPsychtoolbox.m
   [gstreamer-sdk]: http://docs.gstreamer.com/display/GstSDK/Installing+on+Windows
 
   [neurodebian]: http://neuro.debian.net/
