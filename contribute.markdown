@@ -47,7 +47,7 @@ To improve the website itself please click the "Edit and fork this page" below
 and send us a pull request with your changes.
 
 The website is auto-generated from markdown text in the
-[psychtoolbox-3/psychtoolbox-3.git.com](https://github.com/Psychtoolbox-3/Psychtoolbox-3.github.com)
+[psychtoolbox-3/psychtoolbox-3.github.com](https://github.com/Psychtoolbox-3/Psychtoolbox-3.github.com)
 repo.
 
 
