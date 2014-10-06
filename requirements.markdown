@@ -109,7 +109,7 @@ downloader script.
 
 The last version that worked on 10.3 can be downloaded by
 specifying the special `flavor` parameter `Psychtoolbox-3.0.8-PreTiger`
-in our `DownloadLegacyPsychtoolbox` legacy downloader script.
+in our [`DownloadLegacyPsychtoolbox`][legacy-installer] legacy downloader script.
 
 The PowerPC platform is no longer supported by the version 3.0.10
 Psychtoolbox. If you need to use a PowerPC machine, stick to version
@@ -269,6 +269,7 @@ high performance, tear-free dual display support. For static stimuli or
 use as a control monitor, OS X may be good enough.
 
   [linux-install]: /download#Linux
+  [legacy-installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadLegacyPsychtoolbox.m
   [neurodebian]: http://neuro.debian.net
   [neurodebian-matlab]: http://neuro.debian.net/proj_matlab.html
   [additions]: http://docs.psychtoolbox.org/DownloadAdditionsForNeuroDebian
