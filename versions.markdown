@@ -52,7 +52,7 @@ development of PTB-3, but this numbering caused so much confusion with respect
 to PTB Version 2 that we have now abandoned that system.</small>
 
 *To download and install these legacy versions, use the
-`DownloadLegacyPsychtoolbox` function*
+[`DownloadLegacyPsychtoolbox`][legacy-installer] function*
 
 `Psychtoolbox-3.0.9`
    : A snapshot of the code as of May 2012: This was the final 3.0.9 release
@@ -84,3 +84,4 @@ to PTB Version 2 that we have now abandoned that system.</small>
      drawing functions and a few bug fixes. 
 
   [developers]: http://psychtoolbox.org/CurrentActiveDevelopers
+  [legacy-installer]: https://raw.githubusercontent.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadLegacyPsychtoolbox.m
