@@ -5,8 +5,8 @@ categories: getting-started
 ---
 
 In order to install and use the Psychtoolbox, *you must already have
-Matlab or Octave installed on your computer*, unless you install on
-Linux via the NeuroDebian repositories. If you already have
+Matlab or Octave installed on your computer*, unless you install for
+Octave on Linux via the NeuroDebian repositories. If you already have
 Matlab or Octave installed, start it up and read on.
 
 ##### Contents {#contents}
@@ -58,8 +58,8 @@ Installation Instructions {#installation}
 
 These are simple instructions to get you up and running with the
 Psychophysics Toolbox on a computer. It is assumed that you already have
-Matlab or Octave installed on your computer, or are installing on Linux via
-the NeuroDebian repositories. See the [System Requirements][requirements].
+Matlab or Octave installed on your computer, or are installing for Octave on
+Linux via the NeuroDebian repositories. See the [System Requirements][requirements].
 
 #### Mac {#Mac}
 
@@ -88,6 +88,11 @@ Please be patient.
 If the download fails, read below on [Download Problems](#download-problems). If you
 want to know more, see [DownloadPsychtoolbox][docs-download] (or
 `help DownloadPsychtoolbox` in the Matlab command window.)
+
+4.  If you intend to use multi-media functions, you must install the 64-Bit
+    GStreamer-1.0 runtime from [gstreamer.freedesktop.org][gstreamer-osx].
+    Make absolutely sure that you install all offered packages. Read `help GStreamer`
+    carefully for this purpose, *before downloading and installing GStreamer*.
 
 #### Linux {#Linux}
 
@@ -133,10 +138,10 @@ directory.
 
           >> DownloadPsychtoolbox('/home/foo/toolbox')
 
-However, octave mex files from this download will only work out of the box with
+However, Octave mex files from this download will only work out of the box with
 Octave 3.8 on a fairly recent distribution like Ubuntu 14.04-LTS. All required
-dependencies like GStreamer, libdc, etc. need to be manually installed. Go for
-the NeuroDebian installation instead if you are on Debian or Ubuntu flavors.
+dependencies like GStreamer-1, libdc, etc. need to be manually installed in this
+case. Go for the NeuroDebian installation instead if you are on Debian or Ubuntu flavors.
 
 [Additional tips][using-on-linux] for installing and using Psychtoolbox on
 Linux.
@@ -160,7 +165,9 @@ folders of your liking instead:
 6.  Move the Psychtoolbox installer (`DownloadPsychtoolbox`) from the Desktop
     to the new `toolbox` folder.
 7.  If you intend to use multi-media functions, you must install the 64-Bit
-    GStreamer-1.0 runtime from [gstreamer.freedesktop.org][gstreamer-sdk].
+    GStreamer-1.0 runtime from [gstreamer.freedesktop.org][gstreamer-win].
+    Make absolutely sure that you install all offered packages. Read `help GStreamer`
+    carefully for this purpose, *before downloading and installing GStreamer*.
 8.  You also need to install the Microsoft Runtime Libraries for MSVC 2010. You
     can find installers for these at Microsoft’s site beforehand. Otherwise
     when our installer aborted half-ways, follow the instructions it prints to
@@ -353,7 +360,8 @@ function instead of [`DownloadLegacyPsychtoolbox`][legacy-installer].
   [svnmac]: http://www.collab.net/downloads/subversion
   [installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadPsychtoolbox.m
   [legacy-installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadLegacyPsychtoolbox.m
-  [gstreamer-sdk]: http://gstreamer.freedesktop.org/data/pkg/windows/
+  [gstreamer-win]: http://gstreamer.freedesktop.org/data/pkg/windows/
+  [gstreamer-osx]: http://gstreamer.freedesktop.org/data/pkg/osx/
 
   [neurodebian]: http://neuro.debian.net/
   [nd-octave]: http://neuro.debian.net/pkgs/octave-psychtoolbox-3.html
