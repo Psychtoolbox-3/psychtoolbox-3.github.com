@@ -16,28 +16,27 @@ Short version
 
 -   *Operating system:*
 
-    GNU Linux is recommended. Also works on Apple Mac OS X (Intel) and Microsoft
-    Windows (Intel).
+    GNU Linux is strongly recommended. Also works on Apple Mac OS X (Intel) and Microsoft
+    Windows (Intel), but will be much less well supported by the developers and may have
+    restrictions in functionality, performance and precision in some features, compared to
+    Psychtoolbox running on a modern Linux distribution.
 
 -   *Runtime environment:*
 
-    Matlab Version 7.4 R2007a or later, also GNU Octave version 3.2 or later on
-    Linux and Octave version 3.6 on OS X.
-
-    A cautious migration to 64-bit versions of Matlab and Octave is
-    recommended, especially for users of OS X.
+    64-Bit Matlab Version 7.4 R2007a or later, also GNU Octave version 3.2 or later on
+    Linux and 64-Bit Octave version 3.8.x on OS X.
 
 -   *Graphics card:*
 
     Recommended are any OpenGL 2.1 or better capable GPUs from AMD or NVidia.
     Modern Intel HD-Series graphics cards should work for moderately complex
-    workloads. More recent OpenGL-3/4 GPUs may expose additional useful
+    workloads on Linux. More recent OpenGL-3/4 GPUs may expose additional useful
     features. The absolute minimum requirement is OpenGL-1.2 support, but
-    functionality will be limited with such old GPUs. 
+    functionality and performance will be limited with such old GPUs. 
 
     Do not buy PC laptops with hybrid-graphics, e.g., with NVidia Optimus
     technology! Their graphics timing behaviour will likely be wrong and there
-    is no known way to fix this in software.
+    is no known way to fix this in software at this point in time.
 
 -   *Sound card:*
 
@@ -54,15 +53,18 @@ Operating systems
 GNU/Linux is fully supported on Intel compatible PCs and Apple Macintosh
 computers under
 
--  Matlab 7.4 R2007a (32-bit and 64-bit), or later
--  GNU Octave 3.2 (32-bit and 64-bit), or later
+-  Matlab 7.14 R2012a 64-bit, or later versions (tested with R2012a)
+-  GNU Octave 3.8 (32-bit and 64-bit).
+-  Additionally Psychtoolbox from NeuroDebian supports whatever version
+   of GNU Octave ships with your distribution, e.g., Octave 3.6, 3.4 or 3.2
+   on older distributions.
 
 Psychtoolbox should run well on any recent Linux distribution. Testing
 and development however occurs mainly on the most recent Ubuntu Linux
-releases.
+releases or flavors of them like e.g., KUbuntu, XUbuntu, LUbuntu ...
 
 It is recommended to keep up with the latest distribution releases or to stick
-to the latest long-term support (LTS) Ubuntu release.
+to the latest long-term support (LTS) Ubuntu release, currently 14.04-LTS.
 
 The [NeuroDebian project][neurodebian] is an effort to provide convenient
 access to neuroscience-related software on the Debian and Ubuntu Linux
@@ -73,38 +75,32 @@ Recently NeuroDebian has begun to curate open-source packages [for Matlab as
 well][neurodebian-matlab], and since provides two sets of packages, one for
 Octave and one for Matlab.
 
-As an older home-spun solution, the
-[`DownloadAdditionsForNeuroDebian`][additions] script allows you to
-automatically download our compiles for Matlab on top of the NeuroDebian Octave
-package.
-
 For details on these options, see the [Linux installation instructions][linux-install].
 
 We generally recommend Linux as the operating system of choice for
 demanding experimental setups, which require the highest timing
 precision, precision for color or luminance displays, general
-performance and flexibility.
+performance and flexibility. Our support for fixing bugs and other
+issues on other operating systems than Linux will be very limited.
 
 ### Apple Macintosh
 
 Psychtoolbox is also being developed and tested under Apple Mac OS X.
-Supported are
+Psychtoolbox should work on
 
--   64-bit Matlab on OS X 10.6 "Snow Leopard" and later
--   64-bit Octave 3.6 and later on OS X 10.6 "Snow Leopard" and later
+-   64-bit Matlab on OS X 10.8 "Mountain Lion" and later
+-   64-bit Octave v3.8 on OS X 10.8 "Mountain Lion" and later
 
-Compatibility tests have been run on OS X 10.6.8, and 10.7.4 with 64-bit
-Matlab R2012a and on 10.7.4 with 64-Bit Octave 3.6.
+Regular testing currently only happens on the latest version of OS X 10.9
+“Mavericks” with 64-Bit Octave 3.8.0, and with 64-bit Matlab R2012a. This is
+the only marginally supported version of OS X at this point in time.
 
-Regular testing currently only happens on the latest version of 10.7
-“Lion” with 64-Bit Octave 3.6, and with 64-bit Matlab R2012a, but more
-recent OS X versions should work reasonably well for many tasks, according
-to user reports.
-
-The current toolbox version 3.0.11 releases are not supported under OS X 10.5
-or earlier anymore. The last version that worked on OS X 10.4 and 10.5 and also
-with 32-Bit versions of Matlab was v3.0.10. It can be downloaded by specifying
-the special `flavor` parameter `Psychtoolbox-3.0.10` in our `DownloadPsychtoolbox`
+The current toolbox version 3.0.12 releases do not work under OS X 10.7
+or earlier anymore. The last version that worked on OS X 10.6 and 10.7 was
+v3.0.11. The last version that worked on OS X 10.4 and 10.5 and also
+with 32-Bit versions of Matlab was v3.0.10. Those old and unsupported
+versions of Psychtoolbox can be downloaded by specifying the special `flavor`
+parameter `Psychtoolbox-3.0.11` or `Psychtoolbox-3.0.10` in our `DownloadPsychtoolbox`
 downloader script.
 
 The last version that worked on 10.3 can be downloaded by
@@ -123,26 +119,32 @@ especially for multi-display stimulus presentation and stereoscopic
 stimulus presentation. 10.7 “Lion” and later mostly has restrictions in
 the precision for visual stimulus timestamping due to various bugs in the
 operating system. Please install the Psychtoolbox kernel driver to
-resolve these issues (see [PsychtoolboxKernelDriver][docs-kerneldriver] or 
+resolve some of these issues (see [PsychtoolboxKernelDriver][docs-kerneldriver] or 
 `>> help PsychtoolboxKernelDriver`).
 
 ### Windows
 
--   Matlab 32-bit or 64-bit, release 7.4 R2007a or later
+Psychtoolbox should work on
+
+-   Matlab 64-bit, release 7.14 R2012a or later.
+-   Matlab 64-bit, release 7.4 R2007a or later will probably work, but is no
+    longer tested or supported.
 
     External requirements: Microsoft C runtime and GStreamer
 
 If you choose to use Matlab, you may need to install Microsoft Visual C runtime
-libraries to make it work, specifically `vcredist_x86.exe` or
-`vcredist_x64.exe`. The installer should give you instructions on how to do
-that if necessary.
+libraries to make it work, specifically `vcredist_x64.exe`. The installer should
+give you instructions on how to do that if necessary.
 
-Psychtoolbox-3 runs under Microsoft Windows XP, Windows Vista, Windows 7
-and Windows 8.
+Psychtoolbox-3 still runs under Microsoft Windows XP, Windows Vista, Windows 7
+and Windows 8, but we don't test for compatibility with any system but Windows 7,
+and won't provide any bug fixes or troubleshooting help for any issues that can't
+be shown to be also present on Windows 7. Specifically, moving away from Windows XP
+and Vista is strongly recommended.
 
 We do aim to keep the toolbox working under these and future versions of
 Windows, but full support for all features is a lower priority for us
-than Linux or Mac OS X.
+than Linux.
 
 As of December 1, 2009, Windows Vista and Windows-7 have been tested for
 basic compatibility with PTB-3. Precision of sound presentation hasn’t
@@ -161,45 +163,39 @@ with Windows 8, although no systematic testing has been performed by us so far.
 
 All in all you are worse off with Vista and later than with XP, so there is
 no reason to switch to it. Those systems seem to provide less performance
-than XP while at the same time posing higher hardware requirements.
+than XP while at the same time posing higher hardware requirements. As Windows XP
+itself is no longer supported as of Psychtoolbox version 3.0.12 we recommend
+switching to a modern version of Linux, e.g., a flavor of Ubuntu 14.04-LTS.
 
 Additional software
 -------------------
 
-#### Multimedia engine: GStreamer required
+#### Multimedia engine: GStreamer 1.x required
 
-On **64-bit OS X**, installation of GStreamer is mandatory for movie playback,
-movie recording, video capture and video recording. Quicktime is no longer
-supported.
+Installation of GStreamer version 1.0 or later is mandatory for movie playback,
+movie recording, video capture and video recording. Multimedia functions won't
+work on **Windows** or **OSX** without GStreamer being installed.
 
-On **Linux** you also need GStreamer for these operations, but GStreamer is
-a de-facto standard component that ships with all modern Linux distributions.
-
-On **Windows** you must install [GStreamer][gstreamer]. The way we have to
-link to the GStreamer libraries requires GStreamer to be installed even if
-you don’t intend to use the multimedia features.
+On **Linux** you also need GStreamer, but GStreamer is a de-facto standard
+component that ships with all modern Linux distributions.
 
 See [GStreamer][docs-gstreamer] (or `>> help GStreamer`) for installation
 instructions for the different systems.
-
-On **32-bit Mac OS X** legacy Psychtoolbox 3.0.10 used Apple Quicktime 7 for
-movie playback, movie creation, video capture and recording. Quicktime is
-installed on any OS X system by default. Psychtoolbox was able to also
-optionally use GStreamer.
 
 Basic hardware requirements
 ---------------------------
 
 -   Intel PCs: Any Intel-compatible PC that is capable of running the
-    32/64-bit versions of Microsoft Windows XP/Vista/Windows-7/Windows-8
-    or 32/64 bit GNU/Linux.
+    64-bit versions of Microsoft Windows XP/Vista/Windows-7/Windows-8
+    or the 32-bit or 64-bit versions of GNU/Linux.
 
 -   Intel Macs: Any Intel-based Macintosh computer that is capable of
-    running 64-Bit OS X 10.6 “Snow Leopard” or later, or 32/64 Bit GNU/Linux.
+    running 64-Bit OS X 10.8 “Mavericks” or later, or 32/64 Bit GNU/Linux.
 
 -   The Psychtoolbox distributed by the Debian project also supports
     other processor architectures, e.g., PowerPC, ARM, MIPS, Sun
-    UltraSparc, IBM S/360 and some others.
+    UltraSparc, IBM S/360 and some others. However, only the Intel builds
+    receive testing and support from us.
 
 Graphics hardware requirements
 ------------------------------
@@ -230,10 +226,10 @@ The latest generation of integrated Intel HD graphics cards, e.g., Intel HD
 functionality, accuracy and performance for not too demanding tasks. They are
 OpenGL-3 / Direct3D-10 compliant. Numeric precision is on par with recent
 NVidia or AMD cards for most (but not all) accuracy tests that have been
-executed on a Intel HD-3000 under OS X 10.7.4 Lion. Absolute graphics
-performance is of course significantly lower than that of current discrete
-NVidia or AMD cards. But for not too demanding visual stimulation paradigms,
-these cards are now somewhat suitable.
+executed on a Intel HD card under Linux. Absolute graphics performance is of
+course significantly lower than that of current discrete NVidia or AMD cards.
+But for not too demanding visual stimulation paradigms, these cards are now
+somewhat suitable.
 
 Older Intel graphics cards are problematic for all but the most trivial visual
 stimulation tasks: While the Intel GMA X3100 series cards and similar are also
@@ -250,9 +246,6 @@ graphics market, most of their products are not a good choice for OpenGL
 based applications like Psychtoolbox. Even the products that nominally
 claim to support hardware accelerated OpenGL, have a pretty limited
 feature set and performance.
-
-[In depth: More detailed information and recommendations for graphics
-hardware][gfxhw]
 
 For dual-display work (e.g., binocular stereo stimulation), we strongly
 recommend using dual-head or multi-head graphics adapters (i.e., *one*
