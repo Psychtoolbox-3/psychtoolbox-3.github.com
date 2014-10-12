@@ -53,7 +53,7 @@ Operating systems
 GNU/Linux is fully supported on Intel compatible PCs and Apple Macintosh
 computers under
 
--  Matlab 7.14 R2012a 64-bit, or later versions (tested with R2012a)
+-  Matlab 64-bit. Currently tested with release v7.14 R2012a.
 -  GNU Octave 3.8 (32-bit and 64-bit).
 -  Additionally Psychtoolbox from NeuroDebian supports whatever version
    of GNU Octave ships with your distribution, e.g., Octave 3.6, 3.4 or 3.2
@@ -88,7 +88,7 @@ issues on other operating systems than Linux will be very limited.
 Psychtoolbox is also being developed and tested under Apple Mac OS X.
 Psychtoolbox should work on
 
--   64-bit Matlab on OS X 10.8 "Mountain Lion" and later
+-   64-bit Matlab on OS X 10.8 "Mountain Lion" and later. Tested with R2012a.
 -   64-bit Octave v3.8 on OS X 10.8 "Mountain Lion" and later
 
 Regular testing currently only happens on the latest version of OS X 10.9
@@ -100,7 +100,7 @@ or earlier anymore. The last version that worked on OS X 10.6 and 10.7 was
 v3.0.11. The last version that worked on OS X 10.4 and 10.5 and also
 with 32-Bit versions of Matlab was v3.0.10. Those old and unsupported
 versions of Psychtoolbox can be downloaded by specifying the special `flavor`
-parameter `Psychtoolbox-3.0.11` or `Psychtoolbox-3.0.10` in our `DownloadPsychtoolbox`
+parameter `Psychtoolbox-3.0.11` or `Psychtoolbox-3.0.10` in our [`DownloadPsychtoolbox`][current-installer]
 downloader script.
 
 The last version that worked on 10.3 can be downloaded by
@@ -126,9 +126,7 @@ resolve some of these issues (see [PsychtoolboxKernelDriver][docs-kerneldriver] 
 
 Psychtoolbox should work on
 
--   Matlab 64-bit, release 7.14 R2012a or later.
--   Matlab 64-bit, release 7.4 R2007a or later will probably work, but is no
-    longer tested or supported.
+-   Matlab 64-bit. Currently tested with release 7.14 R2012a.
 
     External requirements: Microsoft C runtime and GStreamer
 
@@ -263,9 +261,9 @@ use as a control monitor, OS X may be good enough.
 
   [linux-install]: /download#Linux
   [legacy-installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadLegacyPsychtoolbox.m
+  [current-installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadPsychtoolbox.m
   [neurodebian]: http://neuro.debian.net
   [neurodebian-matlab]: http://neuro.debian.net/proj_matlab.html
-  [additions]: http://docs.psychtoolbox.org/DownloadAdditionsForNeuroDebian
   [gstreamer]: http://gstreamer.freedesktop.org
   [docs-gstreamer]: http://docs.psychtoolbox.org/Gstreamer
   [docs-kerneldriver]: http://docs.psychtoolbox.org/PsychtoolboxKernelDriver
@@ -273,4 +271,3 @@ use as a control monitor, OS X may be good enough.
   [faqvista]: http://psychtoolbox.org/FaqVista
   [gma950]: http://en.wikipedia.org/wiki/GMA_950
   [gfxhw]: /graphics-requirements
-
