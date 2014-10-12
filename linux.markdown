@@ -116,7 +116,7 @@ take effect.
 Another recommendation is to install a low-latency Linux kernel for optimized
 timing, e.g., on Ubuntu flavors and probably also Debian flavors:
 
->> sudo apt-get install linux-lowlatency
+    sudo apt-get install linux-lowlatency
 
 Optimization of the display server settings for good visual timing is
 achieved by following the Linux instructions in ">> help SyncTrouble"
