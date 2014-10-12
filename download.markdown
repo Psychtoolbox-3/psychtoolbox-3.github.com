@@ -5,7 +5,8 @@ categories: getting-started
 ---
 
 In order to install and use the Psychtoolbox, *you must already have
-Matlab or Octave installed on your computer*. If you already have
+Matlab or Octave installed on your computer*, unless you install on
+Linux via the NeuroDebian repositories. If you already have
 Matlab or Octave installed, start it up and read on.
 
 ##### Contents {#contents}
@@ -50,23 +51,23 @@ Find that folder and drag it to the Trash or Recycling Bin. Then type
 `pathtool` in the Matlab command window. This will bring up a dialog box
 with a list of folders that Matlab searches to find commands. Select all
 the folders that have “Psychtoolbox” in the name and click the “Remove”
-button.
+button, followed by the "Save" button to save the changes.
 
 Installation Instructions {#installation}
 -----------------------------------------
 
 These are simple instructions to get you up and running with the
 Psychophysics Toolbox on a computer. It is assumed that you already have
-Matlab or Octave installed on your computer. See the [System
-Requirements][requirements].
+Matlab or Octave installed on your computer, or are installing on Linux via
+the NeuroDebian repositories. See the [System Requirements][requirements].
 
 #### Mac {#Mac}
 
-1.  **Mac OS X < 10.5 Leopard only:** Download Subversion installer
+1.  **Mac OS X < 10.5 Leopard only:** Download Subversion installer manually
 
-    -  [Subversion][svnmac] (Look for “Binaries for Mac OS X”).
+    -  [Subversion][svnmac] (Choose your platform as "Community Binaries" select suitable Mac OS X version).
 
-    **Mac OS X Mountain Lion** users can install the Command Line Tools from
+    **Mac OS X Mountain Lion** users also can install the "Command Line Tools" from
     
     -  <https://developer.apple.com/downloads>
 
@@ -76,7 +77,7 @@ Requirements][requirements].
 
 2.  Download the **[Psychtoolbox installer][installer] to your desktop**. 
 
-3.  Open Matlab and type the following in the command window:
+3.  Open Octave or Matlab and type the following in the command window:
 
         >> cd ~/Desktop
         >> DownloadPsychtoolbox
@@ -92,19 +93,28 @@ want to know more, see [DownloadPsychtoolbox][docs-download] (or
 
 ##### Packages
 
-Psychtoolbox for Linux has been packaged and is available in the
-following repositories:
+Psychtoolbox for Linux has been packaged by the NeuroDebian team and is
+available in the following repositories:
+
+Up to date, tracks most recent official PTB beta releases - recommended:
 
 -   [NeuroDebian][neurodebian] ([Octave][nd-octave] or [Matlab][nd-matlab])
+
+NeuroDebian provides installation instructions on its website when you click
+on the links for Octave or Matlab above.
+
+Usually somewhat outdated versions, GNU Octave only, no Matlab:
+
 -   [Debian archive][debianrepo] (package `octave-psychtoolbox-3`)
 -   [Ubuntu archive][ubunturepo] (package [`octave-psychtoolbox-3`](apt:octave-psychtoolbox-3))
 
-NeuroDebian provides installation instructions on its website. 
 
-_The packages in the main Debian and Ubuntu archives still only ship with GNU
+_The packages in the main Debian and Ubuntu archives only ship with GNU
 Octave support, hence the package to install is_ **`octave-psychtoolbox-3`**.
 Use the script `DownloadAdditionsForNeuroDebian` after the package installation
-to post-install our Matlab versions of the binary MEX routines as well.
+to post-install our Matlab versions of the binary MEX routines as well, should
+you need Matlab support. In general using the NeuroDebian repo above is more
+convenient and provides up to date packages for Octave and Matlab.
 
 The advantage of the above repositories is that third-party dependencies
 are automatically installed by the package manager.
@@ -123,10 +133,18 @@ directory.
 
           >> DownloadPsychtoolbox('/home/foo/toolbox')
 
+However, octave mex files from this download will only work out of the box with
+Octave 3.8 on a fairly recent distribution like Ubuntu 14.04-LTS. All required
+dependencies like GStreamer, libdc, etc. need to be manually installed. Go for
+the NeuroDebian installation instead if you are on Debian or Ubuntu flavors.
+
 [Additional tips][using-on-linux] for installing and using Psychtoolbox on
 Linux.
 
 #### Windows {#Windows}
+
+Filesystem locations given here are examples. You could choose other disc drives or
+folders of your liking instead:
 
 1.  Download Subversion installer
 
@@ -141,9 +159,8 @@ Linux.
     the `toolbox` folder.
 6.  Move the Psychtoolbox installer (`DownloadPsychtoolbox`) from the Desktop
     to the new `toolbox` folder.
-7.  If you intend to use the 64-Bit Psychtoolbox for 64-Bit Matlab, you must
-    install the 64-Bit GStreamer SDK from [gstreamer.com][gstreamer-sdk],
-    otherwise Psychtoolbox will not work and the installation will abort.
+7.  If you intend to use multi-media functions, you must install the 64-Bit
+    GStreamer-1.0 runtime from [gstreamer.freedesktop.org][gstreamer-sdk].
 8.  You also need to install the Microsoft Runtime Libraries for MSVC 2010. You
     can find installers for these at Microsoft’s site beforehand. Otherwise
     when our installer aborted half-ways, follow the instructions it prints to
@@ -168,9 +185,10 @@ Linux.
 If you want to know more about the downloader, see [DownloadPsychtoolbox][docs-download]
 (or `help DownloadPsychtoolbox` in the Matlab command window.)
 
-You should now have a complete Psychtoolbox installation. Occasionally
-type the command `UpdatePsychtoolbox` in the Matlab command window: this
-will ensure that you have the latest version of Psychtoolbox. To start
+After Download and installation
+-------------------------------
+
+You should now have a complete Psychtoolbox installation. To start
 learning about the Psychtoolbox, use the `help` command. For example,
 
 `>> help Psychtoolbox` will list the categories of functions in the
@@ -181,6 +199,12 @@ toolbox, and
 A PDF file with the presentation slides of an introduction into
 Psychtoolbox-3 and the differences to Psychtoolbox-2: [Talk slides of
 Psychtoolbox presentation, given at ECVP 2007 Arezzo][arezzo]
+
+A more recent PDF file with the presentation slides of an introduction into
+Psychtoolbox-3: [Talk slides of Psychtoolbox presentation, given at ECVP 2013 Bremen][bremen]
+
+More detailled information can be found in the Psychtoolbox subfolder
+named `PsychDocumentation` of your Psychtoolbox installation.
 
 Installation without Download {#without-download}
 -------------------------------------------------
@@ -205,7 +229,13 @@ to your MATLAB path.
 Staying Up-to-Date {#upgrading}
 -------------------------------
 
-Psychtoolbox-3 can be updated to the latest version by typing the
+If you installed Psychtoolbox-3 for Linux from NeuroDebian, Debian or
+Ubuntu, your operating system will automatically notify you of new
+Psychtoolbox releases. After your approval, it will automatically
+upgrade the toolbox to the new version.
+
+After a manual installation on OSX, Windows or Linux via `DownloadPsychtoolbox`,
+ Psychtoolbox-3 can be updated to the latest version by typing the
 following Matlab command:
 
     >> UpdatePsychtoolbox
@@ -243,7 +273,7 @@ This can mean two things:
 <dl>
   <dt> Subversion server is down </dt>
   <dd>
-    … our Source code repository server on BerliOS.de or part of your
+    … our Source code repository server on GitHub.com or part of your
     internet connection is experiencing temporary problems. Don’t panic,
     just wait a couple of minutes (sometimes a couple of hours) and retry.
   </dd>
@@ -276,14 +306,14 @@ description of what you tried.*
 ### Subversion {#subversion}
 
 Installing Psychtoolbox-3 requires Subversion because the toolbox is now
-kept in a Subversion database, which is stored on a publicly accessible
+kept in a database, which is stored on a publicly accessible Subversion
 server. The database both stores the latest version of the code and
 tracks all of the changes that have been made to it. This simplifies
 maintenance and development of the toolbox. The Psychtoolbox functions
 `DownloadPsychtoolbox` and `UpdatePsychtoolbox` automate interactions
 with the database, so you never have to use Subversion directly. To
 learn more about Subversion, you can visit the website:
-<http://subversion.tigris.org/>.
+<http://subversion.apache.org>.
 
 ### Downgrading {#downgrading}
 
@@ -295,6 +325,14 @@ previous version, type in the Matlab command window:
     >> UpdatePsychtoolbox(PsychtoolboxRoot, 'PREV')
 
 You can repeat this step to incrementally downgrade to earlier versions.
+
+If you know the revision number of a specific Psychtoolbox release,
+because you noted down the output of `PsychtoolboxVersion` to document
+the software version you used to conduct some of your studies, then you
+can get that version as well, by passing that revision number instead of
+'PREV'. E.g., to get software revision 1236, type
+
+    >> UpdatePsychtoolbox(PsychtoolboxRoot, '1236')
 
 ### Access to Archived Versions of PTB-3 {#archived}
 
@@ -315,7 +353,7 @@ function instead of [`DownloadLegacyPsychtoolbox`][legacy-installer].
   [svnmac]: http://www.collab.net/downloads/subversion
   [installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadPsychtoolbox.m
   [legacy-installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadLegacyPsychtoolbox.m
-  [gstreamer-sdk]: http://docs.gstreamer.com/display/GstSDK/Installing+on+Windows
+  [gstreamer-sdk]: http://gstreamer.freedesktop.org/data/pkg/windows/
 
   [neurodebian]: http://neuro.debian.net/
   [nd-octave]: http://neuro.debian.net/pkgs/octave-psychtoolbox-3.html
@@ -324,6 +362,7 @@ function instead of [`DownloadLegacyPsychtoolbox`][legacy-installer].
   [ubunturepo]: http://packages.ubuntu.com/search?keywords=Psychtoolbox
 
   [arezzo]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/Psychtoolbox3-Slides.pdf
+  [bremen]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/PTBTutorial-ECVP2013.pdf
 
   [docs-download]: http://docs.psychtoolbox.org/DownloadPsychtoolbox
   [docs-setup]: http://docs.psychtoolbox.org/SetupPsychtoolbox
