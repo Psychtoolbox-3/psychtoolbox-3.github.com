@@ -33,7 +33,7 @@ you with a couple of advantages:
     suboptimal hacks in Psychtoolbox itself to work around the unfixable flaws
     of a black box.
 
-### Installation via script
+### Installation via script (Not recommended for Debian or Ubuntu users)
 
 The installation works the same as on Windows or OS X, so follow the instructions
 on the main [download][1] page. However, Psychtoolbox requires a few software
@@ -41,7 +41,7 @@ libraries to be installed on your Linux system. The installer will tell you
 what kind of libraries you need to install, should some of them be missing. For
 the most simple way of installation, read on.
 
-### Neuro Debian installation
+### Neuro Debian installation (Recommended!)
 
 The most convenient way of installation if you have Debian or a Debian
 derivative, e.g., Ubuntu Linux, is the [NeuroDebian repository of
@@ -57,14 +57,14 @@ Psychtoolbox under GNU/Octave.
 
     sudo apt-get install octave-psychtoolbox-3 
 
-If you prefer to run Psychtoolbox with Matlab, you can can run the function
-[DownloadAdditionsForNeuroDebian][3] from within a Matlab running under Linux.
-It will install a few additional files needed to run Psychtoolbox with Matlab
-on Linux.
-
-Alternately install this meta-package
+If you prefer to run Psychtoolbox with Matlab, install this meta-package
 
     sudo apt-get install matlab-psychtoolbox-3 
+
+If you want to do things the hard way, you can can run the function
+[DownloadAdditionsForNeuroDebian][3] from within a Matlab running under
+Linux. It will install a few additional files needed to run Psychtoolbox
+with Matlab on Linux.
 
 ### Debian-7/testing/unstable, Ubuntu 12.10 and later installation
 
@@ -76,11 +76,16 @@ use your favorite package manager to install the psychtoolbox-3 package and
 you're done. E.g., in a terminal window on Ubuntu 12.10:
 
     sudo apt-get install psychtoolbox-3
+    
+However, this is limited to Octave, Matlab packages aren't provided. Also the
+packages shipping with Debian and Ubuntu themselves are usually quite outdated
+and don't contain the latest features, bug fixes and improvements, so we
+recommend going for the NeuroDebian packages mentioned in the previous section.
 
 ### Choice of Distribution
 
 The Linux specific code in PTB is currently being developed and tested using
-[Ubuntu Linux][4]. We recommend this distribution because
+[Ubuntu Linux][4]. We recommend this distribution mostly just because
 it is beginner friendly and constantly tested with Psychtoolbox. However, there
 is nothing wrong with other Linux distributions, so feel free to use them, but
 keep in mind we can only provide you with support for Ubuntu at the moment. See
@@ -97,6 +102,24 @@ libraries.
 To work around these problems, it is often sufficient to delete or move all
 `lib*.so*` files in your `Matlab/bin/glnx86` or `Matlab/bin/glnxa64` folder
 that showed up in the MEX file loading errors.
+
+### After basic installation ###
+
+Once Psychtoolbox works within Matlab or Octave, you should run the script
+`PsychLinuxConfiguration` once, with Matlab or Octave started in commandline
+mode, e.g., `matlab -nojvm` or `octave`. The script will ask you to provide
+your administrator/user password and tweak some system settings for optimal
+performance with Psychtoolbox. Then you will be required to follow the instructions
+provided by the script, and to reboot your machine once for the setttings to
+take effect.
+
+Another recommendation is to install a low-latency Linux kernel for optimized
+timing, e.g., on Ubuntu flavors and probably also Debian flavors:
+
+>> sudo apt-get install linux-lowlatency
+
+Optimization of the display server settings for good visual timing is
+achieved by following the Linux instructions in ">> help SyncTrouble"
 
 
 [1]: /download#linux
