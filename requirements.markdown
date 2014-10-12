@@ -73,7 +73,7 @@ release, which has been packaged to be ready-to-use with GNU Octave.
 
 Recently NeuroDebian has begun to curate open-source packages [for Matlab as
 well][neurodebian-matlab], and since provides two sets of packages, one for
-Octave and one for Matlab.
+Octave ("octave-psychtoolbox-3") and one for Matlab ("matlab-psychtoolbox-3").
 
 For details on these options, see the [Linux installation instructions][linux-install].
 
@@ -221,8 +221,9 @@ advantage of their features.
 
 The latest generation of integrated Intel HD graphics cards, e.g., Intel HD
 2000, HD 3000, as found in many modern “Intel Core” processors, provide decent
-functionality, accuracy and performance for not too demanding tasks. They are
-OpenGL-3 / Direct3D-10 compliant. Numeric precision is on par with recent
+functionality, accuracy and performance for not too demanding tasks *on Linux*.
+*Use on other operating systems than Linux might go much less well*. These cards
+are OpenGL-3 / Direct3D-10 compliant. Numeric precision is on par with recent
 NVidia or AMD cards for most (but not all) accuracy tests that have been
 executed on a Intel HD card under Linux. Absolute graphics performance is of
 course significantly lower than that of current discrete NVidia or AMD cards.
