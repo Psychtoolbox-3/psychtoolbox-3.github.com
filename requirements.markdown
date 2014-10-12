@@ -180,6 +180,12 @@ component that ships with all modern Linux distributions.
 See [GStreamer][docs-gstreamer] (or `>> help GStreamer`) for installation
 instructions for the different systems.
 
+#### Microsoft Kinect support on Linux and OSX: libfreenect-0.15 required
+
+For use of your PsychKinect / PsychKinectCore driver on Linux or OSX,
+at least version 0.15 of libfreenect is needed. See `>> help InstallKinect`
+for instructions.
+
 Basic hardware requirements
 ---------------------------
 
