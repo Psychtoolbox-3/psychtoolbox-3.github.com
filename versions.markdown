@@ -56,11 +56,14 @@ The following releases of old Psychtoolbox versions are available.
 development of PTB-3, but this numbering caused so much confusion with respect
 to PTB Version 2 that we have now abandoned that system.</small>
 
+*To download and install the following versions, use the
+[`DownloadPsychtoolbox`][standard-installer] function*
+
 `Psychtoolbox-3.0.11`
    : A snapshot of the code as of September 2014: This was the final 3.0.11 release
      before start of the 3.0.12 series. It was the last version that supported
      32-Bit Matlab on any operating system (specifically on Linux and Windows, as
-     support for 32-Bit Matlab was cancelled already in 3.0.10). Going on, only
+     support for 32-Bit Matlab for OSX was cancelled already in 3.0.10). Going on, only
      64-Bit Octave and Matlab are supported on all operating systems, and only
      32-Bit Octave continues to be supported on Linux. This was also the last version
      to work on OSX versions older than 10.8 "Mountain Lion", and to be tested and
@@ -112,3 +115,4 @@ to PTB Version 2 that we have now abandoned that system.</small>
 
   [developers]: http://psychtoolbox.org/CurrentActiveDevelopers
   [legacy-installer]: https://raw.githubusercontent.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadLegacyPsychtoolbox.m
+  [standard-installer]: https://raw.githubusercontent.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadPsychtoolbox.m
