@@ -8,9 +8,11 @@ Despite its popularity, Psychtoolbox-3 currently doesn't receive any funding for
 
 If you want to show some gratitude for the work done and help to keep Psychtoolbox-3 development sustainable, please consider donating some money.
 
-Currently one way of donating to Mario Kleiner is by donating to the user "kleinerm" via the GratiPay service:
+Currently one way of donating to Mario Kleiner is by donating to the user "kleinerm" via the GratiPay service. This is useful if you want to donate a small amount in a weekly recurring fashion:
 
 - [GratiPay - Donate to Mario Kleiner][gratipaydonate]
+
+Another way to donate is to click on the PayPal donate button at the bottom of this page.
 
 Thank you for your support!
 
