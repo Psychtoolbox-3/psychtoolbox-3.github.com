@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: donatetomarioviapaypal
 title: Donations
 categories: getting-started
 ---
