@@ -6,7 +6,7 @@ categories: dive-in
 
 ### How to contribute financially
 
-[See our donations page][/donations]
+[See our donations page](/donations)
 
 ### How to help develop the toolbox
 
