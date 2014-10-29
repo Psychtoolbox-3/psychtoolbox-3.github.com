@@ -1,5 +1,5 @@
 ---
-layout: donatetomarioviapaypal
+layout: default
 title: Donations
 categories: getting-started
 ---
@@ -10,12 +10,10 @@ If you want to show some gratitude for the work done and help to keep Psychtoolb
 
 Currently one way of donating to Mario Kleiner is by donating to the user "kleinerm" via the GratiPay service. This is useful if you want to donate a small amount in a weekly recurring fashion:
 
-- [GratiPay - Donate to Mario Kleiner][gratipaydonate]
+- [GratiPay - Donate to Mario Kleiner](https://gratipay.com/kleinerm/)
 
-Another way to donate is to click on the PayPal donate button at the bottom of this page.
+Another way to donate is via PayPal:
+
 
 Thank you for your support!
 
-* * *
-
-[gratipaydonate]: https://gratipay.com/kleinerm/
