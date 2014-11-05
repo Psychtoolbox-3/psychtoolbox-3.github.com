@@ -91,8 +91,8 @@ Psychtoolbox should work on
 -   64-bit Matlab on OS X 10.8 "Mountain Lion" and later. Tested with R2012a.
 -   64-bit Octave v3.8 on OS X 10.8 "Mountain Lion" and later
 
-Regular testing currently only happens on the latest version of OS X 10.9
-“Mavericks” with 64-Bit Octave 3.8.0, and with 64-bit Matlab R2012a. This is
+Regular testing currently only happens on the latest version of OS X 10.10
+“Yosemite” with 64-Bit Octave 3.8.0, and with 64-bit Matlab R2012a. This is
 the only marginally supported version of OS X at this point in time.
 
 The current toolbox version 3.0.12 releases do not work under OS X 10.7
@@ -112,7 +112,7 @@ Psychtoolbox. If you need to use a PowerPC machine, stick to version
 3.0.9.
 
 In general, operating system versions 10.4 “Tiger” and 10.6 “Snow
-Leopard” seem to be relatively unproblematic in use, i.e., most of the
+Leopard” seemed to be relatively unproblematic in use, i.e., most of the
 many operating system bugs we found now have workarounds implemented in
 Psychtoolbox. 10.5 “Leopard” was a rather buggy operating system,
 especially for multi-display stimulus presentation and stereoscopic
@@ -180,10 +180,10 @@ component that ships with all modern Linux distributions.
 See [GStreamer][docs-gstreamer] (or `>> help GStreamer`) for installation
 instructions for the different systems.
 
-#### Microsoft Kinect support on Linux and OSX: libfreenect-0.15 required
+#### Microsoft Kinect support on Linux and OSX: libfreenect-0.5 required
 
 For use of your PsychKinect / PsychKinectCore driver on Linux or OSX,
-at least version 0.15 of libfreenect is needed. See `>> help InstallKinect`
+at least version 0.5 of libfreenect is needed. See `>> help InstallKinect`
 for instructions.
 
 Basic hardware requirements
@@ -194,7 +194,7 @@ Basic hardware requirements
     or the 32-bit or 64-bit versions of GNU/Linux.
 
 -   Intel Macs: Any Intel-based Macintosh computer that is capable of
-    running 64-Bit OS X 10.8 “Mavericks” or later, or 32/64 Bit GNU/Linux.
+    running 64-Bit OS X 10.8 “Mountain Lion” or later, or 32/64 Bit GNU/Linux.
 
 -   The Psychtoolbox distributed by the Debian project also supports
     other processor architectures, e.g., PowerPC, ARM, MIPS, Sun
