@@ -44,7 +44,7 @@ Read below how you can assist us in helping you effectively ...
 > lots of good tips on how to behave on community-run support channels. 
 > 
 > **If you notice a particularly helpful answer on the forum**, we will all be
-> grateful if you would copy it to the [FAQ section](faq) on our Wiki to preserve it for posterity.  You may want to
+> grateful if you would copy it to the [FAQ section][faq] on our Wiki to preserve it for posterity.  You may want to
 > edit it down to the relevant bits. With time we will incorporate and cross-reference these texts elsewhere in the
 > project.
 
@@ -53,6 +53,4 @@ Read below how you can assist us in helping you effectively ...
   [docs-demos]: http://docs.psychtoolbox.org/PsychDemos
   [docs-documentation]: http://docs.psychtoolbox.org/PsychDocumentation
   [forum]: https://groups.yahoo.com/neo/groups/psychtoolbox/conversations/topics
-
-
-
+  [faq]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/wiki/FAQ
