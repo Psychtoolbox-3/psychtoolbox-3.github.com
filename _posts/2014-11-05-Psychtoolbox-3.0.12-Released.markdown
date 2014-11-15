@@ -20,7 +20,7 @@ Changes with respect to version 3.0.11:
 
 ### System and software requirements
 
--   Only 64-Bit Windows-7 is officially supported. PTB only gets (infrequently
+-   MS-Windows: Only 64-Bit Windows-7 is officially supported. PTB only gets (infrequently
     and lightly) tested with Windows-7. It should also work with 64-Bit Windows-8
     and later and with 64-Bit Windows Vista and 64-Bit Windows-XP, but
     if you run into problems with those earlier or later systems you are
@@ -30,12 +30,12 @@ Changes with respect to version 3.0.11:
     
     32-Bit versions of Windows will no longer work with Psychtoolbox 3.0.12.
 
--   64-Bit OSX version 10.8 "Mountain Lion" and later is needed for PTB to
+-   Apple OSX: 64-Bit OSX version 10.8 "Mountain Lion" and later is needed for PTB to
     work at all, but only OSX 10.10 "Yosemite" is officially supported. No
     future testing, bug fixing or troubleshooting will be performed for any
     version but 10.10 "Yosemite".
     
--   All reasonably modern versions of 32-Bit and 64-Bit Linux should work.
+-   GNU/Linux: All reasonably modern versions of 32-Bit and 64-Bit Linux should work.
     Primary development and testing is done on Ubuntu 14.04-LTS and 14.10,
     and compatible flavors, e.g, KUbuntu 14.04-LTS and KUbuntu 14.10. These
     are the officially supported Linux distributions. GNU/Debian version 7
