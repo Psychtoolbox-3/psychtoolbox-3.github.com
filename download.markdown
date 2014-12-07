@@ -4,6 +4,11 @@ title: Download, Installation, and Update
 categories: getting-started
 ---
 
+#### Psychtoolbox needs donations to keep development and maintenance going
+
+[Click this link to our donations page to learn how you can contribute!](/donations)
+
+
 In order to install and use the Psychtoolbox, *you must already have
 Matlab or Octave installed on your computer*, unless you install for
 Octave on Linux via the NeuroDebian repositories. If you already have
