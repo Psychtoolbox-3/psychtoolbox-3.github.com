@@ -61,6 +61,16 @@ If you prefer to run Psychtoolbox with Matlab, install this meta-package
 
     sudo apt-get install matlab-psychtoolbox-3 
 
+The Psychtoolbox for Matlab won't get permanently added to your Matlab
+path by default. You can execute the following command from a terminal
+to run a Matlab session with Psychtoolbox added to the path for the
+duration of that session:
+
+    ptb3-matlab
+
+You could then execute Matlabs savepath command to add it permanently
+if you wanted.
+
 If you want to do things the hard way, you can can run the function
 [DownloadAdditionsForNeuroDebian][3] from within a Matlab running under
 Linux. It will install a few additional files needed to run Psychtoolbox
