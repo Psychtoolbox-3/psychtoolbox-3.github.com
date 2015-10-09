@@ -20,6 +20,10 @@ As usual, the complete develoment history can be found in our GitHub repository.
   Look at "help OculusVR" and "help PsychVRHMD" for general setup and usage instructions.
   
   Look at the demos MovingLineDemo, VRHMDDemo, VRHMDDemo1, SuperShapeDemo, ImagingStereoDemo(103), MorphDemo on how to use this.
+  
+  The Horde3DForPsychtoolbox repository has been updated as well to provide support for such VR headsets when used with the Horde3D graphics engine in combination with Psychtoolbox. Support is available for 64-Bit Linux, OSX and Windows. Horde3D support for 32-Bit systems has been dropped. Find the repo, together with a demo named "HordeVRHMDDemo1" under the following link:
+  
+  <https://github.com/kleinerm/Horde3DForPsychtoolbox>
 
 #### General improvements:
 
