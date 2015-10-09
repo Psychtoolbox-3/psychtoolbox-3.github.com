@@ -1,11 +1,15 @@
 ---
 layout: post
-title: PTB BETA "Immersator (+SP1)" released
+title: PTB BETA "Immersator" (+SP1) released
 categories: news
 author: kleinerm
 ---
 
-The new BETA "Immersator" and its SP1 were relased at 5th October 2015.
+The new BETA "Immersator" and its SP1 were released at 5th October 2015.
+
+As usual, the complete develoment history can be found in our GitHub repository. The release tag is “PTB_Beta-2015-10-05_V3.0.12”, with the full tree and commit logs under the URL:
+
+https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2015-10-05_V3.0.12
 
 ### New features and improvements:
 
