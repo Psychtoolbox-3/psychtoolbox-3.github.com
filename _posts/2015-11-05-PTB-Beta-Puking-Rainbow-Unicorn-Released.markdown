@@ -25,6 +25,8 @@ As usual, the complete develoment history can be found in our GitHub repository.
   immediately switch to 64-Bit Octave support and cancel support for 32-Bit Octave, so do not rely on
   reintroduced 32-Bit support being around for too long on Windows.
 
+- 64-Bit Octave-4 suppport for Linux, as Ubuntu 15.10 and Debian testing now ship Octave-4. 32-Bit Octave-4 is not supported by us, but the NeuroDebian project will provide 32-Bit Octave-4 support soon for those few still using a 32-Bit system.
+
 - Experimental NVidia USB NVision emitter/stereo goggles support for 64-Bit Linux. This is untested due to lack
   of suitable hardware so far. It should allow to use any graphics card under Linux in frame sequential
   stereo mode with such NVidia stereo goggles, driven via the USB connection.
