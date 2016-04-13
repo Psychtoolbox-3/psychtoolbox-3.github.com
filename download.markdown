@@ -72,7 +72,7 @@ Linux via the NeuroDebian repositories. See the [System Requirements][requiremen
 
     -  [Subversion][svnmac] (Choose your platform as "Community Binaries" select suitable Mac OS X version).
 
-    **Mac OS X Mountain Lion** users also can install the "Command Line Tools" from
+    **Mac OS X Mountain Lion** users instead can install the "Command Line Tools" from
     
     -  <https://developer.apple.com/downloads>
 
@@ -363,7 +363,7 @@ function instead of [`DownloadLegacyPsychtoolbox`][legacy-installer].
 
   [svnwin]: http://www.sliksvn.com/en/download
   [svnmac]: http://www.collab.net/downloads/subversion
-  [installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadPsychtoolbox.m
+  [installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadPsychtoolbox.m.zip
   [legacy-installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadLegacyPsychtoolbox.m
   [gstreamer-win]: http://gstreamer.freedesktop.org/data/pkg/windows/
   [gstreamer-osx]: http://gstreamer.freedesktop.org/data/pkg/osx/
