@@ -4,8 +4,12 @@ title: Citations
 categories: meta
 ---
 
-According to the ISI Web of Science, as of June 26, 2012 the following 2769 papers cite one or more of our two papers on
-this software (Brainard, 1997; Pelli, 1997). Thanks!
+According to Google Scholar, as of June 13th 2016, 13532 papers cite one or more of our three papers on
+this software (Brainard, 1997; Pelli, 1997; Kleiner, Brainard, Pelli 2007). Thanks!
+
+![Plot of unique citations per year](http://chart.apis.google.com/chart?chxr=0,0,2500%7C1,1999,2016&chxs=1,676767,10,0,lt,676767&chxt=y,x&chbh=a,8,10&chs=500x150&cht=bvg&chco=3399CC&chds=0,2500&chd=t:19,50,81,120,164,236,310,472,542,658,843,949,1161,1374,1698,1841,2019,908&chtt=Unique+citations+per+year&chts=676767,13.5)
+
+According to the ISI Web of Science, as of June 26, 2012 the following 2769 papers cited one or more of our two initial papers on this software (Brainard, 1997; Pelli, 1997). Thanks!
 
 ![Plot of unique citations per year](http://chart.apis.google.com/chart?chxr=0,0,500%7C1,1997,2012&chxs=1,676767,10,0,lt,676767&chxt=y,x&chbh=a,8,10&chs=500x150&cht=bvg&chco=3399CC&chds=0,500&chd=t:3,6,19,28,39,52,74,103,138,219,233,299,388,437,499,236&chtt=Unique+citations+per+year&chts=676767,13.5)
 
