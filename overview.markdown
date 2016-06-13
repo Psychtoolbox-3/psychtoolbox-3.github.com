@@ -54,11 +54,10 @@ downloaded thirty thousand times: 24,324 Windows and 8,743 Mac OS 9.
 Psychtoolbox-3 for Mac OSX was downloaded 1,832 times before 22 September 2006.
 
 The current count, since 22 September 2006, of registered unique installations
-of Psychtoolbox-3 appears below. The Psychtoolbox [forum][forum] has over 1500
-members and about 4 messages a day.  Principal investigators and their
+of Psychtoolbox-3 appears below. The Psychtoolbox [forum][forum] has over 2500
+members and about 4 messages a day. Principal investigators and their
 collaborators have identified at least 127 [#grant-supported projects](../grants)
-that use it. ISI Web of Science reports 2769 papers that [cite](../citations) it,
-and according to Google scholar 3481 articles cite it.
+that use it. According to Google scholar, over 13500 articles [cite](../citations) it.
 
 The following link is a PDF file with the slides of a presentation held at ECVP
 2007 in Arezzo by Mario Kleiner. These slides will give you a quick overview
