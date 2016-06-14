@@ -11,7 +11,7 @@ this software (Brainard, 1997; Pelli, 1997; Kleiner, Brainard, Pelli 2007). Than
 
 According to the ISI Web of Science, as of June 26, 2012 the following 2769 papers cited one or more of our two initial papers on this software (Brainard, 1997; Pelli, 1997). Thanks!
 
-![Plot of unique citations per year](http://chart.apis.google.com/chart?chxr=0,0,500%7C1,1997,2012&chxs=1,676767,10,0,lt,676767&chxt=y,x&chbh=a,8,10&chs=500x150&cht=bvg&chco=3399CC&chds=0,500&chd=t:3,6,19,28,39,52,74,103,138,219,233,299,388,437,499,236&chtt=Unique+citations+per+year&chts=676767,13.5)
+![Plot of unique citations per year](http://chart.apis.google.com/chart?chxr=0,0,500%7C1,1997,2011&chxs=1,676767,10,0,lt,676767&chxt=y,x&chbh=a,8,10&chs=500x150&cht=bvg&chco=3399CC&chds=0,500&chd=t:3,6,19,28,39,52,74,103,138,219,233,299,388,437,499&chtt=Unique+citations+per+year&chts=676767,13.5)
 
 1.  Aaen-Stockdale, C, & Bowns, L. (2006). Motion-detection thresholds for first- and second-order gratings and plaids. *VISION RESEARCH*, *46*(6-7), 925–931. doi:10.1016/j.visres.2005.10.006
 2.  Aaen-Stockdale, Craig, & Hess, R. F. (2008). The amblyopic deficit for global motion is spatial scale invariant. *VISION RESEARCH*, *48*(19), 1965–1971. doi:10.1016/j.visres.2008.06.012
