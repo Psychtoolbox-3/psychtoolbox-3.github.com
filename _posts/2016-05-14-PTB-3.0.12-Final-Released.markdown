@@ -1,0 +1,44 @@
+---
+layout: post
+title: Psychtoolbox-3.0.12 final released
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.12 final has been branched. This is the final release of 3.0.12. I may or may not backport trivial fixes in M-Files for serious bugs to it for a while, but you can mostly consider it done and unsupported from now on.
+
+3.0.12 was the last version to support:
+
+* 32-Bit Octave-4 for MS-Windows.
+* 64-Bit Octave-3.8 for OSX.
+
+* Mac OSX 10.8 "Mountain Lion" and OSX 10.9 "Mavericks".
+
+
+Future beta releases will only support/work on:
+
+
+* 64-Bit Octave-4 for Windows and OSX.
+
+
+* 64-Bit Matlab on all operating systems, R2012a or later is recommended, earlier versions may or may not continue to work, but are no longer tested or supported in case of trouble.
+
+
+* OSX 10.10 Yosemite and 10.11 El Crapitan. Only El Crapitan is tested and somewhat supported in case of trouble.
+
+
+* On Linux i will no longer provide mex files for 32-Bit Octave for Intel machines for direct download from us. However, NeuroDebian / Debian upstream / Ubuntu upstream will continue to provide these mex files in a convenient fashion in their "app-stores", so this is not really a drawback, just something to be aware of.
+
+
+* I will probably allow inclusion of M-Files into future betas which may use object oriented programming (aka classdef) if those files have been shown to work flawlessly on Octave-4 and don't touch widely used core functionality. Octave-4 has limited support for classdef programming, so not all object oriented code will work. We continue to support Octave-3.8 during the life-time of Ubuntu Linux 14.04-LTS, and Octave-3 does not support classdef programming, so such M-Files should be limited to functionality that isn't essential to the use of PTB by the majority of users. 
+
+
+Users who wish to stick to Psychtoolbox 3.0.12 because they want to continue use of a future unsupported platform can redownload Psychtoolbox via:
+
+
+DownloadPsychtoolbox([targetdirectory], 'Psychtoolbox-3.0.12');
+
+Obviously keep backup copies before deleting/redownloading. Alternatively simply refrain from ever executing UpdatePsychtoolbox again.
+
+-mario
+
