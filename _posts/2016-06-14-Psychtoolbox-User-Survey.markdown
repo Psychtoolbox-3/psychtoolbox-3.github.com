@@ -14,12 +14,10 @@ The outcome of this survey may help to secure some short-term, time-limited brid
 The survey has a mandatory part of six questions, important for funding decisions and PTB's future, and an optional longer part of optional questions, mostly to determine how you use PTB, what your needs and wishes are, what hardware/software you use.
 
 
-Follow this link to the survey form if you want to participate:
-
-
-http://goo.gl/forms/LlD2XbNf0XNYuq7B2
-
+[Click on this link to the survey form if you want to participate][SurveyForm]
 
 Thanks,
 
 -mario
+
+[SurveyForm]: <http://goo.gl/forms/LlD2XbNf0XNYuq7B2>
