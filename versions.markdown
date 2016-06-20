@@ -63,23 +63,23 @@ to PTB Version 2 that we have now abandoned that system.</small>
    : A snapshot of the code as of June 2016: This was the final 3.0.12 release
      before start of the 3.0.13 series. 3.0.12 was the last version to support:
 
-   * 32-Bit Octave-4 for MS-Windows.
-   * 64-Bit Octave-3.8 for OSX.
+      * 32-Bit Octave-4 for MS-Windows.
+      * 64-Bit Octave-3.8 for OSX.
+      
+      * Mac OSX 10.8 "Mountain Lion" and OSX 10.9 "Mavericks".
    
-   * Mac OSX 10.8 "Mountain Lion" and OSX 10.9 "Mavericks".
-
-   Future beta releases will only support/work on:
-
-   * 64-Bit Octave-4 for Windows and OSX.
+      Future beta releases will only support/work on:
    
-   
-   * 64-Bit Matlab on all operating systems, R2012a or later is recommended, earlier versions may or may not continue to work, but are no longer tested or supported in case of trouble.
-   
-   
-   * OSX 10.10 Yosemite and 10.11 El Crapitan. Only El Crapitan is tested and somewhat supported in case of trouble.
-   
-   
-   * On Linux i will no longer provide mex files for 32-Bit Octave for Intel machines for direct download from us. However, NeuroDebian / Debian upstream / Ubuntu upstream will continue to provide these mex files in a convenient fashion in their "app-stores", so this is not really a drawback, just something to be aware of.
+      * 64-Bit Octave-4 for Windows and OSX.
+      
+      
+      * 64-Bit Matlab on all operating systems, R2012a or later is recommended, earlier versions may or may not continue to work, but are no longer tested or supported in case of trouble.
+      
+      
+      * OSX 10.10 Yosemite and 10.11 El Crapitan. Only El Crapitan is tested and somewhat supported in case of trouble.
+      
+      
+      * On Linux i will no longer provide mex files for 32-Bit Octave for Intel machines for direct download from us. However, NeuroDebian / Debian upstream / Ubuntu upstream will continue to provide these mex files in a convenient fashion in their "app-stores", so this is not really a drawback, just something to be aware of.
 
 `Psychtoolbox-3.0.11`
    : A snapshot of the code as of September 2014: This was the final 3.0.11 release
