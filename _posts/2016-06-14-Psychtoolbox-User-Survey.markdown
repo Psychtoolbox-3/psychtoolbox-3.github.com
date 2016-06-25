@@ -5,7 +5,7 @@ categories: news
 author: kleinerm
 ---
 
-# So far we got 194 responses in 6 days - Good, but we need more! Keep them coming!!
+# So far we got 282 responses in 11 days - Good, but we need more! Keep them coming!!
 
 We are currently conducting a user survey for Psychtoolbox. Please participate, the sooner the better! We need one person per lab to respond, ideally one with sufficient insight into the operation of the lab, the labs needs, and the labs ability to contribute funding to PTB. In other words, the PI of the lab, or maybe a lab manager might be best suitable to fill out the survey.
 
