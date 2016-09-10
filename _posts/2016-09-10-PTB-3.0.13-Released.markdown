@@ -9,7 +9,7 @@ Psychtoolbox 3.0.13 "Boldly go where no one has gone before!" was released at 10
 As usual, the complete development history can be found in our GitHub repository.
 The release tag is “PTB_Beta-2016-09-10_V3.0.13”, with the full tree and commit logs under the URL:
 
-Release: https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2016-09-10_V3.0.13
+Release: <https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2016-09-10_V3.0.13>
 
 ### New features and improvements:
 
