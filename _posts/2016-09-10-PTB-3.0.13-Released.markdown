@@ -1,0 +1,44 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.13 "Boldly go where no one has gone before!" was released at 10th September 2016.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2016-09-10_V3.0.13”, with the full tree and commit logs under the URL:
+
+Release: https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2016-09-10_V3.0.13
+
+### New features and improvements:
+
+* Initial hybrid graphics laptop support for Linux (prime renderoffload) "help HybridGraphics". Describes setup to get the majority of hybrid graphics laptops to work between "useable" and "really well" under Linux.
+
+* PsychLinuxConfiguration: Automate setup of AMD deep color support, e.g., for DisplayPort deep color and HDMI deep color.
+
+* Some improvements to XOrgConfCreator.
+
+* Provide basic compatibility with the Windows-10 "Windows subsystem for Linux". With a X-Server like XMing installed, allows to run some basic "PTB for Linux" functionality in Windows-10's new Linux emulation layer. However, no sound, no PsychHID functionality/KeyboardQueus/DAQ, very bad timing, visual tearing artifacts. This more for geek cred than for any even remotely research grade use.
+
+* New demo VideoIPWebcamCaptureDemo.m - Capture streaming video from Android IPWebcam app.
+
+* GetGamePadIndices: Make as capable as GetKeyboardIndices.
+
+* CreateProceduralGabor: Add optional 'validModulationRange' parameter. Suggested by Taylor Hanayik.
+
+* DownloadLegacyPsychtoolbox: It's dead, Jim! Download of legacy toolbox versions < 3.0.10 is currently broken.
+
+* SeparateAlphaTextureShader.vert.txt: Add additional (dx2,dy2) offsets. This allows for off-center rotation of sampled texture images. A usage example would be the one described in PTB forum message 20926. Shaders are created via MakeTextureDrawShader('SeparateAlphaChannel'), cfe. DriftDemo6.m
+
+* KbWait: reorganized and simplified input checking a bit. KbQueueFlush minor improvements. From Diederick.
+
+* KbQueueWait now gained forWhat and untilTime, like KbWait. From Diederick.
+
+* DrawFormattedText's 'flipVertical' fixed for new text renderer. From Diederick.
+
+* PsychPortaudio: Give better error feedback if trying to open same device multiple times.
+
+* Daq: Update help texts wrt. USB 1024-LS. Now verified to work well.
+
+* Minor other stuff here and there.
