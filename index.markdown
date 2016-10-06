@@ -16,8 +16,8 @@ transformations and the QUEST threshold seeking algorithm.
 Psychtoolbox has many active users, an active [forum](forum), and is widely
 [cited](citations). PTB-3 is based on the deprecated Psychophysics Toolbox Version 2
 with its Matlab C extensions rewritten to be more modular and to use OpenGL on
-the back end. The current version supports Matlab 7.x and Octave 3.2.x on Mac
-OSX, Linux and Windows.
+the back end. The current version supports Matlab R2012a+ and Octave 4.0.x on Linux,
+MacOSX, and Windows.
 
 Psychtoolbox News
 -----------------
