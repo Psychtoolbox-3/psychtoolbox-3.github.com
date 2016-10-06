@@ -24,12 +24,12 @@ Short version
 -   *Runtime environment:*
 
     64-Bit Matlab version 7.14 (R2012a) or later, and GNU Octave version 3.8 or later on
-    Linux and 64-Bit Octave version 4.0.x on OS X and MS-Windows.
+    Linux, and 64-Bit Octave version 4.0.x on OS X and MS-Windows.
 
 -   *Graphics card:*
 
-    Recommended are any OpenGL 2.1 (or better) capable GPUs from AMD or NVidia.
-    Modern Intel HD-Series graphics cards should work reliably for moderately
+    Recommended are OpenGL 2.1 (or better) capable GPUs from AMD or NVidia.
+    Modern Intel HD-Series graphics cards should work reliably for medium
     complex workloads on Linux. More recent OpenGL-3/4 GPUs may expose additional
     useful features. The absolute minimum requirement is OpenGL-1.2 support, but
     functionality and performance will be limited with such old GPUs. 
@@ -39,13 +39,15 @@ Short version
     performance gpu will likely be wrong on most such laptops and there is no
     known way to fix this with software workarounds, so you might be restricted
     to the integrated low performance gpu. At least Intel integrated gpus are
-    often very buggy under MS-Windows themselves, so you would be out of luck. The
-    behavior on Linux is better: Some Laptops will work reliably with the high
-    performance gpu and the open-source graphics drivers, e.g., models with older
-    NVidia and AMD graphics cards, but the most recent gpu models from NVidia and
-    AMD are still problematic, or difficult to set up, or unworkable. At least the low
-    performance integrated Intel and AMD graphics chips should work as a reliable
-    fallback on Linux though. "help HybridGraphics" provides up to date info.
+    often _very buggy_ under MS-Windows, so you would be out of luck. The
+    behavior on Linux is a bit better: Some Laptops will work reliably with the high
+    performance gpu and the open-source graphics drivers when combined with an
+    Intel integrated gpu, e.g., models with older NVidia and AMD graphics cards. The
+    most recent gpu models from NVidia and AMD are still problematic., or difficult
+    to set up, or unworkable. The combination of AMD integrated gpu + AMD discrete gpu
+    currently doesn't work well at all. At least the lower performance integrated Intel
+    and AMD graphics chips should work as a reliable fallback on Linux though. Read
+    ["help HybridGraphics"][HybridGraphics], which provides up to date info.
 
 -   *Sound card:*
 
@@ -73,7 +75,10 @@ and development however occurs mainly on the most recent Ubuntu Linux LTS
 releases or flavors of them like e.g., KUbuntu, XUbuntu, LUbuntu ...
 
 It is recommended to keep up with the latest distribution release or to stick
-to the latest long-term support (LTS) Ubuntu release, currently 16.04.1-LTS.
+to the latest long-term support (LTS) Ubuntu release, currently 16.04-LTS.
+
+[Psychtoolbox also works with GNU Octave on the RaspberryPi 2B and later at
+least with the Debian flavor Raspbian.][Raspbian]
 
 The [NeuroDebian project][neurodebian] is an effort to provide convenient
 access to neuroscience-related software on the Debian and Ubuntu Linux
@@ -102,7 +107,7 @@ Psychtoolbox should work on
 
 Regular testing currently only happens on the latest version of OS X 10.11
 “El Capitan” with 64-Bit Octave 4.0, and with 64-bit Matlab R2012a. This is
-the only marginally supported version of OS X at this point in time.
+the only somewhat supported version of OS X at this point in time.
 
 The current toolbox version 3.0.13 releases do not work under OS X 10.9
 or earlier anymore. The last version that worked on OS X 10.8 and 10.9
@@ -134,7 +139,12 @@ resolve some of these issues (see [PsychtoolboxKernelDriver][docs-kerneldriver] 
 Psychtoolbox should work on
 
 -   Matlab 64-bit. Currently tested with release 7.14 R2012a.
-    External requirements: Microsoft C runtime and GStreamer
+    External requirements: Microsoft C runtime and GStreamer.
+
+    Various Matlab versions show instable behavior with GStreamer unless
+    they are used without the Graphical user interface and Java, ie. in
+    matlab.exe -nojvm mode. Matlab can also cause problems on HiDPI "Retina"
+    style displays.
 
 -   GNU Octave 4.0, 64-Bit. Installation of GStreamer _before_ installation
     of Psychtoolbox is mandatory on GNU Octave or the mex files will not work.
@@ -251,7 +261,7 @@ advantage of their features.
 The latest generation of integrated Intel HD graphics cards, e.g., Intel HD
 2000, HD 3000, as found in many modern “Intel Core” processors, provide decent
 functionality, accuracy and performance for not too demanding tasks *on Linux*.
-*Use on other operating systems than Linux will go much less well*. These cards
+*Use on other operating systems than Linux will usually go much less well*. These cards
 are OpenGL-3 / Direct3D-10 compliant. Numeric precision is on par with recent
 NVidia or AMD cards for most (but not all) accuracy tests that have been
 executed on a Intel HD card under Linux. Absolute graphics performance is of
@@ -297,11 +307,12 @@ often even for single-display stimulation on a multi-display setup.
   [neurodebian]: http://neuro.debian.net
   [neurodebian-matlab]: http://neuro.debian.net/proj_matlab.html
   [gstreamer]: http://gstreamer.freedesktop.org
-  [docs-gstreamer]: http://docs.psychtoolbox.org/Gstreamer
-  [docs-kerneldriver]: http://docs.psychtoolbox.org/PsychtoolboxKernelDriver
+  [docs-gstreamer]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/GStreamer.m
+  [docs-kerneldriver]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/PsychtoolboxKernelDriver.m
   [c++ runtime]: http://www.microsoft.com/downloads/details.aspx?familyid=766A6AF7-EC73-40FF-B072-9112BAB119C2&displaylang=en#filelist
   [faqvista]: http://psychtoolbox.org/FaqVista
   [gma950]: http://en.wikipedia.org/wiki/GMA_950
   [gfxhw]: /graphics-requirements
   [Octave4ForWindows]: http://www.tatsuromatsuoka.com/octave/Eng/Win/
   [Raspbian]: https://www.raspberrypi.org/
+  [HybridGraphics]: https://raw.githubusercontent.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/PsychDocumentation/HybridGraphics.m
