@@ -35,6 +35,16 @@ you with a couple of advantages:
 
 ### Installation via script (Not recommended for Debian or Ubuntu users)
 
+If you want to use Psychtoolbox with Matlab instead of Octave, on Debian and
+Ubuntu you can install the `matlab-support` package _after_ installing Matlab
+and _before_ installing Psychtoolbox. This package will do the following useful
+things for us:
+
+"Currently it provides /usr/bin/matlab through the alternatives system, offers
+to work around incompatibilities between the libraries bundled with MATLAB and
+system libraries, and provides a helper utility meant to be used by other packages
+to compile MEX extensions."
+
 The installation works the same as on Windows or OS X, so follow the instructions
 on the main [download][1] page. However, Psychtoolbox requires a few software
 libraries to be installed on your Linux system. The installer will tell you
@@ -57,7 +67,8 @@ Psychtoolbox under GNU/Octave.
 
     sudo apt-get install octave-psychtoolbox-3 
 
-If you prefer to run Psychtoolbox with Matlab, install this meta-package
+If you prefer to run Psychtoolbox with Matlab, _first_ install Matlab,
+then install this meta-package
 
     sudo apt-get install matlab-psychtoolbox-3 
 
@@ -98,7 +109,8 @@ The Linux specific code in PTB is currently being developed and tested using
 [Ubuntu Linux][4]. We recommend this distribution mostly just because
 it is beginner friendly and constantly tested with Psychtoolbox. However, there
 is nothing wrong with other Linux distributions, so feel free to use them, but
-keep in mind we can only provide you with support for Ubuntu at the moment. See
+keep in mind we can only provide you with support for Ubuntu at the moment,
+and you may need to perform extra setup steps with which we can't help you. See
 [[UsingPsychtoolboxOnUbuntu]] for more details and instructions on Ubuntu Linux.
 
 ### Conflicts of libraries shipped with Matlab and system libraries
@@ -113,11 +125,16 @@ To work around these problems, it is often sufficient to delete or move all
 `lib*.so*` files in your `Matlab/bin/glnx86` or `Matlab/bin/glnxa64` folder
 that showed up in the MEX file loading errors.
 
+On Debian and Ubuntu you can install the `matlab-support` package _after_
+installing Matlab and _before_ installing Psychtoolbox. This package will
+automatically take care of moving conflicting libraries out of the way, and
+other potential compatibility issues.
+
 ### After basic installation ###
 
 Once Psychtoolbox works within Matlab or Octave, you should run the script
 `PsychLinuxConfiguration` once, with Matlab or Octave started in commandline
-mode, e.g., `matlab -nojvm` or `octave`. The script will ask you to provide
+mode, e.g., `matlab -nojvm` or `octave --no-gui`. The script will ask you to provide
 your administrator/user password and tweak some system settings for optimal
 performance with Psychtoolbox. Then you will be required to follow the instructions
 provided by the script, and to reboot your machine once for the setttings to
@@ -130,7 +147,10 @@ timing, e.g., on Ubuntu flavors and probably also Debian flavors:
 
 Optimization of the display server settings for good visual timing is
 achieved by following the Linux instructions in ">> help SyncTrouble"
-
+and by running the helper scripts `XOrgConfCreator` and `XOrgConfSelector`
+to automatically create and install optimized xorg.conf configuration files
+for the X-Server. This is especially useful for hybrid graphics laptops and
+multi-display setups.
 
 [1]: /download#linux
 [2]: http://neuro.debian.net
