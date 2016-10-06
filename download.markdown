@@ -144,9 +144,10 @@ directory.
           >> DownloadPsychtoolbox('/home/foo/toolbox')
 
 However, Octave mex files from this download will only work out of the box with
-Octave 3.8 on a fairly recent distribution like Ubuntu 14.04-LTS. All required
-dependencies like GStreamer-1, libdc, etc. need to be manually installed in this
-case. Go for the NeuroDebian installation instead if you are on Debian or Ubuntu flavors.
+Octave 3.8 or 4.0 on a fairly recent distribution like Ubuntu 14.04-LTS or better
+Ubuntu 16.04-LTS. All required dependencies like GStreamer-1, libdc, etc. need to
+be manually installed in this case. Go for the NeuroDebian installation instead if
+you are on Debian or Ubuntu flavors.
 
 [Additional tips][using-on-linux] for installing and using Psychtoolbox on
 Linux.
