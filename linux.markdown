@@ -62,8 +62,9 @@ your Linux distribution.
 
 
 If you install the package `octave-psychtoolbox-3`,
-your system will be automatically configured and tuned for use with
-Psychtoolbox under GNU/Octave.
+your system will be mostly automatically configured and tuned for use with
+Psychtoolbox under GNU/Octave. You should still follow the steps "After
+basic installation" below though:
 
     sudo apt-get install octave-psychtoolbox-3 
 
@@ -80,7 +81,9 @@ duration of that session:
     ptb3-matlab
 
 You could then execute Matlabs savepath command to add it permanently
-if you wanted.
+if you wanted, or simply call `ptb3-matlab` when you need to run a
+Psychtoolbox work session. Read the section "After basic installation"
+below for one time setup steps.
 
 If you want to do things the hard way, you can can run the function
 [DownloadAdditionsForNeuroDebian][3] from within a Matlab running under
