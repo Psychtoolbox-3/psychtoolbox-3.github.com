@@ -270,7 +270,7 @@ More Information {#more}
 
 ### Download problems {#download-problems}
 
-[You can also download Psychtoolbox as a zip filel.](#alternate-download)
+[You can also download Psychtoolbox as a zip file.](#alternate-download)
 
 If the installer complains about being not able to find the Subversion
 client “svn” because it is installed in an unusual location, you can try
