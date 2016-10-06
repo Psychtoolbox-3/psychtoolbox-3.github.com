@@ -218,6 +218,16 @@ Psychtoolbox-3: [Talk slides of Psychtoolbox presentation, given at ECVP 2013 Br
 More detailled information can be found in the Psychtoolbox subfolder
 named `PsychDocumentation` of your Psychtoolbox installation.
 
+Alternate download as a zip file {#alternate-download}
+------------------------------------------------------
+
+If regular installation via Subversion or package respositories does not
+work for some reason, you can also manually download a zip file which
+contains a given Psychtoolbox release, including the source code. These
+downloads are larger due to including the source code.
+
+[Click this link to go to the downloads page for all official releases.][PTBReleases]
+
 Installation without Download {#without-download}
 -------------------------------------------------
 
@@ -259,6 +269,8 @@ More Information {#more}
 ------------------------
 
 ### Download problems {#download-problems}
+
+[You can also download Psychtoolbox as a zip filel.](#alternate-download)
 
 If the installer complains about being not able to find the Subversion
 client “svn” because it is installed in an unusual location, you can try
@@ -367,6 +379,7 @@ function instead of [`DownloadLegacyPsychtoolbox`][legacy-installer].
   [legacy-installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadLegacyPsychtoolbox.m
   [gstreamer-win]: http://gstreamer.freedesktop.org/data/pkg/windows/
   [gstreamer-osx]: http://gstreamer.freedesktop.org/data/pkg/osx/
+  [PTBReleases]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases
 
   [neurodebian]: http://neuro.debian.net/
   [nd-octave]: http://neuro.debian.net/pkgs/octave-psychtoolbox-3.html
