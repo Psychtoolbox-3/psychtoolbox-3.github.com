@@ -229,6 +229,9 @@ downloads are larger due to including the source code.
 
 [Click this link to go to the downloads page for all official releases.][PTBReleases]
 
+Then read on in the following section on how to set up your manually
+downloaded copy of Psychtoolbox.
+
 Installation without Download {#without-download}
 -------------------------------------------------
 
