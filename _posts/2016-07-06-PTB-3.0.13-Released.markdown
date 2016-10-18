@@ -15,7 +15,7 @@ Psychtoolbox 3.0.13 "Set condition 1!" has been released. This is the first rele
 
 It only works on:
 
-* 64-Bit Octave-4 for Windows and OSX.
+* 64-Bit Octave-4 for Linux, Windows and OSX. 64-Bit Octave 3.8 on Linux.
 
 * 64-Bit Matlab on all operating systems, R2012a or later is recommended, earlier versions may or may not continue to work, but are no longer tested or supported in case of trouble.
 
