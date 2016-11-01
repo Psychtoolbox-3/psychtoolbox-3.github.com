@@ -108,8 +108,14 @@ to PTB Version 2 that we have now abandoned that system.</small>
      before start of the 3.0.11 series. It was the last version that supported
      32-Bit Matlab on OSX.
 
-*To download and install the following legacy versions, use the
-[`DownloadLegacyPsychtoolbox`][legacy-installer] function*
+*Automated download and installation of the following legacy versions is no longer
+possible!* Click on the download link for a version, if such a link is provided,
+to download a zip file which approximately contains the code corresponding to that
+version. Unzip the file, then cd() into the Psychtoolbox subfolder of the extracted
+Psychtoolbox-3 folder. Then run the SetupPsychtoolbox function to set that old copy
+up for use. You will need a compatible Matlab/Octave version and operating system
+version for this to work. If you can't find a download link, ask on the Psychtoolbox
+user forum for help.
 
 `Psychtoolbox-3.0.9`
    : A snapshot of the code as of May 2012: This was the final 3.0.9 release
@@ -120,6 +126,7 @@ to PTB Version 2 that we have now abandoned that system.</small>
      and open-source cross-platform GStreamer multimedia framework, which will
      take over Quicktime’s duties. This was also the last version to support
      32-Bit GNU/Octave on MS-Windows and OSX.
+     [`Download link for 3.0.9 zip file`][ptb-3.0.9]
 
 `Psychtoolbox-3.0.8`
    : A snapshot of the code as of April 2011: This was the final 3.0.8 release
@@ -144,3 +151,4 @@ to PTB Version 2 that we have now abandoned that system.</small>
   [developers]: http://psychtoolbox.org/CurrentActiveDevelopers
   [legacy-installer]: https://raw.githubusercontent.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadLegacyPsychtoolbox.m
   [standard-installer]: https://raw.githubusercontent.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadPsychtoolbox.m
+  [ptb-3.0.9]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/archive/Psychtoolbox-3.0.9.zip
