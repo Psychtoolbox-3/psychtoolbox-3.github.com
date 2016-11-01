@@ -37,6 +37,10 @@ Read below how you can assist us in helping you effectively ...
 > 
 > We appreciate it when you **sign with your name and affiliation**.
 > 
+> **If you are a registered member of the forum, your posts won't be subject to moderation
+> delay. Your questions will show up faster and you might get answers faster. Otherwise
+> it may take between hours and days until your post shows up for others to read.**
+>
 > The document [»How To Report Bugs Effectively«](http://www.chiark.greenend.org.uk/~sgtatham/bugs.html) is a great
 > guide on how to report a potential bug in an effective way. **Please read it!**
 > 
