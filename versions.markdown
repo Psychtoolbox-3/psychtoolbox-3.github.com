@@ -4,15 +4,7 @@ title: Flavors and Versions
 categories: getting-started
 ---
 
-Historically, users could choose among two different branches of Psychtoolbox-3: `beta` and `stable`.
-
-Since then the `stable` branch has fallen into disuse and has become
-deprecated. Day-to-day development now occurs on GitHub, with the `beta` branch
-in Subversion serving as the main distribution channel to our users.
-
-| **`beta`**    | current, rolling releases of Psychtoolbox             |
-| **`stable`**  | deprecated and unsupported branch, removed in 3.0.10  |
-
+By default, Psychtoolbox provides the so called **`beta`** branch or flavor.
 The **`beta`** branch provides the latest features, performance enhancements
 and bug fixes. These features have been tested by the [developers][] on the
 system configurations at their disposal and should be reasonably safe for real
