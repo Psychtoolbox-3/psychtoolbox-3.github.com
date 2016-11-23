@@ -146,10 +146,10 @@ Psychtoolbox should work on
     matlab.exe -nojvm mode. Matlab can also cause problems on HiDPI "Retina"
     style displays.
 
--   GNU Octave 4.0, 64-Bit. Installation of GStreamer _before_ installation
+-   [GNU Octave 4.0, 64-Bit. Installation of GStreamer _before_ installation
     of Psychtoolbox is mandatory on GNU Octave or the mex files will not work.
     The current download location for inofficial Octave-4 64-Bit builds is
-    [reached by clicking this link.][Octave4ForWindows]
+    reached by clicking this link.][Octave4ForWindows]
 
 If you choose to use Matlab, you may need to install Microsoft Visual C runtime
 libraries to make it work, specifically `vcredist_x64.exe`. The installer should
