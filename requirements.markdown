@@ -103,7 +103,7 @@ Psychtoolbox is also being developed and tested under Apple Mac OS X.
 Psychtoolbox should work on
 
 -   64-bit Matlab on OS X 10.10 "Yosemite" and later. Tested with R2012a.
--   64-bit Octave v4.0 on OS X 10.10 "Yosemite" and later.
+-  [64-bit Octave v4.0 on OS X 10.10 "Yosemite" and later.][Octave4ForOSX]
 
 Regular testing currently only happens on the latest version of OS X 10.11
 “El Capitan” with 64-Bit Octave 4.0, and with 64-bit Matlab R2012a. This is
@@ -314,5 +314,6 @@ often even for single-display stimulation on a multi-display setup.
   [gma950]: http://en.wikipedia.org/wiki/GMA_950
   [gfxhw]: /graphics-requirements
   [Octave4ForWindows]: http://www.tatsuromatsuoka.com/octave/Eng/Win/
+  [Octave4ForOSX]: https://sourceforge.net/projects/octave/files/Octave%20MacOSX%20Binary/2016-07-11-binary-octave-4.0.3/octave_gui_403_appleblas.dmg/download
   [Raspbian]: https://www.raspberrypi.org/
   [HybridGraphics]: https://raw.githubusercontent.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/PsychDocumentation/HybridGraphics.m
