@@ -1,0 +1,44 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.13 "Jump Prep!" was released at 6th December 2016.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2016-12-06_V3.0.13”, with the full tree and commit logs under the URL:
+
+Release: <https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2016-12-06_V3.0.13>
+
+### New features and improvements:
+
+#### All operating systems:
+
+* Download/Setup/UpdatePsychtoolbox: Be more lenient on unsupported platforms, to allow downloading of old PTB versions.
+* Fix compatibility of MOGL low-level OpenGL for Matlab support with Matlab R2015b and later versions.
+* MOGL: Fix glClearNamedFramebufferfi().
+* Improvements to DaqAInScan(), some by user jsdpag. New option options.nodiscard. Robustness improvements if multiple DAQ's are connected. Fixes for Matlab's brokeness since R2013b.
+* Improvements to ple and PsychEyelinkDispatchCallback by iandol.
+* Fix getting Psychtoolbox root folder in scripts with nested functions, by zacklb.
+* NetStation: Fixed bug for less than 4 arguments for an event and improved argument handling for events. By Justin Ales.
+* VBLSyncTest: Only abort via ESC key, truncate plots/analysis on short (aborted by ESC) runs.
+* Fixes to text rendering plugin for textHeight return argument of Screen('TextBounds') by Diederick.
+* Misc other fixes and lots of low level compatibility/maintenance work, e.g. upgrade of Screen() and moglcore() to GLEW-2.0, which is now the minimum required GLEW version.
+
+#### OSX:
+
+* Screen: New workarounds for the deficient Apple OS, to avoid some crashes of Matlab/Octave after a 'clear all' and then running a PTB script using Screen() again.
+* PsychtoolboxKernelDriver: Add support for AMD Polaris and Nvidia Pascal gpu families. Support for OSX 10.12 "Sierra".
+* LoadIdentityClut: Intel HD gfx needs type 2 lut on OSX. At least on current Intel HD chips.
+
+#### Windows:
+
+* Fix potential 'deviceIndex' breakage for KbCheck on Windows.
+* IOPort on Windows: Allow specification of COM port numbers > 9, e.g., COM10.
+
+#### Linux:
+
+* Linux: Disable loading of 'lp' parallel port line-printer module harder, to simplify use of parallel ports for digital i/o.
+* Various improvements related to use of hybrid graphics/switchable graphics/Enduro/Optimus Laptops under Linux.
+* Linux: Add docu, config files and modified modesetting ddx for some use of NVidia Optimus Laptops under Linux with the proprietary NVidia driver under X-Server 1.19. See "help HybridGraphics".
