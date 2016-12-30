@@ -34,14 +34,15 @@ This release also cancels support for 64-Bit Octave 4.0 on OSX and Windows and i
   while the problem has been diagnosed, the fix is so far untested.
 * Some new workarounds for OSX sync failures on some iMac Retina 5k models, likely only minimally effective.
 * Terminate support for 64-Bit Octave 4.0.
-* Introduce support for 64-Bit Octave 4.2. Octave 4.2 is currently available via the HomeBrew and Fink package managers.
+* Introduce support for 64-Bit Octave 4.2. Octave 4.2 is currently available via the HomeBrew and MacPorts package managers.
   Psychtoolbox has been only tested with Octave-4.0.0 from HomeBrew. You need to install/compile Octave from source if you
   want functional audioread/audiowrite functions for reading and writing wav audio files, e.g., via
+  
   brew install -s octave --with-docs --with-java --with-sndfile
 
 #### Windows:
 
-* IOPort on Windows: Also accept alternate \.\ notation for COM ports.
+* IOPort on Windows: Also accept alternate \\\\.\ notation for COM ports.
 * Terminate support for 64-Bit Octave 4.0.
 * Introduce support for 64-Bit Octave 4.2. Octave 4.2 can be downloaded from here:
 
