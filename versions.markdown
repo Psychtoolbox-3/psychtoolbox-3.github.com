@@ -51,6 +51,31 @@ to PTB Version 2 that we have now abandoned that system.</small>
 *To download and install the following versions, use the
 [`DownloadPsychtoolbox`][standard-installer] function*
 
+`Psychtoolbox-3.0.13`
+   : A snapshot of the code as of end of December 2016: This was the final 3.0.13 release
+     before start of the 3.0.14 series. 3.0.13 was the last version to support:
+     
+     
+      * 64-Bit Octave-4.0 for MS-Windows.
+     
+     
+      * 64-Bit Octave-4.0 for OSX.
+     
+      
+      * Mac OSX 10.10 "Yosemite".
+   
+   
+      Future beta releases will only support/work on:
+   
+   
+      * 64-Bit Octave-4.2 for Windows and OSX. Octave 3.8 and later on Linux.
+      
+      
+      * 64-Bit Matlab on all operating systems, R2012a or later is recommended, earlier versions may or may not continue to work, but are no longer tested or supported in case of trouble.
+      
+      
+      * OSX 10.11 El Capitan and OSX 10.12 Sierra. Only macOS Sierra is tested and somewhat supported in case of trouble.
+
 `Psychtoolbox-3.0.12`
    : A snapshot of the code as of June 2016: This was the final 3.0.12 release
      before start of the 3.0.13 series. 3.0.12 was the last version to support:
