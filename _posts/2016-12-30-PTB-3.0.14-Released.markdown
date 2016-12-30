@@ -1,0 +1,52 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.14 "Standby FTL!" was released at 30th December 2016.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2016-12-30_V3.0.14”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2016-12-30_V3.0.14>
+
+This is the initial v3.0.14 release. It drops all support for MacOSX 10.10 Yosemite. Psychtoolbox will not work at all anymore on OSX 10.10. Going forward only 10.11 El Capitan and 10.12 Sierra are expected to work, but only 10.12 Sierra is officially supported.
+
+This release also cancels support for 64-Bit Octave 4.0 on OSX and Windows and introduces support for 64-Bit Octave 4.2.0 on OSX and Windows.
+
+### New features and improvements:
+
+#### All operating systems:
+
+* Various help text updates, some refinements to some demos.
+
+#### OSX:
+
+* Terminate support for OSX 10.10 "Yosemite". Psychtoolbox will no longer work at all with 10.10.
+* Without OSX 10.10 our own kernel driver based 10 bit framebuffers on AMD graphics cards won't work anymore, as Apple sabotaged this
+  functionality on 10.11 and later. Therefore remove our own 10 bpc support code.
+* Introduce support for OSX 10.11.4+ native 10 bit framebuffers on supported Apple hardware. This is untested due to lack of suitable
+  hardware, but Apple docs claim it should work "under some conditions" on the 2013 MacPro with "suitable displays" and on the late 2014
+  and late 2015 iMac 27 inch Retina 5k models.
+* OSX 10.12 "Sierra" is now the only officially supported and lightly tested Apple OS, although PTB should continue to work on 10.11.
+* Implement a workaround for the MacBook"Pro" 2016 touchbar brain-damage. This will probably make KbCheck and KbQueues work again, but
+  while the problem has been diagnosed, the fix is so far untested.
+* Some new workarounds for OSX sync failures on some iMac Retina 5k models, likely only minimally effective.
+* Terminate support for 64-Bit Octave 4.0.
+* Introduce support for 64-Bit Octave 4.2. Octave 4.2 is currently available via the HomeBrew and Fink package managers.
+  Psychtoolbox has been only tested with Octave-4.0.0 from HomeBrew. You need to install/compile Octave from source if you
+  want functional audioread/audiowrite functions for reading and writing wav audio files, e.g., via
+  brew install -s octave --with-docs --with-java --with-sndfile
+
+#### Windows:
+
+* IOPort on Windows: Also accept alternate \.\ notation for COM ports.
+* Terminate support for 64-Bit Octave 4.0.
+* Introduce support for 64-Bit Octave 4.2. Octave 4.2 can be downloaded from here:
+
+  <https://ftp.gnu.org/gnu/octave/windows/octave-4.2.0-w64-installer.exe>
+
+#### Linux:
+
+* Some compatibility fixes to XOrgConfCreator on Linux + Matlab + NVidia by Ian Andolina.
