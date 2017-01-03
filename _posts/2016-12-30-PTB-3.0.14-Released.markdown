@@ -5,11 +5,11 @@ categories: news
 author: kleinerm
 ---
 
-Psychtoolbox 3.0.14 "Standby FTL!" was released at 30th December 2016.
+Psychtoolbox 3.0.14 "Standby FTL!" SP1 was released at 3rd January 2017.
 As usual, the complete development history can be found in our GitHub repository.
-The release tag is “PTB_Beta-2016-12-30_V3.0.14”, with the full tree and commit logs under the URL:
+The release tag is “PTB_Beta-2017-01-03_V3.0.14”, with the full tree and commit logs under the URL:
 
-<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2016-12-30_V3.0.14>
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2017-01-03_V3.0.14>
 
 This is the initial v3.0.14 release. It drops all support for MacOSX 10.10 Yosemite. Psychtoolbox will not work at all anymore on OSX 10.10. Going forward only 10.11 El Capitan and 10.12 Sierra are expected to work, but only 10.12 Sierra is officially supported.
 
