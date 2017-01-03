@@ -213,6 +213,10 @@ to use Psychtoolbox with GNU Octave on **Windows** you will _have_ to install
 GStreamer first, even if you do not need any multimedia functions, or Psychtoolbox
 won't work.
 
+Caution: Various Matlab versions **on Microsoft Windows** show instable behavior
+with GStreamer unless they are used without the Graphical user interface and Java,
+ie. in "matlab.exe -nojvm" mode.
+
 On **Linux** you also need GStreamer, but GStreamer is a de-facto standard
 component that ships with all modern Linux distributions.
 
