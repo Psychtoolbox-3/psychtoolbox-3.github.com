@@ -4,6 +4,9 @@ title: Using Psychophysics Toolbox on Ubuntu
 categories: getting-started
 ---
 
+# THIS WEBPAGE IS OUTDATED! PLEASE IGNORE IT UNTIL IT HAS BEEN UPDATED!
+
+
 The most recent beta release (since V3.0.9 revision 2191) contains
 support for 64bit Matlab / Octave, but one cannot mix running 64bit
 Matlab on a 32bit Ubuntu and visa versa. Please see below for some
