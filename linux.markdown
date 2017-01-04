@@ -114,7 +114,7 @@ it is beginner friendly and constantly tested with Psychtoolbox. However, there
 is nothing wrong with other Linux distributions, so feel free to use them, but
 keep in mind we can only provide you with support for Ubuntu at the moment,
 and you may need to perform extra setup steps with which we can't help you. See
-[[UsingPsychtoolboxOnUbuntu]] for more details and instructions on Ubuntu Linux.
+[UsingPsychtoolboxOnUbuntu][5] for more details and instructions on Ubuntu Linux.
 
 ### Conflicts of libraries shipped with Matlab and system libraries
 
@@ -159,3 +159,4 @@ multi-display setups.
 [2]: http://neuro.debian.net
 [3]: http://docs.psychtoolbox.org/DownloadAdditionsForNeuroDebian
 [4]: http://www.ubuntu.com/
+[5]: /ubuntu
