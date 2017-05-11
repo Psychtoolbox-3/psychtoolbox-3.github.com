@@ -1,0 +1,83 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.14 "Spooling up the spinner!" was released at 12th May 2017.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2017-05-12_V3.0.14”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2017-05-12_V3.0.14>
+
+This release contains the accumulated work of 4 months, 200 separate improvements in 176 files, changing about 27000 lines of code. Major work was done under the hood for Linux improvements and prep work for VR HMD support improvements.
+
+Btw. I've observed on some MS-Windows systems that UpdatePsychtoolbox - or more accurately the underlying svn Subversion command line tool - didn't do anything. It claimed a successfull update, but didn't update anything. This was also reported once in our Issue tracker. I don't know if this is a Windows specific svn bug, or something more widespread. Anyway, if UpdatePsychtoolbox doesn't upgrade about 176 files then something went wrong, and you'll need to use DownloadPsychtoolbox for a completely fresh download. Let us know if this happens on other systems than Windows.
+
+### New features and improvements:
+
+#### All operating systems:
+
+* New function Screen('ConstrainCursor'); for Linux/X11 and MS-Windows: Allows to constrain cursor movements to subareas of an onscreen window. Not supportable on OSX due to lack of OS facilities.
+
+* DrawFormattedText: Optionally return per-word bounding boxes to define AOI's, e.g., for text perception + eye tracking studies.
+
+* Brand-new DrawFormattedText2() function and DrawFormattedText2Demo by Diederick Niehorster. More flexible in its formatting and text transformation options than DrawFormattedText. This is considered beta quality for now, bugs may linger in this large new piece of code. I added the ability to return per-word bounding boxes, like in DrawFormattedText, but that code has the limitation that it doesn't yet work with complex compound transforms.
+
+* VideoIPWebcamCaptureDemo: Add sample mode for screencasting. Setup code and example gst-launch lines for live screen-casting from Linux X11 (tested) or Windows (untested) to PTB's videocapture, so random windows from the desktop can be live-displayed into a PTB fullscreen onscreen window.
+
+* Screen('GetImage') can now automatically handle multi-sample anti-aliased drawbuffers without need for manual intermediate steps for readback of such buffers as MSAA resolved images.
+
+* PsychImaging 'PseudoGray' task can now also boost 10 bpc and 12 bpc framebuffers by up to 2.8 bits in grayscale precision in principle, although this is only very lightly and incompletely tested due to lack of suitable native 10/12 bpc display devices.
+
+* New PsychImaging 'UseSubpixelDrive task to allow to drive special medical imaging high precision grayscale displays with high precision, e.g., the "Eizo RadiForce GS-521".
+
+* New GetSecs subfunction [getSecsClock, wallClock, syncErrorSecs] = GetSecs('AllClocks'); returns not only regular GetSecs() timestamp as 'getSecsClock', but also a wall clock timestamp 'wallClock' in UTC world time. This 'wallClock' time can be OS synchronized to external time references, e.g., via NTP, to synchronize it with the clocks of other computers. Measures seconds since some reference point, 1.1.1970 00:00:00 UTC on Linux and OSX with microsecond resolution, seconds since 1.1.1601 00:00:00 UTC on MS-Windows with millisecond resolution. This may come in handy for interoperation with EGI Netstation EEG systems.
+
+* Some improvements to PsychColorCal routines by the Brainard lab.
+
+* Various fixes and small improvements.
+
+* Large amount of under the hood infrastructure prep work for supporting new VR HMD devices, but no support for new devices yet. Check for potential regressions if you use Psychtoolbox Oculus Rift DK1/DK2 support!
+
+
+#### OSX:
+
+* help PsychtoolboxKernelDriver: Update setup instructions / help text for OSX 10.11+.
+
+* Document 10/11 bpc framebuffer mode behaviour on OSX 10.11/10.12, improve setup code. Thanks to Denis Pelli and Hoermet Yiltiz for testing on their machines.
+
+* Some fixes for MacBookPro 2016's brokeness.
+
+
+#### Windows:
+
+* Screen(): Disable the magic "@" master abort key.
+
+* Better support for compose/compound/dead keys handling for GetChar / KbEventGet by Diederick.
+
+* PsychRTBox: Fix box serial port probing for Octave on Windows. Although Xiangrui Li found an even better solution, which is not part of this update yet.
+
+* Fix Optical() brokeness due to compatibility bugs introduced by MS into Windows-7. Credit: Andreas Widmann.
+
+
+#### Linux:
+
+* Improved hybrid graphics laptop support: Detail work and improved setup documentation for hybrid graphics with the open-source drivers (Intel + AMD, Intel + NVidia), and verified that NVidia Optimus (Intel + NVidia) also works ok with NVidia proprietary drivers, as tested on Ubuntu 17.04 "Zesty Zappus". Add extra setup instructions specifically for NVidia + Ubuntu 17.04. Tested on two separate Optimus laptops, a Lenovo Ideapad Z50-70, and a Razer Blade 2016 with GeForce Pascal.
+
+* Improved compatibility with amdgpu-pro hybrid graphics driver, for the very few cases where that driver is beneficial over the standard AMD open-source drivers, e.g., certain 144/165/240 Hz refresh rate displays.
+
+* Improved 11 bpc / 16 bpc native framebuffer support for AMD gpu's, and better setup instructions.
+
+* NVidia NVision 3d stereo emitter support for NVidia stereo goggles on regular consumer class GeForce gpu's, AMD gpu's and Intel gpu's should now work with more emitter models, especially - as tested - with some NVision-2 emitters, whereas before only original NVision-1 emitters worked.
+
+* GetMouseWheel() now also works on Linux.
+
+* Improve GetMouse() coordinate handling on multi-x-screen.
+
+* Make PR-670 photometer work out of the box on Linux by adding workarounds for that devices broken firmware. Note: PR-670 remains broken on OSX 10.11, but seems to work on OSX 10.12.
+
+* Improve default keyboard selection if exotic or broken keyboard like devices are connected.
+
+* Various improvements, bug fixes, too many to mention.
