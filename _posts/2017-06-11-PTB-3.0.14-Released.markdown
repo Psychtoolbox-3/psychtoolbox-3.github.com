@@ -1,0 +1,50 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.14 "Kalsarikännit" was released at 11th June 2017.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2017-06-11_V3.0.14”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2017-06-11_V3.0.14>
+
+This release mostly contains bug-fixes, small improvements and minor new features.
+
+Btw. I've observed on some MS-Windows systems that UpdatePsychtoolbox - or more accurately the underlying svn Subversion command line tool - didn't do anything. It claimed a successfull update, but didn't update anything. This was also reported once in our Issue tracker. I don't know if this is a Windows specific svn bug, or something more widespread. Anyway, if UpdatePsychtoolbox doesn't upgrade/change about 60 files then something went wrong, and you'll need to use DownloadPsychtoolbox for a completely fresh download. Let us know if this happens on other systems than Windows.
+
+### New features and improvements:
+
+#### All operating systems:
+
+* Fix PsychImaging 'EnableCLUTRemapping' task. Did only work in scripts, not functions, due to a bug introduced in last beta. Also had off-by-one indexing errors for > 256 slot LUTs. CLUTMappingBugTest.m allows to test for proper functioning of this now, ie. verifies the bug-fix.
+
+* Fix use of Screen('PutImage') when Psychimaging NormalizedHighRescolorRange task is used. PutImageTest.m verifies the bug fix.
+
+* Improve Screen('LoadNormalizedGammatable') compatibility with functions that expect return values for loadOnNextFlip setting 2 -- where those return arguments are meaningless, but return them anyway with faked values to simplify user scripts.
+
+* NetStation() go back to January 2017 version, as the version from the latest beta contains show-stopper bugs curtesy of myself and Justin Ales. This needs more work before a proper update to NTP synced synching is possible.
+
+* Remove all traces (and users) of the long dead SerialComm() serial port driver for 32-Bit Matlab on OSX. This wasn't used by default by anything, and everything has higher quality IOPort based implementations.
+
+* Final fixes and prep work for the ready-for-release, but unreleased, new OculusVR1 driver for Oculus HMD's which need the 1.x runtime.
+
+* Add compat code to the general VR handling routines like PsychVRHMD, and add some compat routines for functions freshly exposed on the Oculus-1 driver.
+
+* Pimp some VR related demos a bit.
+
+#### Linux:
+
+* Provide anti-aliased round dots on RaspberryPi via Screen('DrawDots'). Raspian can do this now with its current Mesa vc4 driver version.
+
+* Update "help SyncTrouble" and "help HybridGraphics", as well as some flip warning messages, to reflect our current knowledge about this stuff on Linux.
+
+* Fix NVidia Optimus detection on Linux with the proprietary NVidia driver. Turns out our detection code only worked by chance on the NVidia 840M laptop by chance. Increasing hardware samples to n=2 with the Razer Blade 2016 showed it was broken. Now works (hopefully) on all such laptops.
+
+* XOrgConfCreator: Add automatic setup code for 30 bit native framebuffers (Intel, NVidia, amdgpu-pro), and setup for special 16 bpc framebuffer experimental code on Linux + AMD Sea Islands gpus.
+
+#### Windows:
+
+* Make ColorCal2() driver work on Windows by use of virtual COM port, by a dedicated code path.
