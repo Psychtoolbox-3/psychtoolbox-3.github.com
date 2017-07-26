@@ -76,10 +76,7 @@ work well, although it's not polished yet, e.g., the documentation and
 some of the demos are not yet updated and cleaned in all parts. You must
 install the runtime libraries from SR - Research on your system for this
 to work. They come bundled with your Eyelink and are also downloadable
-from their website. As of October 2012, there seems to be no support for
-Eyelink on 64-Bit Windows systems, i.e., Eyelink will not work with
-64-Bit Matlab. This limitation is imposed on us by SR-Research's lack of
-support.
+from their website.
 
 ### `Snd` command for sound output
 
