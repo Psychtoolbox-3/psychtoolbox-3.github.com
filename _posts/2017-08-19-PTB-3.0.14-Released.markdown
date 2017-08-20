@@ -1,0 +1,40 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.14 "Kafkaesque!" was released at 19th August 2017.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2017-08-19_V3.0.14”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2017-08-19_V3.0.14>
+
+### New features and improvements:
+
+#### All operating systems:
+
+* ConfirmInfo/TwoStateQuery: Remove brain-dead, broken GUI mode on current Matlab R2014b+, use sane text mode instead.
+* Helptext updates for KbName and DrawTextPlugin.
+* Make glShaderSource() command more robust against awkward/funky formatted GLSL shader code.
+* Fix ClockRandSeed() for compatibility with Octave, and with current Matlab.
+* Some improvements to ComputeCIEConeFundamentals.m by David Brainard.
+* Add new optional 'GetNTPSynchronize' command to NetStation(), which allows to NTP synchronize event timestamps on suitable EGI Netstation systems for much higher timestamp accuracy. Successfully tested on a 400 series amp with Linux as client and MacOs Netstation amp machine. Also a new helper function GetNTP() which is an OS independent simple NTP client. Code contributed and tested by Andreas Widmann and Urte Roeber, with helpful input by Justin Ales.
+* Add matching/selection of devices by productName, serialNumber or locationID to all of GetKeyboard/Mouse/Gamepad/KeypadIndices, ie. wherever this was missing.
+* VideoMultiCameraCaptureDemo: Make it write movies in a format that even Apples dumb Quicktime player can comprehend, similar to ImagingStereoDemo.
+
+#### Linux:
+
+* PsychOpenHMDVR driver for virtual reality headsets (HMDs) supported by OpenHMD. See "help PsychOpenHMDVR" for help and setup instructions. OpenHMD currently supports the Oculus Rift DK1/DK2/CV1, the HTC Vive, the Sony PSVR, and some more exotic devices. No controller input is supported so far. Only head orientation/rotation tracking supported, no absolute position tracking, as that is wip in OpenHMD. Also less sophisticated latency/blur compensation. The driver is so far tested with the Rift DK2 and Rift CV1 on standard PC and the DK2 on RaspberryPi-2. Use of the CV1 requires running openhmdkeepalivedaemon.
+* Clear screen in multi-x-screen config properly to black in stereomode 4/5 at window close.
+* Support transparent windows on 10 bpc / 30 bit color depth setups.
+* Handle use of software renderer wrt. to stimulus timing a bit more intelligently - avoid false warning.
+* VRHMDDemo: Allow selection of HMD via optional deviceIndex parameter.
+* KbQueues: Fix failure to detect key events on multi-x-screen setups if mouse pointer is on other screen than X-Screen 0.
+
+#### Windows:
+
+* Handle backwards compatibility bugs in AMD's proprietary display drivers for Windows, which cause failure to load identity lut's in LoadIdentityClut() or failure to disable digital display dithering when requested to do so. Investigated and fixes contributed by Mark Repnow.
+
+* Some build system improvements and code formatting cleanups by Diederick. Also removal of dead tests for ancient Matlab 4/5 bugs on ancient MacOS 8/9.
