@@ -1,0 +1,41 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.14 "Yellow Alert!" was released at 8th October 2017.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2017-10-08_V3.0.14”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2017-10-08_V3.0.14>
+
+## New features and improvements:
+
+### All operating systems:
+
+* PsychPowerMate: Add 'List' function for enumerating multiple PowerMates, and the ability of 'Open' to select among them. Add timeout ability to 'WaitButton' and 'WaitRotate'. Add a 'wait for button release' ability to 'WaitButton'. Help text updates.
+* PsychtoolboxConfigDir: Cleanups and error handling improved.
+* Screen('ConfigureDisplay','Brightness') - Fail gracefully on pure brightness queries: Return a -1 "unsupported" status code on unsupported setups instead of error out.
+* Screen: Make blue-line stereo sync lines 3 scanlines high. Increases robustness against slightly buggy display drivers and picky stereo goggle sync equipment.
+* NetStation: Add response check to GetNTP synchronization. For improved error handling. Contributed by Andreas Widmann.
+
+### Linux:
+
+* Research-grade Multi-Touch touchscreen and touchpad support. "help TouchInput" for a starter. MultiTouchMinimalDemo.m for a simple demo. MultiTouchDemo.m for an advanced demo.
+* PsychHID: Motion and valuator change recording in KbQueue event buffers, e.g., for time-stamped background recording of mice/joysticks/gamepad/controller movements etc.
+* PsychHID: Add new KbQueueCreate flag 4 for raw motion event delivery. Mostly useful for capturing raw motion dynamics of pointing devices or joysticks.
+* PsychPowerMate: New functions for background recording of knob turns and knob presses. Also acts as a demo for how to use the new motion/valuator change recording of PsychHID.
+* help Hybridgraphics simplified, now that Ubuntu 16.04.3-LTS makes many things simpler.
+* Improve some timing related info/warning messages.
+
+### Windows:
+
+* help DrawTextPlugin: Give more detailed troubleshooting instructions for Matlab + Windows.
+
+### OSX:
+
+* help PsychtoolboxKernelDriver: Update for Apples latest train wreck.
+* PsychHID/DaqDeviceIndex: Improve USB-HID interface detection. This may make DaqDeviceIndex work more reliable on the train wreck.
+* Add new warning message when running on OSX with broken AMD graphics, so people don't waste time trying to get reliable timing on an unfixable setup. Clarify various other mostly OSX related warning messages.
