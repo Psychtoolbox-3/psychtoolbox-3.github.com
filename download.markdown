@@ -366,11 +366,10 @@ can get that version as well, by passing that revision number instead of
 
 You can also choose to install specific old versions of PTB-3 by
 providing their name instead of ‘current’ or ‘unsupported’. E.g., to
-download Psychtoolbox-3.0.6 you would run
-`DownloadLegacyPsychtoolbox([], [], [], 'Psychtoolbox-3.0.6')`. A list
+download Psychtoolbox-3.0.12 you would run
+`DownloadPsychtoolbox([], [], [], 'Psychtoolbox-3.0.12')`. A list
 of older versions can be found at the bottom of the page found
-[here][versions]. Version 3.0.10 and later use the [`DownloadPsychtoolbox`][installer]
-function instead of [`DownloadLegacyPsychtoolbox`][legacy-installer].
+[here][versions]. This only works for versions since 3.0.10.
 
   [requirements]: /requirements
   [forum]: /forum
