@@ -19,15 +19,15 @@ Short version
     GNU Linux is _strongly_ recommended. Also works on Microsoft Windows (Intel), but will
     be much less well supported by the developers and may have restrictions in functionality,
     reliability, performance and precision for some features, compared to Psychtoolbox running
-    on a modern Linux distribution. Especially multi-display setups under Windows are highly
-    problematic! Use on Apple Mac OS X is still supported but _strongly discouraged_
+    on a modern Linux distribution. Especially multi-display setups and HiDPI Retina displays
+    under Windows are highly problematic! Use on Apple Mac OS X is still supported but _strongly discouraged_
     if you need any kind of reliable timing for visual stimulus presentation or trustworthy
     visual stimulation at all, due to the large number of bugs in the Apple operating system.
 
 -   *Runtime environment:*
 
     64-Bit Matlab version 7.14 (R2012a) or later, and GNU Octave version 3.8 or later version
-    on Linux, and 64-Bit Octave version 4.2 on OS X and on MS-Windows.
+    on Linux, and 64-Bit Octave version 4.2.0 on OS X and on MS-Windows.
 
 -   *Graphics card:*
 
@@ -88,8 +88,7 @@ Linux, Gentoo, and Fedora 24/25. We can't provide much support on other distros
 than Ubuntu LTS flavors due to lack of time and resources.
 
 It is recommended to stick to the latest long-term support (LTS) Ubuntu release,
-currently 16.04.3-LTS, if you want the most well tested setup. However, use of
-Ubuntu 17.10 might be an option if you need support for the latest computer hardware.
+currently 16.04.4-LTS, if you want the most well tested setup.
 
 [Psychtoolbox also works with GNU Octave on the RaspberryPi 2B and later at
 least with the Debian flavor Raspbian.][Raspbian]
@@ -119,12 +118,12 @@ Psychtoolbox is also being developed and tested under Apple Mac OS X.
 Psychtoolbox should "work" in principle on
 
 -  64-bit Matlab on OS X 10.11 "El Capitan" and later. Tested with R2012a.
--  64-bit Octave v4.2 on OS X 10.11 "El Capitan" and later. As of 2016,
-   you will need to get Octave 4.2 from a package manager like HomeBrew
+-  64-bit Octave v4.2.0 on OS X 10.11 "El Capitan" and later. As of 2016,
+   you will need to get Octave 4.2.0 from a package manager like HomeBrew
    or MacPorts, as standalone binary installers are not available yet.
 
 Limited testing currently only happens on the latest version of OS X 10.12
-“macOS Sierra” with 64-Bit Octave 4.2, and with 64-bit Matlab R2012a. This is
+“macOS Sierra” with 64-Bit Octave 4.2.0, and with 64-bit Matlab R2012a. This is
 the only somewhat supported version of OS X at this point in time. macOS is
 the most buggy and hazardous operating system you could use for visual stimulation,
 or DAQ digital/analog i/o, so running real data collection using macOS will likely
@@ -168,9 +167,9 @@ Psychtoolbox should work on
     matlab.exe -nojvm mode. Matlab can also cause problems on HiDPI "Retina"
     style displays.
 
--   [GNU Octave 4.2, 64-Bit. Installation of GStreamer _before_ installation
+-   [GNU Octave 4.2.0, 64-Bit. Installation of GStreamer _before_ installation
     of Psychtoolbox is mandatory on GNU Octave or the mex files will not work.
-    The current download location for official Octave-4.2 64-Bit is reached by
+    The current download location for official Octave-4.2.0 64-Bit is reached by
     clicking this link.][Octave4ForWindows]
 
 If you choose to use Matlab, you may need to install Microsoft Visual C runtime
@@ -183,7 +182,7 @@ but Windows 10 and won't provide any bug fixes or troubleshooting help for any
 issues that can't be shown to be also present on Windows 10. Specifically, moving
 away from Windows XP, Vista and Windows 8/8.1 is strongly recommended. Windows 7
 should continue to work without major problems at this point in time, but we don't
-frequently test for this.
+test for this anymore.
 
 We do aim to keep the toolbox working under these and future versions of
 Windows, but full support for all features is a lower priority for us
@@ -202,11 +201,10 @@ provided it is properly configured, e.g., the visual stimulus monitor selected a
 "main monitor" or "primary display", and either no HiDPI displays or careful
 configuration of such a setup with HiDPI displays.
 
-We cannot however recommend Window 7 at all for dual-display stereo
+We cannot however recommend Window at all for dual-display stereo
 stimulus presentation or for tasks with a need for high visual timing
 precision. For some caveats with respect to Vista and later see [our FAQ
-entry about Vista and Windows-7][faqvista]. These problems are even worse
-with Windows 8, although no systematic testing has been performed by us so far.
+entry about Vista and Windows-7][faqvista].
 
 Generally we recommend switching to a modern version of Linux, e.g., a flavor of
 Ubuntu 16.04-LTS.
@@ -221,7 +219,8 @@ movie recording, video capture and video recording. Multimedia functions won't
 work on **Windows** or **OSX** without GStreamer being installed. If you want
 to use Psychtoolbox with GNU Octave on **Windows** you will _have_ to install
 GStreamer first, even if you do not need any multimedia functions, or Psychtoolbox
-won't work.
+won't work. GStreamer 1.14 or later is needed for audio playback with more than 2
+audio channels on Windows.
 
 Caution: Various Matlab versions **on Microsoft Windows** show instable behavior
 with GStreamer unless they are used without the Graphical user interface and Java,
