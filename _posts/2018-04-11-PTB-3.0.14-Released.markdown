@@ -1,0 +1,56 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.14 "Red Alert!" was released at 11th April 2018.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2018-04-11_V3.0.14”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2018-04-11_V3.0.14>
+
+## New features and improvements:
+
+### All operating systems:
+
+* PsychtoolboxPostInstallRoutine: No longer perform any online registration.
+* No longer prompt for any participation in the 1st Psychtoolbox user online survey.
+* Various help text updates. Various minor updates in debugging output.
+* Ask(): Fix formatting / text alignment. Fix by user jonasvannijnatten.
+* psychrethrow(): Handle MException objects.
+* EyelinkGazeContingentDemo: Fix issues due to recent Matlab case sensitivity.
+* New types of procedural shaders by Ian Andolina: Add smoothed edge disc and sine gratings, add square wave grating.
+* LoadOBJFile: Fix error if texture coordinates or normal vectors are missing. Reported and partially fixed by user wangsen131. Additional fixups by kleinerm
+* PsychPortAudio: Handle lifecyle issues and some other bugs. Fixes contributed by user bmtran. Some minor other improvements by kleinerm.
+* Screen: Fix Screen('Close', window) logic.
+* Screen: No longer report 'dacbits' in Screen('ReadNormalizedGammaTable') - it's bs. There's no way we can faithfully detect and report it, so just report 0 from now on as "I don't know". Better no info than wrong info.
+* PsychColorimetric: New function ComputeDE2000_Lab by David Brainard's lab. Other minor improvements, e.g., to SplineSpd().
+* Quest: Improvements by Denis Pelli: "Enhanced to allow for monotonically DECREASING psychometric function. Formerly we assumed it was monotonically INCREASING. Now it can be either. This new feature has not been extensively tested.". Some optional animated graph for QuestDemo.
+
+### Linux:
+
+* XOrgConfCreator improvements:
+   * Handle multi x-screen setups better if modesetting-ddx video driver is used, as on latest Ubuntu 16.04.3+ LTS systems for Intel graphics chips.
+   * Force the NVidia proprietary graphics driver to report/allow VR HMDs instead of hiding them. By default such HMDs get hidden, unless a proper xorg.conf is created to force them to show up.
+   * Allow selection of color depth 30 on a per-x-screen basis. Not needed for AMD gpu's, but useful for NVidia proprietary and for future depth 30 support on NVidia open-source and Intel open-source drivers.
+
+* Screen: Allow logging and delay of NVision3D trigger timing. setenv('PTB_NVISION3D_DELAY', 'SECONDS'); allows to delay trigger emission by SECONDS after vblank, in case we need to phase-shift the trigger emission. This will also swap emission of left-eye and right-eye triggers. This temporary debug setting should allow to better find out how to get this actually working ok'ish.
+
+* Build fixes for latest Debian upstream.
+
+* Minor improvements to low-level gpu control code.
+
+* Add AMD DCE12 as supported display engine for low level functions - Untested due to lack of hardware, assumed to work like older generations DCE10/11.
+
+* Screen: Disable GstDeviceMonitor/DeviceProvider support on Linux. It only provided minor to no benefit so far, we can easily do without it. This removal allows to build PTB on Ubuntu > 14.04 in the future while hopefully retaining backward compatibility for basic features to Ubuntu 14.04 for its remaining 1 year life-span.
+
+### Windows:
+
+* Timeglue: Improve single-core locking on Windows. This to avoid a potential failure in very rare circumstances. In fact, only one failure incident was reported in over 10 years, not reproducible, so this may be a pointless improvement, but who knows?
+
+### OSX:
+
+* GetMouseWheel(): Fix potential compatibility issue with some mice when using this low-level trickery. May or may not help. May or may not hurt.
+* GetKeyboardIndices/GetKeypadIndices: Filter out locationID zero on OSX. Just like default logic for KbCheck does, to deal with the broken MacBookPro 2016+ touch-bar.
