@@ -5,11 +5,11 @@ categories: news
 author: kleinerm
 ---
 
-Psychtoolbox 3.0.14 "Red Alert!" was released at 11th April 2018.
+Psychtoolbox 3.0.14 "Red Alert!" SP1 was released at 13th April 2018.
 As usual, the complete development history can be found in our GitHub repository.
-The release tag is “PTB_Beta-2018-04-11_V3.0.14”, with the full tree and commit logs under the URL:
+The release tag is “PTB_Beta-2018-04-13_V3.0.14”, with the full tree and commit logs under the URL:
 
-<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2018-04-11_V3.0.14>
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2018-04-13_V3.0.14>
 
 ## New features and improvements:
 
@@ -26,6 +26,7 @@ The release tag is “PTB_Beta-2018-04-11_V3.0.14”, with the full tree and com
 * PsychPortAudio: Handle lifecyle issues and some other bugs. Fixes contributed by user bmtran. Some minor other improvements by kleinerm.
 * Screen: Fix Screen('Close', window) logic.
 * Screen: No longer report 'dacbits' in Screen('ReadNormalizedGammaTable') - it's bs. There's no way we can faithfully detect and report it, so just report 0 from now on as "I don't know". Better no info than wrong info.
+* Fix creation of procedural shaders on multi-window, multi-screen setups under certain corner cases.
 * PsychColorimetric: New function ComputeDE2000_Lab by David Brainard's lab. Other minor improvements, e.g., to SplineSpd().
 * Quest: Improvements by Denis Pelli: "Enhanced to allow for monotonically DECREASING psychometric function. Formerly we assumed it was monotonically INCREASING. Now it can be either. This new feature has not been extensively tested.". Some optional animated graph for QuestDemo.
 
