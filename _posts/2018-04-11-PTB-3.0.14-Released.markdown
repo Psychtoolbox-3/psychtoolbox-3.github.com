@@ -5,16 +5,17 @@ categories: news
 author: kleinerm
 ---
 
-Psychtoolbox 3.0.14 "Red Alert!" SP2 was released at 13th April 2018.
+Psychtoolbox 3.0.14 "Red Alert!" SP3 was released at 9th May 2018.
 As usual, the complete development history can be found in our GitHub repository.
-The release tag is “PTB_Beta-2018-04-14_V3.0.14”, with the full tree and commit logs under the URL:
+The release tag is “PTB_Beta-2018-05-09_V3.0.14”, with the full tree and commit logs under the URL:
 
-<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2018-04-14_V3.0.14>
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2018-05-09_V3.0.14>
 
 ## New features and improvements:
 
 ### All operating systems:
 
+* Fix a crash on Linux or MacOSX with Matlab R2018a if CTRL+C is pressed while KbQueues are active.
 * PsychtoolboxPostInstallRoutine: No longer perform any online registration.
 * No longer prompt for any participation in the 1st Psychtoolbox user online survey.
 * Various help text updates. Various minor updates in debugging output.
