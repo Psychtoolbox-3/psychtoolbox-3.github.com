@@ -17,9 +17,6 @@ kramdown:
   use_coderay: false
   # input: GFM
 
-google_analytics:
-  account: UA-6031251-4
-
 defaults:
   -
     scope:
