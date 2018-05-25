@@ -4,10 +4,6 @@ title: Contributing to Psychtoolbox
 categories: dive-in
 ---
 
-### How to contribute financially
-
-[See our donations page](/donations)
-
 ### How to help develop the toolbox
 
 With Psychtoolbox-3 we have moved to an open source development model, and we
