@@ -5,11 +5,11 @@ categories: news
 author: kleinerm
 ---
 
-Psychtoolbox 3.0.14 "Red Alert!" SP3 was released at 9th May 2018.
+Psychtoolbox 3.0.14 "Red Alert!" SP4 was released at 26th May 2018.
 As usual, the complete development history can be found in our GitHub repository.
-The release tag is “PTB_Beta-2018-05-09_V3.0.14”, with the full tree and commit logs under the URL:
+The release tag is “PTB_Beta-2018-05-26_V3.0.14”, with the full tree and commit logs under the URL:
 
-<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2018-05-09_V3.0.14>
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2018-05-26_V3.0.14>
 
 ## New features and improvements:
 
@@ -30,6 +30,9 @@ The release tag is “PTB_Beta-2018-05-09_V3.0.14”, with the full tree and com
 * Fix creation of procedural shaders on multi-window, multi-screen setups under certain corner cases.
 * PsychColorimetric: New function ComputeDE2000_Lab by David Brainard's lab. Other minor improvements, e.g., to SplineSpd().
 * Quest: Improvements by Denis Pelli: "Enhanced to allow for monotonically DECREASING psychometric function. Formerly we assumed it was monotonically INCREASING. Now it can be either. This new feature has not been extensively tested.". Some optional animated graph for QuestDemo.
+* New ProceduralSmoothedDiscMaskDemo by Ian Andolina.
+* Small "help GStreamer" fix.
+* Welcome splash is no longer asking for donations.
 
 ### Linux:
 
