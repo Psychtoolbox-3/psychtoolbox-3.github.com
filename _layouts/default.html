@@ -3,11 +3,11 @@
 <title>{{ site.name }}{% if page.title %} - {{ page.title }}{% endif %}</title>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=no">
-<link rel=stylesheet href=/stylesheets/styles.css>
-<link rel=stylesheet href=/stylesheets/doxy.css>
-<link rel=stylesheet href=/stylesheets/pygment_trac.css>
-<link rel=alternate title="PTB News" type=application/atom+xml href=/news.atom>
-<link rel=icon type=image/x-icon href=/favicon.ico>
+<link rel=stylesheet href={{ site.baseurl }}/stylesheets/styles.css>
+<link rel=stylesheet href={{ site.baseurl }}/stylesheets/doxy.css>
+<link rel=stylesheet href={{ site.baseurl }}/stylesheets/pygment_trac.css>
+<link rel=alternate title="PTB News" type=application/atom+xml href={ site.baseurl }}/news.atom>
+<link rel=icon type=image/x-icon href={{ site.baseurl }}/favicon.ico>
 </head>
 
 <div class=wrapper>
@@ -23,10 +23,10 @@
   <ul>
     <li><small>Getting started</small>
     <ul>
-      <li><a href=/overview>Overview</a></li>
-      <li><a href=/versions>Versions</a></li>
-      <li><a href=/requirements>System Requirements</a></li>
-      <li><a href=/download>Download</a></li>
+      <li><a href={{ site.baseurl }}/overview.html>Overview</a></li>
+      <li><a href={{ site.baseurl }}/versions.html>Versions</a></li>
+      <li><a href={{ site.baseurl }}/requirements.html>System Requirements</a></li>
+      <li><a href={{ site.baseurl }}/download.html>Download</a></li>
     </ul>
     </li>
   </ul>
@@ -34,16 +34,16 @@
     <li><small>Getting help</small>
     <ul>
       <li><a href=http://peterscarfe.com/ptbtutorials.html>Tutorial</a></li>
-      <li><a href=http://docs.psychtoolbox.org/Psychtoolbox>Function Reference</a></li>
+      <li><a href={{ site.baseurl }}/docs/Psychtoolbox.html>Function Reference</a></li>
       <li><a href=https://github.com/Psychtoolbox-3/Psychtoolbox-3/wiki/FAQ>FAQ</a></li>
-      <li><a href=/forum>Forum</a></li>
+      <li><a href={{ site.baseurl }}/forum.html>Forum</a></li>
     </ul>
-    </li>
+  </li>
   </ul>
   <ul>
     <li><small>Diving in</small>
     <ul>
-      <li><a href=/contribute>Contribute to the project</a></li>
+      <li><a href={{ site.baseurl }}/contribute>Contribute to the project</a></li>
       <li><a href=https://github.com/Psychtoolbox-3/Psychtoolbox-3/wiki>Wiki</a></li>
       <li><a href=https://github.com/Psychtoolbox-3/Psychtoolbox-3/issues>Bugs &amp; Feature requests</a></li>
       <li><a href=https://github.com/Psychtoolbox-3/Psychtoolbox-3>Git repository</a></li>
@@ -64,7 +64,6 @@
 
 {{ content }}
 
-</section>
 <footer>
   <p> <a href="https://github.com/psychtoolbox-3/psychtoolbox-3.github.com/edit/master/{{ page.path }}">
     edit and fork this page on GitHub
@@ -72,6 +71,8 @@
   </p>
   <p>Last updated on <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%B %d, %Y' }}</time></p>  
 </footer>
+</section>
+
 </div>
 <script src=/javascripts/scale.fix.js></script>
 <script>

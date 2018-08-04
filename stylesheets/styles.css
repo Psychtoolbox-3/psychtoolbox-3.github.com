@@ -86,8 +86,9 @@ a small {
 }
 
 .wrapper {
-  width: 960px;
-  margin: 0 auto;
+ /* width: 960px;*/
+ margin: 0 auto;
+ overflow: auto;
 }
 
 blockquote {
@@ -227,9 +228,9 @@ aside ul.buttons a strong {
 }
 
 section#content {
-  width: 500px;
-  float: right;
+  width: auto;
   padding-bottom: 50px;
+  padding-left: 400px;
 }
 
 h4#contents {
@@ -267,10 +268,11 @@ hr {
 
 footer {
   width: 370px;
-  float: left;
-  position: fixed;
-  bottom: 50px;
+  position: relative;
+  bottom: 50 px;
   font-size: 75%;
+  text-align: right;
+  clear: both;
 }
 
 footer p {
