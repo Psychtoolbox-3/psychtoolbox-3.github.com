@@ -1,11 +1,12 @@
 name: Psychtoolbox-3
 url: http://psychtoolbox.org
-permalink: pretty
+permalink:  /:title.html
 pygments: false
 markdown: kramdown
 
 gems:
   - jekyll-sitemap
+  - jekyll-titles-from-headings
 
 kramdown:
   auto_ids: true
@@ -16,6 +17,11 @@ kramdown:
   # smart_quotes:  ["apos", "apos", "ldquo", "rdquo"]
   use_coderay: false
   # input: GFM
+
+titles_from_headings:
+  enabled:     true
+  strip_title: true
+  collections: false
 
 defaults:
   -
