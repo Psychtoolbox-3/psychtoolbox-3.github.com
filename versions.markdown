@@ -51,6 +51,16 @@ to PTB Version 2 that we have now abandoned that system.</small>
 *To download and install the following versions, use the
 [`DownloadPsychtoolbox`][standard-installer] function*
 
+`Psychtoolbox-3.0.14`
+   : A snapshot of the code as of beginning of September 2018: This was the final 3.0.14 release
+     before start of the 3.0.15 series. 3.0.14 was the last version to support:
+     
+     
+      * 64-Bit Octave-4.2 for MS-Windows.
+     
+     
+      * 64-Bit Octave-4.2 for OSX.
+
 `Psychtoolbox-3.0.13`
    : A snapshot of the code as of end of December 2016: This was the final 3.0.13 release
      before start of the 3.0.14 series. 3.0.13 was the last version to support:
