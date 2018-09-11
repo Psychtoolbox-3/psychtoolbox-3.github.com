@@ -59,10 +59,13 @@ Short version
 
 -   *Sound card:*
 
+    ![ASIO compatible logo](images/ASIO-compatible-logo-Steinberg-TM-BW.jpg)
+
     On Linux and OS X, any card supported by the operating system should work
     well, as well as built-in sound chips. On Windows, an ASIO capable audio card
-    is absolutely required for research grade timing precision and low-latency.
-
+    is absolutely required for research grade timing precision and low-latency. 
+    [Click this link to find info about download and installation of the 
+required ASIO extension plugin][ASIO]
 
 Operating systems
 -----------------
@@ -189,8 +192,8 @@ Windows, but full support for all features is a lower priority for us
 than Linux.
 
 As of October 1, 2016, Windows-7 and Windows-10 have been tested for
-basic compatibility with PTB-3. Precise sound presentation requires a
-native ASIO sound card and specific careful configuration. Test of
+basic compatibility with PTB-3. [Precise sound presentation requires a
+native ASIO sound card and specific careful configuration.][ASIO] Test of
 visual stimulus presentation on 3 test setups showed somewhat mixed
 results, especially dual display presentation and presentation timing
 were rather disappointing. In general Windows 7 seems to be workable for
@@ -354,3 +357,4 @@ often even for single-display stimulation on a multi-display setup.
   [Octave4ForOSX]: https://sourceforge.net/projects/octave/files/Octave%20MacOSX%20Binary/2016-07-11-binary-octave-4.0.3/octave_gui_403_appleblas.dmg/download
   [Raspbian]: https://www.raspberrypi.org/
   [HybridGraphics]: https://raw.githubusercontent.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/PsychDocumentation/HybridGraphics.m
+  [ASIO]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/wiki/Hardware:-Audio-Devices
