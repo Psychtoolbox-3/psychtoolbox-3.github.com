@@ -60,6 +60,10 @@ to PTB Version 2 that we have now abandoned that system.</small>
      
      
       * 64-Bit Octave-4.2 for OSX.
+      
+      
+      * ASIO pro-audio support for MS-Windows. <small>ASIO is a trademark and software of Steinberg Media Technologies GmbH.</small>
+
 
 `Psychtoolbox-3.0.13`
    : A snapshot of the code as of end of December 2016: This was the final 3.0.13 release
