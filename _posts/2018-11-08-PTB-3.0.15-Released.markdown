@@ -1,0 +1,89 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.15 "The Shape of Things to Come" was released at 8th November 2018.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2018-11-08_V3.0.15”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2018-11-08_V3.0.15>
+
+This is a substantial upgrade, collecting over 5 months of work, with potential backwards compatibility breaking changes especially for Windows audio support.
+Apart from various small improvements and bug fixes these are the major new features and improvements:
+
+## New features and improvements:
+
+### All operating systems:
+
+* Substantial internal code refactoring.
+
+* Initial port of a subset of Psychtoolbox mex files to Python:
+    * WaitSecs, GetSecs, IOPort, PsychHID and PsychPortAudio are ported.
+    * Python 2.7 and Python 3.5+ should work, but Python 3.6+ is recommended.
+    * Python extension binaries are not bundled with Psychtoolbox, to not further bloat the distribution, also because these extensions have to be built specifically for each minor Python 3.x release, due to limitations in Python's ABI compatibility. Local builds and installs can be done via standard distutils method, e.g., python setup.py install --user
+    * Basic Python support code and basic test code in the PsychPython subfolder of the root folder.
+    * Porting of these Psychtoolbox mex files to Python was financially supported by a contract with the University of Nottingham on behalf of Jon Peirce and the PsychoPy toolkit. Thank you!
+
+* PsychPortAudio: Upgrade used libportaudio from our over 10 years old heavily modified branch to what is essentially the (almost) unmodified current upstream Portaudio v19.6.0-devel. This has different OS specific consequences - new features and improvements, but also loss of features - listed below. Various audio demos and tests have been refined accordingly. Small other improvements, e.g., one can now specify a fractional sampling frequency in 'Open' and debug/diagnostic messages have been refined.
+
+* BitsPlusPlus improvements:
+    * Support two connected CRS devices for dual-display operation: New subfunction 'SetDualDevices' controls and describes the new functionality.
+    * Improvements to 'OpenBits#' - handles, port specs.
+
+* Screen: Remove restriction of valid refresh between 25-250 Hz. Also allow to skip "out-of-vblank" 2 msecs minimum waits before Flip via a new ConserveVRAMSettings flag. This allows to operate displays with more than 250 Hz refresh rate, or even more than 500 Hz, e.g., custom DLP devices, although the latter might be highly unstable on operating systems other than Linux.
+
+* CreateProceduralSmoothedApertureSineGrating(): Clarify interactions with alpha blending. Documentation and demos got updated. With contributions from Matthew Krause. See GitHub issue #505 for more details and discussion (https://github.com/Psychtoolbox-3/Psychtoolbox-3/issues/505).
+
+* PsychOptics: OtfToPsf(): Increase default tolerance for negative PSF values. (David Brainard)
+
+
+### Linux:
+
+* This release is tested and known to work well on Ubuntu 18.04 LTS "The Bionic Beaver", which going forward is now the recommended Linux distribution. Ubuntu 16.04 LTS continues to be supported and tested, specifically Ubuntu 16.04.5 LTS. Ubuntu 14.04 LTS is less than 6 months away from its end-of-life and no longer receives any compatibility testing, but expected but not verified to work reasonably well. Please note that our upstream release may not work with Ubuntu 18.10 "Cosmic Coala" at least as tested with Ubuntu 18.10's Octave 4.4.1 due to potential ABI compatibility issues. You need to use official distribution packages built and provided by Ubuntu 18.10, or NeuroDebian provided packages of octave-psychtoolbox-3 once they become available.
+
+* Screen: Improve detection of AMD gpu's under Mesa 18 and later on Ubuntu 18.04 LTS. Also now support AMD Vega 10, Vega 20 and Vega M for low-level control.
+
+* Screen: Handle amdgpu-kms's DisplayCore code for engine detection. Make display detection and identity pixel passthrough work on latest generation AMD gpu's controlled by the new AMD DisplayCore driver. AMD RavenRidge APU's have a new DCN display engine, and PTB's low-level gpu control code is not tested/verified for compatibility with those new display engines. May or may not work.
+
+* Fix multitouch touch screen input support on multi-X-Screen setups. This didn't work properly due to what i think is likely a X-Server bug. Now we work around the problem. Reported by multiple users to work now on single x-screen and multi x-screen setups with one or more touch displays.
+
+* PsychPortAudio on Linux now dynamically links against the system provided libportaudio.so.2, e.g., version 19.6.0 on Ubuntu 18.04 LTS. This
+    * Allows for additional low latency optimizations for even lower latencies at requested latency class 3 or higher, e.g., less than 10 msecs on Intel HDA onboard sound chips.
+    * Supports use of the JACK audio server as an additional backend to the standard ALSA backend.
+    * It is so far untested if PsychPortAudio still works out of the box on Ubuntu 14.04 LTS, whose bundled portaudio library may or may not be too old, whereas support on Ubuntu 16.04 LTS is verified.
+
+### Windows:
+
+* GNU Octave 4.2.0 is no longer supported. Psychtoolbox 3.0.15 now requires and supports the new 64-Bit Octave 4.4.1 (https://ftp.gnu.org/gnu/octave/windows/octave-4.4.1-w64-installer.exe). Psychtoolbox on Octave 4.4.1 has been tested with GStreamer 1.14.4. Due to incompatibilities between Octave and GStreamer you will need to delete the following DLL files in the C:\Octave\4.4.1\bin\ folder, or Screen() won't work properly:
+    * libglib-2.0.0.dll
+    * libgmodule-2.0.0.dll
+    * opengl32.dll
+
+* wintabslowloop.m: Fix missing assignment/misasignment of pkt(9) when using WinTabMex() for accessing digitizer tablets. This allows to properly handle pen pressure information. However, user reporting suggests that the WinTab api is sometimes unreliable on some tablets and use cases.
+
+* PsychPortaudio now uses a dynamically linked Portaudio 19.6.0-devel DLL from upstream:
+    * As this DLL is build with MSVC 2017, it requires the "Microsoft Visual C++ 2015 redistributable
+Update 3", which may or may not be part of Windows-7 and later. I couldn't verify this due to lack of testing hardware.
+    * The proprietary ASIO sound API and backend is no longer supported. Note: "ASIO is a trademark and software of Steinberg Media Technologies GmbH."
+    * DirectSound backend support is also removed in this build.
+    * 'DirectInputMonitoring' is no longer supported.
+    * PsychPortAudio now supports the Windows WASAPI sound system on Windows Vista and later and uses it in low-latency/high timing precision mode. Microsoft documentation claims substantially improved performance for WASAPI compared to older legacy Windows backends(See https://docs.microsoft.com/en-gb/windows-hardware/drivers/audio/low-latency-audio). Testing on one machine with a Intel HDA onboard sound chip showed that millisecond accurate sound timing and sound onset timestamping is possible, with comparable precision to the former ASIO backend on pro sound hardware. On Windows-10, absolute latencies for sound onset of less than 10 msecs and bit-exact audio reproduction are possible for high settings of reqlatencyclass, whereas older versions of Windows are more limited, often to at least 20 msecs latency.
+    * Mapping of PsychPortAudio sound channels to hardware channels is now via the 'selectchannels' parameter of PsychPortAudio('Open', ...); on the WASAPI backend with Windows 7 - Windows 10. However, how well channel mapping works is so far untested. Mapping is not likely to be identical with the one formerly supported via ASIO, so scripts using the 'selectchannels' parameter may need to be adapted.
+
+ ### OSX:
+
+* macOS 10.12 Sierra is no longer tested by myself. My development and main test system is now macOS 10.13 High Sierra, but testing is very limited due to ageing and partially defective hardware. Psychtoolbox is now built against the 10.14 Mojave SDK, but should continue to work on macOS 10.11 El Capitan, which however judging by the lack of critical security updates seems to have been declared end-of-life and abandoned by Apple. macOS 10.14 Mojave received some very light testing. Mojave seems to be the so far worst Apple operating system for visual stimulation. Testing on a Apple macMini 2012 showed visual stimulation to be completely broken.
+
+* GNU Octave 4.2 is no longer supported. Psychtoolbox 3.0.15 now requires and supports the new 64-Bit Octave 4.4.1, as tested with the HomeBrew version (https://formulae.brew.sh/formula/octave)
+
+* Screen: Workaround broken OSX Show/HideCursor support. Multiple invocations of HideCursor or ShowCursor no longer stack and behave like on real operating systems.
+
+* PsychPortaudio now uses unmodified and statically linked Portaudio 19.6.0-devel:
+    * 'DirectInputMonitoring' is no longer supported.
+    * Mapping of PsychPortAudio sound channels to hardware channels is now possible via the 'selectchannels' parameter of PsychPortAudio('Open', ...);
+    * PsychPortAudio may now allow for a tad lower latency and better timing precision on modern Apple Macs due to some optimizations and fixes.
+
+Enjoy!
