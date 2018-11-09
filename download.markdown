@@ -63,11 +63,7 @@ Linux via the NeuroDebian repositories. See the [System Requirements][requiremen
 
 #### Mac {#Mac}
 
-1.  **Mac OS X < 10.5 Leopard only:** Download Subversion installer manually
-
-    -  [Subversion][svnmac] (Choose your platform as "Community Binaries" select suitable Mac OS X version).
-
-    **Mac OS X Mountain Lion** users instead can install the "Command Line Tools" from
+1.  Get and install Subversion from somewhere, e.g., HomeBrew or
     
     -  <https://developer.apple.com/downloads>
 
@@ -139,8 +135,8 @@ directory.
           >> DownloadPsychtoolbox('/home/foo/toolbox')
 
 However, Octave mex files from this download will only work out of the box with
-Octave 3.8 or 4.0 on a fairly recent distribution like Ubuntu 14.04-LTS or better
-Ubuntu 16.04-LTS. All required dependencies like GStreamer-1, libdc, etc. need to
+Octave 3.8, 4.0 or 4.2 on a fairly recent distribution like Ubuntu 16.04-LTS or better
+Ubuntu 18.04-LTS. All required dependencies like GStreamer-1, libdc, etc. need to
 be manually installed in this case. Go for the NeuroDebian installation instead if
 you are on Debian or Ubuntu flavors.
 
@@ -169,6 +165,11 @@ folders of your liking instead:
     GStreamer-1.0 runtime from [gstreamer.freedesktop.org][gstreamer-win].
     Make absolutely sure that you install all offered packages. Read `help GStreamer`
     carefully for this purpose, *before downloading and installing GStreamer*.
+    
+    If you intend to use Octave, you *must* install GStreamer, even if you don't
+    intend to use multi-media functions. In this case you will need to delete
+    the following DLL files from the C:\Octave\4.4.1\bin\ folder:
+    libglib-2.0.0.dll, libgmodule-2.0.0.dll and opengl32.dll
 8.  You also need to install the Microsoft Runtime Libraries for MSVC 2010. You
     can find installers for these at Microsoft’s site beforehand. Otherwise
     when our installer aborted half-ways, follow the instructions it prints to
@@ -189,8 +190,9 @@ folders of your liking instead:
 
     If the download fails, read below on [Download
     Problems](#download-problems).
-10. [If you need high quality sound output, you may need to install some extra
-    software. Click this link to find info about download and installation of it][ASIO]
+10. [If you use the outdated Psychtoolbox 3.0.14 or earlier and need high quality
+    sound output, you may need to install some extra software. Click this link to
+    find info about download and installation of it][ASIO]
 
 If you want to know more about the downloader, see [DownloadPsychtoolbox][docs-download]
 (or `help DownloadPsychtoolbox` in the Matlab command window.)
