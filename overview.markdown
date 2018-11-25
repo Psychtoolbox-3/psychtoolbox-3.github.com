@@ -60,11 +60,10 @@ collaborators have identified at least 127 [#grant-supported projects](../grants
 that use it. According to Google scholar, over 13500 articles [cite](../citations) it.
 
 The following link is a PDF file with the slides of a presentation held at ECVP
-2007 in Arezzo by Mario Kleiner. These slides will give you a quick overview
-about the new features of Psychtoolbox-3 and differences to the old
-Psychtoolbox-2:
+2013 in Bremen by Mario Kleiner. These slides will give you a quick overview
+about using the new features of Psychtoolbox-3:
 
-- [Psychtoolbox presentation, given at ECVP 2007 Arezzo][arezzo]
+- [Psychtoolbox presentation, given at ECVP 2013 Bremen][bremen]
 
 
 Good luck programming.
@@ -78,7 +77,7 @@ Mario Kleiner, David Brainard, Denis Pelli, Chris Broussard, Tobias Wolf, Dieder
     PTB registration stats here
 
  [docs-demos]: http://docs.psychtoolbox.org/PsychDemos
- [arezzo]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/Psychtoolbox3-Slides.pdf
+ [bremen]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/PTBTutorial-ECVP2013.pdf
  [forum]: /forum
 
  *[C or Pascal]: Presumably, this blurb was written 15 years ago
