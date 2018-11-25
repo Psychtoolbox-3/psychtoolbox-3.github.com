@@ -1,0 +1,38 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.15 Beta update "Late Bloomer" was released at 25th November 2018.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2018-11-25_V3.0.15”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2018-11-25_V3.0.15>
+
+The Psychtoolbox-3.0.15 beta update "Late Bloomer", apart from minor improvements, adds one piece of long awaited functionality, basic support for the Oculus VR Rift CV1 Virtual Reality headset for 64-Bit Microsoft Windows 7 and later. Two years later than i hoped, but better late than never...
+
+## New features and improvements:
+
+### All operating systems:
+
+* Some help text updates.
+
+* TextBounds(): Make usable with Unicode text.
+
+* Remove Psychtoolbox3-Slides.pdf - it was utterly outdated.
+
+* License and trademark doc updates.
+
+### Windows:
+
+* Finally adds support for the Oculus Rift CV1 and other Oculus VR products using the "new" v1 SDK and runtime. The new PsychOculusVR1() driver allows use of the Oculus Rift CV1 under 64-Bit Microsoft-Windows 7 or later versions with Octave 4.4.1 or Matlab. Use of Windows-10 is strongly recommended. Existing VR usercode should not need modifications if it uses the PsychVRHMD() high-level driver, as the new driver is as compatible to the old driver as possible, so the switch to a Rift CV1 should be basically plug & play. Example demos that should work are VRHMDDemo, VRHMDDemo1, SuperShapeDemo, MorphDemo, and as part of the separate Horde3DForPsychtoolbox package the HordeVRDemo. Classic "closed loop" VR with a tight stimulus presentation loop that uses Screen('Flip', win); should work well, as tested on Windows-10. Timed flips however, a la Screen('Flip', win, tWhen); with a target time more than a video frame in the future, may show unreliable timing. Timestamps returned by 'Flip' will be generally not very accurate or trusworthy, despite being self-consistent. Pausing animations for more than about a second will bring up the sandclock icon in the VR view. These are limitations imposed on us, because the Oculus v1 SDK allows for much less low-level control than our other VR drivers, ie. the old Oculus drivers for Rift DK1 and Rift DK2, or the PsychOpenHMDVR driver for Linux. It is unclear if this can be improved upon, but so far all my attempts failed due to SDK limitations or what might be bugs in the proprietary Oculus runtime / VR compositor for Windows, or in NVidia's proprietary graphics drivers for Windows. The new driver exposes support for VR input controllers like the Oculus Remote control, the XBox controller or the Oculus Touch controllers - the new demo VRInputStuffTest.m shows the new input capabilities.
+
+### OSX:
+
+* AppleVersion(): Make it less broken, but still pretty pointless.
+
+* PsychJavaSwingCleanup: Try to cope with latest macOS Mojave bugs: On Mojave, onscreen windows get stuck after “window close”, because Apple. Probably new bugs in macOS 10.14 Window/GUI event handling. The hack is as awful as the operating system it tries to deal with. Use of macOS 10.14 is strongly discouraged and officially unsupported at this time.
+
+Enjoy!
