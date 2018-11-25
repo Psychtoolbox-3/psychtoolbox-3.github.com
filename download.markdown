@@ -168,7 +168,7 @@ folders of your liking instead:
     
     If you intend to use Octave, you *must* install GStreamer, even if you don't
     intend to use multi-media functions. In this case you will need to delete
-    the following DLL files from the C:\Octave\4.4.1\bin\ folder:
+    the following DLL files from the C:\Octave\Octave-4.4.1\bin\ folder:
     libglib-2.0.0.dll, libgmodule-2.0.0.dll and opengl32.dll
 8.  You also need to install the Microsoft Runtime Libraries for MSVC 2010. You
     can find installers for these at Microsoft’s site beforehand. Otherwise
@@ -190,7 +190,7 @@ folders of your liking instead:
 
     If the download fails, read below on [Download
     Problems](#download-problems).
-10. [If you use the outdated Psychtoolbox 3.0.14 or earlier and need high quality
+10. [Only if you use the outdated Psychtoolbox 3.0.14 or earlier and need high quality
     sound output, you may need to install some extra software. Click this link to
     find info about download and installation of it][ASIO]
 
@@ -209,10 +209,6 @@ toolbox, and
 `>> help PsychDemos` will list all the demos available.
 
 A PDF file with the presentation slides of an introduction into
-Psychtoolbox-3 and the differences to Psychtoolbox-2: [Talk slides of
-Psychtoolbox presentation, given at ECVP 2007 Arezzo][arezzo]
-
-A more recent PDF file with the presentation slides of an introduction into
 Psychtoolbox-3: [Talk slides of Psychtoolbox presentation, given at ECVP 2013 Bremen][bremen]
 
 More detailled information can be found in the Psychtoolbox subfolder
