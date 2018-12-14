@@ -62,7 +62,10 @@ to PTB Version 2 that we have now abandoned that system.</small>
       * 64-Bit Octave-4.2 for OSX.
       
       
-      * ASIO pro-audio support for MS-Windows. <small>ASIO is a trademark and software of Steinberg Media Technologies GmbH.</small>
+      * ASIO ® pro-audio support for MS-Windows. <small>ASIO is a trademark and software of Steinberg Media Technologies GmbH.</small>
+      [Update: All versions of Psychtoolbox lost all ASIO ® support in December 2018, so you will
+      need to use Psychtoolbox 3.0.15 or later if you want a WASAPI based replacement for reasonably
+      good sound support on Windows.][AudioHW]
 
 
 `Psychtoolbox-3.0.13`
@@ -183,3 +186,4 @@ user forum for help.
   [legacy-installer]: https://raw.githubusercontent.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadLegacyPsychtoolbox.m
   [standard-installer]: https://raw.githubusercontent.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadPsychtoolbox.m
   [ptb-3.0.9]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/archive/Psychtoolbox-3.0.9.zip
+  [AudioHW]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/wiki/Hardware:-Audio-Devices 
