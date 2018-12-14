@@ -59,15 +59,11 @@ Short version
 
 -   *Sound card:*
 
-    ![ASIO compatible logo](images/ASIO-compatible-logo-Steinberg-TM-BW.jpg)
-
     On Linux and OS X, any card supported by the operating system should work
-    well, as well as built-in sound chips. On MS-Windows, sound cards should
+    well, as well as built-in sound chips. On MS-Windows 7 to 10, sound cards should
     work reasonably well with Psychtoolbox 3.0.15 and later. On MS-Windows with
-    Psychtoolbox version 3.0.14 and earlier, an ASIO capable audio card was
-    absolutely required for research grade timing precision and low-latency. 
-    [Click this link to find info about download and installation of the 
-required ASIO extension plugin for use with older Psychtoolbox 3.0.14 and earlier.][ASIO]
+    Psychtoolbox version 3.0.14 and earlier, no precise or low latency sound output
+    is possible anymore. [Click this link to find out why.][AudioHW]
 
 Operating systems
 -----------------
@@ -353,4 +349,4 @@ often even for single-display stimulation on a multi-display setup.
   [Octave4OSX]: https://formulae.brew.sh/formula/octave
   [Raspbian]: https://www.raspberrypi.org/
   [HybridGraphics]: https://raw.githubusercontent.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/PsychDocumentation/HybridGraphics.m
-  [ASIO]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/wiki/Hardware:-Audio-Devices
+  [AudioHW]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/wiki/Hardware:-Audio-Devices
