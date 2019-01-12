@@ -113,7 +113,7 @@ issues on other operating systems than Linux will be very limited.
 We strongly discourage use of Apple macOS for anything but entertainment
 and education purposes.
 
-### Apple Macintosh
+### Apple macOS - Not recommended!
 
 Psychtoolbox is also being developed and tested under Apple Mac OS X.
 Psychtoolbox should "work" in principle on
@@ -125,10 +125,10 @@ Psychtoolbox should "work" in principle on
 
 Limited testing currently only happens on the latest version of OS X 10.13
 “macOS High Sierra” with 64-Bit Octave 4.4.1, and with 64-bit Matlab R2012a. This
-is the only somewhat supported version of OS X at this point in time. macOS is
+is the only somewhat supported version of OS X at this point in time. _macOS is
 the most buggy and hazardous operating system you could use for visual stimulation,
 or DAQ digital/analog i/o, so running real data collection using macOS will likely
-bring you a world of pain (and possibly irreproducible research).
+bring you a world of pain (and possibly irreproducible research)_.
 
 Toolbox version 3.0.14 and later releases do not work under OS X 10.10
 or earlier anymore. The last working version on OS X 10.10 was v3.0.13.
@@ -245,7 +245,8 @@ Basic hardware requirements
     64-bit versions of Microsoft Windows Windows-7/Windows-10, or the
     32-bit or 64-bit versions of GNU/Linux.
 
--   Intel Macs: Any Intel-based Macintosh computer that is capable of
+-   Intel Macs: _Not recommended!_
+    Any Intel-based Macintosh computer that is capable of
     running 64-Bit OS X 10.11 “El Capitan” or later, or 32/64 Bit GNU/Linux.
     However: At this point in time, most NVidia graphics cards have broken
     visual stimulation timing under macOS. Most AMD graphics cards under
@@ -253,7 +254,13 @@ Basic hardware requirements
     and Intel graphics chips also seem to have trouble under at least macOS
     10.13 "High Sierra". So for visual stimulation there essentially doesn't
     exist any supported Apple hardware that would work acceptably under macOS.
-    The hardware may perform fine under Linux though.
+    Old hardware may perform fine under Linux. Apple MacBook's or MacBookPro's
+    from the year 2016 or later are known to be mostly unusable with Linux for
+    practical purposes, as basic things like wifi, suspend/resume or audio won't
+    work. Any current Apple hardware with Apple's T2 security processor will
+    not even allow accessing the internal disc drive - and thereby won't allow
+    installation of Linux on the internal drive.
+    _For these reasons we don't recommend use of any modern Apple hardware._
 
 -   [RaspberryPi models 2B and 3 under the most recent Raspbian operating system.][Raspbian]
     The RaspberryPi 2B is actively tested for compatibility and works well
