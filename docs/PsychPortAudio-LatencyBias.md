@@ -1,6 +1,7 @@
 # [PsychPortAudio('LatencyBias')](PsychPortAudio-LatencyBias) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+oldbias = PsychPortAudio('LatencyBias', pahandle [,biasSecs]);
 
 Set audio output latency bias in seconds to 'biasSecs' and/or return old bias  
 for a device 'pahandle'. The device must be open for this setting to take  

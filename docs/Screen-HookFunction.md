@@ -1,6 +1,7 @@
 # [Screen('HookFunction')](Screen-HookFunction) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[ret1, ret2, ...] = Screen('HookFunction', windowPtr, 'Subcommand', 'HookName', arg1, arg2, arg3, arg4);
 
 Manage [Screen](Screen) processing hook chains. Hook chains are a way to extend [PTBs](PTBs)  
 behaviour with plugins for generic processing or fast image processing. They  

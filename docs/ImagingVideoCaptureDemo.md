@@ -1,7 +1,7 @@
 # [ImagingVideoCaptureDemo](ImagingVideoCaptureDemo)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)>[PsychTutorials](PsychTutorials)
 
-Adrian, this function is not yet documented.
+This function is not yet documented.
 
 
  MissingDocs

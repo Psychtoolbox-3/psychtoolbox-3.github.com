@@ -1,6 +1,7 @@
 # [PsychPortAudio('UseSchedule')](PsychPortAudio-UseSchedule) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+PsychPortAudio('UseSchedule', pahandle, enableSchedule [, maxSize = 128]);
 
 Enable or disable use of a preprogrammed schedule for audio playback on audio  
 device 'pahandle'.  

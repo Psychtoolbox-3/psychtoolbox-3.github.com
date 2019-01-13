@@ -1,6 +1,7 @@
 # [Screen('WindowKind')](Screen-WindowKind) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+kind=Screen(windowPtr, 'WindowKind');
 
 What kind of windowPtr is this? Returns 0 if it's invalid, -1 an offscreen  
 window or a normal texture, 1 our onscreen, 2 Matlab's onscreen, 3 a  

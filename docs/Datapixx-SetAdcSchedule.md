@@ -1,6 +1,7 @@
 # [Datapixx('SetAdcSchedule')](Datapixx-SetAdcSchedule) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('SetAdcSchedule', scheduleOnset, scheduleRate, maxScheduleFrames [, channelList=0] [, bufferBaseAddress=4e6] [, numBufferFrames=maxScheduleFrames]);
 
 Configure a schedule for autonomous ADC analog signal acquisition.  
 -"scheduleOnset" is the desired delay (in double precision seconds) between  

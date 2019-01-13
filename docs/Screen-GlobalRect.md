@@ -1,6 +1,7 @@
 # [Screen('GlobalRect')](Screen-GlobalRect) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+rect=Screen('GlobalRect', windowPointerOrScreenNumber);
 
 Get global rect of window or screen. This is the real position / rectangular  
 area occupied by a screen or onscreen window, with respect to the origin (0,0)  

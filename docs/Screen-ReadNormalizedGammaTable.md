@@ -1,6 +1,7 @@
 # [Screen('ReadNormalizedGammaTable')](Screen-ReadNormalizedGammaTable) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[gammatable, dacbits, reallutsize] = Screen('ReadNormalizedGammaTable', windowPtrOrScreenNumber [, physicalDisplay]);
 
 Reads and returns the gamma table 'gammatable' of the specified screen or window  
 'windowPtrOrScreenNumber'.  

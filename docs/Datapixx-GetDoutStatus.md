@@ -1,6 +1,7 @@
 # [Datapixx('GetDoutStatus')](Datapixx-GetDoutStatus) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+status = Datapixx('GetDoutStatus');
 
 Returns a struct containing the following digital output status information:  
 -"buttonSchedules" is 1 if DIN button presses cause automatic DOUT schedules.  

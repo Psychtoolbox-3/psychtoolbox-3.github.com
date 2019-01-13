@@ -1,6 +1,7 @@
 # [Screen('ShowCursorHelper')](Screen-ShowCursorHelper) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('ShowCursorHelper', screenIndex [, cursorshapeid][, mouseIndex]);
 
 This is a helper function called by [ShowCursor](ShowCursor).  Do not call  
 [Screen](Screen)('ShowCursorHelper'), use [ShowCursor](ShowCursor) instead.  

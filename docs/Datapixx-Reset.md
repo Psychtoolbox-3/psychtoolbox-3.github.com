@@ -1,6 +1,7 @@
 # [Datapixx('Reset')](Datapixx-Reset) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('Reset');
 
 Invokes the following sequence:  
     1) [DATAPixx](DATAPixx) hardware reset for 200 microseconds  

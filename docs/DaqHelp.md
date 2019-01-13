@@ -1,7 +1,7 @@
 # [DaqHelp](DaqHelp)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychHardware](PsychHardware)>[Daq](Daq)
 
-Adrian, this function is not yet documented.
+This function is not yet documented.
 
 
  MissingDocs

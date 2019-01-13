@@ -1,6 +1,7 @@
 # [Screen('TextBackgroundColor')](Screen-TextBackgroundColor) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+oldTextBackgroundColor=Screen('TextBackgroundColor', windowPtr [,colorVector]);
 
 Read/Set the text background color for the specified window.  
 The background color defaults to [0,0,0,0], i.e., a fully transparent black.  

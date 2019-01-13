@@ -1,6 +1,7 @@
 # [Screen('GetFlipInfo')](Screen-GetFlipInfo) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+info = Screen('GetFlipInfo', windowPtr [, infoType=0] [, auxArg1]);
 
 Returns a struct with miscellaneous info about finished flips on the specified  
 onscreen window.  

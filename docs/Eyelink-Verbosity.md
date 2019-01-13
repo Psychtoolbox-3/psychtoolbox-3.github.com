@@ -1,6 +1,7 @@
 # [Eyelink('Verbosity')](Eyelink-Verbosity) 
 ##### [Psychtoolbox](Psychtoolbox)>[Eyelink](Eyelink).{mex*} subfunction
 
+oldlevel = Eyelink('Verbosity' [,level]);
 
 Set level of verbosity for error/warning/status messages. 'level' optional, new  
 level of verbosity. 'oldlevel' is the old level of verbosity. The following  

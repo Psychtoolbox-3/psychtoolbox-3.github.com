@@ -1,7 +1,7 @@
 # [EyelinkClearCalDisplay](EyelinkClearCalDisplay)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychHardware](PsychHardware)>[EyelinkToolbox](EyelinkToolbox)>[EyelinkBasic](EyelinkBasic)
 
-Adrian, this function is not yet documented.
+This function is not yet documented.
 
 
  MissingDocs

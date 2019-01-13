@@ -1,6 +1,7 @@
 # [PsychPortAudio('Stop')](PsychPortAudio-Stop) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+[startTime endPositionSecs xruns estStopTime] = PsychPortAudio('Stop', pahandle [, waitForEndOfPlayback=0] [, blockUntilStopped=1] [, repetitions] [, stopTime]);
 
 Stop a [PortAudio](PortAudio) audio device. The 'pahandle' is the handle of the device to  
 stop.  

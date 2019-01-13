@@ -1,6 +1,7 @@
 # [Datapixx('WriteDacBuffer')](Datapixx-WriteDacBuffer) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+[nextBufferAddress, underflow, overflow] = Datapixx('WriteDacBuffer', bufferData [, bufferAddress=0] [, channelList=[0:numChannels-1]]);
 
 Download DAC data from local host to a Datapixx internal waveform buffer.  
 -"bufferData" is a 2D matrix of DAC waveform voltages. Each row of the matrix  

@@ -1,6 +1,7 @@
 # [Screen('OpenOffscreenWindow')](Screen-OpenOffscreenWindow) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[windowPtr,rect]=Screen('OpenOffscreenWindow',windowPtrOrScreenNumber [,color] [,rect] [,pixelSize] [,specialFlags] [,multiSample]);
 
 Open an offscreen window. This is simply an [OpenGL](OpenGL) texture that is treated as a  
 window, so you can draw to it. Offscreen windows should be used to keep old code  

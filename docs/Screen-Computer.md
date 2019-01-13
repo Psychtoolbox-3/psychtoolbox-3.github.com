@@ -1,6 +1,7 @@
 # [Screen('Computer')](Screen-Computer) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+comp=Screen('Computer')
 
 Get information about the computer. The result is a struct holding information  
 about your computer. Top-level flags in the returned struct are available on all  

@@ -1,6 +1,7 @@
 # [Screen('PreloadTextures')](Screen-PreloadTextures) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[resident [texidresident]] = Screen('PreloadTextures', windowPtr [, texids]);
 
 Try to preload textures into VRAM to facilitate fast drawing. This method tries  
 to upload textures into the local (and fast) VRAM of your graphics hardware  

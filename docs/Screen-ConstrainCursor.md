@@ -1,6 +1,7 @@
 # [Screen('ConstrainCursor')](Screen-ConstrainCursor) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('ConstrainCursor', windowIndex, addConstraint [, rect]);
 
 Confine mouse cursor position to a specified area inside onscreen window  
 'windowIndex'.  

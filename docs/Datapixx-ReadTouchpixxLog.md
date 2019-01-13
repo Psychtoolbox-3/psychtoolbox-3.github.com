@@ -1,6 +1,7 @@
 # [Datapixx('ReadTouchpixxLog')](Datapixx-ReadTouchpixxLog) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+[logCoords, logTimetags, underflow] = Datapixx('ReadTouchpixxLog' [, numFrames]);
 
 Upload [TOUCHPixx](TOUCHPixx) touch panel activity from a Datapixx internal log buffer to the  
 local host.  

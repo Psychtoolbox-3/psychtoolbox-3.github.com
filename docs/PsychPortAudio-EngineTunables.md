@@ -1,6 +1,7 @@
 # [PsychPortAudio('EngineTunables')](PsychPortAudio-EngineTunables) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+[oldyieldInterval, oldMutexEnable, lockToCore1, audioserver_autosuspend] = PsychPortAudio('EngineTunables' [, yieldInterval] [, MutexEnable] [, lockToCore1] [, audioserver_autosuspend]);
 
 Return, and optionally set low-level tuneable driver parameters.  
 The driver must be idle, ie., no audio device must be open, if you want to  

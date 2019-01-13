@@ -1,6 +1,7 @@
 # [Datapixx('StartDinLog')](Datapixx-StartDinLog) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('StartDinLog');
 
 Start logging transitions of digital input bits 0 to 15. This will log rising  
 and falling edges of the digital inputs, and is the best way to monitor button  

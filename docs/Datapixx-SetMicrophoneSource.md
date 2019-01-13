@@ -1,6 +1,7 @@
 # [Datapixx('SetMicrophoneSource')](Datapixx-SetMicrophoneSource) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('SetMicrophoneSource', source [, gain]);
 
 Set Datapixx audio input source.  
 -"source" can take on one of two integer values:  

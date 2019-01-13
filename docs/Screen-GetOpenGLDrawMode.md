@@ -1,6 +1,7 @@
 # [Screen('GetOpenGLDrawMode')](Screen-GetOpenGLDrawMode) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[targetwindow, IsOpenGLRendering] = Screen('GetOpenGLDrawMode');
 
 Return information about current [OpenGL](OpenGL) rendering state.  
 'targetwindow' is the window handle of the window that is currently enabled for  

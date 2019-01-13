@@ -1,6 +1,7 @@
 # [Screen('LoadCLUT')](Screen-LoadCLUT) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+oldclut = Screen('LoadCLUT', ScreenNumber [, clut] [, startEntry=0] [, bits=8]);
 
 Load or query the hardware gamma table of the specified screen. If you pass a  
 new 'clut' hardware gamma table, then 'clut' needs to be a matrix with 1 to  

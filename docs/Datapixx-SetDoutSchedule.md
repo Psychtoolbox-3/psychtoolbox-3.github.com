@@ -1,6 +1,7 @@
 # [Datapixx('SetDoutSchedule')](Datapixx-SetDoutSchedule) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('SetDoutSchedule', scheduleOnset, scheduleRate, maxScheduleFrames [, bufferBaseAddress=8e6] [, numBufferFrames=maxScheduleFrames]);
 
 Configure a schedule for autonomous TTL digital output waveform playback.  
 Digital output schedules drive bits DOUT0-DOUT15 on the "Digital OUT" db-25  

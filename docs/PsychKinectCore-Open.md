@@ -1,6 +1,7 @@
 # [PsychKinectCore('Open')](PsychKinectCore-Open) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychKinectCore](PsychKinectCore).{mex*} subfunction
 
+kinectPtr = PsychKinect('Open' [, deviceIndex=0][, numbuffers=2][, bayerFilterMode=1]);
 
 Open connection to Microsoft Kinect box, return a 'kinectPtr' handle to it.  
   

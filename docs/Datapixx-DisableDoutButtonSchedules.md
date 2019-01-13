@@ -1,6 +1,7 @@
 # [Datapixx('DisableDoutButtonSchedules')](Datapixx-DisableDoutButtonSchedules) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('DisableDoutButtonSchedules');
 
 Disable internal loopback from the digital outputs to the digital inputs. This  
 causes values read from digital inputs to report real values on the db-25  

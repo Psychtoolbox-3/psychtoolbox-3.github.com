@@ -1,6 +1,7 @@
 # [Screen('CopyWindow')](Screen-CopyWindow) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('CopyWindow',srcWindowPtr,dstWindowPtr,[srcRect],[dstRect],[copyMode])
 
 Copy images, quickly, between two windows (on- or off- screen).  
 Content from onscreen windows is copied from the onscreen windows back buffer,  

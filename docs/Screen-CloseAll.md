@@ -1,6 +1,7 @@
 # [Screen('CloseAll')](Screen-CloseAll) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('CloseAll');
 
 [Close](Close) all open onscreen and offscreen windows and textures, movies and video  
 sources. Release nearly all ressources.  

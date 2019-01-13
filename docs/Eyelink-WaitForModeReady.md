@@ -1,6 +1,7 @@
 # [Eyelink('WaitForModeReady')](Eyelink-WaitForModeReady) 
 ##### [Psychtoolbox](Psychtoolbox)>[Eyelink](Eyelink).{mex*} subfunction
 
+[result = ] Eyelink('WaitForModeReady', maxwait)
 
 After a mode-change command is given to the [EyeLink](EyeLink) tracker,  
 an additional 5 to 30 milliseconds may be needed to complete mode setup.  

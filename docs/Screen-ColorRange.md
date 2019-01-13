@@ -1,6 +1,7 @@
 # [Screen('ColorRange')](Screen-ColorRange) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[oldmaximumvalue, oldclampcolors, oldapplyToDoubleInputMakeTexture] = Screen('ColorRange', windowPtr [, maximumvalue][, clampcolors][, applyToDoubleInputMakeTexture]);
 
 Set or return the maximum color component value that PTB should allow for  
 provided color values when drawing into a window 'windowPtr' or its associated  

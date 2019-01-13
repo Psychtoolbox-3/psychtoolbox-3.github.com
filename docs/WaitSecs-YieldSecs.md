@@ -1,6 +1,7 @@
 # [WaitSecs('YieldSecs')](WaitSecs-YieldSecs) 
 ##### [Psychtoolbox](Psychtoolbox)>[WaitSecs](WaitSecs).{mex*} subfunction
 
+[realWakeupTimeSecs] = WaitSecs('YieldSecs', waitPeriodSecs);
 
 Wait for at least "waitPeriodSecs", don't care if it takes a few milliseconds  
 longer. Optionally, return the real wakeup time "realWakeupTimeSecs".  

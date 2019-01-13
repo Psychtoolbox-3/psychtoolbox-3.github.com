@@ -1,6 +1,7 @@
 # [Screen('WaitUntilAsyncFlipCertain')](Screen-WaitUntilAsyncFlipCertain) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[VBLTimestamp StimulusOnsetTime swapCertainTime] = Screen('WaitUntilAsyncFlipCertain', windowPtr);
 
 Wait until it is certain that a previously initiated  
 [Screen](Screen)('AsyncFlipBegin',...); operation for onscreen window 'windowPtr' will  

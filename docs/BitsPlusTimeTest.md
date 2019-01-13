@@ -1,7 +1,7 @@
 # [BitsPlusTimeTest](BitsPlusTimeTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychHardware](PsychHardware)>[BitsPlusToolbox](BitsPlusToolbox)>[BitsPlusTests](BitsPlusTests)
 
-Adrian, this function is not yet documented.
+This function is not yet documented.
 
 
  MissingDocs

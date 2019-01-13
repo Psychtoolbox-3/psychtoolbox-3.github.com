@@ -1,6 +1,7 @@
 # [PsychHID('KbQueueStop')](PsychHID-KbQueueStop) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychHID](PsychHID).{mex*} subfunction
 
+PsychHID('KbQueueStop' [, deviceIndex])
 
 Stops input event collection by a queue.  
 [PsychHID](PsychHID)('KbQueueCreate') must be called before calling this function.  

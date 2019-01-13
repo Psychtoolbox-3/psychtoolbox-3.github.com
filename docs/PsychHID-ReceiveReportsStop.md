@@ -1,6 +1,7 @@
 # [PsychHID('ReceiveReportsStop')](PsychHID-ReceiveReportsStop) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychHID](PsychHID).{mex*} subfunction
 
+err = PsychHID('ReceiveReportsStop', deviceNumber)
 
 Stop receiving and saving reports from the specified USB HID device.  
 Calling [ReceiveReports](ReceiveReports) enables callbacks (forever) for the incoming reports from  

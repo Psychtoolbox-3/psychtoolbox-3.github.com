@@ -1,6 +1,7 @@
 # [Eyelink('Initialize')](Eyelink-Initialize) 
 ##### [Psychtoolbox](Psychtoolbox)>[Eyelink](Eyelink).{mex*} subfunction
 
+[status =] Eyelink('Initialize' [, displayCallbackFunction])
 
 Initializes Eyelink and Ethernet system.  
 Opens tracker connection, reports any problems.  

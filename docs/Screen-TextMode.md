@@ -1,6 +1,7 @@
 # [Screen('TextMode')](Screen-TextMode) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+oldCopyMode=Screen('TextMode', windowPtr [,textMode]);
 
 Set or get the text mode for the specified window. This function currently  
 hasn't any effect whatsoever on systems other than OSX with its default  

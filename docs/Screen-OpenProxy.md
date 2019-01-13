@@ -1,6 +1,7 @@
 # [Screen('OpenProxy')](Screen-OpenProxy) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+proxyPtr = Screen('OpenProxy', windowPtr [, imagingmode]);
 
 Create a proxy object. A proxy is a windowRecord (like a texture, offscreen  
 window or onscreen window), but without associated image content. Its useful as  

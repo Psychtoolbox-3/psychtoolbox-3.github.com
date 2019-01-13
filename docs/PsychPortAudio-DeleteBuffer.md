@@ -1,6 +1,7 @@
 # [PsychPortAudio('DeleteBuffer')](PsychPortAudio-DeleteBuffer) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+result = PsychPortAudio('DeleteBuffer'[, bufferhandle] [, waitmode]);
 
 Delete an existing dynamic audio data playback buffer.  
 'bufferhandle' is the handle for the buffer to delete. If it is omitted, all  

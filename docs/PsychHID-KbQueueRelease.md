@@ -1,6 +1,7 @@
 # [PsychHID('KbQueueRelease')](PsychHID-KbQueueRelease) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychHID](PsychHID).{mex*} subfunction
 
+PsychHID('KbQueueRelease' [, deviceIndex])
 
 Releases queue and other resources allocated by [PsychHID](PsychHID)('KbQueueCreate').  
 The optional 'deviceIndex' is the index of the HID input device whose queue  

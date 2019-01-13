@@ -1,6 +1,7 @@
 # [Eyelink('NewestFloatSampleRaw')](Eyelink-NewestFloatSampleRaw) 
 ##### [Psychtoolbox](Psychtoolbox)>[Eyelink](Eyelink).{mex*} subfunction
 
+[sample, raw] = Eyelink('NewestFloatSampleRaw' [, eye])
 
 Same as Eyelink('NewestFloatSample') but additionally returns raw sample data.  
 Specify the eye for which raw values are desired as LEFT\_EYE or RIGHT\_EYE as  

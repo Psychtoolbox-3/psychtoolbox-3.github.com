@@ -1,6 +1,7 @@
 # [Eyelink('DriftCorrStart')](Eyelink-DriftCorrStart) 
 ##### [Psychtoolbox](Psychtoolbox)>[Eyelink](Eyelink).{mex*} subfunction
 
+[status = ] Eyelink('DriftCorrStart', x, y [,dtype=0][, dodraw=1][, allow_setup=0])
 
 Start drift correction, specify target position with x and y.  
 If the optional 'dtype' argument is zero, the routine eyelink\_driftcorr\_start()  

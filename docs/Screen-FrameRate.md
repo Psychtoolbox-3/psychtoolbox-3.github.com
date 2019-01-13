@@ -1,6 +1,7 @@
 # [Screen('FrameRate')](Screen-FrameRate) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+hz=Screen('NominalFrameRate', windowPtrOrScreenNumber [, mode] [, reqFrameRate]);
 
 Returns or sets the nominal video frame rate in Hz, as reported by your  
 computer's video driver. 'FrameRate' is an alias for 'NominalFrameRate'. By  

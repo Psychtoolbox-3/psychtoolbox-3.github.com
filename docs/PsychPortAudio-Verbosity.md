@@ -1,6 +1,7 @@
 # [PsychPortAudio('Verbosity')](PsychPortAudio-Verbosity) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+oldlevel = PsychPortAudio('Verbosity' [,level]);
 
 Set level of verbosity for error/warning/status messages. 'level' optional, new  
 level of verbosity. 'oldlevel' is the old level of verbosity. The following  

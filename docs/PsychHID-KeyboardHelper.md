@@ -1,6 +1,7 @@
 # [PsychHID('KeyboardHelper')](PsychHID-KeyboardHelper) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychHID](PsychHID).{mex*} subfunction
 
+rc = PsychHID('KeyboardHelper', commandCode)
 
 Low-Level helper function for controlling keyboard input.  
 This function accepts a couple esoteric commandCode's to control low-level  

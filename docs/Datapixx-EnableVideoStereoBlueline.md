@@ -1,6 +1,7 @@
 # [Datapixx('EnableVideoStereoBlueline')](Datapixx-EnableVideoStereoBlueline) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('EnableVideoStereoBlueline');
 
 Enables the bottom raster line to be interpreted as a VESA 3D left/right eye  
 code.  

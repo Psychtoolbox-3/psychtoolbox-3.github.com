@@ -1,6 +1,7 @@
 # [Screen('TextTransform')](Screen-TextTransform) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+oldMatrix = Screen('TextTransform', windowPtr [, newMatrix]);
 
 Query or assign a 2D matrix defining a 2D affine transformation to apply to  
 drawn text.  

@@ -1,6 +1,7 @@
 # [Screen('DrawDots')](Screen-DrawDots) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[minSmoothPointSize, maxSmoothPointSize, minAliasedPointSize, maxAliasedPointSize] = Screen('DrawDots', windowPtr, xy [,size] [,color] [,center] [,dot_type][, lenient]);
 
 Quickly draw an array of dots.  "xy" is a two-row vector containing the x and y  
 coordinates of the dot centers, relative to "center" (default center is [0 0]).  

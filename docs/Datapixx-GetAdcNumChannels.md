@@ -1,6 +1,7 @@
 # [Datapixx('GetAdcNumChannels')](Datapixx-GetAdcNumChannels) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+adcNumChannels = Datapixx('GetAdcNumChannels');
 
 Returns the number of ADC (Analog to Digital Converter) input channels in the  
 Datapixx. Currently the Datapixx has 16 ADC channels with 16-bit resolution. The  

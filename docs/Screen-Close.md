@@ -1,6 +1,7 @@
 # [Screen('Close')](Screen-Close) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('Close', [windowOrTextureIndex or list of textureIndices/offscreenWindowIndices]);
 
 [Close](Close) an onscreen or offscreen window or a texture. If the optional  
 windowOrTextureIndex isn't provided, then all textures and offscreen windows are  

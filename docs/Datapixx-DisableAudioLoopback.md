@@ -1,6 +1,7 @@
 # [Datapixx('DisableAudioLoopback')](Datapixx-DisableAudioLoopback) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('DisableAudioLoopback');
 
 Disable internal loopback from the audio outputs to the audio inputs. This  
 causes audio inputs to decode sound from external input jacks.  

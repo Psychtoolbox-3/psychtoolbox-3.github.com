@@ -1,6 +1,7 @@
 # [Screen('Rect')](Screen-Rect) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+rect=Screen('Rect', windowPointerOrScreenNumber [, realFBSize=0]);
 
 Get local rect of window or screen. This has its top-left corner always at (0,0)  
 and encodes the useable size of the window or screen. E.g., in certain stereo  

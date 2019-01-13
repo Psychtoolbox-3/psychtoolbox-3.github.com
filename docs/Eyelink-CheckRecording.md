@@ -1,6 +1,7 @@
 # [Eyelink('CheckRecording')](Eyelink-CheckRecording) 
 ##### [Psychtoolbox](Psychtoolbox)>[Eyelink](Eyelink).{mex*} subfunction
 
+error = Eyelink('CheckRecording')
 
  Check if we are recording: if not, report an error. Also calls  
 record\_abort\_hide() if recording aborted. Returns 0 if recording in progress.  

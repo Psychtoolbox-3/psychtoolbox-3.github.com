@@ -162,8 +162,8 @@ Datapixx('[ClearError](Datapixx-ClearError)');
 Datapixx('[Reset](Datapixx-Reset)');  
   
 
- Datapixx is a MEX file for precise control of the [DataPixx](DataPixx) device from  
- [VPixx](VPixx) Technologies. It has many functions; type "Datapixx" for a list:  
+ Datapixx is a MEX file for precise control of the DataPixx device from  
+ VPixx Technologies. It has many functions; type "Datapixx" for a list:  
     Datapixx  
   
  For explanation of any particular Datapixx function, just add a question  
@@ -172,15 +172,15 @@ Datapixx('[Reset](Datapixx-Reset)');
     Datapixx Open?  
   
  Most of the time you won't use this function directly, but instead use  
- the [PsychDataPixx](PsychDataPixx)() function for more convenient control and execution of  
+ the PsychDataPixx() function for more convenient control and execution of  
  common tasks.  
   
  For setup of Datapixx video operations, check the online help of  
- [PsychImaging](PsychImaging)(), which has multiple functions for interacting with the  
+ PsychImaging(), which has multiple functions for interacting with the  
  Datapixx device.  
   
- For an overview of demos and other useful helper functions for the [DataPixx](DataPixx),  
- type "help [DatapixxToolbox](DatapixxToolbox)".  
+ For an overview of demos and other useful helper functions for the DataPixx,  
+ type "help DatapixxToolbox".  
   
   
   

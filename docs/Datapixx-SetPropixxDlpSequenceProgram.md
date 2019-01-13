@@ -1,6 +1,7 @@
 # [Datapixx('SetPropixxDlpSequenceProgram')](Datapixx-SetPropixxDlpSequenceProgram) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('SetPropixxDlpSequenceProgram' [, program=0]);
 
 Set [PROPixx](PROPixx) DLP sequencer.  
 The [PROPixx](PROPixx) uses an LED light engine to illuminate a DLP imaging chip. The  

@@ -1,6 +1,7 @@
 # [Datapixx('EnableTouchpixxLogContinuousMode')](Datapixx-EnableTouchpixxLogContinuousMode) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('EnableTouchpixxLogContinuousMode');
 
 During a panel touch, continuous position/timetag updates will be logged at  
 200Hz.  

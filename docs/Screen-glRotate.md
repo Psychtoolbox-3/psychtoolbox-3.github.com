@@ -1,6 +1,7 @@
 # [Screen('glRotate')](Screen-glRotate) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('glRotate', windowPtr, angle, [rx = 0], [ry = 0] ,[rz = 1]);
 
 Define a rotation transform by an angle of 'angle' degrees around the axis  
 defined by the vector (rx,ry,rz) in space, relative to the enclosing reference  

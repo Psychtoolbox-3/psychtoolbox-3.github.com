@@ -1,6 +1,7 @@
 # [Screen('SetMovieTimeIndex')](Screen-SetMovieTimeIndex) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[oldtimeindex] = Screen('SetMovieTimeIndex', moviePtr, timeindex [, indexIsFrames=0]);
 
 Set current time index for movie object with handle 'moviePtr'.  
   

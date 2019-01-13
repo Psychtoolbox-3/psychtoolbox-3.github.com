@@ -1,6 +1,7 @@
 # [Datapixx('GetMicrophoneGroupDelay')](Datapixx-GetMicrophoneGroupDelay) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+delay = Datapixx('GetMicrophoneGroupDelay', sampleRate);
 
 Returns Datapixx Microphone IN group delay in seconds.  
 This is the time between when a voltage appears at the "MIC IN" jack of the  

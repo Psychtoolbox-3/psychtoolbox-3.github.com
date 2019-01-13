@@ -1,6 +1,7 @@
 # [Eyelink('GetQueuedData')](Eyelink-GetQueuedData) 
 ##### [Psychtoolbox](Psychtoolbox)>[Eyelink](Eyelink).{mex*} subfunction
 
+[samples, events, drained] = Eyelink('GetQueuedData' [, eye])
 
 dequeues all samples and events from the link.  
 returns double matrices where columns are items and rows are fields from eyelink  

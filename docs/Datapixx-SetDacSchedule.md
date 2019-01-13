@@ -1,6 +1,7 @@
 # [Datapixx('SetDacSchedule')](Datapixx-SetDacSchedule) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('SetDacSchedule', scheduleOnset, scheduleRate, maxScheduleFrames [, channelList=0] [, bufferBaseAddress=0] [, numBufferFrames=maxScheduleFrames]);
 
 Configure a schedule for autonomous DAC waveform playback.  
 -"scheduleOnset" is the desired delay (in double precision seconds) between  

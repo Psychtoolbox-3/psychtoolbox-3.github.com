@@ -1,6 +1,7 @@
 # [Datapixx('GetAudioGroupDelay')](Datapixx-GetAudioGroupDelay) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+delay = Datapixx('GetAudioGroupDelay', sampleRate);
 
 Returns Datapixx Audio OUT group delay in seconds.  
 This is the time between when a schedule sends a data sample to the CODEC, and  

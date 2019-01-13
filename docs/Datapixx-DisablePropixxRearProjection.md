@@ -1,6 +1,7 @@
 # [Datapixx('DisablePropixxRearProjection')](Datapixx-DisablePropixxRearProjection) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('DisablePropixxRearProjection');
 
 [PROPixx](PROPixx) does not flip image horizontally.  
   

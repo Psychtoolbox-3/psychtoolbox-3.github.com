@@ -1,6 +1,7 @@
 # [Datapixx('ReadAdcBuffer')](Datapixx-ReadAdcBuffer) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+[bufferData, bufferTimetags, underflow, overflow] = Datapixx('ReadAdcBuffer', numFrames [, bufferAddress]);
 
 Upload ADC data from a Datapixx internal acquisition buffer to the local host.  
 -"numFrames" is the number of acquired frames to upload. In a streaming  

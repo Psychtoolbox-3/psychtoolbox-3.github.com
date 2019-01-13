@@ -1,6 +1,7 @@
 # [PsychPortAudio('AddToSchedule')](PsychPortAudio-AddToSchedule) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+[success, freeslots] = PsychPortAudio('AddToSchedule', pahandle [, bufferHandle=0][, repetitions=1][, startSample=0][, endSample=max][, UnitIsSeconds=0][, specialFlags=0]);
 
 Add a new item to an existing schedule for audio playback on audio device  
 'pahandle'.  

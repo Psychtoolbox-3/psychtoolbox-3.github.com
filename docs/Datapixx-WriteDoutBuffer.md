@@ -1,6 +1,7 @@
 # [Datapixx('WriteDoutBuffer')](Datapixx-WriteDoutBuffer) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+[nextBufferAddress, underflow, overflow] = Datapixx('WriteDoutBuffer', bufferData [, bufferAddress=8e6]);
 
 Download digital output data from local host to a Datapixx internal digital  
 waveform buffer. Digital output waveforms can be used to generate complex  

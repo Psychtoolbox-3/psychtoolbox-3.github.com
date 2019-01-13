@@ -1,6 +1,7 @@
 # [Screen('GetFlipInterval')](Screen-GetFlipInterval) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[ monitorFlipInterval nrValidSamples stddev ] =Screen('GetFlipInterval', windowPtr [, nrSamples] [, stddev] [, timeout]);
 
 Returns an estimate of the monitor flip interval for the specified onscreen  
 window.  

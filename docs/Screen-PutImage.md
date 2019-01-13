@@ -1,6 +1,7 @@
 # [Screen('PutImage')](Screen-PutImage) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('PutImage', windowPtr, imageArray [,rect])
 
 Copy the matrix "imageArray" to a window, very slowly.  
 This function is not (and will not ever get) supported on [OpenGL](OpenGL)-ES embedded  

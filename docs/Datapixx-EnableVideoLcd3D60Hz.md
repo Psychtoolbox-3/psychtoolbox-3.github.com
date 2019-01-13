@@ -1,6 +1,7 @@
 # [Datapixx('EnableVideoLcd3D60Hz')](Datapixx-EnableVideoLcd3D60Hz) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('EnableVideoLcd3D60Hz');
 
 Liquid crystal displays can exhibit an artifact when presenting 2 static images  
 on alternating video frames, such as with frame-sequencial 3D. The origin of  

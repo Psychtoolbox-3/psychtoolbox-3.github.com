@@ -1,6 +1,7 @@
 # [Screen('Flip')](Screen-Flip) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[VBLTimestamp StimulusOnsetTime FlipTimestamp Missed Beampos] = Screen('Flip', windowPtr [, when] [, dontclear] [, dontsync] [, multiflip]);
 
 [Flip](Flip) front and back display surfaces in sync with vertical retrace and return  
 completion timestamps.  

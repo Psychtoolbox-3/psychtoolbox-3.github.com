@@ -1,7 +1,7 @@
 # [SimpleTimingTest](SimpleTimingTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)
 
-Adrian, this function is not yet documented.
+This function is not yet documented.
 
 
  MissingDocs

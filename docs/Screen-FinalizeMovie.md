@@ -1,6 +1,7 @@
 # [Screen('FinalizeMovie')](Screen-FinalizeMovie) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('FinalizeMovie', moviePtr);
 
 Finish creating a new movie file with handle 'moviePtr' and store it to  
 filesystem.  

@@ -1,6 +1,7 @@
 # [Eyelink('InitializeDummy')](Eyelink-InitializeDummy) 
 ##### [Psychtoolbox](Psychtoolbox)>[Eyelink](Eyelink).{mex*} subfunction
 
+[status =] Eyelink('InitializeDummy' [, displayCallbackFunction])
 
 Initializes Eyelink in dummy mode, useful for debugging  
 The optional argument 'displayCallbackFunction' registers the name of an m-file  

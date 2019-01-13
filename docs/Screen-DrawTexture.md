@@ -1,6 +1,7 @@
 # [Screen('DrawTexture')](Screen-DrawTexture) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('DrawTexture', windowPointer, texturePointer [,sourceRect] [,destinationRect] [,rotationAngle] [, filterMode] [, globalAlpha] [, modulateColor] [, textureShader] [, specialFlags] [, auxParameters]);
 
 Draw the texture specified via 'texturePointer' into the target window specified  
 via 'windowPointer'. In the the OS X Psychtoolbox textures replace offscreen  

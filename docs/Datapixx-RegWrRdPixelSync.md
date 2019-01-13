@@ -1,6 +1,7 @@
 # [Datapixx('RegWrRdPixelSync')](Datapixx-RegWrRdPixelSync) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+isTimeout = Datapixx('RegWrRdPixelSync', pixelSequence [, timeout=255]);
 
 Write local register cache modifications to Datapixx when the specified pixel  
 sequence appears on the video display, then read back Datapixx register snapshot  

@@ -1,6 +1,7 @@
 # [PsychPortAudio('GetAudioData')](PsychPortAudio-GetAudioData) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+[audiodata absrecposition overflow cstarttime] = PsychPortAudio('GetAudioData', pahandle [, amountToAllocateSecs][, minimumAmountToReturnSecs][, maximumAmountToReturnSecs][, singleType=0]);
 
 Retrieve captured audio data from a audio device. 'pahandle' is the handle of  
 the device whose data is to be retrieved.  

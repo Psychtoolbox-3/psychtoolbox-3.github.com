@@ -1,6 +1,7 @@
 # [PsychHID('KbQueueFlush')](PsychHID-KbQueueFlush) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychHID](PsychHID).{mex*} subfunction
 
+[navail] = PsychHID('KbQueueFlush' [, deviceIndex][, flushType=1])
 
 Flushes all scored and unscored keyboard events from a queue.  
 Returns number of events 'navail' in keyboard event buffer before the flush  

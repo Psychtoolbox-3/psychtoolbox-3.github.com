@@ -1,6 +1,7 @@
 # [Datapixx('SetVideoMode')](Datapixx-SetVideoMode) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('SetVideoMode' [, mode=0]);
 
 Set Datapixx video processing mode.  
 The Datapixx inputs digital DVI data, and outputs analog video. The video "mode"  

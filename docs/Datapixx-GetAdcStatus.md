@@ -1,6 +1,7 @@
 # [Datapixx('GetAdcStatus')](Datapixx-GetAdcStatus) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+status = Datapixx('GetAdcStatus');
 
 Returns a struct containing the following ADC status information:  
 -"dacAdcLoopback" is 1 if ADC inputs are driven internally by DAC outputs, or 0  

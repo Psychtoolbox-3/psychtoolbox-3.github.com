@@ -1,6 +1,7 @@
 # [Datapixx('SetVideoClut')](Datapixx-SetVideoClut) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('SetVideoClut', clut);
 
 Send a 256 row \* 3 column color lookup table to the Datapixx.  
 The three columns contain the red, green, and blue components respectively. The  

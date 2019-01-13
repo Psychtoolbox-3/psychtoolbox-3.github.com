@@ -1,6 +1,7 @@
 # [Datapixx('StartAdcSchedule')](Datapixx-StartAdcSchedule) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('StartAdcSchedule');
 
 Start running an ADC analog acquisition schedule. The actual hardware schedule  
 will be initiated by the next [RegWr](RegWr)\* command, and then the [ADCs](ADCs) will acquire  

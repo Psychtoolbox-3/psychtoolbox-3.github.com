@@ -1,6 +1,7 @@
 # [Screen('MakeTexture')](Screen-MakeTexture) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+textureIndex=Screen('MakeTexture', WindowIndex, imageMatrix [, optimizeForDrawAngle=0] [, specialFlags=0] [, floatprecision=0] [, textureOrientation=0] [, textureShader=0]);
 
 Convert the 2D or 3D matrix 'imageMatrix' into an [OpenGL](OpenGL) texture and return an  
 index which may be passed to 'DrawTexture' to specify the texture.  

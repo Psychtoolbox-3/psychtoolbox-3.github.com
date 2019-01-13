@@ -1,6 +1,7 @@
 # [IOPort('ConfigureSerialPort')](IOPort-ConfigureSerialPort) 
 ##### [Psychtoolbox](Psychtoolbox)>[IOPort](IOPort).{mex*} subfunction
 
+IOPort('ConfigureSerialPort', handle, configString);
 
 (Re-)Configure a serial port device, specified by 'handle'.  
 The string 'configString' is a string with pairs of paramName=paramValue tokens,  

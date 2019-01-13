@@ -1,6 +1,7 @@
 # [Datapixx('SetDinDataOutStrength')](Datapixx-SetDinDataOutStrength) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('SetDinDataOutStrength', strength);
 
 Although DIN is primarily intended to be a digital \_input\_ system, it is  
 possible to turn around these I/Os, to drive outputs at up to 3.3V.  

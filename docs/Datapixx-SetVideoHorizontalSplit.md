@@ -1,6 +1,7 @@
 # [Datapixx('SetVideoHorizontalSplit')](Datapixx-SetVideoHorizontalSplit) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('SetVideoHorizontalSplit', mode(0=MIRROR,1=SPLIT,2=AUTO));
 
 The Datapixx has two independant analog video outputs, VGA1 and VGA2. There are  
 two ways in which these dual video outputs can be driven. In "mirror" mode, the  

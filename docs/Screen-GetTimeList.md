@@ -1,6 +1,7 @@
 # [Screen('GetTimeList')](Screen-GetTimeList) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+timeList= Screen('GetTimelist');
 
 Return a vector of doubles holding times as reported by [GetSecs](GetSecs).  When debugging  
 is enabled for particular  [Screen](Screen) subfunctions using a [Screen](Screen) preference  

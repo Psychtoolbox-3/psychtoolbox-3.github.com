@@ -1,6 +1,7 @@
 # [Datapixx('GetAudioStatus')](Datapixx-GetAudioStatus) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+status = Datapixx('GetAudioStatus');
 
 Returns a struct containing the following audio status information:  
 -"scheduleRunning" is 1 if audio waveform playback schedule is currently  

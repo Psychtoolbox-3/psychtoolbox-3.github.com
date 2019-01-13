@@ -1,6 +1,7 @@
 # [Datapixx('EnableDoutDinLoopback')](Datapixx-EnableDoutDinLoopback) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('EnableDoutDinLoopback');
 
 Enable an internal loopback from the digital outputs to the digital inputs. This  
 causes values programmed into the digital output bits to appear on the  

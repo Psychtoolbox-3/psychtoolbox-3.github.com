@@ -1,6 +1,7 @@
 # [Datapixx('ReadDinLog')](Datapixx-ReadDinLog) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+[logData, logTimetags, underflow] = Datapixx('ReadDinLog' [, numFrames]);
 
 Upload digital input data from a Datapixx internal log buffer to the local host.  
 -"numFrames" is the number of frames to upload, and should not exceed  

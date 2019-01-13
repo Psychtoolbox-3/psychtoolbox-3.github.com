@@ -1,6 +1,7 @@
 # [Eyelink('OpenFile')](Eyelink-OpenFile) 
 ##### [Psychtoolbox](Psychtoolbox)>[Eyelink](Eyelink).{mex*} subfunction
 
+[status =] Eyelink('OpenFile', filename [, dontOpenExisting=0])
 
 Opens an EDF file 'filename' on the tracker computer, closes any existing file.  
 If the optional flag 'dontOpenExisting' is set to a non-zero value, then the  

@@ -1,6 +1,7 @@
 # [Datapixx('SetTouchpixxStabilizeDuration')](Datapixx-SetTouchpixxStabilizeDuration) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('SetTouchpixxStabilizeDuration', duration);
 
 Set duration in seconds that [TOUCHPixx](TOUCHPixx) panel coordinates must be stable before  
 being recognized as a touch in [GetTouchpixxCoordinates](GetTouchpixxCoordinates). Touching a resistive  

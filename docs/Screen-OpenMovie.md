@@ -1,6 +1,7 @@
 # [Screen('OpenMovie')](Screen-OpenMovie) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[ moviePtr [duration] [fps] [width] [height] [count] [aspectRatio]]=Screen('OpenMovie', windowPtr, moviefile [, async=0] [, preloadSecs=1] [, specialFlags1=0][, pixelFormat=4][, maxNumberThreads=-1][, movieOptions]);
 
 Try to open the multimediafile 'moviefile' for playback in onscreen window  
 'windowPtr' and return a handle 'moviePtr' on success.  

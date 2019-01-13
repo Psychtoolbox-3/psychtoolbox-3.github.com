@@ -1,6 +1,7 @@
 # [Screen('StopVideoCapture')](Screen-StopVideoCapture) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+droppedframes = Screen('StopVideoCapture', capturePtr [, discardFrames=1]);
 
 Stop video capture device specified by 'capturePtr'. The function returns the  
 number of captured frames it had to drop from its internal buffers in order to  

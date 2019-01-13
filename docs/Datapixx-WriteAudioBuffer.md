@@ -1,6 +1,7 @@
 # [Datapixx('WriteAudioBuffer')](Datapixx-WriteAudioBuffer) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+[nextBufferAddress, underflow, overflow] = Datapixx('WriteAudioBuffer', bufferData [, bufferAddress=16e6]);
 
 Download audio data from local host to a Datapixx internal waveform buffer.  
 -"bufferData" is a 2D matrix of audio waveform data in the range -1 to +1. The  

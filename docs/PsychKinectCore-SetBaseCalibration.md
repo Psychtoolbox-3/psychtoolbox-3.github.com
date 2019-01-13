@@ -1,6 +1,7 @@
 # [PsychKinectCore('SetBaseCalibration')](PsychKinectCore-SetBaseCalibration) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychKinectCore](PsychKinectCore).{mex*} subfunction
 
+[...old parameter settings in order of inputs... ] = PsychKinect('SetBaseCalibration', kinectPtr, depthsIntrinsics, rgbIntrinsics, rgbRotation, rgbTranslation, depthsUndistort, rgbUndistort, depthBaseAndOffset);
 
 Set and/or Get camera calibration matrices of box 'kinectPtr'.  
   

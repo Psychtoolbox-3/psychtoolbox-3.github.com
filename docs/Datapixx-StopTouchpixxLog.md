@@ -1,6 +1,7 @@
 # [Datapixx('StopTouchpixxLog')](Datapixx-StopTouchpixxLog) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('StopTouchpixxLog');
 
 Stop logging [TOUCHPixx](TOUCHPixx) touch panel activity.  
 See Touchpixx\*Demo files for examples.  

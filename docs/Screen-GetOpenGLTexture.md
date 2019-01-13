@@ -1,6 +1,7 @@
 # [Screen('GetOpenGLTexture')](Screen-GetOpenGLTexture) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[ gltexid gltextarget texcoord_u texcoord_v ] =Screen('GetOpenGLTexture', windowPtr, textureHandle [, x][, y]);
 
 Returns information about the [OpenGL](OpenGL) texture corresponding to a Psychtoolbox  
 texture. "windowPtr" is the handle of the onscreen window for which texture  

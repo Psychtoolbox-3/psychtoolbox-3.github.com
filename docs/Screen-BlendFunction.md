@@ -1,6 +1,7 @@
 # [Screen('BlendFunction')](Screen-BlendFunction) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[sourceFactorOld, destinationFactorOld, colorMaskOld]=Screen('BlendFunction', windowIndex, [sourceFactorNew], [destinationFactorNew], [colorMaskNew]);
 
 Return or set the current alpha-blending mode and the color buffer writemask for  
 window 'windowIndex'.  

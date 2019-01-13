@@ -1,6 +1,7 @@
 # [PsychKinectCore('GrabFrame')](PsychKinectCore-GrabFrame) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychKinectCore](PsychKinectCore).{mex*} subfunction
 
+[result, cts, age] = PsychKinect('GrabFrame', kinectPtr [, waitMode=1][, mostrecent=0]);
 
 Poll or wait for arrival of new captured frames, release old ones.  
   

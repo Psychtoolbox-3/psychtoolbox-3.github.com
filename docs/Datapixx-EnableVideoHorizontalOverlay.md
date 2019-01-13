@@ -1,6 +1,7 @@
 # [Datapixx('EnableVideoHorizontalOverlay')](Datapixx-EnableVideoHorizontalOverlay) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('EnableVideoHorizontalOverlay');
 
 Horizontal overlay causes the left and right halves of the video frame to be  
 treated as two separate images which are composited, or blended. The resulting  

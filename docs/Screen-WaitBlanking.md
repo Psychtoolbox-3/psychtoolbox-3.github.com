@@ -1,6 +1,7 @@
 # [Screen('WaitBlanking')](Screen-WaitBlanking) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+framesSinceLastWait = Screen('WaitBlanking', windowPtr [, waitFrames]);
 
 Wait for specified number of monitor refresh intervals, stopping PTB's execution  
 until then. Select waitFrames=1 (or omit it, since that's the default) to wait  

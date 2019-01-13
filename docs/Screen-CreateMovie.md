@@ -1,6 +1,7 @@
 # [Screen('CreateMovie')](Screen-CreateMovie) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+moviePtr = Screen('CreateMovie', windowPtr, movieFile [, width][, height][, frameRate=30][, movieOptions][, numChannels=4][, bitdepth=8]);
 
 Create a new movie file with filename 'movieFile' and according to given  
 'movieOptions'.  

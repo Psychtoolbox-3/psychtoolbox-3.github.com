@@ -1,6 +1,7 @@
 # [PsychHID('ReceiveReports')](PsychHID-ReceiveReports) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychHID](PsychHID).{mex*} subfunction
 
+err=PsychHID('ReceiveReports',deviceNumber[,options])
 
 Receive and save, internally, all reports from the specified USB HID device, now  
 and forever more (unless stopped).  

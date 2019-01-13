@@ -1,7 +1,7 @@
 # [gpgpuGVF](gpgpuGVF)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychOpenGL](PsychOpenGL)>[PsychGLSLShaders](PsychGLSLShaders)
 
-Adrian, this function is not yet documented.
+This function is not yet documented.
 
 
  MissingDocs

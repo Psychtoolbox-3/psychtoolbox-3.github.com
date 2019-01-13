@@ -1,6 +1,7 @@
 # [Screen('SelectStereoDrawBuffer')](Screen-SelectStereoDrawBuffer) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+currentbuffer = Screen('SelectStereoDrawBuffer', windowPtr [, bufferid] [, param1]);
 
 Select the target buffer for drawing commands in stereo display mode and or  
 return the current/old buffer selection in 'currentbuffer'.  

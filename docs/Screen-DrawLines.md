@@ -1,6 +1,7 @@
 # [Screen('DrawLines')](Screen-DrawLines) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[minSmoothLineWidth, maxSmoothLineWidth, minAliasedLineWidth, maxAliasedLineWidth] = Screen('DrawLines', windowPtr, xy [,width] [,colors] [,center] [,smooth][,lenient]);
 
 Quickly draw an array of lines into the specified window "windowPtr".  
 "xy" is a two-row vector containing the x and y coordinates of the line  

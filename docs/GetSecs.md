@@ -3,19 +3,19 @@
 
   
 
- s=[GetSecs](GetSecs)  
+ s=GetSecs  
    
- [GetSecs](GetSecs) returns the time in seconds (with high precision). [GetSecs](GetSecs) uses  
+ GetSecs returns the time in seconds (with high precision). GetSecs uses  
  the highest precision realtime clock on each operating system. The zero  
- point (point in time where [GetSecs](GetSecs) would report a value of zero) is  
+ point (point in time where GetSecs would report a value of zero) is  
  operating system dependent and nothing to be relied on.  
   
-###  [GetSecs](GetSecs) additionally supports these subfunctions:  
+###  GetSecs additionally supports these subfunctions:  
   
  'Version' - Tell version number etc.  
  'AllClocks' - Return time from all supported clocks.  
    
- Type "[GetSecs](GetSecs) [AllClocks](AllClocks)?" for more infos/help.  
+ Type "GetSecs AllClocks?" for more infos/help.  
   
  TIMING ADVICE: The first time you access any MEX function or M file,  
  Matlab takes several hundred milliseconds to load it from disk.  
@@ -28,7 +28,7 @@
    
  Win : \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
   
- On Windows machines the high precision [QueryPerformanceCounter](QueryPerformanceCounter)() call   
+ On Windows machines the high precision QueryPerformanceCounter() call   
  is used to get the number of seconds since system start up, if a   
  performance counter is available. Otherwise, or if the high precision timer  
  is found to be defective or unreliable, the less accurate timeGetTime()  
@@ -36,8 +36,8 @@
  defective or unreliable timing facilities under some conditions.  
  Psychtoolbox tries to detect and handle such systems at runtime - it  
  performs runtime consistency checks. For a more thorough test, run  
- [GetSecsTest](GetSecsTest). See also the FAQ section of the Psychtoolbox Wiki for more  
- background info, as well as "help [GetSecsTest](GetSecsTest)". Resolution of time on  
+ GetSecsTest. See also the FAQ section of the Psychtoolbox Wiki for more  
+ background info, as well as "help GetSecsTest". Resolution of time on  
  Windows varies: If the high precision clock is used, it will be  
  microsecond resolution and accuracy, if the fallback clock is used, it  
  will be roughly millisecond resolution and accuracy.  
@@ -59,7 +59,7 @@
  computers running a Linux 2.6 kernel have reliably working clocks.  
   
   
- See also: [WaitSecs](WaitSecs), [GetSecsTest](GetSecsTest),   
+ See also: WaitSecs, GetSecsTest,   
   
 
 

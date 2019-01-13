@@ -190,9 +190,6 @@ folders of your liking instead:
 
     If the download fails, read below on [Download
     Problems](#download-problems).
-10. [Only if you use the outdated Psychtoolbox 3.0.14 or earlier and need high quality
-    sound output, you may need to install some extra software. Click this link to
-    find info about download and installation of it][ASIO]
 
 If you want to know more about the downloader, see [DownloadPsychtoolbox][docs-download]
 (or `help DownloadPsychtoolbox` in the Matlab command window.)
@@ -392,4 +389,3 @@ of older versions can be found at the bottom of the page found
   [docs-setup]: http://docs.psychtoolbox.org/SetupPsychtoolbox
   [docs-update]: http://docs.psychtoolbox.org/UpdatePsychtoolbox
   [c++ runtime]: http://www.microsoft.com/downloads/details.aspx?familyid=766A6AF7-EC73-40FF-B072-9112BAB119C2&displaylang=en#filelist
-  [ASIO]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/wiki/Hardware:-Audio-Devices

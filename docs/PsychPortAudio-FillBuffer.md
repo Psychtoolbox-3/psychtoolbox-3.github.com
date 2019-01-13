@@ -1,6 +1,7 @@
 # [PsychPortAudio('FillBuffer')](PsychPortAudio-FillBuffer) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+[underflow, nextSampleStartIndex, nextSampleETASecs] = PsychPortAudio('FillBuffer', pahandle, bufferdata [, streamingrefill=0][, startIndex=Append]);
 
 Fill audio data playback buffer of a [PortAudio](PortAudio) audio device. 'pahandle' is the  
 handle of the device whose buffer is to be filled.  

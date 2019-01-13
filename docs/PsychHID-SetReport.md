@@ -1,6 +1,7 @@
 # [PsychHID('SetReport')](PsychHID-SetReport) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychHID](PsychHID).{mex*} subfunction
 
+err = PsychHID('SetReport', deviceNumber, reportType, reportID, report)
 
 Send a report to the connected USB HID device.  
 "deviceNumber" specifies which device.  

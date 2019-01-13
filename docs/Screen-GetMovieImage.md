@@ -1,6 +1,7 @@
 # [Screen('GetMovieImage')](Screen-GetMovieImage) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[ texturePtr [timeindex]]=Screen('GetMovieImage', windowPtr, moviePtr, [waitForImage=1], [fortimeindex], [specialFlags = 0] [, specialFlags2 = 0]);
 
 Try to fetch a new texture image from movie object 'moviePtr' for visual  
 playback/display in onscreen window 'windowPtr' and return a texture-handle  

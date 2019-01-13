@@ -1,6 +1,7 @@
 # [Datapixx('GetDinStatus')](Datapixx-GetDinStatus) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+status = Datapixx('GetDinStatus');
 
 Returns a struct containing the following digital input status information:  
 -"doutDinLoopback" is 1 if digital inputs are driven internally by digital  

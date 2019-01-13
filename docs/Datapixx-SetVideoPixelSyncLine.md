@@ -1,6 +1,7 @@
 # [Datapixx('SetVideoPixelSyncLine')](Datapixx-SetVideoPixelSyncLine) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('SetVideoPixelSyncLine', rasterLine [, singleLine=1] [, blankLine=1]);
 
 Configure pixel sync raster line operation.  
 Register cache writes to the Datapixx can be delayed until a user-specified  

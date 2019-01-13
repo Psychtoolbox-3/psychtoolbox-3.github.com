@@ -1,6 +1,7 @@
 # [Screen('BeginOpenGL')](Screen-BeginOpenGL) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('BeginOpenGL', windowPtr [, sharecontext=0]);
 
 Prepare window 'windowPtr' for [OpenGL](OpenGL) rendering by external [OpenGL](OpenGL) code. This  
 allows to use [OpenGL](OpenGL) drawing routines other than the ones implemented in  

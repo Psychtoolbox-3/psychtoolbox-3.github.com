@@ -1,6 +1,7 @@
 # [Screen('AsyncFlipCheckEnd')](Screen-AsyncFlipCheckEnd) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[VBLTimestamp StimulusOnsetTime FlipTimestamp Missed Beampos] = Screen('AsyncFlipCheckEnd', windowPtr);
 
 Check if a previously scheduled asynchronous flip operation has completed (see  
 [Screen](Screen) [AsyncFlipBegin](AsyncFlipBegin)? for help).  

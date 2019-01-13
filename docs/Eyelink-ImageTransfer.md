@@ -1,6 +1,7 @@
 # [Eyelink('ImageTransfer')](Eyelink-ImageTransfer) 
 ##### [Psychtoolbox](Psychtoolbox)>[Eyelink](Eyelink).{mex*} subfunction
 
+[status] = Eyelink('ImageTransfer', imagePath [, xPosition=0][, yPosition=0][, width=0][, height=0][, trackerXPosition=0][, trackerYPosition=0][, xferoptions=0]);
 
 This function transfers a 24-bit or 32-bit bitmap to the tracker PC as backdrop  
 for gaze cursors.  

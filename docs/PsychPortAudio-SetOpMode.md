@@ -1,6 +1,7 @@
 # [PsychPortAudio('SetOpMode')](PsychPortAudio-SetOpMode) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+oldOpMode = PsychPortAudio('SetOpMode', pahandle [, opModeOverride]);
 
 Override basic mode of operation of an open audio device 'pahandle' and/or  
 return old/current mode.  

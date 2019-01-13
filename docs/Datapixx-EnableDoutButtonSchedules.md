@@ -1,6 +1,7 @@
 # [Datapixx('EnableDoutButtonSchedules')](Datapixx-EnableDoutButtonSchedules) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('EnableDoutButtonSchedules');
 
 Normally digital output schedules are initiated via calls to [StartDoutSchedule](StartDoutSchedule).  
 [EnableDoutButtonSchedules](EnableDoutButtonSchedules) causes the [DATAPixx](DATAPixx) to automatically initiate a  

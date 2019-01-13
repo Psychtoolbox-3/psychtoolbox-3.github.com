@@ -1,6 +1,7 @@
 # [PsychPortAudio('Start')](PsychPortAudio-Start) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+startTime = PsychPortAudio('Start', pahandle [, repetitions=1] [, when=0] [, waitForStart=0] [, stopTime=inf] [, resume=0]);
 
 Start a [PortAudio](PortAudio) audio device. The 'pahandle' is the handle of the device to  
 start. Starting a device means: Start playback of output devices, start  

@@ -1,6 +1,7 @@
 # [Screen('WindowSize')](Screen-WindowSize) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[width, height]=Screen('WindowSize', windowPointerOrScreenNumber [, realFBSize=0]);
 
 Return the width and height of a window or screen in units of pixels.  
 By default, the useable size in pixels is returned, ie., the size of the area  

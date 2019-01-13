@@ -1,6 +1,7 @@
 # [Screen('AsyncFlipBegin')](Screen-AsyncFlipBegin) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[VBLTimestamp StimulusOnsetTime FlipTimestamp Missed Beampos] = Screen('AsyncFlipBegin', windowPtr [, when] [, dontclear] [, dontsync] [, multiflip]);
 
 Schedule an asynchronous flip of front and back display surfaces for given  
 onscreen window. "windowPtr" is the id of the onscreen window whose content  

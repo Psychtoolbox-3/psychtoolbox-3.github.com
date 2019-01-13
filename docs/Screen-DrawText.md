@@ -1,6 +1,7 @@
 # [Screen('DrawText')](Screen-DrawText) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[newX,newY,textHeight]=Screen('DrawText', windowPtr, text [,x] [,y] [,color] [,backgroundColor] [,yPositionIsBaseline] [,swapTextDirection]);
 
 Draw text. "text" may include Unicode characters (e.g. Chinese).  
 A standard Matlab/Octave char()acter text string is interpreted according to  

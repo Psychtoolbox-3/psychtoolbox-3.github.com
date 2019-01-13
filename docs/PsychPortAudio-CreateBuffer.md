@@ -1,6 +1,7 @@
 # [PsychPortAudio('CreateBuffer')](PsychPortAudio-CreateBuffer) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+bufferhandle = PsychPortAudio('CreateBuffer' [, pahandle], bufferdata);
 
 Create a new dynamic audio data playback buffer for a [PortAudio](PortAudio) audio device and  
 fill it with initial data.  

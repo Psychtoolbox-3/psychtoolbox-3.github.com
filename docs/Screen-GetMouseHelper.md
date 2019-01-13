@@ -1,6 +1,7 @@
 # [Screen('GetMouseHelper')](Screen-GetMouseHelper) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[x, y, buttonValueArray, hasKbFocus, valuators, valuatorNames]= Screen('GetMouseHelper', numButtons [, screenNumber][, mouseIndex]);
 
 This is a helper function called by [GetMouse](GetMouse).  Do not call  
 [Screen](Screen)('GetMouseHelper'), use [GetMouse](GetMouse) instead.  

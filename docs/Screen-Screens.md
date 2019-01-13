@@ -1,6 +1,7 @@
 # [Screen('Screens')](Screen-Screens) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+screenNumbers=Screen('Screens' [, physicalDisplays]);
 
 Return an array of screenNumbers. If this command is executed on Microsoft  
 Windows in a multi-display configuration, then the following rule applies:  

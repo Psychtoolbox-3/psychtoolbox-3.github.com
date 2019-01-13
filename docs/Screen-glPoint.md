@@ -1,6 +1,7 @@
 # [Screen('glPoint')](Screen-glPoint) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('glPoint', windowPtr, color, x, y [,size]);
 
 Draw a point at the specified location 'x', 'y' with the requested optional  
 diameter 'size' in the requested 'color'. For drawing of many points, e.g.,  

@@ -1,6 +1,7 @@
 # [Datapixx('StopMicrophoneSchedule')](Datapixx-StopMicrophoneSchedule) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('StopMicrophoneSchedule');
 
 Stop running an audio acquisition schedule. The actual hardware schedule will be  
 terminated by the next [RegWr](RegWr)\* command.  

@@ -1,6 +1,7 @@
 # [PsychHID('Devices')](PsychHID-Devices) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychHID](PsychHID).{mex*} subfunction
 
+devices=PsychHID('Devices' [, deviceClass])
 
 Return a struct array describing each connected USB HID device.  
 'deviceClass' optionally selects for the class of input device. This is not  

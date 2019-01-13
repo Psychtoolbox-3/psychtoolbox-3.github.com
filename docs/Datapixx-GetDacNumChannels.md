@@ -1,6 +1,7 @@
 # [Datapixx('GetDacNumChannels')](Datapixx-GetDacNumChannels) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+dacNumChannels = Datapixx('GetDacNumChannels');
 
 Returns the number of DAC (Digital to Analog Converter) output channels in the  
 Datapixx. Currently the Datapixx has 4 16-bit DAC channels capable of updating  

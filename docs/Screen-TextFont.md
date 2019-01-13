@@ -1,6 +1,7 @@
 # [Screen('TextFont')](Screen-TextFont) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[oldFontName,oldFontNumber,oldTextStyle]=Screen('TextFont', windowPtr [,fontNameOrNumber][,textStyle]);
 
 Get/Set the font for future text draws in this window.  
 You can ask what the current font is, or specify the desired font by number or  

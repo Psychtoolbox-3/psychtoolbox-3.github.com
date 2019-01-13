@@ -1,6 +1,7 @@
 # [Screen('DrawTextures')](Screen-DrawTextures) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('DrawTextures', windowPointer, texturePointer(s) [, sourceRect(s)] [, destinationRect(s)] [, rotationAngle(s)] [, filterMode(s)] [, globalAlpha(s)] [, modulateColor(s)] [, textureShader] [, specialFlags] [, auxParameters]);
 
 Draw many textures at once, either one texture to many locations or many  
 textures.  

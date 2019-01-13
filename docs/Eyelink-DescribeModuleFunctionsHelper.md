@@ -1,6 +1,7 @@
 # [Eyelink('DescribeModuleFunctionsHelper')](Eyelink-DescribeModuleFunctionsHelper) 
 ##### [Psychtoolbox](Psychtoolbox)>[Eyelink](Eyelink).{mex*} subfunction
 
+subfunctionNames = Modulename('DescribeModuleFunctionsHelper' [, mode] [, subfunctionName]);
 
 Return a cell array of strings naming all subfunctions supported by this module  
 if the optional 'subfunctionName' argument is omitted. If 'subfunctionName' is a  

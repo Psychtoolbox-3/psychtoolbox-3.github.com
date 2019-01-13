@@ -1,6 +1,7 @@
 # [Datapixx('RegWr')](Datapixx-RegWr) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('RegWr');
 
 Write local register cache modifications to Datapixx immediately. All Datapixx  
 Set\* functions do fast writes to a local register cache on the host, and all  

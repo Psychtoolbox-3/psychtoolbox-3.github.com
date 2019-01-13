@@ -1,6 +1,7 @@
 # [Screen('ConfigureDisplay')](Screen-ConfigureDisplay) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+oldSettings = Screen('ConfigureDisplay', setting, screenNumber, outputId [, newwidth][, newheight][, newHz][, newX][, newY]);
 
 Query or change 'setting' for display output 'outputId' of screen  
 'screenNumber'.  

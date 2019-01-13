@@ -1,6 +1,7 @@
 # [PsychKinectCore('GetDepthImage')](PsychKinectCore-GetDepthImage) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychKinectCore](PsychKinectCore).{mex*} subfunction
 
+[imageOrPtr, width, height, components, extFormat] = PsychKinect('GetDepthImage', kinectPtr [, format=0][, returnTexturePtr=0]);
 
 Return the depth image data for the frame fetched via 'GrabFrame'.  
   

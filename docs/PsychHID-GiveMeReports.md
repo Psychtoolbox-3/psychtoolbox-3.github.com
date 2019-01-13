@@ -1,6 +1,7 @@
 # [PsychHID('GiveMeReports')](PsychHID-GiveMeReports) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychHID](PsychHID).{mex*} subfunction
 
+[reports,err]=PsychHID('GiveMeReports',deviceNumber,[reportBytes])
 
 Return, as an output argument, all the saved reports from the connected USB HID  
 device.  

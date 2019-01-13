@@ -1,6 +1,7 @@
 # [PsychPortAudio('RunMode')](PsychPortAudio-RunMode) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+oldRunMode = PsychPortAudio('RunMode', pahandle [,runMode]);
 
 Set general run mode to 'runMode' and/or return old runMode for a device  
 'pahandle'.  

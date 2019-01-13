@@ -1,6 +1,7 @@
 # [Screen('FrameRect')](Screen-FrameRect) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('FrameRect', windowPtr [,color] [,rect] [,penWidth]);
 
 Draw the outline of a rectangle "rect". "color" is the clut index (scalar or [r  
 g b] triplet or [r g b a] quadruple) that you want to poke into each pixel;   

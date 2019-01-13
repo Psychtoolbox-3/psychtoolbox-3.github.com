@@ -1,6 +1,7 @@
 # [Datapixx('DisableVideoHorizontalOverlay')](Datapixx-DisableVideoHorizontalOverlay) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('DisableVideoOverlay');
 
 Disables blending of left and right halves of the video frame. See  
 [EnableVideoHorizontalOverlay](EnableVideoHorizontalOverlay) for more information, and  

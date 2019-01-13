@@ -20,21 +20,21 @@ embracing them with square brackets. You're not meant to include these
 brackets when you actually call the function. For example, "help [Snd](Snd)"  
 will tell you this:  
   
-     err = [Snd](Snd)(command,[sig],[rate])  
+err = [Snd](Snd)(command,[sig],[rate])  
   
 meaning that the "command" argument is required and the "sig" and "rate"  
 arguments are optional. A typical call to [Snd](Snd) looks like this:  
   
-     [Snd](Snd)('Play', mysoundsignal)  
+[Snd](Snd)('Play', mysoundsignal)  
   
 The most important and generally useful functions, especially [Screen](Screen), are  
 in [PsychBasic](PsychBasic). The [PsychDemos](PsychDemos) will show you how to do useful things in  
 Matlab with the Psychtoolbox. Try these:  
   
-     help [PsychDemos](PsychDemos)       % Triple-click me & hit enter.  
-     help [PsychBasic](PsychBasic)  
-     help [Screen](Screen)  
-     [Screen](Screen) [OpenWindow](OpenWindow)?  
+help [PsychDemos](PsychDemos)  
+help [PsychBasic](PsychBasic)  
+help [Screen](Screen)  
+[Screen](Screen) [OpenWindow](OpenWindow)?  
   
 The folder [PsychDocumentation](PsychDocumentation) contains bits of documentation about  
 technical implementation details, how to solve specific tasks and how to  
@@ -89,6 +89,7 @@ Perception 36 ECVP Abstract Supplement.
 [PsychRadiometric](PsychRadiometric)       - Radiometric/photometric calculations and conversions.  
 [PsychRects](PsychRects)             - Manipulate rectangles for drawing.  
 [PsychSignal](PsychSignal)            - Signal processing and math routines.  
+[PsychSound](PsychSound)             - Sound input and output routines.  
 [PsychStairCase](PsychStairCase)         - Adaptive staircase procedure.  
 [PsychTests](PsychTests)             - Evaluate performance of software and hardware.  
 [PsychVideoCapture](PsychVideoCapture)      - Functions for realtime video capture.  

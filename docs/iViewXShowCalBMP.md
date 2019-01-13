@@ -1,7 +1,7 @@
 # [iViewXShowCalBMP](iViewXShowCalBMP)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychHardware](PsychHardware)>[iViewXToolbox](iViewXToolbox)
 
-Adrian, this function is not yet documented.
+This function is not yet documented.
 
 
  MissingDocs

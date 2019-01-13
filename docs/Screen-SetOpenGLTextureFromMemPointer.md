@@ -1,6 +1,7 @@
 # [Screen('SetOpenGLTextureFromMemPointer')](Screen-SetOpenGLTextureFromMemPointer) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[textureHandle rect] = Screen('SetOpenGLTextureFromMemPointer', windowPtr, textureHandle, imagePtr, width, height, depth [, upsidedown][, target][, glinternalformat][, gltype][, extdataformat][, specialFlags]);
 
 DANGEROUS! C-PROGRAMMING EXPERTS ONLY! OTHERS STAY AWAY! Convert raw image data,  
 provided as a pointer to a system memory buffer, into a Psychtoolbox texture.  

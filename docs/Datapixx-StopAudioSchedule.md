@@ -1,6 +1,7 @@
 # [Datapixx('StopAudioSchedule')](Datapixx-StopAudioSchedule) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('StopAudioSchedule');
 
 Stop running an audio waveform playback schedule. The actual hardware schedule  
 will be terminated by the next [RegWr](RegWr)\* command.  

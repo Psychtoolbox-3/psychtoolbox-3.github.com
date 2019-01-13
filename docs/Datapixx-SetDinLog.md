@@ -1,6 +1,7 @@
 # [Datapixx('SetDinLog')](Datapixx-SetDinLog) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('SetDinLog' [, bufferBaseAddress=12e6] [, numBufferFrames=1000]);
 
 Configure digital input transition logging. The log reports rising and falling  
 edges of the digital inputs, with associated timetags, and is the best way to  

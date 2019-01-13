@@ -1,6 +1,7 @@
 # [GetSecs('AllClocks')](GetSecs-AllClocks) 
 ##### [Psychtoolbox](Psychtoolbox)>[GetSecs](GetSecs).{mex*} subfunction
 
+[GetSecsTime, WallTime, syncErrorSecs] = GetSecs('AllClocks' [, maxError=0.000020]);
 
 Return current time in seconds according to all supported clocks.  
   

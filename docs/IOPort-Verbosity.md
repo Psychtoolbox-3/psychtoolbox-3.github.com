@@ -1,6 +1,7 @@
 # [IOPort('Verbosity')](IOPort-Verbosity) 
 ##### [Psychtoolbox](Psychtoolbox)>[IOPort](IOPort).{mex*} subfunction
 
+oldlevel = IOPort('Verbosity' [,level]);
 
 Set level of verbosity for error/warning/status messages. 'level' optional, new  
 level of verbosity. 'oldlevel' is the old level of verbosity. The following  

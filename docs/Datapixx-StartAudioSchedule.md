@@ -1,6 +1,7 @@
 # [Datapixx('StartAudioSchedule')](Datapixx-StartAudioSchedule) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('StartAudioSchedule');
 
 Start running an audio waveform playback schedule. The actual hardware schedule  
 will be initiated by the next [RegWr](RegWr)\* command, and then the first waveform sample  

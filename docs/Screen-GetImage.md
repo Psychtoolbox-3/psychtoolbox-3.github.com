@@ -1,6 +1,7 @@
 # [Screen('GetImage')](Screen-GetImage) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+imageArray=Screen('GetImage', windowPtr [,rect] [,bufferName] [,floatprecision=0] [,nrchannels=3])
 
 Slowly copy an image from a window or texture to Matlab/Octave, by default  
 returning a uint8 array.  

@@ -1,6 +1,7 @@
 # [IOPort('OpenSerialPort')](IOPort-OpenSerialPort) 
 ##### [Psychtoolbox](Psychtoolbox)>[IOPort](IOPort).{mex*} subfunction
 
+[handle, errmsg] = IOPort('OpenSerialPort', port [, configString]);
 
 Open a serial port device, return a 'handle' to it.  
 If a port can't be opened, the function will abort with error, unless the level  

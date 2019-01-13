@@ -1,6 +1,7 @@
 # [Datapixx('GetTouchpixxCoordinates')](Datapixx-GetTouchpixxCoordinates) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+coordinates = Datapixx('GetTouchpixxCoordinates');
 
 Returns 2-element vector containing [TOUCHPixx](TOUCHPixx) x/y location currently being  
 touched. Each of the x/y coordinates ranges from 0 to 1. The coordinate space  

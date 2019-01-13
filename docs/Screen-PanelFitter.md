@@ -1,6 +1,7 @@
 # [Screen('PanelFitter')](Screen-PanelFitter) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+oldParams = Screen('PanelFitter', windowPtr [, newParams]);
 
 Change operating parameters of builtin panel fitter.  
   

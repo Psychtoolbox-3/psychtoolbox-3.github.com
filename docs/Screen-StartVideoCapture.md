@@ -1,6 +1,7 @@
 # [Screen('StartVideoCapture')](Screen-StartVideoCapture) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[fps starttime] = Screen('StartVideoCapture', capturePtr [, captureRateFPS=25] [, dropframes=0] [, startAt]);
 
 Start video capture device specified by 'capturePtr'. If 'captureRateFPS' is  
 provided, the device is requested to capture at that rate. Otherwise it is  

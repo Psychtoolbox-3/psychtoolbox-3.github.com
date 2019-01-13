@@ -1,6 +1,7 @@
 # [Screen('TextBounds')](Screen-TextBounds) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[normBoundsRect, offsetBoundsRect, textHeight, xAdvance] = Screen('TextBounds', windowPtr, text [,x] [,y] [,yPositionIsBaseline] [,swapTextDirection]);
 
 Accepts a window pointer and a 'text' string.  Return in 'normBoundsRect' a rect  
 defining the size of the text in units of pixels. Returns in 'offsetBoundsRect'  

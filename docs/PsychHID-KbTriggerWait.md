@@ -1,6 +1,7 @@
 # [PsychHID('KbTriggerWait')](PsychHID-KbTriggerWait) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychHID](PsychHID).{mex*} subfunction
 
+secs=PsychHID('KbTriggerWait', KeysUsage, [deviceNumber])
 
 Scan a keyboard, keypad, or other HID device with buttons, and wait for a  
 trigger key press.  

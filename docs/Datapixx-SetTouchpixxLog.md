@@ -1,6 +1,7 @@
 # [Datapixx('SetTouchpixxLog')](Datapixx-SetTouchpixxLog) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('SetTouchpixxLog' [, bufferBaseAddress=12e6] [, numBufferFrames=1000]);
 
 Configure [TOUCHPixx](TOUCHPixx) touch panel logging. The [TOUCHPixx](TOUCHPixx) controller polls the  
 panel at more than 5kHz waiting for a panel press. When a panel press is  

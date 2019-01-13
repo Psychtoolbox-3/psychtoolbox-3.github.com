@@ -1,6 +1,7 @@
 # [Datapixx('IsViewpixx3D')](Datapixx-IsViewpixx3D) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+isViewpixx3D = Datapixx('IsViewpixx3D');
 
 Returns non-0 if [DATAPixx](DATAPixx) is embedded in a [VIEWPixx3D](VIEWPixx3D).  
   

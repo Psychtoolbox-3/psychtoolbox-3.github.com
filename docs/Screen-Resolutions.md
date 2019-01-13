@@ -1,6 +1,7 @@
 # [Screen('Resolutions')](Screen-Resolutions) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+resolutions = Screen('Resolutions', screenNumber [, outputId]);
 
 Query a list of all supported and valid display settings for screen  
 "screenNumber" and display output "outputId". If the optional 'outputId' is  

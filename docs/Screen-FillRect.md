@@ -1,6 +1,7 @@
 # [Screen('FillRect')](Screen-FillRect) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('FillRect', windowPtr [,color] [,rect] )
 
 Fill "rect". "color" is the clut index (scalar or [r g b] triplet or [r g b a]  
 quadruple) that you want to poke into each pixel;  default produces white with  

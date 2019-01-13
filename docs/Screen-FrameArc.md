@@ -1,6 +1,7 @@
 # [Screen('FrameArc')](Screen-FrameArc) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('FrameArc',windowPtr,[color],[rect],startAngle,arcAngle, [penWidth], [penHeight], [penMode])
 
 Draw an arc inscribed within the rect. 'color' is the clut index (scalar or [r g  
 b] triplet) that you want to poke into each pixel; default produces black with  

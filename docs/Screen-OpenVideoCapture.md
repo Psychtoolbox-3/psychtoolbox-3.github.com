@@ -1,6 +1,7 @@
 # [Screen('OpenVideoCapture')](Screen-OpenVideoCapture) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+videoPtr = Screen('OpenVideoCapture', windowPtr [, deviceIndex][, roirectangle][, pixeldepth][, numbuffers][, allowfallback][, targetmoviename][, recordingflags][, captureEngineType][, bitdepth=8]);
 
 Try to open the video source 'deviceIndex' for video capture into onscreen  
 window 'windowPtr' and return a handle 'videoPtr' on success. If 'deviceIndex'  

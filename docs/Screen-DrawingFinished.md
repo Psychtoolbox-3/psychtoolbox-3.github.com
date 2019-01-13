@@ -1,6 +1,7 @@
 # [Screen('DrawingFinished')](Screen-DrawingFinished) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[telapsed] = SCREEN('DrawingFinished', windowPtr [, dontclear][, sync]);
 
 Tell Psychtoolbox that no further drawing commands will be issued to 'windowPtr'  
 before the next [Screen](Screen)('[Flip](Flip)') or [Screen](Screen)('AsyncFlipBegin') command.  

@@ -1,6 +1,7 @@
 # [Datapixx('StartMicrophoneSchedule')](Datapixx-StartMicrophoneSchedule) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('StartMicrophoneSchedule');
 
 Start running an audio acquisition schedule. The actual hardware schedule will  
 be initiated by the next [RegWr](RegWr)\* command, and then the audio inputs will acquire  

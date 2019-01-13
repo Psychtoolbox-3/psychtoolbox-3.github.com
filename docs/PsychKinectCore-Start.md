@@ -1,6 +1,7 @@
 # [PsychKinectCore('Start')](PsychKinectCore-Start) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychKinectCore](PsychKinectCore).{mex*} subfunction
 
+[starttime, fps, cwidth, cheight, dwidth, dheight] = PsychKinect('Start', kinectPtr [, dropframes=0]);
 
 Start video and depth capture operation of box 'kinectPtr'.  
   

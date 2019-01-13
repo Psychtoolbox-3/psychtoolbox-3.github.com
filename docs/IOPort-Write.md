@@ -1,6 +1,7 @@
 # [IOPort('Write')](IOPort-Write) 
 ##### [Psychtoolbox](Psychtoolbox)>[IOPort](IOPort).{mex*} subfunction
 
+[nwritten, when, errmsg, prewritetime, postwritetime, lastchecktime] = IOPort('Write', handle, data [, blocking=1]);
 
 Write data to device, specified by 'handle'.  
 'data' must be a vector of data items to write, or a matrix (in which case data  

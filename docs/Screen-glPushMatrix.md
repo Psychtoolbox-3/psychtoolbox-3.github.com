@@ -1,6 +1,7 @@
 # [Screen('glPushMatrix')](Screen-glPushMatrix) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('glPushMatrix', windowPtr);
 
 Store a backup copy of active current [OpenGL](OpenGL) matrix on the matrix stack for  
 later reuse. The capacity of the matrix backup stack is limited, typically not  

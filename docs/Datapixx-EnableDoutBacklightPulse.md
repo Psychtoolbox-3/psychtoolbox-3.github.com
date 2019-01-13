@@ -1,6 +1,7 @@
 # [Datapixx('EnableDoutBacklightPulse')](Datapixx-EnableDoutBacklightPulse) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('EnableDoutBacklightPulse');
 
 The [VIEWPixx](VIEWPixx) backlight is composed of an array of [LEDs](LEDs). [EnableDoutBacklightPulse](EnableDoutBacklightPulse)  
 causes these [LEDs](LEDs) to be enabled or disabled by the state of DOUT15. A digital  

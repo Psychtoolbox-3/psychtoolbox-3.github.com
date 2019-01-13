@@ -1,6 +1,7 @@
 # [Screen('FramePoly')](Screen-FramePoly) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('FramePoly', windowPtr [,color], pointList [,penWidth]);
 
 Draw a polygon frame. "color" is the clut index (scalar or [r g b a] vector)  
 that you want to poke into each pixel; default produces white. "pointList" is a  

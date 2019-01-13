@@ -1,6 +1,7 @@
 # [Screen('DrawLine')](Screen-DrawLine) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('DrawLine', windowPtr [,color], fromH, fromV, toH, toV [,penWidth]);
 
 Draw a line. "color" is the clut index (scalar or [r g b a] vector) that you  
 want to poke into each pixel; default produces black. "fromH" and "fromV" are  

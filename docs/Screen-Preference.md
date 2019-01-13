@@ -1,6 +1,7 @@
 # [Screen('Preference')](Screen-Preference) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+oldPreferenceValue = Screen('Preference', preferenceName, [newPreferenceValue])
 
 Get or set a Psychtoolbox preference.[Preference](Preference) settings are global - they  
 affect all operations of a module until changed.  

@@ -1,6 +1,7 @@
 # [PsychPortAudio('RefillBuffer')](PsychPortAudio-RefillBuffer) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+PsychPortAudio('RefillBuffer', pahandle [, bufferhandle=0], bufferdata [, startIndex=0]);
 
 Refill part of an audio data playback buffer of a [PortAudio](PortAudio) audio device.  
 'pahandle' is the handle of the device whose buffer is to be filled.  

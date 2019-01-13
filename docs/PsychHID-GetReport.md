@@ -1,6 +1,7 @@
 # [PsychHID('GetReport')](PsychHID-GetReport) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychHID](PsychHID).{mex*} subfunction
 
+[report, err] = PsychHID('GetReport', deviceNumber, reportType, reportID, reportBytes)
 
 Get a report from the connected USB HID device.  
 "deviceNumber" specifies which device. "reportType" is 1=input, 3=feature (0 to  

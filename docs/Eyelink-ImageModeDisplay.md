@@ -1,6 +1,7 @@
 # [Eyelink('ImageModeDisplay')](Eyelink-ImageModeDisplay) 
 ##### [Psychtoolbox](Psychtoolbox)>[Eyelink](Eyelink).{mex*} subfunction
 
+[result =] Eyelink('ImageModeDisplay')
 
 This handles display of the [EyeLink](EyeLink) camera images. While in imaging mode, it  
 continuously requests and displays the current camera image. It also displays  

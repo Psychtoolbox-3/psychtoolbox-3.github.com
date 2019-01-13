@@ -1,6 +1,7 @@
 # [Screen('GetMovieTimeIndex')](Screen-GetMovieTimeIndex) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+timeindex = Screen('GetMovieTimeIndex', moviePtr);
 
 Return current time index for movie object 'moviePtr'.  
 

@@ -1,7 +1,7 @@
 # [testgaze](testgaze)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychHardware](PsychHardware)>[iViewXToolbox](iViewXToolbox)>[iviewxtests](iviewxtests)
 
-Adrian, this function is not yet documented.
+This function is not yet documented.
 
 
  MissingDocs

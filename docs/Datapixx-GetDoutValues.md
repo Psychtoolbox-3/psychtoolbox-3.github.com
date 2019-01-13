@@ -1,6 +1,7 @@
 # [Datapixx('GetDoutValues')](Datapixx-GetDoutValues) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+doutValues = Datapixx('GetDoutValues');
 
 Returns the values of the 24 digital output bits.  
 See [DatapixxDout](DatapixxDout)\*Demo files for examples.  

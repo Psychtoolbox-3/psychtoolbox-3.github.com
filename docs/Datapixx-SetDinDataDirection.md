@@ -1,6 +1,7 @@
 # [Datapixx('SetDinDataDirection')](Datapixx-SetDinDataDirection) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('SetDinDataDirection', directionMask);
 
 Although DIN is primarily intended to be a digital \_input\_ system, it is  
 possible to turn around these I/Os, to drive outputs at up to 3.3V. To configure  

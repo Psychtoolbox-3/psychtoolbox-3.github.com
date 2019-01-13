@@ -1,6 +1,7 @@
 # [Datapixx('SetAudioSchedule')](Datapixx-SetAudioSchedule) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('SetAudioSchedule', scheduleOnset, scheduleRate, maxScheduleFrames [, lrMode=mono] [, bufferBaseAddress=16e6] [, numBufferFrames=maxScheduleFrames]);
 
 Configure a schedule for autonomous audio waveform playback.  
 -"scheduleOnset" is the desired delay (in double precision seconds) between  

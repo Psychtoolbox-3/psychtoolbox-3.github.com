@@ -1,6 +1,7 @@
 # [PsychPortAudio('GetStatus')](PsychPortAudio-GetStatus) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+status = PsychPortAudio('GetStatus', pahandle);
 
 Returns 'status', a struct with status information about the current state of  
 device 'pahandle'.  

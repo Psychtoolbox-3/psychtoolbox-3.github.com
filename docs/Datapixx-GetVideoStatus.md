@@ -1,6 +1,7 @@
 # [Datapixx('GetVideoStatus')](Datapixx-GetVideoStatus) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+status = Datapixx('GetVideoStatus');
 
 Returns a struct containing the following video status information:  
 -"horizontalResolution" is the number of visible pixels in one horizontal scan  

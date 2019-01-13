@@ -1,6 +1,7 @@
 # [Screen('LoadNormalizedGammaTable')](Screen-LoadNormalizedGammaTable) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[oldtable, success] = Screen('LoadNormalizedGammaTable', windowPtrOrScreenNumber, table [, loadOnNextFlip][, physicalDisplay][, ignoreErrors]);
 
 Load the gamma table of the specified screen or window  
 'windowPtrOrScreenNumber'.  

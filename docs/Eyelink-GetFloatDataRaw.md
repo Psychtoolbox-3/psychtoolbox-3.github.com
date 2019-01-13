@@ -1,6 +1,7 @@
 # [Eyelink('GetFloatDataRaw')](Eyelink-GetFloatDataRaw) 
 ##### [Psychtoolbox](Psychtoolbox)>[Eyelink](Eyelink).{mex*} subfunction
 
+[item, raw] = Eyelink('GetFloatDataRaw', type [, eye])
 
 Same as Eyelink('GetFloatData') but additionally returns raw sample data.  
 If type is not SAMPLE\_TYPE, identical to [GetFloatData](GetFloatData) (raw will be returned as  

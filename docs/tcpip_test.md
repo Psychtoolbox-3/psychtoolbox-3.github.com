@@ -1,7 +1,7 @@
 # [tcpip_test](tcpip_test)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychHardware](PsychHardware)>[iViewXToolbox](iViewXToolbox)>[tcp_udp_ip](tcp_udp_ip)>[tcpip](tcpip)
 
-Adrian, this function is not yet documented.
+This function is not yet documented.
 
 
  MissingDocs

@@ -1,6 +1,7 @@
 # [Datapixx('DisableDinDebounce')](Datapixx-DisableDinDebounce) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('DisableDinDebounce');
 
 Disable the 30 millisecond debounce interval on the digital inputs. This is  
 useful for logging multiple fast input transitions, such as when logging  

@@ -1,6 +1,7 @@
 # [Screen('DisplaySize')](Screen-DisplaySize) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[width, height]=Screen('DisplaySize', ScreenNumber);
 
 Return the physical width and height of the output display device associated  
 with 'ScreenNumber'. The size is returned in units of millimeters as reported by  

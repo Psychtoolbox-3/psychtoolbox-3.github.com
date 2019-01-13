@@ -1,6 +1,7 @@
 # [Datapixx('RegWrVideoSync')](Datapixx-RegWrVideoSync) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('RegWrVideoSync');
 
 Write local register cache modifications to Datapixx at leading edge of next  
 video vertical sync pulse. This is a good way to write Datapixx registers with  

@@ -1,6 +1,7 @@
 # [Screen('FillPoly')](Screen-FillPoly) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('FillPoly', windowPtr [,color], pointList [, isConvex]);
 
 Fill polygon. "color" is the clut index (scalar or [r g b] or [r g b a] vector)  
 that you want to poke into each pixel; default produces white. "pointList" is a  

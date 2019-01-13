@@ -25,7 +25,7 @@ Commands specific to serial ports:
 IOPort('[ConfigureSerialPort](IOPort-ConfigureSerialPort)', handle, configString);  
   
 
- [IOPort](IOPort) is a MEX file for precise control of input/output hardware, e.g.,  
+ IOPort is a MEX file for precise control of input/output hardware, e.g.,  
  Serial ports (or emulated serial ports like Serial-over-USB etc.),  
  parallel ports, network ports, and special digital I/O boxes.  
   
@@ -38,25 +38,25 @@ IOPort('[ConfigureSerialPort](IOPort-ConfigureSerialPort)', handle, configString
  the same. Your code wants to send a trigger signal immediately (with  
  lowest possible delay), at a scheduled point in time, or automatically in  
  response to some event like stimulus onset. However, the mechanism to  
- send triggers is different for different devices. [IOPort](IOPort) tries to provide  
+ send triggers is different for different devices. IOPort tries to provide  
  a unified interface for such cases, so you need to code only once and  
- [IOPort](IOPort) takes care of the nitty gritty differences between different  
+ IOPort takes care of the nitty gritty differences between different  
  devices in how they send trigger signals.  
   
- So far the theory. The current implementation of [IOPort](IOPort) only provides  
+ So far the theory. The current implementation of IOPort only provides  
  unified support for accessing the serial ports of your computer. All  
  other functions and device classes will be added in future releases of  
  the driver.  
   
  Usage: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
   
- [IOPort](IOPort) has many functions; type "[IOPort](IOPort)" for a list:  
-    [IOPort](IOPort)  
+ IOPort has many functions; type "IOPort" for a list:  
+    IOPort  
   
- For explanation of any particular [IOPort](IOPort) function, just add a question  
+ For explanation of any particular IOPort function, just add a question  
  mark "?". E.g. for 'OpenSerialPort', try either of these equivalent forms:  
-    [IOPort](IOPort)('OpenSerialPort?')  
-    [IOPort](IOPort) [OpenSerialPort](OpenSerialPort)?  
+    IOPort('OpenSerialPort?')  
+    IOPort OpenSerialPort?  
   
   
 

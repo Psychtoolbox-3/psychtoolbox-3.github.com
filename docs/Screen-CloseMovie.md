@@ -1,6 +1,7 @@
 # [Screen('CloseMovie')](Screen-CloseMovie) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('CloseMovie', moviePtr);
 
 [Close](Close) movie object specified by 'moviePtr' and release all associated  
 ressources.  

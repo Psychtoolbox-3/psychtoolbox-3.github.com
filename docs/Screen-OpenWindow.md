@@ -1,6 +1,7 @@
 # [Screen('OpenWindow')](Screen-OpenWindow) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[windowPtr,rect]=Screen('OpenWindow',windowPtrOrScreenNumber [,color] [,rect][,pixelSize][,numberOfBuffers][,stereomode][,multisample][,imagingmode][,specialFlags][,clientRect][,fbOverrideRect]);
 
 Open an onscreen window. Specify a screen by a windowPtr or a screenNumber (0 is  
 the main screen, with menu bar). "color" is the clut index (scalar or [r g b]  

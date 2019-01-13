@@ -1,6 +1,7 @@
 # [PsychHID('KbCheck')](PsychHID-KbCheck) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychHID](PsychHID).{mex*} subfunction
 
+[keyIsDown,secs,keyCode]=PsychHID('KbCheck' [, deviceNumber][, scanList])
 
 Scan a keyboard, keypad, or other HID device with buttons, and return a vector  
 of logical values indicating the state of each key.  

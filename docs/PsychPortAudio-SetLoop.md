@@ -1,6 +1,7 @@
 # [PsychPortAudio('SetLoop')](PsychPortAudio-SetLoop) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+PsychPortAudio('SetLoop', pahandle[, startSample=0][, endSample=max][, UnitIsSeconds=0]);
 
 Restrict audio playback to a subrange of sound samples in the current audio  
 playback buffer for audio device 'pahandle'. The device must be open and a  

@@ -1,6 +1,7 @@
 # [Screen('FillOval')](Screen-FillOval) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+Screen('FillOval', windowPtr [,color] [,rect] [,perfectUpToMaxDiameter]);
 
 Fills an ellipse with the given color, inscribed within "rect"."color" is the  
 clut index (scalar or [r g b] triplet) that you want to poke into each pixel;  

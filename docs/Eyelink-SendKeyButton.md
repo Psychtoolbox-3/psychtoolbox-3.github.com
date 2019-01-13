@@ -1,6 +1,7 @@
 # [Eyelink('SendKeyButton')](Eyelink-SendKeyButton) 
 ##### [Psychtoolbox](Psychtoolbox)>[Eyelink](Eyelink).{mex*} subfunction
 
+[result =] Eyelink('SendKeyButton', code, mods, state)
 
 sends key/button state chane to tracker  
 code = KB\_BUTTON, mods = number for button  

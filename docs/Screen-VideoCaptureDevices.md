@@ -1,6 +1,7 @@
 # [Screen('VideoCaptureDevices')](Screen-VideoCaptureDevices) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+devices = Screen('VideoCaptureDevices' [, engineId]);
 
 Enumerate all available video devices for a given videocapture engine id  
 'engineId', or for the default engine, if none is given. Returns a struct array  

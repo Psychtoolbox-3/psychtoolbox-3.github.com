@@ -1,6 +1,7 @@
 # [Datapixx('GetDacStatus')](Datapixx-GetDacStatus) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+status = Datapixx('GetDacStatus');
 
 Returns a struct containing the following DAC status information:  
 -"scheduleRunning" is 1 if DAC waveform playback schedule is currently running,  

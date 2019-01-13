@@ -1,6 +1,7 @@
 # [PsychPortAudio('DirectInputMonitoring')](PsychPortAudio-DirectInputMonitoring) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+result = PsychPortAudio('DirectInputMonitoring', pahandle, enable [, inputChannel = -1][, outputChannel = 0][, gainLevel = 0.0][, stereoPan = 0.5]);
 
 Change the current settings for the "direct input monitoring" feature on device  
 'pahandle'.  

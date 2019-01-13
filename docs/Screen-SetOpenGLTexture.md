@@ -1,6 +1,7 @@
 # [Screen('SetOpenGLTexture')](Screen-SetOpenGLTexture) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[textureHandle rect] = Screen('SetOpenGLTexture', windowPtr, textureHandle, glTexid, target [, glWidth] [, glHeight] [, glDepth] [, textureShader][, specialFlags]);
 
 Provides information about an external [OpenGL](OpenGL) texture to make it acessible for  
 PTB as PTB texture."windowPtr" is the handle of the onscreen window to which  

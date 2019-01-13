@@ -1,6 +1,7 @@
 # [Screen('PlayMovie')](Screen-PlayMovie) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[droppedframes] = Screen('PlayMovie', moviePtr, rate, [loop], [soundvolume]);
 
 Start playback of movie associated with movieobject 'moviePtr'. 'rate' defines  
 the desired playback rate: 0 == Stop playback, 1 == Normal speed forward, -1 ==  

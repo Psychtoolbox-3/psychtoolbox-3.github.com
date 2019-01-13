@@ -1,6 +1,7 @@
 # [Datapixx('SetVideoStereoVesaWaveform')](Datapixx-SetVideoStereoVesaWaveform) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('SetVideoStereoVesaWaveform', waveform);
 
 Set the waveform which will be sent to the [DATAPixx](DATAPixx) VESA 3D connector.  
 "waveform" should take on one of the following values:  

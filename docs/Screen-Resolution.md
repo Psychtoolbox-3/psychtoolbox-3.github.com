@@ -1,6 +1,7 @@
 # [Screen('Resolution')](Screen-Resolution) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+oldResolution=Screen('Resolution', screenNumber [, newwidth][, newheight][, newHz][, newPixelSize][, specialMode]);
 
 Query or change display settings for screen "screenNumber".  
 Returns a struct "oldResolutions" with the current settings for screen  

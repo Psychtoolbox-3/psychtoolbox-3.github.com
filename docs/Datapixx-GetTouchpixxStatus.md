@@ -1,6 +1,7 @@
 # [Datapixx('GetTouchpixxStatus')](Datapixx-GetTouchpixxStatus) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+status = Datapixx('GetTouchpixxStatus');
 
 Returns a struct containing the following [TOUCHPixx](TOUCHPixx) touch panel status  
 information:  

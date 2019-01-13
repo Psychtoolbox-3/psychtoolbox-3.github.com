@@ -1,7 +1,7 @@
 # [FloatTextureDemo](FloatTextureDemo)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)>[OpenGL4MatlabDemos](OpenGL4MatlabDemos)
 
-Adrian, this function is not yet documented.
+This function is not yet documented.
 
 
  MissingDocs

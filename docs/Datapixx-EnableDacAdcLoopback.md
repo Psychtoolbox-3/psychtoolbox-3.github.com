@@ -1,6 +1,7 @@
 # [Datapixx('EnableDacAdcLoopback')](Datapixx-EnableDacAdcLoopback) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('EnableDacAdcLoopback');
 
 Enable an internal loopback from the DAC outputs to the ADC inputs. This causes  
 voltages programmed into the DAC output channels to appear on the ADC input  

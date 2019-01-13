@@ -1,6 +1,7 @@
 # [Datapixx('DisableDacAdcLoopback')](Datapixx-DisableDacAdcLoopback) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('DisableDacAdcLoopback');
 
 Disable internal loopback from the DAC outputs to the ADC inputs. This causes  
 voltages read from ADC channels to report real analog inputs.  

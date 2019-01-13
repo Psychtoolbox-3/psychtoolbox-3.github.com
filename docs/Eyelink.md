@@ -94,11 +94,11 @@ Eyelink('[SetOfflineMode](Eyelink-SetOfflineMode)')
   
 
   
-    The [EyelinkToolbox](EyelinkToolbox) can be used to ceate eye-movement experiments and  
+    The EyelinkToolbox can be used to ceate eye-movement experiments and  
    control the SR-Research Eyelink� gazetrackers  
    (http://www.eyelinkinfo.com/) from within Matlab.  
-   It is incorporated into the [PsychToolbox](PsychToolbox) (http://www.psychtoolbox.org/).  
-   and uses the functions provided by the [PsychToolBox](PsychToolBox) for graphics and sound.  
+   It is incorporated into the PsychToolbox (http://www.psychtoolbox.org/).  
+   and uses the functions provided by the PsychToolBox for graphics and sound.  
   
    For a complete list of available functions type "Eyelink" in the  
    Matlab command window. For an explanation of any particular Eyelink  
@@ -112,11 +112,11 @@ Eyelink('[SetOfflineMode](Eyelink-SetOfflineMode)')
    arguments, not matrices. Optional arguments must be in order, without  
    omitting earlier ones.  
       
-    If you need examples to get you started, check out the [EyelinkDemos](EyelinkDemos)  
+    If you need examples to get you started, check out the EyelinkDemos  
    folder.  
           
    More information on this toolbox can be found in the file:  
-   [EyelinkToolbox](EyelinkToolbox)/contents.m  
+   EyelinkToolbox/contents.m  
   
   
 

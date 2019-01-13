@@ -1,6 +1,7 @@
 # [WaitSecs('UntilTime')](WaitSecs-UntilTime) 
 ##### [Psychtoolbox](Psychtoolbox)>[WaitSecs](WaitSecs).{mex*} subfunction
 
+[realWakeupTimeSecs] = WaitSecs('UntilTime', whenSecs);
 
 Wait until at least system time "whenSecs" has been reached. Optionally, return  
 the real wakeup time "realWakeupTimeSecs".  

@@ -1,6 +1,7 @@
 # [PsychHID('USBControlTransfer')](PsychHID-USBControlTransfer) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychHID](PsychHID).{mex*} subfunction
 
+outData = PsychHID('USBControlTransfer', usbHandle, bmRequestType, bRequest, wValue, wIndex, wLength, inData)
 
 Communicates with a USB device via the control endpoint, aka control transfer.  
 The results of out-transfers are returned in return argument 'outData' as a  

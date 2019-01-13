@@ -1,7 +1,7 @@
 # [geteventtype](geteventtype)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychHardware](PsychHardware)>[EyelinkToolbox](EyelinkToolbox)>[EyelinkOneLiners](EyelinkOneLiners)
 
-Adrian, this function is not yet documented.
+This function is not yet documented.
 
 
  MissingDocs

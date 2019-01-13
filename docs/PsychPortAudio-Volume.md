@@ -1,6 +1,7 @@
 # [PsychPortAudio('Volume')](PsychPortAudio-Volume) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+[oldMasterVolume, oldChannelVolumes] = PsychPortAudio('Volume', pahandle [, masterVolume][, channelVolumes]);
 
 Set audio output volume(s) and/or return old volumes for a device 'pahandle'.  
 The device must be open for this setting to take effect. It is initially set to  

@@ -1,6 +1,7 @@
 # [Datapixx('GetVideoLine')](Datapixx-GetVideoLine) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+pixels = Datapixx('GetVideoLine' [, nPixels=HORIZONTAL_RESOLUTION]);
 
 Upload pixels from Datapixx internal video receiver line buffer to local host.  
 The pixels uploaded are from the start of the top raster line of the most recent  

@@ -1,6 +1,7 @@
 # [PsychPortAudio('Open')](PsychPortAudio-Open) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+pahandle = PsychPortAudio('Open' [, deviceid][, mode][, reqlatencyclass][, freq][, channels][, buffersize][, suggestedLatency][, selectchannels][, specialFlags=0]);
 
 Open a [PortAudio](PortAudio) audio device and initialize it. Returns a 'pahandle' device  
 handle for the device.  

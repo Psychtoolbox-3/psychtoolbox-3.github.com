@@ -1,6 +1,7 @@
 # [Screen('GetCapturedImage')](Screen-GetCapturedImage) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[ texturePtr [capturetimestamp] [droppedcount] [average_intensityOrRawImageMatrix]]=Screen('GetCapturedImage', windowPtr, capturePtr [, waitForImage=1] [,oldTexture] [,specialmode] [,targetmemptr]);
 
 Try to fetch a new image from video capture device 'capturePtr' for visual  
 playback/display in window 'windowPtr' and return a texture-handle 'texturePtr'  

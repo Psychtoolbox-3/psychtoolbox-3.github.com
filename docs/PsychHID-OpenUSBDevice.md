@@ -1,6 +1,7 @@
 # [PsychHID('OpenUSBDevice')](PsychHID-OpenUSBDevice) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychHID](PsychHID).{mex*} subfunction
 
+usbHandle = PsychHID('OpenUSBDevice', vendorID, deviceID [, configurationId=0])
 
 Tries to open and initialize a generic USB device specified by 'vendorID' and  
 'deviceID'.  

@@ -1,6 +1,7 @@
 # [Datapixx('SetMicrophoneSchedule')](Datapixx-SetMicrophoneSchedule) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('SetMicrophoneSchedule', scheduleOnset, scheduleRate, maxScheduleFrames [, lrMode=mono] [, bufferBaseAddress=20e6] [, numBufferFrames=maxScheduleFrames]);
 
 Configure a schedule for audio input acquisition.  
 -"scheduleOnset" is the desired delay (in double precision seconds) between  

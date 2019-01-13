@@ -1,6 +1,7 @@
 # [Eyelink('ButtonStates')](Eyelink-ButtonStates) 
 ##### [Psychtoolbox](Psychtoolbox)>[Eyelink](Eyelink).{mex*} subfunction
 
+result = Eyelink('ButtonStates')
 
 reads the currently-known state of all buttons  
 the bits in the returned value will be  

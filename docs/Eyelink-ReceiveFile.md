@@ -1,6 +1,7 @@
 # [Eyelink('ReceiveFile')](Eyelink-ReceiveFile) 
 ##### [Psychtoolbox](Psychtoolbox)>[Eyelink](Eyelink).{mex*} subfunction
 
+[status =] Eyelink('ReceiveFile',['filename'], ['dest'], ['dest_is_path'])
 
  If <src\> is omitted, tracker will send last opened data file.  
  If <dest\> is omitted, creates local file with source file name.  

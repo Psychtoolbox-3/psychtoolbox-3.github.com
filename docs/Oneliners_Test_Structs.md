@@ -1,7 +1,7 @@
 # [Oneliners_Test_Structs](Oneliners_Test_Structs)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)>[UnitTests](UnitTests)
 
-Adrian, this function is not yet documented.
+This function is not yet documented.
 
 
  MissingDocs

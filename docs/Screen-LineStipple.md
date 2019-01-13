@@ -1,6 +1,7 @@
 # [Screen('LineStipple')](Screen-LineStipple) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+[stippleEnabled stippleFactor stipleVector]=Screen('LineStipple', windowPtr, [enable], [factor], [stipplePattern] )
 
 Set 'DrawLine' to draw dashed lines.  Argument "stippleArray" is a 16-element  
 logical array specifying the stipple pattern. Argument "factor"  scales the  

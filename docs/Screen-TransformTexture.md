@@ -1,6 +1,7 @@
 # [Screen('TransformTexture')](Screen-TransformTexture) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+transtexid = Screen('TransformTexture', sourceTexture, transformProxyPtr [, sourceTexture2][, targetTexture] [, specialFlags]);
 
 Apply an image processing operation to a texture 'sourceTexture' and store the  
 processed result either in 'targetTexture' if provided, or in a new texture (if  

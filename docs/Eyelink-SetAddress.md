@@ -1,6 +1,7 @@
 # [Eyelink('SetAddress')](Eyelink-SetAddress) 
 ##### [Psychtoolbox](Psychtoolbox)>[Eyelink](Eyelink).{mex*} subfunction
 
+[status =] Eyelink('SetAddress', ipaddress);
 
 Set IP address of eyelink tracker computer to connect to.  
 Call this before opening a tracker connection if you want to use a non-default  

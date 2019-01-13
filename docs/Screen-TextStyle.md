@@ -1,6 +1,7 @@
 # [Screen('TextStyle')](Screen-TextStyle) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
+oldStyle=Screen('TextStyle', windowPtr [,style]);
 
 Get/set the font style for future text draws in this window. Useful values for  
 style follow; they may be OR'd. On different operating systems and text  

@@ -1,6 +1,7 @@
 # [Datapixx('StartTouchpixxLog')](Datapixx-StartTouchpixxLog) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('StartTouchpixxLog');
 
 Start logging [TOUCHPixx](TOUCHPixx) touch panel activity. The [TOUCHPixx](TOUCHPixx) controller polls the  
 panel at more than 5kHz waiting for a panel press. When a panel press is  

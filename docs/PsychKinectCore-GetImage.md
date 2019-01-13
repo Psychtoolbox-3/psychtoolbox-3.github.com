@@ -1,6 +1,7 @@
 # [PsychKinectCore('GetImage')](PsychKinectCore-GetImage) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychKinectCore](PsychKinectCore).{mex*} subfunction
 
+[imageOrPtr, width, height, channels, extType, extFormat] = PsychKinect('GetImage', kinectPtr [, imtype=0][, returnTexturePtr=0]);
 
 Return the color image data for the frame fetched via 'GrabFrame'.  
   

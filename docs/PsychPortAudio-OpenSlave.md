@@ -1,6 +1,7 @@
 # [PsychPortAudio('OpenSlave')](PsychPortAudio-OpenSlave) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
+pahandle = PsychPortAudio('OpenSlave', pamaster [, mode][, channels][, selectchannels]);
 
 Open a virtual slave audio device and initialize it. Returns a 'pahandle' device  
 handle for the device.  

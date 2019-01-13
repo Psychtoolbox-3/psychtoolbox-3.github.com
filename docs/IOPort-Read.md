@@ -1,6 +1,7 @@
 # [IOPort('Read')](IOPort-Read) 
 ##### [Psychtoolbox](Psychtoolbox)>[IOPort](IOPort).{mex*} subfunction
 
+[data, when, errmsg] = IOPort('Read', handle [, blocking=0] [, amount]);
 
 Read data from device, specified by 'handle'.  
 Returned 'data' will be a row vector of read data bytes. 'when' will be a  

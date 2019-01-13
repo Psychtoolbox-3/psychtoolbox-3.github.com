@@ -1,6 +1,7 @@
 # [Eyelink('IsConnected')](Eyelink-IsConnected) 
 ##### [Psychtoolbox](Psychtoolbox)>[Eyelink](Eyelink).{mex*} subfunction
 
+status = Eyelink('IsConnected')
 
 checks if the eyelink is (still) connected  
 returns 1 if connected  

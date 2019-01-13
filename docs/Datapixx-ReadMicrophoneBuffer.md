@@ -1,6 +1,7 @@
 # [Datapixx('ReadMicrophoneBuffer')](Datapixx-ReadMicrophoneBuffer) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+[bufferData, underflow, overflow] = Datapixx('ReadMicrophoneBuffer', numFrames [, bufferAddress]);
 
 Upload audio input data from a Datapixx internal acquisition buffer to the local  
 host.  

@@ -1,6 +1,7 @@
 # [Datapixx('RegWrPixelSync')](Datapixx-RegWrPixelSync) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
+Datapixx('RegWrPixelSync', pixelSequence [, timeout=255]);
 
 Write local register cache modifications to Datapixx when the specified pixel  
 sequence appears on the video display. This is a good way to write Datapixx  
