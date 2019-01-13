@@ -1,10 +1,12 @@
 # [BasicAMAndMixScheduleDemo](BasicAMAndMixScheduleDemo)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)
 
+[BasicAMAndMixScheduleDemo](BasicAMAndMixScheduleDemo)([device])  
+  
 Demonstrates basic use of sound schedules, volume controls, amplitude  
 modulation and audio mixing of multiple voices.  
   
-Usage: [BasicAMAndMixScheduleDemo](BasicAMAndMixScheduleDemo);  
+Usage: [BasicAMAndMixScheduleDemo](BasicAMAndMixScheduleDemo)([device]);  
   
 For more advanced or different use of sound schedules see  
 [BasicSoundScheduleDemo](BasicSoundScheduleDemo). For more advanced use of mixing, modulators and  

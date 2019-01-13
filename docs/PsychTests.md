@@ -5,8 +5,8 @@ Psychtoolbox/[PsychTests](PsychTests)/Contents.m
   
   
   [AlphaAdditionTest](AlphaAdditionTest)               - Combine planes by [OpenGL](OpenGL) alpha addition and verify the result.  
-  [AlphaBlendingTest](AlphaBlendingTest)               - Multiple tests of [OpenGL](OpenGL) alpha blending.   
-  [AlphaBlendSettingTest](AlphaBlendSettingTest)           - Set and readback alpha blending settings by screen; verify match.   
+  [AlphaBlendingTest](AlphaBlendingTest)               - Multiple tests of [OpenGL](OpenGL) alpha blending.  
+  [AlphaBlendSettingTest](AlphaBlendSettingTest)           - Set and readback alpha blending settings by screen; verify match.  
   [AlphaMultiplicationTest](AlphaMultiplicationTest)         - Test alpha multiplication by 0 and 1 for perfect precision.  
   [AlphaMultiplicationAccuracyTest](AlphaMultiplicationAccuracyTest) - Test precision of alpha multiplication for values between 0 and 1.  
   [AnalyzeTiming](AnalyzeTiming)                   - Analyze timing logs from [FlipTimingWithRTBoxPhotoDiodeTest](FlipTimingWithRTBoxPhotoDiodeTest).  
@@ -25,6 +25,7 @@ Psychtoolbox/[PsychTests](PsychTests)/Contents.m
   [DrawTextFontSwitchSpeedTest](DrawTextFontSwitchSpeedTest) - Test speed of text drawing when switching between different font type/style/size settings.  
   [DriftTexturePrecisionTest](DriftTexturePrecisionTest)       - Test subpixel accuracy of texture interpolators: What is the smallest  
                                     fraction of a pixel that one can scroll, using built-in bilinear interpolation?  
+  eGalaxTrace-\*.evemu             - Linux evdev traces with recorded single/multi-touch input from an eGalax touchscreen.  
   [FitCumNormYNTest](FitCumNormYNTest)                - Fit a cumulative normal to yes-no data.  
   [FlipTestConfigurations](FlipTestConfigurations).zip      - Input configuration files for [FlipTimingWithRTBoxPhotoDiodeTest](FlipTimingWithRTBoxPhotoDiodeTest).m  
   [FlipTimingWithRTBoxPhotoDiodeTest](FlipTimingWithRTBoxPhotoDiodeTest) - Benchmark of visual stimulus onset timing and timestamping. See ECVP 2010 poster in [PsychDocumentation](PsychDocumentation)/  

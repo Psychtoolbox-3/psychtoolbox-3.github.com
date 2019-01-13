@@ -1,7 +1,7 @@
 # [BasicSoundScheduleDemo](BasicSoundScheduleDemo)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)
 
-[BasicSoundScheduleDemo](BasicSoundScheduleDemo)([wavfilenames])  
+[BasicSoundScheduleDemo](BasicSoundScheduleDemo)([wavfilenames][, device])  
   
 ### This demo shows two things:  
   
@@ -22,13 +22,16 @@ wavfilenames = Name of a .wav sound file to load and play back, or a cell
 array with multiple filenames to load. Otherwise the default sound files  
 provided with Psychtoolbox will be loaded.  
   
+device = Device index of the sound card to use.  
+  
+  
 The demo first loads all soundfiles, and resamples them to identical  
 samplingrate if possible. Then it plays the first second of each of them.  
 Then it goes into an interactive mode: By pressing any of the F1 - F10  
 keys or any letter key, you can select a specific file for playback. By  
 pressing any other key you exit the interactive loop. After the  
 interactive loop has finished, a subset of the soundfiles is played again  
-with a different method, for about 3 repetitions. Then the demo exits.  
+with a different method, for about 2 repetitions. Then the demo exits.  
   
 
 

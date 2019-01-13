@@ -31,11 +31,11 @@
         Human (Default), [GuineaPig](GuineaPig), Dog  
   
  Supported sources:  
-   Rodeick (Default).  
-    CVRL (Human Cone OS length)  
+   Rodieck (Default).  
+   CVRL (Human Cone OS length)  
    Webvision (Human Cone IS diameter)  
    Hendrickson (Human Rod OS length)  
-    [SterlingLab](SterlingLab) [(GuineaPig]((GuineaPig) dimensions).  
+   [SterlingLab](SterlingLab) [(GuineaPig]((GuineaPig) dimensions).  
    Generic  
    [PennDog](PennDog) (Dog dimensions).  
    None (returns empty for the corresponding value)  

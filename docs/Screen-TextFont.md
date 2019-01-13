@@ -14,8 +14,12 @@ The font name can be a string of at most 255 characters length, e.g.
 for good readability. You can query and change it via a call to  
 [Screen](Screen)('[Preference](Preference)', 'DefaultFontName').  
 It's ok to request a non-existent font; this will have no effect. If you care,  
-call [TextFont](TextFont) again to find out whether you got the font you requested. See  
-[FontDemo](FontDemo).  
+call [TextFont](TextFont) again to find out whether you got the font you requested.  
+However, if you use the FTGL font renderer, [Screen](Screen)('TextFont') will merely echo  
+what  
+you set until you you've drawn some text, after which [Screen](Screen)('TextFont') will  
+correctly  
+return the font family name of the font it's using. See [FontDemo](FontDemo).  
 On OSX there are some exotic fonts which can only be selected if you specify  
 them by either their font number, or by simultaneously selecting their exact  
 font family name and text style. To support those snow flakes you can specify  

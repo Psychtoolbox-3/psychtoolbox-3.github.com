@@ -36,6 +36,7 @@ The Psychtoolbox source code is stored in a Git code repository at
    subfolders:  
   
    Psychtoolbox/   -- The regular Psychtoolbox folder.  
+   [PsychPython](PsychPython)/    -- Code for using some parts of Psychtoolbox in Python.  
    managementools/ -- Miscellaneous scripts for managing PTB releases.  
    [PsychSourceGL](PsychSourceGL)/  -- The C source code for Psychtoolbox.  
   
@@ -70,17 +71,13 @@ The Psychtoolbox source code is stored in a Git code repository at
    the software, we will require you to use git instead of Subversion and  
    you will work with the git repository at [GitHub](GitHub).  
   
-   For almost all source code, i.e., unless otherwise stated in the  
-   source files themselves or accompanying documentation, the MIT license  
-   applies. See the file License.txt in the Psychtoolbox root folder for  
-   more details.  
-  
-   Components & Libraries which are not covered by the MIT license, but  
-   other MIT compatible free software licenses will carry individual  
-   descriptions of their licenses inside the source files or in  
-   accompanying license files within the corresponding subfolders. Such  
-   libraries are usually contained in the [PsychSourceGL](PsychSourceGL)/Cohorts/  
-   subdirectory of the distribution.  
+   For much of the source code the MIT license applies. However, we also include  
+   other 3rd party source code, libraries, [SDKs](SDKs) or tools, which are sometimes of  
+   different licenses. See the file License.txt in the Psychtoolbox root folder  
+   for more details. Some files contain their own license info, especially the  
+   ones in the Psychtoolbox/[PsychContributed](PsychContributed) folder and [PsychSourceGL](PsychSourceGL)/Cohorts/  
+   folder. If a file doesn't contain a specific license, its license may be found  
+   in the Psychtoolbox/License.txt file. Otherwise it will likely be MIT licensed.  
   
    Good luck and "Use the source" (Master Yoda).  
   

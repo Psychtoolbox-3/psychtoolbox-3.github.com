@@ -5,10 +5,12 @@
 Reads and returns the gamma table 'gammatable' of the specified screen or window  
 'windowPtrOrScreenNumber'.  
 Returns the output resolution of the video DAC as optional second argument  
-'dacbits'. Will return dacbits=8 as a safe default if it is unable to query the  
-real resolution of the DAC. Currently only OS-X reports the real DAC size. Will  
-return the real number of slots in the hardware lookup table in optional return  
-argument 'reallutsize'. Currently only OS-X and Linux report the real LUT size.  
+'dacbits'. Will return dacbits=0 as a "Don't know" value if it is unable to  
+query the real resolution of the DAC. Currently no operating system reports a  
+trustworthy 'dacbits'.  
+Will return the real number of slots in the hardware lookup table in optional  
+return argument 'reallutsize'. Currently only OS-X and Linux report the real LUT  
+size.  
 On [MacOS](MacOS)-X, the optional 'physicalDisplay' flag can be set to 1, zero is the  
 default. In this case, the 'windowPtrOrScreenNumber' argument (which then must  
 be a real screen number, not a window index) selects among physically present  

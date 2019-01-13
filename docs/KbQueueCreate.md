@@ -1,7 +1,7 @@
 # [KbQueueCreate](KbQueueCreate)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychBasic](PsychBasic)
 
-[KbQueueCreate](KbQueueCreate)([deviceNumber][, keyList][, numValuators=0][, numSlots=10000][, flags=0])  
+[KbQueueCreate](KbQueueCreate)([deviceNumber][, keyList][, numValuators=0][, numSlots=10000][, flags=0][, windowHandle=0])  
   
 The routines [KbQueueCreate](KbQueueCreate), [KbQueueStart](KbQueueStart), [KbQueueStop](KbQueueStop), [KbQueueCheck](KbQueueCheck)  
  [KbQueueWait](KbQueueWait), [KbQueueFlush](KbQueueFlush) and [KbQueueRelease](KbQueueRelease) provide replacements for  
@@ -37,7 +37,7 @@ The routines [KbQueueCreate](KbQueueCreate), [KbQueueStart](KbQueueStart), [KbQu
 It is acceptable to call [KbQueueCreate](KbQueueCreate) at any time (e.g., to switch to a new  
  device or to change the list of queued keys) without calling [KbQueueRelease](KbQueueRelease).  
   
- [KbQueueCreate](KbQueueCreate)([deviceNumber][, keyList][, numValuators=0][, numSlots=10000][, flags=0])  
+ [KbQueueCreate](KbQueueCreate)([deviceNumber][, keyList][, numValuators=0][, numSlots=10000][, flags=0][, windowHandle=0])  
      Creates the queue for the specified (or default) device number  
      If the device number is less than zero, the default device is used.  
   
@@ -70,6 +70,10 @@ It is acceptable to call [KbQueueCreate](KbQueueCreate) at any time (e.g., to sw
      'flags' defines special modes of operation for the queue. These are OS  
      specific, see "[PsychHID](PsychHID) [KbQueueCreate](KbQueueCreate)?" for an up to date list of supported  
      flags. In general, you don't need these.  
+  
+     'windowHandle' defines the optional onscreen window handle of an associated  
+     onscreen window. By default, input is taken for all windows and screens.  
+     This argument is silently ignored on systems other than Linux/X11 at the moment.  
   
      No events are delivered to the queue until [KbQueueStart](KbQueueStart) or   
      [KbQueueWait](KbQueueWait) is called.  

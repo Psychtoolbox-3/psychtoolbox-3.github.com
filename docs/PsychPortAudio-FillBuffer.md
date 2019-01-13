@@ -3,21 +3,21 @@
 
 
 Fill audio data playback buffer of a [PortAudio](PortAudio) audio device. 'pahandle' is the  
-handle of the device whose buffer is to be filled. 'bufferdata' is usually a  
-matrix with audio data in double() or single() format. Each row of the matrix  
-specifies one sound channel, each column one sample for each channel. Only  
-floating point values are supported. Samples need to be in range -1.0 to +1.0,  
-with 0.0 for silence. This is intentionally a very restricted interface. For  
-lowest latency and best timing we want you to provide audio data exactly at the  
-optimal format and sample rate, so the driver can safe computation time and  
-latency for expensive sample rate conversion, sample format conversion, and  
-bounds checking/clipping.  
+handle of the device whose buffer is to be filled.  
+'bufferdata' is usually a matrix with audio data in double() or single() format.  
+Each row of the matrix specifies one sound channel, each column one sample for  
+each channel. Only floating point values are supported. Samples need to be in  
+range -1.0 to +1.0, with 0.0 for silence. This is intentionally a very  
+restricted interface. For lowest latency and best timing we want you to provide  
+audio data exactly at the optimal format and sample rate, so the driver can save  
+computation time and latency for expensive sample rate conversion, sample format  
+conversion, and bounds checking/clipping.  
 Instead of a matrix, you can also pass in the bufferhandle of an audio buffer as  
 'bufferdata'. This buffer must have been created beforehand via  
 [PsychPortAudio](PsychPortAudio)('CreateBuffer', ...). Its content must satisfy the same  
-constraints as in case of passing a Matlab matrix. The content will be copied  
-from the given buffer to the standard audio buffer, so it is safe to delete that  
-source buffer if you want.  
+constraints as in case of passing a matrix. The content will be copied from the  
+given buffer to the standard audio buffer, so it is safe to delete that source  
+buffer if you want.  
 'streamingrefill' optional: If set to 1, ask the driver to refill the buffer  
 immediately while playback is active. You can think of this as appending the  
 audio data to the audio data already present in the buffer. This is useful for  

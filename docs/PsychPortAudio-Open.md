@@ -3,20 +3,26 @@
 
 
 Open a [PortAudio](PortAudio) audio device and initialize it. Returns a 'pahandle' device  
-handle for the device. All parameters are optional and have reasonable defaults.  
-'deviceid' Index to select amongst multiple logical audio devices supported by  
-[PortAudio](PortAudio). Defaults to whatever the systems default sound device is. Different  
-device id's may select the same physical device, but controlled by a different  
-low-level sound system. E.g., Windows has about five different sound subsystems.  
-'mode' Mode of operation. Defaults to 1 == sound playback only. Can be set to 2  
-== audio capture, or 3 for simultaneous capture and playback of sound. Note  
-however that mode 3 (full duplex) does not work reliably on all sound hardware.  
-On some hardware this mode may crash Matlab! There is also a special monitoring  
-mode == 7, which only works for full duplex devices when using the same number  
-of input- and outputchannels. This mode allows direct feedback of captured  
-sounds back to the speakers with minimal latency and without involvement of your  
-script at all, however no sound can be captured during this time and your code  
-mostly doesn't have any control over timing etc.   
+handle for the device.  
+  
+On most operating systems you can open each physical sound device only once per  
+running session. If you feel the need to call 'Open' multiple times on the same  
+audio device, read the section about slave devices and the help 'PsychPortAudio  
+[OpenSlave](OpenSlave)?' instead for a suitable solution.  
+All parameters are optional and have reasonable defaults. 'deviceid' Index to  
+select amongst multiple logical audio devices supported by [PortAudio](PortAudio). Defaults  
+to whatever the systems default sound device is. Different device id's may  
+select the same physical device, but controlled by a different low-level sound  
+system. E.g., Windows has about five different sound subsystems. 'mode' Mode of  
+operation. Defaults to 1 == sound playback only. Can be set to 2 == audio  
+capture, or 3 for simultaneous capture and playback of sound. Note however that  
+mode 3 (full duplex) does not work reliably on all sound hardware. On some  
+hardware this mode may crash hard! There is also a special monitoring mode == 7,  
+which only works for full duplex devices when using the same number of input-  
+and outputchannels. This mode allows direct feedback of captured sounds back to  
+the speakers with minimal latency and without involvement of your script at all,  
+however no sound can be captured during this time and your code mostly doesn't  
+have any control over timing etc.   
 You can also define a audio device as a master device by adding the value 8 to  
 mode. Master devices themselves are not directly used to playback or capture  
 sound. Instead one can create (multiple) slave devices that are attached to a  
@@ -27,24 +33,24 @@ info.
 'reqlatencyclass' Allows to select how aggressive [PsychPortAudio](PsychPortAudio) should be about  
 minimizing sound latency and getting good deterministic timing, i.e. how to  
 trade off latency vs. system load and playing nicely with other sound  
-applications on the system. Level 0 means: Don't care about latency, this mode  
-works always and with all settings, plays nicely with other sound applications.  
-Level 1 (the default) means: Try to get the lowest latency that is possible  
-under the constraint of reliable playback, freedom of choice for all parameters  
-and interoperability with other applications. Level 2 means: Take full control  
-over the audio device, even if this causes other sound applications to fail or  
-shutdown. Level 3 means: As level 2, but request the most aggressive settings  
-for the given device. Level 4: Same as 3, but fail if device can't meet the  
-strictest requirements. 'freq' Requested playback/capture rate in samples per  
-second (Hz). Defaults to a value that depends on the requested latency mode.  
-'channels' Number of audio channels to use, defaults to 2 for stereo. If you  
-perform simultaneous playback and recording, you can provide a 2 element vector  
-for 'channels', specifying different numbers of output channels and input  
-channels. The first element in such a vector defines the number of playback  
-channels, the 2nd element defines capture channels. E.g., [2, 1] would define 2  
-playback channels (stereo) and 1 recording channel. See the optional  
-'selectchannels' argument for selection of physical device channels on multi-  
-channel cards.  
+applications on the system. Level 0 means: Don't care about latency or timing  
+precision. This mode works always and with all settings, plays nicely with other  
+sound applications. Level 1 (the default) means: Try to get the lowest latency  
+that is possible under the constraint of reliable playback, freedom of choice  
+for all parameters and interoperability with other applications. Level 2 means:  
+Take full control over the audio device, even if this causes other sound  
+applications to fail or shutdown. Level 3 means: As level 2, but request the  
+most aggressive settings for the given device. Level 4: Same as 3, but fail if  
+device can't meet the strictest requirements. 'freq' Requested playback/capture  
+rate in samples per second (Hz). Defaults to a value that depends on the  
+requested latency mode. 'channels' Number of audio channels to use, defaults to  
+2 for stereo. If you perform simultaneous playback and recording, you can  
+provide a 2 element vector for 'channels', specifying different numbers of  
+output channels and input channels. The first element in such a vector defines  
+the number of playback channels, the 2nd element defines capture channels. E.g.,  
+[2, 1] would define 2 playback channels (stereo) and 1 recording channel. See  
+the optional 'selectchannels' argument for selection of physical device channels  
+on multi- channel cards.  
 'buffersize' requested size and number of internal audio buffers, smaller  
 numbers mean lower latency but higher system load and some risk of overloading,  
 which would cause audio dropouts. 'suggestedLatency' optional requested latency  
@@ -52,7 +58,7 @@ in seconds. [PortAudio](PortAudio) selects internal operating parameters dependi
 sampleRate, suggestedLatency and buffersize as well as device internal  
 properties to optimize for low latency output. Best left alone, only here as  
 manual override in case all the auto-tuning cleverness fails.  
- 'selectchannels' optional matrix with mappings of logical channels to device  
+'selectchannels' optional matrix with mappings of logical channels to device  
 channels: If you only want to use a subset of the channels present on your sound  
 card, e.g., only 2 playback channels on a 16 channel soundcard, then you'd set  
 the 'channels' argument to 2. The 'selectchannels' argument allows you to  
@@ -69,8 +75,8 @@ are requested and 'channels' equals 2, ie, two playback channels and two capture
 channels. If you'd specify 'selectchannels' as [0, 6 ; 12, 14], then playback  
 would happen to device channels zero and six, sound would be captured from  
 device channels 12 and 14. Please note that channel selection is currently only  
-supported on MS-Windows with ASIO sound cards. The parameter is silently ignored  
-for non-ASIO operation.  
+supported on some sound cards. The parameter is silently ignored on non-capable  
+hardware or driver software.  
   
 'specialFlags' Optional flags: Default to zero, can be or'ed or added together  
 with the following flags/settings:  

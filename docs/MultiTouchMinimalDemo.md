@@ -3,7 +3,7 @@
 
 [MultiTouchMinimalDemo](MultiTouchMinimalDemo)([dev][, verbose=0]) - A basic demo for multi-touch touchscreens.  
   
-Run it. Pressing any key will stop it.  
+Run it. Pressing the [ESCape](ESCape) key will stop it.  
   
 Touch the screen and watch the nice colorful happy blobs  
 sprinkle to life :)  

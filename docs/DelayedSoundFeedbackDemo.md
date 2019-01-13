@@ -1,7 +1,7 @@
 # [DelayedSoundFeedbackDemo](DelayedSoundFeedbackDemo)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)
 
-[DelayedSoundFeedbackDemo](DelayedSoundFeedbackDemo)([reqlatency=150 ms][, duplex=0][, freq = 48000][, minLatency= 10 ms])  
+[DelayedSoundFeedbackDemo](DelayedSoundFeedbackDemo)([reqlatency=150 ms][, duplex=0][, freq]=48000[, minLatency=10 ms][, device])  
   
 ### CAUTION: TEST TIMING OF THIS SCRIPT WITH MEASUREMENT EQUIPMENT IF YOU  
 DEPEND ON ACCURATE FEEDBACK TIMING!!!  
@@ -32,51 +32,49 @@ to setup.
 Depending on your sound hardware you'll have to either leave 'duplex' at  
 its default of zero (2 times half-duplex mode, aka simplex mode) or set  
 it to 1 (full-duplex mode). On a given system, only one of these will work  
-reliably (or at all): ASIO audio hardware -- typically on MS-Windows --  
-will usually need full-duplex mode and won't work at all in simplex mode.  
-On Macintosh OS/X it depends on the sound hardware. [IntelMacs](IntelMacs) are happy  
-with half-duplex mode, some [PowerMacs](PowerMacs) may need full-duplex mode. However,  
-except for 'reqlatency' == 0 minimal latency mode, simplex mode provides  
-much higher accuracy and reliability on OS/X at least with the built-in  
-soundchips on Intel based Macintosh computers. On Linux, performance  
-varies depending on the card at use.  
+reliably (or at all):  
+On OSX it depends on the sound hardware. [IntelMacs](IntelMacs) are happy with half-  
+duplex mode, some [PowerMacs](PowerMacs) may need full-duplex mode. However, except for  
+'reqlatency' == 0 minimal latency mode, simplex mode provides much higher  
+accuracy and reliability on OSX at least with the built-in soundchips on  
+Intel based Macintosh computers. On Linux, performance varies depending on  
+the card at use.  
   
-'freq' = Sampling frequency (Hz). Defaults to 48000 Hz as this rate is  
-most commonly supported on most sound hardware. The maximum achievable  
-value depends on your specific soundcard. IntelMac's built in soundchips  
+'freq' = Sampling frequency (Hz). Defaults to auto-detect. The maximum achievable  
+value depends on your specific soundcard. Intel Mac's built in soundchips  
 allow for a maximum of 96000 Hz, high-end soundcards may allow for 192000  
 Hz under some circumstances. Increasing the frequency reduces minimum  
 latency but increases system load and the probability of glitches.  
   
 'minLatency' is a tuning parameter for the driver and a hard-constraint  
-on the mininum achievable latency for feedback. It is ignored on OS/X,  
+on the mininum achievable latency for feedback. It is ignored on OSX,  
 but can be tused for tuning latency vs. reliability on Linux and on  
 MS-Windows. High-end cards may allow for much lower than the default 10  
-msecs, low-end cards may malfunction at lower settings. Non-ASIO  
-soundcards on MS-Windows will likely fail already at much higher settings  
-and be therefore completely unsuitabe for low latency feedback.  
+msecs, low-end cards may malfunction at lower settings.  
+  
+'device' Optional device index of soundcard to use.  
   
 ### Specific tips for different setups:  
   
-On OS/X with builtin soundchip on [IntelMacs](IntelMacs), choose duplex = 0 for  
+On OSX with builtin sound chip on Intel Macs, choose duplex = 0 for  
 feedback with controlled low-latency, and a freq'ency of 96000 Hz. For  
 lowest latency mode, you may try reqlatency = 0 and duplex = 1.  
   
-On MS-Windows you \*must\* use a soundcard with ASIO support for any  
-reasonable results! Here you should always set duplex = 1 for full-duplex  
-operation, anything else will fail. Use reqlatency = 0 for feedback with  
-minimal latency, positive values for feedback with controlled latency.  
-Play around with the 'minLatency' parameter, set it as low as possible -  
-to the lowest value that doesn't cause any error messages by our driver  
-or audible artifacts like crackling noises or static. Try to set  
-'freq'uency as high as possible. Check the manual of your soundcard for  
-the highest value that can be used for capture + playback. E.g., the  
-Soundblaster Audigy ZS 2 seems to be limited to max. 48000 Hz in this  
+On MS-Windows use reqlatency = 0 for feedback with minimal latency, positive  
+values for feedback with controlled latency. Play around with the 'minLatency'  
+parameter, set it as low as possible - to the lowest value that doesn't cause  
+any error messages by our driver or audible artifacts like crackling noises or  
+static. Try to set 'freq'uency as high as possible. Check the manual of your  
+soundcard for the highest value that can be used for capture + playback. E.g.,  
+the Soundblaster Audigy ZS 2 seems to be limited to max. 48000 Hz in this  
 mode.  
   
 On Linux, no general statements can be made, only that some soundcards  
 allow for extremely low latencies of < 2 msecs if properly tuned. Search  
 the Internet for tips.  
+  
+If you need low-latency, make sure to read "help [InitializePsychSound](InitializePsychSound)"  
+carefully or contact the forum.  
   
 
 

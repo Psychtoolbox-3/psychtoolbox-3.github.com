@@ -9,8 +9,13 @@ a virtual screen.
 Optionally sets new settings for that output.  
 Possible values for subfunction parameter 'setting':  
 'Brightness': Return or set brightness of an attached display device. Many  
-displays and systems don't support this function.  brightness values are in the  
-range 0.0 to 1.0 from darkest to brightest. Returns old brightness setting.  
+displays and systems don't support this function.  To find out if your system  
+supports brightness queries and setting, call this subfunction without  
+specifying a brightness.  The function will either return a \>= brightness value,  
+or -1 if the system doesn't support brightness control.  If you try to set  
+brightness on a system that doesn't support it, the function will abort with an  
+error.  Brightness values are in the range 0.0 to 1.0 from darkest to brightest.  
+Returns old brightness setting.  
 'NumberOutputs': Return number of active separate display outputs for given  
 screen 'screenNumber'.  
 'Capture': Capture output 'outputId' of a screen 'screenNumber' for exclusive  

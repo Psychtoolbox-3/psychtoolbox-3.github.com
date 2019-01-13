@@ -1,34 +1,40 @@
 # [PsychKinectCore](PsychKinectCore)
-##### >[Psychtoolbox](Psychtoolbox)>[PsychBasic](PsychBasic)
+##### [Psychtoolbox](Psychtoolbox)>[PsychKinectCore](PsychKinectCore)
 
-[PsychKinectCore](PsychKinectCore) is a MEX file for precise control of the Microsoft XBOX  
-Kinect. [PsychKinectCore](PsychKinectCore) has many functions; type "[PsychKinectCore](PsychKinectCore)" for a  
-list:  
+PsychKinectCore - A Psychtoolbox driver for the Microsoft Kinect.  
   
-    [PsychKinectCore](PsychKinectCore)  
+This driver allows to control the box and grab color images and depth  
+images from the Kinect depth camera.  
   
-For explanation of any particular [PsychKinectCore](PsychKinectCore) function, just add a  
-question mark "?". E.g. for 'Open', try either of these equivalent forms:  
+It uses and requires the free software drivers and libraries from the OpenKinect  
+project (Thanks!): http://openkinect.org  
   
-    [PsychKinectCore](PsychKinectCore)('Open?')  
-    [PsychKinectCore](PsychKinectCore) Open?  
+Libfreenect is Copyright (C) 2010 - 2014 individual OpenKinect contributors.  
+Libfreenect requires libusb-1.0, which is licensed under LGPL v2 or later.  
+See 'help InstallKinect' for more detailed license information.  
   
-For more info see "help [PsychKinect](PsychKinect)". [PsychKinect](PsychKinect) is the preferred way of  
-using this driver. It is much more convenient.  
+The PsychKinectCore driver is licensed to you under the terms of the MIT license.  
+See 'help License.txt' in the Psychtoolbox root folder for more details.  
   
-For installation instructions for the required 3rd party driver see  
-help [InstallKinect](InstallKinect).  
+The driver also uses bits of math inspired by Nicolas Burrus Kinect work:  
+http://nicolas.burrus.name/index.php/Research/KinectCalibration   
+  
+  
+Usage:  
+kinectPtr = PsychKinect('Open' [, deviceIndex=0][, numbuffers=2]][, bayerFilterMode=1]);  
+PsychKinect('Close', kinectPtr);  
+PsychKinect('SetAngle', kinectPtr, angle);  
+[starttime, fps, cwidth, cheight, dwidth, dheight] = PsychKinect('Start', kinectPtr [, dropframes=0]);  
+PsychKinect('Stop', kinectPtr);  
+status = PsychKinect('GetStatus', kinectPtr);  
+[...old parameter settings in order of inputs... ] = PsychKinect('SetBaseCalibration', kinectPtr, depthsIntrinsics, rgbIntrinsics, rgbRotation, rgbTranslation, depthsUndistort, rgbUndistort, depthBaseAndOffset);  
+[result, cts, age] = PsychKinect('GrabFrame', kinectPtr [, waitMode=1][, mostrecent=0]);  
+PsychKinect('ReleaseFrame', kinectPtr);  
+[imageOrPtr, width, height, channels, extType, extFormat] = PsychKinect('GetImage', kinectPtr [, imtype=0][, returnTexturePtr=0]);  
+[imageOrPtr, width, height, extType, extFormat] = PsychKinect('GetDepthImage', kinectPtr [, format=0][, returnTexturePtr=0]);  
   
 
+ok<STOUT\>  
+  
 
-
-
-<div class="code_header" style="text-align:right;">
-  <span style="float:left;">Path&nbsp;&nbsp;</span> <span class="counter">Retrieve <a href=
-  "https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/beta/Psychtoolbox/PsychBasic/PsychKinectCore.mexmaci64">current version from GitHub</a> | View <a href=
-  "https://github.com/Psychtoolbox-3/Psychtoolbox-3/commits/beta/Psychtoolbox/PsychBasic/PsychKinectCore.mexmaci64">changelog</a></span>
-</div>
-<div class="code">
-  <code>Psychtoolbox/PsychBasic/PsychKinectCore.mexmaci64</code>
-</div>
 

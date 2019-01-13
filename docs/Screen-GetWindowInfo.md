@@ -57,6 +57,9 @@ but does not set the window 'windowPtr' as drawing target, does not activate its
 [OpenGL](OpenGL) context and only returns information that is safe to return without  
 setting the window as drawing target.  
   
+An 'infoType' of 8 returns 1 if the X-Screens primary gpu uses the  
+modesetting-ddx under Linux.  
+  
 The info struct contains all kinds of information. Just check its output to see  
 what is returned. Most of this info is not interesting for normal users, mostly  
 provided for internal use by M-Files belonging to Psychtoolbox itself, e.g.,  
@@ -107,6 +110,8 @@ Megabytes. Can be very inaccurate or unavailable!
 Zero for none.  
 [SwapBarrier](SwapBarrier): Swap barrier id of the swap barrier to which this windows swap  
 group is assigned. Zero for none.  
+[SysWindowHandle](SysWindowHandle): Low-level windowing system specific window handle of the  
+onscreen window. Currently Linux/X11 only: The X-Window handle.  
   
 The following settings are derived from a builtin detection heuristic, which  
 works on most common GPU's:  
@@ -121,6 +126,8 @@ NV10 = Very old [NVidia](NVidia) [GPUs](GPUs), NV30 = NV30 or later, NV40 = Gefo
 later, G80 = Geforce8000 or later.  
 An empty [GPUCoreId](GPUCoreId) string means a different, unspecified core.  
   
+[DisplayCoreId](DisplayCoreId): Vendor of the display engine / display gpu, [NVidia](NVidia), AMD, Intel,  
+or same as 'GPUCoreId'. May differ from 'GPUCoreId' in hybrid graphics laptops.  
 [BitsPerColorComponent](BitsPerColorComponent): Effective color depths of window/framebuffer in bits per  
 color channel component (bpc).  
 [GLSupportsFBOUpToBpc](GLSupportsFBOUpToBpc): 0 = No support for framebuffer objects. Otherwise maximum  
@@ -133,7 +140,7 @@ linear filtering of textures (8, 16, 32).
 [GLSupportsPrecisionColors](GLSupportsPrecisionColors): 1 = Hardware can be fully trusted to rasterize  
 perfect 32 bpc colors in floating point color mode without special support of  
 PTB. 0 = Needs special (slower) support from PTB to work.  
-[GLSupportsFP32Shading](GLSupportsFP32Shading): 1 = All internal caculations of the GPU are done with  
+[GLSupportsFP32Shading](GLSupportsFP32Shading): 1 = All internal calculations of the GPU are done with  
 IEEE single precision 32 bit floating point, i.e., very accurate.  
 [GPUMinorType](GPUMinorType): Numeric vendor specific gpu id. Chip family on [NVidia](NVidia), display  
 engine revision on AMD atm. -1 if unknown. Subject to change without notice!  

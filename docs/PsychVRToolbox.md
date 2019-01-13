@@ -5,10 +5,13 @@ Psychtoolbox:[PsychHardware](PsychHardware):[PsychVRToolbox](PsychVRToolbox)
   
 Functions for use of and access to Virtual Reality devices.  
   
+[CV1Test](CV1Test)               - A timing test script for [HMDs](HMDs) by use of a photometer.  
 [OculusVR](OculusVR)              - How to setup Oculus VR head mounted displays and general intro.  
 [PsychVRHMD](PsychVRHMD)            - General driver for VR head mounted displays [(HMDs)]((HMDs)).  
-[PsychOculusVR](PsychOculusVR)         - Driver for devices from Oculus VR, e.g., the Oculus Rift.  
+[PsychOculusVR](PsychOculusVR)         - Driver for devices from Oculus VR, e.g., the Oculus Rift, using the v0.5 SDK.  
+[PsychOculusVR1](PsychOculusVR1)        - Driver for devices from Oculus VR, e.g., the Rift CV1, using the v1.0 SDK.  
 [PsychOpenHMDVR](PsychOpenHMDVR)        - Driver for devices supported by [OpenHMD](OpenHMD) (http://www.openhmd.net).  
+[VRInputStuffTest](VRInputStuffTest)      - Test input functionality related to VR devices.  
 
 
 

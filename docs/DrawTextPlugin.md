@@ -48,6 +48,9 @@ the [XQuartz](XQuartz) X11 X-Server. See this link for how to get it:
   
 https://support.apple.com/en-us/HT201341  
   
+If you have [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) installed (help [[GStreamer](GStreamer)][(GStreamer)]((GStreamer))) for multi-media support, then  
+you may not need [XQuartz](XQuartz), as [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) also provides the required libraries.  
+  
 Some recent Matlab versions, e.g., R2015a and R2015b will contain an  
 outdated and incompatible version of libfreetype.6.dylib which will  
 cause problems. Delete (or rename) that file, or move it out of the way.  
@@ -71,6 +74,18 @@ well, just as on OSX (see above). The file to delete or rename would likely
 be found in (e.g., for R2015b):  
 C:\Program Files\MATLAB\R2015b\bin\win64\ under a name like libfreetype.dll,  
 or a similar name containing "freetype".  
+  
+The first time a script calls a text drawing function after an operating system  
+update, or the installation of new text fonts, a long pause of many seconds or  
+even minutes may occur, while the so called fontconfig cache gets rebuilt.  
+Patience is the key. If this pause happens not only once, but at each invocation  
+of text drawing, your system may developed a glitch, as described in [GitHub](GitHub)  
+issue \#429 on our issue tracker:  
+https://github.com/Psychtoolbox-3/Psychtoolbox-3/issues/429  
+  
+The solution is to manually delete the fontconfig cache, e.g., if your user  
+name would be "paul", you'd likely need to delete the following file:  
+"C:\Users\paul\[AppData](AppData)\Local\fontconfig\cache"  
   
 More background info about Psychtoolbox's standard text renderer:  
 =================================================================  

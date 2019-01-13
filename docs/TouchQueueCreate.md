@@ -1,7 +1,7 @@
 # [TouchQueueCreate](TouchQueueCreate)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychBasic](PsychBasic)
 
-[TouchQueueCreate](TouchQueueCreate)(windowHandle, deviceNumber [, numSlots=100000][, numValuators=auto][, keyList=all])  
+[TouchQueueCreate](TouchQueueCreate)(windowHandle, deviceNumber [, numSlots=100000][, numValuators=auto][, keyList=all][, flags=0])  
   
 Create a touch queue for receiving touch input from touch input devices  
 like touchscreens, tablets, touch surfaces, or touchpads.  
@@ -23,6 +23,8 @@ event. Defaults to what the device can provide.
 physical buttons (or maybe virtual buttons?) from the device, this provides  
 the list of buttons to accept. See [KbQeueCreate](KbQeueCreate) for explanation. By default  
 all buttons are accepted.  
+  
+'flags' Optional flags. This defaults to 0 and is so far unused for touch input.  
   
 Once a queue is created its touch data collection can be started via  
 [TouchQueueStart](TouchQueueStart)(), stopped via [TouchQueueStop](TouchQueueStop)(), cleared via [TouchQueueFlush](TouchQueueFlush)(),  

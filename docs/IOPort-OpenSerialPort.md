@@ -53,9 +53,9 @@ mode (see 'StartBackgroundRead' below) if the 'ReadFilterFlags' are set to
 include value 4, or on OS/X and Linux in 'Cooked' processing mode as line  
 delimiter. A setting of -1 will try to disable the line terminator.  
   
-DTR=os default  -- Setting for 'Data Terminal Ready' pin: 0 or 1.  
+DTR=os default    -- Setting for 'Data Terminal Ready' pin: 0 or 1.  
   
-RTS=os default  -- Setting for 'Request To Send' pin: 0 or 1.  
+RTS=os default    -- Setting for 'Request To Send' pin: 0 or 1.  
   
 [BreakBehaviour](BreakBehaviour)=Ignore -- Behaviour if a 'Break Condition' is detected on the  
 line: Ignore, Flush, Zero. On Windows, this setting is ignored.  

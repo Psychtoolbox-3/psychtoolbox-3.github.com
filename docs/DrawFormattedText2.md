@@ -6,7 +6,7 @@ or:
 [nx, ny, textbounds, cache, wordbounds] = [DrawFormattedText2](DrawFormattedText2)(cache, key-value pairs)  
   
 When called with a string, the following key-value pairs are understood:  
-win [, sx][, sy][, xalign][, yalign][, xlayout][, color][, wrapat][, transform][, vSpacing][, righttoleft][, winRect][, resetStyle][, cacheOnly]  
+win [, sx][, sy][, xalign][, yalign][, xlayout][, baseColor][, wrapat][, transform][, vSpacing][, righttoleft][, winRect][, resetStyle][, cacheOnly]  
 Those enclosed in square braces are optional.  
   
 When called with a cache struct, the following optional key-value pair  
@@ -164,7 +164,8 @@ as during a normal call to [DrawFormattedText2](DrawFormattedText2). The boundin
 repositioned according to these for inputs. The winRect argument is only  
 used in this case. It is optional (defaulting to the whole windows), and  
 works as described above, specifying the rect to which 'xalign' and  
-'yalign' apply.  
+'yalign' apply. The input option 'transform' can furthermore be set,  
+which appends additional transformations to what is already in the cache.  
   
   
 ### Return variables:  

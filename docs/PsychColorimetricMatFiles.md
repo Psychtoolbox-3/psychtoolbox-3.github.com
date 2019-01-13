@@ -75,6 +75,13 @@ used here (with extension by zeros).
   spd\_CIEA            - Spectral power distribtion for CIE illuminant A.  
   spd\_CIEC            - Spectral power distribution for CIE illuminant C.  
   spd\_D65             - Spectral power distribution for CIE illuminant D65.  
+  spd\_houser          - 401 normalised illuminant spectral power distributions from:  
+                          Review of measures for light-source color rendition and considerations for a two-measure system for characterizing color rendition  
+                          Kevin W. Houser, Minchen Wei, Aurélien David, Michael R. Krames, and Xiangyou Sharon Shen  
+                          Optics Express, Vol. 21, Issue 8, pp. 10393-10411 (2013)  
+                          http://dx.doi.org/10.1364/OE.21.010393   
+                         The mat file also contains a labels\_houser variable, which is a cell array of string labels  
+                         for each spectrum.  
   spd\_flourescent     - Spectral power distribution for some flourescent lamp.  
   spd\_incanCC         - Spectral power distributions for Macbeth color checker patches under some incandescent lamp.  
   spd\_phillybright    - Direct bright sunlight measured through window and off of a piece of white paper towel  
@@ -91,7 +98,9 @@ used here (with extension by zeros).
   T\_cones\_smj10       - Stockman-[MacLeod](MacLeod)-Johnson 10-degree cone fundamentals.  See CVRL database.  
   T\_cones\_ss2         - Stockman-Sharpe (2000) 2-degree cone fundamentals.  Also the CIE 2006 fundamentals. See CVRL database.  
   T\_cones\_ss10        - Stockman-Sharpe (2000) 10-degree cone fundamentals.  Also the CIE 2006 fundamentals. See CVRL database.  
-  T\_cones\_sp          - Smith-Pokorny cone fundamentals.  Specified between 380 and 780 nm, but non-zero only between 400 and 700 nm.  
+  T\_cones\_sp          - Smith-Pokorny cone fundamentals. Computed using PTB's [JuddVosToSmithPokorny](JuddVosToSmithPokorny). Each fundamental normalized to a max of 1.  
+  T\_cones\_sp\_orig     - Original PTB version of Smith-Pokorny cone fundamentals.  Specified between 380 and 780 nm,  
+                      -   but non-zero only between 400 and 700 nm.  
                       -   This is probably because these were typed in by hand long ago from a table that only had data between 400 and 700 nm  
                       -   and then zero extended to match the wavelength sampling of other data files.  
                       -   It might be good to update these with data over the full specified range.  

@@ -12,6 +12,8 @@ doesn't take letters with descenders into account - Descenders are outside the
 returned box.  
 "textHeight" optionally return height of current text string. May return zero if  
 this is not supported by the current text renderer.  
+"xAdvance" optionally return horizontal advance after drawing the text string.  
+May return zero if this is not supported by the current text renderer.  
 See help for [Screen](Screen)('DrawText') for info about accepted text string formats and  
 all additional parameters...   
 

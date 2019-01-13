@@ -34,9 +34,6 @@ Oculus\_Health\_and\_Safety\_Warnings.pdf - Info about how to use the Oculus
   
 [ProgrammingTips](ProgrammingTips).html   - A very incomplete programming manual.  
   
-Psychtoolbox3-Slides.pdf - Slides of Psychtoolbox presentation from ECVP2007,  
-                           converted to PDF.  
-  
 [SyncTrouble](SyncTrouble)            - Problem with synchronization to the vertical  
                          retrace or display timing, and how to resolve  
                          them.  

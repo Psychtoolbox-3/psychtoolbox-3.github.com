@@ -239,10 +239,10 @@ UDP packets
 
 <div class="code_header" style="text-align:right;">
   <span style="float:left;">Path&nbsp;&nbsp;</span> <span class="counter">Retrieve <a href=
-  "https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/beta/Psychtoolbox/PsychHardware/iViewXToolbox/tcp_udp_ip/pnet.mexmaci64">current version from GitHub</a> | View <a href=
-  "https://github.com/Psychtoolbox-3/Psychtoolbox-3/commits/beta/Psychtoolbox/PsychHardware/iViewXToolbox/tcp_udp_ip/pnet.mexmaci64">changelog</a></span>
+  "https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/beta/Psychtoolbox/PsychHardware/iViewXToolbox/tcp_udp_ip/pnet.m">current version from GitHub</a> | View <a href=
+  "https://github.com/Psychtoolbox-3/Psychtoolbox-3/commits/beta/Psychtoolbox/PsychHardware/iViewXToolbox/tcp_udp_ip/pnet.m">changelog</a></span>
 </div>
 <div class="code">
-  <code>Psychtoolbox/PsychHardware/iViewXToolbox/tcp_udp_ip/pnet.mexmaci64</code>
+  <code>Psychtoolbox/PsychHardware/iViewXToolbox/tcp_udp_ip/pnet.m</code>
 </div>
 

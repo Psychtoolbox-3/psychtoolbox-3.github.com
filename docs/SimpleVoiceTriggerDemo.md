@@ -1,18 +1,13 @@
 # [SimpleVoiceTriggerDemo](SimpleVoiceTriggerDemo)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)
 
-[SimpleVoiceTriggerDemo](SimpleVoiceTriggerDemo)(triggerlevel)  
+[SimpleVoiceTriggerDemo](SimpleVoiceTriggerDemo)([triggerlevel=0.1][, device])  
   
 Demonstrates very basic usage of the new Psychtoolbox sound driver  
 [PsychPortAudio](PsychPortAudio)() for implementation of a "voice trigger". This really  
 only collects the "voice response time" it doesn't actually store the  
-resonse itself. Have a look at [BasicSoundInputDemo](BasicSoundInputDemo) for how one can  
+response itself. Have a look at [BasicSoundInputDemo](BasicSoundInputDemo) for how one can  
 actually retrieve and save the sound vector with the response itself.  
-  
-The script relies on well working sound cards and drivers. It should  
-"just work" on most [MacOS](MacOS)/X and Linux systems with standard hardware, but  
-it will need special ASIO capable sound hardware on MS-Windows for  
-accurate timing! See "help [InitializePsychSound](InitializePsychSound)" for details.  
   
 In any case you \*must\* verify correct timing of your sound hardware with  
 some external measurement equipment, e.g., in conjunction with the  

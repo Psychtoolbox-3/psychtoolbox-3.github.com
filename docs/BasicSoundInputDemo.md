@@ -1,7 +1,7 @@
 # [BasicSoundInputDemo](BasicSoundInputDemo)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)
 
-[BasicSoundInputDemo](BasicSoundInputDemo)([wavfilename] [, voicetrigger=0] [, maxsecs=inf])  
+[BasicSoundInputDemo](BasicSoundInputDemo)([wavfilename][, voicetrigger=0][, maxsecs=inf] [, device])  
   
 Demonstrates very basic usage of the new Psychtoolbox sound driver  
 [PsychPortAudio](PsychPortAudio)() for audio capture / recording.  
@@ -28,6 +28,8 @@ voicetrigger = If set to a non-zero threshold value, the driver will wait
   
 maxsecs      = Maximum number of seconds of sound to capture. Defaults to  
                infinite - sound is recorded until a key is pressed.  
+  
+device       = Deviceindex of audio card to use. Auto-Selected if omitted.  
 
 
 

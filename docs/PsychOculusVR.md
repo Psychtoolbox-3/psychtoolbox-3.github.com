@@ -3,6 +3,9 @@
 
 [PsychOculusVR](PsychOculusVR) - A high level driver for Oculus VR hardware.  
   
+Oculus VR's trademarks, e.g., Oculus, Oculus Rift, etc. are registered trademarks  
+owned by Oculus VR, LLC.  
+  
 Note: If you want to write VR code that is portable across  
 VR headsets of different vendors, then use the [PsychVRHMD](PsychVRHMD)()  
 driver instead of this driver. The [PsychVRHMD](PsychVRHMD) driver will use  
@@ -17,6 +20,14 @@ For setup instructions for Oculus [HMDs](HMDs) see "help [OculusVR](OculusVR)".
   
   
 ### Usage:  
+  
+oldverbosity = [PsychOculusVR](PsychOculusVR)('Verbosity' [, newverbosity]);  
+- Get/Set level of verbosity for driver status messages, warning messages,  
+error messages etc. 'newverbosity' is the optional new verbosity level,  
+'oldverbosity' is the currently set verbosity level - ie. before changing  
+it.  Valid settings are: 0 = Silent, 1 = Errors only, 2 = Warnings, 3 = Info,  
+4 = Debug.  
+  
   
 hmd = [PsychOculusVR](PsychOculusVR)('AutoSetupHMD' [, basicTask='Tracked3DVR'][, basicRequirements][, basicQuality=0][, deviceIndex]);  
 - Open a Oculus HMD, set it up with good default rendering and  
@@ -168,7 +179,7 @@ input = [PsychOculusVRCore](PsychOculusVRCore)('GetInputState', hmd, controllerT
 As this driver does not actually support special VR controllers, only a minimally  
 useful 'input' state is returned for compatibility with other drivers, which is  
 based on emulating or faking input from real controllers, so this function will be  
-of limited use. Specifically, only the input.Time and input.Buttons fields are  
+of limited use. Specifically, only the input.Valid, input.Time and input.Buttons fields are  
 returned, all other fields are missing. input.Buttons maps defined OVR.Button\_XXX  
 fields to similar or corresponding buttons on the regular keyboard.  
   
@@ -179,6 +190,7 @@ OVR.[ControllerType](ControllerType)\_Active for selecting whatever controller i
 Return argument 'input' is a struct with fields describing the state of buttons and  
 other input elements of the specified 'controllerType'. It has the following fields:  
   
+'Valid' = 1 if 'input' contains valid results, 0 if input status is invalid/unavailable.  
 'Time' Time of last input state change of controller.  
 'Buttons' Vector with button state on the controller, similar to the 'keyCode'  
 vector returned by [KbCheck](KbCheck)() for regular keyboards. Each position in the vector  

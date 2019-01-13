@@ -25,6 +25,10 @@
   
  7/11/13  dhb  Wrote it based on [GetSVNInfo](GetSVNInfo)  
  7/12/13  dhb  More info, based on Ben Heasly's version of this in [RenderToolbox3](RenderToolbox3).  
+ 12/2/18  dhb  Add --no-pager to the git branch call, based on email from  
+               Henryk Blasniski who says this will work better across platforms.  
+               The change did not break anything obvious on my machine.  
+ 12/8/18  dhb  Same edit, line 99  
 
 
 
