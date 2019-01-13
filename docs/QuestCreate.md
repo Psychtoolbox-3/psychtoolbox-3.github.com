@@ -12,27 +12,27 @@
  where x represents log10 contrast relative to threshold. The Weibull  
  function itself appears only in [QuestRecompute](QuestRecompute), which uses the  
  specified parameter values in q to compute a psychometric function  
- and store it in q. All the other Quest functions simply use the  
+ and store it in q. All the other [Quest](Quest) functions simply use the  
  psychometric function stored in "q". [QuestRecompute](QuestRecompute) is called solely  
  by [QuestCreate](QuestCreate) and [QuestBetaAnalysis](QuestBetaAnalysis) (and possibly by a few user  
  programs). Thus, if you prefer to use a different kind of  
  psychometric function, called Foo, you need only create your own  
  [QuestCreateFoo](QuestCreateFoo), [QuestRecomputeFoo](QuestRecomputeFoo), and (if you need it)  
  [QuestBetaAnalysisFoo](QuestBetaAnalysisFoo), based on [QuestCreate](QuestCreate), [QuestRecompute](QuestRecompute), and  
- [QuestBetaAnalysis](QuestBetaAnalysis), and you can use them with the rest of the Quest  
+ [QuestBetaAnalysis](QuestBetaAnalysis), and you can use them with the rest of the [Quest](Quest)  
  package unchanged. You would only be changing a few lines of code,  
  so it would quite easy to do.  
   
- Several users of Quest have asked questions on the Psychtoolbox forum  
+ Several users of [Quest](Quest) have asked questions on the Psychtoolbox forum  
  about how to restrict themselves to a practical testing range. That is  
  not what tGuessSd and "range" are for; they should be large, e.g. I  
  typically set tGuessSd=3 and range=5 when intensity represents log  
  contrast. If necessary, you should restrict the range yourself, outside  
- of Quest. Here, in [QuestCreate](QuestCreate), you tell Quest about your prior beliefs,  
- and you should try to be open-minded, giving Quest a generously large  
+ of [Quest](Quest). Here, in [QuestCreate](QuestCreate), you tell [Quest](Quest) about your prior beliefs,  
+ and you should try to be open-minded, giving [Quest](Quest) a generously large  
  range to consider as possible values of threshold. For each trial you  
- will later ask Quest to suggest a test intensity. It is important to  
- realize that what Quest returns is just what you asked for, a  
+ will later ask [Quest](Quest) to suggest a test intensity. It is important to  
+ realize that what [Quest](Quest) returns is just what you asked for, a  
  suggestion. You should then test at whatever intensity you like, taking  
  into account both the suggestion and any practical constraints (e.g. a  
  maximum and minimum contrast that you can achieve, and quantization of  
@@ -41,10 +41,10 @@
  new datum to the database. Don't restrict "tGuessSd" or "range" by the  
  limitations of what you can display. Keep open the possibility that  
  threshold may lie outside the range of contrasts that you can produce,  
- and let Quest consider all possibilities.  
+ and let [Quest](Quest) consider all possibilities.  
   
  There is one exception to the above advice of always being generous with  
- tGuessSd. Occasionally we find that we have a working Quest-based  
+ tGuessSd. Occasionally we find that we have a working [Quest](Quest)-based  
  program that measures threshold, and we discover that we need to measure  
  the proportion correct at a particular intensity. Instead of writing a  
  new program, or modifying the old one, it is often more convenient to  
@@ -52,7 +52,7 @@
  which has the effect of restricting all threshold estimates to be  
  practically identical to tGuess, making it easy to run any number of  
  trials at that intensity. Of course, in this case, the final threshold  
- estimate from Quest should be ignored, since it is merely parroting back  
+ estimate from [Quest](Quest) should be ignored, since it is merely parroting back  
  to you the assertion that threshold is equal to the initial guess  
  "tGuess". What's of interest is the final proportion correct; at the  
  end, call [QuestTrials](QuestTrials) or add an FPRINTF statement to report it.  
@@ -84,7 +84,7 @@
     threshold. Getting out-of-range warnings from [QuestUpdate](QuestUpdate) is one  
     possible indication that your stated range is too small.  
   
- See Quest.  
+ See [Quest](Quest).  
 
 
 

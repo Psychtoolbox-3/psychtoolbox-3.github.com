@@ -6,7 +6,7 @@
 "t" is the mode threshold estimate  
 "p" is the value of the (unnormalized) pdf at t.  
   
-See Quest.  
+See [Quest](Quest).  
 
 
 

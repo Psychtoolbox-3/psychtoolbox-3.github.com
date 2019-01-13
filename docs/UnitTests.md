@@ -649,19 +649,19 @@ and finally some manual editing
 [Psychometric](Psychometric)/[WeibTAFCFitFun](WeibTAFCFitFun).m  
 [Psychometric](Psychometric)/[WeibYNFitFun](WeibYNFitFun).m  
 [PsychtoolboxPostInstallRoutine](PsychtoolboxPostInstallRoutine).m  
-Quest/[QuestBetaAnalysis](QuestBetaAnalysis).m  
-Quest/[QuestCreate](QuestCreate).m  
-Quest/[QuestDemo](QuestDemo).m  
-Quest/[QuestMean](QuestMean).m  
-Quest/[QuestMode](QuestMode).m  
-Quest/[QuestP](QuestP).m  
-Quest/[QuestPdf](QuestPdf).m  
-Quest/[QuestQuantile](QuestQuantile).m  
-Quest/[QuestRecompute](QuestRecompute).m  
-Quest/[QuestSd](QuestSd).m  
-Quest/[QuestSimulate](QuestSimulate).m  
-Quest/[QuestTrials](QuestTrials).m  
-Quest/[QuestUpdate](QuestUpdate).m  
+[Quest](Quest)/[QuestBetaAnalysis](QuestBetaAnalysis).m  
+[Quest](Quest)/[QuestCreate](QuestCreate).m  
+[Quest](Quest)/[QuestDemo](QuestDemo).m  
+[Quest](Quest)/[QuestMean](QuestMean).m  
+[Quest](Quest)/[QuestMode](QuestMode).m  
+[Quest](Quest)/[QuestP](QuestP).m  
+[Quest](Quest)/[QuestPdf](QuestPdf).m  
+[Quest](Quest)/[QuestQuantile](QuestQuantile).m  
+[Quest](Quest)/[QuestRecompute](QuestRecompute).m  
+[Quest](Quest)/[QuestSd](QuestSd).m  
+[Quest](Quest)/[QuestSimulate](QuestSimulate).m  
+[Quest](Quest)/[QuestTrials](QuestTrials).m  
+[Quest](Quest)/[QuestUpdate](QuestUpdate).m  
 
 
 

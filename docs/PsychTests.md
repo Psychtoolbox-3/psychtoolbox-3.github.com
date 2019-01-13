@@ -70,7 +70,7 @@ Psychtoolbox/[PsychTests](PsychTests)/Contents.m
   [PutImageTest](PutImageTest)                    - Test [Screen](Screen)('PutImage') when used with 'NormalizedHighresColorRange'.  
   [PsychPortAudioDataPixxTimingTest](PsychPortAudioDataPixxTimingTest) - Test PsychPortAudio's timing with a [DataPixx](DataPixx) device and a audio line cable.  
   [PsychPortAudioTimingTest](PsychPortAudioTimingTest)        - Testsignal generator for test of [PsychPortAudios](PsychPortAudios) timing with external measurement equipment.  
-  [QuestTest](QuestTest)                       - Some Quest simulations, more elaborate than [QuestDemo](QuestDemo).  
+  [QuestTest](QuestTest)                       - Some [Quest](Quest) simulations, more elaborate than [QuestDemo](QuestDemo).  
   [ResolutionTest](ResolutionTest)                  - Use [Screen](Screen) Resolutions to print table of display resolutions.  
   [RodFundamentalTest](RodFundamentalTest)              - Test the PTB routines generate a good rod fundamental.  
   [ScreenTest](ScreenTest)                      - Thorough test of hardware/software performance.  

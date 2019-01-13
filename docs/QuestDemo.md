@@ -8,7 +8,7 @@ notion of measuring threshold, i.e. the signal strength required for a
 criterion level of response by the observer (Pelli & Farell, 1994;  
 Farell & Pelli, 1999). Watson and Pelli (1983) described a maximum  
 likelihood procedure, which they called QUEST, for estimating threshold.  
-The Quest toolbox in the Psychtoolbox is a set of MATLAB functions  
+The [Quest](Quest) toolbox in the Psychtoolbox is a set of MATLAB functions  
 that implement all the original QUEST functions, plus several others.  
 You can think of it as a Bayesian toolbox for testing observers and  
 estimating their thresholds. This QUEST toolbox is self-contained,  
@@ -33,35 +33,35 @@ trial and the final estimate are at the MEAN of the posterior pdf.
 trial is at the best QUANTILE, and the final estimate is at the MEAN of  
 the posterior pdf.  
   
-You begin by calling [QuestCreate](QuestCreate), telling Quest what is your prior  
+You begin by calling [QuestCreate](QuestCreate), telling [Quest](Quest) what is your prior  
 knowledge, i.e. a guess and associated sd for threshold. Then you run  
-some number of trials, typically 40. For each trial you ask Quest to  
+some number of trials, typically 40. For each trial you ask [Quest](Quest) to  
 recommend a test intensity. Then you actually test the observer at some  
-intensity, not necessarily what Quest recommended, and then you call  
-[QuestUpdate](QuestUpdate) to report to Quest the actual intensity used and whether the  
-observer got it right. Quest saves this information in your Quest struct,  
+intensity, not necessarily what [Quest](Quest) recommended, and then you call  
+[QuestUpdate](QuestUpdate) to report to [Quest](Quest) the actual intensity used and whether the  
+observer got it right. [Quest](Quest) saves this information in your [Quest](Quest) struct,  
 which we usually call "q". This cycle is repeated for each trial. Finally,  
-at the end, when you're done, you ask Quest to provide a final threshold  
+at the end, when you're done, you ask [Quest](Quest) to provide a final threshold  
 estimate, usually the mean and sd (of the posterior pdf).  
   
-It is important to realize that Quest is merely a friendly adviser,  
+It is important to realize that [Quest](Quest) is merely a friendly adviser,  
 cataloging your data in your q structure, and making statistical  
 analyses of it, but never giving you orders. You're still in charge. On  
-each trial, you ask Quest (by calling [QuestMode](QuestMode), or [QuestMean](QuestMean), or  
+each trial, you ask [Quest](Quest) (by calling [QuestMode](QuestMode), or [QuestMean](QuestMean), or  
 [QuestQuantile)](QuestQuantile)) to suggest the best intensity for the next trial. Taking  
 that as advice, in your experiment you should then select the intensity  
 yourself for the next trial, taking into account the limitations of your  
 equipment and experiment. Typically you'll impose a maximum and a  
 minimum, but your equipment may also restrict you to particular discrete  
 values, and you might have some reason for not repeating a value.  
-Typically you'll choose the available intensity closest to what Quest  
+Typically you'll choose the available intensity closest to what [Quest](Quest)  
 recommended. In some cases the process of producing the stimulus is so  
 involved that the exact stimulus intensity is known only after it's been  
 shown. Having run the trial, you then report the new datum,  
-the actual intensity tested and the observer's response, asking Quest to  
+the actual intensity tested and the observer's response, asking [Quest](Quest) to  
 add it to the database in q.  
   
-To use Quest you must provide an estimated value for beta. Beta  
+To use [Quest](Quest) you must provide an estimated value for beta. Beta  
 controls the steepness of the Weibull function. Many vision studies use  
 Michelson contrast to control the visibility of the stimulus. It turns  
 out that psychometric functions for 2afc detection as a function of  
@@ -73,7 +73,7 @@ feature. It allows only two free parameters, threshold and beta. You may
 prefer to use a general-purpose maximum likelihood fitting program to  
 allow more degrees of freedom in fitting a Weibull function to your  
 psychometric data. However, once you've done that it's likely that  
-you'll settle on fixed values for all but threshold and use Quest to  
+you'll settle on fixed values for all but threshold and use [Quest](Quest) to  
 estimate that.  
   
 Note that data collected to estimate threshold usually are not  
@@ -117,7 +117,7 @@ All the papers of which I'm an author can be downloaded as PDF files
 from my web site:  
 web http://psych.nyu.edu/pelli/  
   
-Try "help Quest".  
+Try "help [Quest](Quest)".  
 
 
 

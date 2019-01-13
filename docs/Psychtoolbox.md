@@ -93,7 +93,7 @@ Perception 36 ECVP Abstract Supplement.
 [PsychStairCase](PsychStairCase)         - Adaptive staircase procedure.  
 [PsychTests](PsychTests)             - Evaluate performance of software and hardware.  
 [PsychVideoCapture](PsychVideoCapture)      - Functions for realtime video capture.  
-Quest                  - Threshold estimation procedure.  
+[Quest](Quest)                  - Threshold estimation procedure.  
 
 
 

@@ -14,7 +14,7 @@ of this because the printout mentions any values of beta that were dropped
 because they had zero probability. Thus you should keep the number of trials  
 under around 1000, to avoid the zero-probability warnings.  
   
-See Quest.  
+See [Quest](Quest).  
 
 
 

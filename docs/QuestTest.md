@@ -7,7 +7,7 @@ Created by hacking a copy of [QuestDemo](QuestDemo).m, in order to
 do some simulations for Beau Watson.  
   
 128 repetitions of each condition  
-Quest assumes [LogWeibull](LogWeibull) psychometric function with parameters:  
+[Quest](Quest) assumes [LogWeibull](LogWeibull) psychometric function with parameters:  
 beta = {1.5, 2., 2.5, 3., 3.5, 4., 4.5, 5., 5.5} (in separate conditions)  
 gamma = 0.03  
 delta = .01  
@@ -15,7 +15,7 @@ sample range = {-30,30} dB
 sample step size 0.5 dB  
 Prior is always Gaussian, sd=12 dB, centered on guess.  
 Initial guess drawn from Normal distribution with mean 0 and sd=6 dB.  
-Quest uses mode of posterior density.  
+[Quest](Quest) uses mode of posterior density.  
 Simulated observer has [LogWeibull](LogWeibull) psychometric function with parameters:  
 {beta=3.5,gamma=.03,delta=.01}  
   

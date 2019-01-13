@@ -15,14 +15,14 @@ p2=delta\*gamma+(1-delta)\*(1-(1-gamma)\*exp(-10.^(beta\*(x-xThreshold))));
 where x represents log10 contrast relative to threshold. The Weibull  
 function itself appears only in [QuestRecompute](QuestRecompute), which uses the  
 specified parameter values in q to compute a psychometric function  
-and store it in q. All the other Quest functions simply use the  
+and store it in q. All the other [Quest](Quest) functions simply use the  
 psychometric function stored in "q". [QuestRecompute](QuestRecompute) is called solely  
 by [QuestCreate](QuestCreate) and [QuestBetaAnalysis](QuestBetaAnalysis) (and possibly by a few user  
 programs). Thus, if you prefer to use a different kind of  
 psychometric function, called Foo, you need only create your own  
 [QuestCreateFoo](QuestCreateFoo), [QuestRecomputeFoo](QuestRecomputeFoo), and (if you need it)  
 [QuestBetaAnalysisFoo](QuestBetaAnalysisFoo), based on [QuestCreate](QuestCreate), [QuestRecompute](QuestRecompute), and  
-[QuestBetaAnalysis](QuestBetaAnalysis), and you can use them with the rest of the Quest  
+[QuestBetaAnalysis](QuestBetaAnalysis), and you can use them with the rest of the [Quest](Quest)  
 package unchanged. You would only be changing a few lines of code,  
 so it would quite easy to do.  
   

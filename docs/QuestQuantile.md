@@ -15,7 +15,7 @@ This is based on work presented at a conference, but otherwise
 unpublished: Pelli, D. G. (1987). The ideal psychometric procedure.  
 Investigative Ophthalmology & Visual Science, 28(Suppl), 366.  
   
-See Quest.  
+See [Quest](Quest).  
 
 
 

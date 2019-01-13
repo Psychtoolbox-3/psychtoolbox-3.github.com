@@ -8,7 +8,7 @@ records q.intensity and q.response are always updated, but q.pdf is only
 updated if q.updatePdf is true. You can always call [QuestRecompute](QuestRecompute) to  
 recreate q.pdf from scratch from the historical record.  
   
-See Quest.  
+See [Quest](Quest).  
 
 
 

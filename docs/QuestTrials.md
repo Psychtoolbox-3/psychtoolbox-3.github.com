@@ -10,7 +10,7 @@ Here's how you might use this function to display your results:
         fprintf(' intensity     p fit         p    trials\n');  
         disp([t.intensity; [QuestP](QuestP)(q,t.intensity-logC); (t.responses(2,:)./sum(t.responses)); sum(t.responses)]');  
   
-See Quest.  
+See [Quest](Quest).  
 
 
 
