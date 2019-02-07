@@ -71,7 +71,16 @@ the sum of certain flags is passed. A currently supported flag is the symbolic
 constant kPsychGUIWindow. It enables windows to behave more like regular GUI  
 windows on your system. See 'help kPsychGUIWindow' for more info. The flag  
 kPsychGUIWindowWMPositioned additionally leaves initial positioning of the GUI  
-window to the window manager.  
+window to the window manager. The flag kPsychUseFineGrainedOnset asks to use a  
+more fine-grained technique to schedule stimulus onset than the classic fixed  
+refresh interval scheduling. This may allow to more often achieve a visual  
+stimulus onset exactly at the 'tWhen' onset time asked for in [Screen](Screen)('[Flip](Flip)'),  
+instead of only at the closest frame boundary of a fixed duration frame. This  
+needs a suitable operating-system, graphics driver and graphics hardware, as  
+well as a special suitable display device that can run at a non-fixed refresh  
+rate. On unsuitable system hardware+software configurations the flag may do  
+nothing. This feature is currently considered \*highly experimental\* and may not  
+work reliably or \*at all\*! It is currently only implemented on Linux.  
   
 "clientRect" This optional parameter allows to define a size of the onscreen  
 windows drawing area that is different from the actual size of the windows  
