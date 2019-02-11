@@ -1,0 +1,58 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.15 Beta update "P-Funk" was released at 7th February 2019.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2019-02-07_V3.0.15”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2019-02-07_V3.0.15>
+
+The Psychtoolbox-3.0.15 beta update "P-Funk" mostly contains bug fixes, workarounds for OS bugs, minor improvements here and there.
+
+## New features and improvements:
+
+### All operating systems:
+
+* Help text updates. Online docs improvements and updates.
+
+* Bug fixes and minor improvements.
+
+* Screen('DrawDots') optimize round dot rendering for dot_type 3.
+
+* Screen('Transformtexture') fix some corner-case bug.
+
+* DrawFormattedText/DrawFormattedText2: Suppress unicode warnings on Octave.
+
+* DrawFormattedText2 enhanced by Diederick: Can now handle unicode text. Can now cache drawn text into internal texture for much faster redrawing of text that needs to be presented in multiple stimulus frames, misc other improvements and fixes.
+
+* DrawFormattedText2Demo shows Diederick's new features, like fast text scrolling by redrawing from texture cache, and unicode rendering.
+
+* The Brainard lab did random improvements to random stuff in PsychColorimetric, but without useful commit messages as usual, so i won't try to figure out what they did. Things changed, 'nuff said.
+
+### Linux:
+
+* Fix AMD screen+output -> displayhead mapping for AMD gpu's driven by amdgpu-kms + DisplayCore on kernels later than Linux 4.15. Makes auto-detection of mapping for low-level access plug & play again.
+
+* Add support for low-level access for AMD gpu's with DCE-12 display engine, ie. Vega family.
+
+* Add low-level support for a few more upcoming AMD gpu's.
+
+* Fix failure of Screen('DrawDots') to draw round dots if different point sizes across dots are requested and running on Mesa versions 18.1.0 - 18.3.1. Bug is properly fixed in Mesa 18.3.2 and later.
+
+* Add highly experimental P-Sync support for some AMD gpu's.
+
+### Windows:
+
+* Fix a potential crash-bug on recent Matlab versions, e.g., reported against R2018a, with the new PsychOculusVR1 driver for Oculus Rift CV1 VR HMD.
+
+### OSX:
+
+* PsychPortAudio: Increase default sound output latency to at least 10 msecs for reqlatencyclass setting 0 and 1 (which is the default class setting). This to work around the latest macOS operating system bugs wrt. audio. Apples trainwreck reports being able to support latencies it can't actually handle, so on some Macs this leads to audio dropout and crackling sounds. Select a latency more compatible with the trainwreck, unless agressive low latency is requested with settings 2 and greater, or manually overriden with the suggestedLatencySecs parameter.
+
+* Block use of PsychtoolboxKernelDriver for AMD gpu's with DCE-12 display engine for now, ie., Vega family, e.g., the most expensive 2018 MacBook"Pro" toy, and the absurdly overpriced iMac"Pro". DCE-12 is not yet supported in our low-level code for macOS and can't be validated without access to suitable hardware. This means that those machines are mostly unusable for exact visual timing and other tasks with need for precise control, and that many bugs can't be detected/worked around by Psychtoolbox.
+
+Enjoy!
