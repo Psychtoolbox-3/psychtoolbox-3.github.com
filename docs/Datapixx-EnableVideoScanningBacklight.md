@@ -10,4 +10,4 @@ LCD pixel rise and fall times.
 
 
 ###See also:
-[DisableVideoScanningBacklight](Datapixx-DisableVideoScanningBacklight)
+[DisableVideoScanningBacklight](Datapixx-DisableVideoScanningBacklight), [SetVideoBacklightIntensity](Datapixx-SetVideoBacklightIntensity)

@@ -6,6 +6,8 @@ status = Datapixx('GetTouchpixxStatus');
 Returns a struct containing the following [TOUCHPixx](TOUCHPixx) touch panel status  
 information:  
 -"enabled" is 1 if [TOUCHPixx](TOUCHPixx) touch panel hardware is present and enabled.  
+-"touchPanelMode" is 0 for a Resistive touch panel, 1 for a Capacitive touch  
+panel.  
 -"stabilizeDuration" is duration in seconds that [TOUCHPixx](TOUCHPixx) panel coordinates  
 must be stable before being recognized as a touch in [GetTouchpixxCoords](GetTouchpixxCoords)().  
 -"isPressed" is 1 if touch panel is currently being pressed.  

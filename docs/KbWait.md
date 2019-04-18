@@ -48,27 +48,17 @@ after pressing it againg, ie. waitForAllKeysReleased -\> waitForKeypress
 -\> waitForAllKeysReleased -\> Return [secs, keyCode] of the key press.  
   
   
-OSX and Linux: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+OSX and Linux: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
   
 [KbWait](KbWait) uses the [PsychHID](PsychHID) function, a general purpose function for  
 reading from the Human Interface Device (HID) class of USB devices.  
   
-[KbWait](KbWait) tests the first USB-HID keyboard device by default. Optionally  
-you can pass in a 'deviceNumber' to test a different keyboard if multiple  
-keyboards are connected to your machine.  If deviceNumber is -1, all  
-keyboard devices will be checked.  If deviceNumber is -2, all keypad  
-devices (if any) will be checked. If deviceNumber is -3, all keyboard and  
-keypad devices will be checked. The device numbers to be checked are  
-determined only on the first call to the function.  If these numbers  
-change, the function can be reset using "clear [KbWait](KbWait)".  
-  
-As a little bonus, [KbWait](KbWait) can also query other HID human input devices  
-which have keys or buttons as if they were keyboards. If you pass in the  
-deviceIndex of a mouse [(GetMouseIndices]((GetMouseIndices) will provide with them), it will  
-treat mouse button state as keyboard state. Similar behaviour usually  
-works with Joysticks, Gamepads and other input controllers.  
-  
-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+[KbWait](KbWait) tests a keyboard device by default, which is chosen by an operating  
+system dependent heuristic and usually makes a reasonable choice. For better  
+control over the keyboard input device, you can pass in a 'deviceNumber' to  
+test a different keyboard if multiple keyboards are connected to your machine.  
+See the "help [KbCheck](KbCheck)" for [KbCheck](KbCheck) for the meaning of the 'deviceNumber'.  
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
   
 See also: [KbCheck](KbCheck), [KbStrokeWait](KbStrokeWait), [KbPressWait](KbPressWait), [KbReleaseWait](KbReleaseWait), [GetChar](GetChar), [CharAvail](CharAvail), [KbDemo](KbDemo).  
 

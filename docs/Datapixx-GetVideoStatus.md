@@ -15,6 +15,7 @@ vertical blanking interval
 -"horizontalFrequency" is the horizontal line rate in Hz  
 -"dotFrequency" is the pixel dot rate in Hz  
 -"mode" is the video processing mode set by [SetVideoMode](SetVideoMode)  
+-"greyscaleMode" is the video greyscale mode set by [SetVideoGreyscaleMode](SetVideoGreyscaleMode)  
 -"receivingVideo" is 1 if the Datapixx is currently receiving video data over  
 the DVI link. If the video input cable becomes unplugged, or the graphics board  
 enters power-saving mode, then receivingVideo will be 0.  
@@ -48,7 +49,12 @@ frequency.
 -"pixelSyncSingleLine" is 1 if pixel sync is only recognized on a single line.  
 -"pixelSyncBlankLine" is 1 if the pixel sync raster line is displayed black.  
 -"scanningBacklight" is 1 if [VIEWPixx](VIEWPixx) scanning backlight is enabled.  
+-"backlightIntensity" is the [VIEWPixx](VIEWPixx) LED backlight intensity.  
 -"lcd3D60Hz" is 1 if [VIEWPixx](VIEWPixx)/3D pixel polarity inversion is enabled.  
+-"videoClutTransparencyColorMode" is 1 if [VIEWPixx](VIEWPixx)/[PROPixx](PROPixx) CLUT overlay had  
+enabled transparency.  
+-"pixelMode" is 1 if the digital outputs are being driving by the top-left  
+pixel's value.  
 -"propixxCeilingMount" is 1 if [PROPixx](PROPixx) is flipping image horizontally and  
 vertically.  
 -"propixxRearProjection" is 1 if [PROPixx](PROPixx) is flipping image horizontally.  
@@ -58,6 +64,11 @@ factor.
 factor.  
 -"propixx3DCrosstalkRL" is [PROPixx](PROPixx) left <- right eye 3D crosstalk elimination  
 factor.  
+-"propixxLampLed" is 1 if [PROPixx](PROPixx) LED light source is turned on.  
+-"propixxTScopePrepAcknowledge" is 1 if [PROPixx](PROPixx) T-Scope has finished loading  
+cover page.  
+-"propixxTScopeScheduleFrame" counts [PROPixx](PROPixx) T-Scope stimulus frames.  
+-"propixxLedMask" Current mask on the [LEDs](LEDs).  
 See [DatapixxStatusDemo](DatapixxStatusDemo) example.  
   
 

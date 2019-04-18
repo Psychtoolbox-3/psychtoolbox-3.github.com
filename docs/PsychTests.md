@@ -32,7 +32,6 @@ Psychtoolbox/[PsychTests](PsychTests)/Contents.m
   [CopyWindowTest](CopyWindowTest)                  - Test [CopyWindow](CopyWindow) functionality.  
   [DaqTest](DaqTest)                         - Test [PsychHID](PsychHID) and routines to control the  USB-1208FS digital acquistion device.  
   [DrawingStuffTest](DrawingStuffTest)                - [FrameRect](FrameRect), [DrawLine](DrawLine), [FillPoly](FillPoly), [FramePoly](FramePoly).  
-  [EventAvailTest](EventAvailTest)                  - Test [EventAvail](EventAvail)  
   [FillPolyTest](FillPolyTest)                    - Test drawing concave polygons.  
   [FitConeFundamentalsTest](FitConeFundamentalsTest)         - Test/explore fitting CIE cone fundamentals with absorbance obtained from nomograms.  
   [FitWeibullTAFCTest](FitWeibullTAFCTest)              - Fit a Weibull to 2AFC data.  

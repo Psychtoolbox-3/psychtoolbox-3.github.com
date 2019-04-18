@@ -119,7 +119,7 @@ Screen('[Preference](Screen-Preference)','DebugMakeTexture', enableDebugging);
   
 % Movie and multimedia playback functions:  
 [ moviePtr [duration] [fps] [width] [height] [count] [aspectRatio]]=Screen('[OpenMovie](Screen-OpenMovie)', windowPtr, moviefile [, async=0] [, preloadSecs=1] [, specialFlags1=0][, pixelFormat=4][, maxNumberThreads=-1][, movieOptions]);  
-Screen('[CloseMovie](Screen-CloseMovie)', moviePtr);  
+Screen('[CloseMovie](Screen-CloseMovie)' [, moviePtr=all]);  
 [ texturePtr [timeindex]]=Screen('[GetMovieImage](Screen-GetMovieImage)', windowPtr, moviePtr, [waitForImage], [fortimeindex], [specialFlags = 0] [, specialFlags2 = 0]);  
 [droppedframes] = Screen('[PlayMovie](Screen-PlayMovie)', moviePtr, rate, [loop], [soundvolume]);  
 timeindex = Screen('[GetMovieTimeIndex](Screen-GetMovieTimeIndex)', moviePtr);  

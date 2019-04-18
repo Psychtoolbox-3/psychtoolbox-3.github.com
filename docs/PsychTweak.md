@@ -56,7 +56,7 @@ allows to override that choice.
 [PsychTweak](PsychTweak)('GStreamerDebug', debugconfig);  
   
 -- Select level of verbosity for [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) low-level debug output.  
-See <http://docs.gstreamer.com/display/[GstSDK](GstSDK)/Basic+tutorial+11%3A+Debugging+tools\>  
+See <https://gstreamer.freedesktop.org/documentation/tutorials/basic/debugging-tools.html\>  
 for explanation of debug options.  
   
   

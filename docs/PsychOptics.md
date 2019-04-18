@@ -12,6 +12,7 @@ Psychtoolbox:[PsychOptics](PsychOptics).
   [GoodmanDiffrac](GoodmanDiffrac)      - Diffraction limited MTF, based on cutoff freq, Goodman's formula.  
   [LsfToPsf](LsfToPsf)            - Convert line spread function to point spread function.  
   [MakeRadiusMat](MakeRadiusMat)       - Create a matrix whose entries are equal to their radius.  
+  [NavarroMTF](NavarroMTF)          - MTF from Navarro et al. 1993.  
   [OtfToPsf](OtfToPsf)            - Convert optical transfer function to point spread function.  
   [PositionGridMinutesToSfGridCyclesDeg](PositionGridMinutesToSfGridCyclesDeg) - Convert mess from position to sf.  
   [PsfToLsf](PsfToLsf)            - Convert point spread function to line spread function.  

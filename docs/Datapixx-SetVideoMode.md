@@ -29,4 +29,4 @@ of the following values:
 
 
 ###See also:
-[SetVideoHorizontalSplit](Datapixx-SetVideoHorizontalSplit), [SetVideoVerticalStereo](Datapixx-SetVideoVerticalStereo), [SetVideoClut](Datapixx-SetVideoClut)
+[SetVideoGreyscaleMode](Datapixx-SetVideoGreyscaleMode), [SetVideoHorizontalSplit](Datapixx-SetVideoHorizontalSplit), [SetVideoVerticalStereo](Datapixx-SetVideoVerticalStereo), [SetVideoClut](Datapixx-SetVideoClut)

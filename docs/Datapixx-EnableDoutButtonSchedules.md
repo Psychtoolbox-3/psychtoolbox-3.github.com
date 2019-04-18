@@ -1,7 +1,7 @@
 # [Datapixx('EnableDoutButtonSchedules')](Datapixx-EnableDoutButtonSchedules) 
 ##### [Psychtoolbox](Psychtoolbox)>[Datapixx](Datapixx).{mex*} subfunction
 
-Datapixx('EnableDoutButtonSchedules');
+Datapixx('EnableDoutButtonSchedules, [mode = 0]');
 
 Normally digital output schedules are initiated via calls to [StartDoutSchedule](StartDoutSchedule).  
 [EnableDoutButtonSchedules](EnableDoutButtonSchedules) causes the [DATAPixx](DATAPixx) to automatically initiate a  
@@ -10,6 +10,7 @@ been detected. Transitions on the 16 different button inputs (DIN0-DIN15) will
 initiate 16 different schedules. Transitions on DIN0 will use the schedule  
 buffer specified in the call to [SetDoutSchedule](SetDoutSchedule). Transitions on DIN1-DIN15 will  
 automatically use higher address buffers at 4kB increments.  
+Mode should be 0 for standard setup and 1 for MRI set-up.  
   
 
 

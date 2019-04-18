@@ -8,6 +8,7 @@ Set the waveform which will be sent to the [DATAPixx](DATAPixx) VESA 3D connecto
  0: VESA port drives straight L/R squarewave for 3rd party emitter.  
  1: VESA port drives 3DPixx IR emitter for [CrystalEyes](CrystalEyes) 3D goggles.  
  2: VESA port drives 3DPixx IR emitter for NVIDIA 3D goggles.  
+ 3: SPECIAL CASE: [PROPixx](PROPixx) + [PROPixx](PROPixx) CTRL with ACTIVE NVIDIA.   
 See [DatapixxImagingStereoDemo](DatapixxImagingStereoDemo).m for example.  
   
 
