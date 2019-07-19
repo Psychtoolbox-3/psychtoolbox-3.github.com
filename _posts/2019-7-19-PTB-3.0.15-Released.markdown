@@ -1,0 +1,108 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.15 Beta update "No rocket science" was released at 19th July 2019.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2019-07-19_V3.0.15”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2019-07-19_V3.0.15>
+
+The Psychtoolbox-3.0.15 beta update "No rocket science" mostly contains bug fixes, workarounds for OS bugs, and new features and improvements here and there.
+It is expected to be the last release in the 3.0.15 series, before we start the 3.0.16 series.
+The 3.0.16 series will drop support for Ubuntu versions older than 16.04-LTS and equivalent other distributions that don't provide GStreamer 1.4.0 or later, and will also involve a major update of the Microsoft Windows build system, the Matlab versions used for building and testing, and the supported Octave versions.
+
+## New features and improvements:
+
+### All operating systems:
+
+*   Improvements to Python implementations for PsychHID, PsychPortaudio: Pythonic wrapper classes hid and audio and hidtest_pythonic, ppatest_pythonic. Ability to build wheels and sdist's for upload to PyPi. Jon Peirce currently takes care of building and uploading this stuff to PyPi et al. Bug fixes by Jon and myself for .py and C code, e.g., for detection of HID devices with exotic names on MS-Windows. Also add some missing license file to PyPi distro by Richard Höchenberger.
+
+*   Various updates to help texts and documentation.
+
+*   MakeBeep: Fix off-by-one error by Diederick.
+
+*   Addition of "Krinov reflectance data" data set by David Brainard.
+
+*   Fix failure of PsychHID('ReceiveReports') with optional options struct - regression introduced around beginning of 2019 (forum msg 23724).
+
+*   Screen: Fix GStreamer movie audio writing for recent GStreamer versions. Audio track writing (cfe. ImagingStereoDemo([],[],2)) failed on Ubuntu 19.04, because the audio layout of source data was not specified. Current plugins seem to require explicit specification of our interleaved input format audio caps as "format=interleaved".
+
+*   PsychRTBox: Adapt for use with Bits# emulated virtual RTBox. Tested on Linux, untested on macOS.
+
+*   BitsPlusDIO2Matrix(): Allow use of Bits# trigger output port.
+
+*   Ask/GetString/GetEchoString/GetCharTest: Deal with Unicode key input. This now allows to take input in character sets / from keyboard layouts other than US layout with ASCII/Latin-1. E.g., german umlauts etc. should be processed properly. Only tested on Linux, but hopefully works on Windows/macOS as well. One limitation that became apparent is that GNU/Octave doesn't really support processing of Unicode, while Matlab does. So while you can record/receive use input from non-US layout keyboards, and process it in your own scripts, many of Octave's string processing functions and printing of such strings to the command window via fprintf() or disp() may fail for non-ASCII characters. This is a Octave design limitation as of Octave 5.1. You will have to work around it on a case by case basis in your scripts.
+
+*   PsychImaging: For Native10/11/16Bit framebuffer mode, don't load identity lut.
+    If use of a gpu native 10 Bit, 11 Bit or 16 Bit framebuffer is requested, and this happens via native graphics driver facilities and not via our own Linux+AMD MMIO low-level hackery, then do not request use of a identity gamma lut via LoadIdentityClut() anymore.
+    Modern Intel/AMD/NVidia gpu's when operated natively in > 8 bpc framebuffer depths can switch to hardware lut's with more than 10 bpc output width, so we'd lose precision for gamma correction by using our shader based method instead. Also LoadIdentityClut() built in lut's are only optimized for / targeted at 8 bpc framebuffer passthrough, e.g., for use with VPixx and CRS devices, VideoSwitcher and other video attenuators. If used in 10 bpc framebuffer mode or higher they might truncate output precision to 8 bpc, e.g., on Intel graphics chips under Linux!
+
+*   PsychImaging: Add support for native 16 bit floating point framebuffers.
+    A new task 'EnableNative16BitFloatingPointFramebuffer' requests 64 bpp, 16 bpc RGBA16F floating point windowing system framebuffers. Also requests >= 16 bpc float precision from the imaging pipeline if
+    the pipeline is enabled. Switches to unclamped normalized high-res color range 0.0 - 1.0 as usual.
+    This is so far only known to work in a meaningful way on NVidia GeForce 1000+ "Pascal" gpu's under Windows-10. Photometer measurement on a 8 bit panel with dithering enabled showed at least roughly 11 bits luminance precision under quick testing. Didn't work on AMD + Windows-10, untested on Intel,
+    macOS. Not yet supported on Linux.
+    AdditiveBlendingForLinearSuperpositionTutorial and BitsPlusCSFDemo
+    show off the new mode on suitable gpu + os combos.
+
+*   Snd(): Allow better interop with PsychPortAudio via pahandle sharing. "help Snd" for explanation. Should also help with shared use of PsychPortAudio and Beeper() or PsychPortAudio and Eyelink tracker calibration/recalibration iff Eyelink audio feedback tones are used.
+
+*   OpenAL MOAL support improvements:
+     *  Clean up moaldemo and AudioTunnel3DDemo a bit. moaldemo did not work under Octave on any machine other my own, duh!
+     *  Fix use of OpenAL on Matlab R2015b and later: Broken, but never reported as broken by anyone.
+     *  Implement all missing OpenAL 1.1 functions, e.g., various missing alGetXXX() functions that are rarely needed.
+
+* DrawFormattedText2 with cache as input in cacheOnly mode, to transform text in cache without having it drawn to screen. Also some other bug fixes. By Diederick.
+
+* ConfirmInfo and TwoStateQuery now work in GUI mode on R2014b and later. By Diederick.
+
+* TwoStateQuery: Fix Octave GUI support for current Octave versions.
+
+
+### Linux:
+
+*   Priority(): Add support for Feral Interactive's gamemode optimizations. See "help LinuxGameMode" for setup instructions and detailed explanations. The short story is that if you install the FeralInteractive gamemode package on your Linux distribution, which is easy on Ubuntu 18.04 LTS, then calling Priority(n) with a real-time priority level n > 0 will trigger additional automatic optimizations of your Linux system for optimal real-time behaviour, low-latency, precise timing etc. Hardware I/O for Octave/Matlab is prioritized over other applications. Processors (cpu's) are switched into high-performance mode for more deterministic timing and compute performance. Supported graphics cards, currently modern models from AMD and NVidia, will be switched to high-performance mode as well. Priority(0) restores standard system operation for less real-time but more energy savings.
+
+*   XOrgConfCreator: Usability improvements.
+
+*   Try to workaround or at least warn about runtime environments which may cause trouble in multi-threaded operation, because the host application doesn't call XInitThreads() early enough during application startup. This problem was discovered with the PsychHID implementation on Python. It is fixed in current PsychoPy releases, and worked around for various other Python IDE's or the Python commandline interpreter. Turns out that Octave versions up to and including Octave 4.0.x (e.g,, shipped in Ubuntu 16.04 LTS by default!) and Matlab pre R2013b also have/had this problem. While Screen() has workarounds for this in place and PsychHID never caused trouble, this may mean we just got lucky. Ideally upgrading to Linux distros with at least Octave 4.2 (using QT-5 for its GUI) or Matlab versions of R2013b or later is recommended.
+
+*   AMD Vega-M gpu's should now get detected properly by low-level code to use our bag of tricks if needed. Vega-M is part of some high-end Intel processors.
+
+*   LoadIdentityClut(): Now should also work to load identity pixel-passthrough, e.g., for use with VPixx devices, with latest AMD gpu's of the DCE-12 Vega series and - starting with the upcoming Linux 5.3 kernel - also with latest AMD gpu's/apu's that have the new DCN-1/2 display engines, e.g., integrated AMD Raven / Vega11 in AMD Ryzen processors, or the brand-new AMD Navi gpu generation. These latter parts with DCN display engines are no longer supported by Psychtoolbox low-level setup code, as the default amdgpu display driver provides all the functionality we need - and more! This means though that we leave pixel-identity passthrough setup to the AMD display driver, so PTB must help the driver to do the right thing and validation is needed to make sure things stay in a good shape. Note this also means that DCN parts like Ryzen/Raven won't be suitable for use with special visual stimulators like VPixx devices until Linux 5.3 is released with neccessary enhancements, e.g., as part of Ubuntu 19.10 in October 2019.
+
+*   PsychHID: Allow keyboard queue cookedKeys to handle non-US keyboards. We now deal with other keyboard layouts than US properly. See "help KbEventGet" for remaining pitfalls or troubleshooting if extra configuration is required to make this work.
+
+*   GetChar et al.: Use KbQueue fallback under Linux + Matlab + KDE. Not sure when this happened, but at least KDE Plasma 5 under Ubuntu 18.04 LTS and later steals keyboard input focus from the Matlab window as soon as a fullscreen PTB onscreen window opens. Various attempts at preventing this failed, e.g., use of different config options in the KControlcenter, definition of suitable window rules for Matlab or PTB, code hacks... The net result is that Matlab will lose input focus on Linux+KDE, therefore Java based GetChar() will be starved of keyboard input.
+    Pragmatic solution: Detect if KDE is used as desktop GUI and use the kbQueue fallback, just like in matlab -nojvm mode, on Octave, and on Microsoft Windows.
+    Other options would be to use old-style override redirect setup for onscreen windows even on KDE single-display via Screen('Preference','ConserveVRAM', 2^25) -- but then one must manually (Shift+ALT+F12) toggle off the desktop compositor, which is clunky and easy to forget.
+
+*   VideoCapture: Fix use of dc1394src with GStreamer engine. Never worked. But is also kind of moot, as with pro class DC1394 cameras you should use our dedicated DC1394 firewire high-performance video capture engine. Anyway, cosmetic fixes are also fixes...
+
+### Windows:
+
+*   GetMouse can now also return "physical" mouse cursor position.
+    For the Windows version, return two valuator axis, which encode mouse cursor (x,y) position in what MS calls physical cursor coordinates. This is the returned (x,y) position from calling the windows api function GetPhysicalCursorPos(). This only works with Matlab, not with Octave due to limitations of Octave's MinGW runtime environment on Windows. As a side-effect, this also means Screen() won't work with WindowsXP 64-Bit anymore, Windows Vista is now an absolute must. Officially we don't support anything older than Windows-7 anymore, so this doesn't really matter.
+
+    Usage on Windows for additional physical coordinates:
+
+    [x,y,b,f,v] = GetMouse();
+
+    physicalX = v(1);
+
+    physicalY = v(2);
+
+    This may or may not help for use case from forum message 23845, fingers crossed!
+
+### OSX:
+
+*   PsychtoolboxKernelDriver: Add up to date, but unsigned, kext. This one is rebuilt from current source as of June 2019, so should support all AMD Polaris DCE-11.2 gpu’s used in Apples latest luxury toys, but not Vega gpu's with DCE-12 display engine, so the most expensive Apple gear will as of now also be the most dysfunctional. "help PsychtoolboxKernelDriver" for details. The updated driver for latest Polaris gpu's is not cryptographically signed or attested by Apple, so it will not load without SIP disabled. It may not even load automatically during system boot, requiring manual loading via kextload or kexttool after each reboot. The old driver is still shipping and this one is at least cryptographically signed - but not attested by Apple.
+    However, latest - and way too late for this release cycle - user feedback from testing with a Polaris class "Radeon Pro 560X" gpu under macOS 10.14 Mojave shows that these machines are just as broken in terms of visual stimulation timing and timestamping as most other Apple machines. Therefore the driver can only detect but not fix or workaround the breakage. Upgrading to Linux is strongly recommended on the subset of modern Apple machines that still allow to do that without major pain and problems.
+
+*   DownloadPsychtoolbox: Provide more hand-holding in case of outdated svn clients, as frequently shipping with the "most advanced operating system in the world".
+
+Enjoy!
