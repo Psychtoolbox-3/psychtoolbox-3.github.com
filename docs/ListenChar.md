@@ -45,10 +45,11 @@ more flexible and subject to less restrictions and gotchas than use of
   
 ### Some of the restrictions and caveats:  
   
-1. Works very well with Matlab and its Java based GUI enabled on Linux  
-and [MacOSX](MacOSX), as well as on [WindowsXP](WindowsXP) and earlier versions of Windows.  
+1. Works very well with Matlab and its Java based GUI enabled on Linux (on  
+desktop GUI's other than KDE) and macOS, as well as on [WindowsXP](WindowsXP) and earlier  
+versions of Windows.  
   
-2. When used on Windows Vista or later (Vista, Windows-7, Windows-8, ...)  
+2. When used on Windows Vista or later (Vista, Windows-7, ..., Windows-10)  
 with Matlab's Java GUI, you cannot use any [KbQueue](KbQueue) functions at the same  
 time, ie., [KbQueueCreate](KbQueueCreate)/Start/Stop/Check/Wait as well as [KbWaitTrigger](KbWaitTrigger),  
 [KbEventFlush](KbEventFlush), [KbEventAvail](KbEventAvail), and [KbEventGet](KbEventGet) are off limits after any call  
@@ -84,6 +85,11 @@ Also, [GetChar](GetChar) can only collect keystrokes from multiple connected
 keyboards in case 1. In all other cases, it can only collect keystrokes,  
 or respond to press of CTRL+C, for the default keyboard device. It will  
 ignore other connected keyboards.  
+  
+Another limitation in cases 2 and 3 is that international keyboards with non-US  
+layout and non-ASCII/Latin-1 characters may need special treatment and Octave  
+may have some trouble processing such characters. See "help [KbEventGet](KbEventGet)" for a  
+detailed explanation.  
   
 Basically: Mixing [GetChar](GetChar) et al. and modern [KbQueue](KbQueue) functions is usually  
 not advisable, or if needed, great care must be taken to sidestep all the  

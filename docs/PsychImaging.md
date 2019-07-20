@@ -853,6 +853,25 @@ actions:
   Usage: [PsychImaging](PsychImaging)('AddTask', 'General', 'EnableNative16BitFramebuffer' [, disableDithering=0][, bpc]);  
   
   
+\* 'EnableNative16BitFloatingPointFramebuffer' Enable support for output of  
+  stimuli with up to 16 bit floating point precision per color channel on  
+  graphics hardware and displays that support native 16 bpc floating point  
+  framebuffers. Please note that the effective linear output precision of a  
+  16 bit non-linear floating point framebuffer in the normalized range 0.0 - 1.0  
+  (the "typical" output range for SDR standard dynamic range displays) is only  
+  about 11 bits ~ 2048 levels of red, green, blue intensity. Also note that  
+  actual display hardware will usually only resolve this at about 10 bpc, or  
+  maybe simulated 11 bpc via dithering techniques. As of July 2019, only [NVidia](NVidia)  
+  graphics cards of the [GeForce](GeForce) 1000 "Pascal" series or later under Windows-10  
+  seem to support this mode properly. At least one combo of [GeForce](GeForce) 1060 + 8 bit  
+  panel was shown via photometer to reproduce about 11 bpc luminance via spatial  
+  dithering. macOS does support this mode with what seems to be mostly software  
+  rendering on most machines, ie. with very low performance and even worse timing.  
+  Your mileage may vary.  
+  
+  Usage: [PsychImaging](PsychImaging)('AddTask', 'General', 'EnableNative16BitFloatingPointFramebuffer');  
+  
+  
 \* 'EnableBrightSideHDROutput' Enable the high-performance driver for  
   [BrightSide](BrightSide) Technologies High dynamic range display device for 16 bit  
   per color channel output precision. See "help [BrightSideHDR](BrightSideHDR)" for  

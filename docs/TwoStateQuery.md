@@ -4,8 +4,8 @@
 Syntax: [UserResponse](UserResponse) = [TwoStateQuery](TwoStateQuery)[(TheQuestion]((TheQuestion),[[TheChoices](TheChoices)])  
   
 Purpose: Create simple dialog box asking user an either/or question.  
-On non-GUI setups or Matlab R2014b or later, it will ask a question  
-in the command window instead of showing a GUI dialog box.  
+On non-GUI setups it will ask a question in the command window instead  
+of showing a GUI dialog box.  
   
 History:  5/5/04   mpr   decided whether or not to celebrate cinco de mayo  
           10/13/04 mpr   set Yes Button automatically to be enlarged for large  
@@ -29,7 +29,8 @@ History:  5/5/04   mpr   decided whether or not to celebrate cinco de mayo
                          fixed  
           5/20/13  mk    Add text only fallback for Octave and non-GUI.  
          11/05/15  mk    Add GUI dialog for Octave in GUI mode. White-space cleanup.  
-         7/20/17   mk    Use text only fallback on Matlab R2014b and later.  
+          7/20/17  mk    Use text only fallback on Matlab R2014b and later.  
+          7/11/19  dn    GUI version now works on Matlab R2014b and later.  
 
 
 

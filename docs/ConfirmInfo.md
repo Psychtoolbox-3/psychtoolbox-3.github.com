@@ -5,7 +5,7 @@ Syntax: [[FigureHandle](FigureHandle)] = [ConfirmInfo](ConfirmInfo)[(TheQuestion
   
 Purpose: Create simple dialog box asking user to verify receipt of information.  
   
-On Octave, Matlab in non-GUI mode, or Matlab version R2014b (8.4) or later,  
+On Octave, or Matlab in non-GUI mode,   
 this will just print 'TheQuestion' to the command window and wait for a key  
 press for confirmation. Older Matlab versions present a GUI dialog box.  
   
@@ -40,6 +40,7 @@ History: 1/11/05    mpr   modified this from [TwoStateQuery](TwoStateQuery)
                           space does not overrun number of spaces  
          5/20/13    mk    Add text only fallback for Octave and non-GUI.  
          7/20/17    mk    Use text only fallback on Matlab R2014b and later.  
+         7/11/19    mk    GUI version now works on Matlab R2014b and later.  
 
 
 

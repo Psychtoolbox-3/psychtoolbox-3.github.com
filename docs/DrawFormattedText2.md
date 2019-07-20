@@ -11,7 +11,7 @@ Those enclosed in square braces are optional.
   
 When called with a cache struct, the following optional key-value pair  
 arguments are accepted:  
-[, win][, sx][, sy][, xalign][, yalign][, transform][, winRect]  
+[, win][, sx][, sy][, xalign][, yalign][, transform][, winRect][, cacheOnly]  
   
 example call:  
 [DrawFormattedText2](DrawFormattedText2)('test text', 'win',window\_pointer,'baseColor',[255 0 0])  
@@ -101,7 +101,7 @@ bounding box; and if 'right', all lines are aligned to the right of the
 bounding box. Justification options are currently not supported.  
   
 'baseColor' is the color in which the text will be drawn (until changed  
-by a <color\> format call. This is also the color that will remain active  
+by a <color\> format call). This is also the color that will remain active  
 after invocation of this function.  
   
 'wrapat', if provided, will automatically break text strings longer than  

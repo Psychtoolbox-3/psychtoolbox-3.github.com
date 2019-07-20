@@ -3,7 +3,7 @@
 
 [T\_quantalAbsorptionsNormalized,T\_quantalAbsorptions,T\_quantalIsomerizations,adjIndDiffParams,params,staticParams] = ...  
   [ComputeCIEConeFundamentals](ComputeCIEConeFundamentals)(S,fieldSizeDegrees,ageInYears,pupilDiameterMM,[lambdaMax],[whichNomogram],[[LserWeight](LserWeight)], ...  
-  [DORODS],[rodAxialDensity],[fractionPigmentBleached],indDiffParams)  
+  [DORODS],[rodAxialDensity],[fractionPigmentBleached],[indDiffParams])  
   
 Function to compute normalized cone quantal sensitivities  
 from underlying pieces, as specified in CIE 170-1:2006.  
@@ -91,7 +91,7 @@ You also can shift the absorbances along a wavenumber axis after you have
 obtained them.  To do this, pass argument lambdaMaxShift with the same  
 number of entries as the number of absorbances that are used.  
   
-The adjIndDiffParams outputsis a struct which is populated by [ComputeRawConeFundamentals](ComputeRawConeFundamentals).  
+The adjIndDiffParams outputs is a struct which is populated by [ComputeRawConeFundamentals](ComputeRawConeFundamentals).  
 It contains the actual parameter values for the parameters adjusted using the indDiffParams   
 input. It contains the following fields:  
    adjIndDiffParams.mac - the adjusted macular pigment transmittance as a function of wavelength  

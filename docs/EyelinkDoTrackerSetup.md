@@ -1,14 +1,25 @@
 # [EyelinkDoTrackerSetup](EyelinkDoTrackerSetup)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychHardware](PsychHardware)>[EyelinkToolbox](EyelinkToolbox)>[EyelinkBasic](EyelinkBasic)
 
- USAGE: result=[EyelinkDoTrackerSetup](EyelinkDoTrackerSetup)(el [, sendkey])  
+USAGE: result=[EyelinkDoTrackerSetup](EyelinkDoTrackerSetup)(el [, sendkey])  
   
-        el: Eyelink default values  
-        sendkey: set to go directly into a particular mode  
-                'v', start validation  
-                'c', start calibration  
-                'd', start driftcorrection  
-                13, or el.ENTER\_KEY, show 'eye' setup image  
+el: Eyelink default values  
+  
+sendkey:  set to go directly into a particular mode  
+          sendkey is optional and ignored if el.callback is defined for  
+          callback based tracker setup.  
+  
+          'v', start validation  
+          'c', start calibration  
+          'd', start driftcorrection  
+          13, or el.ENTER\_KEY, show 'eye' setup image  
+  
+Note that [EyelinkDoTrackerSetup](EyelinkDoTrackerSetup)() internally uses [Beeper](Beeper)() and [Snd](Snd)() to play  
+auditory feedback tones if el.targetbeep=1 or el.feedbackbeep=1 and the  
+el.callback function is set to the default [PsychEyelinkDispatchCallback](PsychEyelinkDispatchCallback)().  
+If you want to use [PsychPortAudio](PsychPortAudio) in a script that also calls [EyelinkDoTrackerSetup](EyelinkDoTrackerSetup),  
+then read "help [Snd](Snd)" for instructions on how to provide proper interoperation  
+between [PsychPortAudio](PsychPortAudio) and the feedback sounds created by Eyelink.  
 
 
 

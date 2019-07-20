@@ -9,6 +9,10 @@ frequency can be a number, or else the string 'high', 'med', or 'low'.
 fVolume - normalized to range of 0 - 1.  Default is 0.4;    
 Warning:  1 is the maximum volume and is often very loud!  
   
+NOTE: [Beeper](Beeper)() uses [Snd](Snd)() internally. If you want to use [Beeper](Beeper)() - and therefore  
+[Snd](Snd)() in parallel with [PsychPortAudio](PsychPortAudio), read the notes in "help [Snd](Snd)" about pahandle  
+sharing!  
+  
 Funny name is because Matlab 6 contains a built-in function called "beep".  
   
 2006-02-15 - cburns  

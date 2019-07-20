@@ -1,10 +1,8 @@
 # [moaldemo](moaldemo)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychSound](PsychSound)>[MOAL](MOAL)
 
-moaldemo - Minimalistic demo on how to use [OpenAL](OpenAL) for  
-3D audio output in Matlab. This is mostly trash code  
-for initial testing and development. Better demos will  
-follow soon.  
+moaldemo - Minimalistic demo on how to use [OpenAL](OpenAL) for 3D audio output.  
+See [AudioTunnel3DDemo](AudioTunnel3DDemo) or [AudioTunnel3DDemo2](AudioTunnel3DDemo2) for more complex examples.  
 
 
 

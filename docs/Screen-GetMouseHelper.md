@@ -20,6 +20,8 @@ in the case of a touch input device or digitizer tablet, this will be a vector
 of double values, returning the values of those axis. Return values could be,  
 e.g., distance to surface, pen pressure, touch area, or pen orientation on a pen  
 input device or touchscreen.  
+On Windows the first two valuators currently return physical mouse cursor  
+position [PhysicalX](PhysicalX) and [PhysicalY](PhysicalY).  
 On OSX the first two valuators currently return relative mouse delta movement  
 deltaX and deltaY.  
   

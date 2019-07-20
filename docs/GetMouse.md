@@ -31,14 +31,16 @@ beyond the deflection of the joystick itself.
 'valuators' is a vector with one double value per axis on Linux. On OSX the  
 first two entries will return info about relative mouse movement (deltaX,  
 deltaY) since last query, as reported by the OS with unknown reliability in  
-unknown units, but probably pixels - use with caution! On MS-Windows, valuator  
-is an empty matrix.  
+unknown units, but probably pixels - use with caution! On MS-Windows, the first  
+two entries will return info about "physical" mouse cursor position [(PhysicalX]((PhysicalX),  
+[PhysicalY)](PhysicalY)), as reported by the OS Win32 api function [GetPhysicalCursorPos](GetPhysicalCursorPos)()  
+with unknown reliability in unknown units, so use caution!  
   
 The optional 'valinfo' struct array contains one struct per valuator.  
 The struct contains fields with info about a valuator, e.g., minimum  
-and maximum value, resolution and a label. This is only supported on Linux.  
-On other systems it is an empty matrix, except on OSX where it reports  
-marginally useful info.  
+and maximum value, resolution and a label. This is only fully supported on  
+Linux. On Windows and OSX it reports marginally useful info, e.g., the 'label'  
+with some info about the content of the corresponding valuator.  
   
   
 % Test if any mouse button is pressed.   

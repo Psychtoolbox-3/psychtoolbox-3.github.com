@@ -37,6 +37,9 @@ AMD hardware.
 A 'method' of 7 tries to utilize the native up to 16 bpc framebuffers of recent  
 AMD hardware.  
   
+A 'method' of 8 tries to utilize the native 16 bpc float framebuffers of recent  
+hardware.  
+  
 The optional 'gamma' parameter allows to select the initial gamma value  
 of your display to correct for. This can be changed interactively later  
 on.  

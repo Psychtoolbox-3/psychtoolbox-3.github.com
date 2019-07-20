@@ -28,11 +28,27 @@ function which is of varying - but usually pretty poor - quality in most
 implementations of Matlab. There are many bugs, latency- and timing  
 problems associated with the use of [Snd](Snd).  
   
-GNU/OCTAVE: If you don't use the [PsychPortAudio](PsychPortAudio) based [Snd](Snd)() functin, then  
+GNU/OCTAVE: If you don't use the [PsychPortAudio](PsychPortAudio) based [Snd](Snd)() function, then  
 you must install the optional octave "audio" package from Octave-Forge,  
 as of Octave 3.0.5, otherwise the required sound() function won't be  
 available and this function will fail!  
   
+# Audio device sharing for interop with [PsychPortAudio](PsychPortAudio)  
+  
+If you want to use [PsychPortAudio](PsychPortAudio) and [Snd](Snd)() simultaneously (or one of the  
+functions that indirectly use [Snd](Snd)(), e.g., [Beeper](Beeper)() for simple beep tones,  
+or Eyelink's auditory feedback during tracker setup and recalibration, which  
+in turn uses [Beeper](Beeper)() and thereby [Snd](Snd)(), then try this:  
+  
+1. Open a suitable [PsychPortAudio](PsychPortAudio) audio device, possibly also a slave audio  
+   device and get a pahandle to it, e.g., pahandle = [PsychPortAudio](PsychPortAudio)('Open',...);  
+  
+2. Now open [Snd](Snd)(), passing in this device handle for use as [Snd](Snd)() output device:  
+   [Snd](Snd)('Open', pahandle);  
+  
+3. Proceed as usual, e.g., [Snd](Snd)('Play', ...) or [Beeper](Beeper)(...), etc. [Snd](Snd)() will  
+   use the pahandle audio device for playback, and pahandle can also be used  
+   by [PsychPortAudio](PsychPortAudio) calls directly for precisely controlled sound.  
   
 # Supported functions  
   
@@ -54,8 +70,9 @@ values are either 8 or 16.
   
 [Snd](Snd)('Open') opens the channel, which stays open until you call  
 [Snd](Snd)('[Close](Close)'). [Snd](Snd)('Play',...) automatically opens the channel if it isn't  
-already open. In reality 'Open' does nothing in the current  
-implementation and is silently ignored .  
+already open. You can use [Snd](Snd)('Open', pahandle); to share an existing  
+[PsychPortAudio](PsychPortAudio) audio device handle 'pahandle' with [Snd](Snd)() for optimal  
+interoperation. See instructions above.  
   
 [Snd](Snd)('[Close](Close)') immediately stops all sound and closes the channel.  
   

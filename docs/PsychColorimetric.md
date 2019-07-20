@@ -62,6 +62,7 @@ radiometric. Apologies if our intuitions don't match yours
   [SampleCircle](SampleCircle)        - [Sample](Sample) points on a circle.  
   [SampleSphere](SampleSphere)        - [Sample](Sample) points on a sphere.  
   [ShiftSpectra](ShiftSpectra)        - Shift a spectral function along the wavelength axis.  
+  [SPDToCCT](SPDToCCT)            - Find correlated color temperature of a spectrum.  
   [SPDToLinSPD](SPDToLinSPD)         - Find approximation within specified linear model.  
   [SPDToMetSPD](SPDToMetSPD)         - Find a metameric spd.  
   [SplineCmf](SplineCmf)           - Spline color matching functions to new wavelength sampling.  

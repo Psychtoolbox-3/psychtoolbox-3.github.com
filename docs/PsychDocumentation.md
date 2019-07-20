@@ -24,6 +24,8 @@ related to [PTBs](PTBs) use, technical implementation and troubleshooting.
 [HybridGraphics](HybridGraphics)         - The state of hybrid graphics laptop support and  
                          how to use them with proper timing.  
   
+[LinuxGameMode](LinuxGameMode)          - How to setup Linux performance optimizations via "[GameMode](GameMode)".  
+  
 Oculus\_Health\_and\_Safety\_Warnings.pdf - Info about how to use the Oculus  
                          VR virtual reality headsets safely.  
   

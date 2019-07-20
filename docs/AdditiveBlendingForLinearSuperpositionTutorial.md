@@ -63,6 +63,12 @@ special configuration of your system and use of the Linux open-source graphics
 drivers. If you can do with 10 bpc or 11 bpc, 'Native10Bit' or 'Native11Bit' are  
 much easier to use and setup and provide higher performance.  
   
+'Native16BitFloat' - Enable native 16 bit floating point (~11 bit linear)  
+framebuffer support on suitable operating systems and graphics cards.  
+As of July 2019 only [NVidia](NVidia) [GeForce](GeForce) 1000 and later under Windows-10 is known  
+to support this. macOS emulates it in software with bad timing and performance,  
+and varying success.  
+  
 'VideoSwitcher' - Enable the Xiangrui Li et al. [VideoSwitcher](VideoSwitcher), a special  
 type of video attenuator (see "help [PsychVideoSwitcher](PsychVideoSwitcher)") in standard  
 "simple" mode.  

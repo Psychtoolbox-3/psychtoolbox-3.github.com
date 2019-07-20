@@ -89,7 +89,7 @@ are not.
 ---\> If precise timing of the keypress is important, use [KbCheck](KbCheck) or  
 [KbWait](KbWait) or [KbQueueXXX](KbQueueXXX) functions or [KbEventGet](KbEventGet) for consistent results!  
   
-OS X / Windows-XP / Linux with Matlab and Java enabled: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+### OS X / Windows-XP / Linux (non-KDE desktop GUI) with Matlab and Java enabled:  
   
 JAVA PATH: The [GetChar](GetChar) implementation for Matlab is based on Java.  
 Therefore, the Psychtoolbox subfolder [PsychJava](PsychJava) must be added to Matlabs  
