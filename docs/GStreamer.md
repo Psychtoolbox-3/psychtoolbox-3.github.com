@@ -12,8 +12,8 @@ operations are based on [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)). Thes
 working [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) installation on your system (with the exception of video  
 capture from firewire DCAM/IIDC machine vision cameras on Linux and OSX).  
   
-You will need at least version 1.2 of [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) on Linux and version 1.4  
-on Windows or OSX, but we recommend to use the latest available stable  
+You will need at least version 1.4 of [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) on Linux and OSX and version  
+1.16 on Windows, but we recommend to use the latest available stable  
 release of the version 1 series.  
   
 ### Installation instructions:  
@@ -21,7 +21,7 @@ release of the version 1 series.
   
 ### GNU/Linux:  
   
-Any recent 2013 Linux distribution will include support for [[GStreamer](GStreamer)][(GStreamer)]((GStreamer))-1 in its  
+Any decent Linux distribution will include support for [[GStreamer](GStreamer)][(GStreamer)]((GStreamer))-1 in its  
 package management system, so you can easily install it via the software  
 management tools of your system. If you install PTB via [NeuroDebian](NeuroDebian), then most  
 [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) packages will get automatically installed, with the possible exception  
@@ -42,40 +42,50 @@ but not video, then some of the plugins are missing, e.g., the important
   
 ### MS-Windows and Apple OSX:  
   
-You must install [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) if you want to use multi-media functions!  
-You must also install [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) if you want to use the high-quality text  
-renderer on Windows with Matlab, which provides consistent text rendering  
-with OSX and Linux, instead of the lower quality legacy GDI text renderer.  
+macOS: You must install [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) if you want to use multi-media functions or  
+if you want to use the high-quality text renderer with Matlab, which provides  
+consistent, fast, high-quality text rendering, instead of the lower quality  
+legacy Apple [CoreText](CoreText) text renderer.  
   
 If you don't intend to use such functionality then installation of  
-[[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) is optional. [Screen](Screen) will work normally, but abort with an error  
-message if you try to use any multi-media functions. For use with Octave-4 on  
-Windows you must install [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) regardless if you want to use multi-media  
-functionality or not, as the [Screen](Screen)() mex file won't work at all without [[GStreamer](GStreamer)][(GStreamer)]((GStreamer))  
-installed.  
+[[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) is optional on macOS. [Screen](Screen) will work normally, but abort with an  
+error message if you try to use any multi-media functions.  
   
-NOTE: Many Matlab versions on MS-Windows show instable behavior with [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)),  
-e.g., crashing in [SimpleMovieDemo](SimpleMovieDemo) and other demos that use [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)), unless  
-they are used without the Graphical user interface and without Java. That means  
-you need to start Matlab with the -nojvm command line switch, ie. matlab.exe -nojvm.  
-See also: https://github.com/Psychtoolbox-3/Psychtoolbox-3/wiki/FAQ\#how-to-resolve-gstreamer-problems  
+Windows: You must install [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) regardless if you want to use multi-media  
+functionality or not, as the [Screen](Screen)() mex file won't work at all without  
+[[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) installed! You must install at least version 1.16.0 of the MSVC build  
+variant of [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)).  
+  
+### Here is a FAQ entry on resolving [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) problems:  
+  
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/wiki/FAQ\#how-to-resolve-gstreamer-problems\>  
+  
+NOTE: If [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) complains about not being able to find some plugins,  
+e.g., the video playback doesn't work because there is a [[GStreamer](GStreamer)][(GStreamer)]((GStreamer))  
+configuration problem, then it can help to delete the [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) plugin  
+registry to force a rebuild of that database. E.g., under Windows-10, if your  
+login user name would be Bob, you would probably have to delete the file:  
+  
+'C:\Users\Bob\[AppData](AppData)\Local\Microsoft\Windows\[INetCache](INetCache)\gstreamer-1.0\registry.x86\_64.bin'  
   
   
 ### Download and install the latest 64-Bit ("x86\_64") [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) runtimes from:  
   
 <http://gstreamer.freedesktop.org/download/\>  
   
-You should check for and install the latest runtime packages available for your  
-system for best reliability and performance. However, as a convenience, at time  
-of this writing (October 2018) the required downloads would be:  
+The following [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) runtime packages have been tested for good compatibility  
+with Psychtoolbox 3.0.16 as of August 2019:  
   
-For MS-Windows: 64-Bit Intel runtime v1.14.4 for use with 64-Bit Matlab/Octave.  
+For MS-Windows: 64-Bit Intel MSVC runtime v1.16.0 for use with 64-Bit Matlab/Octave.  
   
-<http://gstreamer.freedesktop.org/data/pkg/windows/1.14.4/gstreamer-1.0-x86\_64-1.14.4.msi\>  
+<https://gstreamer.freedesktop.org/data/pkg/windows/1.16.0/gstreamer-1.0-msvc-x86\_64-1.16.0.msi\>  
   
-For Apple OSX: Runtime v1.14.4  
+You \*must\* install the MSVC variants of [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)), not the [MinGW64](MinGW64) variants!  
   
-<http://gstreamer.freedesktop.org/data/pkg/osx/1.14.4/gstreamer-1.0-1.14.4-x86\_64.pkg\>  
+  
+For Apple OSX: Runtime v1.16.0  
+  
+<https://gstreamer.freedesktop.org/data/pkg/osx/1.16.0/gstreamer-1.0-1.16.0-x86\_64.pkg\>  
   
   
 When the installer asks you to select the components it should install,  

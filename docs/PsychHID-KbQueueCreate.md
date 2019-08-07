@@ -34,11 +34,13 @@ continuous input that might generate hundreds of events per second.
 'flags' Optional flags to alter operation of the queue. Defaults to zero for  
 default behavior.  
 +1 = Always label synthetic key repeat events as invalid - iow. suppress them.  
-Supported on Linux only.  
+     Supported on Linux only.  
 +2 = Never label synthetic key repeat events as invalid - iow. accept them.  
-Supported on Linux only.  
+     Supported on Linux only.  
 +4 = Try to get raw valuator state, avoiding things like pointer acceleration.  
-Supported on Linux only.  
+     Linux and Windows only.  
+     For mouse and touchpad devices, this usually reports relative motion, ie.  
+     movement deltas, instead of absolute position values.  
   
   
 'windowHandle' Optional windowing system specific handle for an associated  

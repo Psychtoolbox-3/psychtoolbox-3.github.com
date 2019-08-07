@@ -69,6 +69,7 @@ Psychtoolbox:[PsychDemos](PsychDemos)
    [LineStippleDemo](LineStippleDemo)         - Draw dotted and dashed lines.  
    [MandelbrotDemo](MandelbrotDemo)          - Visualize the Mandelbrot fractal set by use  
                              of a GLSL procedural texture.  
+   [MouseMotionRecordingDemo](MouseMotionRecordingDemo) - Record mouse motion via [KbQueues](KbQueues).  
    [MouseTraceDemo](MouseTraceDemo)          - Track mouse around screen and draw contour.  
    [MouseTraceDemo2](MouseTraceDemo2)         - More efficient tracking of mouse around screen drawing contour.  
    [MouseTraceDemo3](MouseTraceDemo3)         - Like [MouseTraceDemo2](MouseTraceDemo2), but faster, and for multiple mice.  

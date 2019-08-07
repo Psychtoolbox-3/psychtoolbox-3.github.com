@@ -6,7 +6,7 @@
 This performs setup of Matlab or Octave at session startup for  
 Psychtoolbox.  
   
-On MS-Windows, it currently detects if the [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) 1.4+ runtime is  
+On MS-Windows, it currently detects if the [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) 1.16+ runtime is  
 installed, as this is required for [Screen](Screen)() multi-media functions to  
 work. It performs [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) setup, or outputs a warning if the runtime is  
 missing.  

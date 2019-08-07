@@ -51,10 +51,13 @@ this feature may only work on Linux with X11 windowing system for some event
 types like keyboard, mouse/joystick movements, so use of this is not portable!  
 'Motion' = 1 if this is a motion event, e.g., mouse, joystick, knob, finger  
 motion, 0 otherwise.  
-'X' = For 'Type' 1 motion events, the x position of the pointer associated with  
-the pointing device at event delivery.  
-'Y' = For 'Type' 1 motion events, the y position of the pointer associated with  
-the pointing device at event delivery.  
+'X' = For 'Type' 1 motion events, usually the x position of the pointer  
+associated with the pointing device at event delivery.  
+'Y' = For 'Type' 1 motion events, usually the y position of the pointer  
+associated with the pointing device at event delivery.  
+If raw event delivery is requested during the call to 'KbQueueCreate', depending  
+on operating system, 'X' and 'Y' may not always report mouse cursor position,  
+but something else, e.g., raw movement deltas - just like Valuators 1 and 2.  
 For 'Type' 0 events, this may report the location of the mouse pointer when a  
 keyboard key was pressed or released, at least on Linux with X11 windowing  
 system, but not neccessarily on all operating systems or windowing systems, so  
@@ -68,15 +71,16 @@ Depending on touch device resolution, these can be fractional pixel locations,
 ie. more accurate than 1 pixel.  
 'NormX' and 'NormY' are normalized versions of 'X' and 'Y'. These values are not  
 available for all devices, or all operating systems. They may just return  
-constant zero. Currently only touch devices under Linux/X11 return meaningful  
-values: Touch devices are normalized to the range 0.0 - 1.0.  
+constant zero.  
 'Valuators' = For 'Type' 1 motion events, a vector with the values of various  
 device-specific valuators, e.g., extra axis, levers or knobs on a joystick or  
 gamepad, or the mouse-wheel position on a mouse, or the touch pressure on a  
 touchpad, or pen pressure, orientation, hovering distance on a digitizer tablet.  
-The first two valuators entries encode the equivalent of 'X' and 'Y', but in  
-operating-system + device native coordinates, ie. not neccessarily in units of  
-screen pixels.  
+The first two valuators encode the equivalent of 'X' and 'Y', but in  
+operating-system + device specific coordinates, ie. not neccessarily in units of  
+screen pixels. If raw event delivery is requested, those valuators may report  
+movement deltas instead of absolute positions, e.g., not absolute mouse position  
+but how much the mouse position has changed since the last reported event.  
 The meaning of the different remaining elements of the 'Valuators' vector is  
 completely device specific. The content is also operating system specific for  
 the same device, so scripts making use of these values may not be portable  

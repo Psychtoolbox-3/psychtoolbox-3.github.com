@@ -3,7 +3,7 @@
 
 [AssertOpenGL](AssertOpenGL)  
   
-Break and issue an eror message if the installed Psychtoolbox is not  
+Break and issue an error message if the installed Psychtoolbox is not  
 based on [OpenGL](OpenGL) or [Screen](Screen)() is not working properly.  
 To date there are four versions of the Psychtoolbox, each based on a  
 different graphics library:  

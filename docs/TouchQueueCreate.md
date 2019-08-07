@@ -27,7 +27,7 @@ all buttons are accepted.
 'flags' Optional flags. This defaults to 0 and is so far unused for touch input.  
   
 Once a queue is created its touch data collection can be started via  
-[TouchQueueStart](TouchQueueStart)(), stopped via [TouchQueueStop](TouchQueueStop)(), cleared via [TouchQueueFlush](TouchQueueFlush)(),  
+[TouchQueueStart](TouchQueueStart)(), stopped via [TouchQueueStop](TouchQueueStop)(), cleared via [TouchEventFlush](TouchEventFlush)(),  
 asked for current number of pending events via [TouchEventAvail](TouchEventAvail)() and events  
 can be fetched via [TouchEventGet](TouchEventGet)().  
   

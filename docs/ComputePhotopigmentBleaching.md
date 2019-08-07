@@ -1,7 +1,7 @@
 # [ComputePhotopigmentBleaching](ComputePhotopigmentBleaching)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychColorimetric](PsychColorimetric)
 
-[fractionBleached] = [ComputePhtopigmentBleaching](ComputePhtopigmentBleaching)(irradiance,[units],[source],[initialFraction],[timeUnits])  
+[fractionBleached] = [ComputePhtopigmentBleaching](ComputePhtopigmentBleaching)(irradiance,[receptorType],[units],[source],[initialFraction],[timeUnits])  
   
 Compute fraction of photopigment bleached, given irradiance of light  
 reaching the eye.  
@@ -100,7 +100,7 @@ source        -- source of underlying data
   'Boynton'      Boynton and Kaiser, Human Color Vision, 2nd edition,  
                  pp. 211 and following.  [Default]  
   
- initialFraction -- fraction of input bleached at time zero. If  
+initialFraction -- fraction of input bleached at time zero. If  
                 empty, steady state fraction bleached is  
                 returned. Default is empty.  
   

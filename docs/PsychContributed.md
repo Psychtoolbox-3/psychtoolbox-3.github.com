@@ -64,18 +64,7 @@ x64/libusb-1.0.dll           This is the 64-Bit windows version of libusb-1.0 fo
                              subfolder after you have downloaded the full  
                              ptb source (help [UseTheSource)](UseTheSource)).  
   
-simplepsychtoolboxsetup.sh   Configure OS X priority.  Call from Unix shell, not MATLAB.  
-  
-macid.exe                    Microsoft Windows command line utility for retrieving the MAC  
-                             ethernet address of the primary network  
-                             adapter. This free software GPL utility is  
-                             downloaded from www.mirkes.de Windows batch  
-                             tools. Author: Markus Stephany  
-                             URL:  
-                             http://www.mirkes.de/en/freeware/batch.php  
-  
-macidpascalsource/           This folder contains the Delphi-7 Pascal source code  
-                             of macid.exe, as required by macid's GPL license.  
+simplepsychtoolboxsetup.sh   Configure OS X priority. DO NOT USE ANYMORE!  
   
 ple                          Prints useful debugging output, including a stack trace in case  
                              a script exits via rethrow() or [psychrethrow](psychrethrow)(). See help ple for  
@@ -86,8 +75,14 @@ read\_rle\_rgbe                Reader routine for RLE encoded RGBE high dynamic 
                              a helper routine for [ReadHDR](ReadHDR) - the recommended function for user  
                              scripts.  
   
-vcredist\_x64.exe             Microsoft Visual C++ 2010 runtime 64-Bit  
+vcredist\_x64\_2015-2019.exe   Microsoft Visual C++ 2015-2019 runtime 64-Bit  
                              redistributable installer. You must use this  
+                             to install the Visual C runtime if you want  
+                             to use the Psychtoolbox for 64-Bit Matlab on  
+                             Microsoft Windows.  
+  
+vcredist\_x64\_2010.exe        Microsoft Visual C++ 2010 runtime 64-Bit  
+                             redistributable installer. You may need this  
                              to install the Visual C runtime if you want  
                              to use the Psychtoolbox for 64-Bit Matlab on  
                              Microsoft Windows.  
