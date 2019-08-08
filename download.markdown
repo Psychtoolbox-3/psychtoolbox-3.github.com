@@ -7,7 +7,8 @@ categories: getting-started
 In order to install and use the Psychtoolbox, *you must already have
 Matlab or Octave installed on your computer*, unless you install for
 Octave on Linux via the NeuroDebian repositories. If you already have
-Matlab or Octave installed, start it up and read on.
+Matlab or Octave installed, start it up and read on. On Windows you
+must have installed GStreamer 1.16.0 MSVC edition or later versions.
 
 ##### Contents {#contents}
 
@@ -86,7 +87,7 @@ want to know more, see [DownloadPsychtoolbox][docs-download] (or
 `help DownloadPsychtoolbox` in the Matlab command window.)
 
 4.  If you intend to use multi-media functions, you must install the 64-Bit
-    GStreamer-1.0 runtime from [gstreamer.freedesktop.org][gstreamer-osx].
+    GStreamer-1.4 or later runtime from [gstreamer.freedesktop.org][gstreamer-osx].
     Make absolutely sure that you install all offered packages. Read `help GStreamer`
     carefully for this purpose, *before downloading and installing GStreamer*.
 
@@ -136,7 +137,7 @@ directory.
 
 However, Octave mex files from this download will only work out of the box with
 Octave 3.8, 4.0 or 4.2 on a fairly recent distribution like Ubuntu 16.04-LTS or better
-Ubuntu 18.04-LTS. All required dependencies like GStreamer-1, libdc, etc. need to
+Ubuntu 18.04-LTS. All required dependencies like GStreamer-1.4+, libdc, etc. need to
 be manually installed in this case. Go for the NeuroDebian installation instead if
 you are on Debian or Ubuntu flavors.
 
@@ -161,19 +162,19 @@ folders of your liking instead:
     the `toolbox` folder.
 6.  Move the Psychtoolbox installer (`DownloadPsychtoolbox`) from the Desktop
     to the new `toolbox` folder.
-7.  If you intend to use multi-media functions, you must install the 64-Bit
-    GStreamer-1.0 runtime from [gstreamer.freedesktop.org][gstreamer-win].
+7.  You **must** install the 64-Bit GStreamer-1.16.0 MSVC runtime or later versions
+    from [gstreamer.freedesktop.org][gstreamer-win].
     Make absolutely sure that you install all offered packages. Read `help GStreamer`
     carefully for this purpose, *before downloading and installing GStreamer*.
     
     If you intend to use Octave, you *must* install GStreamer, even if you don't
     intend to use multi-media functions. In this case you will need to delete
     the following DLL files from the C:\Octave\Octave-4.4.1\bin\ folder:
-    libglib-2.0.0.dll, libgmodule-2.0.0.dll and opengl32.dll
-8.  You also need to install the Microsoft Runtime Libraries for MSVC 2010. You
-    can find installers for these at Microsoft’s site beforehand. Otherwise
+    opengl32.dll.
+8.  [You also need to install the Microsoft Runtime Libraries for MSVC 2015-2019.
+    You can find installers for these at Microsoft’s site beforehand. Otherwise
     when our installer aborted half-ways, follow the instructions it prints to
-    the console.
+    the console. Or click this link to get a copy bundled with Psychtoolbox][c++ runtime]
 9.  Open Matlab as administrative user (for Windows 7, right-click Matlab
     shortcut and Run As Administrator) and type the following in the command
     window:
@@ -372,7 +373,7 @@ of older versions can be found at the bottom of the page found
   [svnmac]: http://www.collab.net/downloads/subversion
   [installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadPsychtoolbox.m.zip
   [legacy-installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadLegacyPsychtoolbox.m
-  [gstreamer-win]: http://gstreamer.freedesktop.org/data/pkg/windows/
+  [gstreamer-win]: https://gstreamer.freedesktop.org/data/pkg/windows/1.16.0/gstreamer-1.0-msvc-x86_64-1.16.0.msi
   [gstreamer-osx]: http://gstreamer.freedesktop.org/data/pkg/osx/
   [PTBReleases]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases
 
@@ -388,4 +389,4 @@ of older versions can be found at the bottom of the page found
   [docs-download]: http://docs.psychtoolbox.org/DownloadPsychtoolbox
   [docs-setup]: http://docs.psychtoolbox.org/SetupPsychtoolbox
   [docs-update]: http://docs.psychtoolbox.org/UpdatePsychtoolbox
-  [c++ runtime]: http://www.microsoft.com/downloads/details.aspx?familyid=766A6AF7-EC73-40FF-B072-9112BAB119C2&displaylang=en#filelist
+  [c++ runtime]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychContributed/vcredist_x64_2015-2019.exe
