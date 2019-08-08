@@ -9,8 +9,11 @@ Psychtoolbox 3.0.16 Beta update "Burnout" was released at 7th August 2019.
 As usual, the complete development history can be found in our GitHub repository.
 The release tag is “PTB_Beta-2019-08-7_V3.0.16”, with the full tree and commit logs under the URL:
 
-<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2019-08-7_V3.0.16>
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2019-08-07_V3.0.16>
 
+Please note that as of now, Psychtoolbox 3.0.15 is end-of-life, no longer supported in case of trouble or questions. All documentation on our website will be updated to only help with use of Psychtoolbox 3.0.16.
+
+If you choose to use Psychtoolbox with Matlab then the most well tested Matlab versions on Linux are now R2014b and R2019a. The most well tested Matlab version on MS-Windows and macOS is now R2019a. For best results and support, use R2019a.
 
 The initial release of Psychtoolbox 3.0.16, while light on new features and general improvements, marks the first big transition of runtime environments and build systems in almost 8 years, from:
 
@@ -65,7 +68,7 @@ You may want to make a backup copy of your current Psychtoolbox installation bef
 
 *   Ubuntu 14.04-LTS or other distros older than Ubuntu 16.04-LTS are no longer supported. This because they lack GStreamer 1.4+, but also no further testing is performed against them.
 
-*   Our package work with Octave 3.8 - 4.2. Octave 4.4 and 5.1 will be supported by NeuroDebian packages octave-psychtoolbox-3 or the Linux distributions octave-psychtoolbox-3 packages themselves.
+*   Our download works with Octave 3.8 - 4.2. Octave 4.4 and 5.1 will be supported by NeuroDebian packages octave-psychtoolbox-3 or the Linux distributions octave-psychtoolbox-3 packages themselves.
 
 *   Developed and tested against Matlab R2019a and R2014b, no longer R2012a, but is expected - but not tested - to continue to work with R2012a.
 
@@ -79,7 +82,7 @@ You may want to make a backup copy of your current Psychtoolbox installation bef
 *   May require Microsoft Visual Studio Runtime 2015-2019 redistributable to be installed. One suitable copy of this is bundled with Psychtoolbox and also available under this link:
   <https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychContributed/vcredist_x64_2015-2019.exe>
 
-*   Keyboard queues can now record mouse/touchpad etc. motion as well, also raw motion, similar to Linux.
+*   Keyboard queues can now record mouse/touchpad etc. motion as well, also raw motion, similar to but not quite as powerful and flexible as the Linux implementation (which can also deal with Joysticks and other game contoller movements). Cfe. MouseMotionRecordingDemo.m
 
 *   Update PsychPortAudio's internal Portaudio library to latest upstream release with improvements and bug fixes to Windows WASAPI sound backend support.
 
@@ -97,6 +100,6 @@ You may want to make a backup copy of your current Psychtoolbox installation bef
 
 *   Now runs on and requires 64-Bit Octave 5.1, no longer on Octave 4.4.1.
 
-*   Now is tested and developed against Matlab R2019a, no longer R2012a, but should continue to work on older Matlab versions, possibly back to R2014b.
+*   Now is tested and developed against Matlab R2019a, no longer R2012a, but should continue to work on older Matlab versions than R2019a, possibly back to R2014b.
 
 Enjoy!
