@@ -163,11 +163,6 @@ Psychtoolbox should work on
 -   Matlab 64-bit. Currently tested with release R2019a.
     External mandatory requirements: Microsoft C MSVC 2015-2019 runtime and GStreamer 1.16 MSVC or later.
 
-    Various Matlab versions show instable behavior with GStreamer unless
-    they are used without the Graphical user interface and Java, ie. in
-    matlab.exe -nojvm mode. Matlab can also cause problems on HiDPI "Retina"
-    style displays.
-
 -   [GNU Octave 5.1.0, 64-Bit. Installation of GStreamer _before_ installation
     of Psychtoolbox is mandatory on GNU Octave or the mex files will not work.
     The current download location for official Octave-5.1.0 64-Bit is reached by
@@ -225,10 +220,6 @@ to use Psychtoolbox for visual stimulation on **Windows** you will _have_ to ins
 GStreamer first, even if you do not need any multimedia functions, or Psychtoolbox
 won't work. GStreamer 1.16.0 MSVC variant or later is needed, earlier versions or
 MinGW variants will not work.
-
-Caution: Various Matlab versions **on Microsoft Windows** show instable behavior
-with GStreamer unless they are used without the Graphical user interface and Java,
-ie. in "matlab.exe -nojvm" mode.
 
 On **Linux** you also need GStreamer, but GStreamer is a de-facto standard
 component that ships with all modern Linux distributions.
