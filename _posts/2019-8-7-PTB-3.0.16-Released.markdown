@@ -1,0 +1,102 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.16 Beta update "Burnout" was released at 7th August 2019.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2019-08-7_V3.0.16”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2019-08-7_V3.0.16>
+
+
+The initial release of Psychtoolbox 3.0.16, while light on new features and general improvements, marks the first big transition of runtime environments and build systems in almost 8 years, from:
+
+*   Octave 4.4.1 required to Octave 5.1.0 required on Windows and macOS.
+
+*   Matlab R2012a as a build and test system replaced by R2019a on Windows and macOS.
+
+*   Matlab R2014b as a build and test system and R2019a as a test system instead of old R2012a on GNU/Linux.
+
+*   Switch of the Windows build and test environment from Windows-7 SP1 to Windows-10.
+
+*   Windows 10 SDK and MSVC 2015-2019 runtimes instead of Windows 7 SDK and older MSVC 2010.
+
+*   Linux: At least GStreamer 1.4 required instead of GStreamer 1.0.
+
+*   Windows: At least GStreamer 1.16.0 in the MSVC variant required instead of >= GStreamer 1.4.0 MinGW variant.
+
+    This means that Octave users on Windows and macOS must upgrade to Octave 5.1.0 before they run UpdatePsychtoolbox or DownloadPsychtoolbox. All Windows users must upgrade GStreamer to version 1.16.0 MSVC before updating Psychtoolbox. Download link for new GStreamer on Windows:
+
+    <https://gstreamer.freedesktop.org/data/pkg/windows/1.16.0/gstreamer-1.0-msvc-x86_64-1.16.0.msi>
+
+    With this release, Windows users lose the ability to run Psychtoolbox without installing GStreamer - it is no longer optional, even if you don't need any GStreamer provided multi-media functionality or video capture / video recording.
+
+    On the plus side: This release may fix the crashes and stability problems that Windows users frequently experienced when using multi-media functionality with Matlab's GUI enabled. At least two Windows 10 test machines with R2014a and R2019a did not experience Matlab related stability issues anymore. Fingers crossed!
+
+    Windows users may require Microsoft Visual Studio Runtime 2015-2019 redistributable to be installed unless your system is sufficiently up to date to have this already. One suitable copy of this is bundled with Psychtoolbox and also available under this link:
+    <https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychContributed/vcredist_x64_2015-2019.exe>
+
+
+You may want to make a backup copy of your current Psychtoolbox installation before upgrading to this one!
+
+
+## New features and improvements:
+
+### All operating systems:
+
+*   Fix small bug in PsychPortAudio('Stop'): Did not block until true sound offset, but possibly return a few msecs too early.
+
+*   Add new MouseMotionRecordingDemo.m: Shows how to record mouse/trackpad movements et al. on Linux and Windows via use of enhanced keyboard queues.
+
+*   Various documentation updates, e.g., for Linux gamemode support, RetinaDisplays, GStreamer.
+
+*   Minor improvements and various cleanups.
+
+*   Datapixx updated to latest state from VPixx upstream to support their latest functionality.
+
+### Linux:
+
+*   Enable GstDeviceMonitors for nicer or theoretically more robust video capture device enumeration.
+
+*   Now requires at least GStreamer 1.4.0. Matlab mex files will fail on distributions with older GStreamer versions. Octave mex files provided by Ubuntu/Debian and NeuroDebian would continue to work on older GStreamer versions without GstDeviceMonitors support.
+
+*   Ubuntu 14.04-LTS or other distros older than Ubuntu 16.04-LTS are no longer supported. This because they lack GStreamer 1.4+, but also no further testing is performed against them.
+
+*   Our package work with Octave 3.8 - 4.2. Octave 4.4 and 5.1 will be supported by NeuroDebian packages octave-psychtoolbox-3 or the Linux distributions octave-psychtoolbox-3 packages themselves.
+
+*   Developed and tested against Matlab R2019a and R2014b, no longer R2012a, but is expected - but not tested - to continue to work with R2012a.
+
+*   The RaspberryPi edition now is build and tested against the current Raspbian 10 "Buster" based OS, with Octave 4.4.1 instead of older Octave versions. You need to upgrade to the latest Raspbian to use this release. Or use the distribution provided and probably somewhat outdated octave-psychtoolbox-3 package.
+
+### Windows:
+
+*   Now absolutely requires the MSVC built GStreamer 1.16.0 for both Octave and Matlab. Screen() will no longer work without GStreamer 1.16.0 MSVC installed! Download link:
+  <https://gstreamer.freedesktop.org/data/pkg/windows/1.16.0/gstreamer-1.0-msvc-x86_64-1.16.0.msi>
+
+*   May require Microsoft Visual Studio Runtime 2015-2019 redistributable to be installed. One suitable copy of this is bundled with Psychtoolbox and also available under this link:
+  <https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychContributed/vcredist_x64_2015-2019.exe>
+
+*   Keyboard queues can now record mouse/touchpad etc. motion as well, also raw motion, similar to Linux.
+
+*   Update PsychPortAudio's internal Portaudio library to latest upstream release with improvements and bug fixes to Windows WASAPI sound backend support.
+
+*   Now runs on and requires 64-Bit Octave 5.1, no longer on Octave 4.4.1.
+
+*   Now is tested and developed against Matlab R2019a, no longer R2012a, but should continue to work on older Matlab versions than R2019a.
+
+*   Crashes of Matlab in Java / GUI mode when using GStreamer functions like movie playback/writing/recording and video capture may be finally resolved! At least testing on Windows 10 with R2019a and R2014a did not experience any crashes anymore. Fingers crossed.
+
+*   Improved compatibility and easier setup of GStreamer 1.16.0 + Octave 5.1.0.
+
+### OSX:
+
+*   Improve robustness of Screen('ConfigureDisplay','Brightness') on Apples recent trainwrecks with NightShift support and such. Also add theoretical ability to control 'AutoBrightness' mode - in practice it doesn't seem to work at all on any tested macOS 10.13 or 10.14 system.
+
+*   Now runs on and requires 64-Bit Octave 5.1, no longer on Octave 4.4.1.
+
+*   Now is tested and developed against Matlab R2019a, no longer R2012a, but should continue to work on older Matlab versions, possibly back to R2014b.
+
+Enjoy!
