@@ -32,7 +32,7 @@ repo.
 * * *
 
 When you get (or just see) a particularly helpful answer on the forum,
-we'll all be grateful if you would add it to the [Psychtoolbox FAQ](###FAQ)
+we'll all be grateful if you would add it to the [Psychtoolbox FAQ](https://github.com/Psychtoolbox-3/Psychtoolbox-3/wiki/FAQ)
 to everyone's benefit. You may want to edit it a bit, deleting the
 irrelevant and perhaps making the relevant context more explicit. 
 
