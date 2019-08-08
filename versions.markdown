@@ -51,6 +51,23 @@ to PTB Version 2 that we have now abandoned that system.</small>
 *To download and install the following versions, use the
 [`DownloadPsychtoolbox`][standard-installer] function*
 
+`Psychtoolbox-3.0.15`
+   : A snapshot of the code as of beginning of August 2019: This was the final 3.0.15 release
+     before start of the 3.0.16 series. 3.0.15 was the last version to support:
+     
+     
+      * 64-Bit Octave-4.4.1 for MS-Windows.
+
+      
+      * On Windows: GStreamer versions older than 1.16.0, or any GStreamer MinGW builds. Now only MSVC builds are supported. This was the last version that allowed to avoid installing GStreamer on Windows if one does not need multi-media functionality.
+     
+     
+      * 64-Bit Octave-4.4.1 for OSX.
+      
+      
+      * Linux Ubuntu 14.04 LTS or other distributions with GStreamer versions older than 1.4.0.
+
+
 `Psychtoolbox-3.0.14`
    : A snapshot of the code as of beginning of September 2018: This was the final 3.0.14 release
      before start of the 3.0.15 series. 3.0.14 was the last version to support:
