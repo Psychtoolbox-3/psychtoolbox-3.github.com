@@ -157,24 +157,30 @@ folders of your liking instead:
 
 3.  Open the **My Computer** icon (it is either on the desktop or in the Start
     Menu).
+    
 4.  Double-click on the **C: drive** icon.
+
 5.  Create a new folder called `toolbox`. This assumes you want to install into
     the `toolbox` folder.
+    
 6.  Move the Psychtoolbox installer (`DownloadPsychtoolbox`) from the Desktop
     to the new `toolbox` folder.
+    
 7.  You **must** install the 64-Bit GStreamer-1.16.0 MSVC runtime or later versions
-    from [gstreamer.freedesktop.org][gstreamer-win].
+    from [gstreamer.freedesktop.org][gstreamer-win] even if you do not need multi-media
+    support!
     Make absolutely sure that you install all offered packages. Read `help GStreamer`
     carefully for this purpose, *before downloading and installing GStreamer*.
     
-    If you intend to use Octave, you *must* install GStreamer, even if you don't
-    intend to use multi-media functions. In this case you will need to delete
-    the following DLL files from the C:\Octave\Octave-4.4.1\bin\ folder:
-    opengl32.dll.
+    If you intend to use Octave, will need to delete the following DLL files from the
+    C:\Octave\Octave-5.1.0.0\bin\ folder:
+    opengl32.dll -- Otherwise hardware accelerated visual stimulation will not work.
+    
 8.  [You also need to install the Microsoft Runtime Libraries for MSVC 2015-2019.
     You can find installers for these at Microsoft’s site beforehand. Otherwise
     when our installer aborted half-ways, follow the instructions it prints to
     the console. Or click this link to get a copy bundled with Psychtoolbox][c++ runtime]
+    
 9.  Open Matlab as administrative user (for Windows 7, right-click Matlab
     shortcut and Run As Administrator) and type the following in the command
     window:
