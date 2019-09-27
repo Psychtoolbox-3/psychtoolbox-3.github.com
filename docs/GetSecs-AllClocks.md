@@ -1,7 +1,7 @@
 # [GetSecs('AllClocks')](GetSecs-AllClocks) 
 ##### [Psychtoolbox](Psychtoolbox)>[GetSecs](GetSecs).{mex*} subfunction
 
-[GetSecsTime, WallTime, syncErrorSecs] = GetSecs('AllClocks' [, maxError=0.000020]);
+[GetSecsTime, WallTime, syncErrorSecs, MonotonicTime] = GetSecs('AllClocks' [, maxError=0.000020]);
 
 Return current time in seconds according to all supported clocks.  
   
@@ -23,6 +23,11 @@ the [GetSystemTimeAsFileTime](GetSystemTimeAsFileTime)() function.
 'syncErrorSecs' How tightly together did the returned clock times get queried? A  
 measure of confidence as to how much all returned times actually denote the same  
 point in physical time.  
+  
+'MonotonicTime' is system monotonic timebase, not subject to administrator or  
+NTP time adjustments, with a zero point at operating system boot time. Identical  
+to 'GetSecsTime' on Windows and macOS, identical to Posix clock CLOCK\_MONOTONIC  
+on GNU/Linux.  
   
 The input argument 'maxError' allows to set an allowable upper bound to  
 'syncErrorSecs'. The default value is 20 microseconds. The function will try up  

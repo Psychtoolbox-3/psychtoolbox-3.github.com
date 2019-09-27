@@ -21,7 +21,7 @@ When time varying signals are handled, the unit of time is as specified
 by the timeunits argument (default, msec).  
   
 As far as I can tell, the fundemantal measurements of the half-bleach  
-constant for cones were made by Rushton and Henry (1968, Vision Reserch,  
+constant for human cones were made by Rushton and Henry (1968, Vision Research,  
 8, 617-631). This fact I learned from CVRL  
 (http://www.cvrl.org/database/text/intros/introbleaches.htm).  
   
@@ -57,6 +57,16 @@ instead with 2-deg fundamentals, I get that 1 td is 23.7 L cone
 isomerizations/cone-sec and 19.5 M cone isomerizations/cone-sec.   These  
 two numbers are ballpark consistent with Rodiek page 475 who gives 18.3  
 and 15.9 for a monochromatic 540 [THz](THz) light (555 nm)].  
+  
+This paper  
+  Burkhardt, D. A. "Light adaptation and photopigment  
+  bleaching in cone photoreceptors in situ in the retina  
+  of the turtle." Journal of Neuroscience 14.3 (1994):  
+  1091-1105.  
+provides a half bleach constant for turtle cones of 5.57 expressed  
+in log10 R\*/um2/sec, which could with some work be converted to  
+isomerizations/cone/sec for turtle cones. But it's not  
+clear you want to use that number unless you are studying turtle.  
   
 This routine will do the computation either on the basis of input in  
 trolands or input in isomerization/cone-sec, using the appropirate  
@@ -114,6 +124,13 @@ timeUnits     -- units for time
               varying signal.  This breaks old usage that allowed  
               computing steady state bleaching for a set of vector  
               inputs, but I think that is OK.  
+08/19/19 dhb  Added some information about Burkhardt (1994) to header  
+              comment, and inserted a stub to use that information if  
+              someone does the work to put the number from it into the  
+              right units.  
+         dhb  Reorganized some code relative to source switch statement. Because  
+              there was only one case this didn't matter, but now I think it  
+              is right if more cases.  
 
 
 
