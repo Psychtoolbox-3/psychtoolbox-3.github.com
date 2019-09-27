@@ -70,7 +70,7 @@ You may want to make a backup copy of your current Psychtoolbox installation bef
 
 *   Our download works with Octave 3.8 - 4.2. Octave 4.4 and 5.1 will be supported by NeuroDebian packages octave-psychtoolbox-3 or the Linux distributions octave-psychtoolbox-3 packages themselves.
 
-*   Developed and tested against Matlab R2019a and R2014b, no longer R2012a, but is expected - but not tested - to continue to work with R2012a.
+*   Developed and tested against Matlab R2019a and R2014b, no longer regularly tested with R2012a, but continues to work with R2012a.
 
 *   The RaspberryPi edition now is build and tested against the current Raspbian 10 "Buster" based OS, with Octave 4.4.1 instead of older Octave versions. You need to upgrade to the latest Raspbian to use this release. Or use the distribution provided and probably somewhat outdated octave-psychtoolbox-3 package.
 
