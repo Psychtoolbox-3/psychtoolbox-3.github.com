@@ -53,11 +53,14 @@ The Psychtoolbox is popular. As of October 2006, Psychtoolbox-2 has been
 downloaded thirty thousand times: 24,324 Windows and 8,743 Mac OS 9.
 Psychtoolbox-3 for Mac OSX was downloaded 1,832 times before 22 September 2006.
 
-The current count, since 22 September 2006, of registered unique installations
-of Psychtoolbox-3 appears below. The Psychtoolbox [forum][forum] has over 2500
-members and about 4 messages a day. Principal investigators and their
-collaborators have identified at least 127 [#grant-supported projects](../grants)
-that use it. According to Google scholar, over 13500 articles [cite](../citations) it.
+[The detailed count, from 22 September 2006 to 20 May 2018, of registered unique
+installations of Psychtoolbox-3, appears under this link][finalstats]. Until 20th
+May 2018, we had 285897 downloads of Psychtoolbox-3.
+
+The Psychtoolbox [forum][forum] has over 2800 members and about 4 messages a day.
+Principal investigators and their collaborators have identified at least 127
+[#grant-supported projects](../grants) that use it. According to Google scholar,
+over 24097 articles [cite](../citations) it.
 
 The following link is a PDF file with the slides of a presentation held at ECVP
 2013 in Bremen by Mario Kleiner. These slides will give you a quick overview
@@ -75,7 +78,7 @@ Mario Kleiner, David Brainard, Denis Pelli, Chris Broussard, Tobias Wolf, Dieder
 * * *
 
     PTB registration stats here
-
+ [finalstats]: https://raw.githubusercontent.com/Psychtoolbox-3/Psychtoolbox-3/master/managementtools/stats.html
  [docs-demos]: http://docs.psychtoolbox.org/PsychDemos
  [bremen]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/PTBTutorial-ECVP2013.pdf
  [forum]: /forum
