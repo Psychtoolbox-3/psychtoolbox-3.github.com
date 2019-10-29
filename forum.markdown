@@ -4,13 +4,28 @@ title: Psychtoolbox Forum
 categories: getting-help
 ---
 
-The Psychtoolbox user community is quite active. The forum has more than 2,750
-subscribers and around 4 messages are posted a day. 
+### News!
+
+We are transitioning to a new home for our user forum, after Yahoo shut down all
+their forums on extremely short notice! Posting questions and answers to the old
+forum is no longer possible. We will let you know when the forum has found a new
+home. Meanwhile, bug reports and feature requests can be posted to our issue
+tracker:
+
+[Go to issue tracker](https://github.com/Psychtoolbox-3/Psychtoolbox-3/issues)
+
+
+
+The Psychtoolbox user community is quite active. The old Yahoo Groups forum had
+2,810 subscribers at the time of its shutdown by Yahoo at the end of October 2019,
+and received 24136 messages during its lifetime from 17th January 2000 to 28th
+October 2019.
+
 
 ![Histogram of forum postings](images/ForumUsersChart.png)
 
 <!--- This is how you let Google chart api plot the chart:
-![Histogram of forum postings](http://chart.apis.google.com/chart?chxr=0,0,2000%7C1,2000,2018&chbh=a&chco=A2C180&chd=t:327,398,988,539,771,1084,1498,1911,1439,1524,1219,1614,1618,2076,1451,1596,1218,1212,361&chds=0,2000&chs=500x100&cht=bvg&chts=676767,13.5&chtt=Forum+posts+per+year&chxs=1,676767,10,0,lt,676767&chxt=y,x)
+![Histogram of forum postings](http://chart.apis.google.com/chart?chxr=0,0,2000|1,2000,2019&chbh=a&chco=A2C180&chd=t:327,398,988,539,771,1084,1498,1911,1439,1524,1219,1614,1618,2076,1451,1596,1218,1212,871,681&chds=0,2000&chs=500x100&cht=bvg&chts=676767,13.5&chtt=Forum+posts+per+year&chxs=1,676767,10,0,lt,676767&chxt=y,x)
 --->
 
 *Please help other PTB users on the forum*. 
@@ -56,7 +71,7 @@ Read below how you can assist us in helping you effectively ...
 > edit it down to the relevant bits. With time we will incorporate and cross-reference these texts elsewhere in the
 > project.
 
-**[Continue to Support Forum][forum]**
+**[Continue to READ-ONLY old support Forum][forum]**
 
   [docs-demos]: http://docs.psychtoolbox.org/PsychDemos
   [docs-documentation]: http://docs.psychtoolbox.org/PsychDocumentation
