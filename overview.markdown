@@ -75,9 +75,7 @@ Mario Kleiner, David Brainard, Denis Pelli, Chris Broussard, Tobias Wolf, Dieder
 
 [The Developers](developers)
 
-* * *
 
-    PTB registration stats here
  [finalstats]: https://raw.githubusercontent.com/Psychtoolbox-3/Psychtoolbox-3/master/managementtools/stats.html
  [docs-demos]: http://docs.psychtoolbox.org/PsychDemos
  [bremen]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/PTBTutorial-ECVP2013.pdf

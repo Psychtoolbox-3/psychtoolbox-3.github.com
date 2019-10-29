@@ -9,7 +9,7 @@ this software (Brainard, 1997; Pelli, 1997; Kleiner, Brainard, Pelli 2007). Than
 ![Plot of unique citations per year](/images/CitationsChart.png)
 
 <!--- Disabled: Snippet below can be used to let Google charts api render an updated chart of citations:
-![Plot of unique citations per year](http://chart.apis.google.com/chart?chxr=0,0,3000%7C1,1999,2019&chxs=1,676767,10,0,lt,676767&chxt=y,x&chbh=a,8,10&chs=500x150&cht=bvg&chco=3399CC&chds=0,3000&chd=t:19,50,81,120,164,236,310,472,542,658,843,949,1161,1374,1698,1841,2019,2312,2592,2903,2732&chtt=Unique+citations+per+year&chts=676767,13.5)
+![Plot of unique citations per year](http://chart.apis.google.com/chart?chxr=0,0,3000%7C1,1999,2019&chxs=1,676767,10,0,lt,676767&chxt=y,x&chbh=a,8,10&chs=750x150&cht=bvg&chco=3399CC&chds=0,3000&chd=t:19,50,81,120,164,236,310,472,542,658,843,949,1161,1374,1698,1841,2019,2312,2592,2903,2732&chtt=Unique+citations+per+year&chts=676767,13.5)
 --->
 
 <!--- How to get these stats: Navigate to scholar.google.com, search for author Denis Pelli, click on his profile link, click on the name of the PTB article -> get nice citation graph / under the links below,
@@ -19,5 +19,7 @@ same for David Brainard to get his profile and the link to the original Psychtoo
 Citations by article are available here:
 
 [What's new in Psychtoolbox-3](https://scholar.google.de/citations?user=EO6eQRkAAAAJ&hl=en&oi=sra#d=gs_md_cita-d&u=%2Fcitations%3Fview_op%3Dview_citation%26hl%3Den%26user%3DEO6eQRkAAAAJ%26citation_for_view%3DEO6eQRkAAAAJ%3A0EnyYjriUFMC%26tzom%3D-60)
+
 [The Psychophysics Toolbox](https://scholar.google.de/citations?user=yqfIi9gAAAAJ&hl=en&oi=sra#d=gs_md_cita-d&u=%2Fcitations%3Fview_op%3Dview_citation%26hl%3Den%26user%3DyqfIi9gAAAAJ%26citation_for_view%3DyqfIi9gAAAAJ%3Au5HHmVD_uO8C%26tzom%3D-60)
+
 [The VideoToolbox software](https://scholar.google.de/citations?user=EO6eQRkAAAAJ&hl=en&oi=sra#d=gs_md_cita-d&u=%2Fcitations%3Fview_op%3Dview_citation%26hl%3Den%26user%3DEO6eQRkAAAAJ%26citation_for_view%3DEO6eQRkAAAAJ%3Au5HHmVD_uO8C%26tzom%3D-60)
