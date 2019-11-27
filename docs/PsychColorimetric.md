@@ -23,6 +23,7 @@ radiometric. Apologies if our intuitions don't match yours
   [ContrastToExcitation](ContrastToExcitation) - Convert contrast to excitation coordinate.  
   [ContrastToIncrement](ContrastToIncrement) - Convert contrast to incremental coordinates.  
   [DKLToConeInc](DKLToConeInc)        - Convert from DKL to cone increments.  
+  drawChromaticity -    Plot chromaticity diagram w spectrum locus (provided by Danny Garside).  
   [EffectiveTrolandsFromLum](EffectiveTrolandsFromLum) - Compute effective trolands from luminance.  
   [EnergyToCones](EnergyToCones)       - Convert monochromatic energy to cone excitations.  
   [ExcitationToContrast](ExcitationToContrast) - Convert excitation coordinates to contrast.  

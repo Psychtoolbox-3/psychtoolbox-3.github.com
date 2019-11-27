@@ -69,7 +69,7 @@ Install the [PsychtoolboxKernelDriver64Bit](PsychtoolboxKernelDriver64Bit).kext.
   
 ### You must type this into the terminal:  
   
-cd /System/Library/Extensions/  
+cd /Library/Extensions/  
 sudo unzip /[PathToPsychtoolbox](PathToPsychtoolbox)/Psychtoolbox/[PsychHardware](PsychHardware)/[PsychtoolboxKernelDriver64Bit](PsychtoolboxKernelDriver64Bit).kext.zip  
   
 "[PathToPsychtoolbox](PathToPsychtoolbox)" must be replaced with the path to the Psychtoolbox folder, e.g., if your  
@@ -96,7 +96,7 @@ from "kextload", or it fails for some other reason:
   
 https://developer.apple.com/library/content/technotes/tn2459/\_index.html  
   
-If you are using macOS 10.14 "Mojave", the driver will not load at all unless  
+If you are using macOS 10.14 "Mojave", the driver may not load at all unless  
 you disable SIP. Apple put additional obstacles in our way, because Apple!  
   
 If you use some of the latest and most overprized Apple computers with some  
@@ -117,6 +117,12 @@ to work around this in "help [DisplayOutputMappings](DisplayOutputMappings)".
 # How to upgrade with a more recent version, bundled with a new version of Psychtoolbox  
   
 ### You can unload and delete the driver before a driver upgrade via:  
+  
+sudo kextunload /Library/Extensions/[PsychtoolboxKernelDriver](PsychtoolboxKernelDriver).kext  
+sudo rm -R /Library/Extensions/[PsychtoolboxKernelDriver](PsychtoolboxKernelDriver).kext  
+  
+On older setups, the driver may reside in /System/Library/Extensions/, so  
+delete it from there if above does not work:  
   
 sudo kextunload /System/Library/Extensions/[PsychtoolboxKernelDriver](PsychtoolboxKernelDriver).kext  
 sudo rm -R /System/Library/Extensions/[PsychtoolboxKernelDriver](PsychtoolboxKernelDriver).kext  

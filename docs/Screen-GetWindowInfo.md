@@ -113,6 +113,8 @@ Zero for none.
 group is assigned. Zero for none.  
 [SysWindowHandle](SysWindowHandle): Low-level windowing system specific window handle of the  
 onscreen window. Currently Linux/X11 only: The X-Window handle.  
+[ExternalMouseMultFactor](ExternalMouseMultFactor): Scaling factor to apply for remapping input coordinates  
+on some systems, e.g., by [RemapMouse](RemapMouse).m.  
   
 The following settings are derived from a builtin detection heuristic, which  
 works on most common GPU's:  
