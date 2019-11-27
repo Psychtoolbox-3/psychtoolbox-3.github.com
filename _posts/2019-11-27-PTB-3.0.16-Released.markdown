@@ -1,0 +1,69 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.16 Beta update "Syncopation" was released at 27th November 2019.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2019-11-27_V3.0.16”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2019-11-27_V3.0.16>
+
+If you choose to use Psychtoolbox with Matlab then the most well tested Matlab versions on Linux are now R2014b and R2019a. The most well tested Matlab version on MS-Windows and macOS is now R2019a. For best results and support, use R2019a.
+
+This release was aptly named by Denis Pelli: The main meat of it is substantial improvements to visual stimulation timing on Apple macOS, as well as other fixes for Apples trainwrecks, e.g., for keyboard queries and for running Octave and Matlab R2019b without crashing. The timing fixes were done as contract work, paid by Denis Pelli. For more details about the general state (=awfulness) of current macOS and about these fixes see:
+
+<https://github.com/kleinerm/Psychtoolbox-3/pull/159>
+
+Iow. all Apple macOS users should upgrade to this release ASAP!
+
+
+## New features and improvements:
+
+### All operating systems:
+
+- Help text and doc updates.
+
+- DownloadPsychtoolbox/UpdatePsychtoolbox: Improve some online help texts. Contributed by Ian Andolina.
+
+- UpdatePsychtoolbox can now work even if the Psychtoolbox folder is not on the path. Contributed by Denis Pelli.
+
+- Improvements to diagnostics, e.g., DatapixxGPUDitherpatternTest is even more careful now about detecting trouble.
+
+- FlipTimingWithRtPhotoDiodeTest. Now also supports VideoSwitcher + RtBox for timing tests.
+
+- Improved data sets: Update T_xyz1931 and T_xyz1964 with more decimal places and wavelength samples. Updated versions provided by Danny Garside. It’s possible this could break code that made assumptions about wavelength sampling, but code should not do that. Reviewed and merged by David Brainard.
+
+- New function contributed by Danny Garside: drawChromaticity() can plot various types of chromaticity diagrams with spectrum locus. Reviewed and merged by David Brainard.
+
+### OSX:
+
+macOS Fixes and workarounds for the various horrifying Apple macOS operating system bugs:
+
+- KbCheck: Handle Apple MacBookPro TouchBar Gimmick.
+
+- KbCheck: Workaround for macOS Catalina's shoddy IOKit HID support which led to slowdowns of 50x
+
+- KbQueueCreate: Workaround for macOS Catalina's latest multi-threading bugs to avoid crashing.
+
+- Screen: Improve Retina display handling related to GetMouse and use of panel fitter.
+
+- Screen: Workaround the endless number of graphics/display driver bugs affecting visual stimulus onset timing and timestamping. This should bring improved or well working visual timing on a variety of hardware on macOS 10.11 to 10.15.1, but is targeted at specifically macOS 10.14.6 Mojave with the MacBookPro 2017 and the iMac 27 inch 5k Retina late 2014. Work done under contract with Denis Pelli. A summary of all the horrors in Apples trainwrecks, and how we work around them now can be found in this pull request: https://github.com/kleinerm/Psychtoolbox-3/pull/159
+
+- Fix crashes of Octave 5.1 during operation and shutdown caused by macOS multi-threading bugs 
+and other Apple screwups that just baffle my little brain to no end.
+
+- Fix crash of Matlab R2019b due to more horrendous Apple screwups.
+
+### Windows:
+
+- Make disable of display dithering for modern AMD gpu's on modern drivers actually work, for identity pixel passthrough needed by visual stimulators of VPixx and Cambridge Research Systems.
+
+### Linux:
+
+- Improve gpu detection for some new AMD gpu's.
+
+
+Enjoy!
