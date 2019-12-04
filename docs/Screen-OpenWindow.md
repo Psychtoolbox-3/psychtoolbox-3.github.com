@@ -1,7 +1,7 @@
 # [Screen('OpenWindow')](Screen-OpenWindow) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
-[windowPtr,rect]=Screen('OpenWindow',windowPtrOrScreenNumber [,color] [,rect][,pixelSize][,numberOfBuffers][,stereomode][,multisample][,imagingmode][,specialFlags][,clientRect][,fbOverrideRect]);
+[windowPtr,rect]=Screen('OpenWindow',windowPtrOrScreenNumber [,color] [,rect][,pixelSize][,numberOfBuffers][,stereomode][,multisample][,imagingmode][,specialFlags][,clientRect][,fbOverrideRect][,vrrParams=[]]);
 
 Open an onscreen window. Specify a screen by a windowPtr or a screenNumber (0 is  
 the main screen, with menu bar). "color" is the clut index (scalar or [r g b]  
@@ -71,16 +71,7 @@ the sum of certain flags is passed. A currently supported flag is the symbolic
 constant kPsychGUIWindow. It enables windows to behave more like regular GUI  
 windows on your system. See 'help kPsychGUIWindow' for more info. The flag  
 kPsychGUIWindowWMPositioned additionally leaves initial positioning of the GUI  
-window to the window manager. The flag kPsychUseFineGrainedOnset asks to use a  
-more fine-grained technique to schedule stimulus onset than the classic fixed  
-refresh interval scheduling. This may allow to more often achieve a visual  
-stimulus onset exactly at the 'tWhen' onset time asked for in [Screen](Screen)('[Flip](Flip)'),  
-instead of only at the closest frame boundary of a fixed duration frame. This  
-needs a suitable operating-system, graphics driver and graphics hardware, as  
-well as a special suitable display device that can run at a non-fixed refresh  
-rate. On unsuitable system hardware+software configurations the flag may do  
-nothing. This feature is currently considered \*highly experimental\* and may not  
-work reliably or \*at all\*! It is currently only implemented on Linux.  
+window to the window manager.  
   
 "clientRect" This optional parameter allows to define a size of the onscreen  
 windows drawing area that is different from the actual size of the windows  
@@ -101,6 +92,43 @@ by the standard "rect" parameter, internal processing will instead use the given
 override size. This usually only makes sense in combination with special output  
 devices that live outside the regular windowing system of your computer, e.g.,  
 special Virtual reality displays.  
+  
+"vrrParams" This optional parameter allows to control the method for scheduling  
+visual stimulus onset. By default, if the parameter is omitted, or set to 0,  
+standard presentation with fixed refresh rate is used. Visual stimuli will  
+present at the start of a new video refresh cycle of fixed duration, ie. timing  
+is quantized to multiples of refresh duration.  
+Non-zero values ask to use a more fine-grained technique to schedule stimulus  
+onset, than the classic fixed refresh interval scheduling. This may allow to  
+more often achieve a visual stimulus onset exactly at the 'when' onset time  
+asked for in [Screen](Screen)('[Flip](Flip)'), instead of only at the closest frame boundary of a  
+fixed duration frame. This needs a suitable operating-system, display driver and  
+graphics hardware, as well as a suitable display device that can run at a  
+non-fixed refresh rate. On unsuitable system hardware+software configurations  
+selecting a mode other than zero will abort 'OpenWindow'. Fine-grained stimulus  
+onset scheduling aka non-zero mode is currently only supported on Linux with  
+some hardware.  
+Settings other than 0 / default may require passing a vector with parameters  
+instead of just a mode selection scalar. E.g., instead of vrrParams = mode, it  
+could be vrrParams = [mode, minDuration, maxDuration] with minDuration and  
+maxDuration defining the minimum and maximum duration of a video refresh cycle  
+that the given display is capable off in VRR mode, e.g., in situations where  
+this can't be auto-detected reliably by [Screen](Screen)().  
+If set to 1, Psychtoolbox will auto-select the strategy based on the given setup  
+to provide more fine-grained visual stimulus onset timing. See 'help VRRSupport'  
+for hardware and software requirements and setup instructions for VRR on your  
+system.  
+If set to 2, Psychtoolbox will use VRR technology in the straightforward naive  
+way, efficient, but of limited timing precision and stability: If a 'when'  
+target time is given in [Screen](Screen)('[Flip](Flip)', ...), [Screen](Screen) will simply wait until that  
+time and then submit the flip request to hardware. Immediate flips will be  
+submitted to hardware immediately. Special constraints of the specific operating  
+system, display driver, graphics card or display model are not taken into  
+account, jitter in hardware or software is not compensated for.  
+Future versions of [Screen](Screen)() may bring additional fine-grained presentation  
+timing modes of higher sophistication or with different performance vs precision  
+vs reliability tradeoffs.  
+  
   
 Opening or closing a window takes about one to three seconds, depending on the  
 type of connected display. If your system has noisy timing or flaky graphics  

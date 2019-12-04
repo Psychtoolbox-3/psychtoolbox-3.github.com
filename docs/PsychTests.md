@@ -73,19 +73,20 @@ Psychtoolbox/[PsychTests](PsychTests)/Contents.m
   [ResolutionTest](ResolutionTest)                  - Use [Screen](Screen) Resolutions to print table of display resolutions.  
   [RodFundamentalTest](RodFundamentalTest)              - Test the PTB routines generate a good rod fundamental.  
   [ScreenTest](ScreenTest)                      - Thorough test of hardware/software performance.  
-  [SimpleTimingTest](SimpleTimingTest)                -   
-  [StandaloneTimingTest](StandaloneTimingTest)            - Test for timing glitch outside of MATLAB process.   
+  [SimpleTimingTest](SimpleTimingTest)                -  
+  [StandaloneTimingTest](StandaloneTimingTest)            - Test for timing glitch outside of MATLAB process.  
   [StructsFileTest](StructsFileTest)                 - Test routines for reading and writing struct arrays to text files.  
   [SyncedCLUTUpdateTest](SyncedCLUTUpdateTest)            - Visual test of clut write synching to vertical retrace.  
   [TextBoundsTest](TextBoundsTest)                  - Test [Screen](Screen)('TestBounds')  
   [TextBugTest](TextBugTest)                     - Look for interference between  
   [TextFontTest](TextFontTest)                    - Test setting the text font.  
   [TextInitBugTest](TextInitBugTest)                 - Test for failure of 'DrawText' default font.  
-  [TextInOffscreenWindowTest](TextInOffscreenWindowTest)       - Compare text rendered into onscreen and offscreen windows.   
-  [TextureChannelsTest](TextureChannelsTest)             - Test assignment of matrix layers to RGBA texture channels  
+  [TextInOffscreenWindowTest](TextInOffscreenWindowTest)       - Compare text rendered into onscreen and offscreen windows.  
+  [TextureChannelsTest](TextureChannelsTest)             - Test assignment of matrix layers to RGBA texture channels.  
   [TextureTest](TextureTest)                     - Exercise [Screen](Screen)('DrawTexture').  
   [TrolandTest](TrolandTest)                     - Colorimetric conversions.  
   [VBLSyncTest](VBLSyncTest)                     - Tests syncing of PTB-OSX to the vertical retrace.  
+  [VRRTest](VRRTest)                         - Test support of your setup for Variable refresh rate mode.  
   [WavelengthSamplingTest](WavelengthSamplingTest)          - Test conversion between representations of wavelength sampling information.  
 
 

@@ -160,6 +160,37 @@ actions:
   Usage: [PsychImaging](PsychImaging)('AddTask', 'General', 'UseVirtualFramebuffer');  
   
   
+\* 'UseFineGrainedTiming' [Ask](Ask) for use of fine-grained stimulus onset timing.  
+  [Ask](Ask) [Screen](Screen)('[Flip](Flip)', window, when) to try to show the new visual stimulus  
+  close to (= ideally exactly at) target time 'when', instead of showing the  
+  stimulus at the next video refresh frame boundary with time t \>= 'when', ie.  
+  try to schedule stimuli with better timing granularity than what is given by  
+  the multiples of a video refresh cycle duration of the connected display.  
+  
+  This uses a technique known as "Variable Refresh Rate" or shorthand "VRR" if  
+  your operating system and display driver and graphics card and cable and  
+  display device supports it at the current system configuration. Otherwise,  
+  [PsychImaging](PsychImaging)('OpenWindow', ...) will fail if this task can't be achieved.  
+  
+  For a list of requirements with respect to graphics cards, display devices,  
+  operating systems, drivers and general system configuration to make this work,  
+  read "help [VRRSupport](VRRSupport)". This will also tell you about limitations and caveats  
+  wrt. this task.  
+  
+  There may be different methods of implementing such fine-grained timing.  
+  The optional 'method' parameter allows you to select a specific method.  
+  Using the keyword 'Auto' or omitting the 'method' parameter ([]) will leave  
+  the choice of optimal method to [Screen](Screen)(). Currently only the method 'Simple'  
+  is implemented, but this may change with future versions of Psychtoolbox.  
+  
+  The optional parameter 'vrrMinRefreshHz' allows to specify the lowest video  
+  refresh rate that your display can reliably run at. If the parameter is  
+  omitted, [Screen](Screen)() will try to auto-detect this display property, or failing  
+  that, it will use a reasonable default.  
+  
+  Usage: [PsychImaging](PsychImaging)('AddTask', 'General', 'UseFineGrainedTiming' [, method='Auto'][, vrrMinRefreshHz]);  
+  
+  
 \* 'UseSubpixelDrive' [Ask](Ask) to take advantage of the so-called "Subpixel Drive"  
   mode of certain monochromatic medical imaging displays like, e.g., the  
   "Eizo [RadiForce](RadiForce) GS-521". This monitor essentially has a RGB panel with  

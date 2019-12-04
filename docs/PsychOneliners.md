@@ -62,7 +62,6 @@ Psychtoolbox:[PsychOneliners](PsychOneliners).
   [KbMapKey](KbMapKey)                - Checks if any of specified keys is depressed in a vector returned by [KbCheck](KbCheck), [KbWait](KbWait) etc.  
   kPsychGUIWindow         - Flag to ask [Screen](Screen)() to create onscreen windows with behaviour similar to normal GUI windows.  
   kPsychGUIWindowWMPositioned - Flag to ask [Screen](Screen)() to leave onscreen GUI window placement to the window manager.  
-  kPsychUseFineGrainedOnset - Flag to ask [Screen](Screen)() to use fine-grained visual stimulus onset scheduling.  
   [LoadIdentityClut](LoadIdentityClut)        - Loads the identity CLUT on a specified monitor.  
   [log10nw](log10nw)                 - Compute log base 10 without annoying warnings.  
   [MacModelName](MacModelName)            - Mac model name, e.g. 'PowerBook G4 15"'.  

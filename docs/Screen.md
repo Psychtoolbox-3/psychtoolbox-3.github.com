@@ -7,7 +7,7 @@ Usage:
 oldEnableFlag=Screen('[Preference](Screen-Preference)', 'EmulateOldPTB', [enableFlag]);  
   
 % Open or close a window or texture:  
-[windowPtr,rect]=Screen('[OpenWindow](Screen-OpenWindow)',windowPtrOrScreenNumber [,color] [,rect] [,pixelSize] [,numberOfBuffers] [,stereomode] [,multisample][,imagingmode][,specialFlags][,clientRect][,fbOverrideRect]);  
+[windowPtr,rect]=Screen('[OpenWindow](Screen-OpenWindow)',windowPtrOrScreenNumber [,color] [,rect] [,pixelSize] [,numberOfBuffers] [,stereomode] [,multisample][,imagingmode][,specialFlags][,clientRect][,fbOverrideRect][,vrrParams=[]]);  
 [windowPtr,rect]=Screen('[OpenOffscreenWindow](Screen-OpenOffscreenWindow)',windowPtrOrScreenNumber [,color] [,rect] [,pixelSize] [,specialFlags] [,multiSample]);  
 textureIndex=Screen('[MakeTexture](Screen-MakeTexture)', WindowIndex, imageMatrix [, optimizeForDrawAngle=0] [, specialFlags=0] [, floatprecision=0] [, textureOrientation=0] [, textureShader=0]);  
 oldParams = Screen('[PanelFitter](Screen-PanelFitter)', windowPtr [, newParams]);  

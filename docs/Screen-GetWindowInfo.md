@@ -115,6 +115,8 @@ group is assigned. Zero for none.
 onscreen window. Currently Linux/X11 only: The X-Window handle.  
 [ExternalMouseMultFactor](ExternalMouseMultFactor): Scaling factor to apply for remapping input coordinates  
 on some systems, e.g., by [RemapMouse](RemapMouse).m.  
+[VRRMode](VRRMode): Actual selected mode for VRR stimulus onset scheduling (1 = auto maps  
+to actual choice): 0 = Off, 2 = Simple.  
   
 The following settings are derived from a builtin detection heuristic, which  
 works on most common GPU's:  

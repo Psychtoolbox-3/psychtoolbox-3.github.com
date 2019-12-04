@@ -53,6 +53,9 @@ Oculus\_Health\_and\_Safety\_Warnings.pdf - Info about how to use the Oculus
                          timing is determined by the [Screen](Screen)('[Flip](Flip)') command,  
                          and how PTB tests your setup for proper timing and  
                          synchronization with vertical retrace.  
+  
+[VRRSupport](VRRSupport)             - How to set up and use variable refresh rate (VRR) displays.  
+  
 
 
 
