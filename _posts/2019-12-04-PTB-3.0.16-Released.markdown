@@ -1,0 +1,37 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.16 Beta update "Funky Syncopation!" was released at 4th December 2019.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2019-12-04_V3.0.16”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2019-12-04_V3.0.16>
+
+If you choose to use Psychtoolbox with Matlab then the most well tested Matlab versions on Linux are now R2014b and R2019a. The most well tested Matlab version on MS-Windows and macOS is now R2019a. For best results and support, use R2019a.
+
+This release follows the pattern of substantial visual stimulation timing improvements: 
+
+
+## New features and improvements:
+
+### All operating systems:
+
+- drawChromaticity() renamed to DrawChromaticity(), so Matlab/Octave don't complain and our documentation generator can actually generate documentation. Other small cleanups/refinements.
+
+- InitializePsychSound() made less chatty.
+
+- Minor improvements to PsychPortAudioTimingTest and other timing tests which involve audio: Go back to 44100 Hz sample rate, as that seems to be supported on a wider range of sound hardware. Weird, because the HDA spec only mandates 48000 Hz, so one would expect lazy hw vendors to implement that foremost.
+
+- BasicSoundInputDemo: Only switch from recording to playback on ESCape key press.
+
+### Linux:
+
+- XOrgConfCreator can now configure hybrid graphics laptops also when running under Matlab, not just Octave, by working around a Matlab limitation. So far it didn't recognize a multi-gpu laptop as such when executed under Matlab, only on Octave.
+
+- Support for use of Variable Refresh Rate (VRR) displays, also known as VRR, HDMI-2.1 VRR, DisplayPort Adaptive Sync, AMD FreeSync or NVidia G-Sync, with suitable AMD FreeSync or NVidia G-Sync gpu's on suitable Linux versions and drivers. "help VRRSupport" explains hardware and software requirements, gives setup instructions and usage / test instructions, and also provides background infos. VRRTest exercises suitable system setups. PsychImaging('AddTask', 'General', 'UseFineGrainedTiming'); requests use of VRR on supported setups. This is an initial implementations of the basics. It is expected to work best on AMD gpu's of the Vega gpu family or later, e.g., Ryzen / Raven Ridge integrated graphics controllers and Vega or Navi family discrete gpu's. It will also work with some more limitations on older AMD gpu's like Polaris, Volcanic Islands and Sea Islands family. It may work ok'ish on NVidia G-Sync gpu's, but use of AMD graphics + AMD FreeSync2 monitors is strongly recommended over NVidia graphics + NVidia G-Sync displays. Stay tuned for future improvements to VRR based fine grained visual stimulus timing. Not supported on MS-Windows yet.
+
+Enjoy!
