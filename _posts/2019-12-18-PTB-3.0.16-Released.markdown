@@ -1,0 +1,37 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.16 Beta update "Timely Twinkler" was released at 18th December 2019.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2019-12-18_V3.0.16”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2019-12-18_V3.0.16>
+
+If you choose to use Psychtoolbox with Matlab then the most well tested Matlab versions on Linux are now R2014b and R2019a. The most well tested Matlab version on MS-Windows and macOS is now R2019a. For best results and support, use R2019a.
+
+This release follows the pattern of substantial visual stimulation timing improvements: It brings another bunch of substantial improvements to VRR/FreeSync/G-Sync support on Linux.
+
+
+## New features and improvements:
+
+### All operating systems:
+
+- Adds PsychPhotodiode() driver for combining photo-diodes with sound cards for visual stimulus onset timestamping. Demonstrated in VRRTest.m as hwmeasurement=5 method.
+
+- UpdatePsychtoolbox() will now resolve potential file conflicts automatically by forcing the updated files from the upstream server, simply overwriting/discarding user modifications.
+
+- Documentation updates. Among other minor things, point to the new user forum at Discourse: <https://psychtoolbox.discourse.group>
+
+- Improve ability to do reproducible builds for Python, contributed by Bernhard Wiedemann on behalf of openSUSE.
+
+### Linux:
+
+- Ship basic set of MEX files for Octave 4.4 on Linux, e.g., for easy use with Octave on Ubuntu 19.10. Currently missing, to be part of a later update: Eyelink.mex, PsychCV.mex.
+
+- Improved VRR support for fine-grained visual stimulus onset timing on Linux. The API has been reworked to allow for more future flexibility and future extensions without breaking backwards compatibility of user scripts. Most importantly, a more sophisticated multi-threaded VRR scheduler is now used, which should take hardware (gpu and display) and operating system/driver constraints into account to provide more precise and stable visual stimulus onset timing. Testing shows pretty good results on AMD FreeSync hardware, and some improvements on NVidia G-Sync hardware. AMD gpu's and compatible "FreeSync" displays are strongly recommended over NVidia G-Sync for optimal current results and to take advantage of substantial improvements on Linux in the future.
+
+Enjoy!
