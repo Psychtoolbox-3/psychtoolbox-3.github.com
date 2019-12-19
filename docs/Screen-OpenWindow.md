@@ -94,37 +94,50 @@ devices that live outside the regular windowing system of your computer, e.g.,
 special Virtual reality displays.  
   
 "vrrParams" This optional parameter allows to control the method for scheduling  
-visual stimulus onset. By default, if the parameter is omitted, or set to 0,  
-standard presentation with fixed refresh rate is used. Visual stimuli will  
+visual stimulus onset. By default, if the parameter is omitted, or set to a mode  
+of 0, standard presentation with fixed refresh rate is used. Visual stimuli will  
 present at the start of a new video refresh cycle of fixed duration, ie. timing  
 is quantized to multiples of refresh duration.  
 Non-zero values ask to use a more fine-grained technique to schedule stimulus  
-onset, than the classic fixed refresh interval scheduling. This may allow to  
-more often achieve a visual stimulus onset exactly at the 'when' onset time  
-asked for in [Screen](Screen)('[Flip](Flip)'), instead of only at the closest frame boundary of a  
-fixed duration frame. This needs a suitable operating-system, display driver and  
-graphics hardware, as well as a suitable display device that can run at a  
-non-fixed refresh rate. On unsuitable system hardware+software configurations  
-selecting a mode other than zero will abort 'OpenWindow'. Fine-grained stimulus  
-onset scheduling aka non-zero mode is currently only supported on Linux with  
-some hardware.  
-Settings other than 0 / default may require passing a vector with parameters  
-instead of just a mode selection scalar. E.g., instead of vrrParams = mode, it  
-could be vrrParams = [mode, minDuration, maxDuration] with minDuration and  
-maxDuration defining the minimum and maximum duration of a video refresh cycle  
-that the given display is capable off in VRR mode, e.g., in situations where  
-this can't be auto-detected reliably by [Screen](Screen)().  
-If set to 1, Psychtoolbox will auto-select the strategy based on the given setup  
-to provide more fine-grained visual stimulus onset timing. See 'help VRRSupport'  
-for hardware and software requirements and setup instructions for VRR on your  
-system.  
-If set to 2, Psychtoolbox will use VRR technology in the straightforward naive  
-way, efficient, but of limited timing precision and stability: If a 'when'  
+onset than the classic fixed refresh interval scheduling on suitable hardware  
+and operating systems. This may allow to more often achieve a visual stimulus  
+onset exactly at or close to the 'when' onset time asked for in [Screen](Screen)('[Flip](Flip)'),  
+instead of only at the closest frame boundary of a fixed duration frame. This  
+needs a suitable operating-system, display driver and graphics hardware, as well  
+as a suitable display device that can run at a non-fixed variable refresh rate.  
+Selecting a mode other than zero on unsuitable system hardware+software  
+configurations will abort 'OpenWindow'. Fine-grained stimulus onset scheduling  
+(ie. non-zero mode) is currently only supported on Linux with some hardware.  
+Settings other than mode 0 may require passing a vector with parameters instead  
+of just a mode selection scalar. E.g., instead of vrrParams = mode, it could be  
+vrrParams = [mode, styleHint, minDuration, maxDuration].  
+The 'styleHint' parameter describes or hints to the style of visual stimulation  
+timing to be expected for the session. It gives the scheduling algorithm some  
+high level hint that may allow to optimize for higher precision and robustness.  
+The only supported styleHint at the moment is styleHint 0 for 'don't know / none  
+/ default'. Future versions of [Screen](Screen)() may support more specific styleHint  
+values for common visual stimulation paradigms.  
+'minDuration' and 'maxDuration' would define the minimum and maximum duration of  
+a video refresh cycle that the given display is capable of in VRR mode, e.g., in  
+situations where this can't be auto-detected reliably by [Screen](Screen)().  
+If mode is set to 1, [Screen](Screen)() will auto-select the strategy based on the given  
+hardware setup, operating system and display drivers, 'styleHint' and other  
+vrrParams to provide more fine-grained visual stimulus onset timing. See 'help  
+VRRSupport' for hardware and software requirements and setup instructions for  
+VRR on your system.  
+If mode is set to 2, [Screen](Screen)() will use VRR technology in the straightforward  
+naive way, efficient, but of limited timing precision and stability: If a 'when'  
 target time is given in [Screen](Screen)('[Flip](Flip)', ...), [Screen](Screen) will simply wait until that  
 time and then submit the flip request to hardware. Immediate flips will be  
 submitted to hardware immediately. Special constraints of the specific operating  
 system, display driver, graphics card or display model are not taken into  
-account, jitter in hardware or software is not compensated for.  
+account, jitter in hardware or software is not compensated for in any way.  
+If mode is set to 3, [Screen](Screen)() will use its own more sophisticated implementation  
+of a VRR scheduler on top of the simple VRR mechanism provided by the operating  
+system or graphics driver. It will try to take information about current display  
+system state, e.g., last vblank or flip completion time, minimum and maximum  
+possible refresh rates etc., into account, in order to do a better job at  
+hitting desired 'when' target times than a naive implementation.  
 Future versions of [Screen](Screen)() may bring additional fine-grained presentation  
 timing modes of higher sophistication or with different performance vs precision  
 vs reliability tradeoffs.  

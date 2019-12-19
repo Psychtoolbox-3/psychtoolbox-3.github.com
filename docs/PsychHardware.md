@@ -41,6 +41,7 @@ Gamepad             - All: Read USB game controllers. Formerly "Joystick".
 [PsychGPUTestAndTweakGammaTables](PsychGPUTestAndTweakGammaTables) - All: Helper function. Auto-tweak gamma tables for [DataPixx](DataPixx) et al. and Bits\#  
 [PsychHID](PsychHID)            - All: Read/write any HID-compliant USB device. See web page:  
                            web http://psychtoolbox.org/usb.html  
+[PsychPhotodiode](PsychPhotodiode)     - All: Measure visual stimulus onset via photo-diodes and [PsychPortAudio](PsychPortAudio).  
 [PsychPowerMate](PsychPowerMate)    - Linux: Driver for the Griffin Technologies [PowerMate](PowerMate) USB knob.  
 [PsychRTBox](PsychRTBox)          - All: Driver for [RTBox](RTBox) reaction time button box.  
 [PsychVRToolbox](PsychVRToolbox)      - All: Functions for access to and use of Virtual Reality devices.  

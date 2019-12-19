@@ -301,11 +301,12 @@ transtexid = Screen('[TransformTexture](Screen-TransformTexture)', sourceTexture
  "PsychDemos" if differences apply, and on the Psychtoolbox Wiki under  
  "Platform Differences and writing portable code".  
   
- Initial reports appear first at the forum:  
- web http://www.yahoogroups.com/messages/psychtoolbox/ ;  
+###  Initial reports appear first at the forum:  
   
- If you find a bug, please report it to the forum:   
- web mailto:psychtoolbox@yahoogroups.com ;  
+ https://psychtoolbox.discourse.group  
+  
+ If you find a bug, please report it to the forum or our issue tracker at  
+ psychtoolbox.org  
   
  It will help greatly if you can supply a  minimal-length program that exhibits   
  the bug. And please include as much information about your hardware and software  

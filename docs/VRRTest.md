@@ -63,6 +63,10 @@ All parameters are optional.
 4 = Like 2 -- [RtBox](RtBox) pulse input, but for use with a [ColorCal2](ColorCal2) or photo-diode that  
     sends a TTL pulse to the [RtBox](RtBox) / Bits\# BNC trigger input instead of [VideoSwitcher](VideoSwitcher).  
   
+5 = Measure via a supported photo-diode via [PsychPhotodiode](PsychPhotodiode)().  
+  
+6 = Produce light-flash pattern to drive external photo-diode. Don't record yourself.  
+  
   
 'testImage' Either the name of an image file, or a numeric m x n or m x n x 3  
 matric with color values. The image read from the image file, or given image  

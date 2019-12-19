@@ -68,6 +68,9 @@ the old-style implementation on Matlab with some operating systems. - It
 is checked for correctness, but other than that it is ignored. Allowable  
 values are either 8 or 16.  
   
+oldverbosity = [Snd](Snd)('Verbosity' [, verbosity]);  
+- Query current level of verbosity, optionally set a new 'verbosity' level.  
+  
 [Snd](Snd)('Open') opens the channel, which stays open until you call  
 [Snd](Snd)('[Close](Close)'). [Snd](Snd)('Play',...) automatically opens the channel if it isn't  
 already open. You can use [Snd](Snd)('Open', pahandle); to share an existing  
@@ -106,8 +109,8 @@ your computer hardware.
   
 [Snd](Snd)('Play',sin(0:10000)); % play 22 [KHz](KHz)/(2\*pi)=3.5 kHz tone  
 [Snd](Snd)('Play',[sin(1:20000) zeros(1,10000);zeros(1,10000) sin(1:20000)]); % stereo  
-[Snd](Snd)('Wait');                % wait until end of all sounds currently in channel  
-[Snd](Snd)('Quiet');               % stop the sound and flush the queue  
+[Snd](Snd)('Wait');              % wait until end of all sounds currently in channel  
+[Snd](Snd)('Quiet');             % stop the sound and flush the queue  
   
 For most of the commands, the returned value is zero when successful, and  
 a nonzero error number when [Snd](Snd) fails.  
