@@ -6,26 +6,29 @@ categories: getting-help
 
 ### News!
 
-We are transitioning to a new home for our user forum, after Yahoo shut down all
-their forums on extremely short notice! Posting questions and answers to the old
-forum is no longer possible. We will let you know when the forum has found a new
-home. Meanwhile, bug reports and feature requests can be posted to our issue
-tracker:
+*We have transitioned to a new home for our user forum, after Yahoo shut down all
+their forums on extremely short notice and deleted all posted content!*
 
-[Go to issue tracker](https://github.com/Psychtoolbox-3/Psychtoolbox-3/issues)
+The new forum is hosted at Discourse, the link to it is at the bottom of this
+page. This is a way more polished and featureful discussion group system, so
+it should also provide improved usability. We have to figure out all the new
+bells and whistles ourselves, but all the basics should be ready.
 
-
+People signed up to the old forum may have to (re-)sign up for the new Discourse
+forum. Much of the old content from the old YahooGroups forum has been imported
+into the new forum.
 
 The Psychtoolbox user community is quite active. The old Yahoo Groups forum had
 2,810 subscribers at the time of its shutdown by Yahoo at the end of October 2019,
 and received 24136 messages during its lifetime from 17th January 2000 to 28th
-October 2019.
+October 2019. We hope the new forum will show as much user engagement, not that
+it is reestablished since January 2020.
 
 
 ![Histogram of forum postings](images/ForumUsersChart.png)
 
 <!--- This is how you let Google chart api plot the chart:
-![Histogram of forum postings](http://chart.apis.google.com/chart?chxr=0,0,2000|1,2000,2019&chbh=a&chco=A2C180&chd=t:327,398,988,539,771,1084,1498,1911,1439,1524,1219,1614,1618,2076,1451,1596,1218,1212,871,681&chds=0,2000&chs=500x100&cht=bvg&chts=676767,13.5&chtt=Forum+posts+per+year&chxs=1,676767,10,0,lt,676767&chxt=y,x)
+![Histogram of forum postings](http://chart.apis.google.com/chart?chxr=0,0,2000|1,2000,2019&chbh=a&chco=A2C180&chd=t:327,398,988,539,771,1084,1498,1911,1439,1524,1219,1614,1618,2076,1451,1596,1218,1212,879,681&chds=0,2000&chs=500x100&cht=bvg&chts=676767,13.5&chtt=Forum+posts+per+year&chxs=1,676767,10,0,lt,676767&chxt=y,x)
 --->
 
 *Please help other PTB users on the forum*. 
@@ -70,10 +73,13 @@ Read below how you can assist us in helping you effectively ...
 > grateful if you would copy it to the [FAQ section][faq] on our Wiki to preserve it for posterity.  You may want to
 > edit it down to the relevant bits. With time we will incorporate and cross-reference these texts elsewhere in the
 > project.
+>
+> The Discourse forum site also has features to "like" specific helpful and relevant posts to mark them more prominently.
 
-**[Continue to READ-ONLY old support Forum][forum]**
+
+**[Continue to the support Forum on Discourse][forum]**
 
   [docs-demos]: http://docs.psychtoolbox.org/PsychDemos
   [docs-documentation]: http://docs.psychtoolbox.org/PsychDocumentation
-  [forum]: https://groups.yahoo.com/neo/groups/psychtoolbox/conversations/topics
+  [forum]: https://psychtoolbox.discourse.group
   [faq]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/wiki/FAQ
