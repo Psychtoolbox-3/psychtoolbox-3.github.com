@@ -21,7 +21,7 @@ into the new forum.
 The Psychtoolbox user community is quite active. The old Yahoo Groups forum had
 2,810 subscribers at the time of its shutdown by Yahoo at the end of October 2019,
 and received 24136 messages during its lifetime from 17th January 2000 to 28th
-October 2019. We hope the new forum will show as much user engagement, not that
+October 2019. We hope the new forum will show as much user engagement, now that
 it is reestablished since January 2020.
 
 
