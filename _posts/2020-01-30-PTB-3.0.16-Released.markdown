@@ -1,0 +1,36 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.16 Beta update "English breakfast" was released at 30th January 2020.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2020-01-30_V3.0.16”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2020-01-30_V3.0.16>
+
+If you choose to use Psychtoolbox with Matlab then the most well tested Matlab versions on Linux are now R2014b and R2019a. The most well tested Matlab version on MS-Windows and macOS is now R2019a. For best results and support, use R2019a.
+
+This release follows the pattern of substantial visual stimulation timing improvements: It brings another bunch of substantial improvements to VRR/FreeSync/G-Sync support on Linux.
+
+
+## New features and improvements:
+
+### All operating systems:
+
+- Fix movie playback with pixelformat = 10, ie. deep color playback of more than 8 bpc content.
+
+### Linux:
+
+- Various high precision color improvements for Linux: Enable 10 bpc framebuffer support on Mesa by default. Make sure video outputs operate at maximum output precision in > 8 bpc modes. Improvements to 16 bpc native framebuffer support on AMD DCE-8+ gpu's. I have now verified with a ColorCal2 to be able to produce 12 bpc output precision on at least one display with at least one AMD Polaris gpu. This should work with all AMD gpu's
+except for ones with the new DCN display engines, ie. it should work starting with "Sea Island" gpu's, going on to "Volcanic Island", "Polaris" and ending with "Vega". AMD Ryzen integrated processor graphics "Raven Ridge" and later, and the latest AMD "Navi" gpu's are not supported for 11 bpc and 12 bpc mode for the time being.
+
+- Improve default KbQueue selection to ignore more mice which pretend to be also keyboards.
+
+### Windows:
+
+- More hand-holding for people who are challenged with reading and install the wrong GStreamer variant. Our PsychStartup script tries to detect wrong GStreamer and gives warning and troubleshooting tips.
+
+Enjoy!

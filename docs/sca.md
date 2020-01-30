@@ -2,10 +2,14 @@
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychOneliners](PsychOneliners)
 
 [sca](sca) -- Execute [Screen](Screen)('CloseAll');  
-This is just a convenience wrapper that allows you  
-to save typing that long, and frequently needed,  command.  
-It also unhides the cursor if hidden, and restores graphics card gamma  
-tables if they've been altered.  
+This is just a convenience wrapper that allows you to save typing the long,  
+and frequently needed, command.  
+  
+It also unhides the cursor if hidden, restores graphics card gamma tables if  
+they've been altered, and restores other low-level display system state, like  
+centering the mouse cursor on screen 0 of a multi-X-[Screen](Screen) Linux setup. For  
+Matlab it implements a workaround for Matlab Java GUI bugs related to resolution  
+switching and entering/leaving fullscreen display mode.  
   
 
 
