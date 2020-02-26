@@ -86,10 +86,11 @@ If the download fails, read below on [Download Problems](#download-problems). If
 want to know more, see [DownloadPsychtoolbox][docs-download] (or
 `help DownloadPsychtoolbox` in the Matlab command window.)
 
-4.  If you intend to use multi-media functions, you must install the 64-Bit
+4.  If you intend to use multi-media functions, or you want fast, high-quality,
+    cross-platform consistent text rendering with Matlab, you must install the 64-Bit
     GStreamer-1.4 or later runtime from [gstreamer.freedesktop.org][gstreamer-osx].
-    Make absolutely sure that you install all offered packages. Read `help GStreamer`
-    carefully for this purpose, *before downloading and installing GStreamer*.
+    Make absolutely sure that you install all offered packages. [Read `help GStreamer`
+    carefully for this purpose, *before downloading and installing GStreamer*.][docs-gstreamer]
 
 #### Linux {#Linux}
 
@@ -166,20 +167,21 @@ folders of your liking instead:
 6.  Move the Psychtoolbox installer (`DownloadPsychtoolbox`) from the Desktop
     to the new `toolbox` folder.
     
-7.  You **must** install the 64-Bit GStreamer-1.16.0 MSVC runtime or later versions
+7.  You **must** install the 64-Bit GStreamer-1.16.0 **MSVC** runtime or later versions
     from [gstreamer.freedesktop.org][gstreamer-win] even if you do not need multi-media
-    support!
-    Make absolutely sure that you install all offered packages. Read `help GStreamer`
-    carefully for this purpose, *before downloading and installing GStreamer*.
+    support! Do **not** install the MINGW variant, it will not work, but likely crash!
+    Make absolutely sure that you install all offered packages. [Read `help GStreamer`
+    carefully for this purpose, *before downloading and installing GStreamer*.][docs-gstreamer]
     
     If you intend to use Octave, will need to delete the following DLL files from the
-    C:\Octave\Octave-5.1.0.0\bin\ folder:
+    C:\Octave\Octave-5.1.0.0\mingw64\bin\ folder:
     opengl32.dll -- Otherwise hardware accelerated visual stimulation will not work.
     
-8.  [You also need to install the Microsoft Runtime Libraries for MSVC 2015-2019.
+8.  [You may also need to install the Microsoft Runtime Libraries for MSVC 2015-2019 if
+    you use Matlab instead of Octave.
     You can find installers for these at Microsoft’s site beforehand. Otherwise
     when our installer aborted half-ways, follow the instructions it prints to
-    the console. Or click this link to get a copy bundled with Psychtoolbox][c++ runtime]
+    the console. Or simply click this link to get a copy bundled with Psychtoolbox][c++ runtime]
     
 9.  Open Matlab as administrative user (for Windows 7, right-click Matlab
     shortcut and Run As Administrator) and type the following in the command
@@ -391,7 +393,7 @@ of older versions can be found at the bottom of the page found
 
   [arezzo]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/Psychtoolbox3-Slides.pdf
   [bremen]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/PTBTutorial-ECVP2013.pdf
-
+  [docs-gstreamer]: http://psychtoolbox.org/docs/GStreamer
   [docs-download]: http://docs.psychtoolbox.org/DownloadPsychtoolbox
   [docs-setup]: http://docs.psychtoolbox.org/SetupPsychtoolbox
   [docs-update]: http://docs.psychtoolbox.org/UpdatePsychtoolbox
