@@ -16,13 +16,14 @@ Short version
 
 -   *Operating system:*
 
-    GNU Linux is _strongly_ recommended. Also works on Microsoft Windows (Intel), but will
+    GNU Linux is _strongly_ recommended. Also works on Microsoft Windows 10 (Intel), but will
     be much less well supported by the developers and may have restrictions in functionality,
     reliability, performance and precision for some features, compared to Psychtoolbox running
     on a modern Linux distribution. Especially multi-display setups and HiDPI Retina displays
-    under Windows are highly problematic! Use on Apple Mac OS X is still supported but _strongly discouraged_
-    if you need any kind of reliable timing for visual stimulus presentation or trustworthy
-    visual stimulation at all, due to the large number of bugs in the Apple operating system.
+    under Windows are highly problematic! Use on Apple Mac OS X is still possible but _strongly discouraged_
+    if you need any kind of reliable timing for visual stimulus presentation or precisely calibrated
+    visual output, or use of special visual stimulators, e.g., from VPixx or CRS, or trustworthy
+    visual stimulation at all, due to the large and growing number of bugs in the Apple operating system.
 
 -   *Runtime environment:*
 
@@ -31,10 +32,27 @@ Short version
 
 -   *Graphics card:*
 
-    Recommended are OpenGL 2.1 (or better) capable GPUs from AMD or NVidia.
-    AMD GPUs are somewhat preferrable to NVidia GPUs on Linux and OSX, as they
+    Recommended are OpenGL 2.1 (or ideally better!) capable GPUs from AMD. Modern Intel graphics
+    chips should also work well on Linux for more simple tasks with lower need for performance.
+
+    **AMD GPUs are strongly recommended over NVidia GPUs on Linux and OSX**, as they
     allow use of high quality open-source graphics drivers on Linux, and of additional
-    useful PTB features for vision science on both Linux and OSX.
+    useful PTB features for vision science on Linux and also to some degree on OSX.
+    The most well tested models are currently from the AMD "Polaris" gpu family, with
+    the most exhaustive set of low-level features supported by Psychtoolbox on Linux.
+    AMD "Vega" gpu family gpu's should provide the same quality and features, and have
+    improved FreeSync support if you need it. They are expected to work well with
+    Psychtoolbox, but not tested due to lack of hardware. The latest generation "Navi"
+    gpu's may work, but are untested and lack support for special Psychtoolbox low-level
+    features at the moment. So the sweet spot would be "Polaris", or "Vega" if you intend
+    to use FreeSync for interesting visual stimulation paradigms that require Psychtoolbox
+    VRR functionality.
+    
+    Only choose NVidia if you absolutely must for some very good reason, e.g., if you must
+    use CUDA during visual stimulation. Note that we won't be able to help you much with
+    problems caused by NVidia gpu's even on Linux, as we can't fix their proprietary
+    graphics drivers!
+    
     Modern Intel HD-Series graphics cards should work reliably for medium
     complexity workloads on Linux. Current OpenGL-3/4 GPUs may expose additional
     useful features. The absolute minimum requirement is OpenGL-1.2 support, but
@@ -42,16 +60,17 @@ Short version
 
     Try to avoid PC laptops with hybrid-graphics, e.g., with NVidia Optimus or
     AMD Enduro technology! Under MS-Windows the visual onset timing of the high
-    performance gpu will likely be wrong on most such laptops and there is no
+    performance gpu will very likely be wrong on most such laptops and there is no
     known way to fix this with software workarounds, so you might be restricted
     to the integrated low performance gpu. At least Intel integrated gpus are
-    often _very buggy_ under MS-Windows, so you would be out of luck. The
+    often _very buggy_ under MS-Windows, so you would be out of luck completely. The
     behavior on Linux is generally better: Many Laptops will work reliably with the high
     performance gpu and the open-source graphics drivers when combined with an
     Intel integrated gpu, e.g., models with older NVidia graphics cards and most AMD
     graphics cards. The most recent gpu models from NVidia are more difficult to set up
-    and somewhat inflexible to use, restricting such Optimus setups to single-display
-    visual stimulation only if the proprietary graphics drivers are in use. The
+    and somewhat rather inflexible to use, due to limitations of their proprietary
+    graphics drivers, restricting such Optimus setups to single-display visual stimulation
+    only if the proprietary graphics drivers are in use. The
     combination of AMD integrated gpu + AMD discrete gpu currently doesn't work well
     at all. At least the lower performance integrated AMD graphics chips should work
     as a reliable fallback in such a scenario on Linux though. Read ["help HybridGraphics"][HybridGraphics],
@@ -61,7 +80,8 @@ Short version
 
     On Linux and OS X, any card supported by the operating system should work
     well, as well as built-in sound chips. On MS-Windows 7 to 10, sound cards should
-    work reasonably well with Psychtoolbox 3.0.15 and later. On MS-Windows with
+    work reasonably well with Psychtoolbox 3.0.15 and later, but Windows 10 should
+    provide enhanced precision and lower latency over Windows 7. On MS-Windows with
     Psychtoolbox version 3.0.14 and earlier, no precise or low latency sound output
     is possible anymore. [Click this link to find out why.][AudioHW]
 
@@ -123,7 +143,7 @@ Psychtoolbox should "work" in principle on
    [you will need to get Octave 5.1.0 from a package manager like HomeBrew][Octave5OSX]
    or MacPorts, as standalone binary installers are not available yet.
 
-Limited testing currently only happens on the latest version of OS X 10.13
+Limited testing currently only happens on the latest version of OS X 10.13.6
 “macOS High Sierra” with 64-Bit Octave 5.1.0, and with 64-bit Matlab R2019a. This
 is the only somewhat supported version of OS X at this point in time. _macOS is
 the most buggy and hazardous operating system you could use for visual stimulation,
@@ -247,8 +267,14 @@ Basic hardware requirements
     visual stimulation timing under macOS. Most AMD graphics cards under
     OS X 10.12 and later have broken visual stimulation timing under macOS,
     and Intel graphics chips also seem to have trouble under at least macOS
-    10.13 "High Sierra". So for visual stimulation there essentially doesn't
-    exist any supported Apple hardware that would work acceptably under macOS.
+    10.13 "High Sierra". If you install Psychtoolbox 3.0.16, these timing
+    problems will be worked around at least for standard precision 8 bit per
+    color framebuffers on many gpu + display combinations. Higher precision
+    framebuffers are still unfixably broken, and some machines may still have
+    problems, e.g., the new MacBookPro 2019 16 inch. So for visual stimulation
+    there essentially doesn't exist any supported Apple hardware that would work
+    acceptably under macOS in all configurations.
+    
     Old hardware may perform fine under Linux. Apple MacBook's or MacBookPro's
     from the year 2016 or later are known to be mostly unusable with Linux for
     practical purposes, as basic things like wifi, suspend/resume or audio won't
@@ -282,18 +308,8 @@ your stimulus script and the types of visual stimuli you can create with
 ease will depend much more on the horse power and features of your GPU
 than on the performance of your CPU.
 
-If you want to use all Psychtoolbox features at full performance and
-precision, make sure to get a recent Direct3D 10 or 11 capable (a.k.a.
-OpenGL 3 or 4 capable) graphics card from AMD or NVidia. Almost all
-cards of the NVidia GeForce 8 series and later (e.g., 8600, 8800, 9600,
-9800, GTX 280 etc.), as well as all cards of the AMD/ATI Radeon HD series
-and later (HD 2400, 2600, 3000 series, 4000 series, etc.) and their corresponding
-counterparts from the NVidia Quadro series and ATI FireGL / FirePro line
-of cards are technically state-of-the-art and Psychtoolbox can take full
-advantage of their features.
-
-The latest generation of integrated Intel HD graphics cards, e.g., Intel HD
-2000, HD 3000, as found in many modern “Intel Core” processors, provide decent
+The recent generation of integrated Intel HD graphics cards, e.g., Intel HD
+2000, HD 3000 etc., as found in many modern “Intel Core” processors, provide decent
 functionality, accuracy and performance for not too demanding tasks *on Linux*.
 *Use on other operating systems than Linux will usually go much less well*. These cards
 are OpenGL-3 / Direct3D-10 compliant. Numeric precision is on par with recent
