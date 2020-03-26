@@ -59,10 +59,10 @@ a sound buffer of at least 2 seconds for some security headroom. If you know
 that the recording time of each recording has an upper bound then you can  
 allocate an internal buffer of sufficient size and fetch the buffer all at once  
 at the end of a recording.  
-'ctsstarttime' this is an estimate of the system time (in seconds) when the very  
+'cstarttime' this is an estimate of the system time (in seconds) when the very  
 first sample of this recording was captured by the sound input of your hardware.  
-This is only a rough estimate, not to be trusted down to the millisecond level,  
-at least not without former careful calibration of your setup!  
+This is only to be trusted down to the millisecond level after former careful  
+calibration of your setup!  
   
 
 

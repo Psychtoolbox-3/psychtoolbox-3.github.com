@@ -9,7 +9,9 @@ The cursor position (x,y) is "local" to the screen, i.e. relative to the
 origin of the screen if a screen number is supplied, or relative to the  
 origin of a screen on which a supplied onscreen window is displayed.  
 Otherwise it's "global", i.e. relative to the origin of the main screen  
-([Screen](Screen) 0).  
+([Screen](Screen) 0). It is advisable to specify an onscreen window handle for  
+proper handling of Retina displays on macOS if you use backwards  
+compatibilty mode.  
   
 On Linux with X11, the optional 'mouseid' parameter allows to select  
 which of potentially multiple cursors should be repositioned. On OS/X and  

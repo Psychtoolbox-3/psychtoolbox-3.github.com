@@ -1,0 +1,43 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.16 Beta update "Toiletpaperhamsteridiots" was released at 26th March 2020.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2020-03-26_V3.0.16”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2020-03-26_V3.0.16>
+
+If you choose to use Psychtoolbox with Matlab then the most well tested Matlab versions on Linux are now R2014b and R2019a. The most well tested Matlab version on MS-Windows and macOS is now R2019a. For best results and support, use R2019a.
+
+This release brings minor bug fixes and improvements.
+
+
+## New features and improvements:
+
+### All operating systems:
+
+- PlayMoviesDemo: Add alpha-blending support for transparent movies.
+
+- Improve help text for Screen Screens?
+
+- PsychPortAudio: Fix start of capture 'capturetime' timestamps in certain exotic conditions.
+
+### Linux:
+
+- Fix default audio input/capture device selection for certain exotic audio input devices which expose separate logical audio devices for playback vs. capture.
+
+- Cut down on chatter if running on latest generations of AMD gpu's with DCN display engine, e.g., AMD Ryzen integrated processor graphics (Raven Ridge / Picasso / Renoir / ...) and AMD Navi family discrete graphics cards. These latest generation DCN display engines are not supported by our bag of low-level tricks, as there is neither need nor benefit. Spare the user from pointing this out with extra debug clutter.
+
+- Fix detection code for VRR capable displays (HDMI VRR and DisplayPort Adaptive Sync / FreeSync). The detection code only probed the first connected display output, regardless into which output the display is plugged in, therefore falsely disabling VRR capable displays from using VRR.
+
+### macOS:
+
+- Fix crash on Screen() reload if GStreamer isn't installed, but libglib is installed by 3rd party, e.g., from HomeBrew.
+
+- SetMouse: Deal better with Retina displays on macOS: At least if a window handle is provided, this should deal with position scaling on Retina displays if not using native Retina resolution on the trainwreck. Not great, but better than nothing.
+
+Enjoy!
