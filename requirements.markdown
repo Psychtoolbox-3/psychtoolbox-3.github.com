@@ -109,7 +109,7 @@ Linux, Gentoo, and Fedora 24/25. We can't provide much support on other distros
 than Ubuntu LTS flavors due to lack of time and resources.
 
 It is recommended to stick to the latest long-term support (LTS) Ubuntu release,
-currently 18.04.3-LTS, if you want the most well tested setup.
+currently 18.04.4-LTS, if you want the most well tested setup.
 
 [Psychtoolbox also works with GNU Octave on the RaspberryPi 2B and later at
 least with the Debian flavor Raspbian.][Raspbian]
@@ -144,8 +144,14 @@ Psychtoolbox should "work" in principle on
    or MacPorts, as standalone binary installers are not available yet.
 
 Limited testing currently only happens on the latest version of OS X 10.13.6
-“macOS High Sierra” with 64-Bit Octave 5.1.0, and with 64-bit Matlab R2019a. This
-is the only somewhat supported version of OS X at this point in time. _macOS is
+“macOS High Sierra” with 64-Bit Octave 5.1.0, and with 64-bit Matlab R2019a, and
+on OS X 10.14.6 "macOS Mojave". These are the only somewhat supported versions of
+OS X at this point in time. Do not use macOS Catalina 10.15 if you don't absolutely
+have to. Psychtoolbox is compatible with Catalina in principle, but Catalina has
+fantastic new bugs and flaws, e.g., a slow-down of keyboard input by a factor of 5x,
+and various trouble wrt. keyboard input, sound input, video capture thanks to Catalina's
+awful new security design -- Prepare for lots of hassle if you choose Catalina, you
+have been warned! _macOS is
 the most buggy and hazardous operating system you could use for visual stimulation,
 or DAQ digital/analog i/o, so running real data collection using macOS will likely
 bring you a world of pain (and possibly irreproducible research)_.
