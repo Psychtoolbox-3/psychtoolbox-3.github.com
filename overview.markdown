@@ -60,7 +60,7 @@ which we can't count.
 The Psychtoolbox [forum][forum] has over 2800 members and about 4 messages a day.
 Principal investigators and their collaborators have identified at least 127
 [#grant-supported projects](../grants) that use it. According to Google scholar,
-over 24097 articles [cite](../citations) it.
+over 25635 articles [cite](../citations) it.
 
 The following link is a PDF file with the slides of a presentation held at ECVP
 2013 in Bremen by Mario Kleiner. These slides will give you a quick overview
