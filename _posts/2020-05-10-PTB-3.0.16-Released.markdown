@@ -1,0 +1,67 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.16 Beta update "Crowning achievement" was released at 10th May 2020.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2020-05-10_V3.0.16”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2020-05-10_V3.0.16>
+
+If you choose to use Psychtoolbox with Matlab then the most well tested Matlab versions on Linux are now R2014b and R2019a. The most well tested Matlab version on MS-Windows and macOS is now R2019a. For best results and support, use R2019a. R2019b and R2020a are expected to work as well, but not extensively tested yet.
+
+The most noteworthy thing about "Crowning achievement" is that it contains the highest number of 3rd party contributions (7 if i counted right) ever! Various people contributed new functions and improvements to existing functions. This would be a good trend if it continues. Thanks!
+
+## New features and improvements:
+
+### All operating systems:
+
+- Add disclaimer to "help PsychContributed" that all code in there is not considered up to the regular quality standards, often only supported by the 3rd party contributors not by us, subject to removal or backwards incompatible changes or breakage for any reason. If you use it, you are mostly on your own!
+
+- Improve some help texts, e.g.,
+  - Screen Rect? Screen GlobalRect? : Mention it also works on textures.
+  - Help section on display mirroring in PsychImaging() improved to match what works/doesn't on modern operating systems.
+
+- sca(): No longer recenter the mouse cursor at the display center at invocation of sca(). This is a measure that was needed on old Linux distributions with some desktop environments, but not needed on modern Linux, Windows or macOS. It can trigger some weird crash bugs on some exotic Windows-10 multi-display setups. Problem reported by Diederick.
+
+- Screen: Always print error messages wrt. sync test failure at OpenWindow time, even if level of verbosity is set to zero, to aid debugging the most common reason for OpenWindow failure on Apples trainwrecks and other low-quality systems.
+
+- Add underlining support to Screen('DrawText') (ie. honor the Screen('TextStyle') setting flag 4 = underline) when using the modern standard drawtext plugin. So far underlining was only supported with some of the legacy OS specific text renderers. Now it works in the typical use case. Code for drawtext plugin contributed by Diederick (@dcnieho).
+
+- MinExpEntStair(): Make it compatible with modern Octave versions 4.4 and later, contributed by Diederick.
+
+- Fix ClockRandSeed() for compatibility with recent Matlab versions. Problem reported and solution suggested by Xiangrui Li (@xiangruili)
+
+- MeasureDpi(): Now optionally allows DPI measurement using standard credit cards, as very common calibration objects of well defined size. Measuring with other objects is still possible, by specifying their size, as in the past. Some other minor improvements. Contributed by Miguel García García (@mikelgg93).
+
+- New function HoritaTitler() to control the Horita SCT-50 video titler and compatible devices via serial port (https://horita.com). Contributed by Natasa Ganea from the Goldsmiths Infantlab, University of London.
+
+- New procedural texture shader for sine-wave and square-wave gratings which don't change brightness, but color between a neutral background color and two different colors at the peaks and valleys of the grating, e.g., red-green or blue-yellow gratings for research wrt. color opponent perception. Also with adjustable smoothness of the transition between the two colors for square-wave gratings, and with a radial aperture of controllable radius. CreateProceduralColorGrating() to create them, ProceduralColorGratingDemo.m to show how it is used. Contributed by Ian Andolina (@iandol).
+
+### Linux:
+
+- Add support for Octave 4.4+ 64-Bit, to support the new 64-Bit Octave 5.2 in Ubuntu 20.04-LTS. Mostly by adding an Eyelink mex file built against Octave 5.2 and checking that our set of mex files built against Octave 4.4 for Ubuntu 19.10 still works with Octave 5.2 on Ubuntu 20.04-LTS.
+
+- Improvements to XOrgConfCreator() for Ubuntu 20.04 LTS and modern AMD gpu's:
+  - Fix ddx video driver detection on recent AMD gpu's with DCN display engine (Ryzen integrated graphics, AMD Navi gpu family of discrete gpu's).
+   - Allow to opt-out of use of modesetting-ddx, instead of only opt-in: The defaults have changed on Ubuntu 20.04 LTS. Modesetting is used by default on Intel and NVidia nouveau, instead of being an optional alternative compared to vendor specific intel-ddx and nouveau-ddx drivers.
+    - Make it robust against use under 30 bit color depth for the X-Screen if something is botched in the color depth 30 bit setup. XOrgConfCreator() is part of the troubleshooting procedure, so there shouldn't be a need to troubleshoot itself first in case of trouble.
+
+- Reduce verbosity of gpu detection and low-level access setup machinery at default verbosity level.
+
+### Windows:
+
+- ShowCursor(): Add support for more cursor shapes that are available on Windows by default. Contributed by Diederick.
+
+- "help DrawTextPlugin": Mention alternate locations for the fontconfig cache, and how to solve trouble there. Problem and solution reported by @sr-brian.
+
+- PsychOculusVR1 driver: Allow printing of debug messages from secondary threads (VR runtime threads) again when running under Octave. As printing of debug messages from secondary threads crashes Matlab since around R2018, this was unconditionally disabled. Now we allow it again when running on Octave, so users could get more help in debugging mysterious problems iff they use Octave for debugging these problems.
+
+### macOS:
+
+- Add MacDisplaySettings(), contributed by Denis Pelli (@denispelli) . This is a replacement for AutoBrightness(), which is now a wrapper around MacDisplaySettings() for backwards compatibility. MacDisplaySettings() provides more control over more display settings which get in the way of properly calibrated monitors, e.g., automatic backlight brightness, nightshift, etc. It is also supposed to be more robust and faster than the old code. NOTE: This function is part of the PsychContributed category of functions. As such it is unsupported and not tested at all (not even for security issues or unintended side effects) by the official maintainer. It could fail or break or be changed in a backwards incompatible way in the future for any reason. All support requests will have to go directly to Denis Pelli.
+
+Enjoy!
