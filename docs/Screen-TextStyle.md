@@ -8,7 +8,8 @@ style follow; they may be OR'd. On different operating systems and text
 renderers only a subset of these flags is honored. All settings are accepted on  
 all systems, but some of them are silently ignored on some systems.  
 0=normal,1=bold,2=italic,4=underline,8=outline,32=condense,64=extend.  
-Normal, bold, and italic styles are supported on all systems and renderers.  
+All styles are supported with the default plugin text renderer on all systems.  
+Normal, bold, and italic styles are supported on all system specific renderers.  
 Underline is supported on OSX and Windows. Outline is supported on Linux.  
 Condense and Extend are supported on Linux and OSX.  
 You can assign a default font style for new windows via a call to  

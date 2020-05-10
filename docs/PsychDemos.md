@@ -83,6 +83,7 @@ Psychtoolbox:[PsychDemos](PsychDemos)
    [OldNewRecogExp](OldNewRecogExp)          - A full old-new recognition experiment.  
    [OpenGL4MatlabDemos](OpenGL4MatlabDemos)      - Subfolder: Demos on how to use MOGL [OpenGL](OpenGL) functions.  
    [PanelFitterDemo](PanelFitterDemo)         - Demonstrate use of the builtin panel fitter.  
+   [ProceduralColorGratingDemo](ProceduralColorGratingDemo) - Demo for fast drawing of color gratings.  
    [ProceduralGaborDemo](ProceduralGaborDemo)     - Demo for fast drawing of Gabors via procedural textures.  
    [ProceduralGarboriumDemo](ProceduralGarboriumDemo) - Same as [GarboriumDemo](GarboriumDemo), just with procedural gabor drawing.  
    [ProceduralNoiseDemo](ProceduralNoiseDemo)     - Demo for fast drawing of noise patches via procedural texturing.  

@@ -27,7 +27,7 @@ OSX, WINDOWS, LINUX: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\
 Apart from that names, you can pass integral numbers for type to select  
 further shapes. The mapping of numbers to shapes is operating system  
 dependent, therefore not portable across different platforms. On  
-MS-Windows, you can select between number 0 to 8. On Linux/X11 you can  
+MS-Windows, you can select between number 0 to 13. On Linux/X11 you can  
 select from a wide range of numbers from 0 up to (at least) 152, maybe  
 more, depending on your setup. See the C header file "X11/cursorfont.h"  
 for a mapping of numbers to shapes. Passing invalid numbers can create  
@@ -47,6 +47,24 @@ If provided, the optional "type" argument changes the cursor shape to:
   4: I Beam  
   5: Cross  
  10: Hand  
+  
+Windows: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+  
+If provided, the optional "type" argument changes the cursor shape to:  
+  0: Arrow (IDC\_ARROW)  
+  1: Crosshair (IDC\_CROSS)  
+  2: Hand (IDC\_HAND)  
+  3: Four-pointed arrow pointing north, south, east, and west (IDC\_SIZEALL)  
+  4: Double-pointed arrow pointing north and south (IDC\_SIZENS)  
+  5: Double-pointed arrow pointing west and east (IDC\_SIZEWE)  
+  6: Hourglass (IDC\_WAIT)  
+  7: Slashed circle (IDC\_NO)  
+  8: I-beam (IDC\_IBEAM)  
+  9: Double-pointed arrow pointing northeast and southwest (IDC\_SIZENESW)  
+ 10: Double-pointed arrow pointing northwest and southeast (IDC\_SIZENWSE)  
+ 11: Standard arrow and small hourglass (IDC\_APPSTARTING)  
+ 12: Arrow and question mark (IDC\_HELP)  
+ 13: Vertical arrow (IDC\_UPARROW)  
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
 
 

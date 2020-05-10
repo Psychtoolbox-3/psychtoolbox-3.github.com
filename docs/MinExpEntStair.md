@@ -3,8 +3,6 @@
 
 Minimum Expected Entropy Staircase  
   
-Caution: Currently only works with Matlab, not with GNU/Octave!  
-  
 The staircase gives suggestions for which probe value to test next,  
 choosing the probe that will provide the most information (based on the  
 principle of minimum entropy = maximally unambiguous probability  
@@ -12,6 +10,9 @@ distribution). Probes are chosen from a set of possible probe values
 provided at staircase init, and their use is evaluated based on the  
 expected amount of information gain given a space of PSE and slope values  
 to test over.  
+  
+See [MinExpEntStairDemo](MinExpEntStairDemo) for an example and the comments in the method  
+functions below for use of the different staircase methods.  
   
 By default, a psychometric function ranging from 0% to 100% is used, as  
 is suitable for discrimination experiments with a standard in the middle  
@@ -25,9 +26,9 @@ the default psychometric function with the full range, but all points are
 equally valid for a scaled psychometric function.  
   
 It is recommended to have the staircase determine the optimal next probe  
-based on only a random subset of the response history (see options  
-'toggle\_use\_resp\_subset' and 'toggle\_use\_resp\_subset\_prop'). This makes  
-its operation more robust for response errors and also avoids probe  
+based on only a random subset of the response history (see the  
+'toggle\_use\_resp\_subset' and 'toggle\_use\_resp\_subset\_prop' methods). This  
+makes its operation more robust for response errors and also avoids probe  
 oscillations when the fit estimate is converging.  
 When we are close to convergence, probes will tend to be near the 25% and  
 75% points. If a probe is 25% and you answer '1' (pedestal faster, which  
@@ -48,11 +49,11 @@ computation yields robustness without much cost.
   
 Another option would be to load a non-uniform prior on the space of  
 possible location/mean/PSE and dispersion/slope parameters (known as mu  
-and sigma respectively for a cumulative Gaussian - see option  
-'loadprior'). Probe sampling will then stay reasonable in early trials  
-even if there were a couple bad responses. But this strategy is not as  
-robust as using a random subset -- bad trials will continue to have an  
-effect throughout.  
+and sigma respectively for a cumulative Gaussian - see the loadprior  
+method). Probe sampling will then stay reasonable in early trials even if  
+there were a couple bad responses. But this strategy is not as robust as  
+using a random subset -- bad trials will continue to have an effect  
+throughout.  
   
 In absence of anything to base the optimal probe value on, the first  
 probe is chosen randomly from the set of possible probes. When a prior  
@@ -60,10 +61,11 @@ was loaded, a likelihood distribution is available based on which the
 optional probe value can be computed. If for any other reason choosing  
 the next probe based on the measure of minimum expected entropy fails,  
 the staircase will fall back on the same random probe sampling strategy.  
-There is an option to set the first probe value to be tested, which, for  
-the first trial only, will overrule both of the above probe choice  
-strategies. This can be useful if you want to be sure that the first  
-trial is an easy one so the participant knows what to expect.  
+There is an option to set the first probe value to be tested (see the  
+set\_first\_value method), which, for the first trial only, will overrule  
+both of the above probe choice strategies. This can be useful if you want  
+to be sure that the first trial is an easy one so the participant knows  
+what to expect.  
   
 Another measure for robustness is to choose a small lapse rate. If lapse  
 would be zero and a response error is made by the observer, immediately a  
@@ -82,7 +84,7 @@ psychometric function will range from 0.05 to 0.95.
 Note that the staircase does not support a 0 lapse rate in the first  
 place as it works with log-probability and we get in trouble if we would  
 take the log of a 0 probability. Any lapse rate lower than 1e-10 will be  
-adjusted to 1e-10 upon calling the 'init' function.  
+adjusted to 1e-10 upon calling the init method.  
   
 If the staircase gets stuck at one of the bounds of the probe set, check  
 that the sign of the slope space matches the expected sign of the  
@@ -101,26 +103,26 @@ associated with the response 1 and the higher end with the response
 function.  
   
 The staircase currently only supports logistic and cumulative Gaussian  
-(default) psychometric functions (see 'set\_psychometric\_func'), but  
-others could easily be implemented. Changes should be needed only to the  
-function "fit\_a\_point" at the bottom of this mfile, providing that the  
-function is characterized by two parameters (which do not necessarily  
-have to be PSE and slope, though that is the terminology here.  
-Should you implement such a function, please do send me your code at  
+(default) psychometric functions (see the set\_psychometric\_func method),  
+but others could easily be implemented. Changes should be needed only to  
+the private fit\_a\_point method near the bottom of this mfile, providing  
+that the function is characterized by two parameters (which do not  
+necessarily have to be PSE and slope, though that is the terminology  
+here.  
+Should you implement such a function, please do send me your code to  
 dcnieho @at@ gmail.com.  
   
-The above discussion assumes that response inputs to 'process\_resp' are  
-either 0 or 1 (see note above about their meaning) though in practice  
-anything larger than 0 is treated as 1 and anything lower than 0,  
-including 0, is treated as 0. the staircase can thus easily be integrated  
-with programs that use a 1, -1 response scheme.  
+The above discussion assumes that response inputs to the process\_resp  
+method are either 0 or 1 (see note above about their meaning) though in  
+practice anything larger than 0 is treated as 1 and anything lower than  
+0, including 0, is treated as 0. the staircase can thus easily be  
+integrated with programs that use a 1, -1 response scheme.  
   
 For actual offline fitting of your data, you would probably want to use a  
 dedicated toolbox such as Prins, N & Kingdom, F. A. A. (2009) Palamedes:  
 Matlab routines for analyzing psychophysical data.  
 http://www.palamedestoolbox.org. instead of using the function parameters  
-or PSE and DL returned from staircase functions 'get\_fit' and  
-'get\_PSE\_DL'.  
+or PSE and DL returned from staircase methods get\_fit and get\_PSE\_DL.  
 Also note that while the staircase runs far more robust when a small  
 lapse rate is assumed, it is common to either fit the psychometric  
 function without a lapse rate, or otherwise with the lapse rate as a free  
@@ -139,21 +141,6 @@ References:
  Lesmes LA, Lu ZL, Baek J & Albright TD (2010). Bayesian adaptive  
    estimation of the contrast sensitivity function: The quick CSF method.  
    Journal of Vision 10(3), article 17  
-  
-  
-### USE:  
-Calling this function creates a staircase instance. The interface of the  
-staircase is accessed through the returned function handle. You can  
-create as many instances as you like by calling this function, each  
-instance has its own internal memory/history. In that sense this is  
-really OO (I'm not happy with MATLAB's OO features and also want to be  
-compatible with old versions, hence the below paradigm).  
-When interacting with the staircase through the function handle, the  
-first argument is a string that identifies the action you want to perform  
-(you can think of this as the string containing the name of the member  
-function to be called) and optionally any other arguments that are needed  
-for the call. See [MESDemo](MESDemo) for an example and the comments below for use  
-of the different staircase functions.  
 
 
 

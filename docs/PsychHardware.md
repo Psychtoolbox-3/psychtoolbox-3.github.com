@@ -18,6 +18,7 @@ web http://psychtoolbox.org/usb.html -browser;
                            [ViewPixx](ViewPixx), etc.)  
 [FindSerialPort](FindSerialPort)      - All: Find port number associated with a particular input string.  
 FORP                - All: Obsolete support for the [FiberOpticResponsePad](FiberOpticResponsePad).  
+[HoritaTitler](HoritaTitler)        - All: Control the Horita SCT-50 video titler and compatible devices.  
 [MeasSpd](MeasSpd)             - All: Use color meter to measure a spectral power   
                            distribution.  
 [MeasXYZ](MeasXYZ)             - All: Use color meter to measure XYZ coordinates.  
