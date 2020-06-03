@@ -38,7 +38,7 @@ single-byte encoding scheme, multibyte encoding scheme or unicode
 characters that are not encoded as doubles but as a sequence of UTF-8  
 encoded bytes. To do so, first you have to tell [Screen](Screen)() the encoding  
 scheme of the character string by a call to  
-[Screen](Screen)('[Preference](Preference)','TextEncodingLoale', newloc); newloc is the name of  
+[Screen](Screen)('[Preference](Preference)','TextEncodingLocale', newloc); newloc is the name of  
 the text encoding scheme to use. Example names for valid locales could be  
 'en\_US.ISO8859-1' for single-byte ISO8859-1 "Latin-1" encoding, or  
 'UTF-8' for UTF-8 encoded unicode text, or 'C' for default C language  
