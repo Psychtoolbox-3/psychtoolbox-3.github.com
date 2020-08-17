@@ -4,6 +4,10 @@ title: Download, Installation, and Update
 categories: getting-started
 ---
 
+Make sure to familiarize yourself with the [System requirements][requirements],
+so your system is set up with suitable hardware and additional required
+software before installing Psychtoolbox itself.
+
 In order to install and use the Psychtoolbox, *you must already have
 Matlab or Octave installed on your computer*, unless you install for
 Octave on Linux via the NeuroDebian repositories. If you already have
