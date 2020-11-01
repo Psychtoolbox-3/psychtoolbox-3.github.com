@@ -87,6 +87,10 @@ varargout - Value(s) returned for a subset of the [ColorCal2](ColorCal2) command
      dark.  Returns 1 if the command succeeds, 0 if it fails.  This  
      command must be run after every power cycle of the device.  
   
+'NeedZeroCalibration' - Returns true if a zero calibration is needed, false  
+     otherwise. Devices with firmware build 877 or later do not need this, as  
+     they are factory calibrated.  
+  
 '[Close](Close)' - [Close](Close) connection to device. A 'clear all' or 'clear ColorCal2' or  
      quitting Octave or Matlab will also close the connection, so this is  
      not strictly needed.  

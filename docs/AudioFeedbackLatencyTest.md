@@ -1,7 +1,7 @@
 # [AudioFeedbackLatencyTest](AudioFeedbackLatencyTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)
 
-[AudioFeedbackLatencyTest](AudioFeedbackLatencyTest)([trigger=0.1] [, nrtrials=10] [, freq=44100][, freqout=44100][, runmode=1])  
+[AudioFeedbackLatencyTest](AudioFeedbackLatencyTest)([roundtrip=0][, trigger=0.1] [, nrtrials=10] [, freq=44100][, freqout=44100][, fullduplex=0][, runmode=1])  
   
 Tries to test sound onset accuracy of [PsychPortAudio](PsychPortAudio) without need for  
 external measurement equipment: Sound signals are played back via  
@@ -16,9 +16,22 @@ Results on [MacbookPro](MacbookPro) suggest that the method works, but with a no
 accuracy, so its still better to use external measurement equipment to  
 test!!!  
   
-EARLY BETA CODE: DON'T USE OR USE WITH GREAT CAUTION!  
+### EARLY BETA CODE: USE ONLY WITH GREAT CAUTION AND SUSPICION!  
   
-Optional parameters:  
+### Optional parameters:  
+  
+'roundtrip' If set to 0 then this measures scheduling accuracy of sound  
+onset, as measured by sound capture -- should be no worse than ~ 1 msec  
+on a well working system, and input detection latency, ie., how long does  
+it take from physical sound onset to detection of sound onset by the  
+script. This would be a useful measure of how fast a "Voicekey" could  
+respond to voice onset in a best case scenario.  
+  
+If set to 1 then this measures time from issuing the [PsychPortAudio](PsychPortAudio)('Start')  
+command to start playback until actual start of playback (by driver self-  
+assessment, and by measuring via audio capture), and also as "Roundtrip"  
+how long it would take to detect the onset by the script.  
+  
 'trigger' = Trigger level for detection of sound onset in captured sound.  
   
 'ntrials' = Number of measurement trials to perform.  
@@ -26,6 +39,10 @@ Optional parameters:
 'freq' = Samplerate of capture device.  
   
 'freqout' = Samplerate of playback device.  
+  
+'fullduplex' = Use soundcard in full-duplex mode.  
+  
+'runmode' = Runmode for [PsychPortAudio](PsychPortAudio) to choose.  
   
 Obviously this test function can only be used in a very silent room!  
   

@@ -1,7 +1,7 @@
 # [FlipTimingWithRTBoxPhotoDiodeTest](FlipTimingWithRTBoxPhotoDiodeTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)
 
-[FlipTimingWithRTBoxPhotoDiodeTest](FlipTimingWithRTBoxPhotoDiodeTest)([configFile][, targetFolder])  
+[FlipTimingWithRTBoxPhotoDiodeTest](FlipTimingWithRTBoxPhotoDiodeTest)([configFile][, targetFolder][, usevulkan=0][, bpc=8])  
   
 Test visual stimulus onset timing accuracy and visual stimulus onset  
 timestamping precision and robustness under varying loads, conditions and  
@@ -23,6 +23,15 @@ location is selected if that location exists and is writable, if that does not w
 a fallback location is selected, if that does not work, the users home directory is  
 selected. If a folder is specified, that folder is used if it is writable, otherwise  
 the users home directory is tried as target.  
+  
+'usevulkan' If 1, try to use a Vulkan display backend instead of the  
+[OpenGL](OpenGL) display backend. See 'help PsychVulkan'.  
+  
+'bpc' Request a specific output framebuffer color precision. Currently  
+supported are 8 for standard 8 bpc RGBA8 framebuffer, 10 bpc for RGB10A2,  
+and 16 bpc for a RGBA16F floating point framebuffer. Defaults to 8 bpc,  
+which is the only precision that is guaranteed to be supported on all  
+operating systems, graphics cards and displays.  
   
 # Mandatory variables in the config file, part of the struct variable 'conf'  
   

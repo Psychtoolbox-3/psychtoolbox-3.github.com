@@ -153,7 +153,7 @@ ie., the effective number of samples per pixel for a backing texture. This
 limitation may get relaxed in future versions of the software if possible and  
 sensible.  
 Parameters and their meaning:  
-'hookName' Currently ignored, placeholder for future extensions.  
+'hookname' Currently ignored, placeholder for future extensions.  
 'leftglHandle' [OpenGL](OpenGL) texture object handle of the left-eye texture in  
 stereoMode 12, or of the mono-texture in mono mode.  
 'rightglHandle' [OpenGL](OpenGL) texture object handle of the right-eye texture in  
@@ -183,22 +183,60 @@ sampling/reading from them is appropriate, modifying them in any way is
 forbidden.  
   
   
+[Screen](Screen)('HookFunction', windowPtr, 'ImportDisplayBufferInteropMemory' [,  
+hookname][, viewId=0][, interopMemObjectHandle][, allocationSize][,  
+formatSpec][, tilingMode][, memoryOffset][, width][, height][,  
+interopSemaphoreHandle]);  
+CAUTION: EXPERIMENTAL, UNSTABLE API - Subject to backwards incompatible breaking  
+changes without notice!  
+[Replace](Replace) the current image backing memory for the final output color buffers of  
+the imaging pipeline by externally imported memory.  
+This only works if imagingMode flag kPsychNeedFinalizedFBOSinks is set or  
+stereoMode 12 is active, which implicitely sets that flag.  
+This uses the external memory objects [OpenGL](OpenGL) extension to import external  
+backing memory, e.g., from a Vulkan gpu + driver, and assign it as new backing  
+memory oject to the textures which are used to implement the final output color  
+buffers of the pipeline. Iow. it allows to render into image buffers of an  
+external agent, e.g., a Vulkan device instance.  
+Parameters and their meaning:  
+'hookname' Currently ignored, placeholder for future extensions.  
+'viewId' Selects the left-eye/mono framebuffer if 0, and the right-eye  
+framebuffer if 1 in a stereoMode 12 configuration.  
+'interopMemObjectHandle' Operating system specific handle to the interop image  
+backing memory.  
+'allocationSize' Number of bytes of backing memory for the  
+'interopMemObjectHandle' to import.  
+'formatSpec' Type of texture to create: 0 = GL\_RGBA8, 1 = GL\_RGB10A2, 2 =  
+GL\_RGBA16F, 3 = GL\_RGBA16.  
+'tilingMode' Type of tiling to use/assume for rendering: 0 = Linear (non-tiled),  
+1 = Tiled.  
+'memoryOffset' Memory offset in bytes into the imported memory object to use.  
+'width' Width of texture in pixels.  
+'height' Height of texture in pixels.  
+'interopSemaphoreHandle' Operating system specific handle to an external  
+interop-image-rendering-complete semaphore. If this handle is provided, then  
+[Screen](Screen)() will signal the associated [OpenGL](OpenGL) semaphore each time [OpenGL](OpenGL) rendering  
+into the imported interop image is finished.  
+  
+  
 [Screen](Screen)('HookFunction', windowPtr, 'SetOneshotFlipFlags' [, hookname],  
 flipFlags);  
 Assign special flags to be applied one-time during the next execution of  
 [Screen](Screen)('[Flip](Flip)') or [Screen](Screen)('AsyncFlipBegin').  
 'hookname' is accepted, but currently ignored. Pass '' or [] for now.  
 These 'flipFlags' will be applied during the next window flip operation, and  
-each applied flag will then auto-reset after application. This is mostly meant  
-to be called from within imaging pipeline processing chains during preflip  
-operations or the active presentation sequence to modify behaviour of that  
-sequence. The following 'flipFlags' are currently implemented:  
+each applied flag will then auto-reset after application, unless you also pass  
+in the kPsychDontAutoResetOneshotFlags to prevent "[OneShot](OneShot)" auto-reset.  
+This is mostly meant to be called from within imaging pipeline processing chains  
+during preflip operations or the active presentation sequence to modify  
+behaviour of that sequence. The following 'flipFlags' are currently implemented:  
 kPsychSkipVsyncForFlipOnce, kPsychSkipTimestampingForFlipOnce,  
-kPsychSkipSwapForFlipOnce, kPsychSkipWaitForFlipOnce.  
+kPsychSkipSwapForFlipOnce, kPsychSkipWaitForFlipOnce,  
+kPsychDontAutoResetOneshotFlags.  
   
   
 [Screen](Screen)('HookFunction', windowPtr, 'SetOneshotFlipResults' [, hookname],  
-[VBLTimestamp](VBLTimestamp) [, [StimulusOnsetTime](StimulusOnsetTime)=[VBLTimestamp](VBLTimestamp)][, Missed=0]);  
+[VBLTimestamp](VBLTimestamp) [, [StimulusOnsetTime](StimulusOnsetTime)=[VBLTimestamp](VBLTimestamp)][, Missed=0][, Beampos=-1]);  
 Assign override timestamp values to return from [Screen](Screen)('[Flip](Flip)') or  
 [Screen](Screen)('AsyncFlipBegin').  
 'hookname' is accepted, but currently ignored. Pass '' or [] for now.  
@@ -216,6 +254,8 @@ equivalent, useful for [Flip](Flip) scheduling.
 [VBLTimestamp](VBLTimestamp) if omitted. Must be [StimulusOnsetTime](StimulusOnsetTime) \>= [VBLTimestamp](VBLTimestamp).  
 'Missed' The presentation deadline miss estimate aka 'Missed' flag of  
 [Screen](Screen)('[Flip](Flip)'). Defaults to 0 if omitted.  
+'Beampos' The beamposition at flip completion, as returned in the 'Beampos'  
+return argument of [Flip](Flip). Defaults to -1 if omitted.  
   
   
 [Screen](Screen)('HookFunction', windowPtr, 'SetWindowBackendOverrides' [, hookname][,  
@@ -233,6 +273,60 @@ the display backend, and after proper translation returned by
 change, proj = 1 == Disable overrides, proj = 4x4 matrix for mono-mode drawing,  
 proj = 4x4x2 matrices for separate matrices in stereo modes (:,:,1) left eye,  
 (:,:,2) right eye.  
+  
+  
+[maxSDRToHDRScaleFactor, normalizedToHDRScaleFactor] = [Screen](Screen)('HookFunction',  
+windowPtr, 'SetHDRScalingFactors' [, hookname][, maxSDRToHDRScaleFactor][,  
+normalizedToHDRScaleFactor]);  
+Get or assign scaling factors to map SDR color values or HDR color values into  
+the linear HDR color range and units of the window.  
+'maxSDRToHDRScaleFactor' defines to which color value the maximum input color  
+value of SDR content is mapped. This is used by [Screen](Screen)('MakeTexture') for  
+converting the color/luminance channels of SDR uint8 image matrices into the  
+value range needed for making the texture compatible with the HDR framebuffer.  
+It is also used for mapping SDR movie video content to HDR framebuffer. Example:  
+A factor of 80 would mean to map the maximum uint8 texture value 255 in  
+[MakeTexture](MakeTexture), or the maximum possible component value of the video frame from a  
+SDR movie to an output value of 80 units - Typical if the framebuffer operates  
+in units of Nits, so maximum SDR content intensity would map to 80 Nits,  
+standardized as typical maximum of SDR content.  
+'normalizedToHDRScaleFactor' defines to which color value the maximum possible  
+input color value of HDR content is mapped. This is used by movie playback to  
+map the normalized linear 0.0 - 1.0 intensity range of HDR movies to the linear  
+range 0.0 - maximum HDR intensity. A typical value would be 10000 to map the 1.0  
+normalized maximum to the maximum intensity of 10000 nits of the current HDR  
+display standards HDR10, HDR10+, [DolbyVision](DolbyVision) etc., if the framebuffer uses units  
+of Nits. A factor of 125 would be typical if the framebuffer is set up to  
+operate in units of multiples of 80 Nits, another common standard, where a value  
+of 125 corresponds to 10000 Nits. This scaling factor is also used for  
+displaying HDR movie frames into a SDR window, in this scale to upscale some  
+fraction of the lower range of HDR values to the 0.0 - 1.0 intensity range of a  
+SDR window, as a dumb people's tone-mapping operator. E.g., the startup default  
+is to map 0 - 500 nits input to the 0 - 1 range, to get something reasonable  
+displayed even without application of some proper tone-mapping operator.  
+  
+colorGamut = [Screen](Screen)('HookFunction', windowPtr, 'WindowColorGamut' [, hookname][,  
+colorGamut]);  
+Return the current color gamut settings for the onscreen window 'windowPtr'.  
+Optionally assign new settings.  
+'hookname' is accepted, but currently ignored. Pass '' or [] for now.  
+'colorGamut' as return argument is a 2x4 matrix specifying the currently  
+assigned color gamut for the window. You can specify an optional 'colorGamut'  
+matrix parameter to set a new color gamut.  
+By default, 'colorGamut' is an all-zeros matrix, which means that no color gamut  
+is assigned, and [Screen](Screen)() should use reasonable defaults (which may be context  
+dependent) if it does some gamut dependent processing. If you do set a matrix,  
+then it must be a 2-by-4 matrix, encoding the CIE-1931 2D chromaticity  
+coordinates of the red, green, and blue color primaries in columns 1, 2, and 3,  
+and the location of the white-point in column 4. This defines the color space  
+and gamut in which the visual content of the onscreen window is supposed to  
+live. Currently, this color gamut is only used for movie playback with  
+pixelFormat 11, e.g., HDR playback. When decoding and returning video frames  
+from a movie, [Screen](Screen)() will perform a color space transformation to remap the  
+image pixels from the source color gamut of the movie to the color gamut  
+specified for the window. If no 'WindowColorGamut' call was made prior to start  
+of movie playback, then color gamut will be selected as BT-2020 for HDR windows,  
+and BT-709 for standard dynamic range windows.  
   
   
 ### General notes:  

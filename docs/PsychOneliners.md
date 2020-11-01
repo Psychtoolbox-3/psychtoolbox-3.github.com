@@ -19,6 +19,7 @@ Psychtoolbox:[PsychOneliners](PsychOneliners).
   [CenterMatOnPoint](CenterMatOnPoint)        - Returns indices to center a matrix on a point.  
   [Circle](Circle)                  - Returns a boolean mask in the shape of a [Circle](Circle).  
   [CleanStruct](CleanStruct)             - Deletes all empty structs and fields from a struct array, optionally recursively.  
+  [ComputeHDRStaticMetadataType1ContentLightLevels](ComputeHDRStaticMetadataType1ContentLightLevels) - Compute CTA-861-G static content light levels for an image or a cell array of images.  
   [CreateUniformDotsIn3DFrustum](CreateUniformDotsIn3DFrustum) - [Sample](Sample) dots in 3D frustum uniformly.  
   [CropBlackEdges](CropBlackEdges)          - Detects if there are any black edges around an image and returns indices that can be used to cut away these edges.  
   [DeEmptify](DeEmptify)               - Deletes empty cells or rows from cellarray.  

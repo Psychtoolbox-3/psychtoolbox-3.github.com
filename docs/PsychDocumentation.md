@@ -6,6 +6,15 @@
 This folder contains help files and info on different topics  
 related to [PTBs](PTBs) use, technical implementation and troubleshooting.  
   
+Note that you can now financially contribute to Psychtoolbox sustainability,  
+upkeep and continued improvement by buying a community membership, which  
+also includes some priority support for questions regarding its use, or  
+issues you may have with it. We also offer paid feature development and  
+other useful commercial services.  
+  
+Please type 'PsychPaidSupportAndServices' to learn more.  
+  
+  
 [ConserveVRAMSettings](ConserveVRAMSettings)   - Explanation of some flags that you can use to  
                          enable special workarounds in [Screen](Screen)() for  
                          broken graphics drivers or hardware.  
@@ -35,6 +44,8 @@ Oculus\_Health\_and\_Safety\_Warnings.pdf - Info about how to use the Oculus
 [UseTheSource](UseTheSource)           - How to get access to the Psychtoolbox source code.  
   
 [ProgrammingTips](ProgrammingTips).html   - A very incomplete programming manual.  
+  
+[PsychPaidSupportAndServices](PsychPaidSupportAndServices) - Our commercial support and service offerings.  
   
 [SyncTrouble](SyncTrouble)            - Problem with synchronization to the vertical  
                          retrace or display timing, and how to resolve  

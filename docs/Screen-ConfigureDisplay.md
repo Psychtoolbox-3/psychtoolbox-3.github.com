@@ -76,6 +76,8 @@ Readonly properties:
 \* Display size "displayWidthMM" x "displayHeightMM" in millimeters, as reported  
 by attached display.  
 \* Video output name "name".  
+\* Video output handle "outputHandle". On Linux/X11 this is the numeric XID of  
+the associated [RandR](RandR) video output.  
   
 Providing invalid or incompatible settings will raise an error.  
   

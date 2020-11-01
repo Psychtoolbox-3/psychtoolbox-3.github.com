@@ -1,7 +1,7 @@
 # [DatapixxGPUDitherpatternTest](DatapixxGPUDitherpatternTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)
 
-[DatapixxGPUDitherpatternTest](DatapixxGPUDitherpatternTest)([fullscreen=1])  
+[DatapixxGPUDitherpatternTest](DatapixxGPUDitherpatternTest)([fullscreen=1][, useVulkan=0])  
   
 Low level diagnostic for GPU dithering via a [VPixx](VPixx)  
 devices like Datapixx/[ViewPixx](ViewPixx)/Propixx, or a CRS  
@@ -21,6 +21,9 @@ and can't fix the problem automatically.
 0 = Use a windowed window at top of screen for  
 display to also diagnose possible compositor  
 interference.  
+  
+'useVulkan' Defaults to 0. If set to 1, use Vulkan display  
+backend, instead of standard [OpenGL](OpenGL) backend.  
   
 
 

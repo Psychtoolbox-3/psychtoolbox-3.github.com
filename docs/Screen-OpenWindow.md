@@ -71,7 +71,12 @@ the sum of certain flags is passed. A currently supported flag is the symbolic
 constant kPsychGUIWindow. It enables windows to behave more like regular GUI  
 windows on your system. See 'help kPsychGUIWindow' for more info. The flag  
 kPsychGUIWindowWMPositioned additionally leaves initial positioning of the GUI  
-window to the window manager.  
+window to the window manager. The flag kPsychExternalDisplayMethod marks this  
+onscreen window as not an actual visual stimulation surface, ie. actual visual  
+stimulation is provided by some other external display mechanism, e.g., Vulkan  
+or some VR compositor or such. This tells [Screen](Screen)() to suppress certain warnings  
+or checks which would be prudent if the window were the primary and critical  
+means of visual stimulation.  
   
 "clientRect" This optional parameter allows to define a size of the onscreen  
 windows drawing area that is different from the actual size of the windows  

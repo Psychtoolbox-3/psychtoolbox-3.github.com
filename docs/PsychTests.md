@@ -43,6 +43,7 @@ Psychtoolbox/[PsychTests](PsychTests)/Contents.m
   [GetSecsTest](GetSecsTest)                     - Timing test of clock used by Psychtoolbox, e.g., [GetSecs](GetSecs), [WaitSecs](WaitSecs), [Screen](Screen)...  
   [GraphicsDisplaySyncAcrossDualHeadsTest](GraphicsDisplaySyncAcrossDualHeadsTest) - Test synchronization of refresh cycles of different display heads.  
   [GraphicsDisplaySyncAcrossDualHeadsTestLinux](GraphicsDisplaySyncAcrossDualHeadsTestLinux) - Linux version of the test.  
+  [HDRTest](HDRTest)                         - Perform some basic correctness tests and evaluation for HDR display operation, using a Colorimeter.  
   [HIDIntervalTest](HIDIntervalTest)                 - [Sample](Sample) HID keyboard and mouse, plot distribution of detected event times.  
   [HighColorPrecisionDrawingTest](HighColorPrecisionDrawingTest)   - Test drawing precision of a variety of [Screen](Screen)() functions, esp. wrt. high precision framebuffers.  
   [HighPrecisionLuminanceOutputDriversImagingPipelineTest](HighPrecisionLuminanceOutputDriversImagingPipelineTest) - Test precision of a variety of high precision luminance device output drivers.  

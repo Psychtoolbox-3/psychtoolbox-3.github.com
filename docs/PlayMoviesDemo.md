@@ -1,7 +1,7 @@
 # [PlayMoviesDemo](PlayMoviesDemo)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)>[MovieDemos](MovieDemos)
 
-[PlayMoviesDemo](PlayMoviesDemo)(moviename [, backgroundMaskOut][, tolerance][, pixelFormat=4][, maxThreads=-1])  
+[PlayMoviesDemo](PlayMoviesDemo)(moviename [, hdr=0][, backgroundMaskOut][, tolerance][, pixelFormat=4][, maxThreads=-1])  
   
 This demo accepts a pattern for a valid moviename, e.g.,  
 moviename=`\*.mpg`, then it plays all movies in the current working  
@@ -16,9 +16,26 @@ videos may provide you with useful information for your daily work.
 This demo uses automatic asynchronous playback for synchronized playback  
 of video and sound. Each movie plays until end, then rewinds and plays  
 again from the start. Pressing the Cursor-Up/Down key pauses/unpauses the  
-movie and increases/decreases playback rate.  
+movie and increases/decreases playback rate. The 'c' key toggles a mouse  
+color picker that tells you the color values of the pixel roughly under  
+the mouse cursor position.  
+  
 The left- right arrow keys jump in 1 seconds steps. SPACE jumps to the  
 next movie in the list. ESC ends the demo.  
+  
+If the optional flag 'hdr' is specified as non-zero, then the demo  
+expects the onscreen window to display on a HDR-10 capable display device  
+and system, and tries to switch to HDR mode. If the operating system+gpu  
+driver+gpu+display combo does not support HDR, the demo will abort with  
+an error. Otherwise it will expect the movies to be HDR-10 encoded and  
+try to display them appropriately. A flag of 1 does just that. A flag of 2 will  
+manually force the assumed EOTF of movies to be of type PQ, iow. assume the movie  
+is a HDR-10 movie in typical Perceptual Quantizer encoding. This is useful if you  
+want to play back HDR content on a system with a [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) version older than  
+1.18.0 installed, where [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) is not fully HDR capable, but this hack may  
+get you limping along. Another restriction would be lack of returned HDR metadata,  
+so if your HDR display expects that, you will not get the best possible quality.  
+Upgrading to [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) 1.18 or later is advised for HDR playback.  
   
 If the optional RGB color vector backgroundMaskOut is provided, then  
 color pixels in the video which are equal or close to backgroundMaskOut will be  

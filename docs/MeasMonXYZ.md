@@ -1,37 +1,21 @@
 # [MeasMonXYZ](MeasMonXYZ)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychCal](PsychCal)
 
- XYZ = [MeasMonXYZ](MeasMonXYZ)(window,settings,[syncMode],[whichMeterType])  
+XYZ = [MeasMonXYZ](MeasMonXYZ)(window, settings [, whichMeterType=1])  
   
- Measure the XYZ of a series of monitor settings.  
+Measure the XYZ of a series of monitor settings.  
   
- This routine is specific to go with [CalibrateMon](CalibrateMon),  
- as it depends on the action of [SetMon](SetMon).   
+### Usage:  
   
- If whichMeterType is passed and set to 0, then the routine  
- returns random spectra.  This is useful for testing when  
- you don't have a meter.  
+'window' Onscreen window handle for window to present into.  
+'settings' a 3-rows by nMeas columns matrix with each column defining one  
+[r,g,b]' color value to measure.  
   
- Other valid types:  
-  1 - Use PR650 (default)  
+### 'whichMeterType' type of Colorimeter to use:  
   
- 10/26/93  dhb      Wrote it based on ccc code.  
- 11/12/93  dhb      Modified to use [SetColor](SetColor).  
-    6/23/94     ccc     Modified it from [MeasMonSpd](MeasMonSpd).m for  
-                                    the purpose of measuring XYZ  
-    8/9/94      dhb     Added code to go into sync mode  
-                                    And then commented it out.  
- 8/11/94        dhb     Sync mode back in  
- 8/15/94        dhb     Sync mode as argument.  
- 4/12/97   dhb   New toolbox compatibility, take window and bits args.  
- 8/26/97        dhb, pbe Add noMeterAvail option.  
- 4/7/99    dhb   Add argument for radius board.  Compact default arg code.  
- 8/14/00   dhb   Call to CMETER('SetParams') conditional on OS9.  
- 8/20/00   dhb   Remove bits arg from call to [SetColor](SetColor).  
- 8/21/00   dhb   Remove dependence on RADIUS flag.  This is now handled inside of [SetColor](SetColor).  
-              dhb   Change calling conventions to remove unused args.  
- 9/14/00   dhb   Sync mode no longer used.  Arg passed for backwards compatibility.  
- 2/27/02   dhb, ly  Pass whichMeterType rather than noMeterAvail.  
+  0 - Return random spectra. This is useful for testing when you don't have a meter.  
+\> 0 - Use [MeasXYZ](MeasXYZ)(whichMeterType) to measure. See "help [MeasXYZ](MeasXYZ)" for available meter types.  
+  
 
 
 

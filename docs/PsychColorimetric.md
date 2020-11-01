@@ -22,6 +22,7 @@ radiometric. Apologies if our intuitions don't match yours
   [ConeIncToDKL](ConeIncToDKL)        - Convert from cone increments to DKL.  
   [ContrastToExcitation](ContrastToExcitation) - Convert contrast to excitation coordinate.  
   [ContrastToIncrement](ContrastToIncrement) - Convert contrast to incremental coordinates.  
+  [ConvertRGBSourceToRGBTargetColorSpace](ConvertRGBSourceToRGBTargetColorSpace) - Convert an image from a RGB source colorspace to a RGB target colorspace.  
   [DKLToConeInc](DKLToConeInc)        - Convert from DKL to cone increments.  
   [DrawChromaticity](DrawChromaticity) -    Plot chromaticity diagram w spectrum locus (provided by Danny Garside).  
   [EffectiveTrolandsFromLum](EffectiveTrolandsFromLum) - Compute effective trolands from luminance.  
@@ -60,6 +61,7 @@ radiometric. Apologies if our intuitions don't match yours
   [PupilDiameterFromLum](PupilDiameterFromLum) - Estimate pupil diameter from luminance.  
   [PsychMunsell](PsychMunsell)        - Munsell renotation to xyY conversion.  
   [RetIrradianceToIsoRecSec](RetIrradianceToIsoRecSec) - Convert retinal irradiance (power units) to iso. per receptor per second.  
+  [RGBToXYZMatrix](RGBToXYZMatrix)      - Build a 3x3 CSC matrix for converting some RGB color space to XYZ space.  
   [SampleCircle](SampleCircle)        - [Sample](Sample) points on a circle.  
   [SampleSphere](SampleSphere)        - [Sample](Sample) points on a sphere.  
   [ShiftSpectra](ShiftSpectra)        - Shift a spectral function along the wavelength axis.  
@@ -88,6 +90,7 @@ radiometric. Apologies if our intuitions don't match yours
   [XYZToLab](XYZToLab)            - Convert between XYZ and Lab.  
   [XYZToLjg](XYZToLjg)            - Convert between XYZ (10 degree) and OSA UCS Ljg.  
   [XYZToLuv](XYZToLuv)            - Convert between XYZ and Luv.  
+  [XYZToRGBMatrix](XYZToRGBMatrix)      - Build a 3x3 CSC matrix for converting XYZ space to some RGB color space.  
   [XYZToSRGBPrimary](XYZToSRGBPrimary)    - Convert between XYZ and sRGB primary coordinates.  
   [[XYZTouv](XYZTouv)][(XYZTouv)]((XYZTouv))             - Compute uv chromaticities from XYZ.  
   [XYZTouvY](XYZTouvY)            - Convert between XYZ and u'v'Y.  

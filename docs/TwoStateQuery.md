@@ -31,6 +31,8 @@ History:  5/5/04   mpr   decided whether or not to celebrate cinco de mayo
          11/05/15  mk    Add GUI dialog for Octave in GUI mode. White-space cleanup.  
           7/20/17  mk    Use text only fallback on Matlab R2014b and later.  
           7/11/19  dn    GUI version now works on Matlab R2014b and later.  
+          8/28/20  mk    Always use questdlg() instead of Matlab specific  
+                         figure contraption. Nicer look.  
 
 
 

@@ -56,11 +56,13 @@ Psychtoolbox:[PsychDemos](PsychDemos)
    [FontDemo](FontDemo)                - How to check for font availability and set font.  
    [GarboriumDemo](GarboriumDemo)           - Demonstrate superimposed drawing of many Gabors by use of alpha-  
                              blending, 'DrawTextures' batch drawing and PTB imaging pipeline.  
-   [GazeContingentDemo](GazeContingentDemo)      - Implementation of a simple gaze contingent display   
+   [GazeContingentDemo](GazeContingentDemo)      - Implementation of a simple gaze contingent display  
    [GLSLCLUTAnimDemo](GLSLCLUTAnimDemo)        - Demonstrates use of function moglClutBlit to  
                              perform CLUT animation with GLSL in an OS independent way.  
    [GPGPUDemos](GPGPUDemos)              - Demos for use of GPGPU computing with Psychtoolbox.  
    [GratingDemo](GratingDemo)             - Basic display of a grating on the screen.  
+   [HDRMinimalisticOpenGLDemo](HDRMinimalisticOpenGLDemo) - Basic demo on how to render [OpenGL](OpenGL) 3D stimuli on a HDR display.  
+   [HDRViewer](HDRViewer)               - A simple image viewer for displaying HDR images on a HDR display.  
    [IsomerizationsInDishDemo](IsomerizationsInDishDemo) - Compute photoreceptor isomerizations for retina in a dish.  
    [IsomerizationsInEyeDemo](IsomerizationsInEyeDemo)  - Compute photoreceptor isomerizations for human eye.  
    [KbDemo](KbDemo)                  - Demonstrate [KbCheck](KbCheck), [KbName](KbName), [KbWait](KbWait).  
@@ -81,6 +83,7 @@ Psychtoolbox:[PsychDemos](PsychDemos)
    [MultiTouchMinimalDemo](MultiTouchMinimalDemo)   - Shows a more minimal example of how to get (multi-)touch input from touchscreens and touchpads.  
    [NomogramDemo](NomogramDemo)            - Compute photoreceptor nomograms.  
    [OldNewRecogExp](OldNewRecogExp)          - A full old-new recognition experiment.  
+   [OpenEXRImages](OpenEXRImages)           - Subfolder: [OpenEXR](OpenEXR) HDR sample image files.  
    [OpenGL4MatlabDemos](OpenGL4MatlabDemos)      - Subfolder: Demos on how to use MOGL [OpenGL](OpenGL) functions.  
    [PanelFitterDemo](PanelFitterDemo)         - Demonstrate use of the builtin panel fitter.  
    [ProceduralColorGratingDemo](ProceduralColorGratingDemo) - Demo for fast drawing of color gratings.  
@@ -96,6 +99,7 @@ Psychtoolbox:[PsychDemos](PsychDemos)
    [ReceivingTriggerFromSerialPortDemo](ReceivingTriggerFromSerialPortDemo) - Template for asynchronous trigger collection and timestamping from serial port.  
    [RenderDemo](RenderDemo)              - Render CIE xyY as a color patch.  
    [SadowskiDemo](SadowskiDemo)            - Shows the "Sadowski" color afterimage effect.  
+   [SimpleHDRDemo](SimpleHDRDemo)           - Minimal demo for using a HDR display, showing some basic stimuli.  
    [SimpleImageMixingDemo](SimpleImageMixingDemo)   - Shows how to mix two images via alpha-blending, using an alpha-mask which itself is morphed between two masks.  
                              See also [ImageMixingTutorial](ImageMixingTutorial) for a more complex demonstration of the technique.  
    [SimpleSoundScheduleDemo](SimpleSoundScheduleDemo) - Simple demo for basic use of sound schedules with [PsychPortAudio](PsychPortAudio).  

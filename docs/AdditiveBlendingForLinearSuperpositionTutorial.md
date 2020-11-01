@@ -1,7 +1,7 @@
 # [AdditiveBlendingForLinearSuperpositionTutorial](AdditiveBlendingForLinearSuperpositionTutorial)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)>[PsychTutorials](PsychTutorials)
 
-[AdditiveBlendingForLinearSuperpositionTutorial](AdditiveBlendingForLinearSuperpositionTutorial)([outputdevice='None'] [, overlay=1] [, colorclut=0] [, doGainCorrection=0]);  
+[AdditiveBlendingForLinearSuperpositionTutorial](AdditiveBlendingForLinearSuperpositionTutorial)([outputdevice='None'][, overlay=1][, colorclut=0][, doGainCorrection=0][, useVulkan=0]);  
   
 Illustrates use of floating point textures in combination with  
 source-weighted additive alpha blending to create linear superpositions  
@@ -123,6 +123,11 @@ vignetting correction. It will modulate the brightness of each pixel with
 a gain factor, the gains increasing linearly from the left border to the  
 right border of the display. See "help [VignettingCorrectionDemo](VignettingCorrectionDemo)" for more  
 details of this feature.  
+  
+  
+The fifth optional parameter 'useVulkan' if provided and set to 1, will try  
+to use a Vulkan based display backend, instead of the standard [OpenGL](OpenGL) based  
+display backend. See "help [PsychVulkan](PsychVulkan)" for system requirements and caveats.  
   
   
 Please note: Most of these modes only show expected results when the  

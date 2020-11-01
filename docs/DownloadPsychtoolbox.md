@@ -1,9 +1,9 @@
 # [DownloadPsychtoolbox](DownloadPsychtoolbox)
 ##### >[Psychtoolbox](Psychtoolbox)
 
-[DownloadPsychtoolbox](DownloadPsychtoolbox)([targetdirectory][, flavor][, targetRevision])  
+[DownloadPsychtoolbox](DownloadPsychtoolbox)([targetdirectory][, flavor][, targetRevision][, downloadmethod])  
   
-This script downloads the latest GNU/Linux, Mac OSX, or MS-Windows  
+This script downloads the latest GNU/Linux, MS-Windows, or Apple macOS  
 Psychtoolbox-3, version 3.0.10 or later, from our git-server to your  
 disk, creating your working copy, ready to use as a new toolbox in your  
 MATLAB/OCTAVE application. Subject to your permission, any old  
@@ -47,7 +47,7 @@ this function.
 On Mac OSX, all parameters are optional. On MS-Windows and GNU/Linux, the  
 first parameter "targetdirectory" with the path to the installation  
 target directory is required. The "targetdirectory" name may not contain  
-any white space, otherwise download will fail with mysterious error  
+any white space, otherwise download may fail with mysterious error  
 messages!  
   
 On OSX, your working copy of the Psychtoolbox will be placed in either  
@@ -64,7 +64,7 @@ optional "flavor" parameter: By default, 'beta' (aka 'current') will be
 installed if you don't specify otherwise, as this is almost always the  
 best possible choice. You may be able to download an old versioned  
 release via a namestring like 'Psychtoolbox-x.y.z', e.g.,  
-'Psychtoolbox-3.0.7' if you'd want to download version 3.0.7. This is  
+'Psychtoolbox-3.0.14' if you'd want to download version 3.0.14. This is  
 only useful if you run a very old operating system or Matlab version that  
 isn't supported by the current "beta" anymore, so you'd need to stick  
 with an old versioned release.  
@@ -76,8 +76,9 @@ download failure. In that case, please retry a few hours later.
   
 The "targetRevision" argument is optional and should be normally omitted.  
 Normal behaviour is to download the latest revision of Psychtoolbox. If  
-you provide a specific targetRevision, then this script will install a  
-copy of Psychtoolbox according to the specified revision.  
+you provide a specific targetRevision, e.g., 1234 for revision 1234, then  
+this script will install a copy of Psychtoolbox according to the  
+specified revision.  
   
 This is only useful if you experience problems and want to revert to an  
 earlier known-to-be-good release.  
@@ -86,25 +87,59 @@ Revisions can be specified by a revision number or by the special flag
 'PREV' which will choose the revision before the most current one.  
   
   
+'downloadmethod' Optional: The method to use or prefer for download. By  
+default method 0 is used, which means to perform a Subversion checkout of  
+a fully versioned working copy, including all revision information, which  
+allows to go backward in time or update efficiently via the  
+[UpdatePsychtoolbox](UpdatePsychtoolbox)() command, query the current version and revision of  
+Psychtoolbox via [PsychtoolboxVersion](PsychtoolboxVersion)() command, and access the  
+development history via svn command-line tools etc. A setting of 1  
+requests an export without versioning information, essentialy a dumb  
+download. This will cut download size and disc space usage in less than  
+half, but you won't be able to use [UpdatePsychtoolbox](UpdatePsychtoolbox)() or  
+[PsychtoolboxVersion](PsychtoolboxVersion)() or other svn features anymore.  
+  
+By default, the most efficient and convenient method of Subversion  
+download is used, e.g., using Matlabs integrated [SVNKit](SVNKit) for Matlab R2014b  
+or later, instead of a svn command-line client. You can always enforce  
+use of an installed svn command-line client via setting downloadmethod to  
+-1. This is the old way of doing things, in case the improved method via  
+[SVNKit](SVNKit) should not work for some reason.  
+  
+  
 INSTALLATION INSTRUCTIONS: The Wiki contains much more up to date  
 instructions. If in doubt, follow instructions on the Wiki!  
   
-1. If you don't already have it, you must install the Subversion client.  
-For Mac OSX 10.6 and later, download the latest Mac OSX Subversion client  
-from: http://www.wandisco.com/subversion/download\#osx  
-If you have the [XCode](XCode) command line tools installed, you won't need to  
-install subversion as it is included in these tools.  
+0. If you are using Matlab R2014b or later, skip to step 2.  
   
-### For Windows, download the Windows Subversion client from one of these:  
+  
+1. On older Matlab versions, or on Octave, if you don't already have it,  
+you must install a Subversion client.  
+  
+  
+On Linux, use the OS package manager, e.g., on Debian/Ubuntu based  
+systems:  
+  
+sudo apt install subversion  
+  
+  
+On Windows, download the Windows Subversion client from the internet, e.g.,  
+from one of these:  
   
 http://subversion.apache.org/packages.html\#windows  
 http://www.wandisco.com/subversion/download\#windows  
   
-Install the Subversion client on your machine by double-clicking the  
-installer and following the instructions. After installation of the  
-Subversion client, you will need to exit and restart Matlab or Octave, so  
-it can find the new subversion executable. In many cases it may be  
-neccessary to even reboot your computer after installation of subversion.  
+  
+On macOS, if you happen to have [HomeBrew](HomeBrew) (http://brew.sh) installed, a  
+  
+brew install subversion  
+  
+should do the trick.  
+  
+  
+After installation of the Subversion client, you will need to exit and  
+restart Matlab or Octave, so it can find the new subversion executable.  
+  
 Btw. you should avoid to install the client into a path that contains  
 blanks/spaces/white-space as this can lead to download failures in some  
 cases, e.g., 'C:\Program Files\...' may be bad because there is a blank  
@@ -118,11 +153,8 @@ installed into D:\[MyOwnFolder](MyOwnFolder)\Subversion\ . Then you can do this:
 addpath('D:\[MyOwnFolder](MyOwnFolder)\Subversion\'). Our installer should find the  
 client then.  
   
-For Linux, just install the subversion package from your package  
-management tool.  
   
-  
-2. On [MacOS](MacOS)/X, to install the Psychtoolbox in the default location  
+2. On macOS, to install the Psychtoolbox in the default location  
 (/Applications or, failing that, /Users/Shared). Just type:  
   
 [DownloadPsychtoolbox](DownloadPsychtoolbox)  
@@ -132,7 +164,7 @@ installation of any software, you'll need administrator privileges. Also
 note that if you put the toolbox in the Applications folder, you'll need  
 to reinstall it when MATLAB / OCTAVE is updated on your machine. If you  
 must install without access to an administrator, we offer the option of  
-installing into the /Users/Shared/ folder instead. If you must install  
+installing into the /Users/Shared/ folder instead. If you want to install  
 the Psychtoolbox in some other folder, then specify it in the optional  
 first argument of your call.  
   
@@ -164,7 +196,10 @@ latest bug fixes, enhancements, and new features, just type:
   
 [UpdatePsychtoolbox](UpdatePsychtoolbox) cannot change the flavor of your Psychtoolbox. To  
 change the flavor, run [DownloadPsychtoolbox](DownloadPsychtoolbox) to completely discard your  
-old installation and get a fresh copy with the requested flavor.  
+old installation and get a fresh copy with the requested flavor. If you  
+used [DownloadPsychtoolbox](DownloadPsychtoolbox) with the optional 'downloadmethod' set to 1  
+then [UpdatePsychtoolbox](UpdatePsychtoolbox)() won't work. That's the price you pay for saving  
+disc space.  
   
 ### PERMISSIONS:  
   

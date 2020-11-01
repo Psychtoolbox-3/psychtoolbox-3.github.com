@@ -9,6 +9,13 @@ devices from [BrightSide](BrightSide) Technologies.
   
 See http://www.brightsidetech.com  
   
+NOTE: Deprecated and scheduled for removal. The company [BrightSide](BrightSide)  
+      is dead since before the year 2010, and so are most likely  
+      all DR37-P displays ever made. Therefore the code here is  
+      almost certainly obsolete. Also, the driver mex file is no  
+      longer bundled since many years, given it was only built  
+      for 32-Bit Intel cpu's under [WindowsXP](WindowsXP) for 32-Bit Matlab.  
+  
 The driver consists of a high-level M-File "[BrightSideHDR](BrightSideHDR).m"  
 which implements the user callable PTB interface and a low-  
 level Matlab MEX file "[BrightSideCore](BrightSideCore).dll" that does the  
@@ -24,25 +31,15 @@ display with PTB, thanks to the new PTB built-in imaging pipeline.
   
 ### Files:  
   
-[SimpleHDRDemo](SimpleHDRDemo).m       -- Simple demo to demonstrate use of [BrightSide](BrightSide)-HDR with  
-                         Psychtoolbox.  
-  
-[ShowHDRDemo](ShowHDRDemo).m         -- Less simple demo to demonstrate use of these functions.  
-  
-[HDRViewer](HDRViewer).m           -- An interactive viewer for HDR images, including  
-                         zoom function.  
+[BrightSideBasicDemo](BrightSideBasicDemo)   -- Basic demo to demonstrate use of the [BrightSide](BrightSide) display.  
   
 [BrightSideHDR](BrightSideHDR).m       -- Psychtoolbox interface to the display.  
-[BrightSideCore](BrightSideCore).dll    -- Matlab MEX interface, used by [BrightSideHDR](BrightSideHDR).  
-[BrightSideCore](BrightSideCore).m      -- Technical documentation for [BrightSideCore](BrightSideCore).dll.  
-[BrightSideCore](BrightSideCore).cpp    -- C++ source code for [BrightSideCore](BrightSideCore).dll.  
+[BrightSideCore](BrightSideCore).m      -- Technical documentation for [BrightSideCore](BrightSideCore).mexw32.  
+[BrightSideCore](BrightSideCore).cpp    -- C++ source code for [BrightSideCore](BrightSideCore).mexw32  
   
 [BSRuntimeLibs](BSRuntimeLibs)/        -- Subfolder for runtime libraries and config.  
                          Empty by default. Needs to be filled with files that  
                          are bundled with the software for your display device.  
-  
-[HDRRead](HDRRead).m             -- Generic HDR image reader. Dispatches into helper  
-                         routines for different file formats.  
   
 
 

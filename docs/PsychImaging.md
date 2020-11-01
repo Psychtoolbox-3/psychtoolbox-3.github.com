@@ -1363,6 +1363,64 @@ actions:
   correction and vignette correction for a fullscreen window on the HMD.  
   
   
+\* 'UseVulkanDisplay' Display this onscreen window using a Vulkan-based display  
+  backend. This only works on graphics card + operating system combinations  
+  which support both the [OpenGL](OpenGL) and Vulkan rendering api's and [OpenGL](OpenGL)-Vulkan  
+  interop. As of October 2020 this would be modern AMD and [NVidia](NVidia) graphics cards  
+  under modern GNU/Linux (Ubuntu 18.04-LTS and later) and Microsoft Windows-10.  
+  
+  At the moment 'UseVulkanDisplay' does not provide any advantages for standard  
+  visual stimulus display tasks, quite the contrary! The current implementation  
+  is \*experimental\* and may go through backwards incompatible changes which may  
+  break your scripts if you rely on it! Only use if you really know what you are  
+  doing!  
+  
+###   Usage:  
+  
+  [PsychImaging](PsychImaging)('AddTask', 'General', 'UseVulkanDisplay');  
+  
+  Psychtoolbox will try to display the onscreen window by using a Vulkan driver  
+  with Vulkan/WSI backend, instead of the usual [OpenGL](OpenGL) windowing system backend.  
+  This may fail if the given system setup does not support this.  
+  
+  
+\* 'EnableHDR' Display this onscreen window on a "High dynamic range" (HDR) display.  
+  This requires a combination of operating-system, display drivers, graphics card,  
+  video cables and display devices which are at least HDR-10 capable.  
+  
+  For hardware and system requirements, setup instructions, and further explanations  
+  read "help [PsychHDR](PsychHDR)".  
+  
+###   Usage:  
+  
+  [PsychImaging](PsychImaging)('AddTask', 'General', 'EnableHDR' [, unit='Nits'][, hdrMode='Auto'][, extraRequirements]);  
+  
+###   Optional parameters:  
+  
+  'unit'  The unit in which color values are specified by the users drawing code.  
+          Default value is 'Nits', ie. 1 unit = 1 Nit = 1 candela per square-meter.  
+          '80Nits', ie. 1 unit = 80 Nits = 80 cd/sqm = Supposedly the SDR range.  
+  
+  'hdrMode' General mode of operation for HDR display:  
+            Default is 'Auto' for auto-selection of optimal mode for given system  
+            configuration, selected out of the following available op-modes:  
+  
+            'HDR10' Standard HDR-10, with 10 bpc color precision, ITU Rec 2020 input  
+            color space (aka BT-2020), SMPTE ST-2084 PQ "Perceptual Quantizer" OETF  
+            transfer function.  
+  
+            -\> Currently 'Auto' will select 'HDR-10' as the only supported op-mode.  
+  
+  'extraRequirements' String with various keywords to specify special requirements.  
+                      Default is empty, ie. no extra requirements. Currently supported  
+                      keywords are:  
+  
+                      'Dummy' - Only simulate HDR on a SDR standard dynamic range display.  
+                                This only performs setup steps and processing possible on  
+                                a SDR display, to allow for basic script development and  
+                                testing. Visual results will be obviously wrong!  
+  
+  
 \* More actions will be supported in the future. If you can think of an  
   action of common interest not yet supported by this framework, please  
   file a feature request on our Wiki (Mainpage -\> Feature Requests).  

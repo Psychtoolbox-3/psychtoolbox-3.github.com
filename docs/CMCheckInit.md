@@ -17,6 +17,7 @@ meterType 3 is the CRS Colorimeter
 meterType 4 is the PR655  
 meterType 5 is the PR670  
 meterType 6 is the PR705  
+meterType 7 is the CRS [ColorCal2](ColorCal2).  
   
 For the PR-series colorimeters, 'PortString' is the optional name of a  
 device string for the serial port or Serial-over-USB port to which the  

@@ -1,7 +1,7 @@
 # [PerceptualVBLSyncTest](PerceptualVBLSyncTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)
 
-[PerceptualVBLSyncTest](PerceptualVBLSyncTest)(screen, stereomode, fullscreen, doublebuffer, maxduration, vblSync, testdualheadsync)  
+[PerceptualVBLSyncTest](PerceptualVBLSyncTest)([screen=max][, stereomode=0][, fullscreen=1][, doublebuffer=1][, maxduration=10][, vblSync=1][, testdualheadsync=0][, useVulkan=0])  
   
 Perceptual synchronization test for synchronization of [Screen](Screen)('[Flip](Flip)') and  
 [Screen](Screen)('WaitBlanking') to the vertical retrace.  
@@ -47,6 +47,9 @@ are not properly synchronized, ie., not suitable for artifact free binocular
 stimulation. Caveat: This logic has been developed and tested specifically  
 for testing on Linux with a single X-[Screen](Screen) spanning multiple displays. It may  
 or may not be suitable to assess other operating systems or display configurations.  
+  
+'useVulkan' If 1, try to use a Vulkan display backend instead of the  
+[OpenGL](OpenGL) display backend. See 'help PsychVulkan'.  
   
 After starting this test, you should see a flickering greyish background  
 that flickers in a homogenous way - without cracks or weird moving patterns  

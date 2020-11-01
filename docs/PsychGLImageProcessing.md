@@ -57,21 +57,37 @@ soon with more useful infos...
 [DisplayUndistortionLabRiggerMouseStim](DisplayUndistortionLabRiggerMouseStim) - Create display undistortion based on method from [LabRigger](LabRigger) for mouse visual stims.  
 [DisplayUndistortionSphere](DisplayUndistortionSphere)     - Interactive geometric display calibration for spherical projections.  
 [ImagingStereoDemo](ImagingStereoDemo)             - Counterpart to [StereoDemo](StereoDemo), but using imaging pipeline  
-                                   for increased fidelity, flexibility, ease of use.  
+                                for increased fidelity, flexibility, ease of use.  
 [MakeTextureDrawShader](MakeTextureDrawShader)         - Create GLSL shader for use with [Screen](Screen)('DrawTexture') and [Screen](Screen)('MakeTexture')  
-                                   to apply on-the-fly texture filtering operations during texture draw.  
+                                to apply on-the-fly texture filtering operations during texture draw.  
+  
+[PsychHDR](PsychHDR)                      - Support and control stimulus display to HDR "High dynamic range" displays.  
   
 [PsychImaging](PsychImaging)                  - Generic setup routine for the imaging pipeline. Allows to setup  
-                                   and initialize the pipeline for many common tasks.  
+                                and initialize the pipeline for many common tasks.  
+  
 [PsychVideoSwitcher](PsychVideoSwitcher)            - Setup routine for the Xiangru Li et al. "[VideoSwitcher](VideoSwitcher)" video attenuator device.  
   
-[SetAnaglyphStereoParameters](SetAnaglyphStereoParameters)   - Function for runtime tuning of Anaglyph stereo parameters,  
-                                   see [ImagingStereoDemo](ImagingStereoDemo) for example of use.  
-[SetStereoBlueLineSyncParameters](SetStereoBlueLineSyncParameters) - Change settings for drawing of stereo sync lines in frame-sequential stereo mode.  
-[SetStereoSideBySideParameters](SetStereoSideBySideParameters)   - Change parameters for side-by-side stereo display modes (4 and 5).  
+[PsychVulkan](PsychVulkan)                   - Interface with the Vulkan graphics and compute api for special purpose tasks.  
+  
+[SetAnaglyphStereoParameters](SetAnaglyphStereoParameters)       - Function for runtime tuning of Anaglyph stereo parameters,  
+                                    see [ImagingStereoDemo](ImagingStereoDemo) for example of use.  
+[SetStereoBlueLineSyncParameters](SetStereoBlueLineSyncParameters)   - Change settings for drawing of stereo sync lines in frame-sequential stereo mode.  
+[SetStereoSideBySideParameters](SetStereoSideBySideParameters)     - Change parameters for side-by-side stereo display modes (4 and 5).  
 [SetCompressedStereoSideBySideParameters](SetCompressedStereoSideBySideParameters) - Change parameters for compressed side-by-side stereo display modes.  
   
-[VignetCalibration](VignetCalibration)               - Vignetted luminance calibration procedure for undistortion of distorted display luminance.  
+[VignetCalibration](VignetCalibration)                 - Vignetted luminance calibration procedure for undistortion of distorted display luminance.  
+  
+  
+Constants for use as 'flipFlags' with the imaging pipeline function  
+[Screen](Screen)('HookFunction', windowPtr, 'SetOneshotFlipFlags' ..., flipFlags):  
+  
+kPsychDontAutoResetOneshotFlags   - Prevent "one-shot" flip flags from being automatically cleared after execution of the next [Screen](Screen)('[Flip](Flip)') operation.  
+kPsychSkipSwapForFlipOnce         - Skip [OpenGL](OpenGL) double-buffer swap during execution of next [Screen](Screen)('[Flip](Flip)').  
+kPsychSkipTimestampingForFlipOnce - Skip timestamping of [OpenGL](OpenGL) double-buffer swap stimulus onset after execution of next [Screen](Screen)('[Flip](Flip)').  
+kPsychSkipVsyncForFlipOnce        - Do not synchronize next [OpenGL](OpenGL) buffer swap to vertical retrace during execution of next [Screen](Screen)('[Flip](Flip)').  
+kPsychSkipWaitForFlipOnce         - Do not schedule [OpenGL](OpenGL) buffer swap for specific target time, leave it to some external method.  
+  
   
 Constants for imagingmode flag of [Screen](Screen)('OpenWindow', ...., imagingmode);  
 One can 'or' them together, e.g., imagingmode = mor(kPsychNeed16BPCFixed, kPsychNeedFastBackingStore);  

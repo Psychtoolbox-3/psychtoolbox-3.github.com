@@ -1,7 +1,7 @@
 # [Screen('OpenMovie')](Screen-OpenMovie) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
-[ moviePtr [duration] [fps] [width] [height] [count] [aspectRatio]]=Screen('OpenMovie', windowPtr, moviefile [, async=0] [, preloadSecs=1] [, specialFlags1=0][, pixelFormat=4][, maxNumberThreads=-1][, movieOptions]);
+[ moviePtr [duration] [fps] [width] [height] [count] [aspectRatio] [hdrStaticMetaData]]=Screen('OpenMovie', windowPtr, moviefile [, async=0] [, preloadSecs=1] [, specialFlags1=0][, pixelFormat=4][, maxNumberThreads=-1][, movieOptions]);
 
 Try to open the multimediafile 'moviefile' for playback in onscreen window  
 'windowPtr' and return a handle 'moviePtr' on success.  
@@ -17,6 +17,17 @@ images contained in the movie. 'height' Height of the images.
 querying 'count' can significantly increase the execution time of this command.  
 'aspectRatio' Pixel aspect ratio of pixels in the video frames. Typically 1.0  
 for square pixels.  
+'hdrStaticMetaData' A struct with HDR static metadata of the movie, if the movie  
+has HDR metadata attached and your system supports parsing of HDR metadata. This  
+requires [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) version 1.18 or later, and note that not all video codecs may  
+support parsing of HDR metadata.  
+hdrStaticMetaData.Valid is 1 if the movie has HDR metadata, 0 if none is  
+available or parsing is not supported by your system. All other returned HDR  
+properties are compatible with (and in the format of) the function  
+[PsychHDR](PsychHDR)('HDRMetadata'). Type 'PsychHDR [HDRMetadata](HDRMetadata)?' for details.  
+The structure also reports some fields reported by [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) movie codecs, but  
+not exclusive to HDR movies: 'Colorimetry', 'LimitedRange', 'YUVRGBMatrixType',  
+'PrimariesType', 'EOTFType', 'Format', and 'Depth'.  
 If you want to play multiple movies in succession with lowest possible delay  
 inbetween the movies then you can ask PTB to load a movie in the background  
 while another movie is still playing: Call this function with the 'async' flag  
@@ -104,15 +115,23 @@ supported on some setups: 1 = Luminance/Greyscale image, 2 = Luminance+Alpha, 3
 = RGB 8 bit per channel, 4 = RGBA8, 5 = YUV 4:2:2 packed pixel format on some  
 graphics hardware, 6 = YUV-I420 planar format, using GLSL shaders for color  
 space conversion on suitable graphics cards. 7 or 8 = Y8-Y800 planar format,  
-using GLSL shaders, 9 = 16 bit Luminance, 10 = 16 bpc RGBA image.The always  
-supported default is '4' == RGBA8 format. A setting of 6 (for color) or 7/8 (for  
-grayscale) for selection of YUV-I420/Y8-Y800 format, as supported by at least  
-the H264 and [HuffYUV](HuffYUV) video codecs on any GPU with shader support, can be  
-especially efficient for fast playback of high resolution video. As this format  
-uses shaders for post-processing, it should be fast for texture drawing, but can  
-incur significant overhead if you try to draw into a texture of this format, or  
-try to post-process it via [Screen](Screen)('TransformTexture'). If you try to attach your  
-own shaders to such a texture during [Screen](Screen)('DrawTexture'), you will need to  
+using GLSL shaders, 9 = 16 bit Luminance, 10 = 16 bpc RGBA image, 11 = 16 bpc  
+RGB image for proper encoding of HDR/WCG content, e.g., video encoded in HDR-10  
+format for display on a HDR display. The always supported default is '4' ==  
+RGBA8 format when the onscreen window is in standard dynamic range (SDR) mode.  
+If 'windowPtr' instead refers to a HDR display window, displaying on a HDR  
+display monitor, then the default setting for 'pixelFormat' is '11' == RGB  
+format for proper HDR movie display with up to 16 bpc precision and proper  
+handling of HDR transfer function like Perceptual Quantizer (PQ) and HDR color  
+spaces.  
+A setting of 6 (for color) or 7/8 (for grayscale) for selection of  
+YUV-I420/Y8-Y800 format, as supported by at least the H264 and [HuffYUV](HuffYUV) video  
+codecs on any GPU with shader support, can be especially efficient for fast  
+playback of high resolution video. As this format uses shaders for  
+post-processing, it should be fast for texture drawing, but can incur  
+significant overhead if you try to draw into a texture of this format, or try to  
+post-process it via [Screen](Screen)('TransformTexture'). If you try to attach your own  
+shaders to such a texture during [Screen](Screen)('DrawTexture'), you will need to  
 implement color conversion yourself in your shaders, as your shaders would  
 override [Screen](Screen)'s builtin color conversion shader.  
 'maxNumberThreads' Optional parameter which allows to set the maximum number of  
@@ -135,6 +154,16 @@ processor cores dedicated to them.
 'movieOptions' Optional text string which encodes additional options for  
 playback of the movie. Parameters are keyword=value pairs, separated by three  
 colons ::: if there are multiple parameters. Currently supported keywords:  
+[OverrideEOTF](OverrideEOTF)=eotfID -- Override detected EOTF transfer function of movie to  
+instead be of type eotfID. E.g., specifying [OverrideEOTF](OverrideEOTF)=14 would select  
+[[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) EOTF type 14, which is GST\_VIDEO\_TRANSFER\_SMPTE2084 == HDR PQ  
+function, whereas [OverrideEOTF](OverrideEOTF)=15 would select [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) EOTF type 15, which is  
+GST\_VIDEO\_TRANSFER\_ARIB\_STD\_B67 == HDR HLG function. Please note that  
+[OverrideEOTF](OverrideEOTF) is only accepted at the moment for playback with pixelFormat 11,  
+otherwise it is rejected.  
+You rarely need this override, unless you try to play back a movie format on a  
+[[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) version too old to detect the proper EOTF. Most likely if you try to  
+play back HDR content on a [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) version older than 1.18.0.  
 [AudioSink](AudioSink)=[GStreamerSinkSpec](GStreamerSinkSpec) -- [GStreamerSinkSpec](GStreamerSinkSpec) is a [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) gst-launch line  
 style specification for a audio sink plugin and its parameters. This allows to  
 customize where the audio of a movie is sent during playback and with which  

@@ -1,7 +1,7 @@
 # [MinimalisticOpenGLDemo](MinimalisticOpenGLDemo)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)>[OpenGL4MatlabDemos](OpenGL4MatlabDemos)
 
-[MinimalisticOpenGLDemo](MinimalisticOpenGLDemo)([multiSample][, imagingPipeline][, checkerBoardTexture][, doAccumulate=0])  
+[MinimalisticOpenGLDemo](MinimalisticOpenGLDemo)([multiSample][, imagingPipeline][, checkerBoardTexture][, doAccumulate=0][, hdr=0])  
   
 This demo demonstrates use of [OpenGL](OpenGL) commands in a Matlab script to  
 perform some very boring 3D rendering in Psychtoolbox.  
@@ -47,6 +47,9 @@ a new fast technique is demonstrated. Both achieve the same visual effect
 with very similar code, but the latter technique is well supported on  
 recent hardware, much more flexible and much faster.  
   
+The optional parameter 'hdr' if set to 1 will set the window up for display  
+on a HDR ("High Dynamic Range") display device if your system setup allows  
+this. See "help [PsychHDR](PsychHDR)" for system requirements and setup instructions.  
   
 ### Notable implementation details regarding use of [OpenGL](OpenGL):  
   
@@ -96,10 +99,6 @@ http://www.opengl.org/documentation/red\_book\_1.0/
 ### For more infos, code samples, tutorials, online documentation, go to:  
   
 http://www.opengl.org  
-  
-The [OpenGL](OpenGL) for Matlab toolbox was developed and contributed under  
-GPL license by Prof. Richard F. Murray, University of York, Canada and  
-ported to M$-Windows and GNU/Linux and tuned by Mario Kleiner.  
   
 The earth surface JPEG-image is taken from the Linux/KDE application  
 kdeworldclock. kdeworldclock and its components are licensed under  

@@ -68,7 +68,7 @@ display tests.
   
 # The info struct contains the following fields  
   
-[BeamPosition](BeamPosition): Current rasterbeam position of the video scanout cycle.  
+Beamposition: Current rasterbeam position of the video scanout cycle.  
 [LastVBLTimeOfFlip](LastVBLTimeOfFlip): VBL timestamp of last finished [Screen](Screen)('[Flip](Flip)') operation.  
 [TimeAtSwapRequest](TimeAtSwapRequest): Timestamp taken prior to submission of the low-level swap  
 command. Useful for micro-benchmarking.  
@@ -92,6 +92,8 @@ support this with some GPU's.
 measurement method.  
 [GLVendor](GLVendor), [GLRenderer](GLRenderer), [GLVersion](GLVersion): Vendor name, renderer name and version of the  
 [OpenGL](OpenGL) implementation.  
+[GLDeviceUUID](GLDeviceUUID): The unique device id if supported by the [OpenGL](OpenGL) implementation, an  
+empty field otherwise.  
 [StereoMode](StereoMode): Currently selected stereomode, as requested in call to  
 [Screen](Screen)('OpenWindow', ...);  
 [StereoDrawBuffer](StereoDrawBuffer): Current drawbuffer for stereo display (0 = left eye, 1 = right  

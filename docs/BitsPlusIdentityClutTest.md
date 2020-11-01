@@ -30,7 +30,7 @@ big companies.
   
 ### Usage:  
   
-[BitsPlusIdentityClutTest](BitsPlusIdentityClutTest)([whichScreen=max][, usedpixx=0][, winrect=[]][, useclutmodeonly=0]);  
+[BitsPlusIdentityClutTest](BitsPlusIdentityClutTest)([whichScreen=max][, usedpixx=0][, winrect=[]][, useclutmodeonly=0][, useVulkan=0]);  
   
 ### How to test:  
   
@@ -49,6 +49,9 @@ big companies.
    display on a laptop. For a [DataPixx](DataPixx) device or similar, set the  
    optional 'usedpixx' flag to 1. Set 'useclutmodeonly' flag to 1 if you  
    want to test in Bits++ or L48 mode instead of Mono++ or M16 mode.  
+  
+'useVulkan' Defaults to 0. If set to 1, use Vulkan display  
+backend, instead of standard [OpenGL](OpenGL) backend.  
   
 If everything works, what you see onscreen should match the description  
 in the blue text that is displayed.  

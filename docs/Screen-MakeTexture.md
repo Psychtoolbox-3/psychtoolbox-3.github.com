@@ -1,7 +1,7 @@
 # [Screen('MakeTexture')](Screen-MakeTexture) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
-textureIndex=Screen('MakeTexture', WindowIndex, imageMatrix [, optimizeForDrawAngle=0] [, specialFlags=0] [, floatprecision=0] [, textureOrientation=0] [, textureShader=0]);
+textureIndex=Screen('MakeTexture', WindowIndex, imageMatrix [, optimizeForDrawAngle=0] [, specialFlags=0] [, floatprecision] [, textureOrientation=0] [, textureShader=0]);
 
 Convert the 2D or 3D matrix 'imageMatrix' into an [OpenGL](OpenGL) texture and return an  
 index which may be passed to 'DrawTexture' to specify the texture.  
@@ -13,7 +13,10 @@ pixel. Alpha values typically range between zero (=fully transparent) and 255
 (=fully opaque).  
 The [Screen](Screen)('ColorRange') command affects the range of expected input values in  
 'imageMatrix' matrices of double precision type, as does the optional  
-'floatprecision' flag discussed below.  
+'floatprecision' flag discussed below. If the parent window 'WindowIndex' is a  
+HDR display window, then by default floating point textures will be created, and  
+uint8 image matrices will be remapped to a suitable subset of the HDR color  
+range, so that they fit in with real HDR color range images.  
 You need to enable Alpha-Blending via [Screen](Screen)('BlendFunction',...) for the  
 transparency values to have an effect.  
 The argument 'optimizeForDrawAngle' if provided, asks Psychtoolbox to optimize  
@@ -54,24 +57,32 @@ A 'specialFlags' == 32 setting will prevent automatic closing of the texture if
 [Screen](Screen)('[Close](Close)'); is called. Only [Screen](Screen)('[Close](Close)', textureIndex); would close the  
 texture.  
 'floatprecision' defines the precision with which the texture should be stored  
-and processed. Default value is zero, which asks to store textures with 8 bit  
-per color component precision, a suitable format for standard images read via  
-imread(). A non-zero value will store the textures color component values as  
+and processed. If omitted, the default value in normal display mode is zero,  
+which asks to store textures with 8 bit per color component precision in  
+unsigned normalized (unorm) color range, a suitable format for standard images  
+read via imread() and displayed on normal display devices. If the onscreen or  
+parent window 'WindowIndex' is a HDR (High Dynamic Range) window displayed on a  
+HDR capable display device, then 'floatprecision' defaults to 2 instead of 0, to  
+accomodate the need for high image color precision and the larger value range in  
+HDR mode. A non-zero value will store the textures color component values as  
 floating point precision numbers, useful for complex blending operations and  
-calculations on the textures and for processing and display of high dynamic  
-range image textures, either on a LDR display via tone-mapping, or on a HDR  
-display. If floatprecision is set to 1, the texture gets stored in half\_float  
-format, i.e. 16 bit per color component - Suitable for most display purposes and  
-fast on recent gfx-hardware. A value of 2 asks for full 32 bit single precision  
-float per color component. Useful for complex computations and image processing,  
-but can be extremely slow when texture filtering is used on any piece of  
-graphics hardware manufactured before the year 2007. If a value of 1 is  
-provided, asking for 16 bit floating point textures, but the graphics hardware  
-does not support this, then PTB tries to allocate a 15 bit precision signed  
-integer texture instead, assuming the graphics hardware supports that. Such a  
-texture is more precise than the 16 bit floating point texture it replaces, but  
-can not store values outside the range [-1.0; 1.0]. On [OpenGL](OpenGL)-ES hardware, a 32  
-bit floating point texture is selected instead.  
+calculations on the textures, and for processing and display of high precision  
+or high dynamic range image textures, either on a LDR display via tone-mapping,  
+or on a HDR display. If 'floatprecision' is set to 1, then the texture gets  
+stored in half-float fp16 format, i.e. 16 bit per color component - Suitable for  
+most display purposes and fast on current gfx-hardware. A value of 2 (the  
+default setting for a HDR onscreen display window) asks for full 32 bit single  
+precision float per color component. Useful for complex computations and image  
+processing, but slower, and takes up twice as much video memory. If a value of 1  
+is provided, asking for 16 bit floating point textures, but the graphics  
+hardware does not support this, then in non-HDR mode [Screen](Screen) tries to allocate a  
+15 bit precision signed integer texture instead, if the graphics hardware  
+supports that. Such a texture is more precise than the 16 bit floating point  
+texture it replaces, but can not store values outside the range [-1.0; 1.0]. If  
+the window is a HDR window, then this function will simply fail if floating  
+point storage is not supported, as use of floating point storage is crucial for  
+HDR images. On [OpenGL](OpenGL)-ES hardware, a 32 bit floating point texture is selected  
+instead.  
 'textureOrientation' This optional argument labels textures with a special  
 orientation. Normally (value 0) a Matlab matrix is passed in standard Matlab  
 column-major dataformat. This is efficient for drawing of textures but not for  

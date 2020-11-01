@@ -9,7 +9,7 @@ oldEnableFlag=Screen('[Preference](Screen-Preference)', 'EmulateOldPTB', [enable
 % Open or close a window or texture:  
 [windowPtr,rect]=Screen('[OpenWindow](Screen-OpenWindow)',windowPtrOrScreenNumber [,color] [,rect] [,pixelSize] [,numberOfBuffers] [,stereomode] [,multisample][,imagingmode][,specialFlags][,clientRect][,fbOverrideRect][,vrrParams=[]]);  
 [windowPtr,rect]=Screen('[OpenOffscreenWindow](Screen-OpenOffscreenWindow)',windowPtrOrScreenNumber [,color] [,rect] [,pixelSize] [,specialFlags] [,multiSample]);  
-textureIndex=Screen('[MakeTexture](Screen-MakeTexture)', WindowIndex, imageMatrix [, optimizeForDrawAngle=0] [, specialFlags=0] [, floatprecision=0] [, textureOrientation=0] [, textureShader=0]);  
+textureIndex=Screen('[MakeTexture](Screen-MakeTexture)', WindowIndex, imageMatrix [, optimizeForDrawAngle=0] [, specialFlags=0] [, floatprecision] [, textureOrientation=0] [, textureShader=0]);  
 oldParams = Screen('[PanelFitter](Screen-PanelFitter)', windowPtr [, newParams]);  
 Screen('[Close](Screen-Close)', [windowOrTextureIndex or list of textureIndices/offscreenWindowIndices]);  
 Screen('[CloseAll](Screen-CloseAll)');  
@@ -118,7 +118,7 @@ Screen('ClearTimelist');
 Screen('[Preference](Screen-Preference)','DebugMakeTexture', enableDebugging);  
   
 % Movie and multimedia playback functions:  
-[ moviePtr [duration] [fps] [width] [height] [count] [aspectRatio]]=Screen('[OpenMovie](Screen-OpenMovie)', windowPtr, moviefile [, async=0] [, preloadSecs=1] [, specialFlags1=0][, pixelFormat=4][, maxNumberThreads=-1][, movieOptions]);  
+[ moviePtr [duration] [fps] [width] [height] [count] [aspectRatio] [hdrStaticMetaData]]=Screen('[OpenMovie](Screen-OpenMovie)', windowPtr, moviefile [, async=0] [, preloadSecs=1] [, specialFlags1=0][, pixelFormat=4][, maxNumberThreads=-1][, movieOptions]);  
 Screen('[CloseMovie](Screen-CloseMovie)' [, moviePtr=all]);  
 [ texturePtr [timeindex]]=Screen('[GetMovieImage](Screen-GetMovieImage)', windowPtr, moviePtr, [waitForImage], [fortimeindex], [specialFlags = 0] [, specialFlags2 = 0]);  
 [droppedframes] = Screen('[PlayMovie](Screen-PlayMovie)', moviePtr, rate, [loop], [soundvolume]);  
@@ -128,6 +128,7 @@ moviePtr = Screen('[CreateMovie](Screen-CreateMovie)', windowPtr, movieFile [, w
 Screen('[FinalizeMovie](Screen-FinalizeMovie)', moviePtr);  
 Screen('[AddFrameToMovie](Screen-AddFrameToMovie)', windowPtr [,rect] [,bufferName] [,moviePtr=0] [,frameduration=1]);  
 Screen('[AddAudioBufferToMovie](Screen-AddAudioBufferToMovie)', moviePtr, audioBuffer);  
+[imageArray, format, errorMsg, auxInfo] = Screen('[ReadHDRImage](Screen-ReadHDRImage)', filename [, errorMode=0]);  
   
 % Video capture functions:  
 devices = Screen('[VideoCaptureDevices](Screen-VideoCaptureDevices)' [, engineId]);  

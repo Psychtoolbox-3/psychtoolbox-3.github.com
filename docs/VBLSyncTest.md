@@ -1,7 +1,7 @@
 # [VBLSyncTest](VBLSyncTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)
 
-[VBLSyncTest](VBLSyncTest)(n, numifis, loadjitter, clearmode, stereo, flushpipe, synchronous, usedpixx, screenNumber)  
+[VBLSyncTest](VBLSyncTest)([n=600][, numifis=0][, loadjitter=0][, clearmode=0][, stereo=0][, flushpipe=0][, synchronous=0][, usedpixx=0][, usevulkan=0][, screenNumber=max])  
   
 Tests syncing of Psychtoolbox to the vertical retrace (VBL) and demonstrates  
 how to implement the old [Screen](Screen)('WaitBlanking') behaviour with  
@@ -112,6 +112,10 @@ timestamping of stimulus onset, as a correctness test for [Screen](Screen)('[Fli
 timestamping. Disabled (0) by default.  
 usedpixx = 2 Additionally correct for the clock skew between the computer  
 and [DataPixx](DataPixx) device.  
+  
+  
+'usevulkan' If 1, try to use a Vulkan display backend instead of the  
+[OpenGL](OpenGL) display backend. See 'help PsychVulkan'.  
   
   
 screenNumber =  Use a screen other than the default (max) for testing .  
