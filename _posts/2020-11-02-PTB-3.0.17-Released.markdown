@@ -7,9 +7,9 @@ author: kleinerm
 
 Psychtoolbox 3.0.17 Beta update "Dynamically High!" was released at 2nd November 2020.
 As usual, the complete development history can be found in our GitHub repository.
-The release tag is “PTB_Beta-2020-11-02_V3.0.17”, with the full tree and commit logs under the URL:
+The release tag is “3.0.17.0”, with the full tree and commit logs under the URL:
 
-<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2020-11-02_V3.0.17>
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.17.0>
 
 If you choose to use Psychtoolbox with Matlab then, at time of release, the most well tested Matlab versions on Linux are now R2014b and R2019a. The most well tested Matlab version on MS-Windows is R2019a, and on macOS  R2020b. Other recent versions are expected to work as well, but not tested yet.
 
