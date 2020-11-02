@@ -1,0 +1,113 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.17 Beta update "Dynamically High!" was released at 2nd November 2020.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “PTB_Beta-2020-11-02_V3.0.17”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/PTB_Beta-2020-11-02_V3.0.17>
+
+If you choose to use Psychtoolbox with Matlab then, at time of release, the most well tested Matlab versions on Linux are now R2014b and R2019a. The most well tested Matlab version on MS-Windows is R2019a, and on macOS  R2020b. Other recent versions are expected to work as well, but not tested yet.
+
+The most noteworthy improvements about "Dynamically High!" is that it contains initial support for "High Dynamic Range" displays for visual stimulation (HDR) on Linux and Windows-10, sponsored by [VESA](https://vesa.org), and a new installer and updater for use with Matlab, [sponsored by Mathworks](mathworks.com), which should hopefully especially help the less fortunate - people who are forced to use Apple macOS. This is also the first release supported under our new business model, and the first release built and at least somewhat tested under macOS Catalina 10.15.7 final.
+
+Stats:
+
+A total of 374 commit have changed 451 files for this release, made with in over 6 months of work, changing or adding over 93113 lines of code. This is a big one!
+
+## New features and improvements:
+
+### All operating systems:
+
+- New meta-feature: Advertisement for the new "community membership with priority support" and other paid services. See PsychPaidSupportAndServices() and [our new accompanying website psychtoolbox.net](https://www.psychtoolbox.net). Paid priority support by default applies to the most recent released PTB Beta, ie. this Psychtoolbox-3.0.17 release at time of writing, and the officially recommended and supported operating system and hardware configurations.
+
+- DownloadPsychtoolbox(), UpdatePsychtoolbox() and PsychtoolboxVersion() on Matlab R2014b or later now use Matlab's builtin Java-based SVNKit as "no-need-to-install" Subversion client. This should avoid the need to install a separate Subversion client. Especially macOS users should benefit from this, given that Apple both removed Subversion support from the latest macOS and XCode versions and additionally worked hard to sabotage the easy use of 3rd party clients. Thanks Apple! In case of trouble with the new method, DownloadPsychtoolbox() has a new optional 'downloadmethod' parameter, which can be set to -1 to request use of the old method based on a 3rd party Subversion client. An optional 'downloadmethod' of 1 requests the downloader to just download the raw unversioned Psychtoolbox folder, with all versioning control information stripped. This will prevent the use of UpdatePsychtoolbox() or PsychtoolboxVersion() after such an "export only" download, and you will lose the advantages brought by version control. The advantage is a smaller download and installation size of currently about 300 MB instead of over 600 MB. Choose your poison... [This work was sponsored by Mathworks](mathworks.com).
+
+- ColorCal-II colorimeter integration into the standard CMCheckInit() / MeasXYZ() based color measurement routines. While the ColorCal-II was supported since years via the ColorCal() function, now it also works with the older and more exhaustive calibration routines, e.g., the ones which so far required PhotoResearch PR devices like PR-650/655/670/705. This is so far only tested on one monitor of dubious color reproduction quality, so viewer discretion is advised! Iow. Trust, but verify!
+
+- New colorspace conversion helper routines: RGBToXYZMatrix(), XYZToRGBMatrix(), and ConvertRGBSourceToRGBTargetColorSpace() for converting RGB image matrices from one color gamut (set of primaries and white-point) to another. These are currently used for the HDR demos. They convert source RGB colorspace -> XYZ space -> target RGB colorspace, with the color spaces defined by their CIE 1931 XYZ chromaticity coordinates of red, green, blue primaries and white-point. Iow. Build a 3x3 CSC matrix and do the matrix by color vector multiply for all pixels.
+
+- Basic OpenEXR image reading support for single-part RGB (.exr) images, [by use of the open-source tinyexr library https://github.com/syoyo/tinyexr](https://github.com/syoyo/tinyexr). Also returns some standard and extended OpenEXR image attributes, e.g., image color gamut and conversion factor from values to nits.
+
+- Improved reading for RLE-RGBE "Radiance" image file (.hdr), with some parsing of some image attributes.
+
+- HDR image reading routines are integrated for convenient use into the improved HDRRead() function.
+
+- OpenGL 4.6 support in our "MOGL" Matlab/Octave OpenGL scripting interface. Ofc. only a subset of functions is supported, which is easily usable from a scripting language and allows for auto-generated interface code. Functions which require C memory pointer double indirections are not supported by default. Some might be supportable by manual writing of suitable wrapper code.
+
+- New and improved PsychTests:
+  - VBLSyncTest(), PerceptualVBLSyncTest(), FlipTimingWithRTBoxPhotoDiodeTest() and DatapixxGPUDitherPatternTest() now also support testing with the new Vulkan based display backend.
+  - FlipTimingWithRTBoxPhotoDiodeTest() can now also test timing with framebuffer color precisions beyond standard 8 bpc, e.g., 10 bpc and 16 bit floating point.
+  - The new VulkanInteropDebug() can help debugging Vulkan display driver bugs.
+  - AudioFeedbackLatencyTest() received some makeover to try to fix some file corruption that was present for unknown reasons.
+  - The new HDRTest() allows to test the basic luminance response curve and color gamut of HDR display monitors by use of supported colorimeters (tested with ColorCal-II) or manual data entry or external devices.
+
+- Bug fixes, documentation updates, misc. improvements.
+
+- Deprecation / Half removal of BrightSideDisplay support. More code is to be removed, but this is essentially already dysfunctional since the end of life of WindowsXP 32-Bit. Then BrightSide the company doesn't exist since over 12 years and their products probably all died of old age, so we can let it rest in peace.
+
+- GNU/Octave 6.1 seems to be very close to its first public release, but didn't quite make it. As soon as Octave 6.1 is released, we will switch the Octave requirements for MS-Windows and macOS from Octave 5.2 to Octave-6.1. This will require all Octave users of Psychtoolbox 3.0.17 to upgrade their Octave installations after the corresponding PTB beta update. If you want to stick to Octave-5.1/5.2 be advised to stick to the old Psychtoolbox-3.0.16, which will be officially unsupported from now on going forward.
+
+### Linux and Windows-10 only:
+
+- "High Dynamic Range" (HDR) display support on modern Linux distributions with modern AMD graphics cards, and on Windows-10 with modern AMD and NVidia graphics, when connected to suitable HDR monitors:
+  - Most of my (= Mario Kleiner) development work for this big new feature was sponsored by the [Video Electronics Standards Association (VESA)](https://vesa.org) under contract with my employer [the Medical Innovations
+ Incubator GmbH (MII) in Tuebingen, germany](https://www.mi-incubator.com). Big thanks to VESA for this support! [If you need similar feature development for Psychtoolbox, please see our services at https://www.psychtoolbox.net](https://www.psychtoolbox.net).
+  - More thanks go to the [AMD Linux open-source Vulkan driver team](https://github.com/GPUOpen-Drivers), and AMD Linux display driver team, [the MESA Linux Vulkan developers](https://www.mesa3d.org) for help with integration of HDR related improvements into the Linux kernel and user-space libraries and helpful technical discussions, and also to some of the folks [at the XDC 2020 Linux graphics developer conference](https://xdc2020.x.org/) for fruitful discussions about future improvements to our HDR and Vulkan support. Without Linux and open-source development, this project would have been almost impossible to finish.
+  - See "help PsychHDR" for detailed infos.
+  - The HDR-10 standard (BT-2100) with BT-2020 / ITU Rec. 2020 color space, 10 bit per color channel precision and SMPTE ST-2084 PQ "Perceptual Quantizer" EOTF is supported.
+  - So far, Linux was successfully tested over both DisplayPort and HDMI video outputs with AMD graphics cards of the Polaris series (Radeon Pro 560 in a MacBookPro 2017, and a discrete Radeon RX-460 graphics, both with DCE-11.2 display engine) and Raven Ridge integrated processor graphics (AMD Ryzen 5 2400G, Raven Ridge IGP, Vega 11 graphics, DCN 1.0 display engine). All modern AMD cards of Polaris and later are expected to work, likely also cards of the earlier Volcanic Islands and Sea Islands gpu families.
+  - So far, Windows-10 was successfully tested over both DisplayPort and HDMI video outputs with AMD Raven Ridge processor graphics. Also 3rd party testing of AMD RX-460, and AMD RX 5500 GPU card connected via DisplayPort. Windows-10 was also tested over both DisplayPort and HDMI video outputs with a NVidia GeForce GTX 1650 by myself, and 3rd party testing with GeForce GTX 1080 and GTX 2080.
+  - The new HDRTest.m script allows basic testing of correct operation (luminance response curve / linearity, color gamut) with supported colorimeters.
+  - The new demos SimpleHDRDemo.m and HDRViewer.m demonstrate basic use of HDR for HDR image display, and basic HDR 2D drawing. Also use of the new HDRRead() and color space conversion functions.
+  - MinimalisticOpenGLDemo.m with the new 'hdr' parameter and the new HDRMinimalisticOpenGLDemo.m demonstrate HDR display of OpenGL rendered 3D content.
+  - PlayMoviesDemo.m has been extended with an optional 'hdr' == 1 parameter to demonstrate playback of HDR-10 movies. GStreamer 1.18 is required for automated handling of HDR movies. GStreamer 1.16 will be able to playback HDR content with some manual help of the usercode, at least for PQ and HLG encoded content, as demonstrated in PlayMoviesDemo with the 'hdr' parameter set to 2. This allows 4k UHD HDR playback at reasonable framerates, also utilizing HDR static metadata type 1 information for mastering display properties and content light level properties.
+
+- As a by-product of HDR support, movie playback can now playback non-HDR UHD 4k content or Wide color gamut content with improved performance as well if the optional 'pixelformat' parameter is set to 11. Pixelformat 11 is automatically seleced when HDR display mode is in use. This does not work on Apple macOS due to Apples deficient OpenGL implementation, or on old graphics cards. GLSL shading language version 1.3 is required as a minimum for optimized movie playback.
+
+- As a by-product of HDR we have basic support of the Khronos Vulkan rendering api as a limited display backend on graphics cards and driver which support OpenGL-Vulkan interop. This is not used by default, but as an opt-in, as it does not yet provide real advantages in most standard dynamic range (SDR) stimulation scenarios. See "help PsychImaging" for the new task 'UseVulkanDisplay', as demonstrated in PerceptualVBLSyncTest, VBLSyncTest, FlipTimingWithRTBoxPhotoDiodeTest and AdditiveBlendingForLinearSuperpositionTutorial.
+  - Single display visual stimulation is supported on AMD graphics cards and NVidia graphics cards under Linux and Windows-10 with up to date drivers.
+  - Fullscreen mode with proper timing is currently somewhat unreliable and hit and miss on Linux with proprietary NVidia graphics, but highly reliable with AMD graphics cards. AMD graphics is strongly recommended!
+  - Multi-Display setups can be used, but only one display can be selected and used at a time for a single onscreen window, ie. dual-display stereo onscreen windows do not work.
+  - Opening multiple single-display onscreen windows may work, but is not always trouble-free or reliable.
+  - Basic visual timing and timestamping works reliably on AMD graphics cards, but not on NVidia graphics cards. AMD graphics is strongly recommended!
+  - Only stimulus onset via Screen('Flip') is supported at this time. Async flips via Screen('AsyncFlipBegin')..., frame-sequential stereo modes, and fine-grained timing via HDMI VRR, Displayport adaptive sync or AMD FreeSync are not yet supported. Only Linux with AMD graphics supports FreeSync/DP adaptive sync, and some more fragile and limited support is available for NVidia G-Sync under Linux.
+
+- Use of the Vulkan display backend under Linux with AMD graphics cards of the Polaris gpu family or later models (Vega, AMD Ryzen processor graphics, Navi recommended, but Vega and Navi untested so far) and the AMD developed amdvlk open-source driver with Linux 5.8 or later does allow for a new high precision output mode: Floating point 16 bit output for about ~11.5 bits of precision per color channel on suitable graphics cards and displays. See AdditiveBlendingForLinearSuperpositionTutorial() for one script demonstrating this. This should be able to attain better than 10 bpc output precision on native 12 bpc displays (DisplayPort strongly recommended, HDMI discouraged!) and on 10 bpc displays or 8 bpc displays via use of gpu hardware spatial dithering. This is so far only lightly tested on one native 10 bpc capable HDR monitor, so viewer discretion is advised.
+
+### Linux only:
+
+- GStreamer version 1.8 is now required at a minimum.
+
+- Ubuntu 16.04 LTS - or for that matter really anything older than Ubuntu 18.04.5 LTS, is no longer officially supported. Light touch and go testing shows most stuff still works fine, except DrawFormattedText2() in some special cases like text rotation or certain text alignment on Octave 4.0. But no further testing will be performed, and we may make incompatible changes to the 3.0.17 series and later in the future. This should not be a big problem, as Ubuntu 16.04 LTS will reach its official end-of-life in less than six months.
+
+- There is some minimal compatibility fix for the brand-new Ubuntu 20.10 (Groovy Gorilla) for dealing with the upgraded libdc1394.so.25 Firewire and USB-Vision video capture library for IIDC machine vision cameras.
+
+- NOTE: Ubuntu 20.10 is not yet exhaustively tested for compatibility with Psychtoolbox 3.0.17, but may have some problems with sound output via PsychPortAudio(). Stay tuned...
+
+### Windows only:
+
+- GStreamer version 1.18.0 64-Bit MSVC or later versions are now required on Windows. Screen() will no longer work with older versions of GStreamer! The current download link is this one:
+ [GStreamer 1.18 MSVC](https://gstreamer.freedesktop.org/data/pkg/windows/1.18.0/msvc/gstreamer-1.0-msvc-x86_64-1.18.0.msi)
+
+- Windows 7, Windows 8, Windows 8.1, and Windows-10 versions older than the Window-10 November 2019 update (Release 1909) are not tested at all for this release. Upgrading to a 2020 release of Windows-10 is recommended, as future testing of PTB will happen on the latest recommended stable Windows-10 releases, e.g., May 2020 update (Release 2004) or later. While the expectation is that this release still works with Windows-7, this may change at any time for any reason without further warning in a future PTB beta release. Windows-7 has reached end-of-life already at the beginning of 2020, and Windows-8 even long before, so this should not pose any real problems.
+
+### macOS only:
+
+- The macOS build system and only somewhat tested and officially supported platform is now macOS 10.15.7 Catalina final. Please note that this is not and endorsement of Catalina, the most awful macOS version ever imposed onto the world. I fully expect the upcoming macOS 11 "Big Sur" to be even worse for neuroscience testing and take the crown from Sierra, stay tuned! You should probably stick to your current system if it works reasonably well for you, because things are guaranteed to get worse when "upgrading" to Catalina. I unfortunatey did not have the choice of sticking to the better working macOS Mojave, because of lack of support for some API's and features and forced deprecation of functionality by Apple, so here we are. At this point we only have one test machine for frequent testing with Catalina, using AMD graphics (MacBookPro 2017 15 inch), and one machine for very infrequent testing on Intel graphics (macMini 2012), and no other Apple test machines apart from an over 10 years old MacBookPro 2020 with slowly failing hardware and limited usability for testing under macOS 10.13.6 High Sierra.
+
+- GStreamer version 1.8 is now required at a minimum. While GStreamer on macOS is still optional if you don't need multi-media or video capture/recording functionality, our advanced plugin based text renderer likely will not work, at least not with Matlab (see "help DrawTextPlugin"), only the inferior and officially unsupported Apple CoreText renderer. GStreamer is now the recommended choice for getting our text renderer going, and additional workarounds have been added to deal with macOS being macOS when it comes to text rendering. Previously X11 was recommended, but given that Apple deprecated that technology this doesn't seem to be the most convenient choice. Octave 5.2 should support our high quality renderer even in the absence of GStreamer though.
+
+- [Octave 5.2 from HomeBrew](https://brew.sh/) is the only supported GNU/Octave version at this point in time. Our DownloadPsychtoolbox() function will now try to preferentially use the Subversion command line client "svn" provided by HomeBrew for downloads and updates. In case of a missing or dysfunctional (e.g., intentionally sabotaged by Apple) svn client, it will offer to automatically install Subversion from HomeBrew. The same fallback mechanism is available by specifying an optional 'downloadmethod' of -1 in DownloadPsychtoolbox() if one tried to install/update on Matlab and the new SVNKit method would fail for some reason.
+
+- We are deprecating libdc1394 Firewire video capture support, Microsoft Kinect support (PsychKinect()), and Oculus VR support (PsychOculusVR) on macOS. The functionality is still available but practically untested and unsupported in case of trouble. If we get aware of actual trouble with this functions, we will remove them for macOS, as the effort is not worth the gain anymore:
+  - All Apple Macs since after 2012 do no longer have Firewire ports.
+  - The Microsoft Kinect is no longer sold.
+  - Oculus does not support any of their consumer VR HMD's on macOS as they consider Apple hardware and operating systems unsuitable for serious VR application. So does Valve btw.
+  - We will keep all this functionality supported indefinitely on Linux and as long as practical on MS-Windows.
+
+Enjoy!
