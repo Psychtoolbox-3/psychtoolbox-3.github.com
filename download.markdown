@@ -396,7 +396,7 @@ of older versions can be found at the bottom of the page found
   [arezzo]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/Psychtoolbox3-Slides.pdf
   [bremen]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/PTBTutorial-ECVP2013.pdf
   [docs-gstreamer]: http://psychtoolbox.org/docs/GStreamer
-  [docs-download]: http://docs.psychtoolbox.org/DownloadPsychtoolbox
-  [docs-setup]: http://docs.psychtoolbox.org/SetupPsychtoolbox
-  [docs-update]: http://docs.psychtoolbox.org/UpdatePsychtoolbox
+  [docs-download]: http://psychtoolbox.org/docs/DownloadPsychtoolbox
+  [docs-setup]: http://psychtoolbox.org/docs/SetupPsychtoolbox
+  [docs-update]: http://psychtoolbox.org/docs/UpdatePsychtoolbox
   [c++ runtime]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychContributed/vcredist_x64_2015-2019.exe
