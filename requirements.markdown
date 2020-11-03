@@ -199,7 +199,7 @@ Psychtoolbox should work on
 -   Matlab 64-bit. Currently tested with release R2019a.
     External mandatory requirements: Microsoft C MSVC 2015-2019 runtime and
     GStreamer 1.18 MSVC or later. Installation of GStreamer _before_ installation
-    of Psychtoolbox is mandatory on GNU Octave or the Screen mex file will not work.
+    of Psychtoolbox is mandatory on Matlab or the Screen mex file will not work.
 
 -   [GNU Octave 5.2.0, 64-Bit. Installation of GStreamer _before_ installation
     of Psychtoolbox is mandatory on GNU Octave or the Screen mex file will not work.
@@ -236,8 +236,7 @@ itself if needed, or to fix various bugs or even diagnose bugs for development o
 workarounds. It is hit and miss...
 
 We cannot recommend Window at for dual-display stereo stimulus presentation, HiDPI
-setups, or for tasks with a need for high visual timing precision. For some caveats
-with respect to Vista and later see [our FAQ entry about Vista and Windows-7][faqvista].
+setups, or for tasks with a need for high visual timing precision.
 
 Generally we recommend switching to a modern version of Linux, e.g., a flavor of
 Ubuntu 20.04-LTS.
@@ -321,7 +320,7 @@ graphics hardware for full functionality and good performance. For optimal
 performance and functionality on Linux we recommend AMD or Intel graphics
 over NVidia graphics, due to the high quality open-source drivers for AMD
 and Intel graphics. For advanced functionality like fine-grained timing via
-FreeSync or Display port adaptive sync, choose AMD. Ditto for HDR display
+FreeSync or Displayport adaptive sync, choose AMD. Ditto for HDR display
 support.
 
 In general, you should not try to skimp on the GPU, as performance of
@@ -381,7 +380,6 @@ often even for single-display stimulation on a multi-display setup.
   [docs-gstreamer]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/GStreamer.m
   [docs-kerneldriver]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/PsychtoolboxKernelDriver.m
   [c++ runtime]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychContributed/vcredist_x64_2015-2019.exe
-  [faqvista]: http://psychtoolbox.org/FaqVista
   [gma950]: http://en.wikipedia.org/wiki/GMA_950
   [gfxhw]: /graphics-requirements
   [Octave5ForWindows]: https://ftpmirror.gnu.org/octave/windows/octave-5.2.0-w64-installer.exe
