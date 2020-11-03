@@ -77,7 +77,7 @@ Mario Kleiner, David Brainard, Denis Pelli, Chris Broussard, Tobias Wolf, Dieder
 
 
  [finalstats]: /stats.html
- [docs-demos]: http://docs.psychtoolbox.org/PsychDemos
+ [docs-demos]: http://psychtoolbox.org/docs/PsychDemos
  [bremen]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychDocumentation/PTBTutorial-ECVP2013.pdf
  [forum]: /forum
 
