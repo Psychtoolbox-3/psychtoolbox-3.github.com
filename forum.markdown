@@ -58,6 +58,12 @@ Read below how you can assist us in helping you effectively ...
 > - Hardware setup and relevant driver versions
 > 
 > We appreciate it when you **sign with your name and affiliation**.
+>
+> [Answers on the forum will be provided by volunteers at their leisure, so you might
+> have to wait for quite a while for an answer, or not get an answer at all.
+> If you need expert advice on the use of Psychtoolbox, or for resolving issues,
+> with a guaranteed response in a reasonable amount of time, then please have a
+> look at our commercial priority support by clicking this link.][priority-support]
 > 
 > **If you are a registered member of the forum, your posts won't be subject to moderation
 > delay. Your questions will show up faster and you might get answers faster. Otherwise
@@ -83,3 +89,4 @@ Read below how you can assist us in helping you effectively ...
   [docs-documentation]: http://docs.psychtoolbox.org/PsychDocumentation
   [forum]: https://psychtoolbox.discourse.group
   [faq]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/wiki/FAQ
+  [priority-support]: /prioritysupport
