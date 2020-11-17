@@ -15,8 +15,8 @@ categories: getting-help
  1. As part of your purchase, you will receive a document with a printed
     "Order Id" and a printed "License key".
 
- 2. Next you can run the Psychtoolbox function PsychPaidSupportAndServices in Octave
-    or Matlab. The function will ask you if you need priority support and do have
+ 2. [Next you can run the Psychtoolbox function PsychPaidSupportAndServices in Octave
+    or Matlab.][PsychPaidSupportAndServices] The function will ask you if you need priority support and do have
     an active license key to prove your community membership. Answer "y" for yes.
 
  3. Next the function will ask you about your "Order Id" and "License key".
@@ -36,3 +36,4 @@ categories: getting-help
 [commercialsite]: https://www.psychtoolbox.net/#future
 [forum]: /forum
 [issues]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/issues
+[PsychPaidSupportAndServices]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/beta/Psychtoolbox/PsychDocumentation/PsychPaidSupportAndServices.m
