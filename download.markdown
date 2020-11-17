@@ -326,6 +326,8 @@ Alternatively, if you haven't made any modifications to your Psychtoolbox
 folder, simply rerun `DownloadPsychtoolbox` to install a fresh copy of
 Psychtoolbox.
 
+[If you need timely expert support in resolving download or installation
+issues, we also offer paid priority support under this link.][priority-support]
 *If everything else fails, contact the Psychtoolbox [forum][forum] with a
 description of what you tried.*
 
@@ -376,6 +378,7 @@ of older versions can be found at the bottom of the page found
 
   [requirements]: /requirements
   [forum]: /forum
+  [priority-support]: /prioritysupport
   [versions]: /versions
   [using-on-linux]: /linux
 
