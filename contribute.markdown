@@ -15,10 +15,10 @@ demanding stimulation and data collection paradigms, requires a lot of
 highly qualified and highly focused work.
 
 This work is currently (year 2006 - present) mostly carried out by Mario
-Kleiner, who is now employed to do this work by the Medical Innovations
-Incubator GmbH (MII) in Tuebingen, Germany ( https://www.mi-incubator.com ).
-The MII belongs by 100% to the non-profit foundation for medical
-innovations ( http://www.mi-foundation.org ) in Tuebingen.
+Kleiner, who is now employed to do this work by the [Medical Innovations
+Incubator GmbH (MII) in Tuebingen, Germany.](https://www.mi-incubator.com)
+The MII belongs by 100% to the [non-profit foundation for medical
+innovations in Tuebingen.](http://www.mi-foundation.org)
 
 In order to fund Mario's work and provide him with the resources to do
 this job, the MII offers different types of paid services around
@@ -38,7 +38,7 @@ commercial development services, and for the community membership with
 paid priority support:
 
 
-https://www.psychtoolbox.net
+[https://www.psychtoolbox.net](https://www.psychtoolbox.net)
 
 The membership allows you to get your voice heard by the developers
 regarding future feature development, as well as preferential treatment
