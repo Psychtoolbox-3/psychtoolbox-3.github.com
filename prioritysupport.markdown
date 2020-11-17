@@ -5,9 +5,9 @@ categories: getting-help
 ---
 
  If you require priority support regarding Psychtoolbox, go to the
- following website to buy such services from us:
+ following commercial companion website to buy such services from us:
 
- https://www.psychtoolbox.net
+ [https://www.psychtoolbox.net][commercialsite]
 
  For priority support on our user forum or on our GitHub issue tracker, buy a
  "community membership with priority support" from there.
@@ -23,9 +23,8 @@ categories: getting-help
     Please enter that info that you got from step 1.
 
  4. The function will print out an "authentication token", a string of letters and
-    numbers. Now you can post your question on the Psychtoolbox user forum at
-    https://psychtoolbox.discourse.group or open a new issue for bugs and feature
-    requests on our GitHub issue tracker at https://github.com/Psychtoolbox-3/Psychtoolbox-3/issues
+    numbers. [Now you can post your question on the Psychtoolbox user forum][forum]
+    or [open a new issue for bugs and feature requests on our GitHub issue tracker][issues].
 
     Please add the "authentication token" to your forum question or GitHub issue.
     This will prove to us that you deserve priority support for your question or
@@ -33,3 +32,7 @@ categories: getting-help
     days after date of purchase, so do not buy the priority support last minute,
     when the "house is already burning", but ahead of time, like you would do
     with a fire insurance.
+
+[commercialsite]: https://www.psychtoolbox.net/#future
+[forum]: /forum
+[issues]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/issues
