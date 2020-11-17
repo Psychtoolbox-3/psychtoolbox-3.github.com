@@ -62,6 +62,9 @@ Principal investigators and their collaborators have identified at least 127
 [#grant-supported projects](../grants) that use it. According to Google scholar,
 over 25635 articles [cite](../citations) it.
 
+Commercial support and services around Psychtoolbox are available on the commercial
+companion website [www.psychtoolbox.net](https://www.psychtoolbox.net).
+
 The following link is a PDF file with the slides of a presentation held at ECVP
 2013 in Bremen by Mario Kleiner. These slides will give you a quick overview
 about using the new features of Psychtoolbox-3:
