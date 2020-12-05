@@ -106,5 +106,5 @@ PsychoPy for substantially improved audio, timing and response
 collection functionality; Denis Pelli for fixing severe issues with
 Apple macOS for visual stimulus timing and response collection; and
 the VESA industry consortium for High Dynamic Range display support
-(see <https://vesa.org/featured-articles/vesa-funds-development-of-new-video-compression-test-tool-for-high-dynamic-range-displays/
-for their press release>).
+(see <https://vesa.org/featured-articles/vesa-funds-development-of-new-video-compression-test-tool-for-high-dynamic-range-displays/>
+for their press release).
