@@ -28,7 +28,7 @@ Short version
 -   *Runtime environment:*
 
     64-Bit Matlab version R2019a or later (older versions may work), and GNU Octave version 3.8 or later version
-    on Linux, and 64-Bit [Octave version 5.2.0 on macOS][Octave5macOS] [and on MS-Windows.][Octave5ForWindows]
+    on Linux, and 64-Bit [Octave version 6.1.0 on macOS][OctavemacOS] [and on MS-Windows.][OctaveForWindows]
 
 -   *Graphics card:*
 
@@ -145,12 +145,12 @@ Psychtoolbox is also being developed and tested under Apple macOS.
 Psychtoolbox should "work" in principle on
 
 -  64-bit Matlab R2014b on macOS 10.11 "El Capitan" and later.
--  64-bit Octave v5.2.0 on macOS 10.11 "El Capitan" and later. As of 2020,
-   [you will need to get Octave 5.2.0 from a package manager like HomeBrew][Octave5macOS]
+-  64-bit Octave v6.1.0 on macOS 10.11 "El Capitan" and later. As of 2020,
+   [you will need to get Octave 6.1.0 from a package manager like HomeBrew][OctavemacOS]
    or MacPorts, as standalone binary installers are not available yet.
 
 Limited testing currently only happens on the latest version of macOS 10.15.7
-“macOS Catalina” with 64-Bit Octave 5.2.0, and with 64-bit Matlab R2020b, and
+“macOS Catalina” with 64-Bit Octave 6.1.0, and with 64-bit Matlab R2020b, and
 infrequently on 10.13.6 "macOS High Sierra". These are the only somewhat supported versions of
 macOS at this point in time. Avoid macOS Catalina 10.15 if you don't have to.
 Psychtoolbox is compatible with Catalina in principle, and Catalina is the only
@@ -201,10 +201,10 @@ Psychtoolbox should work on
     GStreamer 1.18 MSVC or later. Installation of GStreamer _before_ installation
     of Psychtoolbox is mandatory on Matlab or the Screen mex file will not work.
 
--   [GNU Octave 5.2.0, 64-Bit. Installation of GStreamer _before_ installation
+-   [GNU Octave 6.1.0, 64-Bit. Installation of GStreamer _before_ installation
     of Psychtoolbox is mandatory on GNU Octave or the Screen mex file will not work.
-    The current download location for official Octave-5.2.0 64-Bit is reached by
-    clicking this link.][Octave5ForWindows]
+    The current download location for official Octave-6.1.0 64-Bit is reached by
+    clicking this link.][OctaveForWindows]
 
 If you choose to use Matlab, you may need to install Microsoft Visual C runtime
 libraries to make it work, specifically `vcredist_x64_2015-2019.exe`. The installer should
@@ -382,8 +382,8 @@ often even for single-display stimulation on a multi-display setup.
   [c++ runtime]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychContributed/vcredist_x64_2015-2019.exe
   [gma950]: http://en.wikipedia.org/wiki/GMA_950
   [gfxhw]: /graphics-requirements
-  [Octave5ForWindows]: https://ftpmirror.gnu.org/octave/windows/octave-5.2.0-w64-installer.exe
-  [Octave5macOS]: https://formulae.brew.sh/formula/octave
+  [OctaveForWindows]: https://ftpmirror.gnu.org/octave/windows/octave-6.1.0-w64-installer.exe
+  [OctavemacOS]: https://formulae.brew.sh/formula/octave
   [Raspbian]: https://www.raspberrypi.org/
   [HybridGraphics]: https://raw.githubusercontent.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/PsychDocumentation/HybridGraphics.m
   [AudioHW]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/wiki/Hardware:-Audio-Devices
