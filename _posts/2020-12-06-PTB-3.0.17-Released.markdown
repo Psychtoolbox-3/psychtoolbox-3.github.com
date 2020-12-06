@@ -1,8 +1,24 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.17 Beta update "Dynamically High!" SP5 was released at 6th December 2020.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.17.5”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.17.5>
+
 The most noteworthy improvements about the original "Dynamically High!" relesae are that it contains initial support for "High Dynamic Range" displays for visual stimulation (HDR) on Linux and Windows-10, sponsored by [VESA](https://vesa.org) ([Read the press release by clicking this link)](https://vesa.org/featured-articles/vesa-funds-development-of-new-video-compression-test-tool-for-high-dynamic-range-displays/), and a new installer and updater for use with Matlab, [sponsored by Mathworks](https://mathworks.com), which should hopefully especially help the less fortunate - people who are forced to use Apple macOS. This is also the first release supported under our new business model, and the first release built and at least somewhat tested under macOS Catalina 10.15.7 final.
 
-SP5 is a release with bug fixes and smaller incremental improvements on top of that. See previous release announcements for the 3.0.17 series for the major features.
-
 What's new in the Santa Claus update?
+
+SP5 is mostly a release with bug fixes and smaller incremental improvements on top of that. See previous release announcements for the 3.0.17 series for the major features.
+
+The __major change__ is cancellation of support for Octave versions other than Octave 6.1 on Microsoft Windows and Apple macOS. If you use Octave on these systems, you must upgrade your Octave to the new version 6.1. macOS users of HomeBrew can do a brew update and brew upgrade to achieve this, followed by launching octave and running cd(PsychtoolboxRoot); SetupPsychtoolbox;
+Ditto for Windows users, after downloading and running the new installer from Octave’s website.
 
 ### All systems
 
