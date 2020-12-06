@@ -1,0 +1,64 @@
+The most noteworthy improvements about the original "Dynamically High!" relesae are that it contains initial support for "High Dynamic Range" displays for visual stimulation (HDR) on Linux and Windows-10, sponsored by [VESA](https://vesa.org) ([Read the press release by clicking this link)](https://vesa.org/featured-articles/vesa-funds-development-of-new-video-compression-test-tool-for-high-dynamic-range-displays/), and a new installer and updater for use with Matlab, [sponsored by Mathworks](https://mathworks.com), which should hopefully especially help the less fortunate - people who are forced to use Apple macOS. This is also the first release supported under our new business model, and the first release built and at least somewhat tested under macOS Catalina 10.15.7 final.
+
+SP5 is a release with bug fixes and smaller incremental improvements on top of that. See previous release announcements for the 3.0.17 series for the major features.
+
+What's new in the Santa Claus update?
+
+### All systems
+
+- Lots of code cleanup and deletion of obsolete/long dead and unused code and functionality.
+
+- Octave mex files will now be stripped of the most verbose debug symbols. This drastically reduces the size of many Octave mex files, so this Psychtoolbox should shrink considerably in download size / disk space despite new functionality.
+
+- Convert EyelinkToolbox demo images from BMP to space saving JPEG for lower disc space consumption.
+
+- Docs and help text updates.
+
+- Make Postinstall routine more robust against fontconfig cache rebuild failures.
+
+- SimpleHDRDemo: No longer use .hdr demo image file from Matlab image processing toolbox. We don't want to require an extra toolbox just for a sample image, when we ship our own set of free images!
+
+- PsychDataPixx('Verbosity', 7) now allows logging of all actual calls to the Datapixx mex file for enhanced debugging of issues with VPixx hardware.
+
+- Add PsychContributed/Eduloggers: Simple Edulogger support. Contributed by Todd Parsons (@TEParsons) under MIT license,
+thanks! This is unmaintained and untested code, as it was partially rewritten to reach the minimal quality standard of PTB by Mario Kleiner, but could not be tested after the rewrite due to lack of Edulogger hardware. Hence the location in the PsychContributed folder for the time being, instead of proper placement in the PsychHardware folder.
+
+- Support the brand new GNU/Octave 6.1 on Windows, macOS, and future Linux distribution releases via NeuroDebian and upstream distribution Octave and Psychtoolbox packages. Cancel support for Octave 5 on Windows and macOS. Octave 6 has various improvements relevant to us, e.g.,:
+  - Improved GUI, editor etc.
+  - HiDPI per monitor scaling on Windows-10, which makes the UI nicer on HiDPI/Retina displays and should allow visual stimulation timing being less affected on mixed DPI setups under Windows (untested, that is the theory).
+  - Supports the webread()/webwrite() family of functions for RESTful api's. This allows, e.g., to now support Eduloggers under Octave.
+  - Supports handles to nested functions. This allows, e.g., the following improvements to various fitting functions in Psychtoolbox.
+
+- Octave 6.1 and later now supports function handles to nested functions, and its 'optim' optimization toolbox supports fmincon() and some other non-linear optimization functions. This enables us to support some parts under Octave 6 which were so far not functional: Various new monitor calibration / gamma fitting routines used / supported by FitGamma(), Some psychometric fitting procedures like, e.g., FitCumNormYN() and FitWeibXXX Weibull function based fitting functions, as well as FitNakaRushton(). Additionally LjgToXYZFun() for color space conversions and FitConeFundamentalsWithNomogram(). Basically all functions that would utilize the Matlab optimization toolbox's fmincon() and fminunc() solvers.
+
+### Linux
+
+- Make PsychHID on Linux robust against touchscreens that claim to be keyboards on the MS Surface Pro 6 tablet (ipts touchscreen!). GetKeyboardIndices() will no longer enumerate such touch screens as *dysfunctional* keyboards.
+
+- Fix PsychtoolboxVersion() for NeuroDebian installations.
+
+- MultiTouchDemo and MultiTouchMinimalDemo allow selection of target touchscreen to display on. Suggested by @iandol.
+
+#### For Octave 5 on Ubuntu 20.04-LTS and similar modern Linux distros only so far:
+
+These features will be provided in a later update for Ubuntu 18.04-LTS and Octave 3.8/4.0/4.2 and for Matlab.
+
+- Have special format handling for Video4Linux2 devices which provide video in MJPEG format.
+
+- Fix rejection of AMD DCN-2 / Navi gpu family gpu's for low-level mmio access.
+
+### Windows
+
+- Switch required and supported Octave version from Octave 5.x to the brand-new Octave 6.1.
+
+- Special case handling for Microsoft Surface tablet's builtin video cameras. Only on Octave 6.1, Matlab to follow later.
+
+- Support new mfvideosrc "Multimedia Foundation" capture plugin. Only on Octave 6.1, Matlab to follow later.
+
+- Minor video capture improvement: Use device monitors / device providers. Only on Octave 6.1, Matlab to follow later.
+
+### macOS
+
+- Switch required and supported Octave version from Octave 5.x to the brand-new Octave 6.1.
+
+- Minor video capture improvement: Use device monitors / device providers.
