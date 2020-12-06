@@ -144,11 +144,11 @@ folders of your liking instead:
     carefully for this purpose, *before downloading and installing GStreamer*.][docs-gstreamer]
 
     If you intend to use Octave, you will need to delete the following DLL files from the
-    C:\Octave\Octave-5.2.0\mingw64\bin\ folder:
+    C:\Program Files\GNU Octave\Octave-6.1.0\mingw64\bin\ folder:
     opengl32.dll -- Otherwise hardware accelerated visual stimulation will not work.
 
 4.  [You may also need to install the Microsoft Runtime Libraries for MSVC 2015-2019 if
-    you use Matlab instead of Octave.
+    you use Matlab instead of Octave. For a few use cases you may even need those if you use Octave.
     You can find installers for these at Microsoft’s site beforehand. Otherwise
     when our installer aborted half-ways, follow the instructions it prints to
     the console. Or simply click this link to get a copy bundled with Psychtoolbox][c++ runtime]
