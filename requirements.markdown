@@ -248,13 +248,12 @@ Additional software
 
 Installation of GStreamer version 1.18 or later is mandatory for movie playback,
 movie recording, video capture and video recording. Multimedia functions won't
-work on **macOS** without GStreamer being installed. Neither will high quality
+work on **macOS** without GStreamer 1.18 being installed. Neither will high quality
 text rendering work, unless you use Octave instead of Matlab. If you want to use
 Psychtoolbox for visual stimulation on **Windows** you will _have_ to install
 GStreamer first, even if you do not need any multimedia functions, or Psychtoolbox
 won't work. GStreamer 1.18.0 MSVC variant or later is needed, earlier versions or
-MinGW variants will not work on Windows. GStreamer 1.8 may work on macOS with
-limited functionality, but is no longer tested, so GStreamer 1.18 is recommended.
+MinGW variants will not work on Windows.
 
 On **Linux** you also need GStreamer, but GStreamer is a de-facto standard
 component that ships with all modern Linux distributions. GStreamer 1.8 will work,
