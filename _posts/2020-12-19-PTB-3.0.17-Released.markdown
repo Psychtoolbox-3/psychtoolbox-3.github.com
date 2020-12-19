@@ -1,0 +1,84 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.17 Beta update "Dynamically High!" SP6 was released at 19th December 2020.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.17.6”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.17.6>
+
+:christmas_tree: Ho Ho Ho! :christmas_tree:
+
+The most noteworthy improvements about "Dynamically High!" are that it contains initial support for "High Dynamic Range" displays for visual stimulation (HDR) on Linux and Windows-10, sponsored by [VESA](https://vesa.org) ([Read the press release by clicking this link)](https://vesa.org/featured-articles/vesa-funds-development-of-new-video-compression-test-tool-for-high-dynamic-range-displays/), and a new installer and updater for use with Matlab, [sponsored by Mathworks](https://www.mathworks.com/solutions/neuroscience.html), which should hopefully especially help the less fortunate - people who are forced to use Apple macOS. This is also the first release supported under our new business model, and the first release built and at least somewhat tested under macOS Catalina 10.15.7 final.
+
+SP6 is a release with bug fixes, workarounds for Apples broken macOS Catalina operating system, and smaller incremental improvements. [See  the previous release announcements for the 3.0.17 series for the major features.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/tag/3.0.17.4)
+
+The most interesting improvement in SP6 is basic support for stereo HDR stimulation on dual HDR display monitor setups under Linux.
+
+### All systems
+
+- Fixes and improvements to the Python support, contributed by Alex Forrence (GitHub users @aforren1) - Thanks!
+  - DLL runtime libraries misplaced on Windows after package restructuring.
+  - NumPy now gets installed automatically in a suitable version, as it was added as dependency.
+
+- More code cleanup and deletion of obsolete/long dead and unused code and functionality.
+
+- All Octave mex files will now be stripped of the most verbose debug symbols. This drastically reduces the size of many Octave mex files, so this Psychtoolbox should shrink considerably in download size / disk space despite new functionality. Some other big binaries related to the no longer supported Ubuntu 14.04/16.04 LTS were deleted for further space savings.
+
+- Quite many Docs and help text updates.
+
+- Various minor improvements to HDR support on Linux and Windows:
+  - SimpleHDRDemo: Hide distracting mouse cursor.
+  - ImagingStereoMoviePlayer: Fix text drawing and add basic HDR stereo movie playback support.
+  - PerceptualVBLSynctest: Add another way to visually check for dual-display video refresh sync, e.g., for stereo setups.
+  - HDRViewer: Fix initial mouse cursor positioning on multi-display HDR setups.
+
+- Performance enhancements to drawing of our startup Welcome Screen. The logo can now also be automatically scaled down when running on low-resolution displays.
+
+### Linux
+
+- Make PsychHID on Linux robust against touchscreens that claim to be keyboards on the MS Surface Pro 6 tablet (ipts touchscreen!). GetKeyboardIndices() will no longer enumerate such touch screens as *dysfunctional* keyboards. PsychHID will reject similar weird devices in the future, even if they don't get filtered out by GetKeyboardIndices() iow. future proofing.
+
+- Have special format handling for Video4Linux2 devices which provide video in MJPEG format.
+
+- Fix rejection of AMD DCN-2 / Navi gpu family gpu's for low-level mmio access.
+
+- Rebuilt the drawtext plugin for 32-Bit ARMv7l architecture, ie. the RaspberryPi, to add so far missing support for underlined text drawing.
+
+- XOrgConfSelector: Recommand CTRL+ALT+F3 instead of CTRL+ALT+F1 in case of display server startup failure, as Ubuntu 20.04-LTS uses the VT1 (F1) for the login manager / lock screen, so VT3 (F3) is a better choice for a text console if troubleshooting is needed.
+
+- XOrgConfCreator: Provide improved setup instructions for 10 bpc / depth 30 deep color support: Update to cover the fact that AMD Navi+, Raven Ridge+ and other 2018+ gpu's with DCN display engine are no longer supported by our low-level MMIO hacks for 10 bpc+ framebuffer precision, but instead the standard xorg.conf depth 30 setup should be used to the same effect with higher performance, just as on Intel and NVidia graphics cards. The low-level hacks could be implemented on more modern gpu's but there isn't any practical need or benefit for that anymore, at least not as of PTB 3.0.17.
+
+- PsychVulkan now supports improved visual stimulus onset timing and timestamping via Vulkan driver native support on suitable drivers. This makes use of the VK_GOOGLE_DISPLAY_TIMING extension when available.
+
+- PsychVulkan can now also optimally work with Intel graphics chips on Linux, as has been tested with a prototype Mesa branch for OpenGL+Vulkan interop. This is not yet available as part of standard Linux distributions, but when they are ready, we are ready! Vulkan is not yet supported in a usable way for us on MS-Windows.
+
+- Add new experimental PsychImaging task for HDR:  ``PsychImaging('AddTask', 'General', 'UseStaticHDRHack');`` enables use of a new hack that only works on Linux with classic X11 X-Display X-Server, not on Linux+Wayland and not on other operating systems. This allows dual-display stereo presentation of HDR-10 stimuli, ie. with stereomode 4 or 5 "Dual display stereo", also single-display or multi-display use of this mode, e.g., for frame-sequential stereo presentation of HDR stimuli, or "display wall" multi-HDR-monitor setups. Normally our HDR display support is currently restricted to one HDR monitor per onscreen window, no multi-monitor HDR stereo setups. This hacks makes this work in a limited fashion, as described in the PsychImaging help.
+  - A new SimpleHDRLinuxStereoDemo.m shows stereoscopic HDR stimulus display on a dual-HDR-monitor setup.
+  - ImagingStereoMoviePlayer shows stereoscopic HDR movie playback as a new optional playback mode.
+  - For performance benchmarking of HDR playback, the option to select this hack was also added to PlayMoviesDemo.
+
+### Windows
+
+- Special case handling for Microsoft Surface tablet's builtin video cameras.
+
+- Support new mfvideosrc "Multimedia Foundation" capture plugin.
+
+- Minor video capture improvement: Use device monitors / device providers.
+
+### macOS
+
+- SetupPsychtoolbox: Handle latest Apple macOS Catalina+ brain-damage. Apples Catalina trainwreck needs special treatment. If Psychtoolbox has been downloaded via a webbrowser as a zip file or tgz file and then extracted, then all binary executable files like .dylib's and .mexmaci64 mex files will have the com.apple.quarantine attribute set to prevent them from working in any meaningfully user fixable way - Thanks Apple! Use the xattr command to remove the quarantine flag.
+
+- Delete memcpuCudaOpenGL for macOS. It's dead since Apple decided to drop support for NVidia gpu's - and thereby CUDA - from their "Most advanced operating system in the world".
+
+- PsychtoolboxPostInstallRounte: Deal with another Apple macOS Catalina SDK screwup: Since we are now building Screen() for macOS against 10.15 Catalina with the Catalina SDK we hit a new bug in Apples low-quality software. Apparently when built against the Catalina SDK, but running on older macOS versions than Catalina, then OpenGL rendering into a hidden window (via Preference ‘WindowShieldingLevel’ -1) is broken and triggers GL_INVALID_FRAMEBUFFER_OPERATION_EXT errors. The same works perfectly fine - as expected and tested before release - on Catalina itself. This caused error abort in the fontconfig cache rebuilt code which opens a hidden onscreen window when run under < Catalina. The bug is known to happen at least on 10.14 Mojave, 10.13 High Sierra, and 10.12 Sierra, so probably going back through all older macOS versions. Work around it by suppressing OpenGL error checking during this OpenWindow sequence, as we do not actually need rendering to work here.
+Work time spent to diagnose and workaround this bug which is again like almost all macOS issues fully Apples fault: 5 hours. Thanks Apple!
+
+- Note in help GStreamer that movie playback and high quality text rendering on macOS now also needs GStreamer 1.18 at a minimum, 1.18.2 is recommended.
+
+- Refine reporting of OS support status in Screen() startup and Screen('Computer'): Report everything before Catalina as untested and unsupported. Report everything beyond Catalina, ie. macOS 11+, as not yet tested or supported. As of now, i very rarely and infrequently spot-check stuff on my old 10.13.6 High Sierra system under some Matlab version. Given 10.13's end of life and age of that machine, this won't happen often anymore. Also testing Octave 6.1 on 10.13 is just too painful going forward, now that HomeBrew no longer provides Octave bottles for 10.13 and source build just takes way too long -- like a dozen hours!
