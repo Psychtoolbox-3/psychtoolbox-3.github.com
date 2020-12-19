@@ -60,6 +60,8 @@ linux\_blacklist\_kinectvideo  Blacklist file for Linux, to be copied into the
                              future OSX versions and will not work on other operating  
                              systems. Tested on OSX 10.10. Contributed by Denis Pelli.  
   
+Eduloggers/                  Simple functions for accessing Edulogger devices from https://neulog.com  
+  
 Kinect-v16-[WindowsDrivers](WindowsDrivers).zip Zip file containing the Microsoft Windows  
                               drivers and installer that are needed to  
                               use the Microsoft XBOX Kinect under  

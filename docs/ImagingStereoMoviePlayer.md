@@ -1,7 +1,7 @@
 # [ImagingStereoMoviePlayer](ImagingStereoMoviePlayer)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)
 
-[ImagingStereoMoviePlayer](ImagingStereoMoviePlayer)(moviefile [,stereoMode=8] [,imaging=1] [,anaglyphmode=0] [,screenid=max])  
+[ImagingStereoMoviePlayer](ImagingStereoMoviePlayer)(moviefile [, stereoMode=8][, imaging=1][, anaglyphmode=0][, screenid=max][, hdr=0])  
   
 Minimalistic movie player for stereo movies. Reads movie from file  
 'moviefile'. Left half of each movie video frame must contain left-eye  
@@ -27,6 +27,24 @@ See "help [SetAnaglyphStereoParameters](SetAnaglyphStereoParameters)" for furthe
   
 'screenid' [Screen](Screen) id of target display screen (on multi-display setups).  
 By default, the screen with maximum id is used.  
+  
+If the optional flag 'hdr' is specified as non-zero, then the demo  
+expects the onscreen window to display on a HDR-10 capable display device  
+and system, and tries to switch to HDR mode. If the operating system+gpu  
+driver+gpu+display combo does not support HDR, the demo will abort with  
+an error. Otherwise it will expect the movies to be HDR-10 encoded and  
+try to display them appropriately. A flag of 1 does just that. A flag of 2 will  
+manually force the assumed EOTF of movies to be of type PQ, iow. assume the movie  
+is a HDR-10 movie in typical Perceptual Quantizer encoding. This is useful if you  
+want to play back HDR content on a system with a [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) version older than  
+1.18.0 installed, where [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) is not fully HDR capable, but this hack may  
+get you limping along. Another restriction would be lack of returned HDR metadata,  
+so if your HDR display expects that, you will not get the best possible quality.  
+Upgrading to [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) 1.18 or later is advised for HDR playback.  
+A 'stereoMode' of 4 or 5 will use an alternative HDR display method only available on  
+Linux/X11 for dual-display HDR playback. This is currently not supported on other  
+operating systems, where you only have single-display stereo for HDR playback.  
+  
   
 The left image is centered on the screen, the right images position can  
 be moved by moving the mouse cursor to align for inter-eye distance.  

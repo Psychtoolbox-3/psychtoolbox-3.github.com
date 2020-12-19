@@ -39,7 +39,6 @@ radiometric. Apologies if our intuitions don't match yours
   [IsomerizationsFromAbsorbptions](IsomerizationsFromAbsorbptions) - Compute isomerization rate from absorption rate.  
   [LabToXYZ](LabToXYZ)            - Convert from Lab to XYZ.  
   [LjgToXYZ](LjgToXYZ)            - Convert from OSA UCS Ljg to XYZ (10 degree).  
-  [LjgToXYZFun](LjgToXYZFun)         - Error function for [LjgToXYZ](LjgToXYZ) numerical optimization.  
   [LumToRadiance](LumToRadiance)       - Get spectral radiance from luminance and relative spectrum of source.  
   [LumToTrolands](LumToTrolands)       - Convert luminance (cd/m2) to trolands.  
   [LuvToXYZ](LuvToXYZ)            - Convert from Luv to XYZ.  
@@ -76,7 +75,6 @@ radiometric. Apologies if our intuitions don't match yours
   [SRGBGammaCorrect](SRGBGammaCorrect)    - Convert between sRGB primary coordinates and 8-bit RGB values.  
   [SRGBGammaUncorrect](SRGBGammaUncorrect)   - Convert between sRGB 8-bit RGB values and primary coordinates.  
   [SToWls](SToWls)              - Convert S wavelength sampling spec to wls format.  
-  [TestLxx](TestLxx)             - Test routine for Lab/Luv calculations.  
   [TriToMetSPD](TriToMetSPD)         - Compute metamer from tristimulus coordinates.  
   [WattsToRetIrradiance](WattsToRetIrradiance) - Get absolute retinal irradiance (power units) from rel. spectrum and watts/area.  
   [uvTols](uvTols)              - Convert between CIE u'v' and a cone based (ls) chromaticity.  

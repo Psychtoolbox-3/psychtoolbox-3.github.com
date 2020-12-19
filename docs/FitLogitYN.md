@@ -1,7 +1,7 @@
 # [FitLogitYN](FitLogitYN)
 ##### >[Psychtoolbox](Psychtoolbox)>[Psychometric](Psychometric)
 
-[a,b,thresh50] = [FitLogistic](FitLogistic)(inputs,nYes,nNo)  
+[a,b,thresh50] = [FitLogitYN](FitLogitYN)(inputs,nYes,nNo)  
   
 Fit a logistic function to YN psychometric data.  
 Returns logistic parameters and 50% threshold.   
@@ -16,7 +16,7 @@ other candidate models for psychometric functions.
 See also: [FitLogistic](FitLogistic), [FitWeibYN](FitWeibYN), [FitCumNormYN](FitCumNormYN),   
  [InvertLogistic](InvertLogistic), [ComputeLogistic](ComputeLogistic).  
   
-2/8/97      dhb     Wrote it.  
+2/8/97    dhb     Wrote it.  
 
 
 

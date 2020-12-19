@@ -63,6 +63,7 @@ Psychtoolbox:[PsychDemos](PsychDemos)
    [GratingDemo](GratingDemo)             - Basic display of a grating on the screen.  
    [HDRMinimalisticOpenGLDemo](HDRMinimalisticOpenGLDemo) - Basic demo on how to render [OpenGL](OpenGL) 3D stimuli on a HDR display.  
    [HDRViewer](HDRViewer)               - A simple image viewer for displaying HDR images on a HDR display.  
+   [ImagingStereoMoviePlayer](ImagingStereoMoviePlayer) - Minimalistic movie player for stereo movies, also HDR and VR capable.  
    [IsomerizationsInDishDemo](IsomerizationsInDishDemo) - Compute photoreceptor isomerizations for retina in a dish.  
    [IsomerizationsInEyeDemo](IsomerizationsInEyeDemo)  - Compute photoreceptor isomerizations for human eye.  
    [KbDemo](KbDemo)                  - Demonstrate [KbCheck](KbCheck), [KbName](KbName), [KbWait](KbWait).  
@@ -100,6 +101,7 @@ Psychtoolbox:[PsychDemos](PsychDemos)
    [RenderDemo](RenderDemo)              - Render CIE xyY as a color patch.  
    [SadowskiDemo](SadowskiDemo)            - Shows the "Sadowski" color afterimage effect.  
    [SimpleHDRDemo](SimpleHDRDemo)           - Minimal demo for using a HDR display, showing some basic stimuli.  
+   [SimpleHDRLinuxStereoDemo](SimpleHDRLinuxStereoDemo) -Like [SimpleHDRDemo](SimpleHDRDemo), but with Linux/X11 stereo hack for stereoscopic HDR stimulation.  
    [SimpleImageMixingDemo](SimpleImageMixingDemo)   - Shows how to mix two images via alpha-blending, using an alpha-mask which itself is morphed between two masks.  
                              See also [ImageMixingTutorial](ImageMixingTutorial) for a more complex demonstration of the technique.  
    [SimpleSoundScheduleDemo](SimpleSoundScheduleDemo) - Simple demo for basic use of sound schedules with [PsychPortAudio](PsychPortAudio).  

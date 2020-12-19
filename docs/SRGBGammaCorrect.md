@@ -27,7 +27,9 @@ and of this implementation.
   
 5/1/04    dhb             Wrote it.  
 7/8/10    dhb             Updated to match standard I can now find on the web.  
-6/15/11   dhb, ms         Clarify input output range issues in comment.  
+6/15/11   dhb, ms         Clarify input output range issues in comment  
+07/31/20  dhb             Get rid of spurious call to clear, which is slow.  
+                          More efficient truncation into range.  
 
 
 

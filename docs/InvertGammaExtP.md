@@ -1,7 +1,7 @@
 # [InvertGammaExtP](InvertGammaExtP)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychGamma](PsychGamma)
 
-output = [InvertGammaExpP](InvertGammaExpP)(x,input)  
+output = [InvertGammaExtP](InvertGammaExtP)(x,input)  
   
 Invert the gamma table using an extended power function.  
 See Brainard, Pelli, & Robson (2001).  

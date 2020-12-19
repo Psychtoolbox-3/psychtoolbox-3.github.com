@@ -1,7 +1,7 @@
 # [ComputeGammaExtP](ComputeGammaExtP)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychGamma](PsychGamma)
 
-output = [ComputeGammaExpP](ComputeGammaExpP)(x,input)  
+output = [ComputeGammaExtP](ComputeGammaExtP)(x,input)  
   
 Compute the gamma table using an extended power function.  
 See Brainard, Pelli, & Robson (2001).  

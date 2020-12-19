@@ -9,9 +9,9 @@ NOTE: Uses Mathworks Optimization Toolbox.
   
 Also see [FitGamma](FitGamma), [FitGammaDemo](FitGammaDemo).  
   
-4/08/02   awi   Turned off warnings while calling constr to avoid future obsolete warning  
-3/4/05  dhb   Conditionals for optimization toolbox version.  
-8/2/15    dhb   Fix conditionsal because fmincon is now a p file.  
+4/08/02   awi Turned off warnings while calling constr to avoid future obsolete warning  
+3/4/05    dhb Conditionals for optimization toolbox version.  
+8/2/15    dhb Fix conditionsal because fmincon is now a p file.  
 
 
 

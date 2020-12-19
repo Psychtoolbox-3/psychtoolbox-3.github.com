@@ -43,8 +43,8 @@ implemented as a shader program in the GLSL language, which is less easy
 to use - and less forgiving of programming errors - than the simple and  
 easy Matlab language. This means that you're either restricted to our  
 predifined set of primitives, or you'll have some steep learning curve.  
-Currently PTB provides gabors and (via [CreateProceduralSineGrating](CreateProceduralSineGrating)())  
-sine gratings.  
+Currently PTB provides several such stimuli (see the [CreateProcedural](CreateProcedural)\*  
+series of functions for details).  
   
 The demo shows "an aquarium" of many cute little gabor patches, each moving  
 into a random direction. Sometimes the gabors intersect, in that case  

@@ -51,6 +51,7 @@ Psychtoolbox:[PsychBeta](PsychBeta):[PsychBasic](PsychBasic)
   [psychassert](psychassert)          - Drop in replacement for Matlabs assert().  
   [psychlasterror](psychlasterror)       - Drop in replacement for Matlabs lasterror().  
   [psychrethrow](psychrethrow)         - Drop in replacement for Matlabs rethrow().  
+  [PsychComputeSHA](PsychComputeSHA)      - Return the SHA hash of a string.  
   [PsychCV](PsychCV)              - Miscellaneous C routines for computer vision and related stuff.  
   [PsychDrawSprites2D](PsychDrawSprites2D)   - Fast drawing of many 2D sprite textures.  
   [PsychKinect](PsychKinect)          - Psychtoolbox driver for the Microsoft XBOX-360 Kinect.  

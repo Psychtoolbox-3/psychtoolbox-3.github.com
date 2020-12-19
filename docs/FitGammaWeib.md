@@ -5,10 +5,10 @@
   
 Fits a Weibull function to the passed gamma data.  
   
-10/3/93   dhb   Created from jms code to fit psychometric functions  
-3/4/05  dhb     Conditionals for optimization toolbox version.  
-            dhb     Encapsulate error calculation  
-8/2/15    dhb   Update calls to exist to work when query is for a p-file.  
+10/3/93   dhb     Created from jms code to fit psychometric functions  
+3/4/05    dhb     Conditionals for optimization toolbox version.  
+          dhb     Encapsulate error calculation  
+8/2/15    dhb     Update calls to exist to work when query is for a p-file.  
 
 
 

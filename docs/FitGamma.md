@@ -23,7 +23,7 @@ We have tried to localize this information in the initialization routines
 caution is advised.  
   
 Optional argument fitType allows you to force the return of a particular  
-paramtetric form.  Currently:  
+parametric form.  Currently:  
   fitType == 1:  Power function  
   fitType == 2:  Extended power function  
   fitType == 3:  Sigmoid  

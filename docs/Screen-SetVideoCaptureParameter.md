@@ -24,13 +24,15 @@ the device model name. 'GetROI' returns the capture region of interest (ROI),
 which can deviate from the ROI requested in [Screen](Screen)('OpenVideoCapture'),  
 depending on the capabilities of the capture device. 'SetNextCaptureBinSpec=xxx'  
 Will set the gst-launch line which describes the video capture source to be used  
-during the next call to [Screen](Screen)('OpenVideoCapture', -9, ...); Opening a video  
-capture device with the special deviceIndex -9 means to create a [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) bin  
-and use it as video source. The bin is created by parsing the string passed  
-here. Use the special 'capturePtr' value -1 when setting this bin description,  
-as this call may need to be made while a capture device is not yet opened, so no  
-valid 'capturePtr' exists. This setting is only honored on the [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) video  
-capture engine.  
+during the next call to [Screen](Screen)('OpenVideoCapture', -9, ...); or the name or path  
+of a video capture device to be used during the next call to  
+[Screen](Screen)('OpenVideoCapture') with a deviceIndex between -1 and -8.  
+Opening a video capture device with the special deviceIndex -9 means to create a  
+[[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) bin and use it as video source. The bin is created by parsing the  
+string passed here. Use the special 'capturePtr' value -1 when setting this bin  
+description, as this call may need to be made while a capture device is not yet  
+opened, so no valid 'capturePtr' exists. This setting is only honored on the  
+[[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) video capture engine.  
 'GetFramerate' Returns the nominal capture rate of the capture device.  
 'GetBandwidthUsage' Returns firewire bandwidth used by camera at current  
 settings in so called bandwidth units. The 1394 bus has 4915 bandwidth units  

@@ -13,8 +13,11 @@ Certain videocapture devices can't get auto-detected and are therefore not
 addressable this way. For such devices you must find out the type and unique  
 identifier of the device. Then pass in a negative 'deviceIndex' to tell [Screen](Screen)  
 you want to select a hidden device by its name or id, and pass in the name or id  
-of that hidden device as string in the argument 'targetmoviename'. See 'help  
-VideoCapture' for more info.  
+of that hidden device as string in the argument 'targetmoviename', or via the  
+'SetNextCaptureBinSpec=' option in [Screen](Screen)('SetVideoCaptureParameter'). The  
+special deviceIndex -9 will create a new [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) videocapture bin out of a  
+given gst-launch style 'SetNextCaptureBinSpec=' string and attach that as a  
+video source. This allows to create arbitrary [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) video capture pipelines.  
 'roirectangle' if specified, defines the requested size for captured images. The  
 default is to return the maximum size image provided by the capture device. A  
 'roirectangle' setting of [0 0 width height] will not define a region of  
@@ -110,13 +113,13 @@ more robust with problematic cameras.
 'captureEngineType' This optional parameter allows selection of the video  
 capture engine to use for this video source. Allowable values are currently 1  
 and 3. A value of 1 selects Firewire video capture via the free software library  
-libdc1394-V2. That engine only supports high performance machine vision cameras  
-that are compliant with the IIDC-1.x standard and are connected via a Firewire  
-(IEEE-1394) bus system. Use of the engine with such cams allows for much higher  
-flexibility and performance than use of video capture via [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)), however one  
-restriction is that sound recording isn't yet supported with firewire capture.  
-The firewire capture engine is supported on Linux and [MacOS](MacOS)/X, but not on  
-MS-Windows.  
+libdc1394-V2. That engine only supports high performance IIDC machine vision  
+cameras that are compliant with the IIDC-1.x standard and are connected via a  
+Firewire (IEEE-1394) bus system or via USB-3 [USBVision](USBVision) standard. Use of the  
+engine with such cams allows for much higher flexibility and performance than  
+use of video capture via [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)), however one restriction is that sound  
+recording isn't yet supported with this capture engine. This IIDC capture engine  
+is supported on Linux and to a lesser degree on [MacOSX](MacOSX), but not on MS-Windows.  
   
 A value of 3 selects the [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) video capture engine. This engine is  
 supported on all operating systems and allows for video and sound recording of  
@@ -143,7 +146,7 @@ resolution per luminance or color channel for classic 256 levels of intensity.
 Lower values are unsupported and will get rounded up to 8 bpc. Higher values may  
 be supported by some higher end professional class cameras. If you ask for an  
 unsupported value, the engine will try to get the lowest supported value that  
-matches or exceeds what you want. Currently the firewire engine for pro-class  
+matches or exceeds what you want. Currently the libdc1394 engine for pro-class  
 IIDC compliant firewire or USB machine vision cameras supports bitdepth \> 8 bpc  
 on capable cameras. The [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) engine always supports 8 bpc and it may  
 support 16 bpc on capable cameras. Please note that requesting \> 8 bpc will  

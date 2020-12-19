@@ -36,6 +36,10 @@ want to play back HDR content on a system with a [[GStreamer](GStreamer)][(GStre
 get you limping along. Another restriction would be lack of returned HDR metadata,  
 so if your HDR display expects that, you will not get the best possible quality.  
 Upgrading to [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) 1.18 or later is advised for HDR playback.  
+A flag of 3 or 4 will use an alternative HDR display method only available on  
+Linux/X11, with 4 applying the same hack to cope with older [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) versions  
+as a setting of 2.  
+  
   
 If the optional RGB color vector backgroundMaskOut is provided, then  
 color pixels in the video which are equal or close to backgroundMaskOut will be  

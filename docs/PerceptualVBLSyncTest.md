@@ -36,7 +36,7 @@ seconds have elapsed (Default is 10 seconds).
 'vblSync' If 1, synchronize bufferswaps to vertical retrace of monitor,  
 otherwise (setting 0) swap immediately without sync, ie., usually with tearing.  
   
-'testdualheadsync' If 1, and 'vblSync' is zero, manually wait until the video  
+'testdualheadsync' If non-zero, and 'vblSync' is zero, manually wait until the video  
 scanout position reaches half the height of the display, then swap. If this  
 is done on a multi-display setup and the video scanout cycles of all the  
 participating displays are properly synchronized, you should see a "static"  

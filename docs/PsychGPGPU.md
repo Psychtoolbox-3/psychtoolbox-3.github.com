@@ -31,7 +31,9 @@ it, so will not deliver 32-Bit support for the time being.
 3. The free and open-source [GPUmat](GPUmat) toolbox for Matlab from [SourceForge](SourceForge):  
    http://sourceforge.net/projects/gpumat  
   
-4. A 64-Bit version of Matlab for Linux, Windows or [MacOSX](MacOSX).  
+4. A 64-Bit version of Matlab for Linux or Windows. macOS is not  
+   supported because Apple ripped out support for [NVidia](NVidia) gpus from their  
+   recent operating systems, because why not, right?  
   
 Demos can be found in the Psychtoolbox/[PsychDemos](PsychDemos)/[GPGPUDemos](GPGPUDemos) folder.  
   

@@ -1,7 +1,7 @@
 # [FitNakaRushton](FitNakaRushton)
 ##### >[Psychtoolbox](Psychtoolbox)>[Psychometric](Psychometric)
 
-[params,f] = [FitNakaRushton](FitNakaRushton)(contrast,response,[params0])  
+[params,f] = [FitNakaRushton](FitNakaRushton)(contrast,response [, params0])  
   
 Find the parameters that best fit the data.  If the initial guess  
 isn't good, this can get stuck in local minima.    

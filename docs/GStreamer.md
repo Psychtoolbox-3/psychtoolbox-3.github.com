@@ -15,14 +15,14 @@ cameras on Linux, where high-performance multi-camera capture works via
 libdc1394, see 'help VideoCaptureDC1394', and [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) is only needed  
 for video recording, not live capture).  
   
-You will need at least version 1.8 of [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) on Linux and macOS, and  
-at least version 1.18 on Windows, but we recommend to use the latest  
+You will need at least version 1.8 of [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) on Linux, and at least  
+version 1.18 on Windows and macOS, but we recommend to use the latest  
 available stable release of the version 1 series. For limited HDR  
 playback support on Linux, you will need at least [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) 1.16 + some  
 modifications to your playback scripts. For full HDR playback support on  
 Linux, just as on Windows, you will need at least version 1.18. HDR  
 playback is not yet supported on macOS due to macOS operating system  
-deficiencies.  
+deficiencies - an insufficiently advanced [OpenGL](OpenGL) implementation.  
   
 ### Installation instructions:  
   
@@ -87,19 +87,18 @@ file:
 <http://gstreamer.freedesktop.org/download/\>  
   
 The following [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) runtime packages have been tested for good compatibility  
-with Psychtoolbox 3.0.17 as of Oktober 2020:  
+with Psychtoolbox 3.0.17 as of December 2020:  
   
-For MS-Windows: 64-Bit Intel MSVC runtime v1.18.0 for use with 64-Bit Matlab/Octave.  
+For MS-Windows: 64-Bit Intel MSVC runtime v1.18.2 for use with 64-Bit Matlab/Octave.  
   
-<https://gstreamer.freedesktop.org/data/pkg/windows/1.18.0/msvc/gstreamer-1.0-msvc-x86\_64-1.18.0.msi\>  
+<https://gstreamer.freedesktop.org/data/pkg/windows/1.18.2/msvc/gstreamer-1.0-msvc-x86\_64-1.18.2.msi\>  
   
 You \*must\* install the MSVC variants of [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)), not the [MinGW64](MinGW64) variants!  
   
   
-For Apple macOS: Runtime v1.18.0  
+For Apple macOS: Runtime v1.18.2  
   
-<https://gstreamer.freedesktop.org/data/pkg/osx/1.18.0/gstreamer-1.0-1.18.0-x86\_64.pkg\>  
-  
+<https://gstreamer.freedesktop.org/data/pkg/osx/1.18.2/gstreamer-1.0-1.18.2-x86\_64.pkg\>  
   
 When the installer asks you to select the components it should install,  
 select a "Full installation" or "Complete installation", or if those  

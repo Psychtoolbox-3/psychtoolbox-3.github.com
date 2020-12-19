@@ -1,7 +1,7 @@
 # [MultiTouchMinimalDemo](MultiTouchMinimalDemo)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)
 
-[MultiTouchMinimalDemo](MultiTouchMinimalDemo)([dev][, verbose=0]) - A basic demo for multi-touch touchscreens.  
+[MultiTouchMinimalDemo](MultiTouchMinimalDemo)([dev][, screenId=max][, verbose=0]) - A basic demo for multi-touch touchscreens.  
   
 Run it. Pressing the [ESCape](ESCape) key will stop it.  
   
@@ -13,6 +13,10 @@ there isn't any touchscreen, the first available touchpad. You
 can also select a specific touch device by passing in its 'dev'  
 device handle. Use of touchpads usually needs special configuration.  
 See "help [TouchInput](TouchInput)" for more info.  
+  
+You can select a specific screen to display on - usually the screenId  
+of the touch screen display surface - with the optional 'screenId' parameter,  
+or it will select the default maximum screenId if omitted.  
   
 If you set the optional 'verbose' flag to 1, then the unique touch  
 id and time delta in msecs between touch updates for each touchpoint  

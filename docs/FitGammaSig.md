@@ -5,8 +5,8 @@
   
 Fit sigmoid function to gamma data.  
   
-3/4/05  dhb   Conditionals for optimization toolbox version.  
-8/2/15  dhb   Update calls to exist to work when query is for a p-file.  
+3/4/05    dhb Conditionals for optimization toolbox version.  
+8/2/15    dhb Update calls to exist to work when query is for a p-file.  
 
 
 

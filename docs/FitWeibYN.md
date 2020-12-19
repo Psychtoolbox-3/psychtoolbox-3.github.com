@@ -10,9 +10,9 @@ Requires the optimization toolbox. Doesn't work with Octave yet.
 ### INPUTS:  
   inputs    Input levels  
   nYes      Number of yes responses at   
-            the corresponding input level  
+            the corresponding input inputs  
   nNo       Number of no responses at   
-            the corresponding input level  
+            the corresponding input inputs  
   alpha0    Initial guess for alpha (optional)  
   beta0     Initial guess for beta (optional)  
 OUTPUTS:  
@@ -29,10 +29,10 @@ See also: [FitWeibTAFC](FitWeibTAFC), [FitFitWeibAlphTAFC](FitFitWeibAlphTAFC), 
                and lower bounds on the fit.  
 2/5/97    dhb  Rewrote to parallel TAFC version but kept slope test.  
           dhb  Check for optimization toolbox.  
-4/18/00   mpr    Added an option to set the number of allowed function calls  
+4/18/00   mpr  Added an option to set the number of allowed function calls  
 10/13/00  dhb  Improve initial guess for alpha.  Thanks to Duje Tadin  
-                             for identifying the need for this.  
-3/5/05      dhb  Update for optimization toolbox version 2.  
+               for identifying the need for this.  
+3/5/05    dhb  Update for optimization toolbox version 2.  
 
 
 

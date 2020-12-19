@@ -11,7 +11,7 @@ This can return imaginary values if you pass XYZ values
 that are outside reasonable physical gamut limits.  
   
 3/27/01  dhb      Wrote it.  
-3/4/05   dhb        Handle new version of optimization toolbox, too.  
+3/4/05   dhb      Handle new version of optimization toolbox, too.  
 9/23/12  dhb, ms  Update options for current Matlab versions.  
 
 

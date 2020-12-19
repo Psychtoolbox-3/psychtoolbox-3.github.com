@@ -28,7 +28,10 @@ versions, processor architectures etc.). This happens occassionally.
 Numeric values of the three integer fields contained in versionString are  
 available in fields of the second return argument, "versionStructure".  
   
-### The field 'Flavor' defines the subtype of Psychtoolbox being used:  
+If Psychtoolbox was installed using Neurodebian or GIT, this source  
+is available in the field 'Flavor'.  
+  
+### Using SVN, the field 'Flavor' defines the subtype of Psychtoolbox being used:  
   
 \* beta: The term 'current' is a synonym for 'beta'. Beta releases are the  
 only releases we provide at this point. 'Beta' is a historical name, not  
