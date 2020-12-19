@@ -59,7 +59,7 @@ to PTB Version 2 that we have now abandoned that system.</small>
       * 64-Bit Octave-5 for MS-Windows and Apple macOS.
 
 
-      * On Windows: GStreamer versions older than 1.18.0 MSVC, or any GStreamer MinGW builds. Now only GStreamer 1.18 MSVC builds are supported.
+      * On Windows and macOS: GStreamer versions older than 1.18.0 MSVC, or any GStreamer MinGW builds. Now only GStreamer 1.18 MSVC builds are supported.
 
 
       * Official Linux Ubuntu 16.04 LTS support. However, Linux Ubuntu 16.04 LTS or other distributions with at least GStreamer 1.8 should continue to work with v3.0.17, but are no longer tested or guaranteed to stay compatible.
