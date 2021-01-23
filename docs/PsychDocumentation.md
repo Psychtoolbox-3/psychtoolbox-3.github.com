@@ -47,6 +47,8 @@ Oculus\_Health\_and\_Safety\_Warnings.pdf - Info about how to use the Oculus
   
 [PsychPaidSupportAndServices](PsychPaidSupportAndServices) - Our commercial support and service offerings.  
   
+[RaspberryPiSetup](RaspberryPiSetup)       - How to setup a [RasperryPi](RasperryPi) for Psychtoolbox, and what to expect.  
+  
 [SyncTrouble](SyncTrouble)            - Problem with synchronization to the vertical  
                          retrace or display timing, and how to resolve  
                          them.  

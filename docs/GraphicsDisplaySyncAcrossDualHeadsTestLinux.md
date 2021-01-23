@@ -11,7 +11,14 @@ defaults to 6000 samples.
   
 Each sample consists of querying the current rasterbeam position on each  
 display head. At the end, the samples of both heads are plotted against each  
-other for comparison.  
+other for comparison. On graphics cards without beamposition query support, e.g.,  
+Intel graphics, [RaspberryPi](RaspberryPi), or modern AMD gpu's with DCN display engine, instead  
+timestamps of the end of vblank are collected and plotted against each other for  
+comparison. In this case, the default duration if 'nrtrials' is omitted will be  
+roughly 10 seconds of runtime.  
+  
+In case of older AMD gpu's with DCE display engines (AMD Radeon Vega and earlier),  
+the following applies:  
   
 The optional parameter 'syncmethod' if set to 1 will try to synchronize all  
 display heads on AMD graphics cards, provided the 'ScreenToHead' mapping  
