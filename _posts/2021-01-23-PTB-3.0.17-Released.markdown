@@ -1,0 +1,28 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.17 Beta update "Let them eat cake!" was released at 23rd January 2021.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.17.7”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.17.7>
+
+
+The most noteworthy improvement about the minor "Let them eat cake!" beta update is initial support for the RaspberryPi 4 and RaspberryPi 400, two quite nifty microcomputers.
+
+A minor PTB beta update, mostly featuring christmas work:
+
+### All systems:
+
+ - OffsetRect(): Allow single rect as both row and column vector, instead of only as row vector.
+ - Some stuff by David Brainard in ComputePhotoPigmentBleaching(), described as "Implement bleaching kinects calculation".
+
+### Linux:
+
+ - Add support for the RaspberryPi 4 and 400 on 32-Bit Raspbian/RaspberryPi OS: Also some setup instructions and feature descriptions in the new help file "help RaspberryPiSetup".
+  The new Pi is in quite good shape, only sound output with PsychPortAudio over HDMI video output does not currently work, but that can be worked around, via the builtin soundchip and headphone jack, or - in the case of the RaspberryPi 400 without headphone jack - by plugging an external USB soundcard. The RPi 4 sports faster processor and graphics, more RAM, dual-display output, well working Wifi, and substantially improved graphics support, e.g., for high precision floating point textures and framebuffers, advanced shaders, and hardware accelerated video playback for some formats like H264.
+  
