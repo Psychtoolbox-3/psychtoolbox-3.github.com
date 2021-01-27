@@ -38,12 +38,18 @@ Short version
     **AMD GPUs are strongly recommended over NVidia GPUs on Linux and macOS**, as they
     allow use of high quality open-source graphics drivers on Linux, and of additional
     useful PTB features for vision science on Linux, and also to some degree on macOS.
-    The most well tested models are currently from the AMD "Polaris" gpu family, with
+    On Linux, please **do not install the AMD proprietary amdgpu-pro driver**, but simply
+    stick to the high qualiy amdgpu driver which is already installed on any new Linux
+    installation (batteries included!), iow. if you don't do anything, you'll do the right
+    thing.
+    
+    The most well tested AMD models are currently from the AMD "Polaris" gpu family, with
     the most exhaustive set of low-level features supported by Psychtoolbox on Linux.
-    AMD "Vega" family gpu's should provide the same quality and features, and have
-    improved FreeSync support if you need it. They are expected to work well with
+    AMD "Vega" family gpu's should provide the same quality and features, and additionally
+    have improved FreeSync support, if you need it. They are expected to work well with
     Psychtoolbox, but are not tested due to lack of hardware. The latest generation "Navi"
-    gpu's should work, but are untested and lack support for special Psychtoolbox low-level
+    gpu's seem to also work well, according to some user reports, but are not yet tested
+    by the developers, and they do lack support for some special Psychtoolbox low-level
     features at the moment. So the sweet spot would be "Polaris", or "Vega" if you intend
     to use FreeSync for interesting visual stimulation paradigms that require Psychtoolbox
     VRR functionality. AMD Raven Ridge gpu's, integrated into AMD Ryzen processors, are
