@@ -3,7 +3,7 @@
 
 startTime = PsychPortAudio('Start', pahandle [, repetitions=1] [, when=0] [, waitForStart=0] [, stopTime=inf] [, resume=0]);
 
-Start a [PortAudio](PortAudio) audio device. The 'pahandle' is the handle of the device to  
+Start a [PsychPortAudio](PsychPortAudio) audio device. The 'pahandle' is the handle of the device to  
 start. Starting a device means: Start playback of output devices, start  
 recording on capture device, do both on full duplex devices. 'waitForStart' if  
 set to 1 will wait until device has really started, default is to continue  
