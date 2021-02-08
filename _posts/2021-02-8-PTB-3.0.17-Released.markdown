@@ -1,0 +1,34 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.17 Beta update "Let them eat cake!" SP1 was released at 8th February 2021.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.17.8”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.17.8>
+
+
+A minor PTB beta update, mostly featuring small bug fixes, doc updates and refinements. And a new start screen.
+
+## General:
+
+ - PsychRTBox: Robustness fix during box open. Sometimes the first query for the box id data delivers partial trash for unknown reasons. If that's the case, requery.
+ - BasicSoundInputDemo: Add missing setup for unified KbName. Otherwise the ESCAPE key is not recognized for mapping on
+Windows and we get error abort.
+ - Update our Welcome splash to Celia's latest and more eye-catching artwork.
+
+## Linux:
+
+ - KbCheck: Add workaround for missing ESCape key on touchbar MacBook Pro's without functioning touchbar. Map ~ key left to 1 key also to ESCAPE. Mostly for testing with Linux development kernels which do not yet have the Apple touchbar dkms drivers updated for use with them.
+ - XOrgConfCreator: Use of intel-ddx implies DRI3/Present from now on. This is needed, because the intel-ddx does not choose the modern iris OpenGL driver on modern Intel chips, but still old-school i965 classic DRI driver, which is a mismatch to the desktop GUI and other clients choosing iris in such a scenario. Switching DRI3 on will make this a non-issue. Or in other words: No login failure when enabling color depth 30 bit / 10 bpc color precision mode on modern Intel graphics chips of Gen 8 and later on modern Linux distributions.
+ - MultiTouchMinimalDemo / MultiTouchDemo: Add a small potential performance optimization.
+ - "help RaspberryPiSetup": Update to account for Raspbian bug fix. 
+
+## Windows:
+
+ - Screen/Windows: Add new visual diagnostic for DWM compositor interference. If Screen('Preference', 'VisualDebugLevel', 6) is set and we run on Windows-8 or later, and a fullscreen window is opened - which shouldn't be subject to DWM composition - then create the onscreen window with DWM redirection surface disabled. This will cause any DWM composited windows client area to not display at all, but instead just show transparent. This is a clear visual indicator that a window is subject to unwanted DWM composition, iow. if  the DWM is the root cause for visual timing and timestamping problems.
+ 
