@@ -86,6 +86,7 @@ Psychtoolbox:[PsychOneliners](PsychOneliners).
   [PsychDefaultSetup](PsychDefaultSetup)       - Setup various defaults for Psychtoolbox session.  
   [PsychGPUControl](PsychGPUControl)         - Control low-level operating parameters of certain supported GPU's.  
   [PsychNumel](PsychNumel)              - Drop-in replacement for numel() on old Matlab versions that don't support it.  
+  psychrange(X [, dims])  - Drop in replacement for range() on Matlab without statistics toolbox.  
   [PsychtoolboxRoot](PsychtoolboxRoot)        - Robust way to get path to Psychtoolbox folder, even if renamed.  
   [RemoveMatchingPaths](RemoveMatchingPaths)     - Removes folders that contain a given string from the path.  
   [RemoveSVNPaths](RemoveSVNPaths)          - Removes ".svn" folders from the path.  

@@ -28,7 +28,15 @@ constant for human cones were made by Rushton and Henry (1968, Vision Research,
 I am pretty sure that the Rushton and Henry measurements were made for  
 560 nm light, and they give (see their Figure 2) a half-bleach constant  
 of 4.3 log10 trolands (20,000 td). This number is also given in Boynton  
-and Kaiser, Human Color Vision, 2nd edition, pp 211 and following.  
+and Kaiser, Human Color Vision, 2nd edition, pp 211 and following.  This  
+is the number you get here if you specify 'Boynton' as the source for the  
+cone bleaching data.  
+  
+Elsewhere in the same paper, Rushton and Henry use another method and  
+come up with 29167 td) as the half-bleach constant.  You can get this  
+number by specifying 'RushtonHenryAlt' as the source for the cone  
+constants.  If you use isomemerizations here, the constant is scaled up  
+from the one derived above by the ratio (29167/(10^4.3)).  
   
 It's probably fine to compute bleaching for L and M cones given retinal  
 illuminance in trolands, given that these are effects that matter over  
@@ -42,7 +50,7 @@ return a number if you give it irradiance either in trolands or in
 isomerizations/cone-sec.  For 560 nm light and the CIE 10 deg  
 fundamentals, I compute that 1 td is 137 isomerizations/cone-sec for L  
 cones and 110 isomerizations/cone-sec for M cones.  Take the weighted  
-average value of (2\*L + 1\*M) = 128 and multiply by (10.^4.3) to get a  
+average value of (2\*L + 1\*M)/3 = 128 and multiply by (10.^4.3) to get a  
 half-bleach constant in isomerizations/cone-sec of  2.55e+06 (6.4 log10  
 isomerizations/cone-sec). [Computations done 6/2/14 using  
 [IsomerizationsInEyeDemo](IsomerizationsInEyeDemo) and setting the fundamentals to 'CIE10deg' and  
@@ -94,9 +102,14 @@ irradiance    -- retinal irradiance specified as determined by units. If
   
 receptortype  
   'cones'     -- computations for cones. [Default]  
+  'rods'      -- computations for rods.  Currently only implemented for  
+                 recovery kinetics.  Need to find and enter half-bleach  
+                 constant for rods in scotopic trolands and/or  
+                 isomerizations to do steady state of full kinetic  
+                 calculations for rods.  
   
-units         -- units of irradiacne  
-  'trolands'     input irradiance in trolands.  Note that the computation  
+units         -- units of irradiance  
+  'trolands'     input irradiance trolands.  Note that the computation  
                  only makes sense for L and M cones if this is the input.  
                  This is photopic trolands if receptor type is 'cones'.  
                  [Default]  
@@ -108,14 +121,20 @@ units         -- units of irradiacne
   
 source        -- source of underlying data  
   'Boynton'      Boynton and Kaiser, Human Color Vision, 2nd edition,  
-                 pp. 211 and following.  [Default]  
+                 pp. 211 and following. See intro text above. [Default]  
+  'RushtonHenryAlt' - Rushton and Henry's other half-bleach constant.  
+                 Only available for 'cones'.  
   
 initialFraction -- fraction of input bleached at time zero. If  
                 empty, steady state fraction bleached is  
                 returned. Default is empty.  
   
-timeUnits     -- units for time  
+timeUnits     -- units for time step on input and output  
+  'sec'          seconds  
+  'tenth'        tenths of seconds  
+  'hundredth'    hundredths of seconds  
   'msec'         millseconds [Default]  
+  'tenthmsec'     tenths of milliseconds  
   
 05/23/14 dhb  Wrote it.  
 05/26/14 dhb  Clean up.  
@@ -131,6 +150,9 @@ timeUnits     -- units for time
          dhb  Reorganized some code relative to source switch statement. Because  
               there was only one case this didn't matter, but now I think it  
               is right if more cases.  
+01/09/21 dhb  Finish off adding kinetics.  
+01/12/21 dhb  Add in the alternate Rushton & Henry half-bleach constant  
+              for cones.  
 
 
 

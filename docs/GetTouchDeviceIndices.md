@@ -10,11 +10,6 @@ like touchscreens, tablets and touchpads for touch input with the
 Also returns corresponding productNames for the devices and detailed  
 info in the allInfo struct-array.  
   
-WINDOWS: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
-  
-This function currently returns nothing, as touch devices aren't yet  
-supported.  
-  
 OS X: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
   
 This function currently returns nothing, as OSX does not support touch  
@@ -37,7 +32,8 @@ If you have touch devices connected you can restrict the set of
 returned devices by specifying the following optional match-critera:  
   
 typeOnly      = 'masterPointer' or 'slavePointer' or 'allPointers'. If left  
-                out, this will default to 'slavePointer'.  
+                out, this will default to 'slavePointer', unless on MS-Windows,  
+                where it defaults to 'masterPointer'.  
   
 touchTypeOnly = 0 for touchpads, 1 for true touchscreens.  
   

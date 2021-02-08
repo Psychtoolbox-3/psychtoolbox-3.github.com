@@ -6,7 +6,7 @@ info = [GetTouchDeviceInfo](GetTouchDeviceInfo)(deviceIndex)
 Return 'info' a struct with info about the specified touch input device  
 'deviceIndex'. 'info' has the following fields:  
   
-'product', 'serialNumber' and 'locationID' Self explanatory.  
+'product', 'serialNumber' and 'locationID' are self-explanatory.  
   
 'maxTouchpoints' The maximum number of simultaneously supported touch  
 points on the device. 10 is a quite common number for typical touchscreens.  
@@ -19,15 +19,10 @@ vector returned as part of touch events. i'th slot == i'th vector entry.
 This is mostly for use with [GetTouchValuators](GetTouchValuators)() to map raw valuator values  
 into something meaningful.  
   
-WINDOWS: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
-  
-This function currently returns nothing, as touch devices aren't yet  
-supported.  
-  
 OS X: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
   
-This function currently returns nothing, as OSX does not support touch  
-screens in a meaningful way as far as we know. And Psychtoolbox for OSX  
+This function currently returns nothing, as macOS does not support touch  
+screens in a meaningful way as far as we know. And Psychtoolbox for macOS  
 currently does not implement any special support for touchpads or such.  
   
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
