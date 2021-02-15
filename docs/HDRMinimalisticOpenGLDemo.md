@@ -2,12 +2,11 @@
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)
 
 [HDRMinimalisticOpenGLDemo](HDRMinimalisticOpenGLDemo) - Demonstrate use of MATLAB-[OpenGL](OpenGL) toolbox with  
-the [BrightSide](BrightSide)-Technologies High Dynamic Range Display.  
+HDR High Dynamic Range Displays.  
   
-It differs from the normal [MinimalisticOpenGLDemo](MinimalisticOpenGLDemo) only by the [OpenWindow](OpenWindow)  
-call that requests [BrightSide](BrightSide) HDR support, and the setup of lightsource  
-intensities to make better use of the large dynamic range of the HDR  
-display.  
+It differs from the normal [MinimalisticOpenGLDemo](MinimalisticOpenGLDemo) only by the [PsychImaging](PsychImaging)  
+call that requests HDR support, and the setup of lightsource intensities to  
+make better use of the large dynamic range of the HDR display.  
   
 This demo demonstrates use of [OpenGL](OpenGL) commands in a Matlab script to  
 perform some very boring 3D rendering in Psychtoolbox.  

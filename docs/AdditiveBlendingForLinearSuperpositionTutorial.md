@@ -99,11 +99,6 @@ or without color index overlay.
 'C48' - User 16 bits per color component mode.  
   
   
-'BrightSide' - Enable drivers for BrightSide's HDR display. This only  
-works if you have a [BrightSide](BrightSide) HDR display + the proper driver libraries  
-installed on MS-Windows. On other operating systems it just uses a simple  
-dummy emulation of the display with less than spectacular results.  
-  
 'DualPipeHDR' - Use experimental output to dual-pipeline HDR display  
 device.  
   

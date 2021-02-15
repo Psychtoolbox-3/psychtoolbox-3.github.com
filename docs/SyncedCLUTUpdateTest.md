@@ -1,7 +1,7 @@
 # [SyncedCLUTUpdateTest](SyncedCLUTUpdateTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)
 
-[SyncedCLUTUpdateTest](SyncedCLUTUpdateTest)  
+[SyncedCLUTUpdateTest](SyncedCLUTUpdateTest)([synced=1])  
   
 Perceptual test to test synchronization of hardware gamma table  
 updates to the vertical refresh and to [Screen](Screen)('[Flip](Flip)').  

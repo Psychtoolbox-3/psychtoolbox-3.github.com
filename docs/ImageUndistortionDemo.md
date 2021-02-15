@@ -1,5 +1,5 @@
 # [ImageUndistortionDemo](ImageUndistortionDemo)
-##### >[Psychtoolbox](Psychtoolbox)>[PsychAlpha](PsychAlpha)
+##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)
 
 [ImageUndistortionDemo](ImageUndistortionDemo)(calibfilename [, imagefilename])  
   
@@ -27,10 +27,10 @@ code for your purpose than a ready made plug & play solution.
 
 <div class="code_header" style="text-align:right;">
   <span style="float:left;">Path&nbsp;&nbsp;</span> <span class="counter">Retrieve <a href=
-  "https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/beta/Psychtoolbox/PsychAlpha/ImageUndistortionDemo.m">current version from GitHub</a> | View <a href=
-  "https://github.com/Psychtoolbox-3/Psychtoolbox-3/commits/beta/Psychtoolbox/PsychAlpha/ImageUndistortionDemo.m">changelog</a></span>
+  "https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/beta/Psychtoolbox/PsychDemos/ImageUndistortionDemo.m">current version from GitHub</a> | View <a href=
+  "https://github.com/Psychtoolbox-3/Psychtoolbox-3/commits/beta/Psychtoolbox/PsychDemos/ImageUndistortionDemo.m">changelog</a></span>
 </div>
 <div class="code">
-  <code>Psychtoolbox/PsychAlpha/ImageUndistortionDemo.m</code>
+  <code>Psychtoolbox/PsychDemos/ImageUndistortionDemo.m</code>
 </div>
 

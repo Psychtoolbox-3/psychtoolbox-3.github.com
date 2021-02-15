@@ -8,10 +8,11 @@ These are subject to change or even complete removal without warning,
 so use them at your own risk.  
   
   
-  [KinectRawRecordingDemo](KinectRawRecordingDemo)   - Half finished, demo on how to record Kinect data.  
-  [PrintStruct](PrintStruct)              - Print structure & cell array to any depth  
+  [KinectRawRecordingDemo](KinectRawRecordingDemo)    - Half finished, demo on how to record Kinect data.  
+  [MeasureLuminancePrecision](MeasureLuminancePrecision) - Automatically determine visual output luminance precision.  
+  [PrintStruct](PrintStruct)               - Print structure & cell array to any depth  
   [PropixxImageUndistortionThrowaway](PropixxImageUndistortionThrowaway) - Experimental demo for [VPixx](VPixx) [ProPixx](ProPixx) projector fast mode.  
-  [ShowHDRDemo](ShowHDRDemo)              - Incomplete demo of how to show HDR images.  
+  [ShowHDRDemo](ShowHDRDemo)               - Incomplete demo of how to show HDR images.  
 
 
 

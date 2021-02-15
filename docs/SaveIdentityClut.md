@@ -5,7 +5,7 @@ savedClut = [SaveIdentityClut](SaveIdentityClut)(windowPtr [, LUT])
   
 This routine defines a LUT or LUT-type for use as identity gamma lookup  
 table for applications that need such a table, e.g., Bits+ box,  
-[VideoSwitcher](VideoSwitcher), Video attenuators, the [BrightSide](BrightSide) HDR display etc.  
+[VideoSwitcher](VideoSwitcher), Video attenuators, etc.  
   
 It writes the LUT into a config file. The function [LoadIdentityClut](LoadIdentityClut)()  
 will use the written LUT from that config file, if such a file exists.  

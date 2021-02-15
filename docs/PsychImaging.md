@@ -951,16 +951,6 @@ actions:
   Usage: [PsychImaging](PsychImaging)('AddTask', 'General', 'EnableNative16BitFloatingPointFramebuffer');  
   
   
-\* 'EnableBrightSideHDROutput' Enable the high-performance driver for  
-  [BrightSide](BrightSide) Technologies High dynamic range display device for 16 bit  
-  per color channel output precision. See "help [BrightSideHDR](BrightSideHDR)" for  
-  detailed explanation. Please note that you'll need to install the 3rd  
-  party driver libraries for that display as described in the help file.  
-  PTB doesn't come bundled with that libraries for copyright reasons.  
-  
-  Usage: [PsychImaging](PsychImaging)('AddTask', 'General', 'EnableBrightSideHDROutput');  
-  
-  
 \* 'UseDataPixx' Tell Psychtoolbox that additional functionality for  
   displaying the onscreen window on a [VPixx](VPixx) Technologies [DataPixx](DataPixx) device  
   should be enabled.  

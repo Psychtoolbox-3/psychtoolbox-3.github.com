@@ -114,7 +114,7 @@ Zero for none.
 [SwapBarrier](SwapBarrier): Swap barrier id of the swap barrier to which this windows swap  
 group is assigned. Zero for none.  
 [SysWindowHandle](SysWindowHandle): Low-level windowing system specific window handle of the  
-onscreen window. Currently Linux/X11 only: The X-Window handle.  
+onscreen window.  
 [ExternalMouseMultFactor](ExternalMouseMultFactor): Scaling factor to apply for remapping input coordinates  
 on some systems, e.g., by [RemapMouse](RemapMouse).m.  
 [VRRMode](VRRMode): Actual selected mode for VRR stimulus onset scheduling (1 = auto maps  
