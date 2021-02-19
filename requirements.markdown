@@ -27,18 +27,19 @@ Short version
 
 -   *Runtime environment:*
 
-    64-Bit Matlab version R2019a or later (older versions may work), and GNU Octave version 3.8 or later version
+    64-Bit Matlab version R2020b or later (older versions will likely work, but are no longer tested
+    for compatibility or supported by us in case of trouble), and GNU Octave version 4.2 or later versions
     on Linux, and 64-Bit [Octave version 6.1.0 on macOS][OctavemacOS] [and on MS-Windows.][OctaveForWindows]
 
 -   *Graphics card:*
 
     Recommended are OpenGL 2.1 (or ideally better!) capable GPUs from AMD. Modern Intel graphics
-    chips should also work well on Linux for more simple tasks with lower need for performance.
+    chips will also work well on Linux for more simple tasks with lower need for performance.
 
     **AMD GPUs are strongly recommended over NVidia GPUs on Linux and macOS**, as they
     allow use of high quality open-source graphics drivers on Linux, and of additional
-    useful PTB features for vision science on Linux, and also to some degree on macOS.
-    On Linux, please **do not install the AMD proprietary amdgpu-pro driver**, but simply
+    useful PTB features for vision science on Linux (and also to some degree on macOS).
+    **On Linux, please do not install the AMD proprietary amdgpu-pro driver**, but simply
     stick to the high qualiy amdgpu driver which is already installed on any new Linux
     installation (batteries included!), iow. if you don't do anything, you'll do the right
     thing.
@@ -49,28 +50,31 @@ Short version
     have improved FreeSync support, if you need it. They are expected to work well with
     Psychtoolbox, but are not tested due to lack of hardware. The latest generation "Navi"
     gpu's seem to also work well, according to some user reports, but are not yet tested
-    by the developers, and they do lack support for some special Psychtoolbox low-level
+    by the developers, and they do lack support for some special, but rarely needed, Psychtoolbox low-level debug
     features at the moment. So the sweet spot would be "Polaris", or "Vega" if you intend
     to use FreeSync for interesting visual stimulation paradigms that require Psychtoolbox
-    VRR functionality. AMD Raven Ridge gpu's, integrated into AMD Ryzen processors, are
-    also well tested and known to work under Linux and Windows-10.
+    VRR functionality. AMD "Raven Ridge" gpu's, integrated into AMD Ryzen processors, are
+    also well tested and known to work under Linux and Windows-10. As "Raven Ridge" uses a
+    "Vega" graphics core at its heart, this is another indicator that "Vega" should work fine.
 
     Only choose NVidia if you absolutely must for some very good reason, e.g., if you must
     use CUDA during visual stimulation. Note that we won't be able to help you much with
-    problems caused by NVidia gpu's *even on Linux*, as we can't fix their proprietary
-    graphics drivers!
+    problems caused by NVidia gpu's **even on Linux**, as we can't debug or fix their
+    proprietary graphics drivers in any meaningful way!
 
     Modern Intel HD-Series graphics cards should work reliably for medium
     complexity workloads on Linux. Current OpenGL-3/4 GPUs may expose additional
     useful features. The absolute minimum requirement is OpenGL-1.2 support, but
-    functionality and performance will be very limited with such old GPUs. 
+    functionality and performance will be very limited with such old GPUs, and using
+    graphics cards with only functionality older than OpenGL-2.1 has not been tested
+    by the developers in years.
 
-    Try to avoid PC laptops with hybrid-graphics, e.g., with NVidia Optimus or
-    AMD Enduro technology. Under MS-Windows the visual onset timing of the high
-    performance gpu will very likely be wrong on most such laptops and there is no
+    **Try to avoid PC laptops with hybrid-graphics, e.g., with NVidia Optimus or
+    AMD Enduro technology!** Under MS-Windows the visual onset timing of the high
+    performance gpu will very likely be wrong on most such laptops, and there is no
     known way to fix this with software workarounds, so you might be restricted
     to the integrated low performance gpu. At least Intel integrated gpus are
-    often _very buggy_ under MS-Windows, so you would be out of luck completely. The
+    often _very buggy_ under MS-Windows, so you would be out of luck completely! The
     behavior on Linux is generally better: Many Laptops will work reliably with the high
     performance gpu and the open-source graphics drivers when combined with an
     Intel integrated gpu, e.g., models with older NVidia graphics cards and most AMD
@@ -78,10 +82,11 @@ Short version
     and somewhat rather inflexible to use, due to limitations of their proprietary
     graphics drivers, restricting such Optimus setups to single-display visual stimulation
     only if the proprietary graphics drivers are in use. This also only works with X-Server
-    1.19, which is outdated and only works on older distributions like Ubuntu 18.04, but not
-    with the current X-Server 1.20 and, e.g., Ubuntu 20.04-LTS or later.
-    The combination of AMD integrated gpu + AMD discrete gpu currently doesn't work well
-    at all. At least the lower performance integrated AMD graphics chips should work
+    1.19, which is outdated and only works on older distributions like Ubuntu 18.04.0 LTS,
+    but not with the current X-Server 1.20 and, e.g., recent Ubuntu 18.04.5 LTS, or the
+    recommended Ubuntu 20.04-LTS or later.
+    The combination of AMD integrated gpu + AMD or other discrete gpus currently doesn't work
+    well at all. At least the lower performance integrated AMD graphics chips should work
     as a reliable fallback in such a scenario on Linux though. Read ["help HybridGraphics"][HybridGraphics],
     which provides up to date info.
 
@@ -102,17 +107,17 @@ Operating systems
 GNU/Linux is fully supported on Intel compatible PCs and suitable Apple Macintosh
 computers under
 
--  Matlab 64-bit, version R2019a and later versions. R2014b is also somewhat tested,
-   older versions may work.
--  GNU Octave 64-bit, versions 3.8, 4.0, 4.2, 4.4, and 5.2.
+-  Matlab 64-bit, version R2020b and later versions. R2014b is also somewhat tested,
+   older versions probably work, but are no longer tested.
+-  GNU Octave 64-bit, versions 4.2, 4.4, and 5.2, possibly later or earlier versions.
 -  Additionally, Psychtoolbox from NeuroDebian supports 32-Bit and 64-Bit
    releases of whatever version of GNU Octave ships by default with your
-   distribution, e.g., also Octave 3.6, 3.4 or 3.2 on older distributions,
-   or Octave 4.4 and Octave 5.1 on recent distributions.
+   distribution, e.g., also Octave 4.0, 3.8, 3.6, 3.4 or 3.2 on older distributions,
+   or Octave 5.1 and Octave 6.x on recent distributions.
 
 Psychtoolbox testing and development occurs mainly on the most recent Ubuntu
-Linux LTS releases or flavors of them, currently Ubuntu 18.04-LTS and Ubuntu
-20.04-LTS.
+Linux LTS releases or flavors of them, currently Ubuntu 18.04.5-LTS and Ubuntu
+20.04.2-LTS.
 
 NeuroDebian tests and supports PTB also on Debian GNU/Linux. According to
 user reports, Psychtoolbox seems to work reasonably well on Linux Mint, Arch
@@ -120,11 +125,10 @@ Linux, Gentoo, and Fedora 24/25. We can't provide much support on other distros
 than Ubuntu LTS flavors due to lack of time and resources.
 
 It is recommended to stick to the latest long-term support (LTS) Ubuntu release,
-currently 20.04.1-LTS, if you want the most well tested and well supported setup.
+currently 20.04.2-LTS, if you want the most well tested and well supported setup.
 
-[Psychtoolbox also works with GNU Octave on the RaspberryPi 2B and 3 at least
-with the Debian flavor Raspbian.][Raspbian]. Tests on the RaspberryPi 4 are
-still to be done.
+[Psychtoolbox also works with GNU Octave on the RaspberryPi 2B, 3, 4, 400 at least
+with the Debian flavor Raspbian (also known as RaspberryPi OS).][Raspbian].
 
 The [NeuroDebian project][neurodebian] is an effort to provide convenient
 access to neuroscience-related software on the Debian and Ubuntu Linux
@@ -137,7 +141,7 @@ Octave ("octave-psychtoolbox-3") and one for Matlab ("matlab-psychtoolbox-3").
 
 For details on these options, see the [Linux installation instructions][linux-install].
 
-We generally recommend Linux as the operating system of choice for
+**We generally strongly recommend Linux** as the operating system of choice for
 demanding experimental setups, which require the highest timing
 precision, precision for color or luminance displays, general
 performance and flexibility. Our support for fixing bugs and other
@@ -151,17 +155,16 @@ Psychtoolbox is also being developed and tested under Apple macOS.
 Psychtoolbox should "work" in principle on
 
 -  64-bit Matlab R2014b on macOS 10.11 "El Capitan" and later.
--  64-bit Octave v6.1.0 on macOS 10.11 "El Capitan" and later. As of 2020,
+-  64-bit Octave v6.1.0 on macOS 10.11 "El Capitan" and later. As of 2021,
    [you will need to get Octave 6.1.0 from a package manager like HomeBrew][OctavemacOS]
    or MacPorts, as standalone binary installers are not available yet.
 
 Limited testing currently only happens on the latest version of macOS 10.15.7
-“macOS Catalina” with 64-Bit Octave 6.1.0, and with 64-bit Matlab R2020b, and
-infrequently on 10.13.6 "macOS High Sierra". These are the only somewhat supported versions of
-macOS at this point in time. Avoid macOS Catalina 10.15 if you don't have to.
-Psychtoolbox is compatible with Catalina in principle, and Catalina is the only
-currently tested system, but Catalina has fantastic
-new bugs and flaws, e.g., a slow-down of keyboard input by a factor of 5x, and
+“macOS Catalina” with 64-Bit Octave 6.1.0, and with 64-bit Matlab R2020b.
+These are the only somewhat supported versions of macOS at this point in time.
+Avoid macOS Catalina 10.15 if you don't have to. Psychtoolbox is compatible with
+Catalina in principle, and Catalina is the only currently tested system, but Catalina
+has fantastic new bugs and flaws, e.g., a slow-down of keyboard input by a factor of 5x,
 and various trouble wrt. keyboard input, sound input, video capture, thanks to Catalina's
 awful new security design -- Prepare for lots of hassle if you choose Catalina, you
 have been warned! _macOS is the most buggy and hazardous operating system you could
@@ -171,6 +174,8 @@ using macOS will likely bring you a world of pain (and possibly irreproducible r
 macOS Mojave or older versions are a likely better working choice. The fact that they
 are no longer actively developed by Apple means that Apple won't have much opportunity
 to screw these older system up for our needs - knock on wood!
+
+**macOS 11 Big Sur is not officially supported or tested at all at the moment!**
 
 Toolbox version 3.0.14 and later releases do not work under macOS 10.10
 or earlier anymore. The last working version on macOS 10.10 was v3.0.13.
@@ -202,7 +207,7 @@ resolve at least some of these issues on AMD and NVidia graphics cards
 
 Psychtoolbox should work on
 
--   Matlab 64-bit. Currently tested with release R2019a.
+-   Matlab 64-bit. Currently tested and supported with release R2020b.
     External mandatory requirements: Microsoft C MSVC 2015-2019 runtime and
     GStreamer 1.18 MSVC or later. Installation of GStreamer _before_ installation
     of Psychtoolbox is mandatory on Matlab or the Screen mex file will not work.
@@ -218,7 +223,7 @@ give you instructions on how to do that if necessary.
 
 Psychtoolbox-3.0.17 is no longer officially supported for Windows-7 / 8 / 8.1. The
 current expectation is that it still mostly works on these systems, but just as with
-v3.0.16, only Windows-10 releases from 2020 are tested and supported in case of trouble,
+v3.0.16, only Windows-10 releases from 2021 are tested and supported in case of trouble,
 and some functionality like sound output should be better on Windows-10, other functions
 like HDR High Dynamic Range display support will only work on recent Windows-10.
 
@@ -306,11 +311,12 @@ Basic hardware requirements
     installation of Linux on the internal drive.
     _For these reasons we don't recommend use of any modern Apple hardware._
 
--   [RaspberryPi models 2B and 3 under the most recent Raspbian operating system.][Raspbian]
-    The RaspberryPi 2B is actively tested for compatibility and works well
+-   [RaspberryPi models 2B, 3, 4, 400 under the most recent Raspbian operating system.][Raspbian]
+    The RaspberryPi 2B and 400 are actively tested for compatibility and works well
     for not too demanding visual and auditory stimulation tasks, USB i/o
     and digitial i/o via the programmable GPIO pins. The Pi model 3 is not
-    tested yet, but expected to work just as well as the model 2B.
+    tested, but expected to work just as well as the model 2B. Pi models 4 and 400
+    are substantial improvements over the older models in hardware capabilities.
 
 Graphics hardware requirements
 ------------------------------
@@ -318,7 +324,7 @@ Graphics hardware requirements
 Basic Psychtoolbox functions should work on any OpenGL 1.2 capable
 graphics card with at least 16 MB of video ram (VRAM), with the mentioned
 operating system specific restrictions in mind, ie., somewhat broken on
-Windows multi-display and almost completely broken on macOS. Fast stimulus
+Windows multi-display and broken on macOS for non-trivial use cases. Fast stimulus
 drawing and use of the more advanced features requires recent graphics
 hardware. However, we do _strongly recommend_ at least OpenGL 2.1 capable
 graphics hardware for full functionality and good performance. For optimal
