@@ -9,8 +9,8 @@ so your system is set up with suitable hardware and additional required
 software before installing Psychtoolbox itself.
 
 In order to install and use the Psychtoolbox, *you must already have
-Matlab or Octave installed on your computer*, unless you install for
-Octave on Linux via the NeuroDebian repositories. If you already have
+Matlab or Octave installed on your computer, unless you install for
+Octave on Linux via the NeuroDebian repositories.* If you already have
 Matlab or Octave installed, start it up and read on. On Windows you
 must have installed GStreamer 1.18.0 MSVC edition or later versions.
 
@@ -63,7 +63,7 @@ Installation Instructions {#installation}
 
 These are simple instructions to get you up and running with the Psychophysics
 Toolbox on a computer. It is assumed that you already have Matlab or Octave
-installed on your computer, or are installing for Octave on Linux via the
+installed on your computer, or you are installing for Octave on Linux via the
 NeuroDebian repositories. See the [System Requirements][requirements].
 
 #### Linux {#Linux}
@@ -73,53 +73,101 @@ NeuroDebian repositories. See the [System Requirements][requirements].
 Psychtoolbox for Linux has been packaged by the NeuroDebian team and is
 available in the following repositories:
 
-Up to date, tracks most recent official PTB beta releases - recommended:
+Usually reasonably up to date, tracks most recent official PTB beta releases -
+recommended for most "bread and butter" use cases:
 
--   [NeuroDebian][neurodebian] ([Octave][nd-octave] or [Matlab][nd-matlab])
+- [NeuroDebian Psychtoolbox for GNU/Octave][nd-octave]
+- [NeuroDebian Psychtoolbox for Matlab][nd-matlab]
 
-NeuroDebian provides installation instructions on its website when you click
-on the links for Octave or Matlab above. At the end of NeuroDebian installation,
-run the script `PsychLinuxConfiguration` and follow the interactive instructions
-and questions.
+[NeuroDebian][neurodebian] provides installation instructions on its website when you
+click on the links for Octave or Matlab above.
 
-Usually somewhat outdated versions, GNU Octave only, no Matlab:
+If you installed Matlab *before* installing Psychtoolbox for Matlab from NeuroDebian,
+the installation will ask you for the location of your Matlab installation, and if
+you want it to rename some Matlab libraries to fix compatibility issues caused by
+Matlab. **Answer YES to these questions, this is crucial!** Otherwise hardware
+accelerated graphics will likely not work with Matlab later on.
+
+If you installed Matlab *after* installing Psychtoolbox, *or after you have upgraded
+Matlab to a more recent version* **you must rerun this Matlab compatibility fixing
+script via:** ``sudo dpkg-reconfigure matlab-support``.
+
+At the end of a successfull NeuroDebian installation, run the script `PsychLinuxConfiguration`
+from within Matlab or Octave, and follow the interactive instructions and questions
+to optimize your Linux system for data collection.
+
+Debian and Ubuntu also provide Psychtoolbox directly from their repositories,
+but these Psychtoolbox packages are usually **very outdated, often years behind** versions,
+and they support GNU Octave only, no Matlab:
 
 -   [Debian archive][debianrepo] (package `octave-psychtoolbox-3`)
 -   [Ubuntu archive][ubunturepo] (package [`octave-psychtoolbox-3`](apt:octave-psychtoolbox-3))
 
 
-_The packages in the main Debian and Ubuntu archives only ship with GNU
-Octave support, hence the package to install is_ **`octave-psychtoolbox-3`**.
-In general using the NeuroDebian repo above is more convenient and provides up to
-date packages for Octave and Matlab, but the distribution packages will do for a
-quick test drive, e.g., from within a Live system for quick compatibility testing.
+_The packages in the main Debian and Ubuntu archives only ship with GNU Octave
+support, hence the package to install is_ **`octave-psychtoolbox-3`**.
 
-The advantage of the above repositories is that third-party dependencies
+*In general using the NeuroDebian repo above is more convenient and provides more
+up to date packages for Octave and Matlab*, but the distribution packages will do
+for a quick test drive, e.g., from within a Live Linux system, booted from a USB
+flash drive, for quick compatibility testing.
+
+If you choose installation from the distribution directly, bypassing NeuroDebian,
+after package installation, run the script `PsychLinuxConfiguration` from within
+Octave once, and follow the interactive instructions and questions to optimize your
+Linux system for data collection. You may be able to do without this step for a
+quick basic test drive or maybe for pure student training without need for high
+timing precision or precise low-level control of your hardware and special equipment.
+
+The advantage of all the above methods is that third-party dependencies
 are automatically installed by the package manager.
 
 ##### Subversion-based installation
  
-Alternatively, you can perform the regular installation via our
-[`DownloadPsychtoolbox.m`][installer] script. The following will install
-Psychtoolbox by checking out the Subversion repo to the specified local
-directory.
+Alternatively, for the most complete and most recent version of Psychtoolbox,
+you can perform the regular installation via our [`DownloadPsychtoolbox.m`][installer]
+script. The following will install Psychtoolbox by checking out the Subversion repo to
+the specified local directory.
 
-  1.  Skip this step and go directly to step 2 if you use Matlab R2014b or later.
-      Get the `subversion` package from your Linux distribution’s archive
-      (i.e. `apt-get install subversion`, or `yum install subversion`, et al.).
+  1.  If you are using Matlab R2014b or later, go to step 3. For older Matlab versions
+      go to step 2.
 
-  2.  Start Octave or Matlab, `cd` into the folder that you saved the
-      [`DownloadPsychtoolbox.m`][installer] script in, and run
+      If you are using GNU/Octave on a Debian or Ubuntu based system, execute this
+      command in a terminal: ``sudo apt build-dep octave-psychtoolbox-3`` and then go
+      to step 2. If you are using Octave on a different Linux distribution (unsupported
+      by us, although it will probably work on many!) then you will need to track down
+      and install various runtime dependencies manually.
+
+  2.  Install the `subversion` package from your Linux distribution’s archive
+      (e.g. `apt-get install subversion`, or `yum install subversion`, et al.).
+      If you are using Octave, go to step 4. For Matlab, continue to step 3.
+
+  3.  On a Debian or Ubuntu based system, quit Matlab, and install the *matlab-support*
+      package by typing ``sudo apt install matlab-support`` into a terminal window.
+      When it asks you for the location of your Matlab installation, **tell it**.
+      When it asks you if it should rename some Matlab libraries to fix Matlab
+      compatibility issues, **answer YES, otherwise hardware accelerated graphics will
+      likely not work later on!**
+      
+      If the *matlab-support* package was already installed before you installed Matlab,
+      or *after each update of Matlab*, run ``sudo dpkg-reconfigure matlab-support`` to
+      rerun this fixup script, as described in the previous sentence, **othewise hardware
+      accelerated graphics will likely stop to work!**
+      
+  4.  Start your Octave or Matlab, `cd` into the folder that you saved the
+      [`DownloadPsychtoolbox.m`][installer] script in, and run (replace /home/foo/toolbox/
+      by a folder of your choice!):
 
           >> DownloadPsychtoolbox('/home/foo/toolbox')
 
-However, Octave mex files from this download will only work out of the box with
-Octave 3.8, 4.0 or 4.2 on a fairly recent distribution like Ubuntu 16.04-LTS or better
-Ubuntu 18.04-LTS, as well as with Octave 5.2 on Ubuntu 20.04-LTS. All required dependencies
-like GStreamer-1.8+, libdc1394, etc. need to be manually installed in this case. It may
-work on Debian/Ubuntu based system to execute "sudo apt build-dep psychtoolbox-3" though
-to get your distribution to auto install required dependencies. Generally prefer the
-NeuroDebian installation instead if you are on Debian or Ubuntu flavors.
+However, Octave mex files from this Subversion download from us, should you choose Octave,
+will only work out of the box with Octave 4.2 on Ubuntu 18.04-LTS, and with Octave 5.2 on
+Ubuntu 20.04-LTS. All required dependencies like GStreamer-1.8+, libdc1394, libusb, libfreenect,
+etc. need to be manually installed in this case. It may work on Debian/Ubuntu based system to
+execute "sudo apt build-dep psychtoolbox-3" though to get your distribution to automatically
+install required dependencies. Generally prefer the NeuroDebian installation instead, if you
+are on Debian or Ubuntu flavors and don't need the absolutely latest functionality at the day
+of release.
 
 [Additional tips][using-on-linux] for installing and using Psychtoolbox on
 Linux.
@@ -129,8 +177,9 @@ Linux.
 Filesystem locations given here are examples. You could choose other disc drives or
 folders of your liking instead:
 
-1.  Skip this step and go directly to step 2 if you use Matlab R2014b or later.
-
+1.  Skip this step and go directly to step 2 if you use Matlab R2014b or later, instead
+    of an older Matlab version or of GNU/Octave.
+    
     Download and install the Subversion installer
 
     -   **Windows:** [Subversion 1.7.x command-line client][svnwin]
@@ -194,7 +243,7 @@ If the download fails, read below on [Download Problems](#download-problems). If
 want to know more, see [DownloadPsychtoolbox][docs-download] (or
 `help DownloadPsychtoolbox` in the command window.)
 
-4.  If you intend to use multi-media functions, or you want fast, high-quality,
+4.  If you intend to use multi-media functions, or if you want fast, high-quality,
     cross-platform, consistent text rendering with Matlab, you must install the 64-Bit
     GStreamer-1.18 or later runtime from [gstreamer.freedesktop.org][gstreamer-osx].
     Make absolutely sure that you install all offered packages. [Read `help GStreamer`
@@ -232,6 +281,12 @@ downloaded copy of Psychtoolbox.
 
 Installation without Download {#without-download}
 -------------------------------------------------
+
+**Note: You still need to execute operating-system dependent or Matlab/
+Octave dependent setup steps like installing GStreamer, or other packages
+and configuration steps mentioned above. Essentially do everything that
+doesn't directly relate to execution of DownloadPsychtoolbox or installation
+of Subversion before proceeding here.**
 
 If you already have downloaded a copy of the Psychtoolbox folder onto a
 local computer and want to replicate that installation onto other computers,
