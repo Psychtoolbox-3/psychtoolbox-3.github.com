@@ -1,0 +1,32 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.17 Beta update "Let them eat cake!" SP2 was released at 19th February 2021.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.17.9”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.17.9>
+
+
+A minor PTB beta update, mostly featuring small bug fixes, doc updates and refinements.
+
+## General:
+
+- Add Denis Pelli's MeasureLuminancePrecision.m as baseline to PsychAlpha/ . The script is already useful as it is, and received quite a bit of cleanup by myself wrt. Denis original. However, currently it is needlessly restricted to use of the ColorCal-II, and needs more refinement. We add it to the PsychAlpha alpha-quality folder for the time being, so it can have some use while it gets refined over time.
+
+- PsychtoolboxPostInstallRoutine(): Improve diagnostics slightly for textrenderer setup failures on MS-Windows or macOS.
+
+- Many minor fixes to demos and tests for Matlab R2020b compatibility. Various cleanups. Also many old and obsolete tests and demos deleted, which don't have much use anymore in the year 2021. This cleanup and R2020b compatibiity work was [sponsored by Mathworks](https://www.mathworks.com/solutions/neuroscience.html).
+
+## macOS:
+
+- Fix MacModelName() for macOS Catalina. By Denis Pelli and Darshan Thapa.
+- DriftTexturePrecisionTest: Make compatible with macOS Retina displays. 
+
+## Linux:
+
+- Minor help text updates in SetResolution() and Screen('Resolution') wrt. multi-display setups.
