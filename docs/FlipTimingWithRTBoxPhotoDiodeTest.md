@@ -7,10 +7,16 @@ Test visual stimulus onset timing accuracy and visual stimulus onset
 timestamping precision and robustness under varying loads, conditions and  
 modes of operation. This requires one of the supported external  
 measurement devices to provide the "ground truth" for true stimulus onset  
-times. Currently supported: UCST [RTBox](RTBox) with photo-diode, [VPixx](VPixx) Inc. [DataPixx](DataPixx)/  
-[ViewPixx](ViewPixx)/[ProPixx](ProPixx), UBW32/Bitwhacker + UCST [VideoSwitcher](VideoSwitcher). The script can also  
-be used without external equipment to just test stimulus onset accuracy with  
-only indirect test of timestamping.  
+times. Currently supported:  
+- UCST [RTBox](RTBox) with its own photo-diode (p)  
+- [VPixx](VPixx) Inc. [DataPixx](DataPixx)/[ViewPixx](ViewPixx)/[ProPixx](ProPixx) (d)  
+- UBW32/Bitwhacker + UCST [VideoSwitcher](VideoSwitcher) (b)  
+- UCST Videoswitcher + UCST [RtBox](RtBox) or CRS Bits\# emulated [RtBox](RtBox) (v)  
+- Other TTL trigger timestamp emitting devices + UCST [RtBox](RtBox) or CRS Bits\#,  
+  e.g., the CRS-[ColorCal2](ColorCal2) used as a photo-diode. (p)  
+  
+The script can also be used without external equipment (n) to just test  
+stimulus onset accuracy with only indirect test of timestamping.  
   
 This documentation is incomplete for now, good luck!  
   
@@ -25,7 +31,8 @@ selected. If a folder is specified, that folder is used if it is writable, other
 the users home directory is tried as target.  
   
 'usevulkan' If 1, try to use a Vulkan display backend instead of the  
-[OpenGL](OpenGL) display backend. See 'help PsychVulkan'.  
+[OpenGL](OpenGL) display backend. See 'help PsychVulkan' for supported hardware +  
+operating system combinations and required setup.  
   
 'bpc' Request a specific output framebuffer color precision. Currently  
 supported are 8 for standard 8 bpc RGBA8 framebuffer, 10 bpc for RGB10A2,  

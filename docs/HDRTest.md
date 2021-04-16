@@ -48,6 +48,9 @@ precision of the encoded signal from 10 bit to up to 12 bit. Please note
 that if used on MS-Windows, the test will print false warnings about  
 mismatches between shader computed PQ values. That is normal at the  
 moment, because on Windows PQ is not used for fp16 mode.  
+If set to 2, will request a 16 bpc fixed point framebuffer, which allows for up  
+to 16 bpc linear precision, but in reality on early 2021 hardware at most 12 bpc.  
+On most operating-systems + driver + gpu combos this 16 bpc mode will fail.  
   
 'screenid' [Screen](Screen) to use. Defaults to maximum screen id.  
   

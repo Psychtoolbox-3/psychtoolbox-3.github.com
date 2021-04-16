@@ -1,15 +1,17 @@
 # [MeasureLuminancePrecision](MeasureLuminancePrecision)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychAlpha](PsychAlpha)
 
-data=[MeasureLuminancePrecision](MeasureLuminancePrecision)  
-INSTRUCTIONS: [Currently this program requires a Cambridge Research  
-Systems photometer, but you could easily adapt it to use another  
-photometer.] Plug your photometer's USB cable into your computer,  
-carefully place your photometer stably against your computer's screen,  
-set PARAMETERS (below), then run. The results (including the best-fitting  
-n-bit-precision model) will be displayed as a graph in a MATLAB figure  
-window, and also saved in three files (in the same folder as this file)  
-with filename extensions: png, fig, and mat. The filename describes the  
+data=[MeasureLuminancePrecision](MeasureLuminancePrecision)([meterType=7])  
+  
+'meterType' selects type of photometer. Defaults to 7 for CRS [ColorCal2](ColorCal2), see  
+'help CMCheckInit' for other supported devices.  
+  
+INSTRUCTIONS: Plug your photometer into your computer, carefully  
+place your photometer stably against your computer's screen, set  
+PARAMETERS (below), then run. The results (including the best-fitting  
+n-bit-precision model) will be displayed as a graph in a figure window,  
+and also saved in three files (in the same folder as this file) with  
+filename extensions: png, fig, and mat. The filename describes the  
 testing conditions, e.g.  
 [DenissMacBookPro5K](DenissMacBookPro5K)-Dithering61696-o.use10Bits-[LoadIdentityCLUT](LoadIdentityCLUT)-Luminances8.fig  
   
@@ -30,7 +32,7 @@ that controls light output. In 2016-2017, Mario Kleiner enhanced The
 Psychtoolbox SCREEN function to allow specification of each color  
 component (R G B) as a floating point number, where 0 is black and 1 is  
 maximum output, so that your software, without change, will drive any  
-display and benefit from as much precision as the display hardward and  
+display and benefit from as much precision as the display hardware and  
 driver provide.  
   
 Typically you'll run [MeasureLuminancePrecision](MeasureLuminancePrecision) from the command line. It  
@@ -42,12 +44,11 @@ floating point color value "data.v".
   
 To use this program to measure the precision of your computer display you  
 need three things:  
-1. MATLAB or Octave. http://mathworks.com  
+1. MATLAB or Octave. http://mathworks.com , https://www.gnu.org/software/octave  
 2. The Psychtoolbox, free from http://psychtoolbox.org.  
-3. A Cambridge Research Systems photometer or colorimeter.  
+3. A photometer or colorimeter supported by [CMCheckInit](CMCheckInit)(), e.g., the CRS [ColorCal2](ColorCal2)  
 http://www.crsltd.com/tools-for-vision-science/light-measurement-display-calibation/colorcal-mkii-colorimeter/  
-It's plug and play, taking power through its USB cable. You could easily  
-modify this program to work with any other photometer.  
+It's plug and play, taking power through its USB cable.  
   
 As of April 2017, Apple documents (below) indicate that two currently  
 available macOS computers attain 10-bit precision from pixel to display  

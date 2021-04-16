@@ -11,8 +11,8 @@ https://www.psychtoolbox.net
 For priority support on the user forum or [GitHub](GitHub) issue tracker, buy a  
 "community membership with priority support".  
   
-1. As part of your purchase, you will receive a document with a printed  
-   "Order Id" and a printed "License key".  
+1. As part of your purchase, you will receive a document - an invoice - with a  
+   printed "Order Id" or "Order no.", and a printed "License key".  
   
 2. Next you can run \*this\* function [PsychPaidSupportAndServices](PsychPaidSupportAndServices) in Octave or  
    Matlab. The function will ask you if you need priority support and do have  

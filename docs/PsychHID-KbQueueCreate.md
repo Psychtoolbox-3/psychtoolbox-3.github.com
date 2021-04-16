@@ -44,7 +44,7 @@ default behavior.
   
   
 'windowHandle' Optional windowing system specific handle for an associated  
-onscreen window. Used on Linux/X11 only.  
+onscreen window.  
   
   
 

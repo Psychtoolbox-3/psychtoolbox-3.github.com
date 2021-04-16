@@ -8,9 +8,12 @@ OSX: Get the computer identifier as reported by open firmware.  In the
 OSX Psychtoolbox that is provided in the struct returned by  
 [Screen](Screen)('Computer'). Convert that identifier to Apple's marketing  
 name for the computer.  To do that we use the mapping of identifier to  
-product names found in:  
+product names found in (up to and including macOS Mojave):  
 /System/Library/[SystemProfiler](SystemProfiler)/[SPPlatformReporter](SPPlatformReporter).spreporter/Contents/  
  Resources/English.lproj/Localizable.strings.    
+In macOS Catalina:  
+/System/Library/[SystemProfiler](SystemProfiler)/[SPPlatformReporter](SPPlatformReporter).spreporter/Contents/  
+ Resources/en.lproj/Localizable.strings  
 There is no official Apple-recommended way to uncover the marketing  
 name. However, this method works and should be reasonably robust.  
   

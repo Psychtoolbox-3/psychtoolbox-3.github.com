@@ -1,7 +1,7 @@
 # [DrawingSpeedTest](DrawingSpeedTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)
 
-[DrawingSpeedTest](DrawingSpeedTest)([n=800][,primitivetype=0][,mode=0][,gpumeasure=0])  
+[DrawingSpeedTest](DrawingSpeedTest)([n=800][,maxsize=80][,primitivetype=0][,mode=0][,gpumeasure=0])  
   
 Tests batch-drawing performance of some [Screen](Screen) functions. Batch drawing  
 is a way to submit multiple primitives, e.g., Filled Rects, at once. This  
@@ -13,12 +13,16 @@ This currently only tests filled rects and framed rects as well as filled
 ovals. It also provides a way to test drawing by texture mapping.  
 Dots and Lines are nicely demonstrated by [DotDemo](DotDemo) and [LinesDemo](LinesDemo).  
   
-The optional parameter n allows to specifiy the number of primitives to  
+The optional parameter 'n' allows to specifiy the number of primitives to  
 draw each frame, default is 800. The test loop will draw 1000 identical  
 frames and measure the time needed.  
   
+'maxsize' The maximum size of the primitive (width and height of covered  
+screen area) in pixels. Size of each primitive will be selected as a random  
+size between 1 pixel and 'maxsize' pixels.  
+  
 'primitivetype' type of primitive: 0 = filled rects, 1 = framed rects, 2  
-= filled ovals, 3 = framed ovals.  
+= filled ovals, 3 = framed ovals, 4 = filled arcs.  
   
 'mode' type of drawing: 0 = One by one submission (slowest), 1 = batch  
 submission, 2 = texture mapping for drawing, 3 = texture mapping with  

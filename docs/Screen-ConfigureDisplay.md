@@ -63,6 +63,16 @@ and only useful for experts.
 Example call: [Screen](Screen)('ConfigureDisplay', 'Dithering', screenNumber,  
 ditherEnable);   
   
+'RequestMinimumOutputPrecision' Try to request a specific minimum output depth  
+'minBpc' for video signals on a X-[Screen](Screen) under Linux/X11. This is currently only  
+supported on Linux/X11, and it does not guarantee that you will get the  
+requested minimum precision, as various hardware constraints in the graphics  
+card, cabling, display device, and available memory bandwidth can lead to a  
+lower precision than requested. In the end it is only a polite request to the  
+graphics driver. Example call:  
+[Screen](Screen)('ConfigureDisplay', 'RequestMinimumOutputPrecision', screenNumber,  
+minBpc);   
+  
 'Scanout': Retrieve or set scanout parameters for a given output 'outputId' of  
 screen 'screenNumber'. Returns a struct 'oldSettings' with the current settings  
 for that output. Only supported on Linux.  

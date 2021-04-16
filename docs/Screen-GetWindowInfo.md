@@ -115,6 +115,8 @@ Zero for none.
 group is assigned. Zero for none.  
 [SysWindowHandle](SysWindowHandle): Low-level windowing system specific window handle of the  
 onscreen window.  
+[SysWindowInteropHandle](SysWindowInteropHandle): Low-level windowing system specific window-related  
+auxiliary handle of the onscreen window.  
 [ExternalMouseMultFactor](ExternalMouseMultFactor): Scaling factor to apply for remapping input coordinates  
 on some systems, e.g., by [RemapMouse](RemapMouse).m.  
 [VRRMode](VRRMode): Actual selected mode for VRR stimulus onset scheduling (1 = auto maps  
