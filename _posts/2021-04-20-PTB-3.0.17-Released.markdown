@@ -1,0 +1,46 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.17 Beta update "No Metal to the pedal!" was released at 20th April 2021.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.17.10”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.17.10>
+
+
+Highlights: Experimental Vulkan/Metal display backend support for macOS (mostly a failed experiment though), Octave 6 fixes for macOS, AMD Vega DCE-12 support for Linux, and various smaller improvments and bug fixes.
+
+## General
+
+- MeasureLuminancePrecision now works with all photometers supported by PTB, not only with ColorCal2. ColorCal2 is the default choice if no photometer type is specified.
+- Octave 6.2 on Windows and macOS is now no longer warned against, as light testing suggests it works.
+- Various minor fixes and improvements.
+- Help text and documentation improvements.
+
+## Linux
+
+- AMD Vega / DCE-12 low-level support for Linux, so now it is actually finally verified to be working, as tested with a Datapixx3 wrt. identity pixel passthrough and timestamping.
+- Fixes to LoadIdentityClut AMD fallback path.
+- Fixes to SetMouse in windowed mode (ie. non-fullscreen windows).
+- Fixes to GraphicsDisplaySyncAcrossDualHeadsLinux() - added a bug in the last release.
+- PsychLinuxConfiguration now also calls AssertOpenGL to allow builtin libdc1394 compatibility fixups for Ubuntu 20.10+ for Screen when installing matlab-psychtoolbox-3 from NeuroDebian.
+- Some improvements ot the RaspberryPi build process.
+
+## macOS
+
+- Basic, **highly experimental, highly deficient / unreliable / low performance, and therefore not supported in case of problems** Vulkan (== Metal) display backend support for macOS. This requires at least macOS 10.15.4 and installation of the 3rd party Khronos MoltenVK open-source Vulkan icd driver and Vulkan runtime. MoltenVK implements the Vulkan portability subset on top of the proprietary Apple macOS Metal graphics api. It allows to now also use our Vulkan display backend on macOS for the really desperate and masochistic. Effectively this is a Metal display backend, which was intended to be a replacement for cases where the standard OpenGL backend doesn't work well. As a by-product, it provides basic HDR support on macOS, on machines where this is supported - utilizing Metal EDR functionality to implement Apples peculiar opinion about HDR. The HDR support is **way more limited in performance, reliability, accuracy and flexibility** compared to Windows-10 and even more limited compared to Linux, but may be of some use for people desperately clinging to the iToys. Unfortunately, at least as testing on macOS 10.15.7 with both AMD and Intel graphics on a MacBookPro 2017 went, Apple Metal is even more broken and unreliable wrt. visual stimulus onset timing and timestamping than OpenGL! After spending over 160 hours of work, trying to beat this thing into submission, i conclude this to be mostly a failure, due to bugs in Apples proprietary Metal api, only fixable by Apple, with all workarounds on our side exhausted. But who knows, maybe it will work better on macOS 11? I can't test macOS 11 at the moment due to unrelated showstopper bugs in macOS 11 which would make installing macOS 11 on my test machine too high a risk of bricking the machine. This experimental Vulkan/Metal display backend work was [sponsored by Mathworks](https://www.mathworks.com/solutions/neuroscience.html).
+
+- Fixes for Octave 6 on macOS 10.15, so the octave GUI no longer hangs infinitely at exit if Screen() was used in a session. The workaround we had to invent for severe Apple macOS 10.11 logger bugs, started to work against us at some point, causing problems instead of fixing them. Apparently either macOS was fixed at some point, or Octave got a workaround for Apple macOS bugs.  Anyway, now it seems that Octave 6.2 when launched in ``octave --gui`` mode now works ok, at least as tested under macOS 10.15.7 Catalina final. We keep the workaround active for macOS 10.13 and earlier, as we don't know when it turned from helping into hurting.
+
+- Fixes for GetChar / CharAvail on macOS, when used with Octave or Matlab in command line (non-gui) mode. ListenChar works with Octave in gui mode, and Matlab in gui and commandline mode, but is still a big troublemaker for Octave in commandline mode under macOS, so now running ``octave --gui`` is recommended as the only way for ``ListenChar`` to work.
+- Octave mex files on macOS rebuilt against Octave 6.2 from HomeBrew.
+
+## Windows
+
+- Robustness improvements by Diederick to GetGITPath and GetGITInfo for Windows.
+
+Enjoy!
