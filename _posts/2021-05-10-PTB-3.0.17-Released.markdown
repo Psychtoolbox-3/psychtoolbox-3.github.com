@@ -1,0 +1,35 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.17 Beta update "Hope to the hopeless" was released at 10th May 2021.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.17.11”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.17.11>
+
+This release is another tribute to Apples low quality operating systems,
+this time dealing with the nightmare that is macOS Catalina and later
+security UX workflow. We can't fix that abomination, but we can give
+users a bit of more hand-holding if they made the unfortunate decision
+to install Catalina, or - even worse, so much worse! - Big Sur.
+
+## General
+
+- DrawFormattedText2(): Fix handling of UTF-8 unicode for Octave 6, contributed by Github user @qx1147.
+- Help text improvements - spelling fixes for some PsychMunsell color conversion routines - by Danny Garside.
+- Some internal minor improvements.
+
+## macOS
+
+- Fix FlushEvents() and ListenChar() and GetCharTest for use with Octave cli on OSX, similar to the fixes of CharAvail() and GetChar() from PTB 3.0.17.10.
+- Improve diagnostics and add troubleshooting help of PsychHID for the latest Apple macOS 10.15 and 11 screwups. PsychHID now detects at startup if Apples broken security workflow blocks use of HID "Input Monitoring" - which makes PsychHID unusable. If so, it reports it to the user, provides troubleshooting guidance, and shuts down. A better error handling behavior than just random mysterious failure to enumerate input devices, failure to create KbQueues or to detect keyboard input in KbCheck et al. Unfortunately we can't auto-fix macOS brokeness, just hopefully give users a hand in navigating this byzantine labyrinth of broken UX, brought to you by Apple.
+
+## Windows
+
+- Mex files for 64-Bit Octave rebuilt: Now we support/recommend Octave-6.2, although Octave 6.1 should continue to work.
+
+Enjoy!
