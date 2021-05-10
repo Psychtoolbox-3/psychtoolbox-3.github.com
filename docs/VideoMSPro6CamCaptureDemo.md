@@ -3,7 +3,7 @@
 
 Demonstrate simple use of built-in front video camera of MS Surface Pro 6  
   
-[VideoMSPro6CamCaptureDemo](VideoMSPro6CamCaptureDemo)([exposure=80][, fullscreen=0][, fullsize=0][, moviename])  
+[VideoMSPro6CamCaptureDemo](VideoMSPro6CamCaptureDemo)([fullscreen=1][, fullsize=1][, moviename])  
   
 [VideoMSPro6CamCaptureDemo](VideoMSPro6CamCaptureDemo) initializes the MS Surface Pro 6 front camera,  
 then shows its video image in a Psychtoolbox window.  
