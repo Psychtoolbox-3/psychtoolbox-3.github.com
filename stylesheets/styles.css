@@ -6,7 +6,7 @@
 body {
   padding: 50px;
   font: 14px/1.5 Lato, sans-serif;
-  color: #444;
+  color: #555;
   font-weight: 400;
 }
 
@@ -80,7 +80,7 @@ p a, li a, li a code {
 
 a small {
   font-size: 11px;
-  color: #777;
+  color: #555;
   margin-top: -0.6em;
   display: block;
 }
