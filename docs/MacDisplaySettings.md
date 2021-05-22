@@ -3,18 +3,24 @@
 
  [oldSettings,errorMsg] = [MacDisplaySettings](MacDisplaySettings)([screenNumber,][newSettings])  
   
-% [MacDisplaySettings](MacDisplaySettings) allows you to peek and poke seven settings in the  
- System Preferences:Displays panel by using the corresponding fields in  
- its newSettings and oldSettings input-output arguments. This allows you  
- to temporarily override any macOS user customization of your  
- display, to allow calibration and user testing with stable display  
+% [MacDisplaySettings](MacDisplaySettings) uses an applescript subroutine of the same name to  
+ allow you to peek and poke seven settings in the macOS System  
+ Preferences:Displays panel. You use corresponding fields in  
+ MacDisplaySettings's input and output arguments newSettings and  
+ oldSettings. You poke by setting one or more fields in the newSettings  
+ struct, and you peek by looking at fields in the oldSettings struct. This  
+ allows you to temporarily override (and later restore) any user  
+ customization of your display (via the Displays System [Preference](Preference)), so  
+ you can calibrate the display and test users with stable display  
  settings. (To be clear, we help you handle the macOS built-in System  
- Preferences; we do nothing about the zillion third-party apps that your  
- users might install.)  All the parameters refer only to the screen  
- selected by screenNumber. However, Apple has very limited support for  
- non-Apple displays, so you probably won't have Brightness, True Tone, or  
- Night Shift on your external display unless it's made by Apple. The Color  
- Profile options seems to always be available for all displays.  
+ Preferences; we do nothing about the zillion third-party apps and  
+ extensions that your users might install.) All the parameters refer only  
+ to the screen selected by screenNumber (optional argument with default 0,  
+ the main screen). When you have multiple displays, Apple's Display panel  
+ seems to always offer the Color Profile options for each display. But the  
+ Display panel's support for non-Apple displays is limited, so you  
+ probably won't have Brightness, True Tone, or Night Shift controls for  
+ your external display unless it's made by Apple.  
   
 % DISPLAY  
  brightness            the Brightness slider  
@@ -22,8 +28,10 @@
  trueTone              the "True Tone" checkbox  
 % COLOR  
  showProfilesForThisDisplayOnly the checkbox  
- profile               name of selection in Color Profile menu  
  profileRow            row \# of selection in Color Profile menu  
+ profile               name of selection in Color Profile menu  
+ profileFilename       name of file  
+ profileFolder         path of folder  
 % NIGHT SHIFT  
  nightShiftSchedule    the Night Shift Schedule pop up menu  
  nightShiftManual      the Night Shift Manual checkbox  
@@ -40,8 +48,8 @@
  "nightShiftSchedule" ('Off','Custom', or 'Sunset to Sunrise')  
  "nighShiftManual" (true or false)  
  "showProfilesForThisDisplayOnly" (true or false)  
- "profile" (text name)  
  "profileRow" (integer)  
+ "profile" (text name)  
   
  If newSettings.profileRow is specified then newSettings.profile is  
  ignored. True Tone is not available on Macs manufactured before 2018.  
@@ -70,11 +78,13 @@
                  nightShiftSchedule: 'Off'  
                    nightShiftManual: 0  
      showProfilesForThisDisplayOnly: 0  
-                            profile: 'Color LCD'  
                          profileRow: 1  
+                            profile: 'Color LCD'  
+                    profileFilename: 'Color LCD-1FF8F5E7-4684-FAAF-396B-715F8AE0AA7F.icc'  
+                      profileFolder: '/Library/[ColorSync](ColorSync)/Profiles/Displays'  
   
- % In one call to [MacDisplaySettings](MacDisplaySettings) you can both peek the old settings  
- % and poke new settings.  
+ In one call to [MacDisplaySettings](MacDisplaySettings) you can both peek the old settings and  
+ poke new settings.  
   
  newSettings.brightness=0.87;  
  newSettings.automatically=false;  
@@ -82,13 +92,14 @@
  newSettings.nightShiftSchedule='Off';  
  newSettings.nightShiftManual=false;  
  newSettings.showProfilesForThisDisplayOnly=false;  
- newSettings.profile='Display P3'; % Select Profile by name.  
- newSettings.profileRow=1; % Specify Profile row, and ignore "profile" field.  
+ newSettings.profileRow=1; % Specify Profile by row.  
+ newSettings.profile='Display P3'; % Or, select Profile by name.  
   
  [oldSettings,errorMsg]=[MacDisplaySettings](MacDisplaySettings)(screen,newSettings)  
   
- % Now use the display, and then restore the old settings as you found  
- % them. You can omit "screen" if you're working on the main screen (0).  
+ Now use the display to run your experiment, and then restore the old  
+ settings as you found them. You can omit the "screen" specifier if you're  
+ working on the main screen (i.e. 0).  
   
  [MacDisplaySettings](MacDisplaySettings)(screen,oldSettings);  
   
@@ -110,51 +121,57 @@
   
 % ERROR REPORTING. If everything worked the optional output argument  
  errorMsg is an empty string. Otherwise errorMsg will contain an error  
- message string, just one even if there are mutiple faults.  
+ message string, just one, even if there are mutiple faults.  
   
-% ERROR CHECKING. Most of the controls are straightforward, you are just  
- peeking and poking a Boolean (0 or 1) or a small integer with a known  
- range. Brightness and Profile are more subtle, so [MacDisplaySettings](MacDisplaySettings)  
- always checks by peeking immediately after poking Brightness or Profile  
- (whether by name or by row). A discrepancy will be flagged by a nonempty  
- string in errorMsg. Note that you provide a float to Brightness but  
- within the macOS it's quantized to roughly 18-bit precision. In my  
- testing on a [MacBook](MacBook) and a [MacBook](MacBook) Pro, poking random numbers between 0.0  
- and 1.0, the discrepancy between peek and poke is uniformly distributed  
- over the range -5e-6 to +5e-6, provided you wait at least 0.1 s after the  
- latest poke. (When you move the slider, the macOS does a slow fade to the  
- new value.) For MacDisplaySettings's built-in peek-after-poke test,  
+% ERROR CHECKING. Most of the controls are straightforward.   
+ You are just peeking and poking a logical value (true or false), a small  
+ integer with a known range, a float with a known range, or a string.  
+ Brightness and Profile are more subtle, so [MacDisplaySettings](MacDisplaySettings) always  
+ checks by peeking immediately after poking Brightness or Profile (whether  
+ by name or by row). A discrepancy will be flagged by a nonempty string in  
+ errorMsg. Note that you provide a float to Brightness but within the  
+ macOS it's quantized to roughly 18-bit precision. In my testing on a  
+ [MacBook](MacBook) and a [MacBook](MacBook) Pro, poking random numbers between 0.0 and 1.0, the  
+ discrepancy between peek and poke is uniformly distributed over the range  
+ -5e-6 to +5e-6, provided you wait at least 0.1 s after the latest poke.  
+ (When you move the slider, the macOS does a slow fade to the new value.)  
+ For MacDisplaySettings's built-in peek-after-poke test,  
  [MacDisplaySettings](MacDisplaySettings) accepts the peek of Brightness if it is within 0.001  
  of what we poked, otherwise it waits 0.1 s and peeks again, and if the  
  second peek is still out of range, then reports the discrepancy in  
  errorMsg.  
   
-% RELIABLE. [MacDisplaySettings](MacDisplaySettings) is reliable, unlike my  
- previous efforts [(AutoBrightness]((AutoBrightness).m, Brightness.m, [ScreenProfile](ScreenProfile).m). The  
- improvement results from discovering, first, that the applescript  
- operations proceed MUCH more quickly while System Preferences is  
- frontmost (so we now bring it to the front), and, second, we now follow  
- the example of pros and have wait loops in the applescript to make sure  
- each object is available before accessing it. Since those enhancements,  
- it now reliably takes 2 s on [MacBook](MacBook) Pro and 8 s on [MacBook](MacBook), instead of  
- the long 60 s delays, and occasional timeout errors, that afflicted the  
- old routines.  
+% RELIABLE. [MacDisplaySettings](MacDisplaySettings) is reliable,   
+ unlike my previous applescript efforts: [AutoBrightness](AutoBrightness).m, Brightness.m,  
+ and [ScreenProfile](ScreenProfile).m. The improvement results from discovering, first,  
+ that the applescript operations proceed MUCH more quickly while System  
+ Preferences is frontmost (so we now bring it to the front), and, second,  
+ we now follow the example of pros and have wait loops in the applescript  
+ to make sure each object is available before accessing it. With these  
+ enhancements, it now reliably takes 2 s on [MacBook](MacBook) Pro and 8 s on  
+ [MacBook](MacBook), instead of the long 60 s delays, and occasional timeout errors,  
+ that afflicted the old routines.  
   
-% INPUT ARGUMENT RANGE. newSettings.brightness has range 0.0 to 1.0;  
- automatically, trueTone, nightShiftManual, and  
- showProfilesForThisDisplayOnly are boolean (true or false);  
- nightShiftSchedule is a text field corresponding to any of the items in  
- the Displays pop up menu ('Off', 'Custom', 'Sunset to Sunrise').  
- (nightShiftSchedule is compatible with international systems, provided  
- you use the English field names when calling [MacDisplaySettings](MacDisplaySettings).m.)  
- profile (text) specifies the desired Color Profile by name, and  
- profileRow (integer) specifies it by row. The row number will work  
- internationally. I suspect the names that you read and write will be in  
- whatever your macOS takes to be the local language. Thus  
- nightShiftSchedule uses English regardless of locality, whereas profile  
- uses local names. Thus, your program can get consistent international  
- behavior by using row numbers to specify profile and English names to  
- specify nightShiftSchedule.  
+% INPUT ARGUMENT RANGE.   
+ newSettings.brightness has range 0.0 to 1.0; "automatically", trueTone,  
+ nightShiftManual, and showProfilesForThisDisplayOnly are logical (true or  
+ false); nightShiftSchedule is a text field corresponding to any of the  
+ items in the Displays pop up menu ('Off', 'Custom', 'Sunset to Sunrise').  
+ profile (a text string) specifies the desired Color Profile by name, and  
+ profileRow (an integer) specifies it by row.  
+  
+% INTERNATIONAL. nightShiftSchedule is compatible with macOS international  
+ localization, provided you use the English field names when calling  
+ [MacDisplaySettings](MacDisplaySettings).m. The profile row number will work internationally. I  
+ don't know whether the profile names change with international  
+ localization. Just use whatever profile names you see in the System  
+ [Preference](Preference): Display panel.  
+  
+% PROFILE ROW NUMBERING. Note that when you look at the list of profiles  
+ in System Preferences:Displays:Color there is a line separating the top  
+ and bottom sections of the list. Apple assigns a row number to that line,  
+ but trying to select that row has no effect and returns an error in  
+ errorMsg.  
   
 % Your screen's display profile is a video lookup table, it  
  affects the color and luminance of everything you display. Apple allows  
@@ -177,19 +194,17 @@
  Psychtoolbox "[sca](sca)"), so the error message won't be hidden behind your  
  window.  
   
-% REQUIREMENTS: macOS and MATLAB. (If it detects Psychtoolbox, then it  
- will use the "[sca](sca)" command to close windows before throwing a fatal  
- error.) In its current form, [MacDisplaySettings](MacDisplaySettings) has only been tested on  
- macOS Mojave (10.14) localized for USA. Earlier versions of this code  
+% REQUIREMENTS: macOS, MATLAB, and Psychtoolbox.   
+ The current version of [MacDisplaySettings](MacDisplaySettings) has only been tested on macOS  
+ Big Sur (11.3) localized for USA. The previous version was extensively  
+ tested on Mojave. Based on earlier testing, I expect this to also  
  supported macOS 10.9 to 10.14. It's designed to work internationally, but  
- that hasn't been tested yet. It was tested on MATLAB 2019a, and very  
- likely works on any version of MATLAB new enough to include structs. I  
+ that hasn't been tested yet. It was tested on MATLAB 2019a and 2021a, and  
+ probably works on any version of MATLAB new enough to include structs. I  
  think, but haven't checked, that the MATLAB code is pure basic MATLAB (no  
- toolboxes) with one negligible exception. Before throwing an error, we  
- check for the presence of the Psychtoolbox, if present then we call the  
- Psychtoolbox routine "[sca](sca)" ([Screen](Screen) [Close](Close) All) to close any open windows,  
- so the error won't be hidden behind your window.  
- [MacDisplaySettings](MacDisplaySettings).applescript needs only the macOS. It works on any  
+ toolboxes). We use the Psychtoolbox to get the global rect of the main  
+ screen, and to close all psychtoolbox windows in case of error. The  
+ routine [MacDisplaySettings](MacDisplaySettings).applescript only needs macOS. It works on any  
  screen, including an external monitor, but testing with external monitors  
  has been very limited.  
   
@@ -197,13 +212,14 @@
  you buy the Script Debugger app from Late Night Software.  
  https://latenightsw.com/  
  and the UI Browser app from UI Browser by [PFiddlesoft](PFiddlesoft).  
- https://pfiddlesoft.com/uibrowser/  
- The Script Debugger is a the best Applescript editor and debugger. The UI  
+ https://pfiddlesoft.com/uibrowser/   
+ The Script Debugger is the best Applescript editor and debugger. The UI  
  Browser allows you to discover the user interface targets in System  
- Preferences that your script will read and set. With it you can do in an  
- hour what would otherwise take days of trial and error.  
+ Preferences (or any macOS app) that your script will read and set. With  
+ it you can do in an hour what would otherwise take days of trial and  
+ error.  
   
-% APPLE PRIVACY. Unless MATLAB has the needed user-granted   
+% APPLE PRIVACY. Unless MATLAB has the needed user-granted  
  permissions to control the computer, attempts by [MacDisplaySettings](MacDisplaySettings) to  
  change settings will be blocked by the macOS. The needed permissions  
  include Accessibility, Full Disk Access, and Automation, all in System  
@@ -213,38 +229,29 @@
  https://support.apple.com/guide/mac-help/allow-accessibility-apps-to-access-your-mac-mh43185/mac  
  New versions of macOS may demand more permissions. In some cases  
  [MacDisplaySettings](MacDisplaySettings) will detect the missing permission, open the  
- appropriate System [Preference](Preference) panel, and provide an  
- error dialog window asking the user to provide the permission. In other  
- cases [MacDisplaySettings](MacDisplaySettings) merely prints the macOS error message. The  
- granting of permission needs to be done only once for your specific  
- MATLAB app. When you upgrade MATLAB it typically has a new name, and will  
- be treated by macOS as a new app, requiring new granting of permissions.  
- Only users with administator privileges can grant permission. When you  
- grant permission, sometimes the macOS doesn't seem to notice right away,  
- and keeps claiming MATLAB lacks permission. It may help to restart MATLAB  
- or reboot.  
-  
-% PROFILE ROW NUMBERING. Note that when you look at the list of profiles  
- in System Preferences:Displays:Color there is a line separating the top  
- and bottom sections of the list. Apple assigns a row number to that line,  
- but trying to select that row has no effect and returns an error in  
- errorMsg.  
+ appropriate System [Preference](Preference) panel, and provide an error dialog window  
+ asking the user to provide the permission. In other cases  
+ [MacDisplaySettings](MacDisplaySettings) merely prints the macOS error message. The granting of  
+ permission needs to be done only once for your specific MATLAB app. When  
+ you upgrade MATLAB it typically has a new name, and will be treated by  
+ macOS as a new app, requiring new granting of permissions. Only users  
+ with administator privileges can grant permission. When you grant  
+ permission, sometimes the macOS doesn't seem to notice right away, and  
+ keeps claiming MATLAB lacks permission. It may help to restart MATLAB or  
+ reboot.  
   
 % WHAT "BRIGHTNESS" CONTROLS: Adjusting the "brightness" setting in an LCD  
  controls the luminance of the fluorescent light that is behind the liquid  
  crystal display. I believe that the "brightness" slider controls only the  
- luminance of the source, and does not affect the liquid crystal itsef,  
- which is driven by the GPU output. The luminance at the viewer's eye is  
+ luminance of the light source, and does not affect the liquid crystal  
+ itsef, which is driven by the GPU. The luminance at the viewer's eye is  
  presumably the product of the two factors: luminance of the source and  
  transmission of the liquid crystal, at each wavelength.  
   
-% INSTALLATION. Just put both the [MacDisplaySettings](MacDisplaySettings).m and  
- [MacDisplaySettings](MacDisplaySettings).applescript files anywhere in MATLAB's path.  
-  
-% MULTIPLE SCREENS: Seems to be working, not yet thoroughly tested.  
- Color Profiles work for all monitors and provides access to all the  
- controls you see in the windows of System Preferences: Displays. However,  
- Apple provides fewer Display options for external monitors, especially  
+% MULTIPLE SCREENS: Seems to work, though not yet thoroughly tested.  
+ For each screen, [MacDisplaySettings](MacDisplaySettings) provides access to all the controls  
+ you see in the windows of System Preferences: Displays. However, Apple  
+ provides fewer Display options for external monitors, especially  
  non-Apple monitors.  
   
 % HISTORY  
@@ -314,22 +321,26 @@
  throw an error if the menu doesn't appear after three attempts of  
  clicking and waiting up to 500 ms each time.  
   
-% ACKNOWLEGEMENTS. Thanks to Mario Kleiner for explaining how macOS  
- "brightness" works. Thanks to nick.peatfield@gmail.com for sharing his  
- applescript code for dimmer.scpt and brighter.scpt. And to Hormet Yiltiz  
- for noting that we need to control Night Shift.  
+ July 14, 2020. Added two new output fields, settings.profileFilename and  
+ settings.profileFolder, which give the [ColorSynch](ColorSynch) profile's filename and  
+ folder path. With these, you can use iccread to read the profile.  
   
-% SEE ALSO:  
- https://support.apple.com/en-us/HT208909 % True Tone  
- https://support.apple.com/en-us/HT207513 % Night Shift  
- [Screen](Screen) [ConfigureDisplay](ConfigureDisplay)? % In Psychtoolbox  
- http://www.manpagez.com/man/1/osascript/  
- https://developer.apple.com/library/mac/documentation/[AppleScript](AppleScript)/Conceptual/[AppleScriptLangGuide](AppleScriptLangGuide)/reference/ASLR\_cmds.html  
- https://discussions.apple.com/thread/6418291  
- [ScriptDebugger](ScriptDebugger) app from Late Night Software.  
- https://latenightsw.com/  
- [UIBrowser](UIBrowser) app from [PFiddlesoft](PFiddlesoft).  
- https://pfiddlesoft.com/uibrowser/  
+ August 25, 2020. Save and restore current directory. Bug reported by Jan  
+ Kurzawski.  
+  
+ February 17, 2021. Not yet compatible with macOS Catalina. If macOS is  
+ too new we return a dummy result (and print a warning) that hopefully  
+ will allow your code to run.  
+  
+ February 25, 2021. Partially compatible with macOS Catalina. If macOS is  
+ Catalina or newer we print a warning and return a partial result.  
+  
+ May 13, 2021. Now fully compatible with Big Sur (macOS 10.3), and hopefully   
+ also compatible with Catalina. We do not expect the enhancements to have   
+ affected the well-tested compatiblity with earlier versions of macOS, Mojave   
+ and before.  
+  
+ May 14, 2021. Polished the help text, above.  
 
 
 

@@ -1,7 +1,7 @@
 # [VRRTest](VRRTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)
 
-[VRRTest](VRRTest)([test='sine'][, n=2000][, maxFlipDelta=0.2][, hwmeasurement=0][, testImage][, saveplots=0][, screenNumber=max])  
+[VRRTest](VRRTest)([test='sine'][, n=2000][, maxFlipDelta=0.2][, hwmeasurement=0][, testImage][, saveplots=0][, screenNumber=max][, usevulkan=0])  
   
 Test accuracy of VRR stimulation with variable timing, aka "[FreeSync](FreeSync)",  
 "[DisplayPort](DisplayPort) Adaptive Sync", "HDMI VRR" or "G-Sync".  
@@ -81,6 +81,10 @@ display device flickers under different VRR stimulation timings.
   
   
 'screenNumber' Number of screen to test on. Maximum X-[Screen](Screen) by default.  
+  
+  
+'usevulkan' If set to 1, use Vulkan display backend instead of [OpenGL](OpenGL) backend.  
+Default is 0 = Use standard [OpenGL](OpenGL) backend.  
   
   
 You can abort the test earlier by pressing the ESC key.  
