@@ -11,7 +11,7 @@ Warning:  1 is the maximum volume and is often very loud!
   
 NOTE: [Beeper](Beeper)() uses [Snd](Snd)() internally. If you want to use [Beeper](Beeper)() - and therefore  
 [Snd](Snd)() in parallel with [PsychPortAudio](PsychPortAudio), read the notes in "help [Snd](Snd)" about pahandle  
-sharing!  
+sharing, especially about [Snd](Snd)('Open', pahandle, 1)!  
   
 Funny name is because Matlab 6 contains a built-in function called "beep".  
   

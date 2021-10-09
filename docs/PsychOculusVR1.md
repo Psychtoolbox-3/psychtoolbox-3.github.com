@@ -3,7 +3,7 @@
 
 [PsychOculusVR1](PsychOculusVR1) - A high level driver for Oculus VR hardware using the Version 1.16+ runtime.  
   
-Copyright (c) 2018 Mario Kleiner. Licensed under the MIT license.  
+Copyright (c) 2018-2021 Mario Kleiner. Licensed under the MIT license.  
 The underlying [PsychOculusVRCore1](PsychOculusVRCore1) mex driver uses the Oculus SDK, which is  
 “Copyright © Facebook Technologies, LLC and its affiliates. All rights reserved.”  
 A copy of the Oculus SDK license, its terms of use and thereby redistribution  

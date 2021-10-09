@@ -87,18 +87,18 @@ file:
 <http://gstreamer.freedesktop.org/download/\>  
   
 The following [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) runtime packages have been tested for good compatibility  
-with Psychtoolbox 3.0.17 as of December 2020:  
+with Psychtoolbox 3.0.18 as of October 2021:  
   
-For MS-Windows: 64-Bit Intel MSVC runtime v1.18.2 for use with 64-Bit Matlab/Octave.  
+For MS-Windows: 64-Bit Intel MSVC runtime v1.18.5 for use with 64-Bit Matlab/Octave.  
   
-<https://gstreamer.freedesktop.org/data/pkg/windows/1.18.2/msvc/gstreamer-1.0-msvc-x86\_64-1.18.2.msi\>  
+<https://gstreamer.freedesktop.org/data/pkg/windows/1.18.5/msvc/gstreamer-1.0-msvc-x86\_64-1.18.5.msi\>  
   
 You \*must\* install the MSVC variants of [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)), not the [MinGW64](MinGW64) variants!  
   
   
-For Apple macOS: Runtime v1.18.2  
+For Apple macOS: Runtime v1.18.5  
   
-<https://gstreamer.freedesktop.org/data/pkg/osx/1.18.2/gstreamer-1.0-1.18.2-x86\_64.pkg\>  
+<https://gstreamer.freedesktop.org/data/pkg/osx/1.18.5/gstreamer-1.0-1.18.5-x86\_64.pkg\>  
   
 When the installer asks you to select the components it should install,  
 select a "Full installation" or "Complete installation", or if those  

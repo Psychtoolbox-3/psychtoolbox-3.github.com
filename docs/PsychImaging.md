@@ -683,22 +683,29 @@ actions:
   with 10 bit precision per color channel (10 bpc / 30 bpp / "Deep color")  
   on graphics hardware that supports native 10 bpc framebuffers.  
   
-  Many graphics cards of the professional class AMD/ATI Fire series  
-  (2008 models and later) and all current models of the professional class  
-  [NVidia](NVidia) Quadro series (2008 models and later), as well as all current models  
-  of the consumer class [NVidia](NVidia) [GeForce](GeForce) series under Linux, do support 10 bpc  
-  framebuffers under some circumstances. 10 bpc display on classic CRT monitors  
-  which are connected via analog VGA outputs is supported. Support for digital  
-  display devices like LCD/OLED panels or video projectors depends on the specific  
-  type of display output connector used, the specific panels, and their video  
-  settings. Consult manufacturer documentation for details. In general, 10 bpc  
-  output may be supported on some graphics cards and displays via [DisplayPort](DisplayPort)  
-  or HDMI video outputs, but to our knowledge not via DVI-D outputs.  
+  Under Linux, all AMD graphics cards since at least 2007, [NVidia](NVidia) graphics cards  
+  since 2008, and Intel graphics chips since at least 2010 do support native  
+  10 bit framebuffers. Intel graphics chips must use the X11 "intel" video driver  
+  to output their 10 bit framebuffers with actual 10 bit precision, the alternative  
+  "modesetting" video driver does not support output with more than 8 bit yet.  
+  [XOrgConfCreator](XOrgConfCreator) will take care of this Intel quirk when creating a custom xorg.config  
+  for such 10 bpc setups under Intel.  
+  
+  Under MS-Windows, many graphics cards of the professional class AMD/ATI Fire/Pro  
+  series (2008 models and later), and all current models of the professional class  
+  [NVidia](NVidia) Quadro series (2008 models and later), do support 10 bpc framebuffers  
+  under some circumstances. 10 bpc display on classic CRT monitors which are connected  
+  via analog VGA outputs is supported. Support for digital display devices like  
+  LCD/OLED panels or video projectors depends on the specific type of display output  
+  connector used, the specific panels, and their video settings. Consult manufacturer  
+  documentation for details. In general, 10 bpc output is usually supported on graphics  
+  cards and displays via [DisplayPort](DisplayPort) or HDMI video outputs, but to our knowledge not  
+  via DVI-D outputs.  
   
   If such a combination of graphics card and display is present on your system  
   on Linux or Microsoft Windows, then Psychtoolbox will request native support  
   from the standard graphics drivers, ie., it won't need to use our own  
-  homegrown, experimental box of tricks to enable this. You do need to enable/  
+  homegrown experimental box of tricks to enable this. You do need to enable/  
   unlock 10 bpc mode somewhere in the display driver settings though. On Linux you  
   can do this for supported cards and drivers via [XOrgConfCreator](XOrgConfCreator) + [XOrgConfSelector](XOrgConfSelector),  
   on Windows the method is vendor specific.  
@@ -726,10 +733,12 @@ actions:
   
 ###   Psychtoolbox experimental 10 bpc framebuffer support:  
   
-  Additionally we support ATI/AMD Radeon hardware of the X1000, HD2000 - HD8000,  
-  series and later models (everything since at least the year 2006) under Linux  
-  via our own low-level setup mechanisms. These graphics cards support a native  
-  ARGB2101010 framebuffer, ie., a system framebuffer with 2 bits for the alpha  
+  Additionally, we support ATI/AMD Radeon hardware of the X1000, HD2000 - HD8000,  
+  series and later models (everything since at least the year 2006) up to the AMD  
+  Polaris gpu family under Linux via our own low-level setup mechanisms. AMD gpu's  
+  of type Vega or more recent are not supported by our own hacks, but by the builtin  
+  native driver support mentioned in the paragraphs above. These graphics cards support  
+  a native ARGB2101010 framebuffer, ie., a system framebuffer with 2 bits for the alpha  
   channel, and 10 bits per color channel.  
   
   As this is supported by the hardware, but not always by the standard AMD  
@@ -757,26 +766,24 @@ actions:
   to VGA adapters or active HDMI to VGA adapters may be limited to maximum 8 bpc output.  
   The status of 10 bpc output to digital display devices differs a lot across devices  
   and OS'es. Output of 10 bpc framebuffers to standard 8 bpc digital laptop panels or  
-  
   DVI/HDMI/[DisplayPort](DisplayPort) panels via digital dithering is known to work, but that is not  
   the real thing, only a simulation of 10 bpc via dithering to 8 bpc. This may or may  
   not be good enough for your specific visual stimulation paradigm. On a DVI-D connected  
   standard digital display, this dithered output is the best you will ever get.  
   
-  [DisplayPort](DisplayPort): Recent [NVidia](NVidia) and AMD graphics cards can output to some suitable [DisplayPort](DisplayPort)  
+  [DisplayPort](DisplayPort): Recent AMD/Intel/[NVidia](NVidia) graphics cards can output to some suitable [DisplayPort](DisplayPort)  
   displays with 10 bpc or higher precision on Linux, and maybe also on MS-Windows, but you  
   have to verify this carefully for your specific display.  
   
   HDMI: Recent Intel graphics cards can output up to 12 bpc precision to HDMI deep color  
-  capable displays on Linux, and maybe also on MS-Windows. However, \> 8 bpc framebuffers  
-  are not yet supported, so this can only be used for gamma correction. All AMD graphics  
+  capable displays on Linux if the X11 intel-ddx video driver is used. All AMD graphics  
   cards of model Radeon HD-5000 or later (and equivalent Fire-Series models) can output to  
   HDMI deep color capable displays with 10 bpc real precision at least if you use a Linux  
   kernel of version 3.16 or later with the open-source AMD graphics drivers. Execute  
   [PsychLinuxConfiguration](PsychLinuxConfiguration) to enable this \>= 10 bpc deep color output mode, then reboot your  
   machine once to enable it.  
   
-  The status with the proprietary AMD drivers on Linux or on MS-Windows is unknown.  
+  The status with the proprietary AMD drivers on MS-Windows is unknown.  
   
   Usage: [PsychImaging](PsychImaging)('AddTask', 'General', 'EnableNative10BitFramebuffer' [, disableDithering=0]);  
   
@@ -832,10 +839,9 @@ actions:
     cards support ~ 11 bpc framebuffers at all. Radeon HD-7000 and earlier can only  
     truly process up to 10 bpc, so 'EnableNative11BitFramebuffer' may not gain you any  
     precision over 'EnableNative10BitFramebuffer' in practice on these cards. AMD cards  
-    of the "Sea Islands" family or later, mostly models from the year \>= 2014, should be  
-    able to process and output up to 12 bpc over HDMI or [DisplayPort](DisplayPort), so they'd be able  
-    to output true ~11 bpc images. However, this hasn't been verified by us so far due to  
-    lack of suitable hardware - we don't know if it really works.  
+    of the "Sea Islands" family or later, mostly models from the year \>= 2014, are  
+    able to process and output up to 12 bpc over HDMI or [DisplayPort](DisplayPort), so they can  
+    output true ~11 bpc images.  
   
   So obviously: Measure very carefully on your setup what kind of precision you really  
   get and make sure not to be fooled by dithering if you need precise low-level control  
@@ -845,91 +851,80 @@ actions:
   Usage: [PsychImaging](PsychImaging)('AddTask', 'General', 'EnableNative11BitFramebuffer' [, disableDithering=0]);  
   
   
-\* 'EnableNative16BitFramebuffer' Enable 16 bpc, 64 bpp framebuffer on some setups.  
-  This asks to enable a framebuffer with a color depth of 16 bpc for up to 65535 levels of intensity  
-  per red, green and blue channel, ie. 48 bits = different 2^48 colors. Currently, as of January 2020,  
-  this mode of operation is only supported on Linux when using the open-source amdgpu display driver  
-  on modern AMD GCN 1.1+ graphics cards. This low-level hack works under specific conditions, but uses  
-  a relatively large amount of graphics memory and compute resources to implement. If you can do with  
-  less than 12 bpc, you are better off with the other high bit depth modes, as they are more efficient  
-  and faster. On suitable setups this will establish a 16 bpc framebuffer which packs 3 \* 16 bpc = 48  
-  bit color info into 64 bpp pixels and the gpu's display engine will scan out that framebuffer at 16  
-  bpc. However, effective output precision is further limited to < 16 bpc by your display, video cable  
-  and specific model of graphics card. As of January 2020, the maximum effective output precision is  
-  limited to at most 12 bpc (= 4096 levels of red, green and blue) by the graphics card, and this  
-  precision is only attainable on AMD graphics cards of the so called "Sea Islands" (cik) family  
-  (aka [GraphicsCore](GraphicsCore) Next GCN 1.1 or later) or later models when used with the amdgpu-kms display driver.  
+\* 'EnableNative16BitFramebuffer' Enable 16 bpc, 64 bpp framebuffer on some supported setups.  
   
-  Older cards of type GCN 1.0 "Southern Islands" or earlier won't work, as they only support at most 10  
-  bpc overall precision. AMD's latest discrete gpu's of the "Navi" gpu family and later, and AMD's latest  
-  integrated gpus as part of AMD Ryzen processors / APU's are not yet supported. The specific requirement  
-  for this to work is an AMD gpu with a DCE-8 to DCE-12 display engine which uses the new amdgpu-ddx /  
-  amdgpu-kms driver and AMD's [DisplayCore](DisplayCore) driver path. Cards older than "Sea Islands" don't have a DCE-8+  
-  engine, and cards newer than "Vega" won't work, because their DCN-2 display engines are not yet supported  
-  by our 16 bpc code, ditto for modern AMD APU's with DCN display engines.  
+  This asks to enable a framebuffer with a color depth of 16 bpc for up to 65535 levels of intensity  
+  per red, green and blue channel, ie. 48 bits = different 2^48 colors. Currently, as of October 2021,  
+  this mode of operation is only supported on Linux/X11 when using the open-source amdgpu-kms driver  
+  on modern AMD GCN 1.1+ graphics cards [3]. On suitable setups, this will establish a 16 bpc framebuffer  
+  which packs 3 \* 16 bpc = 48 bit color info into 64 bpp pixels and the gpu's display engine will scan  
+  out that framebuffer at 16 bpc. However, effective output precision is further limited to < 16 bpc by  
+  your display, video cable and specific model of graphics card. As of October 2021, the maximum effective  
+  output precision is limited to at most 12 bpc (= 4096 levels of red, green and blue) by the graphics card,  
+  and this precision is only attainable on AMD graphics cards of the so called "Sea Islands" (cik) family  
+  (aka [GraphicsCore](GraphicsCore) Next GCN 1.1 or later) or any later models when used with the amdgpu-kms display driver.  
+  
+  Older AMD cards of type GCN 1.0 "Southern Islands" or earlier won't work, as they only support at most 10  
+  bpc overall output precision.  
   
   Please note that actual 12 bpc output precision can only be attained on certain display devices and  
-  software configurations. As of January 2020, the following hardware + software combo has been  
+  software configurations. As of October 2021, the following hardware + software combos have been  
   verified with a CRS [ColorCal2](ColorCal2) colorimeter to provide 12 bpc per color channel precision:  
-  The Apple [MacBookPro](MacBookPro) 2017 15 inch with its built-in 10 bit Retina display, running under Ubuntu Linux  
-  19.10 with Linux 5.5-rc, using the XFCE 4 desktop GUI. This is the only setup we have available for  
-  testing, other setups should work under proper circumstances. Due to time limitations, so far only a  
-  spot check of a fraction of the intensity range has been conducted, testing 128 steps out of the 4096  
-  possible steps in the 12 bpc intensity range.  
   
-  High bit depth 12 bpc output should work over high-end 12 bit displays connected via HDMI or [DisplayPort](DisplayPort).  
+  - The Apple [MacBookPro](MacBookPro) 2017 15 inch with its built-in 10 bit Retina display, running under Ubuntu Linux  
+    20.04 with Linux 5.14, as well as with a HDR-10 monitor via [DisplayPort](DisplayPort) and also via HDMI. As those  
+    displays are 10 bit only, the 12 bit precision was attained via spatial dithering by the gpu.  
+  
+  - AMD Ryzen 2400G with AMD [RavenRidge](RavenRidge) integrated graphics chip with a HDR-10 monitor via [DisplayPort](DisplayPort) and  
+    also via HDMI. As that display is 10 bit only, the 12 bit precision was attained via spatial dithering  
+    by the gpu.  
+  
+  High bit depth 12 bpc output should work with native 12 bit displays connected via HDMI or [DisplayPort](DisplayPort).  
   Modern AMD gpus, e.g., AMD Polaris, are also able to emulate 12 bpc precision via spatial dithering on  
-  8 bit display panels. Measure your results carefully with a photometer or colorimeter, this is the only  
-  way to verify your specific setup really achieves 12 bpc! See the sections about 11 bpc and 10 bpc native  
-  framebuffers above for further details.  
+  8 and 10 bit display panels. Measure your results carefully with a photometer or colorimeter, this is the  
+  only way to verify your specific setup really achieves 12 bpc! See the sections about 11 bpc and 10 bpc  
+  native framebuffers above for further details.  
   
-###   Required manual one time setup:  
+###   Required manual one-time setup:  
   
-  -  Only three distinct display setups are allowed: Either a single display connected, or if multiple  
-     displays are conected, all displays must mirror (aka clone) each other showing the same image,  
-     or a dual display setup with both displays running at the same video resolution, one display  
-     showing the left half of your onscreen window, the other showing the right half of your onscreen  
-     window, ie., a typical setup for dual-display side-by-side stereo presentation. Pretty much any other  
-     display setup will display undefined results, e.g., corrupted images or random pixel trash.  
+###   1. You will need to install the AMD developed and maintained AMDVLK open-source vulkan driver from:  
   
-  -  Also note that not all desktop GUI environments work: GNOME-3 desktop "Gnome shell" and "Ubuntu desktop"  
-     as well as KDE-5 do not work as of Ubuntu 19.10, but the XFCE 4 desktop works.  
+     https://github.com/[GPUOpen](GPUOpen)-Drivers/AMDVLK/releases  
   
-  1. Install a suitable desktop environment, e.g., XFCE 4 via "sudo apt install xfce4", log into it.  
+     At least driver release v-2021.Q4.1 will be required, potentially even a later release than that.  
   
-  2. If you are using an old "Sea Islands" / "[GraphicsCore](GraphicsCore) Next 1.1" / "GCN 1.1" gpu, you must reboot  
+  2. You will need to install Linux kernel 5.14, which is currently not shipping in any Ubuntu release, as  
+     of October 2021. A way to manually install it on Ubuntu 20.04-LTS is described on the following  
+     web page via the "mainline" helper software:  
+  
+     https://ubuntuhandbook.org/index.php/2020/08/mainline-install-latest-kernel-ubuntu-linux-mint  
+  
+     Ubuntu 22.04-LTS should ship with a suitable kernel by default in April 2022.  
+  
+  3. If you are using an AMD Polaris gpu or later then you are done.  
+  
+     If you are using an old "Sea Islands" / "[GraphicsCore](GraphicsCore) Next 1.1" / "GCN 1.1" gpu, you must reboot  
      your machine with Linux kernel boot settings that select the new amdgpu kms driver and AMD [DisplayCore](DisplayCore),  
      instead of the old radeon kms driver that would be used by default. This requires adding the following  
      parameters to the kernel boot command line: "radeon.cik\_support=0 amdgpu.cik\_support=1 amdgpu.dc=1"  
   
-  3. At least the Retina panel on the 2017 [MacBookPro](MacBookPro), while claiming it is a 10 bit panel, seems to work  
-     with better precision if operated in 8 bit mode. Measurements in 'EnableNative16BitFramebuffer' mode  
-     suggest better quality of the "dithering emulated" 11 bpc / 12 bpc framebuffers if the panel is  
-     restricted to 8 bit mode. The assumption is that Apples 10 bit Retina panel is not actually a 10 bit  
-     panel, but an 8 bit panel that uses built in spatial dithering to fake 10 bit panel behaviour. If the  
-     gpu operates at \> 10 bpc output precision, it employs dithering itself, and the panels dithering interferes  
-     with the gpu's dithering, causing degraded results. Running the panel in (true native!) 8 bit mode leaves  
-     all the dithering from 8 bit -\> 10, 11 or 12 bit to the high quality dithering of the gpu, attaining  
-     better results.  
+     Additionally you would need a custom amdvlk driver, as AMD's current official AMDVLK driver does  
+     no longer support pre-Polaris gpu's. We won't provide this driver for free at the moment, so please  
+     enquire for potential paid support options on the Psychtoolbox user forum.  
   
-     You can enforce 8 bit mode + up to 4 bit dithering for up to 12 bpc precision by executing the following  
-     command in a terminal window, startup script, or via a system(); command:  
+  On AMD you can verify actual output bit depth for an output XXX by typing this command into a terminal  
+  window, assuming your AMD graphics card is the first or only gpu in the system, ie. has index 0:  
   
-     xrandr --output eDP --set 'max bpc' 9  
+  sudo cat /sys/kernel/debug/dri/0/XXX/output\_bpc  
   
-     You can verify actual output bit depth for an output XXX by typing this command as root into a  
-     terminal window:  
+###   E.g., for the internal laptop eDP flat panel of the [MacBookPro](MacBookPro) 2017:  
   
-     cat /sys/kernel/debug/dri/0/XXX/output\_bpc  
+  sudo cat /sys/kernel/debug/dri/0/eDP-1/output\_bpc  
   
-###      E.g., for the internal laptop eDP flat panel of the [MacBookPro](MacBookPro) 2017:  
+  Once the above one-time setup is done, adding the following command to your script will enable the  
+  16 bpc framebuffer with up to 12 bpc effective output precision:  
   
-     cat /sys/kernel/debug/dri/0/eDP-1/output\_bpc  
-  
-  Once one time setup is done, adding the following command to your script will enable the 16 bpc framebuffer  
-  with up to 12 bpc effective output precision:  
-  
-  Usage: [PsychImaging](PsychImaging)('AddTask', 'General', 'EnableNative16BitFramebuffer' [, disableDithering=0][, bpc]);  
+  Usage: [PsychImaging](PsychImaging)('AddTask', 'General', 'EnableNative16BitFramebuffer');  
   
   
 \* 'EnableNative16BitFloatingPointFramebuffer' Enable support for output of  
@@ -938,15 +933,27 @@ actions:
   framebuffers. Please note that the effective linear output precision of a  
   16 bit non-linear floating point framebuffer in the normalized range 0.0 - 1.0  
   (the "typical" output range for SDR standard dynamic range displays) is only  
-  about 11 bits ~ 2048 levels of red, green, blue intensity. Also note that  
-  actual display hardware will usually only resolve this at about 10 bpc, or  
-  maybe simulated 11 bpc via dithering techniques. As of July 2019, only [NVidia](NVidia)  
-  graphics cards of the [GeForce](GeForce) 1000 "Pascal" series or later under Windows-10  
-  seem to support this mode properly. At least one combo of [GeForce](GeForce) 1060 + 8 bit  
-  panel was shown via photometer to reproduce about 11 bpc luminance via spatial  
-  dithering. macOS does support this mode with what seems to be mostly software  
+  about 11 bits ~ 2048 levels of red, green, blue intensity. Specifically, for  
+  normalized color values above 0.5 (ie. 50% max intensity) only 11 bpc can be  
+  attained at most, whereas values smaller or equal 0.5 may be able to attain  
+  12 bpc output precision on some recent gpu's. This is due to the precision of  
+  floating point 16, which decreases with increasing magnitude of values and  
+  maxes out at 14 bits for very small magnitude values - however current hardware  
+  can not output at more than 12 bpc precision anyway, even for very small color  
+  values.  
+  
+  Linux supports this mode on AMD gpu's of the "Sea Islands" gpu family or later  
+  if you install the AMDVLK AMD open-source Vulkan driver and use the imaging  
+  pipeline tasks 'UseVulkanDisplay' or 'EnableHDR'. See AMDVLK instructions  
+  above for 'EnableNative16BitFramebuffer'. You need Linux 5.8 for AMD Polaris  
+  and later, or Linux 5.12 for the earler AMD "Sea Islands" and later.  
+  
+  macOS [OpenGL](OpenGL) does support this mode with what seems to be mostly software  
   rendering on most machines, ie. with very low performance and even worse timing.  
   Your mileage may vary.  
+  
+  Windows usually only supports this mode on some gpu's with Vulkan when HDR  
+  mode is used via 'EnableHDR', but not in SDR standard dynamic range mode.  
   
   Usage: [PsychImaging](PsychImaging)('AddTask', 'General', 'EnableNative16BitFloatingPointFramebuffer');  
   
@@ -1361,11 +1368,11 @@ actions:
   
   Apple macOS 10.15.4 Catalina and later is also supported, if you install the  
   3rd party Khronos open-source [MoltenVK](MoltenVK) "Vulkan on Metal" driver. However, this  
-  support is very unreliable wrt. stimulus timing at least on macOS 10.15, due to  
-  severe bugs in Apple's macOS 10 Metal graphics api, which only Apple could fix.  
+  support is very unreliable wrt. stimulus timing at least on macOS 10/11, due to  
+  severe bugs in Apple's macOS 10/11 Metal graphics api, which only Apple could fix.  
   Performance is also miserable, achieving at most a framerate that is half the  
-  video refresh rate of the display monitor. The status on macOS 11 is unknown  
-  as of April 2021. Do not ask us for help in using this on macOS, don't trust it!  
+  video refresh rate of the display monitor. The status on macOS 12 is unknown  
+  as of August 2021. Do not ask us for help in using this on macOS, don't trust it!  
   
   At the moment 'UseVulkanDisplay' does not provide any advantages for standard  
   visual stimulus display tasks, quite the contrary! The current implementation  

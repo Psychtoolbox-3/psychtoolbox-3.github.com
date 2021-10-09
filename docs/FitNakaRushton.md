@@ -4,10 +4,12 @@
 [params,f] = [FitNakaRushton](FitNakaRushton)(contrast,response [, params0])  
   
 Find the parameters that best fit the data.  If the initial guess  
-isn't good, this can get stuck in local minima.    
+isn't good, this can get stuck in local minima.  
   
 8/1/05    dhb, pr     Wrote it.  
 8/2/07    dhb         Change argument order.  
+7/1/21    dhb         Add end statement for compiler happiness.  
+          dhb         Added example at top, which tests that it works.  
 
 
 

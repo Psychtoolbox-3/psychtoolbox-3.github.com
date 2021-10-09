@@ -1,7 +1,7 @@
 # [AudioFeedbackLatencyTest](AudioFeedbackLatencyTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)
 
-[AudioFeedbackLatencyTest](AudioFeedbackLatencyTest)([roundtrip=0][, trigger=0.1] [, nrtrials=10] [, freq=44100][, freqout=44100][, fullduplex=0][, runmode=1])  
+[AudioFeedbackLatencyTest](AudioFeedbackLatencyTest)([roundtrip=0][, trigger=0.1][, deviceid=auto][, nrtrials=10][, freq=auto][, freqout=auto][, fullduplex=0][, runmode=1])  
   
 Tries to test sound onset accuracy of [PsychPortAudio](PsychPortAudio) without need for  
 external measurement equipment: Sound signals are played back via  
@@ -12,9 +12,8 @@ capture the sound signals emitted through line-out (via a line-out -\>
 line-in feedback cable) or emitted through the speakers. We measure and  
 compare timing of emitted vs. captured sound spikes.  
   
-Results on [MacbookPro](MacbookPro) suggest that the method works, but with a not 100%  
-accuracy, so its still better to use external measurement equipment to  
-test!!!  
+Results on [MacbookPro](MacbookPro), Windows, Linux, suggest that the method works, not with  
+100% accuracy, so its still better to use external measurement equipment to test!  
   
 ### EARLY BETA CODE: USE ONLY WITH GREAT CAUTION AND SUSPICION!  
   
@@ -33,6 +32,11 @@ assessment, and by measuring via audio capture), and also as "Roundtrip"
 how long it would take to detect the onset by the script.  
   
 'trigger' = Trigger level for detection of sound onset in captured sound.  
+  
+'deviceid' = Index of audio in/out device, if one device is used. If omitted,  
+the default audio device is chosen. You can also specify a vector of two device  
+indices, to specify separate input and output devices deviceid = [input, output].  
+With different devices, full-duplex mode is obviously not supported.  
   
 'ntrials' = Number of measurement trials to perform.  
   

@@ -44,9 +44,13 @@ device must support at least the HDR-10 standard for high dynamic range display.
   we do not provide any support for this feature. As always, if you care about  
   the quality of your results, use preferrably Linux, or Windows-10 instead.  
   
+  You need at least [MoltenVK](MoltenVK) version 1.1.4 and [LunarG](LunarG) Vulkan SDK 1.2.182.0 from  
+  5th July 2021 or later.  
+  
 ###   Download link for the [MoltenVK](MoltenVK) open-source "Vulkan on Metal" driver:  
   
-  https://vulkan.lunarg.com/sdk/home  
+  https://sdk.lunarg.com/sdk/download/latest/mac/vulkan-sdk.dmg  
+  Overview on: https://vulkan.lunarg.com/sdk/home  
   
   
 ### HDR functionality is demonstrated in multiple demos:  

@@ -341,6 +341,13 @@
  and before.  
   
  May 14, 2021. Polished the help text, above.  
+  
+ May 24, 2021. Now also compatible with macOS Catalina. Various releases  
+ have been tested on every major version of macOS from 10.9 (Mavericks) to  
+ 11.3 (Big Sur). This release has been tested only on Catalina and Big  
+ Sur. The changes are all in the applescript file coping with Apple's  
+ tendency, with each new major version of macOS, to change the hierarchy  
+ of elements in System Preferences:Displays.  
 
 
 

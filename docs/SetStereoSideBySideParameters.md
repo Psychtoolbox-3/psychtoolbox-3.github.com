@@ -3,7 +3,7 @@
 
 Change parameters for side-by-side stereo display modes (4 and 5).  
   
-[SetStereoSideBySideParameters](SetStereoSideBySideParameters)(win [, leftOffset][, leftScale][, rightOffset][, rightScale])  
+[SetStereoSideBySideParameters](SetStereoSideBySideParameters)(win [, leftOffset][, leftScale][, rightOffset][, rightScale][, shaders])  
   
 Call this function after the win = [PsychImaging](PsychImaging)('OpenWindow',...); call on an  
 onscreen window in side-by-side stereo mode to change the parameters  
@@ -22,6 +22,10 @@ height.
   
 'rightOffset', 'rightScale' == Ditto for right eye image.  
   
+'shaders' a vector containing the GLSL handles of a new pair of shaders to replace  
+the standard builtin side-by-side compositing shaders. shaders(1) for left eye  
+view, shaders(2) for right eye view. The old shaders are deleted if new shaders  
+are assigned.  
 
 
 

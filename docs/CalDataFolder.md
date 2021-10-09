@@ -1,7 +1,7 @@
 # [CalDataFolder](CalDataFolder)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychCal](PsychCal)
 
-directory=[CalDataFolder](CalDataFolder)([forceDemo],[calFileName],[calDir])  
+directory=[CalDataFolder](CalDataFolder)([forceDemo],[calFileName],[calDir],[noWarning])  
   
 Get the path to the [CalData](CalData) folder.  
   
@@ -26,9 +26,9 @@ See also [LoadCalFile](LoadCalFile), [SaveCalFile](SaveCalFile).
   
 Denis Pelli 7/25/96  
 Denis Pelli 2/28/98 change "[CalDat](CalDat)" to "[PsychCalData](PsychCalData)"  
-8/14/00  dhb  Add alternate name, change names.   
+8/14/00  dhb  Add alternate name, change names.  
 4/1/07   dhb  Fix subtle bug in error message when there are duplicate cal  
-              folders on path.   
+              folders on path.  
 3/7/08   mpr  changed documentation to make it consistent (apparently  
               "forceDemo" used to be "alt"  
 4/2/13   dhb  Add calFileName and associated behavior.  

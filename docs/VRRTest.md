@@ -1,7 +1,7 @@
 # [VRRTest](VRRTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)
 
-[VRRTest](VRRTest)([test='sine'][, n=2000][, maxFlipDelta=0.2][, hwmeasurement=0][, testImage][, saveplots=0][, screenNumber=max][, usevulkan=0])  
+[VRRTest](VRRTest)([test='sine'][, n=2000][, maxFlipDelta=0.2][, hwmeasurement=0][, testImage][, saveplots=0][, screenNumber=max][, usevulkan=0][, jitterFrac=0])  
   
 Test accuracy of VRR stimulation with variable timing, aka "[FreeSync](FreeSync)",  
 "[DisplayPort](DisplayPort) Adaptive Sync", "HDMI VRR" or "G-Sync".  
@@ -86,6 +86,8 @@ display device flickers under different VRR stimulation timings.
 'usevulkan' If set to 1, use Vulkan display backend instead of [OpenGL](OpenGL) backend.  
 Default is 0 = Use standard [OpenGL](OpenGL) backend.  
   
+'jitterFrac' Amount of random timing noise to introduce into delay before  
+flip submission. 0 - 1 makes sense, 0 is the default.  
   
 You can abort the test earlier by pressing the ESC key.  
   

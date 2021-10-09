@@ -70,8 +70,8 @@ your operating system, graphics card, display driver and display device.
   
 ### Operating system requirements:  
   
-Currently only Linux is supported. This has been tested with Ubuntu 19.10, and  
-should also work with Ubuntu 18.04.3 LTS after some additional setup (see below).  
+Currently only Linux is supported. This has been tested with Ubuntu  
+20.04-LTS and later versions of Ubuntu Linux.  
   
 ### Hardware requirements:  
   
@@ -85,7 +85,10 @@ and play. GPU's of the AMD Vega series or later (Graphics Core Next 5th
 Generation, cfe. https://en.wikipedia.org/wiki/Graphics\_Core\_Next\#fifth)  
 should provide improved stability and precision for VRR mode in many cases  
 and are therefore recommended if you intend to make heavy use of this new  
-feature.  
+feature. Best results have been obtained during actual testing with AMD  
+[RavenRidge](RavenRidge) integrated gpu's - the stuff found in modern AMD Ryzen  
+processors. Those Ryzen integrated graphics or AMD Navi discrete gpu's  
+are recommended strongly.  
   
 Such "[FreeSync](FreeSync)" gpu's from AMD need to be currently combined with a  
 "[FreeSync](FreeSync)" or "[FreeSync](FreeSync)-2" or "[FreeSync](FreeSync)-2 HDR" certified display that is  
@@ -126,46 +129,43 @@ will \*only\* work with [NVidia](NVidia) GPU's. Therefore a "[FreeSync2](FreeSyn
 monitor would be a much better long-term choice, which doesn't restrict the  
 freedom of choice of graphics card.  
   
+Intel integrated graphics chips of type Tigerlake or later ("Intel Xe  
+graphics" or later), or future Intel discrete graphics cards, should also  
+support VRR over Displayport if you use Linux 5.12 or later. However,  
+this has not been tested in practice yet, due to lack of suitable  
+hardware.  
   
-As operating system, Ubuntu Linux 18.04.3 LTS or later or compatible  
-flavors are currently recommended.  
+As operating system, Ubuntu Linux 20.04.3 LTS or later, or compatible  
+flavors, are currently recommended.  
   
-For a recommended AMD GPU, you will need a Linux 5.2 kernel or later (the  
-more recent the better!), with xorg-video-amdgpu 19.0 video driver or later.  
+# Setup  
   
-Ubuntu 19.10 ships suitable components by default (Linux 5.3). For Ubuntu  
-18.04.3 LTS you can easily upgrade to these components by installing the most  
-recent Hardware Enablement Stack (HWE 18.04) plus the latest bleeding edge  
-Linux kernel 5.3. For setup on 18.04.3 LTS, in a terminal window, type:  
-  
-sudo apt install --install-recommends linux-lowlatency-hwe-18.04-edge xserver-xorg-hwe-18.04  
-Then reboot.  
-  
-After rebooting, run our [XOrgConfCreator](XOrgConfCreator) script, answer the question for  
-"advanced features" with (y)es, answer the question about VRR support  
-with (y)es, and the other questions to your liking, finish the script to  
-save the new config file, then run [XOrgConfSelector](XOrgConfSelector) to select that file as  
-new configuration for the following work sessions accordingly, followed by  
-a logout and login (or a reboot if you want) to activate the new  
+Run our [XOrgConfCreator](XOrgConfCreator) script, answer the question for "advanced  
+features" with (y)es, answer the question about VRR support with (y)es,  
+and the other questions to your liking, finish the script to save the new  
+config file, then run [XOrgConfSelector](XOrgConfSelector) to select that file as new  
+configuration for the following work sessions accordingly, followed by a  
+logout and login (or a reboot if you want) to activate the new  
 configuration.  
   
-For [NVidia](NVidia) GPU's (Not recommended! May or may not work ok) you must install  
-a recent enough [NVidia](NVidia) proprietary graphics and display driver, use a X-[Screen](Screen)  
-with exactly one G-Sync monitor, and use the nvidia-settings GUI app to enable  
-"G-Sync" mode whenever you need it, and disable "G-Sync" mode whenever you want  
-to use conventional fixed refresh rate presentation again. Psychtoolbox was  
-lightly tested with a [NVidia](NVidia) [GeForce](GeForce) GTX 1070 + "435 series" drivers at the  
-time of this writing (December 2019).  
+For [NVidia](NVidia) GPU's (Not recommended! May or may not work ok) you must  
+install a recent enough [NVidia](NVidia) proprietary graphics and display driver,  
+use a X-[Screen](Screen) with exactly one G-Sync monitor, and use the  
+nvidia-settings GUI app to enable "G-Sync" mode whenever you need it, and  
+disable "G-Sync" mode whenever you want to use conventional fixed refresh  
+rate presentation again. Psychtoolbox was lightly tested with a [NVidia](NVidia)  
+[GeForce](GeForce) GTX 1070 + "435 series" drivers in December 2019, the situation  
+may have changed since then.  
   
 Once you have set up your hardware and OS accordingly, you can add the  
 above mentioned 'UseFineGrainedTiming' [PsychImaging](PsychImaging) command to script  
 which want to utilize VRR for fine grained timing or controllable  
-framerate. With AMD hardware, Psychtoolbox [Screen](Screen)() command will help you  
-to diagnose and fix any problems that might prevent VRR from working -  
-pointing out missing but required setup steps. With [NVidia](NVidia) hardware,  
-[Screen](Screen)() will just mostly hope that it works and is properly setup and  
-enabled, simply failing or malfunctioning in "interesting" ways, if  
-something is not set up correctly.  
+framerate. With AMD or Intel hardware, Psychtoolbox [Screen](Screen)() command will  
+help you to diagnose and fix any problems that might prevent VRR from  
+working - pointing out missing but required setup steps. With [NVidia](NVidia)  
+hardware, [Screen](Screen)() will just mostly hope that it works and is properly  
+setup and enabled, simply failing or malfunctioning in "interesting"  
+ways, if something is not set up correctly.  
   
 An example script for testing and exercising VRR mode can be found as  
 [VRRTest](VRRTest).m  
@@ -189,10 +189,13 @@ shows pretty good stability and precision on AMD [FreeSync](FreeSync) gpu's. [NV
 also showed some improvement, but is less stable than AMD, just as expected.  
   
 These are operating system and hardware limitations at the moment. Future  
-versions of Psychtoolbox and especially in combination with future versions of  
-the Linux operating system are expected to provide vastly improved support and  
-stability with AMD graphics cards and potentially Intel graphics chips, much  
-less so with [NVidia](NVidia) hardware. But only time will tell... Stay tuned...  
+versions of Psychtoolbox and especially in combination with future  
+versions of the Linux operating system are expected to provide vastly  
+improved support and stability with modern AMD graphics cards - Ryzen  
+integrated processor graphics, or Navi discrete gpu's and later models  
+recommended for best results, Vega may also work well but is so far  
+untested - and potentially Intel graphics chips, much less so with [NVidia](NVidia)  
+hardware. But only time will tell... Stay tuned...  
   
 
 

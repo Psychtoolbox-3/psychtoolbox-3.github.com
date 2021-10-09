@@ -1,10 +1,10 @@
 # [LoadCalFile](LoadCalFile)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychCal](PsychCal)
 
-[cal, cals, fullFilename] = [LoadCalFile](LoadCalFile)([filespec], [whichCal], [dir])  
+[cal, cals, fullFilename] = [LoadCalFile](LoadCalFile)([filespec], [whichCal], [dir], [noWarning])  
   
 Load calibration data from saved file in the [CalData](CalData) folder.  
-Will search one level deep in the [CalData](CalData) folder if the   
+Will search one level deep in the [CalData](CalData) folder if the  
 file does not exist at the top level, but skips subdirs  
 called 'xOld', 'Plots', and those that begin with '.'.  
   
@@ -22,7 +22,7 @@ to get the most recent calibration.
   
 If the specified file cannot be found, returns empty matrix.  
   
-The returned variable cal is a structure containing calibration   
+The returned variable cal is a structure containing calibration  
 information.  
   
 The returned cell array cals contains all of the calibrations  

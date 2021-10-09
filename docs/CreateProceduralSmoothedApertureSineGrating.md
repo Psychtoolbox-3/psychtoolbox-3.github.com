@@ -33,8 +33,8 @@ understand to be the contrast value of a grating.
 'useAlpha' Optional, defaults to 0. Whether to use color (0) or alpha (1)  
  for smoothing channel. Defaults to 0 (color).  
   
-'method' Optional. Whether to use cosine (0) or smoothstep(1) smoothing   
- function. Defaults to 0 (cosine).  
+'method' Optional. Whether to use cosine (0), smoothstep(1) or   
+ inverse smoothstep (2) smoothing function. Defaults to 0 (cosine).  
   
 The function returns a procedural texture handle 'gratingid' that you can  
 pass to the [Screen](Screen)('DrawTexture(s)', windowPtr, gratingid, ...) functions  

@@ -3,6 +3,8 @@
 
 [PsychOpenHMDVR](PsychOpenHMDVR) - A high level driver for VR hardware supported via [OpenHMD](OpenHMD).  
   
+This driver is currently only for use with Linux/X11 with a native [XOrg](XOrg) X-Server.  
+  
 Note: If you want to write VR code that is portable across  
 VR headsets of different vendors, then use the [PsychVRHMD](PsychVRHMD)()  
 driver instead of this driver. The [PsychVRHMD](PsychVRHMD) driver will use  
@@ -15,21 +17,62 @@ so you can mix calls to this driver with calls to [PsychVRHMD](PsychVRHMD).
   
 This driver needs libopenhmd.so version 0.3 or later to be installed  
 in a linker accessible path (e.g., /usr/local/lib/ on a Linux system).  
-You can either download, compile and install it from ...  
+You can either download, compile and install libopenhmd yourself from  
+the official project [GitHub](GitHub)...  
   
 https://github.com/[OpenHMD](OpenHMD)/[OpenHMD](OpenHMD)  
   
-### ... or get a precompiled library for libopenhmd.so from:  
+... or if you have a Oculus Rift and want to take advantage of an experimental  
+implementation that provides absolute head position tracking of reasonable quality,  
+from this repo and branch...  
   
-[RaspberryPi](RaspberryPi)/Raspbian: https://github.com/Psychtoolbox-3/[MiscStuff](MiscStuff)/tree/master/[OpenHMD32BitRaspbianARMv7](OpenHMD32BitRaspbianARMv7)  
+https://github.com/thaytan/[OpenHMD](OpenHMD)/tree/rift-kalman-filter  
   
-64-Bit Intel/Ubuntu:  https://github.com/Psychtoolbox-3/[MiscStuff](MiscStuff)/tree/master/[OpenHMD64BitIntelUbuntuLinux](OpenHMD64BitIntelUbuntuLinux)  
+### ... or you can get a precompiled library for libopenhmd.so from:  
   
-Follow instructions in the accompanying Readme.txt files.  
+For [RaspberryPi](RaspberryPi)/Raspbian: https://github.com/Psychtoolbox-3/[MiscStuff](MiscStuff)/tree/master/[OpenHMD32BitRaspbianARMv7](OpenHMD32BitRaspbianARMv7)  
+  
+For 64-Bit Intel/Ubuntu:  https://github.com/Psychtoolbox-3/[MiscStuff](MiscStuff)/tree/master/[OpenHMD64BitIntelUbuntuLinux](OpenHMD64BitIntelUbuntuLinux)  
+  
+Follow the setup instructions in the accompanying Readme.txt files if you use the  
+precompiled libraries.  
   
 libopenhmd.so in turn needs libhidapi-libusb.so to be installed in  
-a similar path. On Debian GNU/Linux based systems you can install HIDAPI  
-via the package libhidapi-libusb0 (apt-get install libhidapi-libusb0).  
+a similar path. On Debian GNU/Linux based systems like Ubuntu, you can install  
+this via the package libhidapi-libusb0 (apt-get install libhidapi-libusb0).  
+  
+On Ubuntu 20.04-LTS and later, or Debian 11 and later, you can also get the library  
+via a simple "sudo apt install libopenhmd0" for version 0.3 of the library.  
+  
+### Regarding Linux 4.16 and later:  
+  
+Note that on some HMD's, e.g., the Oculus Rift models, this driver will only work  
+on a multi-X-[Screen](Screen) setup, where a dedicated X-[Screen](Screen) (typically X-[Screen](Screen) 1) is  
+created, with the video output of the HMD assigned as only output to that X-[Screen](Screen).  
+Single-X-[Screen](Screen) operation will be unworkable in practice.  
+  
+The xorg.conf file needed for such a configuration must be manually created for your  
+setup. The "Monitor" section for the video output representing the HMD must have this  
+line included:  
+  
+Option "Enable" "on"  
+  
+E.g., if the video output with the HMD has the name "HDMI-A-0", the relevant  
+section would look like this:  
+  
+Section "Monitor"  
+  Identifier    "HDMI-A-0"  
+  Option        "Enable" "on"  
+[EndSection](EndSection)  
+  
+An example file demonstrating this can be found in the [PsychtoolboxRoot](PsychtoolboxRoot)() folder,  
+under the following name:  
+  
+Psychtoolbox/[PsychHardware](PsychHardware)/[LinuxX11ExampleXorgConfs](LinuxX11ExampleXorgConfs)/xorg.conf\_DualXScreen\_OculusRift\_amdgpu.conf  
+  
+Regarding Linux 4.15 and earlier, the following may apply instead, at least for  
+the Oculus Rift CV1 and later Oculus HMD's, maybe also for other models from  
+other vendors:  
   
 From the same URL above, you need to get openhmdkeepalivedaemon, an executable  
 file, and make sure it gets started during system boot of your machine. This so  
@@ -136,8 +179,6 @@ all [HMDs](HMDs) will be closed and the driver will be shutdown.
 of the OVR.[ControllerType](ControllerType)\_XXX flags described in 'GetInputState'.  
 This does not detect if controllers are hot-plugged or unplugged after  
 the HMD was opened. Iow. only probed at 'Open'.  
-As the current [OpenHMD](OpenHMD) driver does not support dedicated controllers at the  
-moment, this always returns 0.  
   
   
 info = [PsychOpenHMDVR](PsychOpenHMDVR)('GetInfo', hmd);  
@@ -215,9 +256,10 @@ constants to map buttons to positions.
   
   
 pulseEndTime = [PsychOpenHMDVR](PsychOpenHMDVR)('HapticPulse', hmd, controllerType [, duration=2.5][, freq=1.0][, amplitude=1.0]);  
-- Fake triggering a haptic feedback pulse. This does nothing, but return a made up  
-but consistent 'pulseEndTime', as this [OpenHMD](OpenHMD) driver currently does not support  
-haptic feedback.  
+- Trigger a haptic feedback pulse, some controller vibration, on the specified 'controllerType'  
+associated with the specified 'hmd'. 'duration' is pulse duration in seconds, by default a maximum  
+of 2.5 seconds is executed. 'freq' is normalized frequency in range 0.0 - 1.0. A value of 0 will  
+disable an ongoing pulse.'amplitude' is the amplitude of the vibration in normalized 0.0 - 1.0 range.  
   
   
 state = [PsychOpenHMDVRCore](PsychOpenHMDVRCore)('PrepareRender', hmd [, userTransformMatrix][, reqmask=1][, targetTime]);  
@@ -432,7 +474,7 @@ parameter as 1 or 0.
 Currently not implemented / supported. Does nothing.  
   
   
-[PsychOpenHMDVR](PsychOpenHMDVR)('SetHSWDisplayDismiss', hmd [, dismissTypes=1+2]);  
+[PsychOpenHMDVR](PsychOpenHMDVR)('SetHSWDisplayDismiss', hmd [, dismissTypes=1+2+4]);  
 - Set how the user can dismiss the "Health and safety warning display".  
 'dismissTypes' can be -1 to disable the HSWD, or a value \>= 0 to show  
 the HSWD until a timeout and or until the user dismisses the HSWD.  
@@ -441,6 +483,7 @@ The following flags can be added to define type of dismissal:
 +0 = Display until timeout, if any. Will wait forever if there isn't any timeout!  
 +1 = Dismiss via keyboard keypress.  
 +2 = Dismiss via mouse click or mousepad tap.  
++4 = Dismiss via press of a button on a connected VR controller, e.g., touch controller.  
   
   
 [bufferSize, imagingFlags, stereoMode] = [PsychOpenHMDVR](PsychOpenHMDVR)('GetClientRenderingParameters', hmd);  

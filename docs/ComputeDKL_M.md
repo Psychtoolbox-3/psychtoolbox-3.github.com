@@ -29,6 +29,12 @@ See [[DKLDemo](DKLDemo)][(DKLDemo)]((DKLDemo)) for proper use of this function. 
           dhb  Fixed definition of M\_raw to handle arbitrary L,M scaling.  
 10/5/12   dhb  Comment specifying coordinate system convention.  Supress extraneous printout.  
 04/13/17  dhb  Return weights that give luminance from sum of L and M cone excitations.  
+08/20/21  dhb  Added check of a direct method of computing M, provided by Supi Ray (sray@iisc.ac.in).  
+               The check is commented out at the end of this routine, but  
+               does indeed give the same answer in the limited cases I've  
+               checked. At the heart of the derivation is analytic  
+               inversion of M\_raw.  I imagine that Ray would be happy to  
+               provide the derivation if asked.  
 
 
 

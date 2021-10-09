@@ -16,6 +16,9 @@ data you want to use to define the space.
 4/13/17   dhb     Switch default cone type to Stockman-Sharpe.  
                   Demonstrate conversion from cone contrast coords to  
                   DKL, code at end.  
+8/21/21   dhb     Added a few more checks and comments.  Made some of the  
+                  numbers less generic, on the view that testing is more  
+                  robust in such cases.  
 
 
 
