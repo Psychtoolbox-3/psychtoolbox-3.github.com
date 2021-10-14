@@ -32,7 +32,7 @@ documenting your research software and ensure reproducibility of the software en
 
 Before any potentially disruptive changes are merged into the `beta` branch, we
 tag and release a new version of Psychtoolbox following the versioning scheme
-**`Psychtoolbox-3.x.y`**.  Examples of such disruptive changes would be the
+**`Psychtoolbox-3.x.y`**. Examples of such disruptive changes would be the
 discontinuation of support for an operating system, Matlab version, or a computer
 hardware platform - anything that could introduce functional regressions into your
 existing hardware and software environment. We recommend to stick with the `beta`
@@ -50,6 +50,20 @@ to PTB Version 2 that we have now abandoned that system.</small>
 
 *To download and install the following versions, use the
 [`DownloadPsychtoolbox`][standard-installer] function*
+
+`Psychtoolbox-3.0.17`
+   : A snapshot of the code as of beginning of October 2021: This was the final 3.0.17 release
+     before start of the 3.0.18 series. 3.0.17 was the last version to support:
+
+
+      * 64-Bit Octave-6.1 and 6.2 for MS-Windows and Apple macOS.
+
+
+      * 64-Bit Octave-3.x and 4.x for GNU/Linux.
+
+
+      * Ubuntu Linux 18.04 LTS support. Going forward, only Ubuntu 20.04 LTS and later are supported.
+
 
 `Psychtoolbox-3.0.16`
    : A snapshot of the code as of beginning of November 2020: This was the final 3.0.16 release
