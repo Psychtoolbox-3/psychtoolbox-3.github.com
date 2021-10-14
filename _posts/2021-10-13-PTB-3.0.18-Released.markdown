@@ -1,0 +1,175 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.18 Beta update "Ode to the slacktivists" was released at 13th October 2021.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.18.0”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.18.0>
+
+## Highlights:
+
+- Changes in Octave support: Octave 6.3 required on Windows and macOS, Octave 5 or later
+  required for Linux.
+
+- Only Matlab R2021b supported and tested, going forward.
+
+- Improved VR support for Linux and Windows, tested on the Oculus Rift CV-1 with touch controllers.
+
+- 16 bit native (effective 12 bit) framebuffer support for Linux with AMD Polaris and later.
+
+- Terminated support for Ubuntu 18.04-LTS or any other pre-Ubuntu 20.04 LTS Linux distribution.
+
+- Multitouch touchscreen support for Windows.
+
+- Fixes for PsychPortAudio and iMac's, thanks to new workarounds for Apples broken macOS 11 operating system.
+
+- Various smaller fixes and improvements.
+
+## General
+
+- This version was built and lightly tested against Matlab R2021b, and going forward R2021b is the only supported version. Older Matlab releases may or may not continue to work correctly.
+
+- CreateProceduralSmoothedApertureSineGrating: Improvements and fixes by Ian Andolina: "By default the 'useAlpha' option is turned OFF and smoothing uses the background color directly (alpha channel untouched). In this case no change will be seen by this fix. However when 'useAlpha' is turned on, the shader should use the edge modifier (Mod)on the alpha channel directly. Previously the fragment shader combined the global and local alpha ((rawAlpha * Mod) + Offset.a) causing an undesired effect (as I originally contributed this it was my bug), and the edge is not smoothed. To fix this we use the Modifier value directly (Offset.a * Mod), which allows the edge to blend properly with the underlying color while leaving the rest unaffected. When the background colour and offset are the same (as is normally the case, e.g. [0.5 0.5 0.5 1]), then useAlpha ON/OFF now looks the same. If the background colour is different to the offset, now with useAlpha=ON the edge properly smooths. I added an optional value = 2 to 'Method' which copies what is done in the SmoothedDiscShader.frag (option to invert the smoothing mask). Previously it accepted 0 or 1, and so there will be no change unless you explicitly set this to 2."
+
+- Screen: Suppress broken pageflip warning if external display method is in use. Also if the window is not a fullscreen window, as failure is expected then. This checking code only ever executes on Linux + AMD if the user foolishly disables OpenML timing and timestamping, ie. never under normal circumstances, or on macOS with PTB kernel driver loaded on a AMD or Intel gpu. In practice only the macOS + kernel driver case matters, and only for standard OpenGL display backend via CGL.
+
+- Snd: Update help text a bit, add "permanent" PPA sharing: This is mostly useful if one wants to use Beeper() in parallel to PsychPortAudio(), e.g., for auditory feedback tones during Eyelink calibration.
+
+- AudioFeedbackLatencyTest: Improve flexibility.
+    - Allow specifying input/output audio devices, or separate devices.
+    - Auto-detect and handle different number of channels for in/out.
+    - Auto-detect and handle different sample frequencies for in/out.
+    - Reduce reqlatencyclass to 2, so the driver can auto-select a supported default sampling frequency, and let it choose that, if not explicitely given. This makes it more robust against Windows WASAPI's endless flaws.
+
+- FlipTimingWithRTBoxPhotoDiodeTest: Reduce audio volume to 2% to make it less annoying, especially on the MacbookPro 2017 under Linux.
+
+- Update "help SyncTrouble" for the year 2021. Less outdated now, still not really up to date.
+
+- Update ``help OculusVR`` for the year 2021.
+
+- VRInputStuffTest: Refine and improve tested functionality, e.g., among others:
+
+    - Haptic pulse feedback support for left/right controllers with low/high frequency rumble.
+
+    - Allow to advance through demo phases with touch-contoller button clicks instead of only keyboard press.
+
+    - Allow teapot movement via thumbsticks on the controllers, ie. left and right, forward and backwards, relative to viewer. Pressing the thumbsticks gives faster movement.
+
+    - Add haptic feedback to teapot animation.
+
+    - Visualize touch controller positions and orientations, and state of the grip and trigger analog buttons.
+
+    - Visualize guardian playbounds / outer bounds under Windows-10 with dual-sensor Rift CV-1.
+
+- Update help for GStreamer setup: Recommend GStreamer 1.18.5 from now on:
+  1.18.2 has sometimes stability issues on macOS, at least with 10.15.7 and Matlab R2021b or Octave 6.3, although Matlab seems to be more fragile, as usual. Note: While 1.18.5 on Windows-10 21H1 with R2021b or Octave 6.3 shows no problems in movie playback/writing, and video capture/recording, with or without sound, on macOS we see that movie playback, movie writing with/without sound and videocapture works fine, but videorecording is broken for unknown reasons -- no known workaround. At least this is true on macOS 10.15.7 on a MBP 2017, using its internal FaceTime HD webcam. Go figure...
+
+- MeasureLuminancePrecision: Refine / cleanup further:
+   Remove pointless wigglePixelNotCLUT and useDithering, as both are either not needed anymore (dithering is handled by Screen() automatically), or ineffective - gamma tables are often now PWL, so this way of defining luminance won't work on modern gpu's.
+
+- PsychImaging: Improve help texts wrt. 10 bit support.
+   Still not quite up to date, but less wrong/outdated. I should revisit all that's changed, now that we can assume Ubuntu 20.04, Linux 5.4, Mesa 20.x, X-Server 1.20, but i don't have the time because time is money and money is scarce, so time is scarce.
+
+- PsychImaging: Update help text for 'EnableNative16BitFloatingPointFramebuffer', so it aligns with reality as of October 2021.
+
+- Some badly documented minor improvments by the Brainard lab, regarding some color conversion or simulation code, who knows?
+
+## Linux
+
+- Terminate support for all Linux distributions older than Ubuntu 20.04-LTS or equivalent. Distributions need at least X-Server 1.20, Linux 5.4, and generally the software versions of components of at least as recent as Ubuntu 20.04-LTS. Also the C runtime library must be at least of version glibc v2.31.
+
+- Terminate support for Octave 4 and earlier. 64-Bit Octave 5 is now the minimal required Octave version. Older versions likely won't work anymore with Psychtoolbox 3.0.18.0.
+
+- PsychImaging: Rewrite 'EnableNative16BitFramebuffer' support.
+  My patches for 16 bpc framebuffer support for all AMD gpu's since Sea Islands (DCE-8) are part of the Linux 5.14 mainline kernel, and my patches for 16 bpc support have also been integrated into the AMDVLK development branch for AMD's open-source Vulkan driver. This driver, likely in its next release, will support 16 bpc framebuffers on AMD Polaris (DCE-11.2) and later, if running under Linux 5.14 or later.
+
+  Sadly Linux 5.14 won't ship with Ubuntu 21.10, a near miss. They are only going for Linux 5.13. But installing Linux 5.14 is easy enough.
+
+  This commit switches PsychImaging() to only expose 16 bpc framebuffers on such Linux + X11 + AMD Polaris+ + amdvlk + Linux 5.14 systems, but then at much better reliability and performance than our old dead code.
+
+  It allows to get up to 12 bpc per color-channel color output, ie. 4096 intensity levels for red, green, blue, grayscale/luminance and a total of 64 billion shades of color, either on suitable 12 bpc capable high-end displays, or via spatial dithering by the gpu on the more common 10 bpc capable displays or even - at a lower quality - standard 8 bpc capable displays.
+
+  This makes Linux the first operating system to my knowledge to support this color precision on out of the box on commodity graphics hardware and displays, natively at full performance without any compromise in timing precision or reliability.
+
+  Basic testing has been performed with a CRS ColorCal-2 on a HDR-10 10 bpc capable monitor and on a MacBookPro 2017 Retina display under Linux, with AMD RavenRidge and Polaris.
+
+- PsychOpenHMDVR driver for driving VR headsets other than the Oculus Rift DK1/DK2. Many improvements:
+  - Add proper state.status signalling for status of positional HMD / touch controller tracking.
+  - Add version check and reporting.
+  - Fixup ipd handling, make consistent with OpenHMD behaviour.
+  - Add input device support: The new subfunction 'GetInputState' now reports digital and analog button state of controllers. 'GetTrackingState' now reports 6-DoF tracking state for supported VR controllers. This has been successfully tested with a Oculus Rift CV1 + up to two tracking sensors, and two Oculus touch controllers. Behaviour is almost identical to the Windows driver, except that capacitive "touch buttons" and derived hand gestures are not reported. The code should handle other than Oculus VR devices reasonably well, e.g., NOLO, GearVR, Android Daydream, WMR, Vive, Deepon, etc. As of OpenHMD 0.3, only Oculus Rift CV1 and S, as well as NOLO touch controllers, do support 6 DoF tracking with up to two touch controllers or equivalents. Other devices only support some input buttons, thumb-sticks, or orientation tracking. The code has not been tested with other than Oculus Rift CV1 + touch controllers, due to lack of hardware.
+  - Some of the VR improvements will need manual installation of an experimental libopenhmd version from our own Misc repository at GitHub, as needed improvements are not yet part of the officiall libopenhmd 0.3 releases contained in Ubuntu 20.04-LTS and later. This is especially true for HMD positional tracking and touch controller tracking for the Oculus Rift CV-1 and Oculus Rift-S. Download location is:
+https://github.com/Psychtoolbox-3/MiscStuff/tree/master/OpenHMD64BitIntelUbuntuLinux
+
+- VRRTest: Refine diagnostics a bit.
+
+- PsychPortAudio: Work around broken timing if pulseaudio is used for output: By default we do not allow use of Pulseaudio in parallel to PPA operation at all, because this way (Pulseaudio server force-suspend) we get exclusive access to the sound hardware for best possible timing. But if the 'EngineTunables' override is used to allow to keep Pulseaudio running in parallel to our operation, things are different. If Pulseaudio is idle for our target sound device, everything is the same. But if it is active, we may get redirected in our choice of default sound card to the ALSA 'default' or 'pulse' device, which both map to the ALSA Pulseaudio plugin. That plugin allows parallel sound i/o with PulseAudio, arbitrated and mixed by PulseAudio. The problem is that the plugin does not return any audio timestamps - all timestamps are constant zero!
+So far we simply returned bogus timestamps and screwed up totally if timed audio onset/offset/scheduling was requested. We can do a bit better:
+If we detect all-zero timestamps from Pulseaudio, we replace them by current system time aka GetSecs time. This gives somewhat wrong/inaccurate but at least consistent timestamps and allows our client code to run with an accuracy that is at least good enough for basic auditory feedback, instead of going bong-shit. This is all consistent with the QoS promised in PPA 'Open' for 'reqlatencyclass' == 0, e.g., as used by simple demos like BasicSoundOutputDemo.m or the Snd() and Beeper() functions. If user code requested reqlatencyclass > 0, ie. low latency, high timing precision, then we print a warning each time PsychPortAudio('Stop') is called if timing and timestamping was broken during a auditory stimulation run, so there aren't any surprises or sad faces in the end.
+
+- PsychPortAudio: Extend half-duplex capture workaround to Portaudio v19.7.0:
+  Portaudio v19.7.0 has the same bug as 19.6, because i never got around to write and submit an upstream fix. This becomes relevant now, because Matlab R2021b ships its own override Portaudio library v19.7 for Linux, with the bug present, but our hack to workaround the bug was limited to 19.6.0 and earlier. Extend the workaround to 19.7.0 and earlier. This fixes R2021b in half-duplex capture mode, ie. timestamping of captured audio is fine again.
+
+- PsychVulkan: Make Vulkan display backend work more robust with NVidia's proprietary display drivers. This should now work reasonably ok on single-display per X-Screen setups, as tested by Celia Foster.
+
+- GetMouseWheel: Adapt to X11 libinput driver. 
+
+- PsychHID: Allow optional use of masterPointer for touch input.
+
+- XOrgConfCreator: Update for PTB 3.0.18 and future X-Server 21.1 and later:
+  The modesetting-ddx of X-Servers after 1.20 does support setup of Variable refresh rate VRR, and the use of modern GAMMA_LUT's if the Linux kernel supports them. This allows use of modesetting-ddx in a VRR scenario, but also on Intel gpu's with a color depth of more than 8 bpc, where Intel-kms needs use of the GAMMA_LUT instead of the legacy lut, which could only do 256 slots of 8 bpc width.
+
+    Also update specs wrt. color depth and VRR and Intel / AMD gpu's.
+
+    Also try to retain modesetting-ddx as driver choide if user does not request otherwise and no forcing circumstances force a different choice and the modesetting-ddx is already in use.
+
+- VideoMSPro6CamCaptureDemo.m: Delete it, no longer needed. Since the Linux 5.13-surface kernel and the latest libcamera-git from September 2021, our standard video capture demos work just fine on the Microsoft Surface Pro 6, no special treatment needed anymore.
+
+- CMUBox: Make OpenSerialPort lenient. Some USB-Serial converters may fail to respond to low-latency setup requests. Make this non-fatal.
+
+- GameMode: Fine tune gamemode.ini and help "LinuxGameMode", for better Intel iGPU tuning, and removed support or pre-Ubuntu 20.04-LTS.
+
+- Update deepcolor.conf file: GNOME-Shell can deal with 10 bpc just fine now. GNOME shell for Ubuntu 20.04-LTS and later can deal with depth 30 / 10 bpc framebuffers without problems, so no longer suppress 10 bpc visuals for the shell.
+
+- help VRRSupport: Update for Ubuntu 20.04-LTS.
+
+- LoadIdentityClut: Fixes for Linux with NVidia hardware.
+
+## Windows
+
+- Terminate support for Octave 6.2 and earlier. 64-Bit Octave 6.3 is now the minimal required Octave version. Older versions won't work anymore with Psychtoolbox 3.0.18.0.
+
+- Add basic multitouch touchscreen support. Development of this feature was paid in the end by Mathworks (https://www.mathworks.com/solutions/neuroscience.html).
+
+  This implementation is more limited than the touchscreen support that we have on Linux since 4 years, but it should do for at least simple use cases with one touchscreen, e.g., on Windows tablets, without affecting visual stimulation timing. Of course, many Windows tablets use Intel integrated graphics chips, and those often have drivers with broken timing, so this may not help as much, e.g., the Microsoft Surface Pro 6. But at least testing on a desktop machine with AMD onboard graphics and NVidia discrete gpu showed that this touchscreen implementation does not make visual stimulation timing reliability worse than it sometimes is on Windows-10. MultiTouchMinimalDemo.m and MultiTouchDemo.m demonstrate this, just as they do on Linux. Tested on Windows-10 May 2019 edition, October 2020 edition, 20H2 edition, and the 21H1 edition which is the most recent Windows-10 version as of 3rd October 2021. Tested hardware: Microsoft Surface Pro 6 with internal touchscreen, and also with RaspberryPi touchscreen attached as secondary screen. This is probably as good as it will ever get on MS-Windows.
+
+- PsychOculusVR1: Bug fixes and improvements for Oculus Rift CV1+ support, e.g.:
+  - Fix haptic feedback for duration < 2.5 seconds.
+  - Make haptic feedback work better in general, more reliable.
+  - Avoid annoying white flashing at the end of sessions with recent Oculus runtimes.
+
+- Upgrade portaudio_x64.dll for 64-Bit Windows to Portaudio v 19.7-devel from latest upstream git: This new Portaudio version supposedly brings some improvements to Windows audio support, so far the theory. In practice I don't have the time now to test this carefully, because time is money and money is scarce, neither do I have the equipment available atm. So "practice in the field" will show if theory translates to practice. At least no obvious regressions were spotted.
+
+- PsychStartup: Fix wrong drive letters for GStreamer path setup if the fallback path for broken Windows setup is triggered and GStreamer is installed on a different drive than the default C drive. Bug was introduced in the initial 3.0.17 release. Reported by Andreas Sprenger, thanks!
+
+## macOS
+
+- Terminate support for Octave 6.2 and earlier. 64-Bit Octave 6.3 is now the minimal required Octave version. Older versions won't work anymore with Psychtoolbox 3.0.18.0. Tested with Octave from HomeBrew, as usual.
+
+- Screen: Enable PsychtoolboxKernelDriver on Intel graphics by default. Instead of being disabled by default (opt-in), we now enable by default (opt-out), unless a user-provided setenv('PSYCH_DISALLOW_DANGEROUS', '1'); setting will disable it. We never received any reports of trouble with this, neither did i ever encounter it. So lets optimistically assume the problem is not one in practice. Maybe it helps users to have less broken Intel graphics timing, or to get an assessment of how broken - or not - it is on macOS. I don't expect Apple to ever release new machines with Intel integrated graphics, so maybe we get lucky with the existing set of Intel gpu's.
+
+- Screen: Try to fix our display timing fixes on macOS 11 + iMac. The iToys company introduced new brokeness for iMac computers under macOS 11, which apparently prevents iMac Retina panels from running under native resolution, despite our code requesting that since over
+a decade. Ian Andolina reported this problem under macOS 11 with a 2015 iMac Retina, so lets deal with this issues via special case handling, using a lookup table which encodes proper settings for all known iMac models. Currently our lut only contains the panel sizes and resolutions of the display panels used in Intel-based iMac computers, but all of this stuff won't matter on M1 ARM Macs anyway - it is all unfixably dead for models with Appple Silicon.
+
+- Update Vulkan related help texts for macOS wrt. minimum MoltenVK requirements and download links to the required 3rd party runtime. macOS 11 is just as broken as macOS 10.15 wrt. to timing under macOS Metal, according to Ian Andolina's testing on an Retina iMac 2015 with Intel graphics on macOS 11.5 Big Sur. The status on macOS 12 and on Apple M1 SoC's remains unknown.
+
+- MacDisplaySettings: Make it also compatible with 10.15 Catalina and macOS 11.6. By Denis Pelli, contributed "as is", untested and unsupported by us.
+
+- Upgrade PsychPortAudio for 64-Bit macOS to use of Portaudio library v19.7-devel: This new Portaudio version supposedly brings many improvements to macOS audio support, trying to fix various things that Apple broke over the years. Especially for the macOS 11 trainwreck. So far the theory. In practice i don't have the time now to test this carefully, neither do i have the equipment available atm. So practice will show if theory translates to practice. One thing that seems to work better is the OS actually respecting the volume settings, although that could be also just an auditory placebo.
+
+Enjoy!
