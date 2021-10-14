@@ -28,9 +28,9 @@ Short version
 
 -   *Runtime environment:*
 
-    64-Bit Matlab version R2020b or later (older versions will likely work, but are no longer tested
-    for compatibility or supported by us in case of trouble), and GNU Octave version 4.2 or later versions
-    on Linux, and 64-Bit [Octave version 6.1.0 or 6.2.0 on macOS][OctavemacOS] [and on MS-Windows.][OctaveForWindows]
+    64-Bit Matlab version R2021b or later (older versions will likely work, but are no longer tested
+    for compatibility or supported by us in case of trouble), and GNU Octave version 5.2 or later versions
+    on Linux, and 64-Bit [Octave version 6.3.0 on macOS][OctavemacOS] [and on MS-Windows.][OctaveForWindows]
 
 -   *Graphics card:*
 
@@ -89,9 +89,12 @@ Short version
     1.19, which is outdated and only works on older distributions like Ubuntu 18.04.0 LTS,
     but not with the current X-Server 1.20 and, e.g., recent Ubuntu 18.04.5 LTS, or the
     recommended Ubuntu 20.04-LTS or later.
-    The combination of AMD integrated gpu + AMD or other discrete gpus currently doesn't work
-    well at all. At least the lower performance integrated AMD graphics chips should work
-    as a reliable fallback in such a scenario on Linux though. Read ["help HybridGraphics"][HybridGraphics],
+    The combination of AMD integrated gpu + AMD discrete gpu should work fine for modern
+    AMD integrated gpu's found in AMD Ryzen 3000 series processors or later, ie. more
+    modern than AMD RavenRidge. Combining AMD integrated gpu's with other discrete gpus,
+    e.g., from NVidia or Intel currently doesn't work well at all due to software limitations.
+    At least the lower performance integrated AMD graphics chips should still work as a
+    reliable fallback in such a scenarios on Linux though. Read ["help HybridGraphics"][HybridGraphics],
     which provides up to date info.
 
 -   *Sound card:*
@@ -111,17 +114,17 @@ Operating systems
 GNU/Linux is fully supported on Intel compatible PCs and suitable (== older) Apple
 Macintosh computers under
 
--  Matlab 64-bit, version R2020b and later versions. R2014b is also somewhat tested,
-   older versions probably work, but are no longer tested.
--  GNU Octave 64-bit, versions 4.2, 4.4, and 5.2, possibly later or earlier versions.
+-  Matlab 64-bit, version R2021b and later versions. Older versions probably work,
+   but are no longer tested.
+-  GNU Octave 64-bit, versions 5.2, 6.1, and probably 6.2.
 -  Additionally, Psychtoolbox from NeuroDebian supports 32-Bit and 64-Bit
    releases of whatever version of GNU Octave ships by default with your
    distribution, e.g., also Octave 4.0, 3.8, 3.6, 3.4 or 3.2 on older distributions,
-   or Octave 5.1 and Octave 6.x on recent distributions.
+   or Octave 5.x and Octave 6.x on recent distributions.
 
 Psychtoolbox testing and development occurs mainly on the most recent Ubuntu
-Linux LTS releases or flavors of them, currently Ubuntu 18.04.5-LTS and Ubuntu
-20.04.2-LTS.
+Linux LTS releases or flavors of them, currently Ubuntu 20.04.3-LTS. Distributions
+older than Ubuntu 20.04-LTS are no longer supported by Psychtoolbox 3.0.18.
 
 NeuroDebian tests and supports PTB also on Debian GNU/Linux. According to
 user reports, Psychtoolbox seems to work reasonably well on Linux Mint, Arch
@@ -129,7 +132,7 @@ Linux, Gentoo, and Fedora 24/25. We can't provide much support on other distros
 than Ubuntu LTS flavors due to lack of time and resources.
 
 It is recommended to stick to the latest long-term support (LTS) Ubuntu release,
-currently 20.04.2-LTS, if you want the most well tested and well supported setup.
+currently 20.04.3-LTS, if you want the most well tested and well supported setup.
 
 [Psychtoolbox also works with GNU Octave on the RaspberryPi 2B, 3, 4, 400 at least
 with the Debian flavor Raspbian (also known as RaspberryPi OS).][Raspbian].
@@ -158,13 +161,13 @@ and education purposes.
 Psychtoolbox is also being developed and tested under Apple macOS 10.
 Psychtoolbox should "work" in principle on
 
--  64-bit Matlab R2014b on macOS 10.11 "El Capitan" to macOS 10.15.
--  64-bit Octave v6.1.0 on macOS 10.11 "El Capitan" to macOS 10.15. As of 2021,
-   [you will need to get Octave 6.2.0 from a package manager like HomeBrew][OctavemacOS]
+-  64-bit Matlab R2021b on macOS 10.11 "El Capitan" to macOS 10.15.
+-  64-bit Octave v6.3.0 on macOS 10.11 "El Capitan" to macOS 10.15. As of 2021,
+   [you will need to get Octave 6.3.0 from a package manager like HomeBrew][OctavemacOS]
    or MacPorts, as standalone binary installers are not available yet.
 
 Limited testing currently only happens on the latest version of macOS 10.15.7
-“macOS Catalina” with 64-Bit Octave 6.2.0, and with 64-bit Matlab R2020b.
+“macOS Catalina” with 64-Bit Octave 6.3.0, and with 64-bit Matlab R2021b.
 These are the only somewhat supported versions of macOS at this point in time.
 Avoid macOS Catalina 10.15 if you don't have to. Psychtoolbox is compatible with
 Catalina in principle, and Catalina is the only currently tested system, but Catalina
@@ -176,11 +179,12 @@ use for visual stimulation, or DAQ digital/analog i/o, so running real data coll
 using macOS will likely bring you a world of pain (and possibly irreproducible research)_.
 
 macOS Mojave is possibly a better working choice, although no longer tested by us. The
-fact that it is no longer actively developed by Apple means that Apple won't have as much
-opportunity to break it with respect to our needs - knock on wood!
+fact that it is no longer developed or supported by Apple means that Apple will no longer
+break it with respect to our needs, but it is now an attractive target for viruses and
+hackers, a security hazard! Choose your poison...
 
-**macOS 11 Big Sur is not officially supported or tested at all at the moment!**
-**macOS 11 on machines with Apple's new ARM based SoC's, e.g., the Apple M1 SoC,
+**macOS 11 Big Sur or macOS 12 Monterey are not officially supported or tested at all at the moment!**
+**macOS 11/12 on machines with Apple's new ARM based SoC's, e.g., the Apple M1 SoC,
 are not working with Psychtoolbox natively at all in any meaningful way. There is
 no timeline for fixing this anytime soon. It is possible to run Ubuntu Linux for
 ARM in a Virtual machine on Apple M1 for training and education purpose, according
@@ -217,14 +221,14 @@ resolve at least some of these issues on AMD and NVidia graphics cards
 
 Psychtoolbox should work on
 
--   Matlab 64-bit. Currently tested and supported with release R2020b.
+-   Matlab 64-bit. Currently tested and supported with release R2021b.
     External mandatory requirements: Microsoft C MSVC 2015-2019 runtime and
-    GStreamer 1.18 MSVC or later. Installation of GStreamer _before_ installation
+    GStreamer 1.18.5 MSVC or later. Installation of GStreamer _before_ installation
     of Psychtoolbox is mandatory on Matlab or the Screen mex file will not work.
 
--   [GNU Octave 6.1.0 and 6.2.0, 64-Bit. Installation of GStreamer _before_ installation
+-   [GNU Octave 6.3.0, 64-Bit. Installation of GStreamer _before_ installation
     of Psychtoolbox is mandatory on GNU Octave or the Screen mex file will not work.
-    The current download location for official Octave-6.1.0 64-Bit is reached by
+    The current download location for official Octave-6.3.0 64-Bit is reached by
     clicking this link.][OctaveForWindows]
 
 If you choose to use Matlab, you may need to install Microsoft Visual C runtime
@@ -233,9 +237,10 @@ give you instructions on how to do that if necessary.
 
 Psychtoolbox-3.0.17 is no longer officially supported for Windows-7 / 8 / 8.1. The
 current expectation is that it still mostly works on these systems, but just as with
-v3.0.16, only Windows-10 releases from 2021 are tested and supported in case of trouble,
-and some functionality like sound output should be better on Windows-10, other functions
-like HDR High Dynamic Range display support will only work on recent Windows-10.
+v3.0.16, only Windows-10 releases from 2021 (21H1 edition specifically) are tested and
+supported in case of trouble, and some functionality like sound output should be better
+on Windows-10, other functions like HDR High Dynamic Range display support will only work
+on recent Windows-10.
 
 Psychtoolbox-3.0.16 no longer works on Microsoft Windows XP, should continue to work
 on Windows Vista and later, but just as with v3.0.15, only Windows-10 is tested and
@@ -265,19 +270,19 @@ Ubuntu 20.04-LTS.
 Additional software
 -------------------
 
-#### Multimedia engine: GStreamer 1.18 or later required on Windows and macOS
+#### Multimedia engine: GStreamer 1.18.5 or later required on Windows and macOS
 
-Installation of GStreamer version 1.18 or later is mandatory for movie playback,
+Installation of GStreamer version 1.18.5 or later is mandatory for movie playback,
 movie recording, video capture and video recording. Multimedia functions won't
-work on **macOS** without GStreamer 1.18 being installed. Neither will high quality
+work on **macOS** without GStreamer 1.18.5 being installed. Neither will high quality
 text rendering work, unless you use Octave instead of Matlab. If you want to use
 Psychtoolbox for visual stimulation on **Windows** you will _have_ to install
 GStreamer first, even if you do not need any multimedia functions, or Psychtoolbox
-won't work. GStreamer 1.18.0 MSVC variant or later is needed, earlier versions or
+won't work. GStreamer 1.18.5 MSVC variant or later is needed, earlier versions or
 MinGW variants will not work on Windows.
 
 On **Linux** you also need GStreamer, but GStreamer is a de-facto standard
-component that ships with all modern Linux distributions. GStreamer 1.8 will work,
+component that ships with all modern Linux distributions. GStreamer 1.8 should work,
 GStreamer 1.16 will work better, and GStreamer 1.18 is required for full convenient
 support for HDR movie playback, whereas GStreamer 1.16 will need some "hand-holding"
 by user scripts for more limited HDR playback support.
@@ -295,12 +300,12 @@ Basic hardware requirements
 ---------------------------
 
 -   Intel PCs: Any Intel-compatible PC that is capable of running the
-    64-bit versions of Microsoft Windows-10, or the 32-bit or 64-bit
-    versions of GNU/Linux.
+    64-bit versions of Microsoft Windows-10, or the 64-bit versions of
+    GNU/Linux Ubuntu 20.04 LTS or later.
 
 -   Intel Macs: _Not recommended!_
     Any Intel-based Macintosh computer that is capable of running 64-Bit macOS
-    10.11 “El Capitan” or later macOS 10 versions, or a 32/64 Bit GNU/Linux distribution.
+    10.11 “El Capitan” or later macOS 10 versions, or a 64 Bit GNU/Linux distribution.
     However: At this point in time, most NVidia graphics cards have broken
     visual stimulation timing under macOS. Most AMD graphics cards under
     macOS 10.12 and later have broken visual stimulation timing under macOS,
@@ -407,7 +412,7 @@ often even for single-display stimulation on a multi-display setup.
   [c++ runtime]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychContributed/vcredist_x64_2015-2019.exe
   [gma950]: http://en.wikipedia.org/wiki/GMA_950
   [gfxhw]: /graphics-requirements
-  [OctaveForWindows]: https://ftpmirror.gnu.org/octave/windows/octave-6.1.0-w64-installer.exe
+  [OctaveForWindows]: https://ftpmirror.gnu.org/octave/windows/octave-6.3.0-w64-installer.exe
   [OctavemacOS]: https://formulae.brew.sh/formula/octave
   [Raspbian]: https://www.raspberrypi.org/
   [HybridGraphics]: https://raw.githubusercontent.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/PsychDocumentation/HybridGraphics.m
