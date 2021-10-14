@@ -12,7 +12,7 @@ In order to install and use the Psychtoolbox, *you must already have
 Matlab or Octave installed on your computer, unless you install for
 Octave on Linux via the NeuroDebian repositories.* If you already have
 Matlab or Octave installed, start it up and read on. On Windows you
-must have installed GStreamer 1.18.0 MSVC edition or later versions.
+must have installed GStreamer 1.18.5 MSVC edition or later versions.
 
 ##### Contents {#contents}
 
@@ -160,14 +160,14 @@ the specified local directory.
 
           >> DownloadPsychtoolbox('/home/foo/toolbox')
 
-However, Octave mex files from this Subversion download from us, should you choose Octave,
-will only work out of the box with Octave 4.2 on Ubuntu 18.04-LTS, and with Octave 5.2 on
-Ubuntu 20.04-LTS. All required dependencies like GStreamer-1.8+, libdc1394, libusb, libfreenect,
-etc. need to be manually installed in this case. It may work on Debian/Ubuntu based system to
-execute "sudo apt build-dep psychtoolbox-3" though to get your distribution to automatically
-install required dependencies. Generally prefer the NeuroDebian installation instead, if you
-are on Debian or Ubuntu flavors and don't need the absolutely latest functionality at the day
-of release.
+However, Octave mex files from this Subversion download from us, should you choose GNU/Octave,
+will only work out of the box with with Octave 5.2 and later on Ubuntu 20.04-LTS and later.
+All required dependencies like GStreamer-1.16+, libdc1394, libusb, libfreenect, etc. need to
+be manually installed in this case. It may work on Debian/Ubuntu based system to execute
+"sudo apt build-dep psychtoolbox-3" though to get your distribution to automatically install
+required dependencies. Generally prefer the NeuroDebian installation instead, if you are on
+Debian or Ubuntu flavors and don't need the absolutely latest functionality at the day of
+release.
 
 [Additional tips][using-on-linux] for installing and using Psychtoolbox on
 Linux.
@@ -186,14 +186,14 @@ folders of your liking instead:
 
 2.  Download the **[Psychtoolbox installer][installer] to your desktop**. 
 
-3.  You **must** install the 64-Bit GStreamer-1.18.0 **MSVC** runtime or later versions
+3.  You **must** install the 64-Bit GStreamer-1.18.5 **MSVC** runtime or later versions
     from [gstreamer.freedesktop.org][gstreamer-win] even if you do not need multi-media
     support! Do **not** install the MINGW variant, it will not work, but likely crash!
     Make absolutely sure that you install all offered packages. [Read `help GStreamer`
     carefully for this purpose, *before downloading and installing GStreamer*.][docs-gstreamer]
 
     If you intend to use Octave, you will need to delete the following DLL files from the
-    C:\Program Files\GNU Octave\Octave-6.1.0\mingw64\bin\ folder:
+    C:\Program Files\GNU Octave\Octave-6.3.0\mingw64\bin\ folder:
     opengl32.dll -- Otherwise hardware accelerated visual stimulation will not work.
 
 4.  [You may also need to install the Microsoft Runtime Libraries for MSVC 2015-2019 if
@@ -223,8 +223,8 @@ If you want to know more about the downloader, see [DownloadPsychtoolbox][docs-d
 
 #### Mac {#Mac}
 
-1.  Skip this step for current Psychtoolbox 3.0.17 or later with Matlab R2014b
-    or later. [Also skip it with GNU/Octave if you already have HomeBrew installed][homebrew]
+1.  Skip this step for Psychtoolbox 3.0.17 or later with Matlab R2014b or later.
+    [Also skip it with GNU/Octave if you already have HomeBrew installed][homebrew]
     Go to step 2 instead.
 
     Otherwise get and install Subversion from somewhere, e.g., HomeBrew.
@@ -245,7 +245,7 @@ want to know more, see [DownloadPsychtoolbox][docs-download] (or
 
 4.  If you intend to use multi-media functions, or if you want fast, high-quality,
     cross-platform, consistent text rendering with Matlab, you must install the 64-Bit
-    GStreamer-1.18 or later runtime from [gstreamer.freedesktop.org][gstreamer-osx].
+    GStreamer-1.18.5 or later runtime from [gstreamer.freedesktop.org][gstreamer-osx].
     Make absolutely sure that you install all offered packages. [Read `help GStreamer`
     carefully for this purpose, *before downloading and installing GStreamer*.][docs-gstreamer]
 
@@ -372,7 +372,7 @@ This can mean two things:
 If the updater fails with a message like ...
 
     svn: E155036: Please see the 'svn upgrade' command 
-    svn: E155036: Working copy '/opt/MATLAB/R2011b/toolbox/Psychtoolbox' is too old (format 10, created by Subversion 1.6) 
+    svn: E155036: Working copy '/opt/MATLAB/R2021b/toolbox/Psychtoolbox' is too old (format 10, created by Subversion 1.6) 
 
 ... then open a terminal window, `cd` into the Psychtoolbox folder and then run
 the command `svn upgrade`. Then rerun the `UpdatePsychtoolbox` command.
@@ -441,7 +441,7 @@ of older versions can be found at the bottom of the page found
   [homebrew]: https://brew.sh
   [installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadPsychtoolbox.m.zip
   [legacy-installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadLegacyPsychtoolbox.m
-  [gstreamer-win]: https://gstreamer.freedesktop.org/data/pkg/windows/1.18.1/msvc/gstreamer-1.0-msvc-x86_64-1.18.1.msi
+  [gstreamer-win]: https://gstreamer.freedesktop.org/data/pkg/windows/1.18.5/msvc/gstreamer-1.0-msvc-x86_64-1.18.5.msi
   [gstreamer-osx]: http://gstreamer.freedesktop.org/data/pkg/osx/
   [PTBReleases]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases
 
