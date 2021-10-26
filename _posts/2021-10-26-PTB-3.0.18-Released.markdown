@@ -1,0 +1,24 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.18 Beta update "Ode to the slacktivists" SP1 was released at 26th October 2021.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.18.1”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.18.1>
+
+## General
+
+- Minor cleanups, mostly irrelevant to end users.
+
+## macOS
+
+ - Rebuild all mex files for Matlab to allow them to work on macOS 10.11 El Capitan and later. Fixes "only works on Catalina and later" bug when using Matlab. This was a compatibility issue silently introduced multiple Matlab releases ago, due to a mex configuration file format change by Mathworks. It already affected v3.0.17, making the Matlab version of PTB 3.0.17 only work on 10.14 Mojave or later, not on 10.11 and later, as intended. Apparently nobody ever noticed that throughout the 1 year life time of  v3.0.17, maybe because nobody updates PTB often enough, or maybe because everybody is on macOS Mojave or later? The former one would be scary, given various fixed macOS issues since 3.0.16.
+
+## Windows
+
+- Minor fix for HDR workarounds for AMD graphics on Windows. Setting PsychVulkan override flags 2 as workaround should no longer fail in HDR mode. Instead it should properly switch to the fp16 + scRGB mode as workaround.
