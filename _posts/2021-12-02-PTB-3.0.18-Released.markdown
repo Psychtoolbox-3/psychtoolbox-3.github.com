@@ -20,7 +20,7 @@ The release tag is “3.0.18.2”, with the full tree and commit logs under the 
 
 - Various improvements to demos and tests, done as part of the validation and compatibility work
   for Matlab R2021b on Ubuntu 20.04.3-LTS, MS-Windows 10 21H1 and macOS 10.15.7 Catalina final.
-  Sponsored by Mathworks, thanks! (https://www.mathworks.com/solutions/neuroscience.html)
+  Sponsored by Mathworks, thanks! (<https://www.mathworks.com/solutions/neuroscience.html>)
 
 - New demo BasicSoundPhaseShiftDemo.m - Realtime phase-shifting of sine wave tones.
 
