@@ -17,7 +17,7 @@ Psychtoolbox has many active users, an active [forum](forum), and is widely
 [cited](citations). PTB-3 is based on the deprecated Psychophysics Toolbox Version 2
 with its Matlab C extensions rewritten to be more modular and to use OpenGL on
 the back end. The current version supports at least Matlab R2021b, and Octave 5 and
-later on Linux, and Octave 6.3 on macOS, and Windows.
+later on Linux, and Octave 6.4 on macOS, and Windows.
 
 Psychtoolbox News
 -----------------
