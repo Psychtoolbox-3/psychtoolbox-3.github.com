@@ -18,7 +18,7 @@ e.g., text = [1424, 1425, 1426] for the first three characters of the
 hebrew alphabet.  
   
 Direct drawing of unicode text characters outside the BMP is possible in  
-the same way the default textrenderer if you've installed the neccessary  
+the same way the default textrenderer if you've installed the necessary  
 software as described in "help [DrawTextPlugin](DrawTextPlugin)". In that case, the unicode  
 code points may have values greater than 65535, ie., they are processed  
 internally as UTF-32 / UCS-4 characters - Each single number represents  

@@ -55,6 +55,7 @@ Psychtoolbox/[PsychTests](PsychTests)/Contents.m
   [MelanopsinFundamentalTest](MelanopsinFundamentalTest)       - Test the PTB routines generate a good melanopsin fundamental.  
   [MonoImageToSRGBTest](MonoImageToSRGBTest)             - Test/demo for routine [PsychColorimetric](PsychColorimetric)/[MonoImageToSRGB](MonoImageToSRGB).  
   [MultiWindowLockStepTest](MultiWindowLockStepTest)         - Exercise asynchronous flip scheduling and timestamping on multiple onscreen windows in parallel.  
+  [MultiWindowVulkanTest](MultiWindowVulkanTest)           - Test multi-window / multi-display exclusive operation under Vulkan.  
   [[OSAUCSTest](OSAUCSTest)][(OSAUCSTest)]((OSAUCSTest))                      - Test OSA UCS <-\> XYZ conversion routines.  
   [OSXCompositorIdiocyTest](OSXCompositorIdiocyTest)         - Test for potential OSX compositor brokeness.  
   [OMLBasicTest](OMLBasicTest)                    - Very basic correctness test for [OpenML](OpenML) flip timestamping.  
@@ -76,7 +77,6 @@ Psychtoolbox/[PsychTests](PsychTests)/Contents.m
   [TextInitBugTest](TextInitBugTest)                 - Test for failure of 'DrawText' default font.  
   [TextInOffscreenWindowTest](TextInOffscreenWindowTest)       - Compare text rendered into onscreen and offscreen windows.  
   [TextureChannelsTest](TextureChannelsTest)             - Test assignment of matrix layers to RGBA texture channels.  
-  [TextureTest](TextureTest)                     - Exercise [Screen](Screen)('DrawTexture').  
   [TrolandTest](TrolandTest)                     - Colorimetric conversions.  
   [VBLSyncTest](VBLSyncTest)                     - Tests syncing of PTB-OSX to the vertical retrace.  
   [VRRTest](VRRTest)                         - Test support of your setup for Variable refresh rate mode.  

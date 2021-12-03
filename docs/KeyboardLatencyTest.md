@@ -1,7 +1,7 @@
 # [KeyboardLatencyTest](KeyboardLatencyTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)
 
-[KeyboardLatencyTest](KeyboardLatencyTest)([triggerlevel=0.01][,modality=0][,submode][,portString])  
+[KeyboardLatencyTest](KeyboardLatencyTest)([triggerlevel=0.01][,modality=0][,submode][,portString][,audioDevice])  
   
 Uses sound capture with high timing precision via  
 [PsychPortAudio](PsychPortAudio)() for measuring latency, timing accuracy and variability  
@@ -78,6 +78,12 @@ The optional 'portString' argument can be set to define the serial port
 to connect to for response devices that are connected via serial port.  
 By default, the proper serial port is auto-detected, but you can override  
 a wrong detection this way.  
+  
+  
+The optional 'audioDevice' allows to specify the device index for the  
+sound card to use for audio capture, in case multiple soundcards are  
+installed in the machine. By default, a sound device is auto-selected,  
+which is capable of sound capture.  
   
   
 Obviously this method of measuring carries quite a bit of uncertainty  

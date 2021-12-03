@@ -9,20 +9,23 @@ do other fancy things(TM).
   
 These demos are all pretty beta and a bit rough, so good luck!  
   
-[MinimalisticOpenGLDemo](MinimalisticOpenGLDemo) -- A nice starter. First draws a simple scene with  
-                          simple lighting, then draws a simple animation of  
-                          a rotating earth globe, showing basic use of texture  
-                          mapping.  
+[CylinderAnnulusOpenGLDemo](CylinderAnnulusOpenGLDemo) -- Use [OpenGL](OpenGL) commands in a Matlab script to  
+                             map a 2D image onto a 3D cylindrical projection  
+                             surface.  
   
-[UtahTeapotDemo](UtahTeapotDemo)         -- Draws a rotating 3D teapot, demonstrates basic setup  
-                          of lighting, camera and geometry.  
+[DrawDots3DDemo](DrawDots3DDemo)            -- Demonstrates use of the moglDrawDots3D command for 3D dot drawing,  
+                             and of fast GLSL vertex shading for 3D dot animation.  
   
-[SpinningCubeDemo](SpinningCubeDemo)       -- Extends on [UtahTeapotDemo](UtahTeapotDemo) by introducing texture mapping.  
+[FDFDemo](FDFDemo)                   -- Demo of "formless dot field" structure from  
+                             motion stimulus rendered via moglFDF().  
   
-[SpinningMovieCube](SpinningMovieCube)      -- Extends [SpinningCubeDemo](SpinningCubeDemo) with cube faces that play back  
-                          a Quicktime movie file, demonstrating exchange of textures  
-                          between Psychtoolbox and Matlab [OpenGL](OpenGL).  
-[SuperShapeDemo](SuperShapeDemo)            Render so called [SuperShapes](SuperShapes) in [OpenGL](OpenGL).  
+[GLSLDemo](GLSLDemo)                  -- Demonstrate use of the GLSL [OpenGL](OpenGL) Shading language.  
+  
+[MinimalisticOpenGLDemo](MinimalisticOpenGLDemo)    -- A nice starter. First draws a simple scene with  
+                             simple lighting, then draws a simple animation of  
+                             a rotating earth globe, showing basic use of texture  
+                             mapping.  
+  
 [MorphDemo](MorphDemo)              -- This demo shows how to load premade 3D objects from filesystem and  
                           how to morph them into each other via the Psychtoolbox function  
                           [moglmorpher](moglmorpher)(). Psychtoolbox can load simple Alias-Wavefront OBJ  
@@ -30,18 +33,18 @@ These demos are all pretty beta and a bit rough, so good luck!
   
 [MorphTextureDemo](MorphTextureDemo)       -- Like [MorphDemo](MorphDemo), but also with GPU accelerated texture morphing.  
   
-[GLSLDemo](GLSLDemo)               -- Demo that shows how to use the [OpenGL](OpenGL) Shading Language (GLSL). This  
-                          demo may only work on recent graphics hardware, so dont be surprised  
-                          if it fails on older hardware.  
+[ShepardZoomDemo](ShepardZoomDemo)        -- A visual version of the Shepard tone illusion.  
   
-[ShepardZoomDemo](ShepardZoomDemo)        -- A visual equivalent of the Shepard tone illusion.  
+[SpinningCubeDemo](SpinningCubeDemo)       -- Extends on [UtahTeapotDemo](UtahTeapotDemo) by introducing texture mapping.  
   
-[FDFDemo](FDFDemo)                -- Demo for use of moglFDF() for creation of  
-                          formless dot field structure from motion  
-                          stimuli.  
+[SpinningMovieCube](SpinningMovieCube)      -- Extends [SpinningCubeDemo](SpinningCubeDemo) with cube faces that play back  
+                          a Quicktime movie file, demonstrating exchange of textures  
+                          between Psychtoolbox and Matlab [OpenGL](OpenGL).  
   
-[DrawDots3DDemo](DrawDots3DDemo)         -- Demonstrates use of the moglDrawDots3D command for 3D dot drawing,  
-                          and of fast GLSL vertex shading for 3D dot animation.  
+[SuperShapeDemo](SuperShapeDemo)         -- Render so called [SuperShapes](SuperShapes) in [OpenGL](OpenGL).  
+  
+[UtahTeapotDemo](UtahTeapotDemo)         -- Draws a rotating 3D teapot, demonstrates basic setup  
+                          of lighting, camera and geometry.  
   
 [VRHMDDemo1](VRHMDDemo1)             -- Display 3D rendered scene on a VR HMD headset for true immersion.  
 

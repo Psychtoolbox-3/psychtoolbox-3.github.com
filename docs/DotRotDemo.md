@@ -1,7 +1,8 @@
 # [DotRotDemo](DotRotDemo)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)
 
-dot motion demo using SCREEN('DrawDots') subfunction  
+dot motion demo using SCREEN('DrawDots') subfunction. Dot rotation  
+pattern.  
 author: Keith Schneider, 12/13/04  
 
 

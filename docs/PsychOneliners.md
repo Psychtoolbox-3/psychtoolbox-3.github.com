@@ -111,31 +111,12 @@ Psychtoolbox:[PsychOneliners](PsychOneliners).
   [TextCenteredBounds](TextCenteredBounds)      - Draw string, centered, return enclosing rect.  
   [UnpackColorImage](UnpackColorImage)        - Extract three color planes from an m by n by 3 color image.  
   [VecToImage](VecToImage)              - Convert a grayscale image from vector to image format.  
+  [WaitSetMouse](WaitSetMouse)            - Set and wait for new cursor position to take effect.  
   [WhiteIndex](WhiteIndex)              - Returns number that will produce the color white.  
+  [WindowCenter](WindowCenter)            - Returns a window's center point.  
+  [WindowSize](WindowSize)              - Returns a window's width and height.  
   [WinDesk](WinDesk)                 - Sends command to windows shell to minimize all Windows, equal to Windows+M.  
   [WrapString](WrapString)              - Word wrap (break into lines).  
-  
-  
-The following is a list of old one-liners that might some day be updated  
-from PTB-2, but haven't been yet.  
-  
-  [BlankingInterruptRate](BlankingInterruptRate) - Used by [PsychBasic](PsychBasic) [FrameRate](FrameRate).  
-  [ClutDefault](ClutDefault)           - Returns standard clut for screen at any pixelSize.  
-  [CmdWinToUpperLeft](CmdWinToUpperLeft)     - Bring Command window forward, saving [Screen](Screen) window.  
-  [DescribeScreen](DescribeScreen)        - Print a description of the screen's video driver.  
-  [DescribeScreenPrefs](DescribeScreenPrefs)   - Print more about the screen's video driver.  
-  [GammaIdentity](GammaIdentity)         - Returns an identity gamma table appropriate to the screen's dacSize.  
-  [IsDownArrow](IsDownArrow)           - Is char the down arrow?  
-  [IsLeftArrow](IsLeftArrow)           - Is char the left arrow?  
-  [IsRightArrow](IsRightArrow)          - Is char the right arrow?  
-  [IsUpArrow](IsUpArrow)             - Is char the up arrow?  
-  [IsInOrder](IsInOrder)             - Are the two strings in alphabetical order?  
-  [IsPopCharProInstalled](IsPopCharProInstalled) - Is the Control Panel "[PopChar](PopChar) Pro" installed?  
-  [MaxPriorityGetSecs](MaxPriorityGetSecs)    - Figure out the maximum priority compatible with [GetSecs](GetSecs). Slow.  
-  [ScreenClutSize](ScreenClutSize)        - How many entries in the graphic card Color Lookup Table?  
-  [ScreenUsesHighGammaBits](ScreenUsesHighGammaBits) - Does this card use the high 10 bits of the gamma values?  
-  [SCREENWinToFront](SCREENWinToFront)      - Bring [Screen](Screen) window back in front of Command window.  
-  [ShowTiff](ShowTiff)              - Show a TIFF file, calibrated.  
 
 
 

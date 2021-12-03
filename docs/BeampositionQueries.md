@@ -169,7 +169,7 @@ on how to use the panelfitter.
 2. System overload: Too many other applications are running in parallel  
 to Psychtoolbox, introducing severe timing noise into the calibration and  
 test loop. See 'help SyncTrouble' on what to do. This happens rather  
-seldomly.  
+seldom.  
   
 3. Driver bug: Not much you can do, except submit a bug report to Apple  
 or Microsoft for your specific hardware + software setup. This is by far  
@@ -182,7 +182,7 @@ ATI and [NVidia](NVidia) on [WindowsXP](WindowsXP) have bugs which cause beampos
 fail in a peculiar way. If PTB detects that failure case, it will enable  
 some workaround to keep the mechanism going at slightly reduced accuracy:  
 Timestamps will still be mostly jitter-free and consistent, so they are  
-fully useable for timestamping, timing checks and as a basis for timed  
+fully usable for timestamping, timing checks and as a basis for timed  
 stimulus presentation and animation. However, all returned timestamps  
 will contain a constant bias wrt. the real stimulus onset time of  
 somewhere between 20 microseconds and 1.5 milliseconds, depending on your  
@@ -190,7 +190,7 @@ display settings, because Psychtoolbox can't determine the total height
 of your display in scanlines (including the invisible VBL interval)  
 anymore. Exact height is important for spot-on timestamps. Psychtoolbox  
 uses some safe, conservative value for its internal computations, so  
-results will be consistent and useable, but contain a small constant  
+results will be consistent and usable, but contain a small constant  
 offset.  
   
 In some rare cases, PTB's automatic test fails to detect the bug and  

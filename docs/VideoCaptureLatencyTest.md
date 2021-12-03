@@ -1,7 +1,7 @@
 # [VideoCaptureLatencyTest](VideoCaptureLatencyTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)
 
-[VideoCaptureLatencyTest](VideoCaptureLatencyTest)  
+[VideoCaptureLatencyTest](VideoCaptureLatencyTest)([texfetch=0][, fullscreen=1][, depth=1])  
   
 This routine tests the latency of Videocapture for  
 a given Camera -\> Computer -\> PTB -\> gfx-card -\> display combo.  

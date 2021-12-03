@@ -4,14 +4,16 @@
 [TextToStuffColorMismatchTest](TextToStuffColorMismatchTest) - Test if text is drawn  
 in the color it was requested to be drawn.  
   
-This demonstrates a bug in the OSX [CoreText](CoreText) renderer,  
-as used in released PTB versions since at least  
-30th December 2013.  
+In the past, this demonstrated a bug in the OSX [CoreText](CoreText) renderer,  
+as used in released PTB versions far in the past. Nowadays nobody gives  
+a crap about Apples crap anymore and we use our own OS independent plugin  
+text renderer by default, so this is what we test.  
   
 ### History:  
   
 16-Jun-2015  mk  Derived from code provided by user shandelman116.  
 14-Jul-2015  mk  Adapt to new situation that renderer 0 == [CoreText](CoreText) on OSX.  
+14-Nov-2021  mk  Throw out a lot of pointless code for the year 2021.  
 
 
 

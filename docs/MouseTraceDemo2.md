@@ -8,6 +8,7 @@
 Draw a curve with the mouse. Same as [MouseTraceDemo](MouseTraceDemo), but asks  
 [Screen](Screen)('[Flip](Flip)') to not clear the framebuffer after flip. This way,  
 we don't need to redraw the whole mousetrace in each frame.  
+Uses the imaging pipeline via [PsychImaging](PsychImaging) for optimal performance.  
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
   
 See also: [PsychDemos](PsychDemos), [MouseTraceDemo](MouseTraceDemo), [GetMouse](GetMouse).  

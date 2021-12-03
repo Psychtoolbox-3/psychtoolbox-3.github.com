@@ -1,5 +1,5 @@
 # [WindowSize](WindowSize)
-##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)>[AlphaImageDemo](AlphaImageDemo)
+##### >[Psychtoolbox](Psychtoolbox)>[PsychOneliners](PsychOneliners)
 
 [width,height] = [WindowSize](WindowSize)(window)  
   
@@ -12,10 +12,10 @@ Returns a window's width and height.
 
 <div class="code_header" style="text-align:right;">
   <span style="float:left;">Path&nbsp;&nbsp;</span> <span class="counter">Retrieve <a href=
-  "https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/beta/Psychtoolbox/PsychDemos/AlphaImageDemo/WindowSize.m">current version from GitHub</a> | View <a href=
-  "https://github.com/Psychtoolbox-3/Psychtoolbox-3/commits/beta/Psychtoolbox/PsychDemos/AlphaImageDemo/WindowSize.m">changelog</a></span>
+  "https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/beta/Psychtoolbox/PsychOneliners/WindowSize.m">current version from GitHub</a> | View <a href=
+  "https://github.com/Psychtoolbox-3/Psychtoolbox-3/commits/beta/Psychtoolbox/PsychOneliners/WindowSize.m">changelog</a></span>
 </div>
 <div class="code">
-  <code>Psychtoolbox/PsychDemos/AlphaImageDemo/WindowSize.m</code>
+  <code>Psychtoolbox/PsychOneliners/WindowSize.m</code>
 </div>
 
