@@ -1,0 +1,83 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.18 Beta update "Ode to the slacktivists" SP2 was released at 2nd December 2021.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.18.2”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.18.2>
+
+
+## General
+
+- Cleanups and refactoring, mostly irrelevant to end users.
+
+- Various help text and documentation updates.
+
+- Various improvements to demos and tests, done as part of the validation and compatibility work
+  for Matlab R2021b on Ubuntu 20.04.3-LTS, MS-Windows 10 21H1 and macOS 10.15.7 Catalina final.
+  Sponsored by Mathworks, thanks! (https://www.mathworks.com/solutions/neuroscience.html)
+
+- New demo BasicSoundPhaseShiftDemo.m - Realtime phase-shifting of sine wave tones.
+
+## Linux
+
+- Note that modern AMD Polaris graphics cards under Linux 5.14 with the latest AMDVLK v2021.Q4.1
+  AMD Vulkan driver now support 16 bpc framebuffers for native 12 bpc output. In principle this
+  would also work with earlier AMD Sea Islands and Volcanic Islands gpu's, but needs a custom built
+  amdvlk driver, which we have available, but won't provide for free.
+
+- Some diagnostic improvements for pixel identity passthrough.
+
+- Substantial improvements to NVidia Optimus laptop support when using the proprietary NVidia
+  OpenGL driver. "help HybridGraphics" for details. Laptops with Intel integrated graphics chips
+  and NVidia discrete gpu's should work with proper timing and timestamping now on modern Linux
+  distributions like Ubuntu 20.04.3-LTS. AMD Ryzen integrated graphics + NVidia discrete gpu's
+  should also work better wrt. quality and timing, although limitations wrt. performance exist with
+  AMD's display driver and there might be unknown edge cases with broken visual stimulus onset
+  timestamping. I do have some (Linux kernel patch) solution for that, which provides excellent quality.
+  That solution is a hack though, and implementing a proper solution for the official Linux kernel
+  will take time to implement and get upstreamed, especially with the lack of proper funding. We
+  haven't decided if and under what conditions we will provide the inofficial - hacky, but well working -
+  solution. The only sure thing is we won't provide it for free.
+
+  **Please note that our general advice is to avoid hybrid graphics dual-gpu laptops. Single gpu
+     machines require less setup and have less potential for bugs and complications. Also, on
+     Windows, these dual-gpu laptops are pure trouble. These improvements for Linux are just
+     to lessen the impact of a bad purchase decision as far as this is possible.**
+
+## macOS
+
+- Switch supported and required Octave version to Octave 6.4. Octave 6.3 will likely continue to work.
+
+- Try to detect if we are running on Apple silicon "M1 SoC" ARM - Macs with Apples proprietary
+  gpu. This will enable workarounds that allow Screen() to at least limp along, still with totally
+  broken visual stimulation timing and timestamping, but at least getting a picture onto the screen,
+  instead of complete failure. Also detect and report macOS variant and version, ie. Intel (supported)
+  or ARM M1 SoC (unsupported), macOS 10.15 (supported), macOS 11/12 (unsupported).
+
+- Fix KbQueueCreate() crash if running in a single-threaded host runtime, iow. ``octave-cli``. More
+  importantly, this should avoid some keyboard queue crashes under macOS with some Python runtimes.
+  Ditto for Screen().
+
+- Note that MoltenVK 1.1.5 should be used for Vulkan on macOS.
+  
+## Windows
+
+- Switch supported and required Octave version to Octave 6.4. Octave 6.3 will likely continue to work.
+
+- Try to detect Windows version more reliable. Report Windows 11 as officially unsupported/untested.
+
+- Fix for Vulkan display backend for AMD graphics on Windows. Try to handle problems switching to
+  "fullscreen exclusive mode" better. Both the latest NVidia and AMD drivers have various bugs and
+  issues. We better try to work around them as good as we can, instead of just showing a black
+  screen. This is highly fragile under current Windows-10 due to poor graphics driver quality, and
+  may result in compromised presentation timing and timestamping. Luckily the only meaningful use
+  cases for Vulkan on Windows are HDR-10 display modes atm., so the damage is limited. Our guess
+  at the moment is that AMD driver versions older than 20.11.2 may work ok, ie. ones from before
+  November 2020. For people who want HDR display with proper timing, upgrading to AMD on Linux is
+  recommended.
