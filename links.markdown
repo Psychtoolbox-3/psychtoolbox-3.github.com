@@ -23,7 +23,7 @@ categories: getting-started
 -   [PsychoPy - Run experiments from Python (Windows, Mac OS/X)](http://www.psychopy.org/)
 -   [Vision Egg - Run experiments from Python (Windows, Mac OS/X, Linux)](http://www.visionegg.org/)
 -   [Cogent - Run experiments from Matlab (Windows, MATLAB-based and standalone versions)](http://www.vislab.ucl.ac.uk/Cogent/)
--   [PsyExTool - Psychophysical experiments from Matlab with GUI control](http://guipsyexp.sourceforge.net/)
+-   [PsyExTool - Psychophysical experiments from Matlab with GUI control](https://sourceforge.net/projects/psyextool/)
 -   [mgl - Matlab interface to OpenGL functions](http://justingardner.net/doku.php/mgl/overview)
 -   [ActiveSTIM - Software for experiments in vision, behavioral, and cognitive science](http://www.activestim.com/)
 
