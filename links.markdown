@@ -25,7 +25,6 @@ categories: getting-started
 -   [Cogent - Run experiments from Matlab (Windows, MATLAB-based and standalone versions)](http://www.vislab.ucl.ac.uk/Cogent/)
 -   [PsyExTool - Psychophysical experiments from Matlab with GUI control](http://guipsyexp.sourceforge.net/)
 -   [mgl - Matlab interface to OpenGL functions](http://justingardner.net/doku.php/mgl/overview)
--   [ActiveSTIM - Software for experiments in vision, behavioral, and cognitive science](http://www.activestim.com/)
 
 #### Toolkits for auditory experiments:
 
