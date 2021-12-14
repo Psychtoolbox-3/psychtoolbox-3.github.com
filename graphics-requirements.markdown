@@ -4,6 +4,8 @@ title: Graphics hardware requirements and recommendations
 categories: getting-started
 ---
 
+# THIS PAGE IS OUTDATED AND STALE SINCE YEARS. DONT'T USE IT. READ THE SYSTEM REQUIREMENTS SECTION LINKE ON OUR MAIN WEBPAGE INSTEAD
+
 #### Contents
 
 -  TOC be here
