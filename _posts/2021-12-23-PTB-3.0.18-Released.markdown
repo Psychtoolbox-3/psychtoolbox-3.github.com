@@ -1,0 +1,18 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.18 Beta update "Ode to the slacktivists" SP3 was released at 23rd December 2021.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.18.3”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.18.3>
+
+## General
+
+- Make PsychStartup more compatible with Matlab standalone app deployment via mcc on Windows. If one knows exactly how, this allows to build standalone apps at least with R2019b and on Windows-10/11, as verified. Status on macOS or Linux is untested, but should supposedly work more easy on macOS and even more easy on Linux.
+
+- Workaround for PsychVulkanCore for build systems with outdated Vulkan SDK. Mostly useful to keep Psychtoolbox 3.0.18 for GNU/Octave building for the NeuroDebian version and by upstream Linux distributions like Debian and Ubuntu, until they update their Vulkan SDK to at least version 1.2.189. Also, we can spare ourselves an update on macOS for the moment, given it lacks the functionality anyway. Some latency optimizations are compile-time disabled for such builds though, so for maximum performance one would want to get our own upstream build via ``DownloadPsychtoolbox``, which does not lack this optimization. However, as of end 2021, only the NVidia proprietary Vulkan drivers for Linux and Windows implement the feature, and only in such a half-assed and broken way that it is utterly useless on those drivers.
