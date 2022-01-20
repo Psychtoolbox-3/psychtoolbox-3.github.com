@@ -1,0 +1,28 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.18 Beta update "Ode to the slacktivists" SP4 was released at 20th January 2022.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.18.4”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.18.4>
+
+
+This release is all about low-level sound driver improvements.
+
+## General
+
+- PsychPortAudio robustness improvements for some exotic sound hardware that provides/requires/uses variable buffersize audio hostbuffers, instead of the more common fixed size audio hostbuffers. Should help on Windows, macOS and Linux in such cases to avoid audio artifacts during recording or playback under such conditions. Code inspection showed that such artifacts were theoretically possible, although no such artifacts are known to us to have happened in practice, neither reported from users, nor experienced in my own testing, so maybe this issue was non-existent on typically used mainstream hardware in practice. Anyway, the theoretical possibility is now fixed.
+
+- PsychPortAudio: No longer enforce a 96000 Hz sampling rate in agressive low latency mode if no sampling frequency was specified by user code. Misc other small audio setup improvements.
+
+## Linux
+
+- PsychPortAudio robustness improvements in half-duplex audio capture mode for some exotic sound hardware. Fixes a theoretical issue, not one actually reported by users or experienced by myself. But better safe than sorry.
+
+- Prep-work for use of a new upcoming Pulseaudio sound server backend on Linux, and changed default device selection priorities. If a Portaudio library with Pulseaudio sound server support would be installed on the Linux machine, then that server could be used now by PsychPortAudio by passing in an explicit deviceNumber for a Pulseaudio backed sound device. For auto device selection, `InitializePsychSound([reallyneedlowlatency=0]) is now prepared to allow to prefer Pulseaudio devices for `reallyneedlowlatency==0` - or for omission of the parameter - over Jack pro-audio server provided devices, and over ALSA devices. In `reallyneedlowlatency==1` setting, the preference order is Jack, then Pulseaudio, then ALSA. Actual preference order also depends on the requested `latencyclass` in each individual ``PsychPortaudio('Open')`` call: Audio device sharing with other audio clients by default can only happen for `latencyclass` 0 and 1, not for class 2 or higher. This to align Linux audio behavior more strongly with macOS behavior and some Windows behavior and make it easier to share audio devices with other applications, system sounds, `Snd`, `Beeper`, `sound`, `soundsc` or our movie playback functions, at least for cases where reasonably low latency and good timing precision and audio control is enough, as opposed to minimum latency + maximum precision and control. However, this new `InitializePsychSound` behavior is currently disabled, until a suitable Portaudio library with Pulseaudio support has been officially released and extensively  tested by us. Tests against the current prototype are highly promising though and this driver is compatible with the prototype if somebody feels manually installing the prototype to relly live life on the bleeding edge. `InitializePsychSound.m` has a `return` statement that one needs to comment out for this to work.
+The new Portaudio library is unlikely to debut in the next Ubuntu 22.04-LTS release though, given approaching deadlines, but for the unlikely case it would make it before deadlines, we want to be prepared.
