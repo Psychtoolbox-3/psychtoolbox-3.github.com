@@ -8,9 +8,14 @@ low-latency, multi-channel sound playback and recording.
   
 Call it at the beginning of your experiment script, optionally providing  
 the 'reallyneedlowlatency' flag set to one to push really hard for low  
-latency.  
+latency. Redundant calls within one session will be ignored, only the first  
+call counts. However, redundant calls with contradictory settings of the  
+'reallyneedlowlatency' flag will print a "don't do that!" warning, so if you  
+want to truly switch the 'reallyneedlowlatency' parameter, e.g., between  
+running different experiment scripts, you must call 'clear all' to reset  
+everything first.  
   
-On [MacOS](MacOS)/X and GNU/Linux, the [PsychPortAudio](PsychPortAudio) driver will just work with  
+On macOS and GNU/Linux, the [PsychPortAudio](PsychPortAudio) driver will just work with  
 low latency and highest timing precision after this initialization.  
   
 ### On Microsoft Windows, things are a bit more complicated:  
@@ -32,7 +37,7 @@ as 10 msecs with onboard sound chips on Windows-10, and maybe even on Windows 8.
 On Windows 7 latencies around 20 msecs are possible. Timing should be generally  
 accurate to millisecond level with WASAPI.  
   
-Using OSX or Linux will usually get you at least as good, or usually better,  
+Using macOS or Linux will usually get you at least as good, or usually better,  
 results with most standard sound hardware, due to the technically superior  
 sound systems of these operating systems.  
   
