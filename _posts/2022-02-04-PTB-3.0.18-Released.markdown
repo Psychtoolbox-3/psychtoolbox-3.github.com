@@ -1,0 +1,32 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.18 Beta update "Experimental Taylor expansion" was released at 4th February 2022.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.18.5”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.18.5>
+
+This release contains some minor improvements, but mostly some experimental and exciting improvements for Linux in composited stimulus presentation mode.
+
+## General
+
+- ``PsychHomeDir(), PsychtoolboxConfigDir()`` compatibility fixes for Matlab compiler on Unix, contributed by Ian Andolina.
+
+- ``Screen('DrawText')``: Improve help text on drawtext plugin rendering failure. The most common cause for failure is that libfontconfig can't find a suitable font, usually because something's wrong with the fontconfig cache. Be a bit more explicit about this and point the user into the right direction. This problem usually only happens occasionally on MS-Windows and Apple macOS, it was not ever observed on Linux.
+
+- ``Screen``: Add some visual indication of some types of triple-buffering. This will cause some fast "jiggle" or "vibrating" movement of the startup splash image if Psychtoolbox does successfully bypass the desktop compositor, but the low-level display driver still employs triple buffering. Not all types of triple-buffering or n-buffering with n > 2 can be detected, e.g., it is expected to not be diagnostic at all in desktop compositor situations, "Optimus" style render offload etc. The most straightforwad type of triple buffering may be detectable, e.g., what the Intel graphics driver on MS-Windows 10+ uses on most modern Intel graphics chips. There should be no visible change for double-buffered systems, only on triple buffering in some conditions. The test has a high false negative rate. We don't use it on Linux, as we have much better diagnostic built in since many years due to superior api's for this stuff on Linux. Also n-buffering is nothing bad on Linux with FOSS drivers, but often beneficial for performance, it is only an easily detected issue with the NVidia proprietary graphics driver on not recommended NVidia hardware.
+
+- Update ``help SyncTrouble`` with a description of this new visual diagnostic cue. Note that DWM -> invisible windows diagnostics at ``Screen('Preference', 'Visualdebuglevel', 6)`` is much less reliable (high false negative rate) at detecting compositor involvement since some MS-Windows 10 update late 2021. Note the unfixable triple-buffer brokeness of Intel graphics on Windows. Note the unfixable brokeness of Apple M1 SoC "Apple Silicon" ARM Macs at the moment.
+
+## Linux
+
+- Experimental support for the NetWM frame timing protocol for improved client - compositor sync to allow for supposedly robust and precise visual stimulus onset timestamps and improved stimulus onset timing even with half-transparent or partially (per-pixel alpha) transparent fullscreen windows, "windowed" non-fullscreen windows, and certain hybrid graphics configurations, e.g., "NVidia Optimus" laptops with AMD integrated display gpu (iGPU) and NVidia discrete render offload gpu (dGPU).
+  - This requires an X11 compositing window manager with NetWM frame timing support: Currently Gnome-3's "Mutter" is known to support this, so use of Ubuntu 20.04-LTS standard "Ubuntu desktop (X11)" or of "Gnome desktop (X11)" should work. Probably most (all?) other desktop environments, e.g., KDE, won't support this.
+  - You need to opt-in to use of this feature by setting the environment variable ``PSYCH_EXPERIMENTAL_NETWMTS to 1``, e.g., via ``setenv('PSYCH_EXPERIMENTAL_NETWMTS', '1')``. The feature is currently a construction site which only works for the most basic and common use case of a single onscreen window, only use of ``Screen('Flip')`` not async flips, no frame-sequential stereo or fine-grained VRR/FreeSync/G-Sync timing, no use of flip events (ie. no functionality demonstrated in ``PerceptualVBLSyncTestFlipInfo.m``) for extra performance boosts or asynchronous operation. Unless the feature supports all reasonable use cases, or at least guards/falls back in a reasonable way on unsupported cases instead of just malfunctioning or hanging without warning, and until is verified more stringently, we keep this an experimental opt-in. The default behavior will stay to have no timing precision/reliability and/or reduced performance in AMD iGPU + NVidia dGPU Optimus configurations, for transparent windows or for windowed windows, just as in the past and on all other operating systems.
+  - **The timing precision and reliability of visual onset timestamps has not been verified with hardware measurement equipment yet** as I am away from the needed equipment for a few weeks. Only software based checks and "eye balling" has been done with Ubuntu desktop and GNOME-3 on Ubuntu 20.04.3-LTS on Intel graphics, and Ubuntu 21.10 on AMD graphics so far, but it looks as if it works correctly. If you use the feature and depend on its precision, wait for my official test results, or measure carefully yourself! In theory this experiment could turn into a failure, although i judge the likelihood of failure low at this point.
+  - [Credit for proposing and publishing the protocol, and for implementing support for it in GNOME's Mutter compositor, goes to Red Hat's Owen Taylor, which also has some nice blog posts about the challenges and tradeoffs of timing vs. performance vs. latency vs. judder in desktop compositors under this link](https://blog.fishsoup.net/2011/11/08/applicationcompositor-synchronization/).
