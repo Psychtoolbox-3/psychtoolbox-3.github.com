@@ -220,7 +220,7 @@ muxless hybrid graphics Laptop.
   Psychtoolbox 3.0.18.2 and later has some support for this. Setup is the  
   same as in the section above for Intel iGPU + [NVidia](NVidia) dGPU. However, due  
   to current limitations in the AMD Linux display driver amdgpu-kms as of  
-  at least Linux 5.14, proper pageflipping and scanout is not yet  
+  at least Linux 5.16, proper pageflipping and scanout is not yet  
   supported. Psychtoolbox will need to use (and force-enable) the desktop  
   compositor of your Ubuntu/Gnome/KDE desktop GUI to get proper high  
   quality pictures on the display. It will try some hackery to try to get  
@@ -235,8 +235,16 @@ muxless hybrid graphics Laptop.
   that is half the video refresh rate of the display. E.g., on a standard  
   60 Hz display, you won't be able to achieve more than 30 fps!  
   
-  I have developed experimental patches to the Linux amdgpu driver to  
-  lift this limitation to get the same excellent performance and  
+  If you use the Gnome or Ubuntu desktop GUI (or any GUI which uses the Gnome  
+  "Mutter" X11 compositor and window manager), you can try the following  
+  command setenv('PSYCH\_EXPERIMENTAL\_NETWMTS', '1') to opt-in into some highly  
+  experimental mode which may make timing more reliable and trustworthy, while  
+  potentially achieving higher framerates again. The downside is that only  
+  single-window use with [Screen](Screen)('[Flip](Flip)') will work, no more fancy things like  
+  flip events, async flips, frame-sequential stereo - This is a construction site!  
+  
+  I also have developed experimental patches to the Linux amdgpu driver to  
+  lift all these limitations on AMD to get the same excellent performance and  
   reliability as with Intel iGPU's, but the current patches are hacky and  
   unlikely to get accepted into official Linux kernels in their current  
   state. Time permitting i will try to get those integrated properly.  
