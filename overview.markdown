@@ -60,7 +60,7 @@ which we can't count.
 The Psychtoolbox [forum][forum] has over 2800 members and about 4 messages a day.
 Principal investigators and their collaborators have identified at least 127
 [#grant-supported projects](../grants) that use it. According to Google scholar,
-over 25635 articles [cite](../citations) it.
+over 31671 articles [cite](../citations) it.
 
 Commercial support and services around Psychtoolbox are available on the commercial
 companion website [www.psychtoolbox.net](https://www.psychtoolbox.net).
