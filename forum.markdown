@@ -24,8 +24,9 @@ and received 24136 messages during its lifetime from 17th January 2000 to 28th
 October 2019. We hope the new forum will show as much user engagement, now that
 it is reestablished since January 2020.
 
-
+<!--- Disable - It is a bit pointless to show info that is multiple years outdated by now.
 ![Histogram of forum postings](images/ForumUsersChart.png)
+--->
 
 <!--- This is how you let Google chart api plot the chart:
 ![Histogram of forum postings](http://chart.apis.google.com/chart?chxr=0,0,2000|1,2000,2019&chbh=a&chco=A2C180&chd=t:327,398,988,539,771,1084,1498,1911,1439,1524,1219,1614,1618,2076,1451,1596,1218,1212,879,681&chds=0,2000&chs=500x100&cht=bvg&chts=676767,13.5&chtt=Forum+posts+per+year&chxs=1,676767,10,0,lt,676767&chxt=y,x)
