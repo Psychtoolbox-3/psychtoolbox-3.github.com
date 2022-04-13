@@ -223,7 +223,7 @@ Psychtoolbox should work on
 
 -   Matlab 64-bit. Currently tested and supported with release R2021b.
     External mandatory requirements: Microsoft C MSVC 2015-2019 runtime and
-    GStreamer 1.18.5 MSVC or later. Installation of GStreamer _before_ installation
+    GStreamer 1.18.5 MSVC. Installation of GStreamer _before_ installation
     of Psychtoolbox is mandatory on Matlab or the Screen mex file will not work.
 
 -   [GNU Octave 6.4.0, 64-Bit. Installation of GStreamer _before_ installation
@@ -270,15 +270,15 @@ Ubuntu 20.04-LTS.
 Additional software
 -------------------
 
-#### Multimedia engine: GStreamer 1.18.5 or later required on Windows and macOS
+#### Multimedia engine: GStreamer 1.18.5 required on Windows and macOS
 
-Installation of GStreamer version 1.18.5 or later is mandatory for movie playback,
+Installation of GStreamer version 1.18.5 is mandatory for movie playback,
 movie recording, video capture and video recording. Multimedia functions won't
 work on **macOS** without GStreamer 1.18.5 being installed. Neither will high quality
 text rendering work, unless you use Octave instead of Matlab. If you want to use
 Psychtoolbox for visual stimulation on **Windows** you will _have_ to install
 GStreamer first, even if you do not need any multimedia functions, or Psychtoolbox
-won't work. GStreamer 1.18.5 MSVC variant or later is needed, earlier versions or
+won't work. GStreamer 1.18.5 MSVC variant is needed, earlier versions or
 MinGW variants will not work on Windows.
 
 On **Linux** you also need GStreamer, but GStreamer is a de-facto standard

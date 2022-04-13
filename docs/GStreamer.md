@@ -17,7 +17,7 @@ for video recording, not live capture).
   
 You will need at least version 1.8 of [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) on Linux, and at least  
 version 1.18 on Windows and macOS, but we recommend to use the latest  
-available stable release of the version 1 series. For limited HDR  
+stable release of the version 1 series tested by us (see below). For limited HDR  
 playback support on Linux, you will need at least [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) 1.16 + some  
 modifications to your playback scripts. For full HDR playback support on  
 Linux, just as on Windows, you will need at least version 1.18. HDR  
