@@ -1,7 +1,7 @@
 # [DownloadPsychtoolbox](DownloadPsychtoolbox)
 ##### >[Psychtoolbox](Psychtoolbox)
 
-[DownloadPsychtoolbox](DownloadPsychtoolbox)([targetdirectory][, flavor][, targetRevision][, downloadmethod])  
+[DownloadPsychtoolbox](DownloadPsychtoolbox)([targetdirectory][, flavor][, targetRevision][, downloadmethod][, tryNonInteractiveSetup=0])  
   
 This script downloads the latest GNU/Linux, MS-Windows, or Apple macOS  
 Psychtoolbox-3, version 3.0.10 or later, from our git-server to your  
@@ -105,6 +105,15 @@ or later, instead of a svn command-line client. You can always enforce
 use of an installed svn command-line client via setting downloadmethod to  
 -1. This is the old way of doing things, in case the improved method via  
 [SVNKit](SVNKit) should not work for some reason.  
+  
+  
+The optional parameter 'tryNonInteractiveSetup' if provided as 1 (true), will  
+try a setup without user interaction, not asking users for input in certain  
+situations, but assuming an answer that keeps the setup progressing. Note that  
+this is not guaranteed to work in all cases, and may end in data loss, e.g.,  
+overwriting an old and potentially user-modified Psychtoolbox installation.  
+This non-interactice setup mode is highly experimental, not well tested, not  
+supported in case of any trouble!  
   
   
 INSTALLATION INSTRUCTIONS: The Wiki contains much more up to date  

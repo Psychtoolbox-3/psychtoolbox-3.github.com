@@ -19,6 +19,8 @@ data you want to use to define the space.
 8/21/21   dhb     Added a few more checks and comments.  Made some of the  
                   numbers less generic, on the view that testing is more  
                   robust in such cases.  
+4/13/22   dhb     Fixed unfinished comment, added numerical check of  
+                  agreement at end.  
 
 
 

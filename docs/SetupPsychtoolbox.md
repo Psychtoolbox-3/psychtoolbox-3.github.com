@@ -3,10 +3,19 @@
 
 [SetupPsychtoolbox](SetupPsychtoolbox) - In-place setup of PTB without network access.  
   
+[SetupPsychtoolbox](SetupPsychtoolbox)([tryNonInteractiveSetup=0])  
+  
 This script prepares an already downloaded working copy of Psychtoolbox  
-for use with Matlab or Octave. It sets proper paths, performs online  
-registration if connected to a network and takes care of special setup  
-operations for the Java based [GetChar](GetChar) implementation.  
+for use with Matlab or Octave. It sets proper paths and takes care of  
+special setup operations for various things.  
+  
+The optional parameter 'tryNonInteractiveSetup' if provided as 1 (true), will  
+try a setup without user interaction, not asking users for input in certain  
+situations, but assuming an answer that keeps the setup progressing. Note that  
+this is not guaranteed to work in all cases, and may end in data loss, e.g.,  
+overwriting an old and potentially user-modified Psychtoolbox installation.  
+This non-interactice setup mode is highly experimental, not well tested, not  
+supported in case of any trouble!  
   
 This setup routine is meant for people who want to install Psychtoolbox  
 but don't have direct access to the internet. Installation in that case  

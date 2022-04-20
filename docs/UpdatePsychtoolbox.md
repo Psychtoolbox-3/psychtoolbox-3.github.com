@@ -1,7 +1,7 @@
 # [UpdatePsychtoolbox](UpdatePsychtoolbox)
 ##### >[Psychtoolbox](Psychtoolbox)
 
-[UpdatePsychtoolbox](UpdatePsychtoolbox)(targetdirectory, targetRevision)  
+[UpdatePsychtoolbox](UpdatePsychtoolbox)([targetdirectory][, targetRevision][, tryNonInteractiveSetup=0])  
   
 Update your working copy of the Psychtoolbox with the latest bug fixes,  
 enhancements, and features from our Git server.  
@@ -30,6 +30,14 @@ downgrade until stuff works for you.
   
 [UpdatePsychtoolbox](UpdatePsychtoolbox) cannot change the beta-vs-stable flavor of your  
 Psychtoolbox. To change the flavor, run [DownloadPsychtoolbox](DownloadPsychtoolbox) again.  
+  
+The optional parameter 'tryNonInteractiveSetup' if provided as 1 (true), will  
+try a setup without user interaction, not asking users for input in certain  
+situations, but assuming an answer that keeps the setup progressing. Note that  
+this is not guaranteed to work in all cases, and may end in data loss, e.g.,  
+overwriting an old and potentially user-modified Psychtoolbox installation.  
+This non-interactice setup mode is highly experimental, not well tested, not  
+supported in case of any trouble!  
   
 
 
