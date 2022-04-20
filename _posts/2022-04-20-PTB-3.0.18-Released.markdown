@@ -1,0 +1,31 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.18 Beta update "Experimental Taylor expansion " SP2 was released at 20th April 2022.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.18.7”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.18.7>
+
+## General:
+
+- GetClicks(): Add timeout for 1st click, and click time reporting.
+- Setup/Download/UpdatePsychtoolbox(): Add highly experimental optional support for non-interactive operation. May help sysadmins to setup multiple machines faster without too much user interaction. Experimental, unsupported in case of trouble, will not work easily on Linux - would need more work to update PsychLinuxConfiguration.
+- PsychPaidSupportAndServices(): Update language a bit for new support conditions.
+- Fixes by Diederick for DrawFormattedText2() cached text drawing while geometric transformations are applied.
+- DKLDemo.m: Some comment fixes by David Brainard.
+
+## Linux:
+
+- PsychPortAudio(): Change realtime priority setup for ALSA and Pulseaudio: Instead of assigning static FIFO RT priority 1, use priority of main thread (aka ``Priority()``) + 4, so audio processing stays at higher RT priority than main thread or other PTB threads. May help some special edge cases, e.g., Microsoft Surface Pro 6 audio glitches in some scnearios that I could not reproduce, but a user could. See https://psychtoolbox.discourse.group/t/audio-and-surface-pen-questions/4276
+- Add a GitHub actions CI setup to allow to build our mex files for 64-Bit Linux on Intel in the GitHub cloud, both for Octave 5.2 and Matlab under Ubuntu 20.04-LTS.
+- Make Screen() mex files hopefully compatible with Ubuntu 22.04.0-LTS, by changing link dependency to libdc1394-25. Only lightly tested.
+
+## Windows:
+
+- Require use of GStreamer 1.18.x series, 1.18.5 as latest tested release. GStreamer 1.20 contains multiple potential compatibility bugs wrt. fontconfig / high quality text rendering under Matlab + Windows. Octave 6.4 + Windows should be unaffected, as are other operating systems.
+
