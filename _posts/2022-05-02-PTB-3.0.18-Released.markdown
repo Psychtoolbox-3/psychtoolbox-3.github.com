@@ -1,0 +1,26 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.18 Beta update "Experimental Taylor expansion " SP3 was released at 2nd May 2022.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.18.8”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.18.8>
+
+Minor bug fixes / compatibility improvements.
+
+## Linux
+
+- Detect if the Screen() function (for X11/GLX Linux) is executed under a Wayland based desktop GUI,
+which would run it under XWayland, which would end badly. Warn user, error abort with troubleshooting
+tips -> Logout and login into a X11/Xorg native X-Server session.
+This to deal with the new default choice of a Wayland-based desktop environment under Ubuntu 22.04-LTS,
+which leads to "failure by default".
+
+## Windows
+
+- Improve postinstall routine to skip sync tests while rebuilding the fontconfig cache on Window or macOS, as sync failure could cause a false error and failure to rebuild the fontconfig cache. Spotted on Windows, but may also apply to macOS.
