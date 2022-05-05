@@ -1,0 +1,20 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.18 Beta update "Experimental Taylor expansion " SP4 was released at 4th May 2022.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.18.9”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.18.9>
+
+Minor bug fix for 3.0.18.8 Linux + Wayland handling.
+
+## Linux
+
+
+- Prevent use of Wayland backend by default also under Octave, not just Matlab!
+  setenv('PSYCH_ALLOW_WAYLAND','1'); to override for the adventurous and masochistic.
