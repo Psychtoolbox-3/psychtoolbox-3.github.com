@@ -7,8 +7,8 @@ This folder contains help files and info on different topics
 related to [PTBs](PTBs) use, technical implementation and troubleshooting.  
   
 Note that you can now financially contribute to Psychtoolbox sustainability,  
-upkeep and continued improvement by buying a community membership, which  
-also includes some priority support for questions regarding its use, or  
+upkeep and continued improvement by buying a "Psychtoolbox Support Membership",  
+which also includes some paid support for questions regarding its use, or  
 issues you may have with it. We also offer paid feature development and  
 other useful commercial services.  
   

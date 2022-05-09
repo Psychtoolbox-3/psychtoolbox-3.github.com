@@ -45,7 +45,7 @@ of signals by attaching AM modulator slave devices to the pafixedsine and pashif
 slave devices used here. A suitable time series of AM envelope values would allow to  
 gate the output sine waves.  
   
-This demo was sponsored by a priority support request. Thanks!  
+This demo was sponsored by a paid support request. Thanks!  
   
 ### Usage:  
   
