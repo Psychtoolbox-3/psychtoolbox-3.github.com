@@ -90,4 +90,4 @@ Read below how you can assist us in helping you effectively ...
   [docs-documentation]: http://docs.psychtoolbox.org/PsychDocumentation
   [forum]: https://psychtoolbox.discourse.group
   [faq]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/wiki/FAQ
-  [priority-support]: /prioritysupport
+  [priority-support]: https://www.psychtoolbox.net/license-key

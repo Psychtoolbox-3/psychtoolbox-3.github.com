@@ -433,7 +433,7 @@ of older versions can be found at the bottom of the page found
 
   [requirements]: /requirements
   [forum]: /forum
-  [priority-support]: /prioritysupport
+  [priority-support]: https://www.psychtoolbox.net/license-key
   [versions]: /versions
   [using-on-linux]: /linux
 
