@@ -26,7 +26,7 @@ Psychtoolbox and the use of Linux for neuroscience, among them a
 "Psychtoolbox Support Membership".
 
 Your lab can now financially contribute to Psychtoolbox sustainability,
-upkeep and continued improvement, by once a year buying such a community
+upkeep and continued improvement, by once a year buying such a
 membership for a modest fee. This membership entitles you to some
 paid support for questions regarding efficient use of Psychtoolbox,
 questions regarding the resolution of issues you may have with it, fixing
@@ -34,8 +34,7 @@ of bugs you may encounter, and feature requests. MII also offers paid
 feature development and other commercial services.
 
 Please visit the following website, operated by MII, for our offering of
-commercial development services, and for the community membership with
-paid support:
+commercial development services, and for the "Psychtoolbox Support Membership":
 
 
 [https://www.psychtoolbox.net](https://www.psychtoolbox.net)
@@ -56,9 +55,8 @@ sufficiently high quality is invited to contribute to the open-source
 code, the documentation on this public community website and Wiki, and to
 participate and help each other on the public community forum.
 
-Faster support on the forum or the bug trackers, or of any support at all
-in times of high developer workload will however be reserved to paying
-community members.
+Professional support on the forum or the bug trackers by our main developer
+will be reserved to paying community members.
 
 Thanks for your participation and support!
 
