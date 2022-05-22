@@ -1,0 +1,32 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.18 Beta update "Experimental Taylor expansion " SP5 was released at 22nd May 2022.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.18.10”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.18.10>
+
+A minor update for macOS Octave compatibility, help/status text updates and to mention our new user survey.
+
+## General:
+
+- Reword text for our new commercial support.
+- Add a mention of our ongoing user survey 2022, ask for participation.
+
+## macOS:
+
+- Rebuild 64-Bit Octave mex files so that they should work on both Octave-6.3/6.4 and the new Octave-7.1 from HomeBrew.
+- Minor improvements to ``Screen()`` status messages.
+
+## Linux:
+
+- Update some help texts wrt. hybrid graphics support. Some more configurations are verified to work with proper timing, e.g., AMD iGPU + NVidia dGPU Optimus style.
+- Update ``help PsychLinuxConfiguration``.
+
+Enjoy!
+
