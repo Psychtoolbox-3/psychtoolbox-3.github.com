@@ -238,10 +238,10 @@ muxless hybrid graphics Laptop.
   If you use the Gnome or Ubuntu desktop GUI (or any GUI which uses the Gnome  
   "Mutter" X11 compositor and window manager), you can try the following  
   command setenv('PSYCH\_EXPERIMENTAL\_NETWMTS', '1') to opt-in into some highly  
-  experimental mode which may make timing more reliable and trustworthy, while  
-  potentially achieving higher framerates again. The downside is that only  
-  single-window use with [Screen](Screen)('[Flip](Flip)') will work, no more fancy things like  
-  flip events, async flips, frame-sequential stereo - This is a construction site!  
+  experimental mode which makes timing reliable and trustworthy, however while  
+  potentially reducing framerate. Additional downsides are that currently only  
+  single-window use with [Screen](Screen)('[Flip](Flip)') will work, also no more fancy things like  
+  flip events, async flips, frame-sequential stereo or VRR. This is a construction site!  
   
   I also have developed experimental patches to the Linux amdgpu driver to  
   lift all these limitations on AMD to get the same excellent performance and  
@@ -257,8 +257,8 @@ muxless hybrid graphics Laptop.
 For those combinations that should work (Intel iGPU + [NVidia](NVidia)/AMD dGPU  
 "Optimus/Enduro", and AMD iGPU + AMD dGPU), after you've upgraded to all  
 the required software, the following setup steps are needed for muxless  
-PRIME mode. Note that these \*do not apply\* to Optimus with the  
-proprietary graphics driver from [NVidia](NVidia) for which setup was explained above:  
+PRIME mode. Note that these \*do not apply\* to Optimus with the proprietary  
+graphics driver from [NVidia](NVidia), for which setup was explained above:  
   
 1. Run the "[XOrgConfCreator](XOrgConfCreator)" script to create a proper [XOrg](XOrg) configuration file,  
    and then "[XOrgConfSelector](XOrgConfSelector)" to switch to that configuration file, logout and  
