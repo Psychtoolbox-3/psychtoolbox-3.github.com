@@ -28,7 +28,7 @@ Short version
 
 -   *Runtime environment:*
 
-    64-Bit Matlab version R2021b or later (older versions will likely work, but are no longer tested
+    64-Bit Matlab version R2022a or later (older versions will likely work, but are no longer tested
     for compatibility or supported by us in case of trouble), and GNU Octave version 5.2 or later versions
     on Linux, and 64-Bit [Octave version 6.4.0 on macOS][OctavemacOS] [and on MS-Windows.][OctaveForWindows]
 
@@ -114,7 +114,7 @@ Operating systems
 GNU/Linux is fully supported on Intel compatible PCs and suitable (== older) Apple
 Macintosh computers under
 
--  Matlab 64-bit, version R2021b and later versions. Older versions probably work,
+-  Matlab 64-bit, version R2022a and later versions. Older versions probably work,
    but are no longer tested.
 -  GNU Octave 64-bit, versions 5.2, 6.1, and probably 6.2.
 -  Additionally, Psychtoolbox from NeuroDebian supports 32-Bit and 64-Bit
@@ -123,7 +123,7 @@ Macintosh computers under
    or Octave 5.x and Octave 6.x on recent distributions.
 
 Psychtoolbox testing and development occurs mainly on the most recent Ubuntu
-Linux LTS releases or flavors of them, currently Ubuntu 20.04.3-LTS. Distributions
+Linux LTS releases or flavors of them, currently Ubuntu 20.04.4-LTS. Distributions
 older than Ubuntu 20.04-LTS are no longer supported by Psychtoolbox 3.0.18.
 
 NeuroDebian tests and supports PTB also on Debian GNU/Linux. According to
@@ -161,27 +161,28 @@ and education purposes.
 Psychtoolbox is also being developed and tested under Apple macOS 10.
 Psychtoolbox should "work" in principle on
 
--  64-bit Matlab R2021b on macOS 10.11 "El Capitan" to macOS 10.15.
--  64-bit Octave v6.4.0 on macOS 10.11 "El Capitan" to macOS 10.15. As of 2021,
-   [you will need to get Octave 6.4.0 from a package manager like HomeBrew][OctavemacOS]
-   or MacPorts, as standalone binary installers are not available yet.
+-  64-bit Matlab R2022a on macOS 10.15 "Catalina", maybe macOS 10.14 (untested).
+-  64-bit Octave v6.4, probably v7.1/v7.2 on macOS 10.15 "Catalina", maybe macOS 10.14 (untested).
+-  As of 2022, [you will need to get Octave 6.4+ from a package manager like HomeBrew][OctavemacOS]
+   as standalone binary installers are not available yet.
 
 Limited testing currently only happens on the latest version of macOS 10.15.7
-“macOS Catalina” with 64-Bit Octave 6.4.0, and with 64-bit Matlab R2021b.
+“macOS Catalina” with 64-Bit Octave 6.4, and with 64-bit Matlab R2022a.
 These are the only somewhat supported versions of macOS at this point in time.
-Avoid macOS Catalina 10.15 if you don't have to. Psychtoolbox is compatible with
-Catalina in principle, and Catalina is the only currently tested system, but Catalina
-has fantastic new bugs and flaws, e.g., a slow-down of keyboard input by a factor of 5x,
-and various trouble wrt. keyboard input, sound input, video capture, thanks to Catalina's
-awful new security design -- Prepare for lots of hassle if you choose Catalina, you
-have been warned! _macOS is the most buggy and hazardous operating system you could
-use for visual stimulation, or DAQ digital/analog i/o, so running real data collection
-using macOS will likely bring you a world of pain (and possibly irreproducible research)_.
+Psychtoolbox is compatible with Catalina in principle, and Catalina is the only
+currently tested system, but Catalina has fantastic new bugs and flaws, e.g., a
+slow-down of keyboard input by a factor of 5x, and various trouble wrt. keyboard
+input, sound input, video capture, thanks to Catalina's awful new security design
+-- Prepare for lots of hassle if you choose Catalina, you have been warned!
+_macOS is the most buggy and hazardous operating system you could use for visual
+stimulation, or DAQ digital/analog i/o, so running real data collection using macOS
+will likely bring you a world of pain (and possibly irreproducible research)_.
 
-macOS Mojave is possibly a better working choice, although no longer tested by us. The
-fact that it is no longer developed or supported by Apple means that Apple will no longer
-break it with respect to our needs, but it is now an attractive target for viruses and
-hackers, a security hazard! Choose your poison...
+macOS Mojave was possibly a better working choice, although no longer tested by us and
+possibly not fully compatible with Psychtoolbox 3.0.18 anymore. The fact that it is no
+longer developed or supported by Apple means that Apple will no longer break it with
+respect to our needs, but it is now an attractive target for viruses and hackers,
+a security hazard! Choose your poison...
 
 **macOS 11 Big Sur or macOS 12 Monterey are not officially supported or tested at all at the moment!**
 **macOS 11/12 on machines with Apple's new ARM based SoC's, e.g., the Apple M1 SoC,
