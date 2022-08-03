@@ -82,7 +82,7 @@ to PTB Version 2 that we have now abandoned that system.</small>
       * Official Linux Ubuntu 16.04 LTS support. However, Linux Ubuntu 16.04 LTS or other distributions with at least GStreamer 1.8 should continue to work with v3.0.17, but are no longer tested or guaranteed to stay compatible.
 
 
-      * Official macOS older than 10.15.7 support. However, older versions should continue to work with v3.0.17, but are no longer tested or guaranteed to stay compatible. Expectation is that macOS 10.11 El Capitan and later should probably still work.
+      * Official macOS older than 10.15.7 support. Older macOS versions may continue to work with v3.0.17, but are no longer tested or guaranteed to stay compatible. Hope is that macOS 10.11 El Capitan and later should probably still work at least in parts.
 
 
       * Official Windows-7, Windows-8 and Windows-8.1 support. However, older versions than Windows-10 should currently continue to work with v3.0.17, but are no longer tested or guaranteed to stay compatible.
