@@ -114,25 +114,25 @@ Operating systems
 GNU/Linux is fully supported on Intel compatible PCs and suitable (== older) Apple
 Macintosh computers under
 
--  Matlab 64-bit, version R2022a and later versions. Older versions probably work,
-   but are no longer tested.
--  GNU Octave 64-bit, versions 5.2, 6.1, and probably 6.2.
+-  Matlab 64-bit, version R2022a. Older versions likely work, but are no longer
+   tested or testable by us due to lack of access.
+-  GNU Octave 64-bit, versions 5.2, 6.1 - 6.4.
 -  Additionally, Psychtoolbox from NeuroDebian supports 32-Bit and 64-Bit
    releases of whatever version of GNU Octave ships by default with your
-   distribution, e.g., also Octave 4.0, 3.8, 3.6, 3.4 or 3.2 on older distributions,
-   or Octave 5.x and Octave 6.x on recent distributions.
+   distribution, e.g., also Octave 3.2 to 4.4 on older distributions, or
+   Octave 5.x, 6.x and 7.x on recent distributions.
 
 Psychtoolbox testing and development occurs mainly on the most recent Ubuntu
 Linux LTS releases or flavors of them, currently Ubuntu 20.04.4-LTS. Distributions
-older than Ubuntu 20.04-LTS are no longer supported by Psychtoolbox 3.0.18.
+older than Ubuntu 20.04-LTS are no longer supported since Psychtoolbox 3.0.18.
 
 NeuroDebian tests and supports PTB also on Debian GNU/Linux. According to
 user reports, Psychtoolbox seems to work reasonably well on Linux Mint, Arch
-Linux, Gentoo, and Fedora 24/25. We can't provide much support on other distros
-than Ubuntu LTS flavors due to lack of time and resources.
+Linux, Gentoo, and Fedora. We can't provide much support on other distros than
+Ubuntu LTS flavors due to lack of time and resources.
 
 It is recommended to stick to the latest long-term support (LTS) Ubuntu release,
-currently 20.04.3-LTS, if you want the most well tested and well supported setup.
+currently 20.04.4-LTS, if you want the most well tested and well supported setup.
 
 [Psychtoolbox also works with GNU Octave on the RaspberryPi 2B, 3, 4, 400 at least
 with the Debian flavor Raspbian (also known as RaspberryPi OS).][Raspbian].
@@ -142,8 +142,8 @@ access to neuroscience-related software on the Debian and Ubuntu Linux
 distributions. The NeuroDebian APT archives include a Psychtoolbox snapshot
 release, which has been packaged to be ready-to-use with GNU Octave.
 
-Recently NeuroDebian has begun to curate open-source packages [for Matlab as
-well][neurodebian-matlab], and since provides two sets of packages, one for
+NeuroDebian curates some open-source neuroscience packages [for Matlab as
+well][neurodebian-matlab], and provides two sets of packages, one for
 Octave ("octave-psychtoolbox-3") and one for Matlab ("matlab-psychtoolbox-3").
 
 For details on these options, see the [Linux installation instructions][linux-install].
@@ -161,35 +161,45 @@ and education purposes.
 Psychtoolbox is also being developed and tested under Apple macOS 10.
 Psychtoolbox should "work" in principle on
 
--  64-bit Matlab R2022a on macOS 10.15 "Catalina", maybe macOS 10.14 (untested).
--  64-bit Octave v6.4, probably v7.1/v7.2 on macOS 10.15 "Catalina", maybe macOS 10.14 (untested).
+-  64-bit macOS 10.15.7 "Catalina", maybe macOS 10.14 (untested), maybe partially
+   macOS 10.11-10.13 (untested, but known limitations, e.g., PsychPortAudio broken).
+-  64-bit Matlab R2022a, likely older recent versions upwards of R2014b, but those are untested.
+-  64-bit Octave v6.4, probably also v7.1/v7.2 (expected to work, but untested).
 -  As of 2022, [you will need to get Octave 6.4+ from a package manager like HomeBrew][OctavemacOS]
    as standalone binary installers are not available yet.
 
 Limited testing currently only happens on the latest version of macOS 10.15.7
 “macOS Catalina” with 64-Bit Octave 6.4, and with 64-bit Matlab R2022a.
+
 These are the only somewhat supported versions of macOS at this point in time.
 Psychtoolbox is compatible with Catalina in principle, and Catalina is the only
 currently tested system, but Catalina has fantastic new bugs and flaws, e.g., a
 slow-down of keyboard input by a factor of 5x, and various trouble wrt. keyboard
-input, sound input, video capture, thanks to Catalina's awful new security design
+input, sound input, and video capture, thanks to Catalina's awful new security design
 -- Prepare for lots of hassle if you choose Catalina, you have been warned!
 _macOS is the most buggy and hazardous operating system you could use for visual
 stimulation, or DAQ digital/analog i/o, so running real data collection using macOS
 will likely bring you a world of pain (and possibly irreproducible research)_.
 
-macOS Mojave was possibly a better working choice, although no longer tested by us and
-possibly not fully compatible with Psychtoolbox 3.0.18 anymore. The fact that it is no
+macOS Mojave was possibly a better working choice, although it is no longer tested by us
+and unknown if it is still fully compatible with Psychtoolbox 3.0.18. The fact that it is no
 longer developed or supported by Apple means that Apple will no longer break it with
 respect to our needs, but it is now an attractive target for viruses and hackers,
 a security hazard! Choose your poison...
 
 **macOS 11 Big Sur or macOS 12 Monterey are not officially supported or tested at all at the moment!**
 **macOS 11/12 on machines with Apple's new ARM based SoC's, e.g., the Apple M1 SoC,
-are not working with Psychtoolbox natively at all in any meaningful way. There is
-no timeline for fixing this anytime soon. It is possible to run Ubuntu Linux for
-ARM in a Virtual machine on Apple M1 for training and education purpose, according
-to a user report, ie. not for data collection, only for learning on Linux.**
+are not working with Psychtoolbox natively at all in any suitable way for data collection.
+There is no timeline for fixing this anytime soon. It is unclear if this is fixable at all,
+given the challenging and disruptive changes Apple made on Apple Silicon, especially switching
+from industry standard AMD, Intel and NVidia graphics to Apples own proprietary graphics chip.
+But also due to the disappointing lack of financial support from most of our users, we con't
+have the funds to investigate this any further at the moment.
+It is possible to run Ubuntu Linux for ARM in a Virtual machine on Apple M1 for training
+and education purpose, according to a user report, ie. not for data collection, only for
+learning on Linux. It is also possible to somewhat run Psychtoolbox on macOS 11/12, but
+with completely broken visual stimulation timing. May be good enough for basic training
+purposes though.**
 [See this link for reference about the current state.][AppleM1]
 
 Toolbox version 3.0.14 and later releases do not work under macOS 10.10
@@ -222,7 +232,7 @@ resolve at least some of these issues on AMD and NVidia graphics cards
 
 Psychtoolbox should work on
 
--   Matlab 64-bit. Currently tested and supported with release R2021b.
+-   Matlab 64-bit. Currently tested and supported with release R2022a.
     External mandatory requirements: Microsoft C MSVC 2015-2019 runtime and
     GStreamer 1.18.5 MSVC. Installation of GStreamer _before_ installation
     of Psychtoolbox is mandatory on Matlab or the Screen mex file will not work.
@@ -234,11 +244,13 @@ Psychtoolbox should work on
 
 If you choose to use Matlab, you may need to install Microsoft Visual C runtime
 libraries to make it work, specifically `vcredist_x64_2015-2019.exe`. The installer should
-give you instructions on how to do that if necessary.
+give you instructions on how to do that if necessary, ie. on install failure. The
+Psychtoolbox/PsychContributed/ subfolder contains the neccessary `vcredist_x64_2015-2019.exe`
+executable for your convenience in such a case.
 
 Psychtoolbox-3.0.17 is no longer officially supported for Windows-7 / 8 / 8.1. The
 current expectation is that it still mostly works on these systems, but just as with
-v3.0.16, only Windows-10 releases from 2021 (21H1 edition specifically) are tested and
+v3.0.16, only Windows-10 releases from 2021 (21H2 edition specifically) are tested and
 supported in case of trouble, and some functionality like sound output should be better
 on Windows-10, other functions like HDR High Dynamic Range display support will only work
 on recent Windows-10.
