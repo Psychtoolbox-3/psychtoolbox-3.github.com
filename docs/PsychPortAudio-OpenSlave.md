@@ -54,6 +54,14 @@ i.e., it records the audio stream that is sent to the speakers. This may be
 useful for capturing PsychPortAudio's audio output for documentation or debug  
 purposes.  
   
+The slave-only mode flag 256 (kPortAudioAMModulatorNeutralIsZero) when combined  
+with the flag 32, will ask for creation of an AM modulator which outputs a zero  
+value - and thereby creates silence on the modulated channels - when the  
+modulator is stopped. Without this flag, a stopped modulator acts as if no  
+modulator is present, ie. sound is output without AM modulation, instead of  
+silence. This only works for AM modulators attached to slave output devices, not  
+for AM modulators attached to a physical master device.  
+  
 All slave devices share the same settings for latencymode, timing, sampling  
 frequency and other low-level tunable parameters, because they operate on the  
 same underlying audio hardware.  

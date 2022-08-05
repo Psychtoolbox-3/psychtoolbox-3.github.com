@@ -76,7 +76,9 @@ onscreen window as not an actual visual stimulation surface, ie. actual visual
 stimulation is provided by some other external display mechanism, e.g., Vulkan  
 or some VR compositor or such. This tells [Screen](Screen)() to suppress certain warnings  
 or checks which would be prudent if the window were the primary and critical  
-means of visual stimulation.  
+means of visual stimulation. The flag kPsychDontUseFlipperThread prevents use of  
+the internal background flipper thread, and thereby of any functionality  
+depending on it, e.g., frame-sequential stereomode 11 and async flips.  
   
 "clientRect" This optional parameter allows to define a size of the onscreen  
 windows drawing area that is different from the actual size of the windows  

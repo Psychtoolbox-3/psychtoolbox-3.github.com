@@ -61,10 +61,15 @@ setting the window as drawing target.
 An 'infoType' of 8 returns 1 if the X-Screens primary gpu uses the  
 modesetting-ddx under Linux.  
   
-The info struct contains all kinds of information. Just check its output to see  
-what is returned. Most of this info is not interesting for normal users, mostly  
-provided for internal use by M-Files belonging to Psychtoolbox itself, e.g.,  
-display tests.  
+An 'infoType' of 9 returns a struct with interop info needed for interop with  
+certain clients, currently tailored to the needs of [OpenGL](OpenGL) interop with the  
+[OpenXR](OpenXR) api on Linux and Windows.  
+  
+  
+The default info struct for 'infoType' 7 and the default 'infoType' 0 contains  
+all kinds of information. Just check its output to see what is returned. Most of  
+this info is not interesting for normal users, mostly provided for internal use  
+by M-Files belonging to Psychtoolbox itself, e.g., display tests.  
   
 # The info struct contains the following fields  
   

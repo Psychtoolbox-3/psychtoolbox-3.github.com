@@ -32,46 +32,47 @@ but superfast way to query device state.
   
 LINUX: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
   
-Gamepad uses the [Screen](Screen)() mex file and its mouse query functions.  
-On Linux, gamepads and joysticks are treated as a special type of  
-mouse/pointing device with multiple extra axes and buttons. If your  
-[GamePad](GamePad) is not recognized, you may need to install the optional joystick driver.  
-This driver has different names, depending on the version of the Ubuntu distribution  
-you are using, and if the hardware enablement stack (HWE) is installed. You can  
-find out if the HWE is installed by typing: system('hwe-support-status')  
+On Linux/X11, Gamepad() uses the [Screen](Screen)() mex file and its mouse query functions.  
   
-On Ubuntu 16.04 LTS or 18.04 LTS original installs or upgrades, ie. without the  
-optional HWE installed, this should work:  
+On Linux, gamepads and joysticks are treated as a special type of mouse/pointing  
+device with multiple extra axes and buttons. You should install the optional  
+joystick driver, although the evdev driver may also work with suitable configuration.  
+  
+This joystick driver has different names, depending on the version of the Ubuntu  
+distribution you are using, and if the hardware enablement stack (HWE) is installed.  
+You can usually find out if the HWE is installed by typing: system('hwe-support-status'),  
+unless your system is weirdly configured and only partially installed the HWE,  
+in which case it matters if your X-Server is the "factory default" or the HWE  
+variant. Check in your package manager.  
+  
+On Ubuntu 20.04 LTS or 22.04 LTS original installs or upgrades, ie. without the  
+optional HWE for the X-Server installed, this should work:  
   
 "sudo apt-get install xserver-xorg-input-joystick"  
   
 ### If the HWE is installed, you will need one of the following instead:  
   
-Ubuntu 16.04-LTS: "sudo apt-get install xserver-xorg-input-joystick-hwe-16.04".  
+Ubuntu 20.04-LTS: "sudo apt-get install xserver-xorg-input-joystick-hwe-20.04".  
   
-Ubuntu 18.04-LTS: "sudo apt install xserver-xorg-input-joystick-hwe-18.04".  
+Ubuntu 22.04-LTS: "sudo apt install xserver-xorg-input-joystick-hwe-22.04".  
   
-You may also wish to install a custom joystick configuration file  
-to customize the mapping  and behaviour of buttons and axis, and if the  
-Joystick also operates as a mouse or not.  
+You should also install a custom joystick configuration file to customize the  
+mapping  and behaviour of buttons and axis, and if the Joystick also operates  
+as a mouse or not.  
   
-An example configuration file with installation instructions is   
-available in the Psychtoolbox/[PsychContributed](PsychContributed) folder under the name   
-"52-[MyLinuxJoystick](MyLinuxJoystick).conf".  
+An example configuration file with installation instructions is  available in  
+the Psychtoolbox/[PsychContributed](PsychContributed) folder under the name "52-[MyLinuxJoystick](MyLinuxJoystick).conf".  
   
 OSX: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
   
-[GamePad](GamePad) uses the [PsychHID](PsychHID) function, which provides a universal  
-interface to USB HID devices, including keyboards.  
-  
-On OS X Gamepad is an .m file but provides built-in help to match the  
-behavior of Gamepad on other platforms where it is a mex file.  
+[GamePad](GamePad) uses the [PsychHID](PsychHID) function, which provides a universal interface to  
+USB HID devices, including keyboards.  
   
 WIN: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
   
 Gamepad is not yet supported on Windows. [WinJoystickMex](WinJoystickMex)() in the  
 Psychtoolbox/[PsychContributed](PsychContributed) subfolder may serve as a temporary  
-replacement.  
+replacement of more limited functionality.  
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
   
 See also: [PsychGamepad](PsychGamepad), [PsychHID](PsychHID)  
