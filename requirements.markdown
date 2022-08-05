@@ -162,7 +162,7 @@ Psychtoolbox is also being developed and tested under Apple macOS 10.
 Psychtoolbox should "work" in principle on
 
 -  64-bit macOS 10.15.7 "Catalina", maybe macOS 10.14 (untested), maybe partially
-   macOS 10.11-10.13 (untested, but known limitations, e.g., PsychPortAudio broken).
+   macOS 10.11-10.13 (untested).
 -  64-bit Matlab R2022a, likely older recent versions upwards of R2014b, but those are untested.
 -  64-bit Octave v6.4, probably also v7.1/v7.2 (expected to work, but untested).
 -  As of 2022, [you will need to get Octave 6.4+ from a package manager like HomeBrew][OctavemacOS]
