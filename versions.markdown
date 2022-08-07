@@ -67,6 +67,7 @@ to PTB Version 2 that we have now abandoned that system.</small>
 
       * Due to a bug, this version only runs on macOS 10.14 Mojave and later, instead of 10.11 El Capitan and later.
 
+     Requires 64-Bit GStreamer 1.18 MSVC on Microsoft Windows for both Matlab and Octave. GStreamer 1.18 recommended on macOS.
 
 `Psychtoolbox-3.0.16`
    : A snapshot of the code as of beginning of November 2020: This was the final 3.0.16 release
