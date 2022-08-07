@@ -1,0 +1,23 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.18 Beta update "Experimental Taylor expansion " SP7 was released at 7th August 2022.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.18.12”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.18.12>
+
+This release only contains improvements for the RaspberryPi computer. The 3.0.18 series may be the last version supporting Raspbian OS 10, given that the current stable version is OS 11 / Debian 11 "Bullseye".
+
+### Linux:
+
+- Installer: Compatibility fixes for Linux RaspberryPi OS 11 aka Debian 11 / Bullseye on the RaspberryPi microcomputer. Make installation more smooth.
+
+- Screen: Fix pageflipping on the RPi 4/400 with VideoCore-6 gpu again after it got broken again for Debian 11 by new half-assed format+modifier dmabuf optimization attempts. ``PsychLinuxConfiguration`` now installs a special mesa config file with special secret opt-in parameter that enables special downstream patches made to Mesa v3d to fix the half-assery. This way, pageflipping and visual stimulation timing/timestamping works again on RPi4/400 after upgrading to RPi OS 11.
+
+- PsychPortAudio: Fix selection of default sound output device on the RPi 400. Allows 'sysdefault' as a viable choice of device.
+
