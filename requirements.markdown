@@ -79,23 +79,13 @@ Short version
     known way to fix this with software workarounds, so you might be restricted
     to the integrated low performance gpu. At least Intel integrated gpus are
     often _very buggy_ under MS-Windows, so you would be out of luck completely! The
-    behavior on Linux is generally better: Many Laptops will work reliably with the high
-    performance gpu and the open-source graphics drivers when combined with an
-    Intel integrated gpu, e.g., models with older NVidia graphics cards and most AMD
-    graphics cards. The most recent gpu models from NVidia are more difficult to set up
-    and somewhat rather inflexible to use, due to limitations of their proprietary
-    graphics drivers, restricting such Optimus setups to single-display visual stimulation
-    only if the proprietary graphics drivers are in use. This also only works with X-Server
-    1.19, which is outdated and only works on older distributions like Ubuntu 18.04.0 LTS,
-    but not with the current X-Server 1.20 and, e.g., recent Ubuntu 18.04.5 LTS, or the
-    recommended Ubuntu 20.04-LTS or later.
-    The combination of AMD integrated gpu + AMD discrete gpu should work fine for modern
-    AMD integrated gpu's found in AMD Ryzen 3000 series processors or later, ie. more
-    modern than AMD RavenRidge. Combining AMD integrated gpu's with other discrete gpus,
-    e.g., from NVidia or Intel currently doesn't work well at all due to software limitations.
-    At least the lower performance integrated AMD graphics chips should still work as a
-    reliable fallback in such a scenarios on Linux though. Read ["help HybridGraphics"][HybridGraphics],
-    which provides up to date info.
+    behavior on Linux is generally much better, often with precise timing and good
+    performance, but it depends on the gpu combination. In any case, even on Linux,
+    more manual setup is needed to make things work, and some combinations will still
+    only work with very reduced performance, e.g., AMD iGPU's with non-AMD dGPU's, or
+    older AMD iGPU's. The only plug & play solution even under Linux is a single-gpu
+    machine.: Read ["help HybridGraphics"][HybridGraphics], which provides up to date
+    info about capabilities, limitations and setup for different gpu combinations.
 
 -   *Sound card:*
 
