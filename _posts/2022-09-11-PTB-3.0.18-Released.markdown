@@ -1,0 +1,23 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.18 Beta update "Experimental Taylor expansion " SP8 was released at 11th September 2022.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.18.13”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.18.13>
+
+A very minor update. Barely worth proper release announcements.
+
+### macOS:
+
+- Minor improvements to PsychHID troubleshooting help texts for macOS security GUI bugs.
+
+### Windows:
+
+- Point out need for GStreamer 1.18 instead of GStreamer 1.20 more clearly.
+
