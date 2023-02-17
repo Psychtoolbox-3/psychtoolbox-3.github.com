@@ -51,6 +51,22 @@ to PTB Version 2 that we have now abandoned that system.</small>
 *To download and install the following versions, use the
 [`DownloadPsychtoolbox`][standard-installer] function*
 
+`Psychtoolbox-3.0.18`
+   : A snapshot of the code as of 17th February 2023: This was the final 3.0.18 release
+     before start of the 3.0.19 series. 3.0.18 was the last version to support:
+
+      * 64-Bit Octave-6.3 and 6.4 for MS-Windows and Apple macOS.
+
+      * Minimal support for Microsoft Windows 7 and 8. Future versions will fail to work correctly on anything but Windows-10 or later.
+
+      * Last version tested on macOS 10.15. Future versions may or may not work on the macOS 10.x and macOS 11 operating systems.
+
+      * RaspberryPi OS 10. Going forward, only OS 11 is supported on 32-Bit ARM.
+
+      * Ubuntu Linux 20.04 LTS tested. Going forward, Ubuntu 20.04 LTS still works, but testing happens mostly only on Ubuntu 22.04-LTS.
+
+     Requires 64-Bit GStreamer 1.18.5 MSVC on Microsoft Windows for both Matlab and Octave. GStreamer 1.18 recommended on macOS.
+
 `Psychtoolbox-3.0.17`
    : A snapshot of the code as of beginning of October 2021: This was the final 3.0.17 release
      before start of the 3.0.18 series. 3.0.17 was the last version to support:
