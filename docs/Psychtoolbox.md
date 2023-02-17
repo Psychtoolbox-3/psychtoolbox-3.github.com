@@ -2,11 +2,12 @@
 ##### >[Psychtoolbox](Psychtoolbox)
 
 Psychtoolbox.  
-Version 3.0.18      13 October 2021  
+Version 3.0.19      17 February 2023  
   
 The Psychophysics Toolbox is a collection of Octave and Matlab functions  
 that extend the language to give you exquisite control of your computer  
-to test observers with research-grade dynamic stimuli.  
+to test observers with research-grade dynamic stimuli. Parts of it are  
+also used as critical parts of Python toolkits like [PsychoPy](PsychoPy).  
   
 Every Psychtoolbox function has its own documentation available through  
 the Matlab HELP command, and, in the case of MEX files, through the  
@@ -63,7 +64,7 @@ Perception 36 ECVP Abstract Supplement.
 ### Folders and their contents:  
   
 [PsychAlpha](PsychAlpha)             - Under development. Experimental, risky, undocumented.  
-[PsychAlphaBlending](PsychAlphaBlending)     - [OpenGL](OpenGL) alpha-channel blending utilities and constants.    
+[PsychAlphaBlending](PsychAlphaBlending)     - [OpenGL](OpenGL) alpha-channel blending utilities and constants.  
 [PsychBasic](PsychBasic)             - Basic support routines for psychophysics.  
 [PsychCal](PsychCal)               - Calibrate your video monitors.  
 [PsychCalDemoData](PsychCalDemoData)       - Demo calibration data.  
@@ -107,7 +108,7 @@ useful commercial services.
 Please type 'PsychPaidSupportAndServices' to learn more.  
   
   
-ADDITIONAL NEWS: The Psychtoolbox user survey 2022 is underway!  
+ADDITIONAL NEWS: The Psychtoolbox user survey 2022/2023 is underway!  
   
 In recent years the Psychtoolbox Team has worked hard to improve Psychtoolbox itself and its services.  
 We kindly ask you to fill out this survey, so that we can better understand the needs and wishes of our  

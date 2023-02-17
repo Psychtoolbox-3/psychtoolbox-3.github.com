@@ -1224,29 +1224,61 @@ actions:
   
   
 \* 'MirrorDisplayTo2ndOutputHead' Mirror the content of the onscreen  
-  window to given 2nd screen, ie., to a 2nd output connector (head)  
-  of a dualhead graphics card. This should give the same result as if one  
+  window to the given 2nd screen, ie., to a 2nd video output (head) of a  
+  multi-display setup. This should give roughly the same result as if one  
   switches the graphics card into "Mirror mode" or "Clone mode" via the  
-  display settings panel of your operating system.  
+  display settings panel of your operating system, but with different  
+  tradeoffs. The disadvantage compared to use of an operating system provided  
+  mirror mode is that it requires more gpu processing, adding one millisecond to  
+  potentially multiple milliseconds of processing time to each [Screen](Screen)('[Flip](Flip)').  
   
-  This function only works for monoscopic displays, ie., it can not be  
-  used simultaneously with any stereo display mode. The reason is that it  
-  internally uses stereomode 10 with a few modifications to get its job  
-  done, so obviously neither mode 10 nor any other mode can be used  
-  without interference.  
+  The advantage is that it allows for proper visual stimulation timing and for  
+  higher animation framerates in various configurations in which the operating  
+  system provided mechanisms would cause impaired timing and drastically reduced  
+  or erratic framerates, especially when the subject visual stimulation display  
+  and the experimenter feedback mirror display do not have perfectly synchronized  
+  video refesh cycles, e.g., because the two displays are not the same model and  
+  vendor, or can't be set to the same video resolution and refresh rate, or  
+  can't be connected both to the same type of video link (e.g. not both via  
+  [DisplayPort)](DisplayPort)), or operating system limitations prevent synchronized scanout.  
+  Non-synchronized video refresh can cause broken timing, strong judder of  
+  animations or severely reduced framerate, e.g., if a 60 Hz experimenter  
+  display throttles all animations down to 60 fps, even though the subjects  
+  stimulus display is configured for 120 Hz operation. This mode will run the  
+  main window for stimulus presentation with proper timing and vsync, whereas  
+  it runs the experimenter feedback "mirror" display without vsync, allowing  
+  for tearing artifacts to happen, in exchange for optimal timing and performance  
+  on the main display.  
   
-  Only use this function for mirroring onto the 2nd head of a dual-head  
-  graphics card under [MacOS](MacOS)/X, or if you need to mirror onto a 2nd head  
-  on MS-Windows and can't use "desktop spanning" mode on Windows to  
-  achieve dual display output. If possible on your setup and OS, rather use  
-  'MirrorDisplayToSingleSplitWindow' (see below). That mode should work  
-  well on dual-head graphics cards on MS-Windows or GNU/Linux, as well as  
+  Another advantage is that this allows to display an overlay window on top of  
+  the visual stimulus mirror image, to supply some additional debug information  
+  to the experimenter. Operating system provided mirror modes don't allow for  
+  such overlays.  
+  
+  This function only works for monoscopic displays and single-window stereo  
+  modes (steremode 2 - 9 and some [PsychImaging](PsychImaging) modes), it can not be used with  
+  frame-sequential or dual-window / dual-stream stereo display modes, as it  
+  internally uses the machinery for stereomode 10 with a few modifications to  
+  get its job done, so obviously neither dual-window mode 10 nor any similar  
+  mode can be used without interference.  
+  
+  This function is typically used for mirroring onto a secondary display of a  
+  multi-display setup on Apple macOS, or if you need to mirror on Microsoft  
+  Windows and can't use "desktop spanning" mode on Windows to achieve dual  
+  display output. On Linux/X11, this can be useful in combination with the  
+  Vulkan display backend, ie. the 'UseVulkanDisplay' task. On Linux or Windows  
+  with a properly synchronized dual-display setup, rather use the task  
+  'MirrorDisplayToSingleSplitWindow' (see below). That task should work  
+  well on in synchronized mode, and is more efficient. It would also work well  
   in conjunction with a hardware display splitter attached to a single  
   head on any operating system. It has the advantage of consuming less  
   memory and compute ressources, so it is potentially faster or provides  
-  a more reliable overall timing.  
+  a more reliable overall timing. On modern Linux distributions with X-Server  
+  version 21 or later, e.g., Ubuntu 22.04-LTS or later, that more efficient  
+  mode can also be made to work, after special setup with [XOrgConfCreator](XOrgConfCreator), on  
+  unsynchronized displays.  
   
-  Usage: [PsychImaging](PsychImaging)('AddTask', 'General', 'MirrorDisplayTo2ndOutputHead', mirrorScreen [, mirrorRectangle]);  
+  Usage: [PsychImaging](PsychImaging)('AddTask', 'General', 'MirrorDisplayTo2ndOutputHead', mirrorScreen [, mirrorRectangle=[]][, specialFlags=0][, useOverlay=0]);  
   
   The content of the onscreen window shall be shown not only on the  
   display associated with the screen given to [PsychImaging](PsychImaging)('OpenWindow',  
@@ -1256,6 +1288,17 @@ actions:
   mirror image shall not fill the whole 'mirrorScreen', but only a  
   subregion 'mirrorRectangle'.  
   
+  'specialFlags' are optional flags to customize the mirror window, similar to  
+  the specialFlags parameter of [PsychImaging](PsychImaging)('OpenWindow', ...., specialFlags).  
+  Cfe. flags like kPsychGUIWindow and kPsychGUIWindowWMPositioned to turn the  
+  experimenter feedback mirror window into a regular desktop GUI window that  
+  can be moved and resized.  
+  
+  Optionally you can set the 'useOverlay' flag to 1, to request use of an  
+  overlay window on top of the mirror window. The function ...  
+  overlaywin = [PsychImaging](PsychImaging)('GetMirrorOverlayWindow', win);  
+  ... will return a window handle overlaywin for a given onscreen window win,  
+  and you can then use overlaywin for drawing content into that overlay.  
   
 \* 'MirrorDisplayToSingleSplitWindow' Mirror the content of the onscreen  
   window to the right half of the desktop (if desktop spanning on a  
@@ -1263,11 +1306,58 @@ actions:
   if a display splitter (e.g., Matrox [Dualhead2Go](Dualhead2Go) (TM)) is attached to a  
   single head of a graphics card. This should give the same result as if one  
   switches the graphics card into "Mirror mode" or "Clone mode" via the  
-  display settings panel of your operating system.  
+  display settings panel of your operating system. It offers the same tradeoffs  
+  and advantages as explained above for 'MirrorDisplayTo2ndOutputHead' mode.  
+  The 'MirrorDisplayToSingleSplitWindow' task may be a bit more efficient than  
+  'MirrorDisplayTo2ndOutputHead', but it requires either use of a modern Linux  
+  distribution like Ubuntu 22.04-LTS with X-Server 21, and some configuration  
+  with [XOrgConfCreator](XOrgConfCreator), or the use of two display devices of identical  
+  model from the same vendor, set to exactly the same video mode  
+  (resolution and refresh rate), and identical video connections, so the  
+  video refresh cycles of both the stimulus presentation display, and the  
+  experimenter feedback mirror display are perfectly synchronized with  
+  each other. Otherwise timing and performance will be less than optimal!  
+  If you can't meet these conditions then the 'MirrorDisplayTo2ndOutputHead'  
+  task is the better choice, at expense of higher gpu load.  
   
-  Usage: [PsychImaging](PsychImaging)('AddTask', 'General', 'MirrorDisplayToSingleSplitWindow');  
+  Usage: [PsychImaging](PsychImaging)('AddTask', 'General', 'MirrorDisplayToSingleSplitWindow' [, useOverlay=0][, mirrorDestination]);  
   
-  Optionally, you can add the command...  
+  Optionally you can set the 'useOverlay' flag to 1, to request use of an  
+  overlay window on top of the mirrored stimulus. The function ...  
+  overlaywin = [PsychImaging](PsychImaging)('GetMirrorOverlayWindow', win);  
+  ... will return a window handle overlaywin for a given onscreen window win,  
+  and you can then use overlaywin for drawing content into that overlay.  
+  
+  Optionally you can provide the 'mirrorDestination' parameter to specify  
+  where the mirror image should go within the onscreen window, and which  
+  size it has. By default, the mirror image will fill out the right half  
+  of the onscreen window, an appropriate choice if your mirror display  
+  monitor has the same resolution as the stimulus display monitor and  
+  both are arranged side-by-side in a dual-display setup. For different  
+  monitor arrangements, e.g., triple-display setups or similar, of for  
+  different selected mirror monitor resolutions, a future Psychtoolbox  
+  release may also select a proper location and size for the mirror  
+  image. But for now, if your mirror monitor has a different resolution  
+  than the stimulus monitor, you need to manually specify the mirror  
+  monitors resolution, ie. width x height in pixels as mirrorDestination  
+  parameter, a two-component row vector of form [width, height]., so the  
+  mirror image can get appropriately scaled to the resolution of the  
+  mirror monitor. On Linux you will also need to use the [SetResolution](SetResolution)()  
+  function to set a horizontal resolution that is twice the horizontal  
+  resolution of your stimulus monitor(s). E.g., if your stimulus monitor  
+  is 2560x1440 resolution and your mirror monitor is 1280x1024 pixels,  
+  and both are attached to Psychtoolbox screen 1 (aka X-[Screen](Screen) 1), you'd  
+  have to call [SetResolution](SetResolution)(1, 2\*2560, 1440); before 'OpenWindow', and  
+  specify 'mirrorDestination' as [1280, 1024]. A setup with three  
+  monitors, two stimulus monitors next to each other at 2560x1440 pixels  
+  each, plus one mirror monitor of 1280x1024 right to the both stimulus  
+  monitors would instead require a call to  
+  [SetResolution](SetResolution)(1, 2 \* (2560 + 2560), 1440). Note that setups which  
+  require specification of 'mirrorDestination' may not work at all at the  
+  moment on systems other than Linux.  
+  
+  Optionally, if you don't need the imaging pipeline and don't need the overlay  
+  for experimenter feedback, ie. you let 'useOverlay' = 0, you can add ...  
   [PsychImaging](PsychImaging)('AddTask', 'General', 'DontUsePipelineIfPossible');  
   ... if you don't intend to use the imaging pipeline for anything else  
   than display mirroring. This will allow further optimizations.  
@@ -1535,6 +1625,15 @@ such a feature. See "help [BitsPlusPlus](BitsPlusPlus)" for subfunction
 'GetOverlayWindow' for more explanations of the purpose and properties of  
 overlay windows. The explanations apply to the [DPixx](DPixx) device as well if it  
 is opened in videomode 'M16WithOverlay'.  
+  
+  
+overlaywin = [PsychImaging](PsychImaging)('GetMirrorOverlayWindow', win);  
+- Will return the handle to the mirror 'overlaywin'dow associated with the  
+given 'win'dow, if any. Will abort with an error message if the 'win'dow  
+doesn't have an associated mirror overylay, because the 'win'dow was not  
+configured for mirror mode, or for use of an overlay on its mirror window.  
+Cfe. the [PsychImaging](PsychImaging) stimulus mirroring tasks 'MirrorDisplayTo2ndOutputHead'  
+and 'MirrorDisplayToSingleSplitWindow' for use cases.  
   
   
   

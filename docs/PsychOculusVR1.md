@@ -3,7 +3,7 @@
 
 [PsychOculusVR1](PsychOculusVR1) - A high level driver for Oculus VR hardware using the Version 1.16+ runtime.  
   
-Copyright (c) 2018-2021 Mario Kleiner. Licensed under the MIT license.  
+Copyright (c) 2018-2023 Mario Kleiner. Licensed under the MIT license.  
 The underlying [PsychOculusVRCore1](PsychOculusVRCore1) mex driver uses the Oculus SDK, which is  
 “Copyright © Facebook Technologies, LLC and its affiliates. All rights reserved.”  
 A copy of the Oculus SDK license, its terms of use and thereby redistribution  
@@ -85,16 +85,25 @@ requested from Psychtoolbox and the compositor, ie., a roughly gamma 2.2 8 bpc
 format is used, which is optimized for the gamma response curve of at least the Oculus  
 Rift CV1 display.  
   
+'ForceSize=widthxheight' = Enforce a specific fixed size of the stimulus  
+image buffer in pixels, overriding the recommmended value by the runtime,  
+e.g., 'ForceSize=2200x1200' for a 2200 pixels wide and 1200 pixels high  
+image buffer. By default the driver will choose values that provide good  
+quality for the given Oculus display device, which can be scaled up or down  
+with the optional 'pixelsPerDisplay' parameter for a different quality vs.  
+performance tradeoff in the function [PsychOpenXR](PsychOpenXR)('SetupRenderingParameters');  
+The specified values are clamped against the maximum values supported by  
+the given hardware + driver combination.  
+  
 'PerEyeFOV' = Request use of per eye individual and asymmetric fields of view even  
 when the 'basicTask' was selected to be 'Monoscopic' or 'Stereoscopic'. This allows  
 for wider field of view in these tasks, but requires the usercode to adapt to these  
 different and asymmetric fields of view for each eye, e.g., by selecting proper 3D  
 projection matrices for each eye.  
   
-'TimingSupport' = Support some hardware specific means of timestamping  
-or latency measurements. On the Rift DK1 this does nothing. On the DK2  
-it enables dynamic prediction and timing measurements with the Rifts internal  
-latency tester.  
+'TimingSupport' = Use high precision and reliability timing for presentation.  
+Useless, as this driver always has presentation timing that has to be considered  
+\*not trustworthy\*, unreliable and unprecise!  
   
 'basicQuality' defines the basic tradeoff between quality and required  
 computational power. A setting of 0 gives lowest quality, but with the  
@@ -233,6 +242,18 @@ Return argument 'input' is a struct with fields describing the state of buttons 
 other input elements of the specified 'controllerType'. It has the following fields:  
   
 'Valid' = 1 if 'input' contains valid results, 0 if input status is invalid/unavailable.  
+'ActiveInputs' = Bitmask defining which of the following struct elements do contain  
+meaningful input from actual physical input source devices. This is a more fine-grained  
+reporting of what 'Valid' conveys, split up into categories. The following flags will be  
+logical or'ed together if the corresponding input category is valid, ie. provided with  
+actual input data from some physical input source element, controller etc.:  
+  
++1  = 'Buttons' gets input from some real buttons or switches, ie. Touch / [XBox](XBox) / Oculus remote controller.  
++2  = 'Touches' gets input from some real touch sensors or gesture recognizers, e.g., Touch controller.  
++4  = 'Trigger' gets input from some real analog trigger sensor, e.g., Touch or [XBox](XBox) controller.  
++8  = 'Grip' gets input from Touch controllers.  
++16 = 'Thumbstick' gets input from some real thumbstick, e.g., from Touch controllers or [XBox](XBox) controller.  
+  
 'Time' Time of last input state change of controller.  
 'Buttons' Vector with button state on the controller, similar to the 'keyCode'  
 vector returned by [KbCheck](KbCheck)() for regular keyboards. Each position in the vector  
@@ -423,11 +444,6 @@ in other words, it will do nothing.
              3D scenes with the [Horde3D](Horde3D) 3D engine or other engines which want  
              absolute camera pose instead of the inverse matrix.  
   
-Additionally tracked/predicted head pose is returned in eyePose.localHeadPoseMatrix  
-and the global head pose after application of the 'userTransformMatrix' is  
-returned in eyePose.globalHeadPoseMatrix - this is the basis for computing  
-the camera transformation matrix.  
-  
   
 trackers = [PsychOculusVR1](PsychOculusVR1)('GetTrackersState', hmd);  
 - Return a struct array with infos about all connected tracking cameras/sensors  
@@ -592,7 +608,7 @@ clientRect for the onscreen window. 'needPanelFitter' is 0 if no panel fitter is
 needed.  
   
   
-[winRect, ovrfbOverrideRect, ovrSpecialFlags] = [PsychOculusVR1](PsychOculusVR1)('OpenWindowSetup', hmd, screenid, winRect, ovrfbOverrideRect, ovrSpecialFlags);  
+[winRect, ovrfbOverrideRect, ovrSpecialFlags, ovrMultiSample] = [PsychOculusVR1](PsychOculusVR1)('OpenWindowSetup', hmd, screenid, winRect, ovrfbOverrideRect, ovrSpecialFlags, ovrMultiSample);  
 - Compute special override parameters for given input/output arguments, as needed  
 for a specific HMD. Take other preparatory steps as needed, immediately before the  
 [Screen](Screen)('OpenWindow') command executes. This is called as part of [PsychImaging](PsychImaging)('OpenWindow'),  

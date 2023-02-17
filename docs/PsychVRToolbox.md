@@ -11,6 +11,7 @@ Functions for use of and access to Virtual Reality devices.
 [PsychOculusVR](PsychOculusVR)         - Driver for devices from Oculus VR, e.g., the Oculus Rift, using the v0.5 SDK.  
 [PsychOculusVR1](PsychOculusVR1)        - Driver for devices from Oculus VR, e.g., the Rift CV1, using the v1.0 SDK.  
 [PsychOpenHMDVR](PsychOpenHMDVR)        - Driver for devices supported by [OpenHMD](OpenHMD) (http://www.openhmd.net).  
+[PsychOpenXR](PsychOpenXR)           - Driver for XR devices supported by a [OpenXR](OpenXR) compliant runtime.  
 [VRInputStuffTest](VRInputStuffTest)      - Test input functionality related to VR devices.  
 
 

@@ -107,12 +107,8 @@ event.
   
 [PsychPowerMate](PsychPowerMate)('SetBrightness', handle, level);  
 -- Change brightness of the LED of the [PowerMate](PowerMate) specified by 'handle'  
-to 'level'. Level can be between 0 and 255. Note: This does not currently  
-work on MS-Windows.  
-  
-Note: Currently 'handle' is ignored, so you can not select which one  
-of multiple PowerMate's would get its brightness set and this only  
-works reliably for a single [PowerMate](PowerMate).  
+to 'level'. Level can be between 0 and 255. 'handle' is currently ignored  
+on Linux.  
   
   
 [button, dialPos] = [PsychPowerMate](PsychPowerMate)('Get', handle);  

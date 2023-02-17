@@ -4,8 +4,8 @@
 [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) - Installation instructions for the [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) media framework.  
   
 Psychtoolbox uses the [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) multi-media framework for all multi-media  
-related operations. On MS-Windows and macOS with Matlab, [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) is also  
-needed for high quality text rendering via [Screen](Screen)('DrawText').  
+related operations. Always on MS-Windows, and on macOS when using Matlab,  
+[[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) is also needed for high quality text rendering via [Screen](Screen)('DrawText').  
   
 All movie playback, movie creation, video capture and video recording  
 operations are based on [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)). These functions won't work without a  
@@ -13,16 +13,19 @@ working [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) installation on your 
 video capture from firewire and USB-Vision DCAM/IIDC machine vision  
 cameras on Linux, where high-performance multi-camera capture works via  
 libdc1394, see 'help VideoCaptureDC1394', and [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) is only needed  
-for video recording, not live capture).  
+for video recording, not for live capture).  
   
 You will need at least version 1.8 of [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) on Linux, and at least  
-version 1.18 on Windows and macOS, but we recommend to use the latest  
-stable release of the version 1 series tested by us (see below). For limited HDR  
-playback support on Linux, you will need at least [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) 1.16 + some  
-modifications to your playback scripts. For full HDR playback support on  
-Linux, just as on Windows, you will need at least version 1.18. HDR  
-playback is not yet supported on macOS due to macOS operating system  
-deficiencies - an insufficiently advanced [OpenGL](OpenGL) implementation.  
+version 1.20.5 on MS-Windows and at least version 1.18.5 on macOS, but  
+we recommend to use the latest stable release of the version 1 series  
+tested by us (see links below).  
+  
+For limited HDR playback support on Linux, you will need at least [[GStreamer](GStreamer)][(GStreamer)]((GStreamer))  
+version 1.16 + some special modifications to your playback scripts, e.g., as  
+contained in Ubuntu 20.04-LTS. For full HDR playback support on Linux, you will  
+need at least version 1.18, e.g., as contained in Ubuntu 22.04-LTS. HDR playback  
+is not yet supported on macOS due to macOS operating system deficiencies - an  
+insufficiently advanced Apple [OpenGL](OpenGL) implementation.  
   
 ### Installation instructions:  
   
@@ -46,13 +49,13 @@ specifically add them to your system depending on your format needs.
   
 An easy test is to run [SimpleMovieDemo](SimpleMovieDemo). If it fails or only plays sound,  
 but not video, then some of the plugins are missing, e.g., the important  
-"gst-libav" plugins. For basic HDR playback support, Ubuntu 20.04 LTS  
-(and maybe 18.04 LTS - untested) would suffice. For full HDR playback  
-support, you would need Ubuntu 20.10, or some 3rd party provided  
-[[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) 1.18+ packages, or packages built from source.  
+"gst-libav" plugins. For minimal HDR playback support, Ubuntu 20.04 LTS  
+would suffice. For full HDR playback support, you need Ubuntu 22.04 LTS,  
+or some 3rd party provided [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) 1.18+ packages, or packages built  
+from source.  
   
   
-### MS-Windows and Apple OSX:  
+### MS-Windows and Apple macOS:  
   
 macOS: You must install [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) if you want to use multi-media functions or  
 if you want to use the high-quality text renderer with Matlab, which provides  
@@ -63,10 +66,10 @@ If you don't intend to use such functionality then installation of [[GStreamer](
 is optional on macOS. [Screen](Screen) will work normally, but abort with an error  
 message if you try to use any multi-media functions.  
   
-Windows: You must install [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) regardless if you want to use multi-media  
-functionality or not, as the [Screen](Screen)() mex file won't work at all without  
-[[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) installed! You must install at least version 1.18.0 of the MSVC  
-variant of [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)).  
+MS-Windows: You must install [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)), regardless if you want to use multi-media  
+functionality or not, as the [Screen](Screen)() mex file won't work at all without [[GStreamer](GStreamer)][(GStreamer)]((GStreamer))  
+installed! You must install at least version 1.20.5 of the 64-Bit MSVC variant of  
+[[GStreamer](GStreamer)][(GStreamer)]((GStreamer)).  
   
 ### Here is a FAQ entry on resolving [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) problems:  
   
@@ -86,12 +89,16 @@ file:
   
 <http://gstreamer.freedesktop.org/download/\>  
   
-The following [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) runtime packages have been tested for good compatibility  
-with Psychtoolbox 3.0.18 as of October 2021:  
+The following [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) runtime packages have been lightly tested for compatibility  
+with Psychtoolbox 3.0.19 as of February 2023:  
   
-For MS-Windows: 64-Bit Intel MSVC runtime v1.18.5 for use with 64-Bit Matlab/Octave.  
+For MS-Windows: 64-Bit Intel MSVC runtime v1.20.5 for use with 64-Bit Matlab/Octave.  
   
-<https://gstreamer.freedesktop.org/data/pkg/windows/1.18.5/msvc/gstreamer-1.0-msvc-x86\_64-1.18.5.msi\>  
+<https://gstreamer.freedesktop.org/data/pkg/windows/1.20.5/msvc/gstreamer-1.0-msvc-x86\_64-1.20.5.msi\>  
+  
+also lightly tested, probably with higher performance and more modern, is v1.22.0.  
+  
+<https://gstreamer.freedesktop.org/data/pkg/windows/1.22.0/msvc/gstreamer-1.0-msvc-x86\_64-1.22.0.msi\>  
   
 You \*must\* install the MSVC variants of [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)), not the [MinGW64](MinGW64) variants!  
   
@@ -99,6 +106,11 @@ You \*must\* install the MSVC variants of [[GStreamer](GStreamer)][(GStreamer)](
 For Apple macOS: Runtime v1.18.5  
   
 <https://gstreamer.freedesktop.org/data/pkg/osx/1.18.5/gstreamer-1.0-1.18.5-x86\_64.pkg\>  
+  
+also tested, probably higher performance andmore modern, but known to crash with  
+[VideoRecordingDemo](VideoRecordingDemo).m at least with the [MacBookPro](MacBookPro) 2017 builtin camera, is v1.22.0.  
+  
+<https://gstreamer.freedesktop.org/data/pkg/osx/1.22.0/gstreamer-1.0-1.22.0-universal.pkg\>  
   
 When the installer asks you to select the components it should install,  
 select a "Full installation" or "Complete installation", or if those  

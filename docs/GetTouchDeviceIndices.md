@@ -10,12 +10,6 @@ like touchscreens, tablets and touchpads for touch input with the
 Also returns corresponding productNames for the devices and detailed  
 info in the allInfo struct-array.  
   
-OS X: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
-  
-This function currently returns nothing, as OSX does not support touch  
-screens in a meaningful way as far as we know. And Psychtoolbox for OSX  
-currently does not implement any special support for touchpads or such.  
-  
 LINUX: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
   
 [GetTouchDeviceIndices](GetTouchDeviceIndices) allows selection of different types of touch devices  
@@ -25,6 +19,17 @@ devices. These correspond to visible mouse cursors. 'slavePointer' will
 only return indices of slave pointer devices. Often only 'slavePointer'  
 devices work properly or with full functionality for touch devices, that's  
 why typeOnly defaults to 'slavePointer' if the argument is omitted.  
+  
+Windows: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+  
+Basic device enumeration should work, but only true touchscreens are supported,  
+not touchpads.  
+  
+OS X: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
+  
+This function currently returns nothing, as OSX does not support touch  
+screens in a meaningful way as far as we know. And Psychtoolbox for OSX  
+currently does not implement any special support for touchpads or such.  
   
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
   

@@ -70,6 +70,8 @@ Please type 'PsychPaidSupportAndServices' to learn more.
 Oculus\_Health\_and\_Safety\_Warnings.pdf - Info about how to use the Oculus  
                          VR virtual reality headsets safely.  
   
+[OpenXR](OpenXR)                 - Intro to [OpenXR](OpenXR) and installation and setup instructions.  
+  
 [ProceduralShadingAPI](ProceduralShadingAPI)   - Documentation useful for procedural shading.  
   
 [ProgrammingTips](ProgrammingTips).html   - A very incomplete programming manual.  

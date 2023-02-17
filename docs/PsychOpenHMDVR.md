@@ -128,6 +128,16 @@ time of visual images on the retina low if possible, ie., try to approximate
 a pulse-type display instead of a hold-type display if possible. This has  
 no effect at the moment for this driver and its supported devices.  
   
+'ForceSize=widthxheight' = Enforce a specific fixed size of the stimulus  
+image buffer in pixels, overriding the recommmended value by the runtime,  
+e.g., 'ForceSize=2200x1200' for a 2200 pixels wide and 1200 pixels high  
+image buffer. By default the driver will choose values that provide good  
+quality for the given HMD display device, which can be scaled up or down  
+with the optional 'pixelsPerDisplay' parameter for a different quality vs.  
+performance tradeoff in the function [PsychOpenXR](PsychOpenXR)('SetupRenderingParameters');  
+The specified values are clamped against the maximum values supported by  
+the given hardware + driver combination.  
+  
 'PerEyeFOV' = Request use of per eye individual and asymmetric fields of view even  
 when the 'basicTask' was selected to be 'Monoscopic' or 'Stereoscopic'. This allows  
 for wider field of view in these tasks, but requires the usercode to adapt to these  
@@ -137,8 +147,10 @@ projection matrices for each eye.
 'FastResponse' = Try to switch images with minimal delay and fast  
 pixel switching time. This does nothing on this driver at the moment.  
   
-'TimingSupport' = Support some hardware specific means of timestamping  
-or latency measurements. This does nothing on this driver at the moment.  
+'TimingSupport' = Use high precision and reliability timing for presentation.  
+Not really needed, as this driver always uses high precision timing and  
+timestamping, at least if you present to your HMD via a dedicated  
+X-[Screen](Screen) on a multi-X-[Screen](Screen) setup under Linux X11.  
   
 'TimeWarp' = Enable per eye image 2D timewarping via prediction of eye  
 poses at scanout time. This mostly only makes sense for head-tracked 3D  
@@ -248,6 +260,18 @@ Return argument 'input' is a struct with fields describing the state of buttons 
 other input elements of the specified 'controllerType'. It has the following fields:  
   
 'Valid' = 1 if 'input' contains valid results, 0 if input status is invalid/unavailable.  
+'ActiveInputs' = Bitmask defining which of the following struct elements do contain  
+meaningful input from actual physical input source devices. This is a more fine-grained  
+reporting of what 'Valid' conveys, split up into categories. The following flags will be  
+logical or'ed together if the corresponding input category is valid, ie. provided with  
+actual input data from some physical input source element, controller etc.:  
+  
++1  = 'Buttons' gets input from some real buttons or switches.  
++2  = 'Touches' gets input from some real touch/proximity sensors or gesture recognizers.  
++4  = 'Trigger' gets input from some real analog trigger sensor or gesture recognizer.  
++8  = 'Grip' gets input from some real analog grip sensor or gesture recognizer.  
++16 = 'Thumbstick' gets input from some real thumbstick, joystick or trackpad or similar 2D sensor.  
+  
 'Time' Time of last input state change of controller.  
 'Buttons' Vector with button state on the controller, similar to the 'keyCode'  
 vector returned by [KbCheck](KbCheck)() for regular keyboards. Each position in the vector  
@@ -503,7 +527,7 @@ clientRect for the onscreen window. 'needPanelFitter' is 0 if no panel fitter is
 needed.  
   
   
-[winRect, ovrfbOverrideRect, ovrSpecialFlags] = [PsychOpenHMDVR](PsychOpenHMDVR)('OpenWindowSetup', hmd, screenid, winRect, ovrfbOverrideRect, ovrSpecialFlags);  
+[winRect, ovrfbOverrideRect, ovrSpecialFlags, ovrMultiSample] = [PsychOpenHMDVR](PsychOpenHMDVR)('OpenWindowSetup', hmd, screenid, winRect, ovrfbOverrideRect, ovrSpecialFlags, ovrMultiSample);  
 - Compute special override parameters for given input/output arguments, as needed  
 for a specific HMD. Take other preparatory steps as needed, immediately before the  
 [Screen](Screen)('OpenWindow') command executes. This is called as part of [PsychImaging](PsychImaging)('OpenWindow'),  

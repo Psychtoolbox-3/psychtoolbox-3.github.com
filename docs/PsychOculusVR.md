@@ -60,6 +60,16 @@ no effect on the Rift DK1. On the Rift DK2 it will enable low persistence
 scanning of the OLED display panel, to light up each pixel only a fraction  
 of a video refresh cycle duration.  
   
+'ForceSize=widthxheight' = Enforce a specific fixed size of the stimulus  
+image buffer in pixels, overriding the recommmended value by the runtime,  
+e.g., 'ForceSize=2200x1200' for a 2200 pixels wide and 1200 pixels high  
+image buffer. By default the driver will choose values that provide good  
+quality for the given Rift DK-1/DK-2 display device, which can be scaled  
+up or down with the optional 'pixelsPerDisplay' parameter for a different  
+quality vs. performance tradeoff in the function [PsychOpenXR](PsychOpenXR)('SetupRenderingParameters');  
+The specified values are clamped against the maximum values supported by  
+the given hardware + driver combination.  
+  
 'PerEyeFOV' = Request use of per eye individual and asymmetric fields of view even  
 when the 'basicTask' was selected to be 'Monoscopic' or 'Stereoscopic'. This allows  
 for wider field of view in these tasks, but requires the usercode to adapt to these  
@@ -71,10 +81,12 @@ pixel switching time. This will enable OLED panel overdrive processing
 on the Oculus Rift DK1 and DK2. OLED panel overdrive processing is a  
 relatively expensive post processing step.  
   
-'TimingSupport' = Support some hardware specific means of timestamping  
-or latency measurements. On the Rift DK1 this does nothing. On the DK2  
-it enables dynamic prediction and timing measurements with the Rifts internal  
-latency tester.  
+'TimingSupport' = Use high precision and reliability timing for presentation.  
+This driver always uses high precision timing and timestamping, at least if you  
+present to your Rift DK1/DK2 HMD via a dedicated X-[Screen](Screen) on a multi-X-[Screen](Screen)  
+setup under Linux X11. However, specifying it will enable some additional  
+optimizations on the Oculus Rift DK2, taking advantage of some builtin  
+hardware features.  
   
 'TimeWarp' = Enable per eye image 2D timewarping via prediction of eye  
 poses at scanout time. This mostly only makes sense for head-tracked 3D  
@@ -191,7 +203,14 @@ Return argument 'input' is a struct with fields describing the state of buttons 
 other input elements of the specified 'controllerType'. It has the following fields:  
   
 'Valid' = 1 if 'input' contains valid results, 0 if input status is invalid/unavailable.  
+This is always 1, as any kind of connected keyboard can emulate at least 'Buttons', by  
+using [KbCheck](KbCheck) to query keys and map them to "fake buttons".  
+  
+'ActiveInputs' = 1, signifying the presence of a valid 'Buttons' input due to emulation  
+by [KbCheck](KbCheck) on any connected keyboard.  
+  
 'Time' Time of last input state change of controller.  
+  
 'Buttons' Vector with button state on the controller, similar to the 'keyCode'  
 vector returned by [KbCheck](KbCheck)() for regular keyboards. Each position in the vector  
 reports pressed (1) or released (0) state of a specific button. Use the OVR.Button\_XXX  
@@ -474,7 +493,7 @@ clientRect for the onscreen window. 'needPanelFitter' is 0 if no panel fitter is
 needed.  
   
   
-[winRect, ovrfbOverrideRect, ovrSpecialFlags] = [PsychOculusVR](PsychOculusVR)('OpenWindowSetup', hmd, screenid, winRect, ovrfbOverrideRect, ovrSpecialFlags);  
+[winRect, ovrfbOverrideRect, ovrSpecialFlags, ovrMultiSample] = [PsychOculusVR](PsychOculusVR)('OpenWindowSetup', hmd, screenid, winRect, ovrfbOverrideRect, ovrSpecialFlags, ovrMultiSample);  
 - Compute special override parameters for given input/output arguments, as needed  
 for a specific HMD. Take other preparatory steps as needed, immediately before the  
 [Screen](Screen)('OpenWindow') command executes. This is called as part of [PsychImaging](PsychImaging)('OpenWindow'),  

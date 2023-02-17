@@ -29,8 +29,8 @@ The returned values (xo, yo) are the remapped stimulus pixel locations,
 over which a mouse cursor at location (xm,ym) is currently hovering.  
   
 If you pass in a (xm,ym) position for which there doesn't exist any  
-corresponding stimulus pixel position, the values (0,0) will be  
-returned.  
+corresponding stimulus pixel position, values outside the window bounds  
+will be returned, e.g., greater than window width or height, or negative.  
   
 If you call this function on a window or view without active geometry  
 manipulations, it will do nothing and simply return the passed in (xm,  

@@ -1,7 +1,7 @@
 # [CV1Test](CV1Test)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychHardware](PsychHardware)>[PsychVRToolbox](PsychVRToolbox)
 
-res = [CV1Test](CV1Test)([useRTbox=0]) - A timing test script for [HMDs](HMDs) by use of a photometer.  
+res = [CV1Test](CV1Test)([waitframes=90][, useRTbox=0]) - A timing test script for [HMDs](HMDs) by use of a photometer.  
   
 Needs the [RTBox](RTBox), and a photo-diode or such, e.g., a [ColorCal](ColorCal)-II,  
 connected to the TTL trigger input.  

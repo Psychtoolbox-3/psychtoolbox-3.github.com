@@ -42,7 +42,10 @@ Support for access to generic USB devices: See 'help ColorCal2' for one usage ex
   
 usbHandle = PsychHID('[OpenUSBDevice](PsychHID-OpenUSBDevice)', vendorID, deviceID [, configurationId=0])  
 PsychHID('[CloseUSBDevice](PsychHID-CloseUSBDevice)' [, usbHandle])  
-outData = PsychHID('[USBControlTransfer](PsychHID-USBControlTransfer)', usbHandle, bmRequestType, bRequest, wValue, wIndex, wLength, inData)  
+PsychHID('[USBClaimInterface](PsychHID-USBClaimInterface)', usbHandle, interfaceId)  
+[recData, count] = PsychHID('[USBControlTransfer](PsychHID-USBControlTransfer)', usbHandle, bmRequestType, bRequest, wValue, wIndex, wLength [, outData][, timeOutMSecs=10000])  
+[countOrRecData] = PsychHID('[USBBulkTransfer](PsychHID-USBBulkTransfer)', usbHandle, endPoint, length [, outData][, timeOutMSecs=10000])  
+[countOrRecData] = PsychHID('[USBInterruptTransfer](PsychHID-USBInterruptTransfer)', usbHandle, endPoint, length [, outData][, timeOutMSecs=10000])  
   
 
 ok<STOUT\>  

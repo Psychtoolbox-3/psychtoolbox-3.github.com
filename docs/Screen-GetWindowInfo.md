@@ -11,6 +11,9 @@ returned.
 "infoType" If left out or set to zero, all available information for the  
 'windowPtr' is returned.  
   
+If set to -1, only the [OpenGL](OpenGL) context of the onscreen window is activated  
+(Expert use only!).  
+  
 If set to 1, only the rasterbeam position of the associated display device is  
 returned (or -1 if unsupported).  
   

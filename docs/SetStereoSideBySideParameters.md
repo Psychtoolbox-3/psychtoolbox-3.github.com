@@ -3,7 +3,7 @@
 
 Change parameters for side-by-side stereo display modes (4 and 5).  
   
-[SetStereoSideBySideParameters](SetStereoSideBySideParameters)(win [, leftOffset][, leftScale][, rightOffset][, rightScale][, shaders])  
+[SetStereoSideBySideParameters](SetStereoSideBySideParameters)(win [, leftOffset][, leftScale][, rightOffset][, rightScale][, shaders][, offsetUnit='windowsizes'])  
   
 Call this function after the win = [PsychImaging](PsychImaging)('OpenWindow',...); call on an  
 onscreen window in side-by-side stereo mode to change the parameters  
@@ -14,7 +14,10 @@ reasonable builtin defaults:
   
 'leftOffset' = Top-Left [x,y] offset of left eye framebuffer in relative  
 coordinates [0,0] == top-left of framebuffer, [1,0] == 1 stereo window  
-width to the right, [2,0] == 2 stereo window width to the right etc.  
+width to the right, [2,0] == 2 stereo window width to the right etc. This  
+is the case if the optional parameter 'offsetUnit' is omitted, empty, or  
+set to 'windowsizes'. Otherwise the unit for 'leftOffset' and 'rightOffset'  
+is selected by the 'offsetUnit' parameter.  
   
 'leftScale' = Scaling of left eye image buffer. E.g., [1,1] == Don't  
 scale. [0.75, 0.5] scale to 75% of original width, 50% of original  
@@ -26,6 +29,20 @@ height.
 the standard builtin side-by-side compositing shaders. shaders(1) for left eye  
 view, shaders(2) for right eye view. The old shaders are deleted if new shaders  
 are assigned.  
+  
+'offsetUnit' is a string, specifying the unit used for specifying 'leftOffset'  
+and 'rightOffset'. If omitted, by default it is 'windowsizes'. Following values  
+are currently supported:  
+  
+'windowsizes' - 1 Unit for x or y is one width or height of the onscreen window,  
+                as described above for 'leftOffset'.  
+'pixels'      - 1 Unit for x or y is one pixel, so you can specify offsets in  
+                absolute pixel coordinates. The pixels are likely framebuffer  
+                pixels, ie. after potential application of Retina/[HiDPI](HiDPI) scaling  
+                or the panelfitter, but other correction tasks like 'GeometryCorrection'  
+                may affect which 'pixels' are meant, if such tasks change  
+                imaging geometry further.  
+  
 
 
 

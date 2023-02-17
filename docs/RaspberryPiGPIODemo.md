@@ -15,7 +15,11 @@ aspects of the [GPIOs](GPIOs) which your code can't control as non-root,
 therefore you'll see multiple system() callouts in this script  
 to that helper utility. If the [RPiGPIOMex](RPiGPIOMex) mex file doesn't work  
 then you will need to install the 'wiringPi' package to provide  
-the required libwiringPi runtime library.  
+the required libwiringPi runtime library. On [RaspberryPi](RaspberryPi) OS 11 and  
+later, wiringPi does not exist anymore, but you may be able to find  
+an alternative Debian (armhf) package from the following link:  
+  
+https://github.com/[WiringPi](WiringPi)/[WiringPi](WiringPi)/releases  
   
 Shows digital i/o by flashing/alternating the two  
 [LEDs](LEDs) on the [RPi](RPi) 2B, Red power, and green status.  

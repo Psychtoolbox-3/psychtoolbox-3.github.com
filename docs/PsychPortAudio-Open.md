@@ -68,16 +68,30 @@ select, e.g.,  which two of the 16 channels to use for playback.
 playback or pure capture. For full-duplex mode (playback and capture),  
 'selectchannels' must be a 2 rows by max(channels) column matrix. row 1 will  
 define playback channel mappings, whereas row 2 will then define capture channel  
-mappings. In any case, the number in the i'th column will define which physical  
+mappings. Ideally, the number in the i'th column will define which physical  
 device channel will be used for playback or capture of the i'th [PsychPortAudio](PsychPortAudio)  
-channel (the i'th row of your sound matrix). Numbering of physical device  
-channels starts with zero! Example: Both, playback and simultaneous recording  
-are requested and 'channels' equals 2, ie, two playback channels and two capture  
-channels. If you'd specify 'selectchannels' as [0, 6 ; 12, 14], then playback  
-would happen to device channels zero and six, sound would be captured from  
-device channels 12 and 14. Please note that channel selection is currently only  
-supported on some sound cards. The parameter is silently ignored on non-capable  
-hardware or driver software.  
+channel (the i'th row of your sound matrix), but note various significant  
+limitations on MS-Windows! Numbering of physical device channels starts with  
+zero! Example: Both, playback and simultaneous recording are requested and  
+'channels' equals 2, ie. two playback channels and two capture channels. If  
+you'd specify 'selectchannels' as [0, 6 ; 12, 14], then playback would happen to  
+device channels zero and six, sound would be captured from device channels 12  
+and 14.  
+Limitations: Please note that 'selectchannels' is currently only supported on  
+macOS and on Windows WASAPI and only with some sound cards in some  
+configurations. The parameter is silently ignored on non-capable  
+hardware/driver/operating system software, or in unsupported configurations,  
+e.g., it will do nothing on Linux, or on Windows with other sound backends than  
+WASAPI. On Windows, channel mapping only works for sound playback, not for sound  
+capture. On Windows, you can only select which physical sound channels are used,  
+but not to which logical sound channel they are assigned. This means that  
+effectively the entries in the 'selectchannels' row vector will get sorted in  
+ascending order, e.g., a vector of [12, 0, 4, 2] for a 4 channel setup will be  
+interpreted as if it were [0, 2, 4, 12]! This is a limitation of the Windows  
+sound system, nothing we could do about it.  
+All these limitations of 'selectchannels' make your scripts quite non-portable  
+to different operating systems and sound cards if you choose to use this  
+parameter, so use with caution!  
   
 'specialFlags' Optional flags: Default to zero, can be or'ed or added together  
 with the following flags/settings:  

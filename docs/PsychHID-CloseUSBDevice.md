@@ -8,4 +8,4 @@ devices if 'usbHandle' is omitted.
 
 
 ###See also:
-
+[OpenUSBDevice](PsychHID-OpenUSBDevice)

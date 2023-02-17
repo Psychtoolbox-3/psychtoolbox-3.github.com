@@ -1,7 +1,7 @@
 # [Screen('HookFunction')](Screen-HookFunction) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
-[ret1, ret2, ...] = Screen('HookFunction', windowPtr, 'Subcommand', 'HookName', arg1, arg2, arg3, arg4);
+[ret1, ret2, ...] = Screen('HookFunction', windowPtr, 'Subcommand', 'HookName', arg1, arg2, ...);
 
 Manage [Screen](Screen) processing hook chains. Hook chains are a way to extend [PTBs](PTBs)  
 behaviour with plugins for generic processing or fast image processing. They  
@@ -169,12 +169,14 @@ pixels or texels.
   
   
 [leftglHandle, rightglHandle, glTextureTarget, format, multiSample, width,  
-height] = [Screen](Screen)('HookFunction', windowPtr, 'GetDisplayBufferTextures');  
+height, leftFboId, rightFboId] = [Screen](Screen)('HookFunction', windowPtr,  
+'GetDisplayBufferTextures');  
 Get the [OpenGL](OpenGL) handles of the backing textures and their parameters for the  
 final output color buffers of the imaging pipeline.  
-For the meaning of return values see 'SetDisplayBufferTextures' above.  
-This only works if imagingMode flag kPsychNeedFinalizedFBOSinks is set or  
-stereoMode 12 is active, which implicitely sets that flag.  
+'leftFboId' and 'rightFboId' return the ids of the associated [OpenGL](OpenGL) framebuffer  
+objects containing the 'leftglHandle' and 'rightglHandle' output textures.  
+For the meaning of other return values see 'SetDisplayBufferTextures' above.  
+This only works if the imaging pipeline is active.  
 This query function works both with internally generated and maintained backing  
 textures and externally injected/maintained ones.  
 For internally generated textures (without flag kPsychUseExternalSinkTextures),  

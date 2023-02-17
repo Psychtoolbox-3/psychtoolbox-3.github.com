@@ -25,8 +25,11 @@ with the text COM3 then virtual COM port 3 would be used for serial port
 communication.  
   
   
-OSX: OSX 10.12 or later is required for this function to work. For older  
-OSX versions, look for instructions on the CRS Ltd. website.  
+macOS: macOS 10.12 or later is required for this function to work. For  
+older macOS versions, look for instructions on the CRS Ltd. website.  
+Access to all [ColorCal2](ColorCal2) functionality needs a 3rd party libusb-1.0.dylib  
+installed - seee 'help PsychHID'. Without that, the same serial port  
+method is used as on MS-Windows, with a bit more limited functionality.  
   
   
 LINUX: If you want to use this function without the need to run Matlab or  
@@ -95,7 +98,9 @@ varargout - Value(s) returned for a subset of the [ColorCal2](ColorCal2) command
      quitting Octave or Matlab will also close the connection, so this is  
      not strictly needed.  
   
-### All the following commands are not supported on MS-Windows, only on Linux and OSX:  
+All the following commands are not supported on MS-Windows, only on Linux  
+and macOS, and on macOS they need a 3rd party installed libusb-1.0.dylib  
+(see 'help PsychHID'):  
   
   
 'GetRawData' - Returns the raw data for all three light channels, the  

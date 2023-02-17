@@ -15,6 +15,7 @@ Psychtoolbox:[PsychDemos](PsychDemos)
    [AudioTunnel3DDemo](AudioTunnel3DDemo)       - Very sketchy demo on how to use [OpenAL](OpenAL) for 3D spatialized sound.  
    [AudioTunnel3DDemo2](AudioTunnel3DDemo2)      - Another sketchy demo on how to use [OpenAL](OpenAL) for 3D spatialized sound.  
    [BasicAMAndMixScheduleDemo](BasicAMAndMixScheduleDemo) - Demonstrates basic use of sound schedules, volume controls, amplitude modulation and audio mixing of multiple voices.  
+   [BasicSoundChannelHoppingDemo](BasicSoundChannelHoppingDemo) - Demonstrates how to access individual channels of a multi-channel soundcard.  
    [BasicSoundInputDemo](BasicSoundInputDemo)     - Demonstrate basic usage of [PsychPortAudio](PsychPortAudio)() for sound capture.  
    [BasicSoundOutputDemo](BasicSoundOutputDemo)    - Demonstrate basic usage of [PsychPortAudio](PsychPortAudio)() for sound playback.  
    [BasicSoundPhaseShiftDemo](BasicSoundPhaseShiftDemo) - Demonstrate playback a live phase-shifted sine tone.  
