@@ -28,9 +28,9 @@ Short version
 
 -   *Runtime environment:*
 
-    64-Bit Matlab version R2022a or later (older versions will likely work, but are no longer tested
+    64-Bit Matlab version R2022b or later (older versions will likely work, but are no longer tested
     for compatibility or supported by us in case of trouble), and GNU Octave version 5.2 or later versions
-    on Linux, and 64-Bit [Octave version 6.4.0 on macOS][OctavemacOS] [and on MS-Windows.][OctaveForWindows]
+    on Linux, and 64-Bit [Octave version 7.3.0 on macOS][OctavemacOS] [and on MS-Windows.][OctaveForWindows]
 
 -   *Graphics card:*
 
@@ -104,9 +104,9 @@ Operating systems
 GNU/Linux is fully supported on Intel compatible PCs and suitable (== older) Apple
 Macintosh computers under
 
--  Matlab 64-bit, version R2022a. Older versions likely work, but are no longer
+-  Matlab 64-bit, version R2022b. Older versions likely work, but are no longer
    tested or testable by us due to lack of access.
--  GNU Octave 64-bit, versions 5.2, 6.1 - 6.4.
+-  GNU Octave 64-bit, versions 5.2, 6.1 - 7.3.
 -  Additionally, Psychtoolbox from NeuroDebian supports 32-Bit and 64-Bit
    releases of whatever version of GNU Octave ships by default with your
    distribution, e.g., also Octave 3.2 to 4.4 on older distributions, or
@@ -151,19 +151,25 @@ and education purposes.
 Psychtoolbox is also being developed and tested under Apple macOS 10.
 Psychtoolbox should "work" in principle on
 
--  64-bit macOS 10.15.7 "Catalina", maybe macOS 10.14 (untested), maybe partially
+-  64-bit macOS 12.6 "Monterey", maybe macOS 10.14 - macOS 11 (untested), maybe partially
    macOS 10.11-10.13 (untested).
--  64-bit Matlab R2022a, likely older recent versions upwards of R2014b, but those are untested.
--  64-bit Octave v6.4, probably also v7.1/v7.2 (expected to work, but untested).
--  As of 2022, [you will need to get Octave 6.4+ from a package manager like HomeBrew][OctavemacOS]
+-  64-bit Matlab R2022b, likely older recent versions upwards of R2014b, but those are untested.
+-  64-bit Octave v7.3, probably also v6.4-v7.2 (expected to work, but untested).
+-  As of 2022, [you will need to get Octave 7.3 from a package manager like HomeBrew][OctavemacOS]
    as standalone binary installers are not available yet.
 
-Limited testing currently only happens on the latest version of macOS 10.15.7
-“macOS Catalina” with 64-Bit Octave 6.4, and with 64-bit Matlab R2022a.
+Limited testing currently only happens on the latest version of macOS 12.6
+“macOS Monterey” with 64-Bit Octave 7.3, and with 64-bit Matlab R2022b.
 
-These are the only somewhat supported versions of macOS at this point in time.
-Psychtoolbox is compatible with Catalina in principle, and Catalina is the only
-currently tested system, but Catalina has fantastic new bugs and flaws, e.g., a
+Monterey is the only somewhat supported version of macOS at this point in time.
+Psychtoolbox is compatible with Monterey in principle, and Monterey is the only
+currently tested system, but Monterey has fantastic new bugs and flaws. Also note
+that Apple stated that the only version of macOS that receives all their security
+updates is the very latest version of macOS, which would be macOS 13 Ventura. We
+do not officially test or support macOS 13 yet due to lack of recources caused by
+lack of funding.
+
+Catalina introduced many new flaws inherited by macOS 11 and macOS 12, e.g., a
 slow-down of keyboard input by a factor of 5x, and various trouble wrt. keyboard
 input, sound input, and video capture, thanks to Catalina's awful new security design
 -- Prepare for lots of hassle if you choose Catalina, you have been warned!
@@ -172,13 +178,13 @@ stimulation, or DAQ digital/analog i/o, so running real data collection using ma
 will likely bring you a world of pain (and possibly irreproducible research)_.
 
 macOS Mojave was possibly a better working choice, although it is no longer tested by us
-and unknown if it is still fully compatible with Psychtoolbox 3.0.18. The fact that it is no
+and unknown if it is still fully compatible with Psychtoolbox 3.0.19. The fact that it is no
 longer developed or supported by Apple means that Apple will no longer break it with
 respect to our needs, but it is now an attractive target for viruses and hackers,
 a security hazard! Choose your poison...
 
-**macOS 11 Big Sur or macOS 12 Monterey are not officially supported or tested at all at the moment!**
-**macOS 11/12 on machines with Apple's new ARM based SoC's, e.g., the Apple M1 SoC,
+**macOS 13 Ventura is not officially supported or tested at all at the moment!**
+**macOS 11/12/13 on machines with Apple's new ARM based SoC's, e.g., the Apple M1 SoC,
 are not working with Psychtoolbox natively at all in any suitable way for data collection.
 There is no timeline for fixing this anytime soon. It is unclear if this is fixable at all,
 given the challenging and disruptive changes Apple made on Apple Silicon, especially switching
@@ -187,7 +193,7 @@ But also due to the disappointing lack of financial support from most of our use
 have the funds to investigate this any further at the moment.
 It is possible to run Ubuntu Linux for ARM in a Virtual machine on Apple M1 for training
 and education purpose, according to a user report, ie. not for data collection, only for
-learning on Linux. It is also possible to somewhat run Psychtoolbox on macOS 11/12, but
+learning on Linux. It is also possible to somewhat run Psychtoolbox on macOS 11/12/13, but
 with completely broken visual stimulation timing. May be good enough for basic training
 purposes though.**
 [See this link for reference about the current state.][AppleM1]
@@ -222,14 +228,14 @@ resolve at least some of these issues on AMD and NVidia graphics cards
 
 Psychtoolbox should work on
 
--   Matlab 64-bit. Currently tested and supported with release R2022a.
+-   Matlab 64-bit. Currently tested and supported with release R2022b.
     External mandatory requirements: Microsoft C MSVC 2015-2019 runtime and
-    GStreamer 1.18.5 MSVC. Installation of GStreamer _before_ installation
+    GStreamer 1.20.5 MSVC or later. Installation of GStreamer _before_ installation
     of Psychtoolbox is mandatory on Matlab or the Screen mex file will not work.
 
--   [GNU Octave 6.4.0, 64-Bit. Installation of GStreamer _before_ installation
+-   [GNU Octave 7.3.0, 64-Bit. Installation of GStreamer _before_ installation
     of Psychtoolbox is mandatory on GNU Octave or the Screen mex file will not work.
-    The current download location for official Octave-6.4.0 64-Bit is reached by
+    The current download location for official Octave-7.3.0 64-Bit is reached by
     clicking this link.][OctaveForWindows]
 
 If you choose to use Matlab, you may need to install Microsoft Visual C runtime
@@ -238,7 +244,10 @@ give you instructions on how to do that if necessary, ie. on install failure. Th
 Psychtoolbox/PsychContributed/ subfolder contains the neccessary `vcredist_x64_2015-2019.exe`
 executable for your convenience in such a case.
 
-Psychtoolbox-3.0.17 is no longer officially supported for Windows-7 / 8 / 8.1. The
+Psychtoolbox-3.0.19 is expected to fail to work soon on Windows-7 / 8 / 8.1. Only tested
+on Windows 10 21H2 at the moment, but soon will only be tested on Windows 10 22H2 only.
+
+Psychtoolbox-3.0.17 - 3.0.18 is no longer officially supported for Windows-7 / 8 / 8.1. The
 current expectation is that it still mostly works on these systems, but just as with
 v3.0.16, only Windows-10 releases from 2021 (21H2 edition specifically) are tested and
 supported in case of trouble, and some functionality like sound output should be better
@@ -273,15 +282,15 @@ Ubuntu 20.04-LTS.
 Additional software
 -------------------
 
-#### Multimedia engine: GStreamer 1.18.5 required on Windows and macOS
+#### Multimedia engine: At least GStreamer 1.20.5 required on Windows and macOS
 
-Installation of GStreamer version 1.18.5 is mandatory for movie playback,
+Installation of at least GStreamer version 1.20.5 is mandatory for movie playback,
 movie recording, video capture and video recording. Multimedia functions won't
-work on **macOS** without GStreamer 1.18.5 being installed. Neither will high quality
-text rendering work, unless you use Octave instead of Matlab. If you want to use
+work on **macOS** without GStreamer 1.18.5 or later being installed. Neither will high
+quality text rendering work, unless you use Octave instead of Matlab. If you want to use
 Psychtoolbox for visual stimulation on **Windows** you will _have_ to install
 GStreamer first, even if you do not need any multimedia functions, or Psychtoolbox
-won't work. GStreamer 1.18.5 MSVC variant is needed, earlier versions or
+won't work. GStreamer 1.20.5 MSVC variant or later is needed, earlier versions or
 MinGW variants will not work on Windows.
 
 On **Linux** you also need GStreamer, but GStreamer is a de-facto standard
@@ -304,7 +313,9 @@ Basic hardware requirements
 
 -   Intel PCs: Any Intel-compatible PC that is capable of running the
     64-bit versions of Microsoft Windows-10, or the 64-bit versions of
-    GNU/Linux Ubuntu 20.04 LTS or later.
+    GNU/Linux Ubuntu 20.04 LTS or later. Ubuntu 22.04 LTS is recommended,
+    as Ubuntu 20.04 LTS support will be phased out in the near future due
+    to lack of resources.
 
 -   Intel Macs: _Not recommended!_
     Any Intel-based Macintosh computer that is capable of running 64-Bit macOS
@@ -415,7 +426,7 @@ often even for single-display stimulation on a multi-display setup.
   [c++ runtime]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/raw/master/Psychtoolbox/PsychContributed/vcredist_x64_2015-2019.exe
   [gma950]: http://en.wikipedia.org/wiki/GMA_950
   [gfxhw]: /graphics-requirements
-  [OctaveForWindows]: https://ftpmirror.gnu.org/octave/windows/octave-6.4.0-w64-installer.exe
+  [OctaveForWindows]: https://ftpmirror.gnu.org/octave/windows/octave-7.3.0-w64-installer.exe
   [OctavemacOS]: https://formulae.brew.sh/formula/octave
   [Raspbian]: https://www.raspberrypi.org/
   [HybridGraphics]: https://raw.githubusercontent.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/PsychDocumentation/HybridGraphics.m

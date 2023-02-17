@@ -12,7 +12,7 @@ In order to install and use the Psychtoolbox, *you must already have
 Matlab or Octave installed on your computer, unless you install for
 Octave on Linux via the NeuroDebian repositories.* If you already have
 Matlab or Octave installed, start it up and read on. On Windows you
-must have installed GStreamer 1.18.5 MSVC edition.
+must have installed GStreamer 1.20.5 MSVC edition or later versions.
 
 ##### Contents {#contents}
 
@@ -186,14 +186,14 @@ folders of your liking instead:
 
 2.  Download the **[Psychtoolbox installer][installer] to your desktop**. 
 
-3.  You **must** install the 64-Bit GStreamer-1.18.5 **MSVC** runtime 
+3.  You **must** install the 64-Bit GStreamer-1.20.5 **MSVC** or later versions runtime 
     from [gstreamer.freedesktop.org][gstreamer-win] even if you do not need multi-media
     support! Do **not** install the MINGW variant, it will not work, but likely crash!
     Make absolutely sure that you install all offered packages. [Read `help GStreamer`
     carefully for this purpose, *before downloading and installing GStreamer*.][docs-gstreamer]
 
     If you intend to use Octave, you will need to delete the following DLL files from the
-    C:\Program Files\GNU Octave\Octave-6.4.0\mingw64\bin\ folder:
+    C:\Program Files\GNU Octave\Octave-7.3.0\mingw64\bin\ folder:
     opengl32.dll -- Otherwise hardware accelerated visual stimulation will not work.
 
 4.  [You may also need to install the Microsoft Runtime Libraries for MSVC 2015-2019 if
@@ -202,9 +202,9 @@ folders of your liking instead:
     when our installer aborted half-ways, follow the instructions it prints to
     the console. Or simply click this link to get a copy bundled with Psychtoolbox][c++ runtime]
 
-5.  Open Matlab as administrative user (for Windows 7 and later, right-click the Matlab
-    shortcut and "Run As Administrator") and type the following in the command window,
-    assuming you want Psychtoolbox to be installed inside the C:\toolbox folder:
+5.  Open Matlab as administrative user (right-click the Matlab shortcut and "Run As Administrator")
+    and type the following in the command window, assuming you want Psychtoolbox to be installed
+    inside the C:\toolbox folder:
 
         >> cd('into the folder where you downloaded DownloadPsychtoolbox.m to').
         >> DownloadPsychtoolbox('C:\toolbox')
@@ -372,7 +372,7 @@ This can mean two things:
 If the updater fails with a message like ...
 
     svn: E155036: Please see the 'svn upgrade' command 
-    svn: E155036: Working copy '/opt/MATLAB/R2021b/toolbox/Psychtoolbox' is too old (format 10, created by Subversion 1.6) 
+    svn: E155036: Working copy '/opt/MATLAB/R2022b/toolbox/Psychtoolbox' is too old (format 10, created by Subversion 1.6) 
 
 ... then open a terminal window, `cd` into the Psychtoolbox folder and then run
 the command `svn upgrade`. Then rerun the `UpdatePsychtoolbox` command.
@@ -441,7 +441,7 @@ of older versions can be found at the bottom of the page found
   [homebrew]: https://brew.sh
   [installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadPsychtoolbox.m.zip
   [legacy-installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadLegacyPsychtoolbox.m
-  [gstreamer-win]: https://gstreamer.freedesktop.org/data/pkg/windows/1.18.5/msvc/gstreamer-1.0-msvc-x86_64-1.18.5.msi
+  [gstreamer-win]: https://gstreamer.freedesktop.org/data/pkg/windows/1.20.5/msvc/gstreamer-1.0-msvc-x86_64-1.20.5.msi
   [gstreamer-osx]: http://gstreamer.freedesktop.org/data/pkg/osx/
   [PTBReleases]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases
 

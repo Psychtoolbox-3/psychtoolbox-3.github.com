@@ -93,11 +93,11 @@ with Matlab on Linux.
 ### Debian-7/testing/unstable, Ubuntu 12.10 and later installation
 
 Psychtoolbox-3 for octave is part of current Debian unstable / testing /
-experimental, as well as the official Debian-7.0 and Ubuntu 12.10
-distributions. Everything said in the "Neuro Debian" section applies, except
+experimental, as well as all the official Debian-7.0 and later, and Ubuntu 12.10
+and later distributions. Everything said in the "Neuro Debian" section applies, except
 you don't need to add the Neuro Debian ppa to your software sources.  Simply
 use your favorite package manager to install the psychtoolbox-3 package and
-you're done. E.g., in a terminal window on Ubuntu 12.10:
+you're done. E.g., in a terminal window on Ubuntu 22.04:
 
     sudo apt-get install psychtoolbox-3
     
