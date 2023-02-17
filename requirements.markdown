@@ -113,8 +113,9 @@ Macintosh computers under
    Octave 5.x, 6.x and 7.x on recent distributions.
 
 Psychtoolbox testing and development occurs mainly on the most recent Ubuntu
-Linux LTS releases or flavors of them, currently Ubuntu 20.04.4-LTS. Distributions
-older than Ubuntu 20.04-LTS are no longer supported since Psychtoolbox 3.0.18.
+Linux LTS releases or flavors of them, currently Ubuntu 20.04.5-LTS. Distributions
+older than Ubuntu 20.04-LTS are no longer supported since Psychtoolbox 3.0.18. We
+recommend Ubuntu 22.04-LTS at this time.
 
 NeuroDebian tests and supports PTB also on Debian GNU/Linux. According to
 user reports, Psychtoolbox seems to work reasonably well on Linux Mint, Arch
@@ -122,7 +123,7 @@ Linux, Gentoo, and Fedora. We can't provide much support on other distros than
 Ubuntu LTS flavors due to lack of time and resources.
 
 It is recommended to stick to the latest long-term support (LTS) Ubuntu release,
-currently 20.04.4-LTS, if you want the most well tested and well supported setup.
+currently 22.04 -LTS, if you want the most well tested and well supported setup.
 
 [Psychtoolbox also works with GNU Octave on the RaspberryPi 2B, 3, 4, 400 at least
 with the Debian flavor Raspbian (also known as RaspberryPi OS).][Raspbian].
@@ -148,7 +149,7 @@ and education purposes.
 
 ### Apple macOS - Not recommended!
 
-Psychtoolbox is also being developed and tested under Apple macOS 10.
+Psychtoolbox is also being developed and tested under Apple macOS 12.
 Psychtoolbox should "work" in principle on
 
 -  64-bit macOS 12.6 "Monterey", maybe macOS 10.14 - macOS 11 (untested), maybe partially
