@@ -18,10 +18,10 @@ The release tag is “3.0.19.0”, with the full tree and commit logs under the 
 - GStreamer 1.20.5 or later required on MS-Windows, GStreamer 1.22.0 recommended on
   Windows and macOS.
 
-- Octave 6 support cancelled, except for Linux. Octave 7.3 required on macOS and
+- Octave 6 support is cancelled, except for Linux. Octave 7.3 is required on macOS and
   Windows.
 
-- New baseline Matlab is R2022b.
+- Psychtoolbox was built and lightly tested against Matlab R2022b.
 
 - Recommended operating systems: Ubuntu 22.04-LTS Linux, MS-Windows 10, macOS 12.6.
 
@@ -30,13 +30,14 @@ The release tag is “3.0.19.0”, with the full tree and commit logs under the 
   to provide the levels of long term support as in the past, even for the best suited
   operating system for neuroscience :(.
   
-- RaspberryPi OS 10 support is terminated. OS 11 32-Bit required.
+- RaspberryPi OS 10 support is terminated. RaspberryPi OS 11 32-Bit required.
 
 - Support for all Windows versions older than recent Windows-10 will soon be completely
-  removed. Stick to older Psychtoolbox versions if you want to continue older versions
-  for some insane reason. All Windows versions older than Windows 10 are now dead, even
-  for Microsoft customers which paid for expensive extended security support.
-  It is dead, Jim!
+  removed. Stick to older Psychtoolbox versions if you want to continue on older Windows
+  for some insane reason. All Windows versions older than Windows 10 are declared dead
+  by Microsoft since early January 2023, even for Microsoft customers which paid for
+  expensive extended security support that has now ended, so use of Windows < 10 is now
+  an even bigger risk for security. It is dead, Jim!
 
 - The macOS 10 (aka Mac OSX) and macOS 11 operating systems should continue to work
   but are officially unsupported and unsupportable. macOS 13 or Apple Silicon is not
@@ -44,21 +45,22 @@ The release tag is “3.0.19.0”, with the full tree and commit logs under the 
 
 ### Highlights:
 
-- OpenXR cross-platform, cross-vendor, cross-device support for VR/AR/MR/XR applications.
+- [OpenXR cross-platform, cross-vendor, cross-device support for VR/AR/MR/XR applications.
   A new modern foundation for these kind of things, highly extensible, future proof, and
-  supports a much wider range of devices.
+  supports a much wider range of devices.](https://www.khronos.org/openxr)
 
 - Improved display mirroring support, including scaling and experimenter overlays for
   having setups with a stimulus monitor for the subject and a "experimenter console" /
   "experimenter control monitor" for the experimenter. PTB is still the only software
   that allows such setups without expensive special hardware and/or screwing up visual
-  stimulation timing and timestamping. There are still corner cases where this is difficult,
-  but we are better than ever now, increasing our lead over other toolkits further.
+  stimulation timing and timestamping. There are still corner cases where this is
+  difficult, requiring tinkering and various performance vs. quality tradeoffs, but
+  we are better than ever now, increasing our lead over other toolkits further.
 
 - Improved low-level USB support, especially useful for the PsyCalibrator toolbox for
   display calibration under Octave and Matlab.
 
-- ASIO support for Matlab users on Windows sort-of back through the backdoor, without
+- ASIO support for Matlab users on Windows sort-of back, through the backdoor, without
   us actually having to add it back or dealing with the legal and licensing nightmares.
 
 - Shitloads of new workarounds for shittons of new bugs brought to you by the iPhone
@@ -66,9 +68,9 @@ The release tag is “3.0.19.0”, with the full tree and commit logs under the 
 
 ### All:
 
-- The main new feature, after over 700 hours of development, spread over 12 months,
+- [The main new feature, after over 700 hours of development, spread over 12 months,
   is our new OpenXR driver for virtual reality, augmented reality and mixed reality
-  applications, known as eXtended Reality. The new PsychOpenXR driver should work on
+  applications, known as eXtended Reality.](https://www.khronos.org/openxr) The new PsychOpenXR driver should work on
   all VR/AR/MR/XR devices from all vendors on all operating systems which have an
   OpenXR 1 specification compliant runtime installed on your machine. So far the theory.
   In practice, this means GNU/Linux X11 and MS-Windows 10 and later, and so far it has
@@ -81,37 +83,38 @@ The release tag is “3.0.19.0”, with the full tree and commit logs under the 
   improvements and help - sufficient for most use cases - in 'help PsychVRHMD', as before.
   Development of this driver was sponsored by a consumer VR company which wants to stay
   anonymous and not specifically credited here, so thank you for contributing most of the
-  funding. As funding was insufficient to complete this very complex project, Mathworks
-  (https://www.mathworks.com/solutions/neuroscience.html) sponsored another quarter of the
-  remaining costs, thanks! Of course that means some other highly interesting project had
+  funding. [As funding was insufficient to complete this very complex project, Mathworks
+  ](https://www.mathworks.com/solutions/neuroscience.html) sponsored another quarter of the
+  remaining costs, thanks! Of course, that means some other highly interesting project had
   to be delayed indefinitely, as the amount of funding we get from Mathworks is fixed, just
-  the distribution of the fixed some to work items is flexible. In total, funding was totally
-  insufficient for making any urgently needed profit or even breaking even nonetheless, so we
-  end this one year project with a serious net loss of over 3000 Euros at this point, without
-  the project being finished to my quality and performance standards, barely reaching what I
-  would consider the minimum viable product from my perspective, but almost certainly still
+  the distribution of the fixed amount to deliverables is flexible. In total, funding was totally
+  insufficient for making any urgently needed profit, or even breaking even nonetheless, so we
+  end this one year project with a serious net loss of over 3000 Euros at this point. This without
+  the project being finished to my personal quality and performance standards, barely reaching
+  what I would consider the minimum viable product from my perspective, but almost certainly still
   much better than anything competing out there for vision science applications. I expect
-  more financial losses related to this area of functionality unless new contract work or
+  more financial losses related to this area of functionality, unless new contract work or
   funding come in, related to OpenXR aka VR/AR/MR/XR applications.
 
-  The new driver should be reasonably backwareds compatible, essentially a drop-in replacement,
-  so code written to our recommendations should work unchanged, just on a much wider variety
-  of VR hardware than before.
+  Lots of care was taken to make the new driver reasonably backwareds compatible, essentially
+  a drop-in replacement for the old drivers, so code written following our recommendations should
+  work unchanged, just on a much wider variety of VR hardware than before.
 
-  Effective immediately this means that all our old drivers are now considered to be in
-  minimal maintenance mode - critical bug fixes only, no further enhancements. They are
-  scheduled for removal as soon as the OpenXR driver has proven its maturity to some degree.
+  Effective immediately, this means that all our old drivers are now considered to be in
+  minimal maintenance mode - critical bug fixes only, no further enhancements! They are
+  scheduled for removal, as soon as the OpenXR driver has proven its maturity to some degree over
+  some time.
 
 - Tons of minor bug fixes and improvements.
 
 - PsychPortAudio: Improve diagnostics and help texts for channel mapping, and a new demo for
-  multi-channel audio output, named BasicSoundChannelHoppingDemo.m which motivated those
+  multi-channel audio output, named `BasicSoundChannelHoppingDemo.m` which motivated those
   improvements, demonstrating dynamic switching between channels of a multi-channel sound card,
   e.g., hopping between the channels of a 24 channel sound card.
 
-- SetStereoSideBySideParameters(): Add option to specify offsets in pixels, and add basic
-  RemapMouse() support to deal better with changed stereo display geometry. Various other
-  compatibility fixes to SetStereoSideBySideParameters() and RemapMouse() in combination with
+- ``SetStereoSideBySideParameters()``: Add option to specify offsets in pixels, and add basic
+  ``RemapMouse()`` support to deal better with changed stereo display geometry. Various other
+  compatibility fixes to ``SetStereoSideBySideParameters()`` and ``RemapMouse()`` in combination with
   stereo display modes in combination with imaging pipeline geometric transformations like
   FlipHorizontal or FlipVertical. Also for 90 degree step rotation with the PanelFitter.
 
@@ -126,13 +129,15 @@ The release tag is “3.0.19.0”, with the full tree and commit logs under the 
   'MirrorDisplayToSingleSplitWindow'. The new optional useOverlay parameter for these
   PsychImaging tasks generates a (normally transparent) overlay window, a "head up display"
   on top of the mirror window that shows a mirror image of the stimulus presented to the
-  subject on the main stimulation display. overlaywin = PsychImaging('GetMirrorOverlayWindow', win);
-  allows to get a window handle overlaywin to this overlay and then use Screen drawing commands
-  to draw info only meant to be seen by the experimenter, not the subject, into the overlay.
+  subject on the main stimulation display.
+  ``overlaywin = PsychImaging('GetMirrorOverlayWindow', win);``
+  allows to get a window handle `overlaywin` to this overlay, and then one can use Screen drawing
+  commands to draw info that is only meant to be seen by the experimenter, not the subject, into
+  the overlay.
   A common use case seems to be gaze position or gaze traces of a subject in eyetracking tasks,
   or other live feedback about task progression and subject performance. This is generally
-  more flexible than hardware solutions, e.g., as provided by VPixx stimulators or similar
-  equipment or some display splitters.
+  more flexible than hardware solutions, e.g., as provided by VPixx stimulators, or similar
+  equipment, or some display splitters.
 
 - PsychImaging: Allow size spec of mirror image for mirroring task 'MirrorDisplayToSingleSplitWindow'.
   Dealing with setups where the mirror/console/experimenter monitor has a lower/different resolution
@@ -144,12 +149,12 @@ The release tag is “3.0.19.0”, with the full tree and commit logs under the 
 - PsychHID: Add support for synchronous USB bulk and interrupt transfers, and manual of automatic
   claiming of USB interfaces. The new subfunctions 'USBBulkTransfer' and 'USBInterruptTransfer'
   implement synchronous bulk and interrupt transfers. This now allows writing M-File drivers
-  for more research equipment. The main motivation was to enable the free and open-source
+  for more research equipment. [The main motivation was to enable the free and open-source
   PsyCalibrator toolbox for Octave and Matlab to implement support for many more Photometers
   and other light measurement devices in a more efficient manner, starting with the cheap
-  SpyderX device. Cfe. https://github.com/yangzhangpsy/PsyCalibrator
+  SpyderX device. Cfe.](https://github.com/yangzhangpsy/PsyCalibrator).
 
-- PsychHID: Add PsychHID('USBClaimInterface', usbHandle, interfaceId) for manual claiming of
+- PsychHID: Add ``PsychHID('USBClaimInterface', usbHandle, interfaceId)`` for manual claiming of
   device interfaces. This function allows to explicitely claim a USB interface to enable it
   for I/O from/to an USB interface endpoint. Bulk- or interrupt transfers don't work if the
   interface who owns the endpoint has not been claimed. If a call to this function is omitted
@@ -161,12 +166,10 @@ The release tag is “3.0.19.0”, with the full tree and commit logs under the 
 
   On macOS: Note that if a macOS kernel driver (kext) has already claimed exclusive access to the
   device, then this will only work by detaching the kernel driver, which requires you to run Octave
-  or Matlab as root. Only tested by myself with octave via "sudo octave" so far. For the hoops you
-  have to jump through on macOS to get this working without sudo, read this FAQ:
+  or Matlab as root. Only tested by myself with octave via "sudo octave" so far. [For the hoops you
+  have to jump through on macOS to get this working without sudo, read the FAQ under this link](https://github.com/libusb/libusb/wiki/FAQ#how-can-i-run-libusb-applications-under-mac-os-x-if-there-is-already-a-kernel-extension-installed-for-the-device-and-claim-exclusive-access)
 
-  https://github.com/libusb/libusb/wiki/FAQ#how-can-i-run-libusb-applications-under-mac-os-x-if-there-is-already-a-kernel-extension-installed-for-the-device-and-claim-exclusive-access
-
-  Executive summary: Give up, or be prepared to suffer greatly!
+  Executive summary for macOS in such cases: Give up, or be prepared to suffer greatly!
 
 - Various help text and documentation updates.
 
@@ -181,6 +184,8 @@ The release tag is “3.0.19.0”, with the full tree and commit logs under the 
 - Add support for 64-Bit Octave 7.x, implemented via the shared mex files for Octave 4.4 - Octave 7.3.
   This enables use with Octave on Ubuntu 22.10.
 
+- Psychtoolbox was built and lightly tested against Matlab R2022b.
+
 - Screen: Add gpu detection support for NVidia 170 "Ampere" gpu family and "Ada Lovelace" gpu
   family. Avoids some confusing warning and may improve Flip performance by a few dozen microseconds
   in some cases. Use of NVidia graphics cards is still discouraged due to the need of proprietary
@@ -191,11 +196,11 @@ The release tag is “3.0.19.0”, with the full tree and commit logs under the 
   less. Rarely needed, but somebody in the VR research community needed it, so there.
 
 - Compatibility fixes for the RaspberryPi on RaspberryPi OS 11 aka Debian 11 stable. Especially
-  for old RPi 1,2,3 with VideoCore-4 gpu, XOrgConfCreator now generates a special xorg.conf
+  for old RPi 1,2,3 with VideoCore-4 gpu, ``XOrgConfCreator()`` now generates a special xorg.conf
   file to enable fixes for these gpu's which were not neccessary on older RaspberryPi OS versions.
   Other misc compatibility improvements.
   
-  Our build system for ARM / RaspberryPi is no 32-Bit RaspberryPi OS 11, with 32-Bit Octave 6.2,
+  Our build system for ARM / RaspberryPi is now 32-Bit RaspberryPi OS 11, with 32-Bit Octave 6.2,
   32-Bit ARM RaspberryPi 400. 64-Bit operating systems are not supported, and support for the
   legacy RaspberryPi OS 10 is now terminated.
 
@@ -225,19 +230,19 @@ The release tag is “3.0.19.0”, with the full tree and commit logs under the 
 - Psychtoolbox was built and lightly tested against Matlab R2022b.
 
 - PsychPortAudio: Allow use of a wider range of 3rd party portaudio_x64.dll plugins for the
-  underlying PortAudio engine implementation. The most interesting use case of this is for
+  underlying PortAudio engine implementation. The most interesting use case of this is ASIO for
   users of Matlab, as recent versions of Matlab ship with a Mathworks provided Portaudio
   implementation that has builtin ASIO support, where all the legal licensing and trademark
   issues are taken care of by Mathworks. If one copies the DLL shipping with Matlab into the
   PsychtoolboxRoot() folder, renamed to the filename portaudio_x64.dll instead of the filename
   that Matlab uses (libportaudio.dll), then this will expose basic ASIO support, even when used
   with GNU/Octave. Please note that Mathworks is legally responsible for this ASIO support, whereas
-  we do not include any support for ASIO into Psychtoolbox, we merely expose whatever a 3rd party
-  portaudio DLL supports, which happens to be also ASIO in case of the Matlab provided dll, so we
-  are legally in the clear, while some of our users may be more happy with their sound setup even
-  if they refuse to switch to Linux. Obviously these 3rd party driver plugins are completely
+  we do not include any support for ASIO into Psychtoolbox, we merely expose whatever backend a 3rd party
+  portaudio DLL supports, which happens to be also ASIO in this case of the Matlab provided dll. Therefore
+  we are legally in the clear, while some of our users may be more happy with their sound setup, even
+  if they refuse to switch to Linux. Obviously, these 3rd party driver plugins are completely
   unsupported by us in case of trouble, and likely also by Mathworks, as this is not their intended
-  use case, just a side-effect of some functionality that is probably meant for the audio toolbox.
+  use case, just a side-effect of some functionality that is probably meant for the Matlab audio toolbox.
 
 - Update bundled libusb-1 for MS-Windows to most recent version 1.0.26 with many bug fixes and
   improvements over the last 11 years.
@@ -249,13 +254,13 @@ The release tag is “3.0.19.0”, with the full tree and commit logs under the 
 
 - Psychtoolbox was built and lightly tested against Matlab R2022b.
 
-- Switch only supported and lightly tested macOS version from 10.15 Catalina to 12 Monterey.
+- Switch the *only supported and lightly tested* macOS version from 10.15 "Catalina" to 12 "Monterey".
   No more development or testing on 10.15.7 Catalina, now that it has been wiped from my drive.
-  We keep macosx-version-min at 10.11 for the time being, so PTB may still work back to 10.11,
+  We keep macosx-version-min at 10.11 for the time being, so PTB may still work back to macOS 10.11,
   but no guarantees, and I don't care if it breaks on older systems than macOS 12.6 Monterey.
   macOS 13 Ventura is completely untested and not officially supported yet. Apple Silicon Macs
   continue to be unsupported and untested, with known completely broken visual stimulation timing
-  and possible other issues. All mex files are for 64-Bit Intel processor architecture variants of
+  and possible other issues. All mex files are for the 64-Bit Intel processor architecture variants of
   Matlab and GNU/Octave only.
 
 - PsychOculusVR: Remove for macOS. No VR virtual reality support on macOS anymore as of PTB 3.0.19.
@@ -267,7 +272,7 @@ The release tag is “3.0.19.0”, with the full tree and commit logs under the 
 
 - Fix performance of PsychHID further for the latest Apple security bullshit, introduced sometime
   after macOS 10.15 Catalina. This was found when testing Octave on macOS 12.5 Monterey, a massive
-  performance degradation for KbCheck and related functions if Matlab or Octave are launched from
+  performance degradation for `KbCheck` and related functions if Matlab or Octave are launched from
   a terminal (iow. always for Octave!). Apple screwed up their api's further to increase processing
   time of some time sensitive operation from 1 msec to over 15 msec! Now we are back to about 2.4
   msecs on macOS 12, which is much worse than MS-Windows with less than 1 msecs or Linux with less
@@ -287,10 +292,10 @@ The release tag is “3.0.19.0”, with the full tree and commit logs under the 
   to progress in the same way with shared high-quality code. It does mean however, that if one wants
   to use low-level USB device access, e.g., USB control-/bulk-/interrupt-transfers, one needs to
   install libusb-1.dylib with a minimum version of 1.0.22 from a suitable source, or these functions
-  will refuse to work. The most simple way to get this library is via HomeBrew: brew install libusb
+  will refuse to work. The most simple way to get this library is via HomeBrew: ``brew install libusb``
   
-  The only affected Psychtoolbox function without libusb dylib is the ColorCal2() functions for using
-  CRS ColorCal-II devices.
+  The only affected standard Psychtoolbox function without installing libusb dylib is the ColorCal2()
+  functions for using CRS ColorCal-II devices.
 
 Enjoy!
 
