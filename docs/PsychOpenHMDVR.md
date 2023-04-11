@@ -210,7 +210,7 @@ separateEyePosesSupported = 1 if use of [PsychOpenHMDVR](PsychOpenHMDVR)('GetEye
 The returned struct may contain more information, but the fields mentioned  
 above are the only ones guaranteed to be available over the long run. Other  
 fields may disappear or change their format and meaning anytime without  
-warning.  
+warning. See 'help PsychVRHMD' for more detailed info about available fields.  
   
   
 isSupported = [PsychOpenHMDVRCore](PsychOpenHMDVRCore)('Supported');  

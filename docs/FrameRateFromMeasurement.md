@@ -16,7 +16,7 @@ The function returns the measured interval in units of seconds.
 CAUTION: This is unfinished alpha quality code. While it works well on  
 some system setups, it doesn't yet on others and will need more  
 fine-tuning in the future. For most purpose, the values returned by  
-[Screen](Screen)('GetFlipInterval', window); are perfectly useable and the  
+[Screen](Screen)('GetFlipInterval', window); are perfectly usable and the  
 recommended way of getting the video refresh duration.  
 
 

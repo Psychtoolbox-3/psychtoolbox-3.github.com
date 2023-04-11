@@ -342,6 +342,12 @@ hapticFeedbackSupported = 1 if basic haptic feedback is supported in principle o
                             test for a setting == 1 to know if [PsychVRHMD](PsychVRHMD)('HapticPulse') works  
                             in principle, which is considered basic feedback ability.  
   
+eyeTrackingSupported = 1 if basic eye gaze tracking is supported by the given VR/AR/MR device and  
+                         software setup, 0 otherwise. In other words, if the device is equipped  
+                         with at least a monocular eye tracker. Values bigger than 1 may indicate  
+                         support for more than basic monocular eye gaze tracking, but the exact  
+                         meaning of these values is not yet specified.  
+  
 The info struct may contain much more vendor specific information, but the above  
 set is supported across all devices.  
   

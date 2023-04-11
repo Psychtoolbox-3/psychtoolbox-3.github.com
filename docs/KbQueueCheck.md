@@ -6,7 +6,7 @@
  Obtains data about keypresses on the specified device since the   
  most recent call to this routine, [KbQueueStart](KbQueueStart), or [KbQueueWait](KbQueueWait)  
  Clears all scored events, but unscored events that are still being  
- processsed may remain in the queue  
+ processed may remain in the queue  
   
  pressed: a boolean indicating whether a key has been pressed  
   
@@ -34,7 +34,7 @@
  ptb\_kbcheck\_disabledKeys (see "help [DisableKeysForKbCheck](DisableKeysForKbCheck)"), will  
  not caused pressed to return as true and will be zeroed out in the  
  returned arrays. However, a better alternative is to specify a  
- keyList arguement to [KbQueueCreate](KbQueueCreate).   
+ keyList argument to [KbQueueCreate](KbQueueCreate).   
   
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
   

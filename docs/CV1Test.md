@@ -4,15 +4,15 @@
 res = [CV1Test](CV1Test)([waitframes=90][, useRTbox=0]) - A timing test script for [HMDs](HMDs) by use of a photometer.  
   
 Needs the [RTBox](RTBox), and a photo-diode or such, e.g., a [ColorCal](ColorCal)-II,  
-connected to the TTL trigger input.  
+connected to the TTL trigger input of a [RTBox](RTBox) or CRS Bits\#.  
   
-Atm., we still measure a discrepancy of about 75 msecs between what  
-'[Flip](Flip)' reports according to our drivers timestamping, and what the  
-photometer based timestamping reports. That's still not good enough, and  
-i'm out of ideas on how to improve this.  
-  
-Onset scheduling also becomes erratic for short waitframes intervals  
-between white flashes.  
+While measured timestamps/timing on [OculusVR](OculusVR)-1 via [PsychOculusVR1](PsychOculusVR1) is catastrophic,  
+and bad on all proprietary [OpenXR](OpenXR) runtimes on Windows [(OculusVR]((OculusVR), [SteamVR)](SteamVR)) and Linux  
+[(SteamVR)]((SteamVR)), as well as with standard Monado, we get close to perfect timestamps with  
+our "metrics enhanced" Monado on Linux + Mesa Vulkan drivers with timestamping support,  
+as tested with both Oculus Rift CV-1 and HTC Vive Pro Eye on AMD Raven Ridge apu with  
+radv + timing extension and Monado metrics mode. Errors are sub-millisecond wrt. to  
+testing with a [ColorCal2](ColorCal2) and also with a Videoswitcher in simulated HMD mode.  
   
 
 

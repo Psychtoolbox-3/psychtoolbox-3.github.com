@@ -8,7 +8,7 @@
   
  This routine is called automatically at clean-up (e.g., when   
  'clear mex' is invoked and can be omitted expense of keeping   
- memory allocated and an additional thread running unnecesarily  
+ memory allocated and an additional thread running unnecessarily  
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
   
  See also: [KbQueueCreate](KbQueueCreate), [KbQueueStart](KbQueueStart), [KbQueueStop](KbQueueStop), [KbQueueCheck](KbQueueCheck),  

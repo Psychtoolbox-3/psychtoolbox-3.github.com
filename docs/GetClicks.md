@@ -22,7 +22,7 @@ inter-click interval to 1 second. By default, the interval is 500 msecs.
 You can also specify an override interval in the optional argument  
 'interClickSecs' for a given call to [GetClicks](GetClicks). A setting of zero would  
 disable multi-click detection, ie., only wait for first mouse-click or  
-press, then return immediatly.  
+press, then return immediately.  
   
 If the optional parameter 'untilTime' is provided, [GetClicks](GetClicks) will only wait  
 for the first click until that time and then return, regardless if the 1st click  

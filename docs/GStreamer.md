@@ -90,27 +90,23 @@ file:
 <http://gstreamer.freedesktop.org/download/\>  
   
 The following [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) runtime packages have been lightly tested for compatibility  
-with Psychtoolbox 3.0.19 as of February 2023:  
+with Psychtoolbox 3.0.19.1, as of March 2023:  
   
-For MS-Windows: 64-Bit Intel MSVC runtime v1.20.5 for use with 64-Bit Matlab/Octave.  
+For MS-Windows: 64-Bit Intel MSVC runtime v1.22.1 for use with 64-Bit Matlab/Octave.  
   
-<https://gstreamer.freedesktop.org/data/pkg/windows/1.20.5/msvc/gstreamer-1.0-msvc-x86\_64-1.20.5.msi\>  
-  
-also lightly tested, probably with higher performance and more modern, is v1.22.0.  
-  
-<https://gstreamer.freedesktop.org/data/pkg/windows/1.22.0/msvc/gstreamer-1.0-msvc-x86\_64-1.22.0.msi\>  
+<https://gstreamer.freedesktop.org/data/pkg/windows/1.22.1/msvc/gstreamer-1.0-msvc-x86\_64-1.22.1.msi\>  
   
 You \*must\* install the MSVC variants of [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)), not the [MinGW64](MinGW64) variants!  
   
   
-For Apple macOS: Runtime v1.18.5  
+### For Apple macOS: Oldest runtime v1.18.5:  
   
 <https://gstreamer.freedesktop.org/data/pkg/osx/1.18.5/gstreamer-1.0-1.18.5-x86\_64.pkg\>  
   
-also tested, probably higher performance andmore modern, but known to crash with  
-[VideoRecordingDemo](VideoRecordingDemo).m at least with the [MacBookPro](MacBookPro) 2017 builtin camera, is v1.22.0.  
+also tested, probably higher performance and more modern, but known to crash with  
+[VideoRecordingDemo](VideoRecordingDemo).m at least with the [MacBookPro](MacBookPro) 2017 builtin camera, is v1.22.1.  
   
-<https://gstreamer.freedesktop.org/data/pkg/osx/1.22.0/gstreamer-1.0-1.22.0-universal.pkg\>  
+<https://gstreamer.freedesktop.org/data/pkg/osx/1.22.1/gstreamer-1.0-1.22.1-universal.pkg\>  
   
 When the installer asks you to select the components it should install,  
 select a "Full installation" or "Complete installation", or if those  

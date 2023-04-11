@@ -1,7 +1,7 @@
 # [FlipTimingWithRTBoxPhotoDiodeTest](FlipTimingWithRTBoxPhotoDiodeTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)
 
-[FlipTimingWithRTBoxPhotoDiodeTest](FlipTimingWithRTBoxPhotoDiodeTest)([configFile][, targetFolder][, usevulkan=0][, bpc=8])  
+[FlipTimingWithRTBoxPhotoDiodeTest](FlipTimingWithRTBoxPhotoDiodeTest)([configFile][, targetFolder][, usevulkan=0][, bpc=8][, useXR=0])  
   
 Test visual stimulus onset timing accuracy and visual stimulus onset  
 timestamping precision and robustness under varying loads, conditions and  
@@ -39,6 +39,9 @@ supported are 8 for standard 8 bpc RGBA8 framebuffer, 10 bpc for RGB10A2,
 and 16 bpc for a RGBA16F floating point framebuffer. Defaults to 8 bpc,  
 which is the only precision that is guaranteed to be supported on all  
 operating systems, graphics cards and displays.  
+  
+'useXR' If 1, try to test timing on a supported VR/AR/MR/XR display via  
+[PsychVRHMD](PsychVRHMD)(). Might be fiddly and low performance, but not impossible.  
   
 # Mandatory variables in the config file, part of the struct variable 'conf'  
   

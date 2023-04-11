@@ -68,7 +68,7 @@ text string in right-to-left reading direction, e.g., for scripts which
 read right to left  
   
 The optional argument 'winRect' allows to specify a [left top right bottom]  
-rectange, in which the text should be centered/placed etc. By default,  
+rectangle, in which the text should be centered/placed etc. By default,  
 the rectangle of the whole 'win'dow is used.  
   
 The function employs clipping by default. Text lines that are detected as  

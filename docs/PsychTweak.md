@@ -11,7 +11,7 @@ and weird things may happen! If in doubt, execute "clear mex" before
 executing this function.  
   
 Currently the function mostly implements tweaks for MS-Windows to allow  
-to cope with the brokeness of the system, especially in the domain of  
+to cope with the brokenness of the system, especially in the domain of  
 timing and timestamping.  
   
   
@@ -34,7 +34,7 @@ the toolbox itself, or maybe for some simple demos.
   
 [PsychTweak](PsychTweak)('ScreenVerbosity', verbosity);  
   
--- Set initial level of verbosity for [Screen](Screen)(). This can be overriden via  
+-- Set initial level of verbosity for [Screen](Screen)(). This can be overridden via  
 [Screen](Screen)('[Preference](Preference)','Verbosity'). The default verbosity is 3 = Errors,  
 Warnings and some Info output.  
   

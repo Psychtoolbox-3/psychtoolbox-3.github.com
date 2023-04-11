@@ -33,7 +33,7 @@ first two entries will return info about relative mouse movement (deltaX,
 deltaY) since last query, as reported by the OS with unknown reliability in  
 unknown units, but probably pixels - use with caution! On MS-Windows, the first  
 two entries will return info about "physical" mouse cursor position [(PhysicalX]((PhysicalX),  
-[PhysicalY)](PhysicalY)), as reported by the OS Win32 api function [GetPhysicalCursorPos](GetPhysicalCursorPos)()  
+physically), as reported by the OS Win32 api function [GetPhysicalCursorPos](GetPhysicalCursorPos)()  
 with unknown reliability in unknown units, so use caution!  
   
 The optional 'valinfo' struct array contains one struct per valuator.  

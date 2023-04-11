@@ -199,6 +199,57 @@ that is why it is advisable to explicitely state your needs, to allow the
 driver to optimize for the best precision/reliability/performance  
 tradeoff on all the runtimes where such a tradeoff is required.  
   
+As mentioned here, in "help [PsychVRHMD](PsychVRHMD)" and our "help [OpenXR](OpenXR)" overview  
+and setup instructions, currently no standard [OpenXR](OpenXR) implementation with  
+reliable and trustworthy timestamping exists. Proper enhancements to  
+[OpenXR](OpenXR) will need to be done in the future. Right now, as of Psychtoolbox  
+3.0.19.1, we have a hacky solution for a subset of Linux users, called  
+"Monado metrics timestamping hack". It goes as follows:  
+  
+If you need reliable timestamping, the only solution right now is to use  
+Linux + a modified version of Monado + a modified version of Mesa + an  
+AMD or Intel gpu of sufficient performance + a VR HMD supported by Monado  
+on Linux. Contact our paid support "help [PsychPaidSupportAndServices](PsychPaidSupportAndServices)" for  
+help in setting up this feature and getting suitable modified Monado and  
+Mesa drivers. Once everything is installed on the hardware and software  
+side, the following steps need to be taken at the start of each  
+experiment session to enable the special Monado metrics timestamping hack  
+for trustworthy timestamping at the price of lowered performance:  
+  
+    1. Create a Linux fifo pipe file, e.g., in a terminal type  
+       "sudo mkfifo /usr/local/framequeue.protobuf"  
+       You can choose any file path and name instead of  
+       /usr/local/framequeue.protobuf but it makes sense to choose a  
+       directory which is under your users control, not a temporary  
+       directory, unless you want to repeat step 1 after each system  
+       reboot. In steps 2 and 3 you must path the same path/filename to  
+       both monado-service and Octave/Matlab via the XRT\_METRICS\_FILE  
+       environment variable.  
+  
+    2. Start monado-service and use the created fifo file as output file  
+       for the metrics log, e.g., in a terminal window via  
+  
+       "XRT\_METRICS\_FILE=/usr/local/framequeue.protobuf monado-service"  
+  
+       This will launch the monado-service [OpenXR](OpenXR) compositor, enable its  
+       metrics logging into the fifo, and block its startup until the  
+       Psychtoolbox XR work session is started.  
+  
+    3. Start a PTB session, also with XRT\_METRICS\_FILE environment variable  
+       specified to the same fifo file location during launch of Octave or  
+       Matlab, e.g., in a terminal start Octave or Matlab via:  
+  
+       "XRT\_METRICS\_FILE=/usr/local/framequeue.protobuf octave --gui" or  
+       "XRT\_METRICS\_FILE=/usr/local/framequeue.protobuf matlab"  
+  
+       Once the [PsychOpenXR](PsychOpenXR) driver has detected that a Monado XR server is  
+       running, and that the fifo file exists and is accessible, it opens  
+       that fifo for read access, which will let monado-service fully start  
+       up and get ready to serve [OpenXR](OpenXR) clients. Your Psychtoolbox session  
+       should then work with trustworthy timestamps, but at potentially  
+       significantly reduced performance, e.g., a framerate of only half  
+       or a third of the refresh rate of your VR HMD display.  
+  
   
 'basicQuality' defines the basic tradeoff between quality and required  
 computational power. A setting of 0 gives lowest quality, but with the  
@@ -252,7 +303,7 @@ separateEyePosesSupported = 1 if use of [PsychOpenXR](PsychOpenXR)('GetEyePose')
 The returned struct may contain more information, but the fields mentioned  
 above are the only ones guaranteed to be available over the long run. Other  
 fields may disappear or change their format and meaning anytime without  
-warning.  
+warning. See 'help PsychVRHMD' for more detailed info about available fields.  
   
   
 isSupported = [PsychOpenXR](PsychOpenXR)('Supported');  

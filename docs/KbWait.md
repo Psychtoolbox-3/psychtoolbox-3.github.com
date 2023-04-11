@@ -28,7 +28,7 @@ and [KbWait](KbWait) are keypress oriented (and fast).
   
 Using [KbWait](KbWait) from the MATLAB command line: When you type "[KbWait](KbWait)" at the  
 prompt and hit the enter/return key to execute that command, then [KbWait](KbWait)  
-will detect the enter/return key press and return immediatly.  If you  
+will detect the enter/return key press and return immediately.  If you  
 want to test [KbWait](KbWait) from the command line, then try this:  
   
  [WaitSecs](WaitSecs)(0.2);[KbWait](KbWait)  

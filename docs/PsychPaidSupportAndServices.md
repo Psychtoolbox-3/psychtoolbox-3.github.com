@@ -82,11 +82,10 @@ fund general development and upkeep of Psychtoolbox and its ecosystem. In
 other words, it contributes to / acts as an insurance that allows  
 Psychtoolbox to be around and in good shape years into the future.  
   
-To clarify: Psychtoolbox itself will stay freely downloadable and usable  
-by anyone, and stay fully accessible as open-source software, by anyone  
-for any purpose. Anybody able and willing to contribute code and ideas of  
-sufficiently high quality is invited to contribute to the open-source  
-code, the documentation on our public community website and Wiki  
+To clarify: Psychtoolbox itself will stay open-source software. Anybody  
+able and willing to contribute code and ideas of sufficiently high quality  
+is invited to contribute to the open-source code, the documentation on our  
+public community website and Wiki  
 http://psychtoolbox.org, and to participate and help each other on the  
 public community forum https://psychtoolbox.discourse.group.  
   

@@ -4,7 +4,7 @@
 [ch, when] = [GetChar](GetChar)([getExtendedData], [getRawCode])  
   
 Wait for a typed character and return it.  If a character was typed  
-before calling [GetChar](GetChar) then [GetChar](GetChar) will return that character immediatly.  
+before calling [GetChar](GetChar) then [GetChar](GetChar) will return that character immediately.  
 Characters flushed by [FlushEvents](FlushEvents) are all ignored by [GetChar](GetChar). Characters  
 are returned in the first return argument "ch".  
   
@@ -46,9 +46,9 @@ times returned by [GetSecs](GetSecs) are not directly comparable to when.secs.
   
 By setting getExtendedData to 0, all extended timing/modifier information  
 will not be collected and "when" will be returned empty.  This speeds up  
-calls to this function. If ommitted or set to 1, the "when" data  
+calls to this function. If omitted or set to 1, the "when" data  
 structure is filled.  getRawCode set to 1 will set "ch" to be the integer  
-ACII code of the available character.  If ommitted or set to 0, "ch" will  
+ASCII code of the available character.  If omitted or set to 0, "ch" will  
 be in char format. When running under Linux in "matlab -nojvm" mode or on  
 Octave, "when" will be returned empty. When running on any other  
 operating system under Octave or in "matlab -nojvm" mode, or on Windows  

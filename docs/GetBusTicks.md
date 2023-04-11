@@ -16,7 +16,7 @@ from the CPU clock and typically faster than 1/10 of its speed. On
 Allen's 1GHz G4 the [GetBusTicks](GetBusTicks) clock is 133 [MHz](MHz).  
   
 The [GetTicks](GetTicks) clock is slow, always 1/60.15 seconds. On OS  
-X [GetTicks](GetTicks) is obsolete and provided only for compatability with older  
+X [GetTicks](GetTicks) is obsolete and provided only for compatibility with older  
 scripts.       
   
 TIMING ADVICE: the first time you access any MEX function or M file,  

@@ -14,7 +14,7 @@ Example: To enable the keys with keycodes 4, 6 and 7, do
 [RestrictKeysForKbCheck](RestrictKeysForKbCheck)([4, 6, 7]);  
   
 Calling [RestrictKeysForKbCheck](RestrictKeysForKbCheck)([]); ie., with an empty vector, will  
-reenable all keys.  
+re-enable all keys.  
   
 Caution: This setting is reset to "empty" during a "clear all" command,  
 ie., all keys will be enabled again after a "clear all"!  

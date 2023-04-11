@@ -13,7 +13,7 @@ keyboard scan code (keyCode).
   
    keyCode        A 256-element logical array.  Each bit  
                   within the logical array represents one keyboard key.   
-                  If a key is pressed, its bit is set, othewise the bit   
+                  If a key is pressed, its bit is set, otherwise the bit   
                   is clear. To convert a keyCode to a vector of key    
                   numbers use FIND(keyCode). To find a key's keyNumber   
                   use [KbName](KbName) or [KbDemo](KbDemo).  
@@ -57,7 +57,7 @@ this from happening by disabling keyboard input to Matlab: Add a
 [ListenChar](ListenChar)(2); command at the beginning of your script and a  
 [ListenChar](ListenChar)(0); to the end of your script to enable/disable transmission of  
 keypresses to Matlab. If your script should abort and your keyboard is  
-dead, press CTRL+C to reenable keyboard input -- It is the same as  
+dead, press CTRL+C to re-enable keyboard input -- It is the same as  
 [ListenChar](ListenChar)(0). See 'help ListenChar' for more info.  
   
 [GetChar](GetChar) and [CharAvail](CharAvail) are character-oriented (and slow), whereas [KbCheck](KbCheck)  

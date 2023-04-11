@@ -11,7 +11,7 @@ passing any value will enable listening. Passing a value of 2 will enable
 listening, additionally any output of keypresses to Matlabs or Octaves  
 windows is suppressed. Use this with care, if your script aborts with an  
 error, Matlab or Octave may be left with a dead keyboard until the user  
-presses CTRL+C to reenable keyboard input. 'listenFlag' 2 is silently  
+presses CTRL+C to re-enable keyboard input. 'listenFlag' 2 is silently  
 ignored on Matlab in -nojvm mode under MS-Windows.  
   
 Passing the listenFlag -1 will only suppress keypresses into Matlabs or  

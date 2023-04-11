@@ -137,7 +137,7 @@ The optional argument 'vSpacing' sets the spacing between the lines.
 Default value is 1.  
   
 The optional argument 'winRect' allows to specify a [left top right  
-bottom] rectange, in which the text should be placed etc. By default, the  
+bottom] rectangle, in which the text should be placed etc. By default, the  
 rectangle of the whole 'win'dow is used.  
   
 'resetStyle'. If true, we reset the base text style to normal before  

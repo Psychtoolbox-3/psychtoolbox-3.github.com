@@ -1,7 +1,7 @@
 # [VRInputStuffTest](VRInputStuffTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychHardware](PsychHardware)>[PsychVRToolbox](PsychVRToolbox)
 
-[VRInputStuffTest](VRInputStuffTest)([withHapticFeedback=0][, withMTStressTest=0][, specialReqs='DebugDisplay'][, refSpace]) - Test input functionality related to VR devices.  
+[VRInputStuffTest](VRInputStuffTest)([withHapticFeedback=0][, withMTStressTest=0][, specialReqs='DebugDisplay'][, refSpace][, withGazeTracking=0]) - Test input functionality related to VR devices.  
   
 Tries to enumerate available controllers and other properties related to  
 input. After any key press or controller button press, reports live state  
@@ -44,6 +44,13 @@ tested [OpenXR](OpenXR) runtimes on Linux and Windows did support the stage
 reference space, which provided a more natural coordinate system and also  
 visualization of the "play area". The driver default is 2 for local, as  
 that is always supported.  
+  
+The optional parameter 'withGazeTracking', if provided and non-zero, will  
+enable some basic tests of eye gaze tracking with VR HMD's which support  
+eye tracking. Please note that this functionality is not available in  
+official Psychtoolbox releases yet, at least not as of v3.0.19.1, and the  
+api used in this demo is highly experimental and subject to backwards  
+incompatible changes!  
   
 After a keypress (or Enter/Back button press on the controller),  
 visualizes tracked hand position and orientation of hand controllers and  

@@ -25,7 +25,7 @@ varies from system to system. We're ignoring the system ticks here.)
 OS X: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_  
   
 "Ticks" functions are deprecated, use "Secs" functions instead;  To  
-measure time, use [GetSecs](GetSecs) insted of [GetTicks](GetTicks). To delay, use [WaitSecs](WaitSecs)  
+measure time, use [GetSecs](GetSecs) instead of [GetTicks](GetTicks). To delay, use [WaitSecs](WaitSecs)  
 instead of [WaitTicks](WaitTicks).    
   
 "Secs" functions are provided for OS 9, Windows, and OS X and are more precise  

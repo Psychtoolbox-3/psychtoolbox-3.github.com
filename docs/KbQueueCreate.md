@@ -97,7 +97,7 @@ It is acceptable to call [KbQueueCreate](KbQueueCreate) at any time (e.g., to sw
      Obtains data about keypresses on the specified device since the   
      most recent call to this routine, [KbQueueStart](KbQueueStart), [KbQueueWait](KbQueueWait)  
      Clears all scored events, but unscored events that are still being  
-     processsed may remain in the queue  
+     processed may remain in the queue  
   
      pressed: a boolean indicating whether a key has been pressed  
   
@@ -125,7 +125,7 @@ It is acceptable to call [KbQueueCreate](KbQueueCreate) at any time (e.g., to sw
     ptb\_kbcheck\_disabledKeys (see "help [DisableKeysForKbCheck](DisableKeysForKbCheck)"), will  
     not cause pressed to return as true and will be zeroed out in the  
     returned arrays. However, a better alternative is to specify a  
-    keyList arguement to [KbQueueCreate](KbQueueCreate).   
+    keyList argument to [KbQueueCreate](KbQueueCreate).   
   
 secs=[KbQueueWait](KbQueueWait)([deviceNumber])  
      Waits for any key to be pressed and returns the time of the press.  
@@ -152,7 +152,7 @@ secs=[KbQueueWait](KbQueueWait)([deviceNumber])
   
      This routine is called automatically at clean-up (e.g., when   
      'clear mex' is invoked and can be omitted expense of keeping   
-     memory allocated and an additional thread running unnecesarily  
+     memory allocated and an additional thread running unnecessarily  
   
 Note that any keyboard typing used to invoke [KbQueue](KbQueue) commands will be  
 recorded. This would include the release of the carriage return used  

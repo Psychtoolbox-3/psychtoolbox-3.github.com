@@ -15,7 +15,7 @@ kbNameResult = [KbName](KbName)(arg)
 \* If no argument is supplied then [KbName](KbName) waits one second and then  
   calls [KbCheck](KbCheck).  [KbName](KbName) then returns a cell array holding the names of  
   all keys which were down at the time of the [KbCheck](KbCheck) call. The  
-  one-second delay preceeding the call to [KbCheck](KbCheck) avoids catching the  
+  one-second delay preceding the call to [KbCheck](KbCheck) avoids catching the  
   <return\> keypress used to execute the [KbName](KbName) function.  
   
 \* If arg is 'UnifyKeyNames', [KbName](KbName) will switch its internal naming  

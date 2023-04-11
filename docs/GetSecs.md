@@ -55,7 +55,7 @@
  precision clock on a system for that call, usually the processors  
  performance counter or the HPET high precision event timer, or the ACPI  
  power management timer - whatever is the best tradeoff between  
- reliability, acccuracy and performance. To our current knowledge, all  
+ reliability, accuracy and performance. To our current knowledge, all  
  computers running a Linux 2.6 kernel have reliably working clocks.  
   
   

@@ -11,7 +11,7 @@ origin of a screen on which a supplied onscreen window is displayed.
 Otherwise it's "global", i.e. relative to the origin of the main screen  
 ([Screen](Screen) 0). It is advisable to specify an onscreen window handle for  
 proper handling of Retina displays on macOS if you use backwards  
-compatibilty mode.  
+compatibility mode.  
   
 On Linux with X11, the optional 'mouseid' parameter allows to select  
 which of potentially multiple cursors should be repositioned. On OS/X and  
