@@ -25,10 +25,10 @@ expresses sarcasm and I just didn't get the joke.
 
 There just seems to be no meaningful capacity for rational mid- to
 long-term thinking in this field, at least not in the majority of
-over 99% of our users. A bit thank you to the ~ 0.5% of decent and
+over 99% of our users. A big thank you to the ~ 0.5% of decent and
 supportive people out there though! Unfortunately not enough to save
-this soft win-win-win approach for everybody to secure funding of
-PTB’s maintenance and development.
+this soft win-win-win approach for everybody to secure funding for
+PTB’s future maintenance and development.
 
 We will evaluate new options, but it is time to conclude that we are
 out of "carrots" to incentivize people in a soft and friendly way to
