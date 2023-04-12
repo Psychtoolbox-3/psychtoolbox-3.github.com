@@ -1,0 +1,151 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.19 Beta update "Virtuality" SP1 was released at 12th April 2023.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.19.1”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.19.1>
+
+### Compatibility changes wrt. Psychtoolbox 3.0.19.0:
+
+- Octave 7.3 is required on Windows. Octave 8.1 is required on macOS, but Octave
+  6.3 - 7.3 may also continue to work on macOS (untested as of 3.0.19.1).
+
+- Recommended operating systems: Ubuntu 22.04.2-LTS Linux, MS-Windows 10 22H2, macOS 12.6.
+
+- The macOS 10 (aka Mac OSX) and macOS 11 operating systems should continue to work, but
+  are officially unsupported and unsupportable. Use of macOS 13, or running Psychtoolbox
+  on Apple Silicon (M1, M2, ...) is not officially supported by this release. Visual
+  stimulation timing will be totally broken on Apple Silicon Macs, as well as some other
+  features. It is our understanding that currently no vision science toolkit exists that
+  could provide any reliable or trustworthy operation on macOS for Apple Silicon. On
+  Intel based Macs, Psychtoolbox likely continues to be the only toolkit with somewhat
+  trustworthy visual stimulation timing on most Intel Mac configurations.
+
+### Highlights:
+
+- Further compatibility improvements and refinements to our new [OpenXR cross-platform,
+  cross-vendor, cross-device support for VR/AR/MR/XR applications. A new modern foundation
+  for these kind of things, highly extensible, future proof, and supports a much wider
+  range of devices.](https://www.khronos.org/openxr)
+
+### All:
+
+- [The main new feature, after over 800 hours of development, spread over 13.75 months,
+  is our new OpenXR driver for virtual reality, augmented reality and mixed reality
+  applications, known as eXtended Reality.](https://www.khronos.org/openxr) The new
+  PsychOpenXR driver should work on all VR/AR/MR/XR devices from all vendors on all
+  operating systems which have an OpenXR 1 specification compliant runtime installed on
+  your machine. So far the theory.
+
+  In practice, this means GNU/Linux X11 and MS-Windows 10 and later. This new 3.0.19.1
+  release has been further refined and now also tested for compatibility with the HTC
+  Vive Pro Eye (and presumably similar HMDs from the Vive series), and the associated
+  "Vive Wand" hand controllers. Proper working of our new driver on HMDs from two different
+  VR hardware vendors - Oculus and HTC - should give good confidence that the new OpenXR
+  driver really works cross-vendor. Testing with the HTC Vive Pro Eye was performed with
+  Valve SteamVR 1.25.7 as OpenXR runtime on both Windows 10 22H2 and on Ubuntu Linux
+  20.04.6-LTS, and additionally also with Monado (with vive and survive backends) under
+  Ubuntu Linux 20.04.6-LTS.
+
+- Improvements and fixes to all legacy VR drivers, and to VR test scripts and demos.
+
+- Minor bug fixes and improvements.
+
+- Various help text and documentation updates. Also spelling fixes to some code comments and
+  docs contributed by Yaroslav Halchenko from the NeuroDebian project. He contributed some
+  automatic spellchecking for our GitHub CI to reduce such mistakes over time.
+
+- Fixes by Alex Forrence to allow building Python wheels from source more easily.
+
+### Linux:
+
+- Add support for 64-Bit Octave 8.x, implemented via the shared mex files for Octave 4.4 to
+  Octave 8.x. This enables use with Octave on Ubuntu 20.04 - Ubuntu 23.04, and should also
+  enable use on future Linux distributions. Note though that Octave 8.x compatibility is
+  assumed at the moment, not actually tested, as upcoming Ubuntu 23.04 ships with Octave 7.3.
+
+- Psychtoolbox was built and lightly tested against Matlab R2022b.
+
+- Our new OpenXR driver now has the ability to provide accurate and trustworthy visual
+  stimulus onset timestamps for VR HMD's - as tested with Oculus Rift CV-1 and HTC Vive Pro Eye
+  and some photo-diode measurements. This however currently only works with Linux and only
+  with Monado as OpenXR runtime, and only with a slightly modified Monado runtime and a special
+  set of Mesa Vulkan drivers for AMD and Intel gpu's. It also comes at a performance cost.
+  However, this combination of Psychtoolbox 3.0.19.1 and modified Monado + Mesa is to my
+  knowledge the only existing modern VR system that can actually provide accurate and trustworthy
+  timing and timestamping for VR applications on modern VR HMD's. Read "Help PsychOpenXR"
+  for setup instructions. A proper non-hacky, easy to use solution to VR timing problems is
+  still to be done and will require substantial amounts of work.
+
+  As part of this work, the CV1Test.m script has been improved for VR related timing tests,
+  and FlipTimingWithRTBoxPhotoDiodeTest.m now optionally can also test VR HMD's wrt. stimulus
+  onset timing and timestamping. These test scripts were used to verify timestamping precision
+  and reliability of the proprietary VR drivers (OculusVR, Oculus OpenXR, SteamVR OpenXR) or
+  rather the terrible lack of reliability and precision, and the excellent reliability and
+  precision of the hacked Monado OpenXR runtime on Linux.
+
+- Basic Vulkan display backend support for RaspberryPi 4 and 400 with VideoCore-6 gpu. This
+  is very basic right now, and requires special setup and use of Mesa Vulkan drivers built
+  from Mesa source code, the build and install automated by use of PiKISS. See instructions
+  under 'help RaspberryPiSetup'. This currently has little to no advantage over use of the
+  standard OpenGL display backend. In fact, expect *way less trustworthy* visual timing and
+  reduced graphics performance. The only use case at the moment would be convenient setup
+  on a dual-display RaspberryPi 4/400 setup for experimenter GUI/mirror display + subject
+  stimulus display, a split experimenter + subject configuration currently not supported by
+  the standard display backend.
+
+- Fixes for Mathworks latest Matlab bugs since R2022b, this time breaking our Vulkan support
+  by shipping a totally outdated and crippled libvulkan.so.1 loader library that overrides
+  the system provided full featured loader. `PsychLinuxSetup()` will now detect this and
+  rename the library to fix Mathworks latest screwup.
+
+
+### Windows:
+
+- 64-Bit Intel MSVC GStreamer version 1.20.5 is now required as minimum supported version,
+  and GStreamer 1.22.1 is now recommended as most modern version, and also as the only lightly
+  tested version for 3.0.19. _High quality text rendering will fail with any earlier versions!_
+
+- 64-Bit GNU/Octave 7.3 is required for running Psychtoolbox 3.0.19 on Octave, earlier or
+  later versions won't work! Substantial technical difficulties were encountered when trying
+  to upgrade Psychtoolbox for Windows to the brand-new Octave 8.1, forcing me to give up after
+  over 15 hours of work. The lack of funding for any such troubleshooting and maintenance work
+  means that Psychtoolbox will be frozen/locked to Octave 7.3 until significant funding for
+  such compatibility work becomes available, or until the problem magically resolves itself,
+  in other words possibly never.
+
+- Psychtoolbox was built and lightly tested against Matlab R2022b.
+
+- Compatibility fixes for `LoadIdentityClut()` with AMD graphics card drivers on Windows,
+  contributed by GitHub user @qx1147. The contributor has the following to say about this fix:
+  "Tested with several Windows 10 versions, AMD driver versions, video ports (DP, DVI, DP++/DVI)
+  and AMD cards (HD-7750, R7-250X, R7-260X, RX-550, RX-6400, WX-5100) - although not all
+  combinations of these." - The old code broke on a subset of these cards, depending on output
+  port, card, driver versions and whatnot. This due to backwards incompatible changes that AMD
+  apparently made to their display drivers gamma table and color conversion handling since
+  summer/autumn 2017, when the same contributer last fixed `LoadIdentityClut()` for AMD driver
+  changes which broke pixel identity passthrough. Example of a new bug, citing the contributor:
+  "For example, for the Radeon RX550, the codes 9-254 would map to 8-253, but only for DP and
+  DP++/DVI, whereas all is fine with DVI, at least with an older driver. With newer drivers,
+  the mapping is also screwed up with DVI."
+
+
+### macOS:
+
+- Upgrade to the brand new 64-Bit GNU/Octave 8.1 is recommended for running Psychtoolbox 3.0.19.1
+  on Octave. Other Octave versions from the Octave 6.3/6.4 and 7.x series, or future Octave 8.x
+  versions, may work as well, but no guarantees for anything other than Octave 8.1.
+
+- Psychtoolbox was built and lightly tested against Matlab R2022b.
+
+- Compatibility fixes for new GStreamer 1.22 releases.
+
+
+Enjoy!
+
