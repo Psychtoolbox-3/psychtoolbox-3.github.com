@@ -20,7 +20,7 @@ Short version
     be much less well supported by the developers and may have restrictions in functionality,
     reliability, performance and precision for some features, compared to Psychtoolbox running
     on a modern Linux distribution. Especially multi-display setups and HiDPI Retina displays
-    under Windows are highly problematic! Use on Apple macOS 10 is possible but _strongly discouraged_
+    under Windows are highly problematic! Use on Apple macOS is possible but _strongly discouraged_
     if you need any kind of reliable timing for visual stimulus presentation or precisely calibrated
     visual output, or use of special visual stimulators, e.g., from VPixx or CRS, or trustworthy
     visual stimulation at all, due to the large and growing number of bugs in the Apple operating system.
@@ -30,7 +30,7 @@ Short version
 
     64-Bit Matlab version R2022b or later (older versions will likely work, but are no longer tested
     for compatibility or supported by us in case of trouble), and GNU Octave version 5.2 or later versions
-    on Linux, and 64-Bit [Octave version 7.3.0 on macOS][OctavemacOS] [and on MS-Windows.][OctaveForWindows]
+    on Linux, and 64-Bit [Octave version 8.1.0 on macOS][OctavemacOS] [and Octave 7.3.0 on MS-Windows.][OctaveForWindows]
 
 -   *Graphics card:*
 
@@ -113,9 +113,9 @@ Macintosh computers under
    Octave 5.x, 6.x and 7.x on recent distributions.
 
 Psychtoolbox testing and development occurs mainly on the most recent Ubuntu
-Linux LTS releases or flavors of them, currently Ubuntu 20.04.5-LTS. Distributions
+Linux LTS releases or flavors of them, currently Ubuntu 20.04.6-LTS. Distributions
 older than Ubuntu 20.04-LTS are no longer supported since Psychtoolbox 3.0.18. We
-recommend Ubuntu 22.04-LTS at this time.
+recommend Ubuntu 22.04.2-LTS at this time.
 
 NeuroDebian tests and supports PTB also on Debian GNU/Linux. According to
 user reports, Psychtoolbox seems to work reasonably well on Linux Mint, Arch
@@ -152,15 +152,15 @@ and education purposes.
 Psychtoolbox is also being developed and tested under Apple macOS 12.
 Psychtoolbox should "work" in principle on
 
--  64-bit macOS 12.6 "Monterey", maybe macOS 10.14 - macOS 11 (untested), maybe partially
-   macOS 10.11-10.13 (untested).
+-  64-bit macOS 12.6 "Monterey", maybe macOS 10.14 - macOS 11 (no longer tested), maybe partially
+   macOS 10.11-10.13 (no longer tested).
 -  64-bit Matlab R2022b, likely older recent versions upwards of R2014b, but those are untested.
--  64-bit Octave v7.3, probably also v6.4-v7.2 (expected to work, but untested).
--  As of 2022, [you will need to get Octave 7.3 from a package manager like HomeBrew][OctavemacOS]
+-  64-bit Octave v8.1, probably also v6.4-v7.3 (expected to work, but untested).
+-  As of 2023, [you will need to get Octave 8.1 from a package manager like HomeBrew][OctavemacOS]
    as standalone binary installers are not available yet.
 
 Limited testing currently only happens on the latest version of macOS 12.6
-“macOS Monterey” with 64-Bit Octave 7.3, and with 64-bit Matlab R2022b.
+“macOS Monterey” with 64-Bit Octave 8.1, and with 64-bit Matlab R2022b.
 
 Monterey is the only somewhat supported version of macOS at this point in time.
 Psychtoolbox is compatible with Monterey in principle, and Monterey is the only
@@ -246,7 +246,7 @@ Psychtoolbox/PsychContributed/ subfolder contains the neccessary `vcredist_x64_2
 executable for your convenience in such a case.
 
 Psychtoolbox-3.0.19 is expected to fail to work soon on Windows-7 / 8 / 8.1. Only tested
-on Windows 10 21H2 at the moment, but soon will only be tested on Windows 10 22H2 only.
+on Windows 10 22H2 at the moment.
 
 Psychtoolbox-3.0.17 - 3.0.18 is no longer officially supported for Windows-7 / 8 / 8.1. The
 current expectation is that it still mostly works on these systems, but just as with
@@ -278,7 +278,7 @@ We cannot recommend Window at for dual-display stereo stimulus presentation, HiD
 setups, or for tasks with a need for high visual timing precision.
 
 Generally we recommend switching to a modern version of Linux, e.g., a flavor of
-Ubuntu 20.04-LTS.
+Ubuntu 22.04-LTS.
 
 Additional software
 -------------------
@@ -320,7 +320,7 @@ Basic hardware requirements
 
 -   Intel Macs: _Not recommended!_
     Any Intel-based Macintosh computer that is capable of running 64-Bit macOS
-    10.11 “El Capitan” or later macOS 10 versions, or a 64 Bit GNU/Linux distribution.
+    12.6 “Monterey”, or a 64 Bit GNU/Linux distribution.
     However: At this point in time, most NVidia graphics cards have broken
     visual stimulation timing under macOS. Most AMD graphics cards under
     macOS 10.12 and later have broken visual stimulation timing under macOS,
