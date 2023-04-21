@@ -203,11 +203,11 @@ As mentioned here, in "help [PsychVRHMD](PsychVRHMD)" and our "help [OpenXR](Ope
 and setup instructions, currently no standard [OpenXR](OpenXR) implementation with  
 reliable and trustworthy timestamping exists. Proper enhancements to  
 [OpenXR](OpenXR) will need to be done in the future. Right now, as of Psychtoolbox  
-3.0.19.1, we have a hacky solution for a subset of Linux users, called  
+3.0.19.2, we have a hacky solution for a subset of Linux users, called  
 "Monado metrics timestamping hack". It goes as follows:  
   
 If you need reliable timestamping, the only solution right now is to use  
-Linux + a modified version of Monado + a modified version of Mesa + an  
+Linux + the latest Monado upstream version + a modified version of Mesa + an  
 AMD or Intel gpu of sufficient performance + a VR HMD supported by Monado  
 on Linux. Contact our paid support "help [PsychPaidSupportAndServices](PsychPaidSupportAndServices)" for  
 help in setting up this feature and getting suitable modified Monado and  
@@ -229,11 +229,11 @@ for trustworthy timestamping at the price of lowered performance:
     2. Start monado-service and use the created fifo file as output file  
        for the metrics log, e.g., in a terminal window via  
   
-       "XRT\_METRICS\_FILE=/usr/local/framequeue.protobuf monado-service"  
+       "XRT\_METRICS\_FILE=/usr/local/framequeue.protobuf XRT\_METRICS\_EARLY\_FLUSH=true monado-service"  
   
        This will launch the monado-service [OpenXR](OpenXR) compositor, enable its  
-       metrics logging into the fifo, and block its startup until the  
-       Psychtoolbox XR work session is started.  
+       metrics logging with low latency into the fifo, and block its  
+       startup until the Psychtoolbox XR work session is started.  
   
     3. Start a PTB session, also with XRT\_METRICS\_FILE environment variable  
        specified to the same fifo file location during launch of Octave or  
