@@ -1,0 +1,40 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.19 Beta update "Virtuality" SP2 was released at 21st April 2023.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.19.2”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.19.2>
+
+### All:
+
+- PsychPaidSupportAndServices now handles users pressing Space or Enter too often.
+  Reported by Giles Holland, thanks!
+
+- PsychDataPixx: Don't blank top-left pixel anymore, so the "Viewpixx EEG trigger pixel"
+  works better.
+
+### Linux:
+
+- Our new OpenXR driver now has the ability to provide accurate and trustworthy visual
+  stimulus onset timestamps for VR HMD's - as tested with Oculus Rift CV-1 and HTC Vive Pro Eye
+  and some photo-diode measurements. This however currently only works with Linux and only
+  with Monado as OpenXR runtime, and only with a special set of Mesa Vulkan drivers for AMD
+  and Intel gpu's. It also comes at a performance cost.
+  However, this combination of Psychtoolbox 3.0.19.1 and modified Monado + Mesa is to my
+  knowledge the only existing modern VR system that can actually provide accurate and trustworthy
+  timing and timestamping for VR applications on modern VR HMD's. Read "Help PsychOpenXR"
+  for setup instructions. A proper non-hacky, easy to use solution to VR timing problems is
+  still to be done and will require substantial amounts of work.
+
+  The Monado improvements needed for this timestamping hack have now been upstreamed and
+  integrated into official Monado. A minor update to 'help PsychOpenXR' describes required
+  tweaked setup instructions.
+
+Enjoy!
+
