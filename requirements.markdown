@@ -30,7 +30,7 @@ Short version
 
     64-Bit Matlab version R2022b or later (older versions will likely work, but are no longer tested
     for compatibility or supported by us in case of trouble), and GNU Octave version 5.2 or later versions
-    on Linux, and 64-Bit [Octave version 8.1.0 on macOS][OctavemacOS] [and Octave 7.3.0 on MS-Windows.][OctaveForWindows]
+    on Linux, and 64-Bit [Octave version 8.2.0 on macOS][OctavemacOS] [and Octave 7.3.0 on MS-Windows.][OctaveForWindows]
 
 -   *Graphics card:*
 
@@ -155,12 +155,12 @@ Psychtoolbox should "work" in principle on
 -  64-bit macOS 12.6 "Monterey", maybe macOS 10.14 - macOS 11 (no longer tested), maybe partially
    macOS 10.11-10.13 (no longer tested).
 -  64-bit Matlab R2022b, likely older recent versions upwards of R2014b, but those are untested.
--  64-bit Octave v8.1, probably also v6.4-v7.3 (expected to work, but untested).
--  As of 2023, [you will need to get Octave 8.1 from a package manager like HomeBrew][OctavemacOS]
+-  64-bit Octave v8.2 and v8.1, probably also v6.4-v7.3 (expected to work, but untested).
+-  As of 2023, [you will need to get Octave 8.2 from a package manager like HomeBrew][OctavemacOS]
    as standalone binary installers are not available yet.
 
-Limited testing currently only happens on the latest version of macOS 12.6
-“macOS Monterey” with 64-Bit Octave 8.1, and with 64-bit Matlab R2022b.
+Limited testing currently only happens on a version of macOS 12.6
+“macOS Monterey” with 64-Bit Octave 8.2 from HomeBrew, and with 64-bit Matlab R2022b.
 
 Monterey is the only somewhat supported version of macOS at this point in time.
 Psychtoolbox is compatible with Monterey in principle, and Monterey is the only

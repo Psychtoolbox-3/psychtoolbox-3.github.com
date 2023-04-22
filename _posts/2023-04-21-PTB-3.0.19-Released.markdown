@@ -36,5 +36,10 @@ The release tag is “3.0.19.2”, with the full tree and commit logs under the 
   integrated into official Monado. A minor update to 'help PsychOpenXR' describes required
   tweaked setup instructions.
 
+### macOS:
+
+- Verified that Psychtoolbox for Octave also works with new Octave 8.2 from HomeBrew on
+  macOS 12.0, in addition to supported Octave 8.1.
+
 Enjoy!
 
