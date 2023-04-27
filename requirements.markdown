@@ -24,7 +24,7 @@ Short version
     if you need any kind of reliable timing for visual stimulus presentation or precisely calibrated
     visual output, or use of special visual stimulators, e.g., from VPixx or CRS, or trustworthy
     visual stimulation at all, due to the large and growing number of bugs in the Apple operating system.
-    macOS 11 is completely untested and not officially supported yet.
+    macOS 13 is completely untested and not officially supported yet.
 
 -   *Runtime environment:*
 
@@ -51,27 +51,30 @@ Short version
     the most exhaustive set of low-level features supported by Psychtoolbox on Linux.
     AMD "Vega" family gpu's should provide the same quality and features, and additionally
     have improved FreeSync support, if you need it. They are expected to work well with
-    Psychtoolbox on Linux, according to testing by one lab so far. The latest generation "Navi"
+    Psychtoolbox on Linux, according to testing by one lab so far. Later generation "Navi"
     gpu's seem to also work well, according to some user reports, but are not yet tested
-    by the developers due to lack of hardware, and they do lack support for some special,
-    but rarely needed, Psychtoolbox low-level debug
-    features at the moment. So the sweet spot would be "Polaris", or "Vega" if you intend
-    to use FreeSync for interesting visual stimulation paradigms that require Psychtoolbox
-    VRR functionality. AMD "Raven Ridge" gpu's, integrated into AMD Ryzen processors, are
-    also well tested and known to work under Linux and Windows-10. As "Raven Ridge" uses a
-    "Vega" graphics core at its heart, this is another indicator that "Vega" should work fine.
+    by the developers due to lack of hardware. They do lack support for some special, but
+    rarely needed, Psychtoolbox low-level debug features. The sweet spot would be "Polaris",
+    or "Vega" if you intend to use FreeSync for interesting visual stimulation paradigms that
+    require Psychtoolbox VRR functionality and want to retain PTB support for low-level debug
+    features, but in practice anything later should be just fine as well. AMD "Raven Ridge"
+    gpu's, integrated into AMD Ryzen processors, are also very well tested and known to work
+    under Linux and Windows-10. As "Raven Ridge" uses a "Vega" graphics core at its heart,
+    but display engines like later Navi gpu's, so this is another indicator that both "Vega"
+    and later graphics cards should work just fine.
 
     Only choose NVidia if you absolutely must for some very good reason, e.g., if you must
     use CUDA during visual stimulation. Note that we won't be able to help you much with
     problems caused by NVidia gpu's **even on Linux**, as we can't debug or fix their
     proprietary graphics drivers in any meaningful way!
 
-    Modern Intel HD-Series graphics cards should work reliably for medium
-    complexity workloads on Linux. Current OpenGL-3/4 GPUs may expose additional
-    useful features. The absolute minimum requirement is OpenGL-1.2 support, but
-    functionality and performance will be very limited with such old GPUs, and using
-    graphics cards with only functionality older than OpenGL-2.1 has not been tested
-    by the developers in years.
+    Modern Intel HD-Series graphics chips and later - anything made since at least the
+    year 2010 - should work reliably for low to medium complexity workloads on Linux.
+
+    Current OpenGL-3/4 GPUs do expose additional useful features. The absolute minimum
+    requirement is OpenGL-1.2 support, but functionality and performance will be very
+    limited with such old GPUs, and using graphics cards with only functionality older
+    than OpenGL-2.1 has not been tested by the developers in many years.
 
     **Try to avoid PC laptops with hybrid-graphics, e.g., with NVidia Optimus or
     AMD Enduro technology!** Under MS-Windows the visual onset timing of the high
@@ -105,15 +108,15 @@ GNU/Linux is fully supported on Intel compatible PCs and suitable (== older) App
 Macintosh computers under
 
 -  Matlab 64-bit, version R2022b. Older versions likely work, but are no longer
-   tested or testable by us due to lack of access.
--  GNU Octave 64-bit, versions 5.2, 6.1 - 7.3.
+   tested or testable or supportable by us due to lack of access.
+-  GNU Octave 64-bit, versions 5.2, and at least v6.1 - v7.3.
 -  Additionally, Psychtoolbox from NeuroDebian supports 32-Bit and 64-Bit
    releases of whatever version of GNU Octave ships by default with your
    distribution, e.g., also Octave 3.2 to 4.4 on older distributions, or
    Octave 5.x, 6.x and 7.x on recent distributions.
 
 Psychtoolbox testing and development occurs mainly on the most recent Ubuntu
-Linux LTS releases or flavors of them, currently Ubuntu 20.04.6-LTS. Distributions
+Linux LTS releases or flavors of them, currently Ubuntu 22.04.2-LTS. Distributions
 older than Ubuntu 20.04-LTS are no longer supported since Psychtoolbox 3.0.18. We
 recommend Ubuntu 22.04.2-LTS at this time.
 
@@ -123,7 +126,7 @@ Linux, Gentoo, and Fedora. We can't provide much support on other distros than
 Ubuntu LTS flavors due to lack of time and resources.
 
 It is recommended to stick to the latest long-term support (LTS) Ubuntu release,
-currently 22.04 -LTS, if you want the most well tested and well supported setup.
+currently 22.04-LTS, if you want the most well tested and well supported setup.
 
 [Psychtoolbox also works with GNU Octave on the RaspberryPi 2B, 3, 4, 400 at least
 with the Debian flavor Raspbian (also known as RaspberryPi OS).][Raspbian].
@@ -152,23 +155,23 @@ and education purposes.
 Psychtoolbox is also being developed and tested under Apple macOS 12.
 Psychtoolbox should "work" in principle on
 
--  64-bit macOS 12.6 "Monterey", maybe macOS 10.14 - macOS 11 (no longer tested), maybe partially
-   macOS 10.11-10.13 (no longer tested).
+-  64-bit macOS 12.6 "Monterey", maybe macOS 10.14 - macOS 11 (no longer tested),
+   maybe partially macOS 10.11-10.13 (no longer tested).
 -  64-bit Matlab R2022b, likely older recent versions upwards of R2014b, but those are untested.
 -  64-bit Octave v8.2 and v8.1, probably also v6.4-v7.3 (expected to work, but untested).
 -  As of 2023, [you will need to get Octave 8.2 from a package manager like HomeBrew][OctavemacOS]
    as standalone binary installers are not available yet.
 
-Limited testing currently only happens on a version of macOS 12.6
-“macOS Monterey” with 64-Bit Octave 8.2 from HomeBrew, and with 64-bit Matlab R2022b.
+Limited testing currently only happens on a version of macOS 12.6 “macOS Monterey”
+with 64-Bit Octave 8.2 from HomeBrew, and with 64-bit Matlab R2022b.
 
 Monterey is the only somewhat supported version of macOS at this point in time.
 Psychtoolbox is compatible with Monterey in principle, and Monterey is the only
-currently tested system, but Monterey has fantastic new bugs and flaws. Also note
-that Apple stated that the only version of macOS that receives all their security
-updates is the very latest version of macOS, which would be macOS 13 Ventura. We
-do not officially test or support macOS 13 yet due to lack of recources caused by
-lack of funding.
+currently tested system, but Monterey inherited many fantastic bugs and flaws
+from its predecessors. Also note that Apple stated that the only version of macOS
+that receives all their security updates is the very latest version of macOS,
+which would be macOS 13 Ventura. We do not officially test or support macOS 13 yet
+due to lack of recources caused by lack of funding.
 
 Catalina introduced many new flaws inherited by macOS 11 and macOS 12, e.g., a
 slow-down of keyboard input by a factor of 5x, and various trouble wrt. keyboard
@@ -245,8 +248,10 @@ give you instructions on how to do that if necessary, ie. on install failure. Th
 Psychtoolbox/PsychContributed/ subfolder contains the neccessary `vcredist_x64_2015-2019.exe`
 executable for your convenience in such a case.
 
-Psychtoolbox-3.0.19 is expected to fail to work soon on Windows-7 / 8 / 8.1. Only tested
-on Windows 10 22H2 at the moment.
+Psychtoolbox-3.0.19 is expected to fail to work soon on Windows 7 / 8 / 8.1.
+It is only tested on Microsoft Windows 10 Release 22H2 going forward. Windows 10 22H2
+is meant to be the final feature update to Windows 10, according to Microsoft.
+Windows 10 will continue to receive purely security updates until October 2025 though.
 
 Psychtoolbox-3.0.17 - 3.0.18 is no longer officially supported for Windows-7 / 8 / 8.1. The
 current expectation is that it still mostly works on these systems, but just as with
@@ -313,14 +318,14 @@ Basic hardware requirements
 ---------------------------
 
 -   Intel PCs: Any Intel-compatible PC that is capable of running the
-    64-bit versions of Microsoft Windows-10, or the 64-bit versions of
+    64-bit versions of Microsoft Windows-10 22H2, or the 64-bit versions of
     GNU/Linux Ubuntu 20.04 LTS or later. Ubuntu 22.04 LTS is recommended,
     as Ubuntu 20.04 LTS support will be phased out in the near future due
     to lack of resources.
 
 -   Intel Macs: _Not recommended!_
     Any Intel-based Macintosh computer that is capable of running 64-Bit macOS
-    12.6 “Monterey”, or a 64 Bit GNU/Linux distribution.
+    12.6 “Monterey”, or a 64 Bit Ubuntu 20.04-LTS or later GNU/Linux distribution.
     However: At this point in time, most NVidia graphics cards have broken
     visual stimulation timing under macOS. Most AMD graphics cards under
     macOS 10.12 and later have broken visual stimulation timing under macOS,
@@ -341,7 +346,7 @@ Basic hardware requirements
     installation of Linux on the internal drive.
     _For these reasons we don't recommend use of any modern Apple hardware._
 
--   Apple ARM Macs, e.g., Apple M1: _Broken! Do not use!_
+-   Apple ARM Macs, e.g., Apple M1/M2/M3: _Broken! Do not use!_
 
 -   [RaspberryPi models 2B, 3, 4, 400 under the most recent Raspbian operating system.][Raspbian]
     The RaspberryPi 2B and 400 are actively tested for compatibility and works well
