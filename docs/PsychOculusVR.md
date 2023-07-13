@@ -493,7 +493,7 @@ clientRect for the onscreen window. 'needPanelFitter' is 0 if no panel fitter is
 needed.  
   
   
-[winRect, ovrfbOverrideRect, ovrSpecialFlags, ovrMultiSample] = [PsychOculusVR](PsychOculusVR)('OpenWindowSetup', hmd, screenid, winRect, ovrfbOverrideRect, ovrSpecialFlags, ovrMultiSample);  
+[winRect, ovrfbOverrideRect, ovrSpecialFlags, ovrMultiSample, screenid] = [PsychOculusVR](PsychOculusVR)('OpenWindowSetup', hmd, screenid, winRect, ovrfbOverrideRect, ovrSpecialFlags, ovrMultiSample);  
 - Compute special override parameters for given input/output arguments, as needed  
 for a specific HMD. Take other preparatory steps as needed, immediately before the  
 [Screen](Screen)('OpenWindow') command executes. This is called as part of [PsychImaging](PsychImaging)('OpenWindow'),  

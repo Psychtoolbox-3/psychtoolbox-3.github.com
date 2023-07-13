@@ -14,26 +14,16 @@ driver, which is recommended for most purposes.
   
 [Snd](Snd)() is a rather dumb and primitive wrapper around the [PsychPortAudio](PsychPortAudio)()  
 driver. It uses PsychPortAudio's most basic functionality to achieve  
-"sort of ok" sound playback. The driver is used in high-latency,  
-low-timing precision mode, so [Snd](Snd)()'s audio playback timing will likely  
-be very unreliable.  
+"sort of ok" sound playback. The driver is used in high latency, low timing  
+precision mode, so [Snd](Snd)()'s audio playback timing will likely be very unreliable.  
   
 Alternatively you can create an empty file named '[Snd](Snd)\_use\_oldstyle.txt' in  
 the [PsychtoolboxConfigDir](PsychtoolboxConfigDir)() folder, ie., [[PsychtoolboxConfigDir](PsychtoolboxConfigDir) '[Snd](Snd)\_use\_oldstyle.txt']  
-This will enable the old-style implementation of [Snd](Snd)(), which is equally  
-shoddy and works as follows:  
+This will enable the old-style implementation of [Snd](Snd)(), which just calls into  
+Matlabs/Octaves sound() function. As sound() is of varying quality, there may  
+be bugs, latency- and timing problems associated with the use of sound() by [Snd](Snd)().  
   
-While [Snd](Snd) used to use a special purpose low level driver on [MacOS](MacOS)-9 which  
-was well suited for cognitive science, [Snd](Snd) for all other operating  
-systems (Windows, [MacOS](MacOS)-X, Linux) just calls into Matlab's Sound()  
-function which is of varying - but usually pretty poor - quality in most  
-implementations of Matlab. There are many bugs, latency- and timing  
-problems associated with the use of [Snd](Snd).  
-  
-GNU/OCTAVE: If you don't use the [PsychPortAudio](PsychPortAudio) based [Snd](Snd)() function, then  
-you must install the optional octave "audio" package from Octave-Forge,  
-as of Octave 3.0.5, otherwise the required sound() function won't be  
-available and this function will fail!  
+The command [Snd](Snd)('Oldstyle') also requests use of this old-style sound() path.  
   
 # Audio device sharing for interop with [PsychPortAudio](PsychPortAudio)  
   
@@ -76,9 +66,8 @@ compatibility!).
   
 The optional 'sampleSize' argument used with [Snd](Snd)('Play') is only retained  
 for backwards compatibility and has no meaning, unless you opt in to use  
-the old-style implementation on Matlab with some operating systems. - It  
-is checked for correctness, but other than that it is ignored. Allowable  
-values are either 8 or 16.  
+the old-style implementation. Otherwise it is checked for correctness, but  
+other than that it is ignored. Allowable values are either 8 or 16.  
   
 oldverbosity = [Snd](Snd)('Verbosity' [, verbosity]);  
 - Query current level of verbosity, optionally set a new 'verbosity' level.  

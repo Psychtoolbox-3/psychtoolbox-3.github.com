@@ -71,7 +71,7 @@ Eyelink('[SetOfflineMode](Eyelink-SetOfflineMode)')
 [version, versionString]  = Eyelink('[GetTrackerVersion](Eyelink-GetTrackerVersion)')  
 [time =] Eyelink('[TrackerTime](Eyelink-TrackerTime)')  
 [offset =] Eyelink('[TimeOffset](Eyelink-TimeOffset)')  
-[status] = Eyelink('[ImageTransfer](Eyelink-ImageTransfer)', imagePath [, xPosition=0][, yPosition=0][, width=0][, height=0][, trackerXPosition=0][, trackerYPosition=0][, xferoptions=0])  
+[status] = Eyelink('[ImageTransfer](Eyelink-ImageTransfer)', imagePathOrImageMatrix [, xPosition=0][, yPosition=0][, width=0][, height=0][, trackerXPosition=0][, trackerYPosition=0][, xferoptions=0])  
   
 % Eyelink Velocity related functions:  
 [vel, acc, fsample]= Eyelink('CalculateOverallVelocityAndAcceleration' [, sample_model])  

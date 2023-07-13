@@ -608,7 +608,7 @@ user. Note: This parameter is ignored with the current driver in 3D mode, ie.
 basicTask '3DVR' or 'Tracked3DVR' on any standard [OpenXR](OpenXR) 1.0 backend, as the  
 driver auto-selects optimal field of view for 3D perspective correct rendering.  
 In the 2D modes 'Monoscopic' or 'Stereoscopic', or in 3D mode with stopped loop,  
-the specified field of view will be used for calculating position and size of the   
+the specified field of view will be used for calculating position and size of the  
 2D views in use. If omitted the driver will try to auto-detect a meaningful field  
 of view. If that is impossible, it will use the hard-coded values of an Oculus  
 Rift CV-1 HMD as fallback. In all these cases, the 'PerEyeFOV' keyword will alter  
@@ -681,7 +681,7 @@ clientRect for the onscreen window. 'needPanelFitter' is 0 if no panel fitter is
 needed.  
   
   
-[winRect, ovrfbOverrideRect, ovrSpecialFlags, ovrMultiSample] = [PsychOpenXR](PsychOpenXR)('OpenWindowSetup', hmd, screenid, winRect, ovrfbOverrideRect, ovrSpecialFlags, ovrMultiSample);  
+[winRect, ovrfbOverrideRect, ovrSpecialFlags, ovrMultiSample, screenid] = [PsychOpenXR](PsychOpenXR)('OpenWindowSetup', hmd, screenid, winRect, ovrfbOverrideRect, ovrSpecialFlags, ovrMultiSample);  
 - Compute special override parameters for given input/output arguments, as needed  
 for a specific device. Take other preparatory steps as needed, immediately before the  
 [Screen](Screen)('OpenWindow') command executes. This is called as part of [PsychImaging](PsychImaging)('OpenWindow'),  

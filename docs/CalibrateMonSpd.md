@@ -8,6 +8,14 @@ you have [CMCheckInit](CMCheckInit)/[MeasSpd](MeasSpd) functions that initialize
 measurement hardware and return a measured spectral  
 power distribution respectively.  
   
+NOTE 30-June-2023: I tried to fix some of this mess, to make the functions  
+more compatible with the way current operating systems, graphics cards and  
+display devices work. Specifically the massive changes in how hardware gamma  
+tables work on modern gpu's. I also added support for more Photo Research  
+colormeters. This seems to work ok with the simulated meterType 0, but I don't  
+have actual measurement hardware to verify if things work as expected. I guess  
+it is less broken now, and maybe even working fine, but who knows?  
+  
 NOTE (dhb, 8/19/12).  This code is a bit dusty, as it is not  
 being actively maintained.  In particular, the PTB display   
 control has evolved since this was last looked at carefully.  
@@ -88,6 +96,8 @@ and [CalibrateAmbDrvr](CalibrateAmbDrvr) so that is where you would look.
 11/08/06 cgb, dhb  OS/X.  
 9/27/08 dhb  Default primary bases is 1 now.  Use [RefitCalLinMod](RefitCalLinMod) to change later if desired.  
 8/19/12 mk   [Ask](Ask) user for choice of display output device.  
+6/30/23 mk   Use new clut mapping to fix this mess on standard gpus. Also allow  
+             choice of different supported colormeters, not just PR-650.  
 
 
 

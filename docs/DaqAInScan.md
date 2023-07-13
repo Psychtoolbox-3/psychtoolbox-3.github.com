@@ -282,6 +282,10 @@ and for the 1608FS:
   
 9/26/16 mk  Runs on Matlab R2013a and later, replacing the deprecated bitcmp function  
             for handling of 12 bit differential channels on non-USB 1608FS. Untested.  
+  
+5/17/23 mk  Try to fix issue with data loss / data misalignment if used in livedata  
+            mode with [DaqAInScanContinue](DaqAInScanContinue) and more than 1 input channel, cfe.  
+            https://psychtoolbox.discourse.group/t/sampling-frequency-of-analogue-input/4780/10  
 
 
 
