@@ -1,0 +1,129 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.19 Beta update "Virtuality" SP3 was released at 13th July 2023.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.19.3”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.19.3>
+
+### Compatibility changes wrt. Psychtoolbox 3.0.19.2:
+
+- Octave: Octave 7.3 is required on MS-Windows. Octave 8.2 is required on macOS,
+  but Octave 6.3 - 8.1 may also continue to work on macOS (assumed, but untested).
+
+- Recommended operating systems: Ubuntu 22.04.2-LTS Linux, MS-Windows 10 22H2, macOS 13.4
+
+- The macOS 10 (aka Mac OSX) OS family, macOS 11 and macOS 12 operating systems will
+  probably continue to work, but are now untested and officially unsupported and unsupportable.
+  Running Psychtoolbox on Apple Silicon Macs (M1, M2, ...) is not officially supported by
+  this release. Visual stimulation timing will be totally broken on Apple Silicon Macs, as
+  well as some other features. It is our understanding that currently no vision science
+  toolkit exists that could provide any reliable or trustworthy operation on macOS for
+  Apple Silicon. On Intel based Macs, Psychtoolbox likely continues to be the only toolkit
+  with somewhat trustworthy visual stimulation timing on most Intel Mac configurations
+  if configured correctly for use with a properly installed PsychtoolboxKernelDriver.
+
+- Procedural shaders: Remove corrective offsets for hardware texture sampling, as
+  it may be no longer helpful, but harmful, due to changes in gpu hardware drivers
+  on all operating systems. See GitHub issue #800, reported by user @qx1147. Tests on
+  AMD, NVidia and Intel gpu's under Linux, Windows and macOS suggest this is the right
+  thing to do now. This means that the centers of procedurally generated stimuli like
+  Gabor patches or sine gratings will shift by 0.5 pixels on the screen.
+
+### Highlights:
+
+- Switch lightly tested and supported macOS version from macOS 12 Monterey to
+  macOS 13 Ventura. Older macOS versions are untested and unsupported from now on.
+
+### All:
+
+- The new OpenXR driver has now also been tested with the HTC Vive Pro Eye and the
+  associated "Vive Wand" hand controllers with Valve SteamVR 1.25.7 on Windows and Linux,
+  and with Monado on Linux with "vive" and "survive" backends as OpenXR runtimes on
+  (recommended going forward) Ubuntu Linux 22.04.2-LTS. Past successfull Linux tests
+  were on - no longer tested - Ubuntu 20.04.6-LTS. The driver now also works with
+  Octave 7.3 on MS-Windows.
+
+- DaqAInScanContinue: Try to fix live data retrieval on USB-1208FS when using more than one
+  analog input channel. It could cause data loss or data to channel mapping misalignment
+  when ``DaqAInScanContinue(daq, options, 1);`` was used with more than one input channel.
+  Cfe. <https://psychtoolbox.discourse.group/t/sampling-frequency-of-analogue-input/4780/10>
+  This is untested due to lack of hardware. Unpaid work time spent trying to diagnose and
+  fix this: 4 hours.
+
+- Snd: Update help text, remove Octave specific quirks - no longer needed. Add a new function
+  ``Snd('OldStyle');`` to allow selection of old style audio output path on the fly, as
+  addition to the former static only selection by creating a config file. Allows use of the
+  old output path which simply uses Matlabs or Octaves `sound()` function, which is now
+  available also on all supported Octave 5+ versions.
+
+- Make CalDemo work with graphics hardware gamma lut sizes other than 256 slots. Instead
+  use the size of the actual luts stored in the loaded calibration file.
+
+- Try to fix and improve CalibrateMonSpd and related functions: It now also works on
+  standard display setups other than visual stimulators from CRS and VPixx. Plus tons
+  of bug fixes. Also it now also supports other colorimeters than the PR650. See the
+  following link for the mess this tries to fix:
+
+  <https://psychtoolbox.discourse.group/t/single-row-entries-in-theclut-during-calibration-with-a-spectroradiometer-calmonspd/5033>
+
+- Improve ``Eyelink('ImageTransfer')``: Allow to pass in image matrices from Matlab/Octave,
+  e.g., as read from image files via ``imread()``, or retrieved from PTB drawing commands
+  via ``Screen('GetImage')``, or computed in scripts. Before this, it was only possible
+  to load uncompressed BMP image files. Also fix the - previously broken - demos
+  EyelinkPictureCustomCalibration and EyeLinkPicture. Untested on actual Eyelink, only
+  tested in simulation due to lack of hardware.
+
+- Procedural shaders: Remove corrective offsets for hardware texture sampling, as
+  it may be no longer helpful, but harmful, due to changes in gpu hardware drivers
+  on all operating systems. See GitHub issue #800, reported by user @qx1147.
+
+- Minor bug fixes, documentation updates and improvements.
+
+
+### Linux:
+
+- Psychtoolbox was built and lightly tested against Matlab R2022b.
+
+- PsychOpenHMDVR: Fix crash in 'GetTrackingState' if VR controllers are not present or
+  are not supported. Also add HTC Vive Pro Eye specific undistortion shaders. Other minor
+  improvements.
+
+- Eyelink: The mex files for Linux were upgraded to now use and require the SR-Research
+  eyelink_core SDK and runtime version 2.0, instead of the old v1.9 runtimes. To run the
+  new mex files you either need to manually set a symlink for mapping the new runtime name
+  to the old runtime library name. Or install the recent v2 runtime from SR-Research. It is
+  recommended to upgrade, as the new runtime contains nice bug fixes. E.g., the runtime no
+  longer hangs if no Eyelink tracker hardware is connected, iow. Eyelink dummy mode fallback
+  can now work. The most easy way to upgrade Ubuntu or Debian to the latest SDK is from a
+  terminal via the following command-line:
+  ``sudo apt-key adv --fetch-keys https://apt.sr-research.com/SRResearch_key ; sudo add-apt-repository 'deb [arch=amd64] https://apt.sr-research.com S
+RResearch main' ; sudo apt install eyelinkcore``
+  or you follow the setup instructions at <https://www.sr-research.com/support/docs.php?topic=linuxsoftware>
+
+### Windows:
+
+- Psychtoolbox was built and lightly tested against Matlab R2022b.
+
+- The OpenXR driver now also works with Octave 7.3, in addition to Matlab.
+
+### macOS:
+
+- macOS Ventura (currently version 13.4.1) is the only officially lightly tested and
+  supported macOS operating system, and only for 64-Bit Intel Macs. Support and testing
+  for macOS 12 Monterey has ended, but macOS 12 is assumed to continue to work as before.
+
+- Upgrade to the brand new 64-Bit GNU/Octave 8.2 from HomeBrew is recommended for running
+  Psychtoolbox 3.0.19.3 on Octave. Other Octave versions from the Octave 6.3/6.4 and 7.x
+  series, Octave 8.1, or future Octave 8.x versions, may work as well, but no guarantees
+  for anything other than Octave 8.2 from HomeBrew.
+
+- Psychtoolbox was built and lightly tested against Matlab R2022b.
+
+
+Enjoy!
