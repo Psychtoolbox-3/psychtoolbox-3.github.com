@@ -92,12 +92,23 @@ Short version
 
 -   *Sound card:*
 
-    On Linux and macOS, any card supported by the operating system should work
-    well, as well as built-in sound chips. On MS-Windows 7 to 10, sound cards should
-    work reasonably well with Psychtoolbox 3.0.15 and later, but Windows 10 should
-    provide enhanced precision and lower latency over Windows 7. On MS-Windows with
-    Psychtoolbox version 3.0.14 and earlier, no precise or low latency sound output
-    is possible anymore. [Click this link to find out why.][AudioHW]
+    On Linux and macOS, any card supported by the operating system should work well,
+    as well as built-in sound chips. On MS-Windows 7 to 11, sound cards should
+    work reasonably well with Psychtoolbox 3.0.15 and later, but Windows 10 and later
+    should provide enhanced precision and lower latency over Windows 7. On MS-Windows with
+    Psychtoolbox version 3.0.14 and earlier, precise or low latency sound output
+    is no longer possible. [Click this link to find out why.][AudioHW]
+
+    Please note that due to lack of funding by our users, we can not and have not
+    tested any dedicated professional or multi-channel soundcards on any operating
+    system since at least the year 2012. Only some simple Intel HDA compliant onboard
+    sound chips in some laptops, PC's and Macs are tested infrequently, iow. the very
+    cheap and basic stereo stuff. Due to the high demands of auditory stimulation for
+    neuroscience, just because a soundcard is nominally working for typical use by a
+    typical user, this doesn't mean it will also work as well - or at all - for use with
+    Psychtoolbox for more complex auditory stimulation. This is a problem that could be
+    fixed with proper funding. [In the meantime, this link may give some info on hardware
+    tested by users - no guarantee for completeness or correctness!][AudioHW]
 
 Operating systems
 -----------------
@@ -109,7 +120,7 @@ Macintosh computers under
 
 -  Matlab 64-bit, version R2022b. Older versions likely work, but are no longer
    tested or testable or supportable by us due to lack of access.
--  GNU Octave 64-bit, versions 5.2, and at least v6.1 - v7.3.
+-  GNU Octave 64-bit, versions 5.2, and at least versions v6.1 - v7.3.
 -  Additionally, Psychtoolbox from NeuroDebian supports 32-Bit and 64-Bit
    releases of whatever version of GNU Octave ships by default with your
    distribution, e.g., also Octave 3.2 to 4.4 on older distributions, or
@@ -118,7 +129,7 @@ Macintosh computers under
 Psychtoolbox testing and development occurs mainly on the most recent Ubuntu
 Linux LTS releases or flavors of them, currently Ubuntu 22.04.2-LTS. Distributions
 older than Ubuntu 20.04-LTS are no longer supported since Psychtoolbox 3.0.18. We
-recommend Ubuntu 22.04.2-LTS at this time.
+recommend Ubuntu 22.04-LTS at this time.
 
 NeuroDebian tests and supports PTB also on Debian GNU/Linux. According to
 user reports, Psychtoolbox seems to work reasonably well on Linux Mint, Arch
@@ -155,26 +166,25 @@ and education purposes.
 Psychtoolbox is also being developed and tested under Apple macOS 12.
 Psychtoolbox should "work" in principle on
 
--  64-bit macOS 12.6 "Monterey", maybe macOS 10.14 - macOS 11 (no longer tested),
+-  64-bit macOS 13 "Ventura", maybe macOS 10.14 - macOS 12 (no longer tested),
    maybe partially macOS 10.11-10.13 (no longer tested).
 -  64-bit Matlab R2022b, likely older recent versions upwards of R2014b, but those are untested.
 -  64-bit Octave v8.2 and v8.1, probably also v6.4-v7.3 (expected to work, but untested).
 -  As of 2023, [you will need to get Octave 8.2 from a package manager like HomeBrew][OctavemacOS]
-   as standalone binary installers are not available yet.
+   as standalone binary installers are not available.
 
-Limited testing currently only happens on a version of macOS 12.6 “macOS Monterey”
+Limited testing currently only happens on a version of macOS 13 “macOS Ventura”
 with 64-Bit Octave 8.2 from HomeBrew, and with 64-bit Matlab R2022b.
 
-Monterey is the only somewhat supported version of macOS at this point in time.
-Psychtoolbox is compatible with Monterey in principle, and Monterey is the only
-currently tested system, but Monterey inherited many fantastic bugs and flaws
-from its predecessors. Also note that Apple stated that the only version of macOS
-that receives all their security updates is the very latest version of macOS,
-which would be macOS 13 Ventura. We do not officially test or support macOS 13 yet
-due to lack of recources caused by lack of funding.
+Ventura is the only somewhat supported version of macOS at this point in time.
+Psychtoolbox is compatible with it in principle, and it is the only currently
+tested system, but it inherited many bugs and flaws from its predecessors. Also
+note that Apple stated that the only version of macOS which receives all their
+security updates is the very latest version of macOS. We do not officially test
+or support macOS 14 yet due to lack of recources caused by lack of funding.
 
-Catalina introduced many new flaws inherited by macOS 11 and macOS 12, e.g., a
-slow-down of keyboard input by a factor of 5x, and various trouble wrt. keyboard
+Catalina and later introduced many new flaws inherited by macOS 11, 12, ..., e.g.,
+a slow-down of keyboard input by a factor of 5x, and various trouble wrt. keyboard
 input, sound input, and video capture, thanks to Catalina's awful new security design
 -- Prepare for lots of hassle if you choose Catalina, you have been warned!
 _macOS is the most buggy and hazardous operating system you could use for visual
@@ -187,9 +197,9 @@ longer developed or supported by Apple means that Apple will no longer break it 
 respect to our needs, but it is now an attractive target for viruses and hackers,
 a security hazard! Choose your poison...
 
-**macOS 13 Ventura is not officially supported or tested at all at the moment!**
-**macOS 11/12/13 on machines with Apple's new ARM based SoC's, e.g., the Apple M1 SoC,
-are not working with Psychtoolbox natively at all in any suitable way for data collection.
+**macOS 14 is not officially supported or tested at all at the moment!**
+**macOS on machines with Apple's new ARM based SoC's, e.g., the Apple M1 SoC, is not
+working with Psychtoolbox natively at all in any suitable way for data collection.
 There is no timeline for fixing this anytime soon. It is unclear if this is fixable at all,
 given the challenging and disruptive changes Apple made on Apple Silicon, especially switching
 from industry standard AMD, Intel and NVidia graphics to Apples own proprietary graphics chip.
@@ -325,7 +335,7 @@ Basic hardware requirements
 
 -   Intel Macs: _Not recommended!_
     Any Intel-based Macintosh computer that is capable of running 64-Bit macOS
-    12.6 “Monterey”, or a 64 Bit Ubuntu 20.04-LTS or later GNU/Linux distribution.
+    13 “Ventura”, or a 64 Bit Ubuntu 20.04-LTS or later GNU/Linux distribution.
     However: At this point in time, most NVidia graphics cards have broken
     visual stimulation timing under macOS. Most AMD graphics cards under
     macOS 10.12 and later have broken visual stimulation timing under macOS,
@@ -336,7 +346,9 @@ Basic hardware requirements
     framebuffers are still unfixably broken, and some machines may still have
     problems, e.g., the new MacBookPro 2019 16 inch. So for visual stimulation
     there essentially doesn't exist any supported Apple hardware that would work
-    acceptably under macOS in all configurations.
+    acceptably under macOS in all configurations, although there exist various
+    Intel based Macs that should work fine in many standard configurations if
+    set up correctly by users following our instructions.
 
     Old hardware may perform fine under Linux. Apple MacBook's or MacBookPro's
     from the year 2016 or later are known to be mostly unusable with Linux for
@@ -349,7 +361,7 @@ Basic hardware requirements
 -   Apple ARM Macs, e.g., Apple M1/M2/M3: _Broken! Do not use!_
 
 -   [RaspberryPi models 2B, 3, 4, 400 under the most recent Raspbian operating system.][Raspbian]
-    The RaspberryPi 2B and 400 are actively tested for compatibility and works well
+    The RaspberryPi 2B and 400 are actively tested for compatibility and work well
     for not too demanding visual and auditory stimulation tasks, USB i/o
     and digitial i/o via the programmable GPIO pins. The Pi model 3 is not
     tested, but expected to work just as well as the model 2B. Pi models 4 and 400
