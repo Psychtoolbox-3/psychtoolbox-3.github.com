@@ -21,10 +21,10 @@ an alternative Debian (armhf) package from the following link:
   
 https://github.com/[WiringPi](WiringPi)/[WiringPi](WiringPi)/releases  
   
-Shows digital i/o by flashing/alternating the two  
+The demo shows digital i/o by flashing/alternating the two  
 [LEDs](LEDs) on the [RPi](RPi) 2B, Red power, and green status.  
   
-Shows how to efficiently wait for a rising edge  
+It shows how to efficiently wait for a rising edge  
 trigger on Broadcom pin 17, a real GPIO pin on the  
 connector. To avoid the need to actually connect  
 a switch to the connector, uses internal programmable  
@@ -44,6 +44,7 @@ numbers, not pin numbers on the connector or wiringPi pin numbers!
   
 A nice translation table between connector pins and Broadcom GPIO  
 pins can be found on the following website: https://pinout.xyz  
+The command 'pinout' in a terminal will also print the pin mapping.  
   
 
 

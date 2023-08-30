@@ -94,7 +94,7 @@ The [OpenGL](OpenGL) Red Book is a great introduction and reference for [OpenGL]
 programming. Release 1.0 is available online, later releases can be  
 purchased in any good book store:  
   
-http://www.opengl.org/documentation/red\_book\_1.0/  
+http://www.glprogramming.com/red/  
   
 ### For more infos, code samples, tutorials, online documentation, go to:  
   
