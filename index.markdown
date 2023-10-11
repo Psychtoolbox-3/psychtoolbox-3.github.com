@@ -23,8 +23,9 @@ to make implementation of research data collection especially easy in specific s
 of neuroscience. For beginners or certain domains there also exist user friendly 3rd party
 graphical user interfaces, e.g., [PsyBuilder](https://www.psybuilder.com).
 
-VPixx provides an online service if you want to run some of your Psychtoolbox paradigms
-for data collection online, over the internet, in a web browser.
+[If you want to run some of your Psychtoolbox studies online, VPixx Technologies offers
+a service to upload and run paradigms remotely over the internet, called LabMaestro
+Pack&Go. You can find out more under this link at https://vpixx.com/products/labmaestro-packngo](https://vpixx.com/products/labmaestro-packngo)
 
 Psychtoolbox has many active users, an active [forum](forum), and is widely
 [cited](citations). The current version supports at least Matlab R2022b on Linux, Windows
