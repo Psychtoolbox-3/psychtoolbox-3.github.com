@@ -90,6 +90,7 @@ Psychtoolbox:[PsychDemos](PsychDemos)
    [MovingLineDemo](MovingLineDemo)          - Shows some horizontally moving lines to demonstrate flat panel display artifacts.  
    [MultiTouchDemo](MultiTouchDemo)          - Shows how to get (multi-)touch input from touchscreens and touchpads.  
    [MultiTouchMinimalDemo](MultiTouchMinimalDemo)   - Shows a more minimal example of how to get (multi-)touch input from touchscreens and touchpads.  
+   [MultiTouchPinchDemo](MultiTouchPinchDemo)     - Shows how to detect and handle a two-finger pinch gesture on a touchscreen.  
    [NomogramDemo](NomogramDemo)            - Compute photoreceptor nomograms.  
    [OldNewRecogExp](OldNewRecogExp)          - A full old-new recognition experiment.  
    [OpenEXRImages](OpenEXRImages)           - Subfolder: [OpenEXR](OpenEXR) HDR sample image files.  

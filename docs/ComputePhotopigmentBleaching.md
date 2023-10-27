@@ -102,17 +102,14 @@ irradiance    -- retinal irradiance specified as determined by units. If
   
 receptortype  
   'cones'     -- computations for cones. [Default]  
-  'rods'      -- computations for rods.  Currently only implemented for  
-                 recovery kinetics.  Need to find and enter half-bleach  
-                 constant for rods in scotopic trolands and/or  
-                 isomerizations to do steady state of full kinetic  
-                 calculations for rods.  
+  'rods'      -- computations for rods.  
   
 units         -- units of irradiance  
   'trolands'     input irradiance trolands.  Note that the computation  
                  only makes sense for L and M cones if this is the input.  
                  This is photopic trolands if receptor type is 'cones'.  
-                 [Default]  
+                 [Default].  It is scotopic trolands if receptor type is  
+                 rods.  
   'isomerizations'  nominal isomerization rate in  
                  isomerizations/cone-sec, comptued taking into account  
                  pre-retinal absorption as well as nominal cone axial  
@@ -124,6 +121,7 @@ source        -- source of underlying data
                  pp. 211 and following. See intro text above. [Default]  
   'RushtonHenryAlt' - Rushton and Henry's other half-bleach constant.  
                  Only available for 'cones'.  
+  'WyszeckiStiles' - Wyszecki and Stiles (1982) give parameters on page  
   
 initialFraction -- fraction of input bleached at time zero. If  
                 empty, steady state fraction bleached is  

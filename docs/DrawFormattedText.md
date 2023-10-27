@@ -19,9 +19,11 @@ carriage return is performed, breaking the text string into lines.
   
 'sx' defines the left border of the text: If it is left out, text  
 starts at x-position zero, otherwise it starts at the specified position  
-'sx'. If sx=='center', then each line of text is horizontally centered in  
-the window. If sx=='right', then each line of text is right justified to  
-the right border of the target window, or of 'winRect', if provided.  
+'sx' in the window. If sx=='left', then each line of text is left justified  
+to the left border of the target window, or of 'winRect', if provided.  
+If sx=='center', then each line of text is horizontally centered in  
+the window or 'winRect'. If sx=='right', then each line of text is right  
+justified to the right border of the target window, or of 'winRect'.  
 The options sx == 'wrapat' and sx == 'justifytomax' try to align the start  
 of each text line to the left border and the end of each text line to either  
 the specified 'wrapat' number of columns, or to the width of the widest line  

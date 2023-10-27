@@ -1,7 +1,7 @@
 # [PsychPortAudio('EngineTunables')](PsychPortAudio-EngineTunables) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychPortAudio](PsychPortAudio).{mex*} subfunction
 
-[oldyieldInterval, oldMutexEnable, lockToCore1, audioserver_autosuspend] = PsychPortAudio('EngineTunables' [, yieldInterval] [, MutexEnable] [, lockToCore1] [, audioserver_autosuspend]);
+[oldyieldInterval, oldMutexEnable, lockToCore1, audioserver_autosuspend, workarounds] = PsychPortAudio('EngineTunables' [, yieldInterval][, MutexEnable][, lockToCore1][, audioserver_autosuspend][, workarounds]);
 
 Return, and optionally set low-level tuneable driver parameters.  
 The driver must be idle, ie., no audio device must be open, if you want to  
@@ -40,6 +40,8 @@ reason it is a good idea to switch them to standby (suspend) while a
 [PsychPortAudio](PsychPortAudio) session is active. Sometimes this isn't needed or not even  
 desireable. Therefore this option allows to inhibit this automatic suspending of  
 audio servers.  
+'workarounds' A bitmask to enable various workarounds: +1 = Ignore  
+Pa\_IsFormatSupported() errors, +2 = Don't even call Pa\_IsFormatSupported().  
   
 
 

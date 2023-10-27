@@ -98,6 +98,7 @@ and [CalibrateAmbDrvr](CalibrateAmbDrvr) so that is where you would look.
 8/19/12 mk   [Ask](Ask) user for choice of display output device.  
 6/30/23 mk   Use new clut mapping to fix this mess on standard gpus. Also allow  
              choice of different supported colormeters, not just PR-650.  
+8/31/23 mk   Assign cal.describe.dacsize also if g\_usebitspp is already set.  
 
 
 

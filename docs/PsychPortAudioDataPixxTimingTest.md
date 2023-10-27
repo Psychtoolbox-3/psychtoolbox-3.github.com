@@ -1,7 +1,7 @@
 # [PsychPortAudioDataPixxTimingTest](PsychPortAudioDataPixxTimingTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)
 
-[PsychPortAudioDataPixxTimingTest](PsychPortAudioDataPixxTimingTest)([waitTime = 1][, exactstart=1][, deviceid=-1][, latbias=0][, triggerLevel=0.01])  
+[PsychPortAudioDataPixxTimingTest](PsychPortAudioDataPixxTimingTest)([waitTime = 1][, exactstart=1][, deviceid=-1][, latbias=0][, triggerLevel=0.01][, reqlatencyclass=2])  
   
 Test script for sound onset timing reliability and sound onset latency of  
 the [PsychPortAudio](PsychPortAudio) sound driver.  
@@ -42,6 +42,9 @@ parameter.
                  calibration. This will likely need tweaking on your  
                  setup.  
   
+'reqlatencyclass' Override setting for reqlatencyclass parameter. By default,  
+                  reqlatencyclass = 2 is used, for exclusive device access for  
+                  low latency / high timing precision mode.  
 
 
 

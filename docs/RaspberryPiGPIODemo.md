@@ -3,9 +3,7 @@
 
 [RaspberryPiGPIODemo](RaspberryPiGPIODemo) - Show basic use of GPIO's on [RaspberryPi](RaspberryPi).  
   
-Demos full access to the Pi [GPIOs](GPIOs) when running as root,  
-slightly more limited access when running as a regular user,  
-and also the different setup steps required.  
+Demos full access to the Pi [GPIOs](GPIOs).  
   
 Accessing the [GPIOs](GPIOs) as non-root requires the user account  
 to be a member of the Unix group 'gpio'. [PsychLinuxConfiguration](PsychLinuxConfiguration)  

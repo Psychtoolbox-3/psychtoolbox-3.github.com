@@ -14,8 +14,8 @@ Each struct contains information about its associated [PortAudio](PortAudio) dev
 optional parameter 'devicetype' can be used to enumerate only devices of a  
 specific class:   
 1=Windows/[DirectSound](DirectSound), 2=Windows/MME, 11=Windows/WDMKS, 13=Windows/WASAPI,  
-8=Linux/ALSA, 7=Linux/OSS, 12=Linux/JACK, probably 16=Linux/[PulseAudio](PulseAudio),  
-5=[MacOSX](MacOSX)/[CoreAudio](CoreAudio).  
+8=Linux/ALSA, 7=Linux/OSS, 12=Linux/JACK, 16=Linux/[PulseAudio](PulseAudio),  
+5=macOS/[CoreAudio](CoreAudio).  
   
 On macOS you'll usually only see devices for the [CoreAudio](CoreAudio) API, a first-class  
 audio subsystem. On Linux you may have the choice between ALSA, JACK, [PulseAudio](PulseAudio)  

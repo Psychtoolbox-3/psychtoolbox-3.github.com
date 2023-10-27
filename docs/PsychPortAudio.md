@@ -13,7 +13,7 @@ devices = PsychPortAudio('[GetDevices](PsychPortAudio-GetDevices)' [,devicetype]
   
 General settings:  
   
-[oldyieldInterval, oldMutexEnable, lockToCore1, audioserver_autosuspend] = PsychPortAudio('[EngineTunables](PsychPortAudio-EngineTunables)' [, yieldInterval] [, MutexEnable] [, lockToCore1] [, audioserver_autosuspend]);  
+[oldyieldInterval, oldMutexEnable, lockToCore1, audioserver_autosuspend, workarounds] = PsychPortAudio('[EngineTunables](PsychPortAudio-EngineTunables)' [, yieldInterval][, MutexEnable][, lockToCore1][, audioserver_autosuspend][, workarounds]);  
 oldRunMode = PsychPortAudio('[RunMode](PsychPortAudio-RunMode)', pahandle [,runMode]);  
   
   

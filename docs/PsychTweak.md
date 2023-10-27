@@ -92,6 +92,20 @@ Warnings, 3 = Errors + Warnings + Info messages.
   
 # MS-Windows only tweaks  
   
+[PsychTweak](PsychTweak)('DontDisableProcessorIdling', dontDisable);  
+-- Don't disable processor idling during certain [Screen](Screen)() operations, e.g.,  
+during video refresh calibrations and timing startup tests in 'OpenWindow' if  
+'dontDisable' is set to 1. By default, processor idling is disabled during some  
+tests, to keep cpu cores 100% busy and prevent cpu power management actions like  
+switching to higher C-states, ie. prevent switching to C1 or higher. This causes  
+a temporary increase in system idle power consumption, but reduces timing noise  
+caused by C-state switching, and thereby improves the quality and reliability of  
+the timing tests, hopefully reducing the frequency of "false positive" test  
+failures. However, this could interfere with the operation of other 3rd party  
+cpu performance tweaking tools and other low level tuning measures. Therefore  
+this [PsychTweak](PsychTweak)() setting allows to skip disable of processor idling during tests.  
+  
+  
 [PsychTweak](PsychTweak)('BackwardTimejumpTolerance', secs);  
   
 -- Allow system clock to report a time that is up to `secs` in the past,  

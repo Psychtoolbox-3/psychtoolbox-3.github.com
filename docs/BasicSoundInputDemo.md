@@ -1,7 +1,7 @@
 # [BasicSoundInputDemo](BasicSoundInputDemo)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)
 
-[BasicSoundInputDemo](BasicSoundInputDemo)([wavfilename][, voicetrigger=0][, maxsecs=inf] [, device])  
+[BasicSoundInputDemo](BasicSoundInputDemo)([wavfilename][, voicetrigger=0][, maxsecs=inf][, device][, reqlatencyclass])  
   
 Demonstrates very basic usage of the new Psychtoolbox sound driver  
 [PsychPortAudio](PsychPortAudio)() for audio capture / recording.  
@@ -30,6 +30,10 @@ maxsecs      = Maximum number of seconds of sound to capture. Defaults to
                infinite - sound is recorded until a key is pressed.  
   
 device       = Deviceindex of audio card to use. Auto-Selected if omitted.  
+  
+reqlatencyclass = Override reqlatencyclass parameter for audio capture. Defaults  
+                  to standard [] for low-latency, high timing precision if omitted.  
+  
 
 
 
