@@ -1,0 +1,174 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.19 Beta update "Virtuality" SP4 was released at 27th October 2023.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.19.4”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.19.4>
+
+This Psychtoolbox release was partially sponsored by [Mathworks under the year
+2023/2024 contract.](https://www.mathworks.com/solutions/neuroscience.html)
+
+
+### Compatibility changes wrt. Psychtoolbox 3.0.19.3:
+
+- On MS-Windows, GStreamer 1.22 is now required, the latest lightly tested
+  version is GStreamer 1.22.5. With the older GStreamer 1.20, text rendering
+  with the high quality drawtext plugin will no longer work, and the fallback
+  GDI text renderer would be used, which is officially unsupported in case of
+  trouble and has lower performance/quality/features/reliability.
+
+- On macOS if using Octave, Octave 8.3 is now recommended and tested, but older
+  Octave versions back to v6.3 are expected (but not tested) to continue to work.
+
+
+### Highlights:
+
+  None, just a large grab bag of various minor and major fixes and improvements.
+
+
+### All:
+
+- Some Unix file permission cleanup contributed by Yaroslav from NeuroDebian.
+
+- CalibrateMonSpd(): Fix some fallout from previous fixes. Set cal.describe.dacsize
+  also if g_usebitspp is already set. Reference:
+  <https://github.com/kleinerm/Psychtoolbox-3/issues/252>
+
+- DegreesToRetinalEccentricityMM(): Fix typo in code that prevented replacement
+  of small angles by the linear approximation. Contributed by Stella Prins.
+
+- MakeSineImage(): Allow passing of center (0 phase) position of the sinusoid.
+  Contributed by David Brainard.
+
+- ComputePhotopigmentBleaching(): Add constants from Wyszecki and Stiles.
+  Contributed by David Brainard.
+
+- New touchscreen demo: MultiTouchPinchDemo.m, to show detection and handling of
+  two finger pinch gestures on touchscreens.
+
+- Output info message with potential troubleshooting tips if drawtext init takes
+  unusually long, hinting at potential fontconfig cache rebuild (problems) on
+  MS-Windows. May or may not help anybody, but probably doesn't hurt. Suggested
+  by GitHub user @mirh.
+
+- DrawFormattedText(): Add new keyword 'left' to use for the 'sx' parameter. It
+  will left-align drawn text to the left border of an optionally provided
+  'winRect', similar to the 'right' keyword for right-alignment. Improvement
+  contributed by GitHub user @SVNKoch.
+
+- PsychPortAudio: Add potential workaround to deal with temperamental / weird
+  audio sound cards. Add a new optional parameter to the tweaking command
+  ``PsychPortAudio('EngineTunables', ...., workarounds);``, which allows to
+  specify a non-default (ie. non-zero) workarounds bitmask to selectively
+  disable or enable workarounds. The currently defined workaround bits are the
+  following, which modify how the Portaudio audio format test function
+  Pa_IsFormatSupported is handled:
+
+  +1 = Do not error abort on test failure, ie. print warnings but don't abort.
+  +2 = Skip the whole test and always assume success.
+
+  Both could help if the test reports false positives (+1 to continue), or
+  if some hardware queries/operations themselves during the test trigger
+  some trouble (+2 to skip the whole test).
+
+  Also various other minor improvements to PsychPortAudio and some of the audio
+  demos and tests.
+
+- Snd(): Switch fallback method from use of sound() to use of audioplayer().
+  Both modern Octave and Matlab implement sound() as a wrapper around their
+  audioplayer() objects, so using audioplayer() directly gives us more control
+  for a better Snd() fallback implementation. Also use the fallback method as
+  new default by default. Iow. unless specified otherwise, Snd() will play
+  via audioplayer(). This provides good interop with other audio clients and
+  with Screen()'s GStreamer based movie playback engine.
+
+- Beeper(): Formatting/Indentation fixes, refine soundvector calculation.
+
+- BitsPlusIdentityClutTest: Disable encoder test if Vulkan display is used.
+  Current design lead to the tests running before the Vulkan backend is fully
+  in charge, so we display the PTB welcome screen or pixeltrash during the test,
+  instead of the test stims, which leads to false-positive test failure. Just
+  don't offer the test option under Vulkan. DatapixxGPUDitherpatternTest is an
+  alternative working way to test with Vulkan at the moment.
+
+- PsychOpenHMDVR: Use correct ipd/2 instead of ipd for warp-mesh setup in our
+  OpenHMD driver.
+
+- Minor bug fixes, documentation updates and improvements.
+
+
+### Linux:
+
+- Psychtoolbox was built and lightly tested against Matlab R2022b.
+
+- RPiGPIOMex: Various bug fixes and improvements. Also merged two alternative
+  implementations of the file co-written by Steve Van Hooser and myself. These
+  reimplement functionality by using the pigpio library instead of the old and
+  deprecated wiringPi library. This should be more future-proof and maintainable.
+  For now, the original file based on wiringPi is still used though, until we
+  decide which of the two new variants is the better choice.
+
+- Fix exception handling on Octave for RaspberryPi on RaspberryPi OS, so errors
+  only abort the users script and don't terminate the whole Octave application.
+
+
+### Windows:
+
+- Psychtoolbox was built and lightly tested against Matlab R2022b.
+
+- GStreamer 1.22 is now required, GStreamer 1.20 will have limitations.
+
+- Fix drawtext plugin again, so it no longer breaks under Matlab with
+  GStreamer 1.22 on some systems. This will now require the installation
+  of GStreamer 1.22, the older GStreamer 1.20 will no longer work with
+  the drawtext plugin.
+
+- Windows: Remove support for building 32-Bit mex files.
+  Matlab is 64-Bit only since a long time on Windows, Octave is about to
+  remove 32-Bit support as well. Windows-10 - the last MS 32-Bit operating
+  system is on the way to final retirement. Ergo, no need for 32-Bit builds
+  in the future anymore.
+
+- Make Screen('Openwindow') timing startup tests and calibrations more
+  robust. This by disabling processor idling during the tests, ie. ACPI
+  C-State processor power management transitions out of C0 (active). Such
+  transitions can induce latency / variability in code execution timing bad
+  enough to affect timing tests on some setups. If and how much this helps
+  in practice remains to be seen. Based on investigations / measurements
+  by GitHub user @mirh, see GitHub isse #793 for reference. If this new
+  optimization causes trouble or interop problems with cpu performance
+  tweaking tools, e.g., the Windows tools "throttlestop", it can be disabled
+  by use of the command before the first time you try to open an onscreen
+  window in your experiment script:
+
+  ``PsychTweak('DontDisableProcessorIdling', 1);``
+
+
+### macOS:
+
+- Psychtoolbox was built and lightly tested against Matlab R2022b and
+  Octave 8.3 from HomeBrew.
+
+- Screen(): Add iMac20,1 and iMac20,2 aka year 2020 iMacs to timing fixup lut,
+  so the visual timing fixes also apply to these final Intel iMac models with
+  AMD Navi graphics chips. As the PsychtoolboxKernelDriver does not support AMD
+  Navi graphics, our visual timestamping and our diagnostic for visual timing
+  problems on these machines will be more limited than on older machines, but
+  the untested expectation is that this should fix timing on 2020 iMac internal
+  displays.
+
+- Screen(): Remove conserveVRAM flag kPsychDontCacheTextures. It was useless and
+  even buggy since years, so let it die.
+
+- Screen(): Add new conserveVRAM preference flag 2 == kPsychDontSwitchToOptimalVidMode.
+  May or may not help fullscreen display on connected external video splitters like the
+  Matrox DualHead2Go. This is based on a hunch, not on proper root causing. Cfe.
+  https://psychtoolbox.discourse.group/t/open-window-cant-set-to-a-specified-rect-size-on-macos-with-matrox-dualhead2go/5061
+
+Enjoy!
