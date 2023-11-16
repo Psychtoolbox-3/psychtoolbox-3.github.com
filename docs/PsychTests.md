@@ -79,6 +79,7 @@ Psychtoolbox/[PsychTests](PsychTests)/Contents.m
   [TextureChannelsTest](TextureChannelsTest)             - Test assignment of matrix layers to RGBA texture channels.  
   [TrolandTest](TrolandTest)                     - Colorimetric conversions.  
   [VBLSyncTest](VBLSyncTest)                     - Tests syncing of PTB-OSX to the vertical retrace.  
+  [VREyetrackingTest](VREyetrackingTest)               - Test eye gaze tracking in VR/AR [HMDs](HMDs) and other XR devices.  
   [VRRTest](VRRTest)                         - Test support of your setup for Variable refresh rate mode.  
   [WavelengthSamplingTest](WavelengthSamplingTest)          - Test conversion between representations of wavelength sampling information.  
 

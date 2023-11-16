@@ -296,7 +296,7 @@ if the HMD is strapped to the users head.
      reference frame. They are the inverses of state.modelView{}. These  
      matrices can be directly used to define cameras for rendering of complex  
      3D scenes with the [Horde3D](Horde3D) 3D engine. Left- and right eye matrices are  
-     contained in state.cameraView{1} and {2}.  
+     contained in state.cameraView{1} and state.cameraView{2}.  
   
      Additionally tracked/predicted head pose is returned in state.localHeadPoseMatrix  
      and the global head pose after application of the 'userTransformMatrix' is  

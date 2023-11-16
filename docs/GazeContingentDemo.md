@@ -17,6 +17,10 @@ This illustrates an application of [OpenGL](OpenGL) Alpha blending by compositin
 two images based on a spatial gaussian weight mask. Compositing is done  
 by the graphics hardware.  
   
+If you set the optional 'usehmd' parameter to 1 then the demo will display on  
+a VR HMD, and if that HMD has a suported eyetracker, it will be used to move  
+the foveated area gaze contingent with the users tracked gaze.  
+  
 See also: [PsychDemos](PsychDemos), [MovieDemo](MovieDemo), [DriftDemo](DriftDemo)  
 
 
