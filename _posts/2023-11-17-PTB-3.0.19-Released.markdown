@@ -1,0 +1,117 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+The Psychtoolbox v3.0.19.5 update "Eye to eye" was released on 17th November 2023.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.19.5”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.19.5>
+
+[This Psychtoolbox release was fully sponsored by Mathworks under the year
+2023/2024 contract.](https://www.mathworks.com/solutions/neuroscience.html)
+
+This is the last release built and tested with Matlab R2022b. Future development
+and user support will immediately switch to Matlab R2023b after this announcement,
+as we no longer have access to earlier Matlab releases, but Psychtoolbox is expected
+to continue to work just fine on older Matlab versions.
+
+### Highlights:
+
+- Eye gaze tracking support for OpenXR supported devices via `PsychVRHMD()`, ie.
+  Virtual Reality (VR) / Augmented Reality (AR) / Mixed Reality (MR) Headsets
+  with built in eye trackers and suitable eye tracking runtimes!
+
+  This release should support monocular "cyclops eye" eye gaze tracking on HMDs
+  with monocular eye trackers and binocular eye trackers (typically reporting a
+  fused gaze vector for noise reduction, based on sensor fusion between both
+  eyes tracking data) on all hardware and OpenXR runtimes which support the
+  XR_EXT_eye_gaze_interaction OpenXR extension. Data reporting is very limited
+  due to the limited functionality provided by that extension: Only a binary
+  confidence value (eye tracked / not tracked) and a 3D eye gaze vector aka
+  gaze ray aka eye position and looking direction, usable for determining the
+  looking direction in a 3D VR scene and hit testing with 3D scene geometry, as
+  well as remapped 2D pixel coordinates of where the user is looking inside the
+  Psychtoolbox onscreen window, both for monoscopic mode and stereoscopic mode.
+  Demos which demonstrate 3D gaze are `VRInputStuffTest.m` if the optional
+  `withGazeTracking` flag is set to 2, or just 2D position for flag setting 1.
+  2D gaze reporting is demonstrated - if the proper flags are set - by the
+  following demos and tests: `VRHMDemo.m` - simple mono/stereo view reporting,
+  GazeContingentDemo.m - monoscopic display, "foveated area" is moved via gaze,
+  and `VREyetrackingTest.m` for extensive demo and testing.
+
+  The API / how to use and description of features and limitations is in the
+  `help PsychVRHMD` where one would expect VR/AR/MR/XR related functionality.
+
+  Setup instructions can be found under `help OpenXR`.
+
+  For VR HMDs with builtin eyetrackers from HTC, e.g., HTC Vive Pro Eye, on
+  MS-Windows only, a second more feature rich eyetracking mechanism via use
+  of HTC's proprietary Windows-only SRanipal eyetracking runtime is used. It
+  additionally to the above "cyclops eye" reporting allows for binocular
+  eyetracking, more precise gaze sample timestamps, and estimates reported for
+  "eye openess" aka how much are the eyelids open, and pupil diameter.
+
+  Due to lack of other equipment, time and funding, this functionality was only
+  tested under Microsoft Windows 10 with a rented HTC Vive Pro Eye HMD under
+  SteamVR 1.26, and to a lesser extent, the new SteamVR 2.0.10 runtime from
+  Valve. The monocular "cyclops" eye gaze tracking should work on any other HMD
+  with OpenXR compliant eye tracking though, also on Linux. And binocular tracking
+  should work on other HTC HMDs under Windows as well. Theory and practice, we
+  will see...
+
+  Performance and precision is reasonably good, although functionality wise there
+  is a lot of room for improvement. Further funding would be needed to do that
+  work. [This OpenXR eye gaze tracking was sponsored by Mathworks as the main
+  new sponsored improvement under the 2023/2024 contract.](https://www.mathworks.com/solutions/neuroscience.html)
+  As so often though, the funding was insufficient to fully cover our costs
+  up to this point, so future development of this eyetracking support will be
+  mostly dependent on future funding or contract work from interested labs
+  or users.
+
+  Given that the HTC Vive Pro Eye used for developing and testing this support
+  is only rented, and due to the lack of funding, we will likely have to give
+  the HMD back before christmas, so no further debugging / refinement or
+  related user support can be provided after that point in time, unless some
+  labs or users contract and fund us for further development and support.
+
+  Therefore I urge you to test this functionality early and give timely feedback,
+  before it is too late for a cheap solution. That still means of course that
+  while constructive feedback is appreciated, no free help will be provided
+  for setup and first steps in general. That's what our paid support is for.
+
+### All:
+
+- OpenXR VR/AR/MR/XR eyetracking support. See above.
+
+- PlayMoviesDemo.m: Some performance optimizations for high fps HDR movie playback.
+
+- `CreateResolutionPyramid()`: Fix and deuglify MipMapDownsamplingShader.
+
+- Minor bug fixes, documentation updates and improvements.
+
+
+### Linux:
+
+- Psychtoolbox was built and lightly tested against Matlab R2022b and Octave 6.4.
+
+- OpenXR VR/AR/MR/XR eyetracking support. See above.
+
+
+### Windows:
+
+- Psychtoolbox was built and lightly tested against Matlab R2022b and Octave 7.3.
+
+- Additionally to OpenXR eyetracking, also SRAnipal binocular eyetracking on
+  suitable HTC HMDs, as tested with the HTC Vive Pro Eye.
+
+
+### macOS:
+
+- Psychtoolbox was built and lightly tested against Matlab R2022b and
+  Octave 8.3 from HomeBrew. Octave 8.4 was also lightly tested and seems fine.
+
+Enjoy!
