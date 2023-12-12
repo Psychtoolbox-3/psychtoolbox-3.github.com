@@ -28,9 +28,10 @@ Short version
 
 -   *Runtime environment:*
 
-    64-Bit Matlab version R2022b or later (older versions will likely work, but are no longer tested
-    for compatibility or supported by us in case of trouble), and GNU Octave version 5.2 or later versions
-    on Linux, and 64-Bit [Octave version 8.3.0 on macOS][OctavemacOS] [and Octave 7.3.0 on MS-Windows.][OctaveForWindows]
+    64-Bit Matlab version R2023b (other versions will likely work, but are not tested for
+    compatibility or supported by us in case of trouble), and GNU Octave version 5.2 or
+    later versions on Linux, and 64-Bit [Octave version 8.4.0 on macOS][OctavemacOS] and
+    [Octave 7.3.0 on MS-Windows.][OctaveForWindows]
 
 -   *Graphics card:*
 
@@ -118,16 +119,16 @@ Operating systems
 GNU/Linux is fully supported on Intel compatible PCs and suitable (== older) Apple
 Macintosh computers under
 
--  Matlab 64-bit, version R2022b. Older versions likely work, but are no longer
+-  Matlab 64-bit, version R2023b. Older versions likely work, but are no longer
    tested or testable or supportable by us due to lack of access.
 -  GNU Octave 64-bit, versions 5.2, and at least versions v6.1 - v7.3.
 -  Additionally, Psychtoolbox from NeuroDebian supports 32-Bit and 64-Bit
    releases of whatever version of GNU Octave ships by default with your
    distribution, e.g., also Octave 3.2 to 4.4 on older distributions, or
-   Octave 5.x, 6.x and 7.x on recent distributions.
+   Octave 5.x, 6.x, 7.x and 8.x on recent distributions.
 
 Psychtoolbox testing and development occurs mainly on the most recent Ubuntu
-Linux LTS releases or flavors of them, currently Ubuntu 22.04.2-LTS. Distributions
+Linux LTS releases or flavors of them, currently Ubuntu 22.04.3-LTS. Distributions
 older than Ubuntu 20.04-LTS are no longer supported since Psychtoolbox 3.0.18. We
 recommend Ubuntu 22.04-LTS at this time.
 
@@ -168,13 +169,13 @@ Psychtoolbox should "work" in principle on
 
 -  64-bit macOS 13 "Ventura", maybe macOS 10.14 - macOS 12 (no longer tested),
    maybe partially macOS 10.11-10.13 (no longer tested).
--  64-bit Matlab R2022b, likely older recent versions upwards of R2014b, but those are untested.
--  64-bit Octave v8.3, probably also v6.4-v8.2 (expected to work, but untested).
--  As of 2023, [you will need to get Octave 8.3 from a package manager like HomeBrew][OctavemacOS]
+-  64-bit Matlab R2023b, likely older recent versions upwards of R2014b, but those are untested.
+-  64-bit Octave v8.4, probably also v6.4-v8.3 (expected to work, but untested).
+-  As of 2023, [you will need to get Octave 8.4 from a package manager like HomeBrew][OctavemacOS]
    as standalone binary installers are not available.
 
 Limited testing currently only happens on a version of macOS 13 “macOS Ventura”
-with 64-Bit Octave 8.3 from HomeBrew, and with 64-bit Matlab R2022b.
+with 64-Bit Octave 8.4 from HomeBrew, and with 64-bit Matlab R2023b.
 
 Ventura is the only somewhat supported version of macOS at this point in time.
 Psychtoolbox is compatible with it in principle, and it is the only currently
@@ -242,7 +243,7 @@ resolve at least some of these issues on AMD and NVidia graphics cards
 
 Psychtoolbox should work on
 
--   Matlab 64-bit. Currently tested and supported with release R2022b.
+-   Matlab 64-bit. Currently tested and supported with release R2023b.
     External mandatory requirements: Microsoft C MSVC 2015-2019 runtime and
     GStreamer 1.22.5 MSVC or later. Installation of GStreamer _before_ installation
     of Psychtoolbox is mandatory on Matlab or the Screen mex file will not work.

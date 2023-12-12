@@ -112,7 +112,7 @@ Psychtoolbox:[PsychDemos](PsychDemos)
    [RenderDemo](RenderDemo)              - Render CIE xyY as a color patch.  
    [SadowskiDemo](SadowskiDemo)            - Shows the "Sadowski" color afterimage effect.  
    [SimpleHDRDemo](SimpleHDRDemo)           - Minimal demo for using a HDR display, showing some basic stimuli.  
-   [SimpleHDRLinuxStereoDemo](SimpleHDRLinuxStereoDemo) -Like [SimpleHDRDemo](SimpleHDRDemo), but with Linux/X11 stereo hack for stereoscopic HDR stimulation.  
+   [SimpleHDRLinuxStereoDemo](SimpleHDRLinuxStereoDemo) - Like [SimpleHDRDemo](SimpleHDRDemo), but with Linux/X11 stereo hack for stereoscopic HDR stimulation.  
    [SimpleImageMixingDemo](SimpleImageMixingDemo)   - Shows how to mix two images via alpha-blending, using an alpha-mask which itself is morphed between two masks.  
                              See also [ImageMixingTutorial](ImageMixingTutorial) for a more complex demonstration of the technique.  
    [SimpleSoundScheduleDemo](SimpleSoundScheduleDemo) - Simple demo for basic use of sound schedules with [PsychPortAudio](PsychPortAudio).  

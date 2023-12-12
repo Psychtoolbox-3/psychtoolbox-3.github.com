@@ -7,17 +7,17 @@ Demos demonstrating use of the [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)
   
 Read the help for the corresponding [Screen](Screen) subfunctions for infos.  
   
-[SimpleMovieDemo](SimpleMovieDemo)              -- Most simplistic demo on how to play a movie.  
-[PlayMoviesDemo](PlayMoviesDemo)               -- Show simple playback of one movie with sound at a time.  
-[PlayDualMoviesDemo](PlayDualMoviesDemo)           -- Same as [PlayMoviesDemo](PlayMoviesDemo), but play two movies in parallel.  
-[PlayInterlacedMovieDemo](PlayInterlacedMovieDemo)      -- Simple demo on how to use the GLSL realtime video deinterlacer.  
-[PlayMoviesWithoutGapDemo1](PlayMoviesWithoutGapDemo1)    -- Play one movie while opening another one for gap-less playback.  
-[PlayMoviesWithoutGapDemo2](PlayMoviesWithoutGapDemo2)    -- [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) only: Optimized version of gap-less playback.  
-                                movie in the background to reduce gaps between movies.  
-[DetectionRTInVideoDemo](DetectionRTInVideoDemo)       -- How to collect reaction times in response to detection of some  
-                                event in a presented movie file. Takes care to get timing right.  
-[LoadMovieIntoTexturesDemo](LoadMovieIntoTexturesDemo)    -- Quickly load a movie into a stack of textures for quick playback  
-                                with arbitrary speed and order.  
+[SimpleMovieDemo](SimpleMovieDemo)              - Most simplistic demo on how to play a movie.  
+[PlayMoviesDemo](PlayMoviesDemo)               - Show simple playback of one movie with sound at a time.  
+[PlayDualMoviesDemo](PlayDualMoviesDemo)           - Same as [PlayMoviesDemo](PlayMoviesDemo), but play two movies in parallel.  
+[PlayInterlacedMovieDemo](PlayInterlacedMovieDemo)      - Simple demo on how to use the GLSL realtime video deinterlacer.  
+[PlayMoviesWithoutGapDemo1](PlayMoviesWithoutGapDemo1)    - Play one movie while opening another one for gap-less playback.  
+[PlayMoviesWithoutGapDemo2](PlayMoviesWithoutGapDemo2)    - [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) only: Optimized version of gap-less playback.  
+                               movie in the background to reduce gaps between movies.  
+[DetectionRTInVideoDemo](DetectionRTInVideoDemo)       - How to collect reaction times in response to detection of some  
+                               event in a presented movie file. Takes care to get timing right.  
+[LoadMovieIntoTexturesDemo](LoadMovieIntoTexturesDemo)    - Quickly load a movie into a stack of textures for quick playback  
+                               with arbitrary speed and order.  
   
 
 

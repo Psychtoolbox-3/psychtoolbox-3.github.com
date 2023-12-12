@@ -1,7 +1,18 @@
 # [OSSchedulingAccuracyTest](OSSchedulingAccuracyTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)
 
-[OSSchedulingAccuracyTest](OSSchedulingAccuracyTest)(configFile [, duration=60])  
+[OSSchedulingAccuracyTest](OSSchedulingAccuracyTest)([configFile][, duration=60])  
+  
+Test accuracy of the operating systems scheduling for code execution of  
+code on the cpu, ie. Psychtoolbox and Matlab/Octave scripting language  
+code.  
+  
+'configFile' Filename of benchmark configuration file. If none is specified,  
+the file fliptimingdefaultconfig.mat from the Psychtoolbox/[PsychTests](PsychTests)/[TestConfigurations](TestConfigurations)/  
+folder is used for some reasonable default testing setup.  
+  
+'duration' Duration of the test in seconds. Default is 60 seconds.  
+  
 
 
 

@@ -1,7 +1,7 @@
 # [MultiWindowLockStepTest](MultiWindowLockStepTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)
 
-[MultiWindowLockStepTest](MultiWindowLockStepTest)([nrwins=10][, separateScreens=0]);  
+[MultiWindowLockStepTest](MultiWindowLockStepTest)([nrwins=2][, separateScreens=0]);  
   
 Test if and how many parallel asynchronous window flips  
 Psychtoolbox can handle on multiple onscreen windows.  

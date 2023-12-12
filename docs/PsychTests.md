@@ -69,16 +69,18 @@ Psychtoolbox/[PsychTests](PsychTests)/Contents.m
   [QuestTest](QuestTest)                       - Some [Quest](Quest) simulations, more elaborate than [QuestDemo](QuestDemo).  
   [ResolutionTest](ResolutionTest)                  - Use [Screen](Screen) Resolutions to print table of display resolutions.  
   [RodFundamentalTest](RodFundamentalTest)              - Test the PTB routines generate a good rod fundamental.  
-  [ScreenTest](ScreenTest)                      - Thorough test of hardware/software performance.  
   [StructsFileTest](StructsFileTest)                 - Test routines for reading and writing struct arrays to text files.  
   [SyncedCLUTUpdateTest](SyncedCLUTUpdateTest)            - Visual test of clut write synching to vertical retrace.  
   [TextBoundsTest](TextBoundsTest)                  - Test [Screen](Screen)('TestBounds')  
   [TextBugTest](TextBugTest)                     - Look for interference between  
   [TextInitBugTest](TextInitBugTest)                 - Test for failure of 'DrawText' default font.  
   [TextInOffscreenWindowTest](TextInOffscreenWindowTest)       - Compare text rendered into onscreen and offscreen windows.  
+  [TextOffByOneBugTest](TextOffByOneBugTest)             - Tests for fix off an off-by-one bug in [Screen](Screen)('Drawtext').  
+  [TextToStuffColorMismatchTest](TextToStuffColorMismatchTest)    - Test if text is drawn in the color it was requested to be drawn.  
   [TextureChannelsTest](TextureChannelsTest)             - Test assignment of matrix layers to RGBA texture channels.  
-  [TrolandTest](TrolandTest)                     - Colorimetric conversions.  
-  [VBLSyncTest](VBLSyncTest)                     - Tests syncing of PTB-OSX to the vertical retrace.  
+  [TextureSharingTest](TextureSharingTest)              - Test [OpenGL](OpenGL) context resource sharing.  
+  [TrolandTest](TrolandTest)                     - Test colorimetric conversions.  
+  [VBLSyncTest](VBLSyncTest)                     - Tests visual stimulus onset timing and timestamping.  
   [VREyetrackingTest](VREyetrackingTest)               - Test eye gaze tracking in VR/AR [HMDs](HMDs) and other XR devices.  
   [VRRTest](VRRTest)                         - Test support of your setup for Variable refresh rate mode.  
   [WavelengthSamplingTest](WavelengthSamplingTest)          - Test conversion between representations of wavelength sampling information.  

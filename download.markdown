@@ -372,7 +372,7 @@ This can mean two things:
 If the updater fails with a message like ...
 
     svn: E155036: Please see the 'svn upgrade' command 
-    svn: E155036: Working copy '/opt/MATLAB/R2022b/toolbox/Psychtoolbox' is too old (format 10, created by Subversion 1.6) 
+    svn: E155036: Working copy '/opt/MATLAB/R2023b/toolbox/Psychtoolbox' is too old (format 10, created by Subversion 1.6) 
 
 ... then open a terminal window, `cd` into the Psychtoolbox folder and then run
 the command `svn upgrade`. Then rerun the `UpdatePsychtoolbox` command.

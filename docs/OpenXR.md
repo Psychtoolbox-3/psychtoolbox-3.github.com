@@ -52,7 +52,7 @@ both showing 2D gaze position and 3D gaze rays. [VREyetrackingTest](VREyetrackin
 allows to test and assess various aspects of 2D gaze tracking of 2D or 3D  
 stimuli presented monoscopically or stereoscopically.  
   
-### So far successfully tested with the PTB 3.0.19.5 release are:  
+### So far successfully tested with the PTB 3.0.19.5/3.0.19.6 release are:  
   
 - The open-source Monado(XR) runtime version 21.0.0 for Linux/X11, as shipping  
   with Ubuntu 22.04-LTS and later, or as a 3rd party ppa for Ubuntu 20.04-LTS,  
@@ -61,11 +61,12 @@ stimuli presented monoscopically or stereoscopically.
   
   https://monado.freedesktop.org  
   
-  This has been tested on Ubuntu 20.04.6-LTS and 22.04.1-LTS with AMD and [NVidia](NVidia)  
+  This has been tested on Ubuntu 20.04.6-LTS and 22.04-LTS with AMD and [NVidia](NVidia)  
   gpu's so far.  
   
-- The proprietary Valve [SteamVR](SteamVR) runtime version 1.24.7 and 1.25.7 on  
-  Linux (Ubuntu 20.04.6-LTS) and on Microsoft Windows 10 21H2 - 22H2.  
+- The proprietary Valve [SteamVR](SteamVR) runtime version 1.24.7 and 1.25.7 on Linux  
+  (Ubuntu 20.04.6-LTS and 22.04.3-LTS), and [SteamVR](SteamVR) 1.25.7 and 2.0 on Microsoft  
+  Windows 10 21H2 - 22H2.  
   
 - The proprietary [OculusVR](OculusVR) runtime version 1.81.0 on Microsoft Windows 10  
   21H2 - 22H2.  
@@ -78,17 +79,17 @@ and its two "Vive Wand" controllers, tracked by a Valve Lighthouse
 version 2 system with two Vive lighthouse emitter stations.  
   
 Eye gaze tracking was tested under Windows 10 22H2 under [SteamVR](SteamVR) 1.25.6  
-and HTC [SRAnipal](SRAnipal) SDK 1.3.6.8, under Octave 7.3 and Matlab R2022b, using a  
-HTC Vive Pro Eye VR headset. Both [OpenXR](OpenXR) "cyclops" gaze tracking, and  
-also binocular gaze tracking with eye opening and pupil diameter reporting  
-worked well.  
+and and [SteamVR](SteamVR) 2.0 and HTC [SRAnipal](SRAnipal) SDK 1.3.6.8, under Octave 7.3 and  
+Matlab R2022b and R2023b, using a HTC Vive Pro Eye VR headset. Both [OpenXR](OpenXR)  
+"cyclops" gaze tracking, and also binocular gaze tracking with eye opening  
+and pupil diameter reporting worked well.  
   
 A limitation of the current [OpenXR](OpenXR) spec is that it doesn't provide any  
 means for reliable, robust, trustworthy, accurate and precise visual  
 stimulus onset timestamping. We are investigating a future solution for  
 reliable and trustworthy timestamping for the open-source [MonadoXR](MonadoXR)  
 runtime on Linux and hope to find a solution there in the foreseeable  
-future, stay tuned. For now, as of Psychoolbox 3.0.19.1 we have a hack  
+future, stay tuned. For now, as of Psychoolbox 3.0.19.6 we have a hack  
 that only works on a modified version of Monado + a modified version of  
 Mesa, on AMD or Intel gpu's under Linux. The hack has various restrictions  
 and it impacts performance. It is also not quite plug and play to set up.  
@@ -97,7 +98,7 @@ instructions.
   
 Testing also showed that all tested proprietary [OpenXR](OpenXR) runtimes, ie.  
 both [OculusVR](OculusVR) and [SteamVR](SteamVR), violate the [OpenXR](OpenXR) specs stimulus timing  
-requirements, as of April 2023. The only exception was the open-source  
+requirements, as of December 2023. The only exception was the open-source  
 Monado(XR) runtime for Linux.  
   
 The same limitations are true for the old [OculusVR](OculusVR) runtimes on  

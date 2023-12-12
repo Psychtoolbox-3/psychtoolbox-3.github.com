@@ -59,7 +59,7 @@ DTR=os default    -- Setting for 'Data Terminal Ready' pin: 0 or 1.
 RTS=os default    -- Setting for 'Request To Send' pin: 0 or 1.  
   
 [BreakBehaviour](BreakBehaviour)=Ignore -- Behaviour if a 'Break Condition' is detected on the  
-line: Ignore, Flush, Zero. On Windows, this setting is ignored.  
+line: Ignore, Flush, Zero. On Windows, only 'Ignore' is allowed.  
   
 [OutputBufferSize](OutputBufferSize)=4096 -- Size of output buffer in bytes.  
   

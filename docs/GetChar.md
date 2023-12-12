@@ -10,7 +10,9 @@ are returned in the first return argument "ch".
   
 Please read the 'help ListenChar' carefully to understand various  
 limitations and caveats of this function, and to learn about - often  
-better - alternatives.  
+better - alternatives. Also read the "international keyboard" section in  
+'help KbEventGet' for limitations, caveats, or possibly needed extra  
+setup in some cases when using a keyboard with a non-US layout.  
   
 CAUTION: Do not rely on the keypress timestamps returned by [GetChar](GetChar)  
 without fully reading and understanding this help text. Run your own  
@@ -32,10 +34,18 @@ subjects response, synchronizing to keytriggers (e.g., fMRI machines) or
 if you require high timing precision then use [KbCheck](KbCheck) instead of [GetChar](GetChar).  
   
 [GetChar](GetChar) should work on all platforms, but its specific functionality,  
-beyond simply returning typed characters, will vary depending on OS type  
-and version, if you use Matlab or Octave, and if you use Matlab with or  
-without Java based GUI active. For portability it is therefore best to  
-ignore all info returned beyond the character code.  
+beyond simply returning simple typed characters, will vary depending on  
+OS type and version, the type of desktop GUI in use, or if you use Matlab  
+or Octave, and if you use Matlab with or without Java based GUI active.  
+For portability it is therefore best to ignore all info returned beyond  
+the character code. Composed characters, e.g., putting accents on top of  
+letters, do not always work on all setups. In general, only Matlab with  
+Java based desktop GUI enabled on Linux and macOS will get optimal  
+international keyboard and composed character handling, at reduced timing  
+precision, whereas anything on MS-Windows, and on Linux with KDE desktop,  
+and on Octave, and Matlab in -nodesktop mode, will use an implementation  
+based on [KbQueues](KbQueues), which has better timing and flexibility, but worse  
+handling of international keyboards and composed characters at the moment.  
   
 "when" is a struct. It (used to) return the time of the keypress, the "adb"  
 address of the input device, and the state of all the modifier keys  
@@ -61,12 +71,12 @@ and [KbWait](KbWait) are keypress-oriented (and fast). If only a meta key (like
 pressed, but [CharAvail](CharAvail) will return false, because no character was  
 generated. See [KbCheck](KbCheck).  
   
-[CharAvail](CharAvail) and [GetChar](GetChar) use the system event queue to retrieve the character  
-generated, not the raw key press(es) per se. If the user presses "a",  
-[GetChar](GetChar) returns 'a', but if the user presses option-e followed by "a",  
-this selects an accented a, "?", which is treated by [GetChar](GetChar) as a single  
-character, even though it took the user three keypresses (counting the  
-option key) to produce it.  
+[CharAvail](CharAvail) and [GetChar](GetChar) try to use the system event queue to retrieve the  
+character generated if possible, not the raw key press(es) per se. If the  
+user presses "a", [GetChar](GetChar) returns 'a', but if the user presses option-e  
+followed by "a", this selects an accented a, "?", which is treated by  
+[GetChar](GetChar) as a single character, even though it took the user three  
+keypresses (counting the option key) to produce it.  
   
 There can be some delay between when the key is pressed and when [CharAvail](CharAvail)  
 or [GetChar](GetChar) detects it, due to internal processing overhead in Matlabs Java  
@@ -89,16 +99,16 @@ are not.
 ---\> If precise timing of the keypress is important, use [KbCheck](KbCheck) or  
 [KbWait](KbWait) or [KbQueueXXX](KbQueueXXX) functions or [KbEventGet](KbEventGet) for consistent results!  
   
-### OS X / Windows-XP / Linux (non-KDE desktop GUI) with Matlab and Java enabled:  
+### macOS or Linux (with other than KDE desktop GUI), with Matlab and Java enabled:  
   
-JAVA PATH: The [GetChar](GetChar) implementation for Matlab is based on Java.  
-Therefore, the Psychtoolbox subfolder [PsychJava](PsychJava) must be added to Matlabs  
-static classpath. Normally this is done by the Psychtoolbox installer by  
-editing the Matlab file "classpath.txt" (enter which('classpath.txt') to  
-find the location of that file). If the installer fails to edit the file  
-properly, you'll need to perform that step manually by following the  
-instructions of the installer. See 'help PsychJavaTrouble' for more infos  
-on this.  
+JAVA PATH: The [GetChar](GetChar) implementation for Matlab on these systems is  
+based on Java. Therefore, the Psychtoolbox subfolder [PsychJava](PsychJava) must be  
+added to Matlabs static classpath. Normally this is done by the  
+Psychtoolbox installer by editing the Matlab file "classpath.txt" (enter  
+which('classpath.txt') to find the location of that file). If the  
+installer fails to edit the file properly, you'll need to perform that  
+step manually by following the instructions of the installer. See 'help  
+PsychJavaTrouble' for more infos on this.  
   
 KEYSTROKES IN THE BACKGROUND: To detect keypresses made before the  
 [GetChar](GetChar) call, you must have called "[ListenChar](ListenChar)" earlier.  [ListenChar](ListenChar)  
