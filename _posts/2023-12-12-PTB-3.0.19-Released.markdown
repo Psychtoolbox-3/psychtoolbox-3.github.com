@@ -107,9 +107,9 @@ to some degree by Cambridge Research Systems.
   This uses VAAPI for hardware accelerated video decoding on AMD and Intel,
   and maybe on NVidia, but NVidia is untested so far on Linux.
 
-  Note that while AMD and NVidia worked well in my testing, more often than
-  not, Intel Kabylake shit its bed, causing hangs or massive visual artifacts
-  in decoded video, on both Ubuntu 20.04 and Windows 11. May or may not be
+  Note that while AMD and NVidia worked well in my testing, at pixelFormat 11,
+  Intel Kabylake produced some visual decoding artifacts under Ubuntu 20.04, and
+  massive visual artifacts in decoded video on Windows 11. May or may not be
   general Intel bugs, or may just be a problem on my specific old Intel iGPU.
 
   Additional successful testing was performed by a user under Windows-10 with
