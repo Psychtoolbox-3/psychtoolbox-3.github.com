@@ -1,0 +1,393 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.19 Beta update "Raspberry cake" was released at 12th December 2023.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.19.6”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.19.6>
+
+This Psychtoolbox release was sponsored to a large degree by [Mathworks under the year
+2023/2024 contract.](https://www.mathworks.com/solutions/neuroscience.html), and
+to some degree by Cambridge Research Systems.
+
+
+### Compatibility changes wrt. Psychtoolbox 3.0.19.5:
+
+- Psychtoolbox is now tested and supported on Matlab R2023b, instead of R2022b.
+  It is expected to continue to work on older releases than R2023b, but no longer
+  developed or tested against them.
+
+- Slight behavioral changes in IOPort BreakBehaviour settings on MS-Windows, and
+  generally a few IOPort config options. Not expected to affect (m)any user scripts.
+
+
+### Highlights:
+
+- This release was tested for compatibility with Matlab R2023b on Linux and Windows,
+  specifically Ubuntu 22.04.3-LTS with AMD RavenRidge (AMD Ryzen 5 2400G processor
+  integrated graphics) and AMD Polaris graphics, and on Microsoft Windows 10 22H2
+  with AMD RavenRidge and NVidia GeForce GTX 1650 graphics, and to a lesser degree
+  on Ubuntu 20.04.6-LTS and Windows 11 22H2 with Intel Kabylake (GT2) "UHD 620"
+  integrated graphics. Testing with some onboard sound chips was also performed.
+  The testing led to various smaller improvements, and various workarounds on
+  MS-Windows for AMD OpenGL and Vulkan graphics driver bugs, and for some NVidia
+  driver bugs, as well as some bugs in Matlab wrt. backwards compatibility and
+  OS compatibility. Most improvements in this release are due to that.
+  
+  This was done as part of out Mathworks 2023/2024 contract for ensuring compatibility
+  with recent Matlab releases, spending over 65 work hours. Due to not even remotely
+  sufficient funding for this work, no significant testing beyond some very quick touch
+  and go spot testing was performed for macOS.
+
+- Substantial movie playback performance improvements in pixelFormat 11 for HDR
+  and WCG movies when hardware video decoding is used on Linux and MS-Windows. A
+  small fraction of this work was sponsored as part of the Mathworks contract.
+
+- 10 bit deep color framebuffer and HDMI output for the RaspberryPi 4/400 by
+  improvements to Psychtoolbox and to the Mesa 23.3.1 OpenGL graphics drivers
+  for RaspberryPi's VideoCore 6+ gpu. Mostly paid for by Cambridge Research Systems.
+
+
+### All:
+
+- Screen: Optimize storage format for LUMINANCE16 textures for texture normalization.
+  If a 16 bpc luminance texture is turned into an offscreen window, or drawn into,
+  the needed normalization / conversion to RGBA format now converts into RGBA16
+  format instead of RGBA32 float format. This retains full precision of the original
+  image content, but at half the memory consumption.
+
+- Screen: In DrawTexture(s), always filter planar textures via nearest neighbour
+  sampling instead of any of the other filtering/sampling modes, as any sampling
+  other than nearest neighbour will cause massive artifacts.
+
+- Screen: Improve performance of HDR movie playback by more efficient use of hardware
+  video decoding. Enable the GStreamer movie playback engine in HDR mode (aka pixelFormat 11)
+  to accept and handle typical semi-planar YUV formats used for HDR movies when
+  gpu hardware accelerated video decoding is in use. This allows GStreamer to avoid
+  cpu expensive frame format conversions from semi-planar frames provided by the
+  gpu hardware decoders to planar formats previously accepted by PTB's texture
+  creation code, leading to way higher performance when such hardware decoders
+  are used. Software decoding still works via the previous path, whenever that is
+  wanted or needed. Software decoding can also be enforced by disabling of hardware
+  decoding by passing in specialFlags1 flag +4 in ``Screen('OpenMovie', ...)``. One
+  limitation of the disable is that hardware decoding will stay off for the remainder
+  of the whole session, ie. until Octave/Matlab is quit, once the disable flag
+  for hardware decoding has been given once in a session. This could be fixed by
+  requiring GStreamer 1.20+ as minimum requirement, ie. Ubuntu 22.04 and later.
+
+  Note that I've repurposed/redefined specialFlags1 flag +4 as hw accel disable,
+  from previously "draw 2D flow vectors on content for debugging/visualisation".
+  This is ok, as the feature was probably never used by anybody, and also because
+  this feature is deprecated and unsupported in all supported GStreamer versions
+  since quite a while.
+
+  The following new formats are supported for efficient handling:
+
+  - Y42B = YUV planar 4:2:2 with 8 bpc.
+  - NV16 = YUV semi-planar 4:2:2 with 8 bpc, aka P208.
+
+  - P0xx formats of YUV semi-planar 4:2:0 sampling with 8, 10, 12 and 16 bpc,
+    ie. NV12, P010_10LE, P012, P016. These are the relevant ones for typical
+    HDR-10 hardware decoding from H265/HEVC, AV1, and from VP9.
+
+  So far this has been tested on MS-Windows 10 with NVidia GeForce GTX1650 and
+  AMD Raven Ridge / Vega as part of a Ryzen 5 2400G processor. On NVidia it shows
+  a 2x speedup in decoding speed, to allow playback of 4k HDR at 60 fps with stable
+  framerate and none to minimal frame dropping. This typically uses NVCODEC on
+  NVidia hardware or Direct3D11/DXVA decoding on NVidia, AMD and Intel gpus.
+
+  Tests on Ubuntu 20.04.6-LTS + Intel Kabylake + GStreamer 1.16, and on two
+  Ubuntu 22.04.3-LTS machines with GStreamer 1.20.3, once with AMD Polaris11
+  and once with AMD Raven Ridge, also showed 2x performance improvements.
+  This uses VAAPI for hardware accelerated video decoding on AMD and Intel,
+  and maybe on NVidia, but NVidia is untested so far on Linux.
+
+  Note that while AMD and NVidia worked well in my testing, more often than
+  not, Intel Kabylake shit its bed, causing hangs or massive visual artifacts
+  in decoded video, on both Ubuntu 20.04 and Windows 11. May or may not be
+  general Intel bugs, or may just be a problem on my specific old Intel iGPU.
+
+  Additional successful testing was performed by a user under Windows-10 with
+  a NVidia GeForce RTX 3080 with H265 and AV1 4k HDR 60 fps content.
+
+  As a general guideline, as of November 2023, these video codec formats
+  are generally hardware accelerated on Linux and Windows with typical
+  recent hardware from AMD, NVidia and Intel:
+
+  - MPEG2, VC1, H264, VP8: YUV 4:2:0, 8 bpc.
+  - H265, VP9: YUV 4:2:0, 10 bpc HDR.
+
+  - Sometimes also MPEG4, and AV1, the latter only on latest gpu's from
+    NVidia, AMD and Intel, specifically NVidia Ampere+ RTX3000+, or AMD RDNA2
+    Navi 2nd gen, or Intel Xe+/Arc+ or macOS 14 on Apple M3+.
+
+  For best cross-platform, cross-vendor compatibility and with older hardware,
+  the safest choices for high performance playback are probably H264 and H265
+  at the moment.
+
+  None of this applies to Apple macOS, as macOS too primitive OpenGL implementation
+  currently does not allow use of pixelFormat 11 playback.
+
+- PlayMoviesDemo.m: Optimize further for fast playing movies.
+  Suppress costly text drawing for any fps >= 30. Skip wait for flip complete for
+  non-HDR playback. Ths way the demo also serves as a real-world performance test.
+
+- `help GetChar`: Update wrt. OS+GUI+Matlab/Octave support, internationalization.
+
+- `PerceptualVBLSyncTest[FlipInfo2]`: Add optimizations, especially for RaspberryPi.
+  Avoid redundant stimulus draw in non-stereo mono-mode. Do clear the backbuffer
+  after each flip, as that seems to give a substantial performance boost for the
+  VideoCore gpu's - See speculation in code comments - probably related to it being
+  a tiled renderer, or a split gpu + display engine design at least for VideoCore 6+
+  of RaspberryPi 4 and later. I haven't checked the driver source for the more likely
+  reason yet.
+  
+  Another thing that can really help sync tests on the Pi is Priority(1), because
+  then gamemode daemon chooses a more aggressive cpu governor. This only matters at
+  high display refresh rates though, e.g., on a RPi 400 with a 1920x1080 120 Hz
+  display. At somewhat lower refresh rates, e.g., 60 Hz, it isn't needed.
+
+- `IOPort`: Fix 'OpenSerialPort' bugs where default settings override user settings.
+  
+  As GitHub user @qx1147 found out during a code review, there is a flaw in
+  the handling of serial port options, where default serial port options may
+  override user provided configuration options, so the wrong settings are
+  silently applied! This only happens if the user script provides different
+  settings in ``IOPort('OpenSerialPort', ..., settings)``, ie. on initial port
+  open. Calls to ``IOPort('ConfigureSerialPort', ..., settings)`` are not
+  affected.
+
+  Luckily (dumb luck!), only a few options were mishandled, and most of these
+  are rarely changed by user scripts, specifically:
+    
+  ProcessingMode=Cooked would get ignored, and raw mode used instead. Rarely
+  used on Linux/macOS and not supported on Windows anyways. Low impact.
+    
+  BreakBehaviour=Ignore would be used instead of Flush or Zero. Not a
+  problem on Windows, as that is the only supported option. The fact that
+  this went unnoticed on Linux/macOS suggests not much use of Flush or Zero
+  by users scripts. No use by PTB itself. Low expected impact. Note that the
+  implementation of 'Flush' on the Unixes is of questionable use, as Flush
+  would not only flush read/write buffers, but also send a SIGINT, which may
+  end in unexpected ways on Unix, as we don't handle SIGINT specifically.
+  
+  StopBits=2 would get ignored and the default of 1 stop bits would be used.
+  Unclear how many devices want 2 stop bits, but I haven't ever seen one, so
+  probably low expected impact.
+  
+  DataBits=16 would get ignored on MS-Windows only and replaced by 8 bits,
+  whereas other settings are fine, and 16 bits is unsuported on Linux/macOS,
+  so probably rarely if ever used. Low expected impact.
+  
+  FlowControl=None will be used instead of hardware or software flow control.
+  This can be a real bummer with potential real impact, as some devices do
+  support or recommend active flow control! In the case of PTB, the
+  CedrusResponseBox() driver for Cedrus response box devices would have
+  liked that setting.
+  
+  Audit of Psychtoolbox internal user of IOPort, and of the demos, only
+  shows one bad case where things went sideways: CedrusResponseBox.m
+  This driver requested hardware flow control, but silently got instead NO
+  flow control! This is interesting, because during my testing I found
+  communication with Cedrus boxes always rather unreliable, and now I have
+  to wonder if this was because of the accidental lack of hardware flow
+  control? I can't find out, as I lost access to Cedrus devices long ago.
+  
+  This whole parameter handling is somewhat fragile, and could do with an
+  improved implementation, but due to the severe lack of financial funding
+  for PTB, this is not an option in the foreseeable future. Not even code
+  review or testing of 3rd party contributions, if there were any. Luckily
+  this part of the driver is mostly static since years, so I guess we can
+  drag our feet longer and sit it out.
+
+  Another problem pointed out by @qx1147 is indeed that wrong options, e.g.,
+  due to typos in users experiment scripts, would not lead to an error abort
+  or warning, but would get silently ignored in many cases. Not great at all,
+  but lack of funding will leave this problems also unsolved in the near- to
+  midterm, possibly forever. Life sucks...
+    
+  See also PR #821 for discussion. Thanks to @qx1147 for catching this!
+
+- psychrange(): Make fallback trigger robust against Matlab R2023b if
+  statistics toolbox is not installed.
+
+- help PsychDemos, MovieDemos: Some fixes so Matlabs help system can cope.
+
+- Snd(): Minimal compatibility fix for older Matlab releases. E.g., R2018b
+  may need this fix, as reported on the forum.
+
+- FlipTimingWithRTBoxPhotoDiodeTest: Fix useXR flag.
+
+- Cone fundamentals fitting tests: Fix plotting to be usable on different displays.
+  Old plot positioning caused UI awkwardness on most monitors. Also fix use of
+  savefig() function, which was broken due to incompatible changes in Matlab over
+  the years as far as I understand.
+
+- LosslessMovieWritingTest.m: Switch default codec for encoding.
+  From long non-existent huffyuv to supported avenc_huffyuv. Update help texts.
+
+- Delete ScreenTest.m the most useless test ever.
+
+- ComputePhotopigmentBleaching(): Fix some bug in example. By David Brainard.
+
+- Minor bug fixes, documentation updates and improvements.
+
+
+### Linux:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b.
+
+- PsychHID: Work around latest Matlab R2023b internationalization bugs.
+  
+  Matlab R2023b, at least on Ubuntu 20.04-LTS and Ubuntu 22.04-LTS, has a
+  new compatibility bug, where it provides its own deficient libX11 that
+  defines a wrong path to the locale configuration directories. This causes
+  failure of international keyboard handling, ie. calls to XSupportsLocale(),
+  XSetLocaleModifiers() and XOpenIM() fail. As a consequence, only U.S.
+  keyboard layouts get properly handled whenever our our PsychHID/keyboard
+  queue based GetChar() implementation is in use, but not other keyboard
+  layouts!
+    
+  It also triggers a warning each time KbQueueCreate() is called, regardless
+  if in the context of GetChar/CharAvail/ListenChar, or just for keyboard
+  queue operation.
+    
+  Try to detect and work around this Matlab bug, by detecting the failure
+  and then setting the XLOCALEDIR environment variable to override Matlabs
+  broken path to a path that is correct at least for Ubuntu 20.04/22.04 and
+  for similar Debian(-based) systems. Also try to detect user interference,
+  e.g., the user setting a unsuitable XLOCALEDIR, and give troubleshooting
+  tips in that case as well.
+    
+  This fixes the problem with R2023b on at least Ubuntu 20.04 and 22.04.
+  The problem could also have been present in R2023a already, but this was
+  not ever tested by myself, and I am not aware of any bug reports against
+  either R2023a or R2023b.
+
+- Add support to XOrgConfCreator, XOrgConfSelector and PsychLinuxConfiguration
+  to allow to enable 10 bpc / 30 bit deep color framebuffers and display over
+  HDMI on suitable displays with the RaspberryPi 4 and 400, and likely also the
+  RaspberryPi 5. This was only tested on the RaspberryPi 400 under RaspberryPi OS
+  versions 11 "Buster" (legacy) and 12 "Bookworm" (most recent one) 32-Bit editions.
+  Note that current Psychtoolbox from us currently only works on RaspberryPi OS 11,
+  ie. what is now called the "legacy" edition, not yet on the "current" OS version 12.
+  Psychtoolbox 3.0.18.12, shipping with OS version 12 will work of course, but it
+  does not have this setup code. However, it would work with a manually created
+  xorg.conf file.
+
+  Note that 10 bit framebuffers do not work on current versions of RaspberryPi OS
+  out of the box. You need to manually install Mesa version 23.3.1 stable or later,
+  which has an ETA of sometimes at or after 13th December 2024. Until then, a build
+  script can be found under. You can download it, make it executable, and run it to
+  build and install a Mesa local build in /usr/local/ compatible with RaspberryPi 4
+  and 400, possibly RaspberryPi 5. Use this hacked build and install script at your
+  own risk, if it totally breaks your system you get to keep all parts:
+  
+  https://raw.githubusercontent.com/kleinerm/PiKISS/ForCRS10BitMesa/scripts/config/vulkan.sh
+
+  My enablement work for OpenGL 10 bpc / color depth 30 bit / deep color framebuffer
+  support for Mesa 23.3.1+ on the RaspberryPi 4+ was sponsored by a contract from
+  Cambridge Research Systems Ltd. Thank you!
+
+- Other smaller refinements to RaspberryPi support.
+
+
+### Windows:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b.
+
+- For Vulkan on Windows, reenable fullscreen exclusive support on current AMD drivers
+  for proper timing. now works again on AMD gpu's with the latest AMD display drivers,
+  version 23.11.1 from November 2023, as tested successfully in both SDR mode and HDR-10
+  mode on Windows 10 22H2 with AMD Raven Ridge iGPU of AMD Ryzen 5 2400G APU, aka DCN-1
+  display engine and Vega 11 graphics. Hurray!
+
+  Some earlier driver versions might work as well, but this is the only confirmed one
+  by testing, so reenable fullscreen exclusive starting with the 23.11.1 release.
+
+- `IOPort`: Fix wrong break condition handling. Ignore break conditions completely
+  `(BreakBehaviour=Ignore)`, rather than treating them as errors without further
+  handling them in a useful way. Do validate BreakBehaviour parameter to be the only
+  currently supported setting. Contributed by GitHub user @qx1147.
+
+- `PsychPortAudio`: Update libportaudio for MS-Windows with latest from upstream Git
+  main development branch. This way we get my bug fixes to WASAPI audio capture/input
+  timestamping. Testing on MS-Windows 10 and 11 still shows some fragility and oddity
+  in audio input capture timestamping, e.g., for voice onset timestamping, or sound
+  based timing measurements like KeyboardLatencyTest.m or AudioFeedbackLatencyTest.m.
+  These tests may not be very trustworthy on MS-Windows with WASAPI sound backend.
+
+- Screen: Rewrite CRS clut update function RenderClutBits++ as a workaround.
+    
+  Switch from using point rendering via glVertex2i() of the clut T-Lock update pattern
+  to instead using glRasterPos2i + glDrawPixels().
+    
+  Why? Because the proprietary AMD OpenGL driver on Windows has bugs in
+  glVertex2i positioning when rendering to the OpenGL system backbuffer. The
+  most easy way to work around this atm. is to use glRasterPos2i + glDrawPixels()
+  to avoid the glVertex2i AMD bugs. This has the added benefit that we now use
+  this glRasterPos2i + glDrawPixels() combo consistently for all CRS T-Lock rendering,
+  ie. FE1 stereo driving and DIO codes, and for identity pixel passthrough tests and
+  gamma table tweaking in PsychGPUTestAndTweakGammaTables(). At least we only
+  have to think about one potentially broken function (glRasterPos2i()) in the future,
+  not two separate ones.
+    
+  This was found on AMD RavenRidge Vega11 under Windows 10 with AMD driver 23.11.1.
+  No such problem happened with the same hardware on Linux during my testing.
+
+- AdditiveBlendingForLinearSuperpositionTutorial.m: Fix clut overlay text, and cleanups.
+  Apply same fix as for BitsPlusIdentityClutTest.m for AMD Windows OpenGL driver
+  bugs, so text rendering via the Mono++ / M16 clut hardware overlay works.
+
+- BitsPlusIdentityClutTest.m: Work around MS-Windows AMD OpenGL driver bug.
+  AMD's current OpenGL driver version 23.11.1 from November 2023 for MS-Windows
+  has a bug in that glTexImage2D() does not accept GL_BITMAP texture specs. This
+  breaks non-anti-aliased text rendering mode in the drawtext plugin.
+    
+  Work around this by enabling anti-aliased rendering for the plugin via
+  Screen('Preference', 'TextAntiAliasing', 1); However, we don't want anti-aliasing,
+  as it potentially interferes with clut overlays on CRS and VPixx devices, so use
+  Screen('Preference', 'TextAlphaBlending', 1); to apply Screen('Blendfunction')
+  settings during text rendering, but don't actually use Screen('Blendfunction').
+  Instead leave alpha-blending at defaults, which is alpha-blending disabled.
+  This effectively brings back aliased text rendering which works with the clut
+  overlays.
+
+- Screen('ColorRange'): Add workaround for color clamping OpenGL driver bugs.
+    
+  Turns out the recent proprietary AMD OpenGL driver on MS-Windows has a broken
+  color clamping query implementation, which does not report clamp state for
+  GL_CLAMP_VERTEX_COLOR_ARB or GL_CLAMP_FRAGMENT_COLOR_ARB.
+    
+  As such, we get reported failure to change color clamping on Windows 10 + AMD,
+  whereas the same code works fine on Windows 10 NVidia or Intel.
+    
+  Work around this by detecting the failure and auto-selecting our own internal
+  GLSL shader based fallback path. This should fix it - at a performance penalty,
+  as vertex color clamping can be handled by our fallback shader, fragment color
+  clamping has proper default behaviour of clamping on for fixed point unorm
+  framebuffers, and clamping off for floating point framebuffers. Only readback
+  clamping needs to be controlled via glClampColorARB, but luckily readback
+  clamping is supported by glClampColor() as well, in a backwards compatible way,
+  so we should be good. Famous last words...
+    
+  Note that this bug is so far only present on AMD on Windows, so we can get
+  away with only rebuilding Screen() for MS-Windows for the moment.
+    
+  Also note that because it is the query that is broken, not the setting, our response
+  of selecting the fallback path may be not necessary. However, it is unlikely to hurt,
+  and we can not know, so better safe than sorry.
+
+
+### macOS:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b and Octave 8.4
+  from HomeBrew. It should likely continue to work on older versions of Octave 8.x,
+  possibly 7.x or 6.x., although none of these was tested.
+
+Enjoy!
