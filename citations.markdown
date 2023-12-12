@@ -3,7 +3,7 @@ layout: page
 title: Citations
 categories: meta
 ---
-According to Google Scholar, as of October 8th 2023, 36365 papers cite one or more of our three papers on
+According to Google Scholar, as of December 11th 2023, 36824 papers cite one or more of our three papers on
 this software (Brainard, 1997; Pelli, 1997; Kleiner, Brainard, Pelli 2007). Thanks!
 
 ![Plot of unique citations per year](/images/CitationsChart.png)
