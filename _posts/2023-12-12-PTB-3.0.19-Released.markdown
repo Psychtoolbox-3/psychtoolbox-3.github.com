@@ -273,7 +273,7 @@ to some degree by Cambridge Research Systems.
   to allow to enable 10 bpc / 30 bit deep color framebuffers and display over
   HDMI on suitable displays with the RaspberryPi 4 and 400, and likely also the
   RaspberryPi 5. This was only tested on the RaspberryPi 400 under RaspberryPi OS
-  versions 11 "Buster" (legacy) and 12 "Bookworm" (most recent one) 32-Bit editions.
+  versions 11 "Bullseye" (legacy) and 12 "Bookworm" (most recent one) 32-Bit editions.
   Note that current Psychtoolbox from us currently only works on RaspberryPi OS 11,
   ie. what is now called the "legacy" edition, not yet on the "current" OS version 12.
   Psychtoolbox 3.0.18.12, shipping with OS version 12 will work of course, but it
@@ -282,11 +282,11 @@ to some degree by Cambridge Research Systems.
 
   Note that 10 bit framebuffers do not work on current versions of RaspberryPi OS
   out of the box. You need to manually install Mesa version 23.3.1 stable or later,
-  which has an ETA of sometimes at or after 13th December 2024. Until then, a build
-  script can be found under. You can download it, make it executable, and run it to
-  build and install a Mesa local build in /usr/local/ compatible with RaspberryPi 4
-  and 400, possibly RaspberryPi 5. Use this hacked build and install script at your
-  own risk, if it totally breaks your system you get to keep all parts:
+  which was released as stable source code at 13th December 2023. An automated build
+  script can be found under the link below. You can download it, make it executable,
+  and run it to auto-build and install a Mesa local build in /usr/local/lib/ compatible
+  with RaspberryPi 4 and 400, possibly RaspberryPi 5. Use this hacked build and install
+  script at your own risk! If it totally breaks your system you get to keep all the pieces:
   
   https://raw.githubusercontent.com/kleinerm/PiKISS/ForCRS10BitMesa/scripts/config/vulkan.sh
 
