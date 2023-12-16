@@ -28,6 +28,7 @@ Eyelink('[TestSuite](Eyelink-TestSuite)')
 [status =] Eyelink('[OpenFile](Eyelink-OpenFile)', filename [, dontOpenExisting=0])  
 [status =] Eyelink('[CloseFile](Eyelink-CloseFile)')  
 [status =] Eyelink('[ReceiveFile](Eyelink-ReceiveFile)',['filename'], ['dest'], ['dest_is_path'])  
+[status =] Eyelink('[SendFile](Eyelink-SendFile)', src, dest, dest_is_path)  
   
 % Calibration:  
 [result =] Eyelink('[StartSetup](Eyelink-StartSetup)' [, stype=0])  
@@ -71,7 +72,9 @@ Eyelink('[SetOfflineMode](Eyelink-SetOfflineMode)')
 [version, versionString]  = Eyelink('[GetTrackerVersion](Eyelink-GetTrackerVersion)')  
 [time =] Eyelink('[TrackerTime](Eyelink-TrackerTime)')  
 [offset =] Eyelink('[TimeOffset](Eyelink-TimeOffset)')  
-[status] = Eyelink('[ImageTransfer](Eyelink-ImageTransfer)', imagePathOrImageMatrix [, xPosition=0][, yPosition=0][, width=0][, height=0][, trackerXPosition=0][, trackerYPosition=0][, xferoptions=0])  
+[status] = Eyelink('[ImageTransfer](Eyelink-ImageTransfer)', imagePath [, xPosition=0][, yPosition=0][, width=0][, height=0][, trackerXPosition=0][, trackerYPosition=0][, xferoptions=0])  
+[status] = Eyelink('[ImageTransfer](Eyelink-ImageTransfer)', imageArray [, xPosition=0][, yPosition=0][, width=0][, height=0][, trackerXPosition=0][, trackerYPosition=0][, xferoptions=0])  
+[versionString] = Eyelink('[EDKVersion](Eyelink-EDKVersion)')  
   
 % Eyelink Velocity related functions:  
 [vel, acc, fsample]= Eyelink('CalculateOverallVelocityAndAcceleration' [, sample_model])  
@@ -91,6 +94,9 @@ Eyelink('[SetOfflineMode](Eyelink-SetOfflineMode)')
 	Mario Kleiner  
 	Erik Flister  
 	Nuha Jabakhanji  
+	Brian Richardson  
+	Kurt Debono  
+	Marcus Johnson  
   
 
   The EyelinkToolbox can be used to ceate eye-movement experiments and  

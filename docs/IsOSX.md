@@ -3,9 +3,9 @@
 
 resultFlag = [IsOSX](IsOSX)([is64=0])  
   
-Returns true if the operating system is Mac OS X.  
+Returns true if the operating system is macOS.  
 If the optional 'is64' flag is set to one, returns  
-true if the runtime is 64 bit and on OSX.  
+true if the runtime is 64 bit and on macOS.  
   
 See also: [IsWin](IsWin), [IsLinux](IsLinux), [[OSName](OSName)][(OSName)]((OSName)), computer  
 

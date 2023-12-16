@@ -3,8 +3,8 @@
 
 item = Eyelink('GetFloatData', type)
 
- makes copy of last item. You have to supply the type (returned from  
-Eyelink('getnextdatatype')). Returns the item.  
+ Makes a copy of the last item. You have to supply the type (returned from  
+Eyelink('GetNextDatatype')). Returns the item.  
 
 
 ###See also:

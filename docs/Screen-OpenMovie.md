@@ -67,18 +67,20 @@ efficient. 2 = Don't decode and use sound - May be more efficient. On Linux you
 may need to specify a setting of 2 if you try to use movie playback at the same  
 time as [PsychPortAudio](PsychPortAudio) sound output, otherwise movie playback may hang. A flag  
 of 4 will try to disable gpu hardware accelerated video decoding for playback of  
-this and all future movies for the running Octave/Matlab session. A flag of 8  
-will ask the video decoder to skip all B-Frames during decoding to reduce  
-processor load on very slow machines. Not all codecs may support flag 8, in  
-which case these flags are silently ignored. A flag of 16 asks [Screen](Screen) to convert  
-all video textures immediately into a format which makes them useable as  
-offscreen windows, and for the [Screen](Screen)('TransformTexture') function as well as  
-for drawing them with your own custom GLSL shaders. Normally this conversion  
-would be deferred until needed, ie. it would get skipped if you would just draw  
-the texture regularly. If you know already that you want to use the texture with  
-one of the given functions, manually triggering the conversion via this flag may  
-be a bit more efficient - or convenient if you want to use your own GLSL  
-shaders.  
+this and all future movies for the running Octave/Matlab session on [[GStreamer](GStreamer)][(GStreamer)]((GStreamer))  
+1.16 and earlier. On [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) 1.18 and later, the disable will only affect the  
+to be opened movie, giving more dynamic control over use of hardware video  
+acceleration. A flag of 8 will ask the video decoder to skip all B-Frames during  
+decoding to reduce processor load on very slow machines. Not all codecs may  
+support flag 8, in which case these flags are silently ignored. A flag of 16  
+asks [Screen](Screen) to convert all video textures immediately into a format which makes  
+them useable as offscreen windows, and for the [Screen](Screen)('TransformTexture')  
+function as well as for drawing them with your own custom GLSL shaders. Normally  
+this conversion would be deferred until needed, ie. it would get skipped if you  
+would just draw the texture regularly. If you know already that you want to use  
+the texture with one of the given functions, manually triggering the conversion  
+via this flag may be a bit more efficient - or convenient if you want to use  
+your own GLSL shaders.  
 The optional flags 32, 64 and 128 influence how looped playback is performed if  
 usercode requests such repetitive playback via [Screen](Screen)('PlayMovie', ...) with the  
 'loop' flag set to one. Different strategies exist to handle different quirks  
