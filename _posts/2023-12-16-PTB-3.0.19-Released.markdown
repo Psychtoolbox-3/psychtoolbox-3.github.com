@@ -1,0 +1,125 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.19 Beta update "Christmas looks" was released at 16th December 2023.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.19.7”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.19.7>
+
+This Psychtoolbox release was sponsored to a large degree by [Mathworks under the year
+2023/2024 contract.](https://www.mathworks.com/solutions/neuroscience.html), and
+to some degree by our partner SR-Research, makers of the Eyelink gaze trackers.
+
+
+### Compatibility changes wrt. Psychtoolbox 3.0.19.6:
+
+None.
+
+
+### Highlights:
+
+- Further refinement to the performance improvements for hardware accelerated
+  movie playback via GStreamer and gpu hardware video decoders on Linux and
+  MS-Windows, with only very minor benefit to macOS.
+
+- Eyelink mex file improvements.
+
+- Usability improvements for macOS.
+
+
+### All:
+
+- Screen: Allow dynamic, per-movie, enable and disable of hardware accelerated video
+  decoding when using GStreamer 1.18 or later, iow. on MS-Windows, macOS, RaspberryPi OS,
+  and Ubuntu 22.04-LTS and later. Only on older GStreamer versions, e.g., Ubuntu 20.04,
+  will a hardware decoding disable last for the remainder of a session, ie. until
+  Octave/Matlab is quit, once the disable flag for hardware decoding has been given
+  once in a session. Also some minor robustness improvements to movie playback if
+  special flags are given, which could cause some trouble sometimes.
+
+- Eyelink: New and improved Eyelink mex files with some contributions by SR-Research,
+  specifically from Brian Richardson, Marcus Johnson, and Kurt Debono. Thanks!
+
+  - A new subfunction 'EDKVersion' provides version information about the Eyelink
+    software core library runtime in use.
+
+  - A new subfunction 'EyelinkSendFile' to send a file to the Eyelink tracker
+    computer. Using this function, an image or video can be uploaded from the
+    display PC to the host Tracker PC.
+
+  - Eyelink('OpenFile'): Another attempt to fix the 'dontOpenExisting' flag.
+
+    'dontOpenExisting' functionality was broken from day 1, but nobody bothered
+    to ever give us feedback about this, not even the person who requested that
+    functionality! As a new attempt at a fix by myself, lets try the following
+    untested fix:
+
+    Assume that create_path() is a way to find out if a file already exists
+    on the tracker computer, given that file_exists() actually operates on
+    the stimulation computer, contrary to what anybody expected. The Eyelink
+    programmers manual is very unclear about these file utility functions.
+
+    This may be wrong as well, no feedback from SR-Research yet. Let's see...
+
+  - Eyelink('ImageTransfer'): Restore my version of it, but also add some bug
+    fixes by SR-Research, so that it hopefully now finally works as intended.
+
+  - Fix regression for potential buffer overflow in 'EyelinkGetQueuedData', and
+    generally make 'EyelinkGetQueuedData' and 'EyelinkGetFloatDataRaw' more robust
+    and memory-safe.
+
+  - Minor other improvements and cleanups to Eyelink mex.
+
+- Simplify OS type and 64-Bit detection functions, ie. IsWin(), IsLinux(), IsOSX(),
+  IsARM(), Is64Bit(), IsWindows(), IsWinVista(), IsWinMatlabR11Style().
+
+- IsARM(): Try to detect running on 64-Bit ARM or on native Apple Silicon Matlab/Octave.
+
+- DownloadPsychtoolbox and UpdatePsychtoolbox: Prepare for EOL at 8-Jan-2024.
+
+  GitHub will shut down and permanently remove its Subversion frontend that day,
+  so our current SVN based downloader and updater methods will fail completely.
+
+  There may be, and already have been, temporary brownouts in the service, as a
+  heads up by GitHub about what's coming.
+
+  Inform users, and about their inconvenient alternatives, so they are less
+  stumped by what is happening, assuming an ability to read. Due to the severe
+  lack of financial support by the vast majority of our users, we didn't have
+  and don't have the time right now to deal with this and find new solutions or
+  workarounds for this problem. Finally people get what they pay for.
+
+- Merge in some new GitHub actions, contributed by Mathworks open-source team,
+  which allow auto-building of zip files of the Psychtoolbox folder and of a
+  corresponding MTLBX file for each tagged release. This is preliminary and needs
+  more work and refinement, but may help a bit to work around imminent failure
+  of DownloadPsychtoolbox and UpdatePsychtoolbox for MS-Windows and Apple macOS
+  users. Thanks to Bensingh Pancras from Mathworks for this work!
+
+
+### Linux:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b.
+
+
+### Windows:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b.
+
+
+### macOS:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b and Octave 8.4
+  from HomeBrew.
+
+- IsARM(): Try to detect running on 64-Bit ARM or on native Apple Silicon Matlab/Octave.
+
+- PsychtoolboxPostInstallRoutine(): Detect and reject native Apple Silicon Matlab/Octave.
+  Point to Intel variants under Rosetta 2 emulation instead. Untested so far.
+
+Enjoy!
