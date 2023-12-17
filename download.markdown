@@ -123,7 +123,10 @@ The advantage of all the above methods is that third-party dependencies
 are automatically installed by the package manager.
 
 ##### Subversion-based installation
- 
+
+** This method will fail to work starting 8th January 2024! [Skip to Alternate Download
+below for how to download zip files instead](#alternate-download) **
+
 Alternatively, for the most complete and most recent version of Psychtoolbox,
 you can perform the regular installation via our [`DownloadPsychtoolbox.m`][installer]
 script. The following will install Psychtoolbox by checking out the Subversion repo to
@@ -270,9 +273,15 @@ Alternate download as a zip file {#alternate-download}
 ------------------------------------------------------
 
 If regular installation via Subversion or package respositories does not
-work for some reason, you can also manually download a zip file which
-contains a given Psychtoolbox release, including the source code. These
-downloads are larger due to inclusion of the source code.
+work for some reason, you can also manually download a "Source Code" zip or
+tar.gz file which contains a given Psychtoolbox release, including the source
+code. These downloads are larger due to inclusion of the source code.
+
+Or you can download the smaller zip file with the version number for only
+the Psychtoolbox standard folder (no source code), e.g., something named
+like `3.0.19.7.zip`.
+
+The "Assets" section of each release contains the download links.
 
 [Click this link to go to the downloads page for all official releases.][PTBReleases]
 
