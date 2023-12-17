@@ -124,8 +124,9 @@ are automatically installed by the package manager.
 
 ##### Subversion-based installation
 
-** This method will fail to work starting 8th January 2024! [Skip to Alternate Download
-below for how to download zip files instead](#alternate-download) **
+**This method will fail to work starting 8th January 2024! Either use the more
+convenient method mentioned above, or only execute step 3, and then afterwards
+[skip to Alternate Download below for how to download zip files instead.](#alternate-download)**
 
 Alternatively, for the most complete and most recent version of Psychtoolbox,
 you can perform the regular installation via our [`DownloadPsychtoolbox.m`][installer]
@@ -177,6 +178,9 @@ Linux.
 
 #### Windows {#Windows}
 
+**This method will fail to work starting 8th January 2024! Only execute steps 3 and 4
+below and then [skip to Alternate Download below for how to download zip files instead.](#alternate-download)**
+
 Filesystem locations given here are examples. You could choose other disc drives or
 folders of your liking instead:
 
@@ -225,6 +229,9 @@ If you want to know more about the downloader, see [DownloadPsychtoolbox][docs-d
 (or `help DownloadPsychtoolbox` in the Matlab command window.)
 
 #### Mac {#Mac}
+
+**This method will fail to work starting 8th January 2024! Only execute step 4
+and then [skip to Alternate Download below for how to download zip files instead.](#alternate-download)**
 
 1.  Skip this step for Psychtoolbox 3.0.17 or later with Matlab R2014b or later.
     [Also skip it with GNU/Octave if you already have HomeBrew installed][homebrew]
