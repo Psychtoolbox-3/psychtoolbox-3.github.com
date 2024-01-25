@@ -18,17 +18,14 @@ Versioned Releases
 ------------------
 
 The `beta` branch of PTB is normally updated for the purpose of introducing
-bug fixes, new features or incremental improvements. Thus the `beta`
-branch pushes out rolling releases, and the incremental updates are
-reflected in their SVN revision number. 
+bug fixes, new features or incremental improvements. Thus the `beta` branch
+pushes out rolling releases.
 
 Executing the command `PsychtoolboxVersion` should return the *version number,
 flavor and revision number* of your current Psychtoolbox. The command also
 prints a web URL, which points to the online change log where you can read in
-detail what has changed between different revisions. You can use the info provided
-by `PsychtoolboxVersion` to restore your installation to a given version, providing
-the SVN revision number to our `DownloadPsychtoolbox` install script, useful for
-documenting your research software and ensure reproducibility of the software environment.
+detail what has changed between different revisions. Since 8th January 2024,
+this may no longer be the case for new Psychtoolbox downloads and updates.
 
 Before any potentially disruptive changes are merged into the `beta` branch, we
 tag and release a new version of Psychtoolbox following the versioning scheme
@@ -44,12 +41,8 @@ Previous Releases
 
 The following releases of old Psychtoolbox versions are available.
 
-<small>There were some unfortunately numbered versions 1.0.x released earlier in the
-development of PTB-3, but this numbering caused so much confusion with respect
-to PTB Version 2 that we have now abandoned that system.</small>
-
-*To download and install the following versions, use the
-[`DownloadPsychtoolbox`][standard-installer] function*
+*To download and install the following versions, go to our GitHub repository
+and checkout or download the correspondlingly named Git branch.*
 
 `Psychtoolbox-3.0.18`
    : A snapshot of the code as of 17th February 2023: This was the final 3.0.18 release

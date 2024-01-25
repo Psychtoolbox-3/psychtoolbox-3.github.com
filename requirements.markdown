@@ -24,7 +24,7 @@ Short version
     if you need any kind of reliable timing for visual stimulus presentation or precisely calibrated
     visual output, or use of special visual stimulators, e.g., from VPixx or CRS, or trustworthy
     visual stimulation at all, due to the large and growing number of bugs in the Apple operating system.
-    macOS 13 is completely untested and not officially supported yet.
+    macOS 14 is completely untested and not officially supported yet.
 
 -   *Runtime environment:*
 
@@ -37,7 +37,7 @@ Short version
 
     Recommended are OpenGL 2.1 (or ideally better!) capable GPUs from AMD. Modern Intel graphics
     chips will also work well **on Linux, not on Windows** for more simple tasks with lower need
-    for performance.
+    for performance. RaspberryPi 2B and later also have supported gpu's for simple tasks.
 
     **AMD GPUs are strongly recommended over NVidia GPUs on Linux and macOS**, as they
     allow use of high quality open-source graphics drivers on Linux, and of additional
@@ -219,9 +219,7 @@ The last version that worked on macOS 10.9 and 10.8 was v3.0.12. The last
 version that worked on macOS 10.7 and 10.6 was v3.0.11. The last version
 that worked on macOS 10.5 and 10.4 and also with 32-Bit versions of Matlab
 was v3.0.10. Those old and unsupported versions of Psychtoolbox can be
-downloaded by specifying the special `flavor` parameter `Psychtoolbox-3.0.13`
-or `Psychtoolbox-3.0.12` or `Psychtoolbox-3.0.11` or `Psychtoolbox-3.0.10` in
-our [`DownloadPsychtoolbox`][current-installer] downloader script.
+downloaded from our GitHub repos Git branches.
 
 The PowerPC platform is no longer supported by the version 3.0.10
 Psychtoolbox. If you need to use a PowerPC machine, stick to version
