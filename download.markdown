@@ -72,7 +72,7 @@ NeuroDebian repositories. See the [System Requirements][requirements].
 
 ##### Packages
 
-Psychtoolbox for Linux has been packaged by the NeuroDebian team and is
+**Recommended:** Psychtoolbox for Linux has been packaged by the NeuroDebian team and is
 available in the following repositories:
 
 Usually reasonably up to date, tracks most recent official PTB beta releases -
@@ -94,14 +94,27 @@ If you installed Matlab *after* installing Psychtoolbox, *or after you have upgr
 Matlab to a more recent version* **you must rerun this Matlab compatibility fixing
 script via:** ``sudo dpkg-reconfigure matlab-support``.
 
-At the end of a successfull NeuroDebian installation, run the script `PsychLinuxConfiguration`
-from within Matlab or Octave, and follow the interactive instructions and questions
-to optimize your Linux system for data collection.
+As opposed to Octave, the Psychtoolbox for Matlab won't get permanently added to your
+Matlab path by default. You can execute the following command from a terminal to run
+a Matlab session with the standard system-wide Psychtoolbox installation added to the
+path for the duration of that session (this path is not customizable easily):
 
-Debian and Ubuntu also provide Psychtoolbox directly from their repositories,
-but these Psychtoolbox packages are usually **very outdated, often years behind** versions,
-and they support GNU Octave only, no Matlab, and not certain functions like Eyelink or
-Datapixx:
+    ptb3-matlab
+
+You could then execute Matlabs `savepath` command to add it permanently if you wanted,
+or after customizing it for your special needs, or in the typical case simply call
+`ptb3-matlab` whenever you need to run a standard Psychtoolbox work session.
+
+At the end of a successfull NeuroDebian installation, after first launch of your Octave
+or Matlab with the new Psychtoolbox, run the script `PsychLinuxConfiguration` from within
+Matlab or Octave, and follow the interactive instructions and questions to optimize your
+Linux system for data collection.
+
+**Only for basic testing and very simple use cases:**
+Debian and Ubuntu and potentially other Debian/Ubuntu based Linux distributions also
+provide Psychtoolbox directly from their repositories, but these Psychtoolbox packages
+are usually **very outdated, often years behind** versions, and they support GNU Octave
+only, no Matlab, and not certain functions like Eyelink or Datapixx:
 
 -   [Debian archive][debianrepo] (package `octave-psychtoolbox-3`)
 -   [Ubuntu archive][ubunturepo] (package [`octave-psychtoolbox-3`](apt:octave-psychtoolbox-3))
@@ -125,12 +138,26 @@ timing precision or precise low-level control of your hardware and special equip
 The advantage of all the above methods is that third-party dependencies
 are automatically installed by the package manager.
 
-[Additional tips][using-on-linux] for installing and using Psychtoolbox on
-Linux.
-
 ##### Manual download
 
 See section [Alternate Download below for how to download zip files instead.](#alternate-download)
+
+##### After basic Linux installation - further tweaks:
+
+Another recommendation is to install a low-latency Linux kernel for optimized
+timing, e.g., on Ubuntu flavors and probably also Debian flavors:
+
+    sudo apt install linux-lowlatency
+
+Optimization of the display server settings for good visual timing is
+achieved by following the Linux instructions in ">> help SyncTrouble"
+and by running the helper scripts `XOrgConfCreator` and `XOrgConfSelector`
+to automatically create and install optimized xorg.conf configuration files
+for the X-Server. This is especially useful for hybrid graphics laptops and
+multi-display setups.
+
+[Additional tips][using-on-linux] for installing and using Psychtoolbox on
+Linux.
 
 #### Windows {#Windows}
 
