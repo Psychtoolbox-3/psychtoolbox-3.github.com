@@ -1,0 +1,92 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.19 Beta update "CamJam" was released at 14th March 2024.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.19.8”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.19.8>
+
+Some of this Psychtoolbox release was sponsored by [Mathworks under the year
+2023/2024 contract.](https://www.mathworks.com/solutions/neuroscience.html),
+[and our partner SR-Research, makers of the Eyelink gaze trackers](https://www.sr-research.com/).
+
+
+### Compatibility changes wrt. Psychtoolbox 3.0.19.7:
+
+- `dontOpenExisting` non-zero flag in ``Eyelink('OpenFile')`` now error aborts,
+  instead of trying to implement something unsupportable.
+
+### Highlights:
+
+- None. Mostly a small refinement release.
+
+### All:
+
+- ``Eyelink('OpenFile')``: Error out if optional dontOpenExisting flag is set
+  to a non-zero value. Update help text. According to feedback from SR-Research
+  this is simply not supportable with all current and past Eyelink runtimes and
+  tracker host software. Game over for this feature, just warn users about it.
+
+- `Gamepad() / Joystick()` et al.: Improve docs, help, setup instructions. Especially
+  for proper choice of joystick driver on Ubuntu 20.04/22.04-LTS.
+
+- Downloaders/Updaters etc.: Update again for final SVN death on GitHub. In combo
+  with website updates, to make clear that functions `DownloadPsychtoolbox` and
+  `UpdatePsychtoolbox` and `DownloadAdditionsForLinux` are currently dead.
+
+- `SetupPsychtoolbox()`: Dead code removal, cleanup, docs updates.
+
+
+### Linux:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b.
+
+- `XOrgConfSelector`: Add error handling and error resolution tips.
+  There wasn't error handling in case of delete() or copyfile() failure.
+  Add something, and try to give some helpful feedback and advice, e.g.,
+  running PsychLinuxConfiguration().
+
+- Allow selection of a different clock to be used as the general GetSecs
+  clock for (almost) all timing and timestamping, e.g., by GetSecs, WaitSecs,
+  PsychPortAudio, Screen, etc. Since the year 2007, the so called wall clock,
+  or gettimeofday() clock, or Posix CLOCK_REALTIME clock was used for this,
+  and it continues to be the default. But now one can use the new PsychTweak
+  function ``PsychTweak('GetSecsClock', clockid);`` at the beginning of a
+  script (before any other calls to Psychtoolbox mex files!) to select a clock
+  with a different clockid. A clockid setting of 0 uses the default CLOCK_REALTIME
+  clock, as in the past. A clockid setting of 1 uses CLOCK_MONOTONIC instead.
+  CLOCK_MONOTONIC, as opposed to default CLOCK_REALTIME, does not maintain time
+  in seconds since 1st January 1970 0:00:00 UTC, but has an unspecified zero
+  point, but usually 0 denotes time of operating system boot. CLOCK_MONOTONIC
+  is always guaranteed to be monotonically increasing, not subject to step
+  adjustments by the system administrator, NTP, PTP, or other external clock
+  reference sources. This prevents synchronization to other computer on the
+  network/setup, but may avoid clock trouble caused by time jumping in certain
+  situations. CLOCK_MONOTONIC behaves like the GetSecs clocks for Psychtoolbox
+  on MS-Windows and macOS. For now the new monotonic mode is only lightly
+  tested, and only available on Psychtoolbox for Intel processors, not yet for
+  RaspberryPi - this will follow in a future release.
+
+  This improvement was sponsored by a Mathworks sponsored support incident under
+  our 2023/2024 contract.
+
+
+### Windows:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b.
+
+
+### macOS:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b and
+  Octave 8.4 from HomeBrew.
+
+- Detect futile attempt of running under native Matlab for Apple Silicon / ARM,
+  ie. not under Rosetta2 emulation and bail with more enlightening messages.
+
+Enjoy!
