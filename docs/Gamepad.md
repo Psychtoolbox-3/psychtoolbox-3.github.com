@@ -38,26 +38,12 @@ On Linux, gamepads and joysticks are treated as a special type of mouse/pointing
 device with multiple extra axes and buttons. You should install the optional  
 joystick driver, although the evdev driver may also work with suitable configuration.  
   
-This joystick driver has different names, depending on the version of the Ubuntu  
-distribution you are using, and if the hardware enablement stack (HWE) is installed.  
-You can usually find out if the HWE is installed by typing: system('hwe-support-status'),  
-unless your system is weirdly configured and only partially installed the HWE,  
-in which case it matters if your X-Server is the "factory default" or the HWE  
-variant. Check in your package manager.  
+### On Ubuntu 20.04 LTS or later, the following command should work:  
   
-On Ubuntu 20.04 LTS or 22.04 LTS original installs or upgrades, ie. without the  
-optional HWE for the X-Server installed, this should work:  
-  
-"sudo apt-get install xserver-xorg-input-joystick"  
-  
-### If the HWE is installed, you will need one of the following instead:  
-  
-Ubuntu 20.04-LTS: "sudo apt-get install xserver-xorg-input-joystick-hwe-20.04".  
-  
-Ubuntu 22.04-LTS: "sudo apt install xserver-xorg-input-joystick-hwe-22.04".  
+"sudo apt install xserver-xorg-input-joystick"  
   
 You should also install a custom joystick configuration file to customize the  
-mapping  and behaviour of buttons and axis, and if the Joystick also operates  
+mapping and behaviour of buttons and axis, and if the Joystick also operates  
 as a mouse or not.  
   
 An example configuration file with installation instructions is  available in  

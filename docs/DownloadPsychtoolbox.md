@@ -3,6 +3,23 @@
 
 [DownloadPsychtoolbox](DownloadPsychtoolbox)([targetdirectory][, flavor][, targetRevision][, downloadmethod][, tryNonInteractiveSetup=0])  
   
+THIS DOWNLOADER DOES NO LONGER WORK, AS GITHUB HAS REMOVED THEIR  
+SUBVERSION FRONTEND, WHICH IT CRITICALLY REQUIRES, FROM THEIR SERVICES  
+PERMANENTLY AT 8TH JANUARY 2024.  
+  
+Due to the lack of financial support for Psychtoolbox by the vast  
+majority of our non-paying users, we did not and currently do not have  
+the funding to work on a good alternative solution for this. Therefore  
+this convenient installation and update method will be unavailable for an  
+unknown period of time.  
+  
+See http://psychtoolbox.org/download.html\#alternate-download for a  
+workable, although way less convenient and advanced, download and  
+installation method, via zip file download and execution of  
+[SetupPsychtoolbox](SetupPsychtoolbox)(). Good luck!  
+  
+=========================================================================  
+  
 This script downloads the latest GNU/Linux, MS-Windows, or Apple macOS  
 Psychtoolbox-3, version 3.0.10 or later, from our git-server to your  
 disk, creating your working copy, ready to use as a new toolbox in your  

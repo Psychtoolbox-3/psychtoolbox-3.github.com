@@ -3,7 +3,7 @@
 
 result = [HatLeft](HatLeft)  
 Return a constant for hat left position.  To read a hat position, use:  
-JOYSTICK(joystickNumber,'GetHat',hatNumber).    
+Gamepad('GetHat', gamepadIndex, hatIndex).  
 
 
 

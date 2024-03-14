@@ -17,27 +17,19 @@ overwriting an old and potentially user-modified Psychtoolbox installation.
 This non-interactice setup mode is highly experimental, not well tested, not  
 supported in case of any trouble!  
   
-This setup routine is meant for people who want to install Psychtoolbox  
-but don't have direct access to the internet. Installation in that case  
-is a three step procedure:  
+### Installation is a three step procedure:  
   
 1. Download and unpack a full working copy of PTB into your target  
 folder. Obviously you need to somehow get a copy, either via conventional  
-download from a computer with network connection (See 'help  
-DownloadPsychtoolbox' or 'help UpdatePsychtoolbox') or from a helpful  
-colleague.  
+download from a computer with network connection, visit this URL for that  
+download: http://psychtoolbox.org/download.html  
+Or from a helpful colleague or copied from some other machine.  
   
 2. Change your Matlab/Octave working directory to the Psychtoolbox installation  
 folder, e.g., 'cd /Applications/Psychtoolbox'.  
   
 3. Type 'SetupPsychtoolbox' to run this script.  
   
-Please be aware that the recommended method of installation is via the  
-online Subversion system, i.e., [DownloadPsychtoolbox](DownloadPsychtoolbox) and  
-[UpdatePsychtoolbox](UpdatePsychtoolbox). Some functionality may not work with a copy that is  
-set up via this script, e.g., [PsychtoolboxVersion](PsychtoolboxVersion) may provide incomplete  
-version information. Convenient upgrades via [UpdatePsychtoolbox](UpdatePsychtoolbox) may be  
-impossible. Download size with this method is much higher as well.  
   
 ### If you get stuck, post your question to the forum:  
   

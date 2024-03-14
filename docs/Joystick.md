@@ -1,10 +1,9 @@
 # [Joystick](Joystick)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychObsolete](PsychObsolete)
 
-This function is not yet documented.
+Joystick() is deprecated and will call [GamePad](GamePad)() as its replacement.  
+See 'help GamePad'.  
 
-
- MissingDocs
 
 
 

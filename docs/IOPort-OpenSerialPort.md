@@ -22,10 +22,14 @@ to specify specific values 'paramValue' to specific serial port parameters
 'paramName'. Not all parameters are supported by all operating systems, and all  
 settings have reasonable defaults. Settings unknown to a specific operating  
 system are ignored.  
+Be meticulous when it comes to the spelling in the configuration string, as  
+[IOPort](IOPort) tends to overlook misspelled parameter names and values silently.  
+Especially, do not insert spaces around the equals signs, and pay attention to  
+the case sensitivity.  
 The following is a list of (possibly) supported parameters with their defaults:  
   
 Lenient -- If this keyword is present, then the driver will carry on on certain  
-error conditions instead of aborting. This is sometimes neccessary for some  
+error conditions instead of aborting. This is sometimes necessary for some  
 special cases like virtual com ports or other non-standard setups.  
   
 [BaudRate](BaudRate)=9600 -- The baud transmission rate of the connection. Standard baud  

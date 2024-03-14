@@ -3,7 +3,7 @@
 
 result = [HatDown](HatDown)  
 Return a constant for hat down position.  To read a hat position, use:  
-JOYSTICK(joystickNumber,'GetHat',hatNumber).    
+Gamepad('GetHat', gamepadIndex, hatIndex).  
 
 
 

@@ -6,13 +6,9 @@
 This function allows to tweak some low-level operating parameters of  
 Psychtoolbox. Such tweaks often affect all mex files, not only specific  
 files. You must execute this function before any other Psychtoolbox mex  
-file is used, otherwise mex files will not pick up consistent settings  
+file is used, otherwise mex files may not pick up consistent settings  
 and weird things may happen! If in doubt, execute "clear mex" before  
 executing this function.  
-  
-Currently the function mostly implements tweaks for MS-Windows to allow  
-to cope with the brokenness of the system, especially in the domain of  
-timing and timestamping.  
   
   
 Available subfunctions:  
@@ -82,12 +78,40 @@ threading. By default, Frame+Slice threading will be used.
   
   
 [PsychTweak](PsychTweak)('LibUSBDebug', verbosity);  
-  
 -- Select level of verbosity for low-level debug output of USB functions.  
 This currently sets the debug level of libusb-1.0 based functions, e.g,  
 [PsychHID](PsychHID), [PsychKinectCore](PsychKinectCore), some videocapture functions and others.  
 Possible values: 0 = Silence (default), 1 = Errors, 2 = Errors +  
 Warnings, 3 = Errors + Warnings + Info messages.  
+  
+  
+# Linux only tweaks  
+  
+[PsychTweak](PsychTweak)('GetSecsClock', clockid);  
+-- Select type of system clock to use for all timing functions like [GetSecs](GetSecs),  
+[WaitSecs](WaitSecs), all timing and timestamps in [Screen](Screen)(), [PsychPortAudio](PsychPortAudio)() etc.  
+clockid can be any of:  
+  
+0 = CLOCK\_REALTIME (aka gettimeofday() time or wall clock). This is the default.  
+    It counts the seconds since 1st January 1970 midnight. This clock can be set  
+    by the system administrator, or external time services like NTP network time  
+    service. If NTP or the system administrator so desires, time can jump forward  
+    or backwards. Leap seconds can do similar things. Allows easy synchronization  
+    of clocks across computers if they are all driven by a NTP or PTP time source.  
+  
+1 = CLOCK\_MONOTONIC. This clock can not jump backwards, but is always monotonically  
+    increasing. Its zero point is typically system boot time. It freezes if the  
+    system is suspended / sleeping. The clock is still slowly adjusted (slewed) by  
+    external time sources like NTP or PTP if available. This can be the most efficient  
+    selection if you don't need to have consistent time across computers or equipment.  
+  
+4 = CLOCK\_MONOTONIC\_RAW. Like CLOCK\_MONOTONIC, but no time correction wrt. an external  
+    reference time source like NTP or PTP is performed.  
+  
+7 = CLOCK\_BOOTTIME. Like CLOCK\_MONOTONIC, but keeps counting while system is sleeping.  
+  
+Note that only clockid 0 and 1 have been verified for precision and correctness to some  
+degree. Other settings may cause to functions to malfunction or be imprecise.  
   
   
 # MS-Windows only tweaks  

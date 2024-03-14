@@ -3,12 +3,29 @@
 
 [UpdatePsychtoolbox](UpdatePsychtoolbox)([targetdirectory][, targetRevision][, tryNonInteractiveSetup=0])  
   
+THIS UPDATER DOES NO LONGER WORK, AS GITHUB HAS REMOVED THEIR  
+SUBVERSION FRONTEND, WHICH IT CRITICALLY REQUIRES, FROM THEIR SERVICES  
+PERMANENTLY AT 8TH JANUARY 2024.  
+  
+Due to the lack of financial support for Psychtoolbox by the vast  
+majority of our non-paying users, we did not and currently do not have  
+the funding to work on a good alternative solution for this. Therefore  
+this convenient installation and update method will be unavailable for an  
+unknown period of time.  
+  
+See http://psychtoolbox.org/download.html\#alternate-download for a  
+workable, although way less convenient and advanced, download and  
+installation method, via zip file download and execution of  
+[SetupPsychtoolbox](SetupPsychtoolbox)(). Good luck!  
+  
+=========================================================================  
+  
 Update your working copy of the Psychtoolbox with the latest bug fixes,  
 enhancements, and features from our Git server.  
   
 If you are using a Psychtoolbox provided by [NeuroDebian](NeuroDebian), then this is not  
 needed. You will be automatically notified of updates to Psychtoolbox by  
-your operating systems update manager as soon as they become available.  
+your operating systems update manager, as soon as they become available.  
   
 The "targetdirectory" argument is optional. If present, it specifies the path  
 of the Psychtoolbox folder to update. If omitted, [UpdatePsychtoolbox](UpdatePsychtoolbox) will  
@@ -28,8 +45,8 @@ the revision before the most current one. By executing this script
 multiple times with the 'PREV' specifier, you could incrementally  
 downgrade until stuff works for you.  
   
-[UpdatePsychtoolbox](UpdatePsychtoolbox) cannot change the beta-vs-stable flavor of your  
-Psychtoolbox. To change the flavor, run [DownloadPsychtoolbox](DownloadPsychtoolbox) again.  
+[UpdatePsychtoolbox](UpdatePsychtoolbox) cannot change the flavor of your Psychtoolbox. To  
+change the flavor, run [DownloadPsychtoolbox](DownloadPsychtoolbox) again.  
   
 The optional parameter 'tryNonInteractiveSetup' if provided as 1 (true), will  
 try a setup without user interaction, not asking users for input in certain  

@@ -10,6 +10,7 @@ Psychtoolbox:[PsychDemos](PsychDemos)
   
    [AlphaImageDemo](AlphaImageDemo)          - Simple demo of [OpenGL](OpenGL) alpha blending.  
    [AlphaRotateDemo](AlphaRotateDemo)         - A variant of [AlphaImageDemoOSX](AlphaImageDemoOSX), demonstrates rotated drawing.  
+   [ApriltagsDemo](ApriltagsDemo)           - Demonstrate use of the apriltag library for fiducial April tag marker tracking.  
    [ArcDemo](ArcDemo)                 - Demonstrate the 'FrameArc', 'FillArc' functions.  
    [ARToolkitDemo](ARToolkitDemo)           - Use [ARToolkit](ARToolkit) to track and visualize 3D objects in live-video.  
    [AudioTunnel3DDemo](AudioTunnel3DDemo)       - Very sketchy demo on how to use [OpenAL](OpenAL) for 3D spatialized sound.  
