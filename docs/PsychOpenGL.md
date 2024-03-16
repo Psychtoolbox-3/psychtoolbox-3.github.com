@@ -198,6 +198,11 @@ be found at:
 http://www.opengl.org  
   
 Enjoy!  
+  
+  
+### Supported functions:  
+  
+[PsychCamIntrinsicsToGLProjectionMatrix](PsychCamIntrinsicsToGLProjectionMatrix)   - Compute GL\_PROJECTION\_MATRIX from camera intrinsics.  
 
 
 
