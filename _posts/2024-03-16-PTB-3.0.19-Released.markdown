@@ -1,0 +1,54 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.19 Beta update "Tag games" was released at 16th March 2024.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.19.9”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.19.9>
+
+
+### Compatibility changes wrt. Psychtoolbox 3.0.19.8:
+
+- None
+
+### Highlights:
+
+- Apriltags fiducial marker tracking support on Linux. This is only
+  supported on Linux, not on other operating systems.
+
+### All:
+
+- New helper function ``PsychCamIntrinsicsToGLProjectionMatrix()``.
+  Given camera intrinsic parameters from some camera calibration software,
+  and the desired zNear and zFar clipping planes of the view frustum,
+  compute and return a projection matrix for use as GL_PROJECTION_MATRIX
+  for OpenGL rendering with a virtual pinhole camera that approximates the
+  properties of the real camera.
+
+### Linux:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b.
+
+- (Re-)add `PsychCV()` mex file for Octave and Matlab, with support for
+  vision based tracking of AprilTag fiducial markers (aka tags) by use
+  of the apriltag library. This PsychCV mex file will only work on
+  Ubuntu 22.04-LTS and later, not on Ubuntu 20.04-LTS anymore.
+
+
+### Windows:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b.
+
+
+### macOS:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b and
+  Octave 8.4 from HomeBrew.
+
+
+Enjoy!
