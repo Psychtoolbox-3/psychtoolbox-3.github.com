@@ -1,0 +1,66 @@
+---
+layout: post
+title: Psychtoolbox beta updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.19 Beta update "Bitty Bits" was released at 26th March 2024.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.19.10”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.19.10>
+
+
+### Compatibility changes wrt. Psychtoolbox 3.0.19.9:
+
+- None.
+
+### Highlights:
+
+- None, just bug fixes and minor improvements, and Octave 9.1 on macOS support.
+
+### All:
+
+- PropixxImageUndistortionThrowaway.m: Fix stupid bug. Don't close the onscreen
+  window and then try use it again afterwards!
+
+- Fix wrong definition of glPathGlyphIndexRangeNV().
+
+- Sound input demos: Allow specification of number of input channels.
+  For BasicSoundInputDemo and DelayedSoundFeedbackDemo, allow to specify the
+  number of inputs, to also deal with sound cards which only provide one mono
+  input channel. Continue to default to 2 stereo channels.
+
+- Various internal cleanups with no immediate user facing benefit.
+
+### Linux:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b.
+
+- Screen: Fix idiotic bug in ``Screen('GetFlipInfo')`` there since day 1!
+  If a query for a flip info struct was made, but no new struct was available,
+  the function errored out, instead of returning an empty [] return argument!
+
+  This was not ever noticed due to the way our only test scripts for this
+  PerceptualVBLSyncTestFlipInfo2 had try-catch-end statement placed just so
+  that the error was swallowed and never showed up!
+
+  Fix this properly by returning an empty [] return argument in this case,
+  as expected.
+
+
+### Windows:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b.
+
+
+### macOS:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b and
+  Octave 8.4 from HomeBrew. It also works on the new Octave 9.1 from
+  HomeBrew
+
+- Enable use with the brand-new Octave 9.1.0 from HomeBrew.
+
+Enjoy!
