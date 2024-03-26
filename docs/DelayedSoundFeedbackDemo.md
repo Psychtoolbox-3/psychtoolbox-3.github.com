@@ -1,7 +1,7 @@
 # [DelayedSoundFeedbackDemo](DelayedSoundFeedbackDemo)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)
 
-[DelayedSoundFeedbackDemo](DelayedSoundFeedbackDemo)([reqlatency=150 ms][, duplex=0][, freq]=48000[, minLatency=10 ms][, device])  
+[DelayedSoundFeedbackDemo](DelayedSoundFeedbackDemo)([reqlatency=150 ms][, duplex=0][, freq]=48000[, minLatency=10 ms][, device][, channels=2])  
   
 ### CAUTION: TEST TIMING OF THIS SCRIPT WITH MEASUREMENT EQUIPMENT IF YOU  
 DEPEND ON ACCURATE FEEDBACK TIMING!!!  
@@ -53,6 +53,8 @@ MS-Windows. High-end cards may allow for much lower than the default 10
 msecs, low-end cards may malfunction at lower settings.  
   
 'device' Optional device index of soundcard to use.  
+  
+'channels' Number of input and output channels to use. Defaults to 2.  
   
 ### Specific tips for different setups:  
   
