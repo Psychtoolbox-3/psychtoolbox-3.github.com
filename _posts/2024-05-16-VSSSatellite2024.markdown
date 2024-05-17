@@ -1,0 +1,31 @@
+---
+layout: post
+title: VSS 2024 Satellite on Psychophysics Software with Matlab
+categories: news
+author: kleinerm
+---
+
+Next Monday at VSS 2024, there will be a satellite event about "Psychophysics Software with Matlab",
+organized by Mathworks. Among other things, it will involve:
+
+- A remote presentation by Celia Foster about the latest news wrt. Psychtoolbox since the last such
+  event in 2022, and I will also participate remotely in the Q & A part of the event.
+
+- VPixx will present some Psychtoolbox related solutions of theirs, as far as I know.
+
+- Giles Holland will present about progress with his high-level toolbox PsychBench on top of Psychtoolbox.
+
+The Psychtoolbox session should be interesting for users of Apple Silicon Macs,
+and to those who still want to have a Psychtoolbox around in the next year.
+
+This year, Mathworks chose a title for the satellite that might actually attract an audience bigger
+than the 8 or so people that showed up last time. I hope my announcing it here a few days in advance
+instead of an hour in advance will also help ;).
+
+<https://www.visionsciences.org/2024-psychophysics-satellite/>
+
+For reference, Celia's past presentation from VSS 2022 can be watched here:
+
+<https://www.youtube.com/watch?v=afKbkOx62dQ>
+
+-mario
