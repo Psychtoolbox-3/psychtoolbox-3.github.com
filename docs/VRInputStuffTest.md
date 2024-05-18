@@ -1,7 +1,9 @@
 # [VRInputStuffTest](VRInputStuffTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychHardware](PsychHardware)>[PsychVRToolbox](PsychVRToolbox)
 
-[VRInputStuffTest](VRInputStuffTest)([withHapticFeedback=0][, withMTStressTest=0][, specialReqs='DebugDisplay'][, refSpace][, withGazeTracking=0]) - Test input functionality related to VR devices.  
+[VRInputStuffTest](VRInputStuffTest)([withHapticFeedback=0][, withMTStressTest=0][, specialReqs='DebugDisplay'][, refSpace][, withGazeTracking=0][, withHandTracking=0])  
+  
+Test input functionality related to VR devices.  
   
 Tries to enumerate available controllers and other properties related to  
 input. After any key press or controller button press, reports live state  
@@ -49,6 +51,10 @@ The optional parameter 'withGazeTracking', if provided and non-zero, will
 enable some basic tests of eye gaze tracking with VR HMD's which support  
 eye tracking. A setting of 1 will visualize the 2D gaze position, a setting of  
 2 will visualize a 3D gaze ray in addition.  
+  
+The optional parameter 'withHandTracking', if provided and non-zero, will  
+enable some basic tests of hand tracking with VR hardware that supports hand  
+tracking. A setting of 1 will visualize the measured hand joint locations.  
   
 After a keypress (or Enter/Back button press on the controller),  
 visualizes tracked hand position and orientation of hand controllers and  

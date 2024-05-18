@@ -1,7 +1,7 @@
 # [ImagingStereoMoviePlayer](ImagingStereoMoviePlayer)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)
 
-[ImagingStereoMoviePlayer](ImagingStereoMoviePlayer)(moviefile [, stereoMode=8][, imaging=1][, anaglyphmode=0][, screenid=max][, hdr=0])  
+[ImagingStereoMoviePlayer](ImagingStereoMoviePlayer)(moviefile [, stereoMode=8][, imaging=1][, anaglyphmode=0][, screenid=max][, hdr=0][, topBottom=0])  
   
 Minimalistic movie player for stereo movies. Reads movie from file  
 'moviefile'. Left half of each movie video frame must contain left-eye  
@@ -44,6 +44,9 @@ Upgrading to [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) 1.18 or later is
 A 'stereoMode' of 4 or 5 will use an alternative HDR display method only available on  
 Linux/X11 for dual-display HDR playback. This is currently not supported on other  
 operating systems, where you only have single-display stereo for HDR playback.  
+  
+'topBottom' If this optional flag is set to 1, then top-bottom encoding in the  
+movie is assumed and handled accordignly, otherwise left-right encoding is assumed.  
   
   
 The left image is centered on the screen, the right images position can  

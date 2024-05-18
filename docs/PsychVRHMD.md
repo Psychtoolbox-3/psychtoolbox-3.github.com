@@ -327,6 +327,26 @@ resolution is reduced to at best 16.6 msecs for at most 60 gaze samples
 per second.  
   
   
+'Handtracking' = Request articulated hand and finger tracking via a supported  
+hand tracker. This keyword asks the driver to enable articulated hand tracking.  
+Typical methods are markerless vision based hand and finger tracking, e.g.,  
+from external cameras or HMD builtin cameras, or marker based optical tracking,  
+or sensor equipped hand gloves, or other technologies, depending on your [OpenXR](OpenXR)  
+runtime. The info struct returned by info = [PsychVRHMD](PsychVRHMD)('GetInfo'); contains info  
+about hand tracking capabilities as a bitmask in info.articulatedHandTrackingSupported:  
+A value of +1 means that basic [OpenXR](OpenXR) hand tracking of finger and hand joint poses,  
+typically for both hands of a user, is supported. A value of zero means lack of  
+any support. NOTE: Current Psychtoolbox releases do not yet support hand tracking,  
+this help text is preparation for future use and subject to incompatible changes!  
+  
+If hand tracking is requested via the keyword, and supported, then the user  
+script can request return of hand tracking sample data by calling the  
+state = [PsychVRHMD](PsychVRHMD)('PrepareRender', ..., reqmask, ...) function with reqmask  
+flag +8. This will cause the returned 'state' struct to contain additional fields  
+with information about recently tracked articulated hand configuration. See the  
+help text for the 'PrepareRender' function for details.  
+  
+  
 These basic requirements get translated into a device specific set of  
 settings. The settings can also be specific to the selected 'basicTask',  
 and if a quality vs. performance / system load tradeoff is unavoidable  
@@ -394,9 +414,9 @@ separateEyePosesSupported = 1 if use of [PsychVRHMD](PsychVRHMD)('GetEyePose') w
                            ie. mapping keyboard keys to OVR.Button\_XXX buttons.  
   
 handTrackingSupported = 1 if [PsychVRHMD](PsychVRHMD)('PrepareRender') with reqmask +2 will provide  
-                          valid hand tracking info, 0 if this is not supported and will  
-                          just report fake values. A driver may report 1 here but still  
-                          don't provide meaningful info at runtime, e.g., if required  
+                          valid tracked hand controller info, 0 if this is not supported  
+                          and will just report fake values. A driver may report 1 here but  
+                          still don't provide meaningful info at runtime, e.g., if required  
                           tracking hardware is missing or gets disconnected. The flag  
                           just aids extra performance optimizations in your code.  
   
@@ -414,6 +434,14 @@ eyeTrackingSupported = Info about eye gaze tracking capabilities of the given VR
                        reporting of binocular per-eye tracking data is supported. A value of  
                        +1024 means that HTC's proprietary [SRAnipal](SRAnipal) eyetracking is available for  
                        more extensive gaze data reporting.  
+  
+articulatedHandTrackingSupported = Info about hand tracking capabilities. A  
+value of +1 means that basic articulated hand tracking is supported, usually  
+for both hands. Zero means no support for articulated hand tracking. The hand  
+tracking methods could be based on cameras and computer-vision markerless optical  
+tracking, or on marker based tracking, or it could be, e.g., with some sensor  
+glove input device, or with any other suitable future modality supported by your  
+[OpenXR](OpenXR) runtime.  
   
   
 The info struct may contain much more vendor specific information, but the above  
@@ -791,6 +819,22 @@ VR session status:
      distance of the fixation point from the eyes. May be supported on  
      some HTC [HMDs](HMDs) under [SRAnipal](SRAnipal), but has not been confirmed to work in  
      practice on the tested HTC Vive Pro Eye.  
+  
++8 = Request return of articulated hand tracking information on suitable [OpenXR](OpenXR)  
+     systems.  
+  
+     NOTE: This feature is NOT YET IMPLEMENTED in current Psychtoolbox releases!  
+  
+     Returned information may represent the latest available measured hand and  
+     finger configuration data, or it may be predicted configuration information  
+     for the specified 'targetTime', computed via interpolation or extrapolation  
+     from actual previously tracked configurations. This is dependent on the  
+     specific hand tracker implementation of your XR system.  
+  
+     The following fields are mandatory as part of the returned state struct,  
+     if hand tracking is supported and enabled and requested:  
+  
+     TODO, IMPLEMENTATION OF FEATURE NOT YET FINISHED.  
   
   
 More flags to follow...  
