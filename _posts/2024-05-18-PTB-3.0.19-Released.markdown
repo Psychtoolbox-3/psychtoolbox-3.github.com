@@ -1,0 +1,119 @@
+---
+layout: post
+title: Psychtoolbox updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.19 update "Eyegazer" was released at 18th May 2024.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.19.11”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.19.11>
+
+Some of this Psychtoolbox release was sponsored by [Mathworks under the year
+2023/2024 contract.](https://www.mathworks.com/solutions/neuroscience.html).
+
+[Our partner SR-Research, makers of the Eyelink gaze trackers, sponsored
+the major 2024 Eyelink toolbox update.](https://www.sr-research.com/)
+
+### Compatibility changes wrt. Psychtoolbox 3.0.19.10:
+
+- None expected. But possibility due to massive Eyelink toolbox changes.
+
+### Highlights:
+
+- Big Eyelink toolbox update by SR-Research with the most massive
+  improvements in over a decade.
+
+### All:
+
+- Release of the new Eyelink toolbox. This is the biggest update of the
+  Eyelink toolbox for Eyelink gaze trackers from SR-Research since over
+  a decade! Most of the work was done by the team at SR-Research. Credits
+  to Brian Richardson, Marcus Johnson, and Kurt Debono. Additional 88
+  hours of my work time were sponsored by SR-Research, to provide code
+  review, feedback and advice on improving the integration while
+  maintaining backwards compatibility, and code improvements. Among
+  many other improvements, the new Eyelink toolbox can integrate better
+  with PsychPortAudio for playing feedback sounds during tracker calibration,
+  and it can use dynamic animated calibration targets by playing back
+  movies. Upload of backdrop images to the tracker host computer is possible.
+  Stereoscopic/Binocular display modes of Psychtoolbox are now supported
+  for use with the gazetracker. Many new functions have been added to improve
+  ease and efficiency of use. A new set of demos demonstrates efficient use
+  and best practices with the new toolbox. Legacy functions should be still
+  supported for backwards compatibility, but many legacy demos have been
+  removed. The toolbox has been carefully tested by SR-Research on all
+  supported operating systems, so we hope this major update will go without
+  major problems. Thanks to our partner SR-Research for this contribution
+  and the team at SR-Research for good collaboration!
+
+- CedrusResponseBox(): Disable any flow control.
+  It was supposed to use hardware flow control (FlowControl=Hardware),
+  but that did not work until PTB v3.0.19.6 due to an IOPort parameter
+  handling bug. Since the bug is fixed, hardware flow control would be
+  used. This was supposed to make Cedrus to work more robust, but it
+  apparently had the opposite effect, as the following PTB forum message
+  suggests:
+
+  <https://psychtoolbox.discourse.group/t/waiting-forever-for-data-transmission-with-cedrus-rb/5319>
+
+  Disable flow control explicitely, to revert to pre 3.0.19.6 behaviour,
+  where Cedrus boxes worked as well as they could.
+
+  If this fixes the bug though, that means my original opinion about
+  the quality of Cedrus hardware - or the lack thereof - would be
+  true, and the fragile communication was not caused by our IOPort
+  driver bug, ie. by lack of hardware flow control. Let's see...
+
+- ImagingStereoMoviePlayer.m: Also handle top-bottom stereo encoded movies.
+
+### Linux:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b.
+
+- Fix most basic compatibility with Ubuntu 24.04.0-LTS. Extensive compatibility
+  testing with Ubuntu 24.04-LTS is still outstanding.
+
+- Fix Matlab R2020 - R2024a plotting on Intel graphics. After this Matlab bug
+  being reported to Mathworks and going unfixed for multiple years, I decided
+  to cave and add a workaround to PsychLinuxConfiguration(). It will add some
+  config option during post-install to Matlab's Java JOGL OpenGL interface, to
+  avoid use of OpenGL ARB contexts. This works around the Matlab bug and makes
+  Matlab's graphics and plotting functions work on Intel graphics chips.
+
+- Refine PsychCV's Apriltags implementation. Make sure that if the same marker
+  is apparently detected multiple times in an image, that then the detection
+  with the lowest hamming error and highest score is returned, so good detections
+  can't override false positive noise. Allow limiting the number of markers used
+  from a tagFamily, so one can select tag families whose total marker count would
+  cause a very high memory consumption, leading to out-of-memory errors on machines
+  with even 8 GB of RAM, or very long startup times, by only using a subset of
+  markers. Allow to select more tuning parameters for marker detection. Suppress
+  useless debug output.
+
+- Screen('OpenVideoCapture'): Allow to disable videorate converter during recording.
+
+### Windows:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b.
+
+- PsychPortAudio: Use auto samplerate conversion under WASAPI shared mode
+  with reqlatencylcass 0 or 1 (the default). This should allow to request
+  arbitrary audio sample rates, as the operating system should perform
+  proper sample rate conversion. Should automatically fix issues like the
+  following:
+
+  <https://psychtoolbox.discourse.group/t/ptb-thinks-usb-sound-card-doesnt-support-44100hz/5324>
+
+  For now this is only implemented for Octave, not yet Matlab, until it can be
+  tested a bit more.
+
+### macOS:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b and
+  Octave 8.4 from HomeBrew. It also works on the new Octave 9.1 from
+  HomeBrew
+
+Enjoy!
