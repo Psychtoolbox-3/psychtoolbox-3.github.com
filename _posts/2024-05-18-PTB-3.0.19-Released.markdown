@@ -86,7 +86,7 @@ the major 2024 Eyelink toolbox update.](https://www.sr-research.com/)
 - Refine PsychCV's Apriltags implementation. Make sure that if the same marker
   is apparently detected multiple times in an image, that then the detection
   with the lowest hamming error and highest score is returned, so good detections
-  can't override false positive noise. Allow limiting the number of markers used
+  can not be overriden by false positive noise. Allow limiting the number of markers used
   from a tagFamily, so one can select tag families whose total marker count would
   cause a very high memory consumption, leading to out-of-memory errors on machines
   with even 8 GB of RAM, or very long startup times, by only using a subset of
