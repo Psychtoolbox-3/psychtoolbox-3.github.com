@@ -1,0 +1,81 @@
+---
+layout: post
+title: Psychtoolbox updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.19 update "Scraps" was released at 5th June 2024.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.19.12”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.19.12>
+
+Some of this Psychtoolbox release was sponsored by [Mathworks under the year
+2023/2024 contract.](https://www.mathworks.com/solutions/neuroscience.html).
+
+
+### Compatibility changes wrt. Psychtoolbox 3.0.19.11:
+
+- None.
+
+### Highlights:
+
+- None. Just some small fixups for improved Ubuntu 24.04-LTS and Matlab R2024a
+  compatibility.
+
+### All:
+
+
+
+### Linux:
+
+- Psychtoolbox was built and tested against Matlab R2024a.
+
+- PsychLinuxConfiguration: Quote paths, to improve MLTBX compatibility.
+
+- PsychLinuxConfiguration(): Add users also to 'gamemode' group.
+  This provides additional permissions to the gamemoded running on behalf
+  of the user, to execute additional performance optimizations as part
+  of Priority(n) with n > 0. Needed on at least Ubuntu 24.04-LTS and later.
+
+- ``Screen('OpenMovie')``: On Linux, use pipewiresink as audio sink if
+  available. Should fix the following issue on Ubuntu 24.04-LTS and later,
+  and other distributions that use Pipewire as desktop sound server and
+  have an outdated buggy Pulseaudio 16 installation, instead of the more
+  recent Pulseaudio 17. The bug can't be fixed on Ubuntu 22.04-LTS without
+  manual user workarounds. See following issue for this bug, which is
+  likely not encountered often:
+
+  <https://github.com/Psychtoolbox-3/Psychtoolbox-3/issues/814>
+
+  On unfixed affected systems (mostly Ubuntu 22.04-LTS), if there is
+  a notable time delay between ``Screen('OpenMovie')`` and start of
+  video+audio playback via ``Screen('PlayMovie')``, then the movie
+  playback will freeze after displaying the 1st video frame for the
+  duration of that delay between OpenMovie and PlayMovie, then
+  continue. Problem didn't exist in earler Linux distributions like
+  Ubuntu 20.04-LTS and is fixed by this bug fix for later distros like
+  Ubuntu 24.04-LTS from April 2024.
+
+### Windows:
+
+- Psychtoolbox was built and lightly tested against Matlab R2023b.
+
+### macOS:
+
+- Psychtoolbox was built against Matlab R2023b and tested against
+  Matlab R2024a and Octave 8.4 from HomeBrew. It also works on the
+  new Octave 9.1 from HomeBrew
+
+- SetupPsychtoolbox: Quote paths, to improve MLTBX compatibility.
+
+- TextInOffscreenWindowTest.m: Fix it for Retina displays on macOS. Also cleanup.
+
+- BitsPlusPlus: Handle Apple macOS Retina displays properly for imaging pipeline validation runs.
+
+- ImagingStereoDemo: Handle Apple Retina displays properly during movie writing.
+
+- TwoStateQuery(): Add workaround for broken Matlab R2024a on Apple macOS.
+
+Enjoy!
