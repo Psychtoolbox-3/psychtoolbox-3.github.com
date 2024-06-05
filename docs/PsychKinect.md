@@ -61,7 +61,7 @@ specified by the given 'kinect' handle. Recycle 'oldkobject' so save
 memory and resources if 'oldkobject' is provided. Otherwise create a new  
 object.  
   
-Do not use within creen('BeginOpenGL', window); and [Screen](Screen)('EndOpenGL',  
+Do not use within [Screen](Screen)('BeginOpenGL', window); and [Screen](Screen)('EndOpenGL',  
 window); calls, as 2D mode is needed.  
   
   
@@ -77,7 +77,7 @@ During a work-loop you could also pass 'kobject' to the next
 [PsychKinect](PsychKinect)('CreateObject', ...); call as 'oldkobject' to recycle it for  
 reasons of computational efficiency.  
   
-Do not use within creen('BeginOpenGL', window); and [Screen](Screen)('EndOpenGL',  
+Do not use within [Screen](Screen)('BeginOpenGL', window); and [Screen](Screen)('EndOpenGL',  
 window); calls, as 2D mode is needed.  
   
   

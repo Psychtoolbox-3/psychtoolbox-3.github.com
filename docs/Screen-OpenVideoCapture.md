@@ -76,20 +76,20 @@ elapsed time since start of capture, or recording time in movie), instead of the
 default time base, which is regular [GetSecs](GetSecs)() time.  
 A setting of 128 will force use of a videorate converter in pure live capture  
 mode. By default the videorate converter is only used if video recording is  
-active. The converter makes sure that video is recorded (or delivered) at  
-exactly the requested capture framerate, even if the system isn't really capable  
-of maintaining that framerate: If the video source (camera) delivers frames at a  
-too low framerate, the converter will insert duplicated frames to boost up  
-effective framerate. If the source delivers more frames than the engine can  
-handle (e.g., system overload or video encoding too slow) the converter will  
-drop frames to reduce effective framerate. Slight fluctuations are compensated  
-by adjusting the capture timestamps. This mechanism guarantees a constant  
-framerate in recorded video as well as the best possible audio-video sync and  
-smoothness of video, given system constraints. The downside may be that the  
-recorded content and returned timestamps don't reflect the true timing of  
-capture, but a beautified version. In pure live capture, rate conversion is off  
-by default to avoid such potential confounds in the timestamps. Choose this  
-options carefully.  
+active, unless flag 8192 is specified. The converter makes sure that video is  
+recorded (or delivered) at exactly the requested capture framerate, even if the  
+system isn't really capable of maintaining that framerate: If the video source  
+(camera) delivers frames at a too low framerate, the converter will insert  
+duplicated frames to boost up effective framerate. If the source delivers more  
+frames than the engine can handle (e.g., system overload or video encoding too  
+slow) the converter will drop frames to reduce effective framerate. Slight  
+fluctuations are compensated by adjusting the capture timestamps. This mechanism  
+guarantees a constant framerate in recorded video as well as the best possible  
+audio-video sync and smoothness of video, given system constraints. The downside  
+may be that the recorded content and returned timestamps don't reflect the true  
+timing of capture, but a beautified version. In pure live capture, rate  
+conversion is off by default to avoid such potential confounds in the  
+timestamps. Choose this options carefully.  
 A setting of 256 in combined video live capture and video recording mode will  
 restrict video framerate conversion to the recorded videostream, but provide  
 mostly untampered true timing to the live capture. By default, framerate  
@@ -108,7 +108,8 @@ A setting of 4096 requests to apply some performance optimizations (the setting
 of filter-caps). This can hurt if a videocapture device refuses to work, with  
 some error message about ''check your filtered caps, if any.''. By default, if  
 the flag is omitted, some performance loss will be present, but capture will be  
-more robust with problematic cameras.  
+more robust with problematic cameras. A setting of 8192 requests to avoid any  
+use of videorate converters, not even for recording (see above).  
   
 'captureEngineType' This optional parameter allows selection of the video  
 capture engine to use for this video source. Allowable values are currently 1  

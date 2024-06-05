@@ -175,10 +175,9 @@ chooses audio output and parameters, based on your system and user settings.
 Most often this is what you want. Sometimes you may want to have more control  
 over outputs, e.g., if your system has multiple sound cards installed and you  
 want to route audio output to a specific card and output connector. Example use  
-of the parameter: 'AudioSink=pulseaudiosink device=MyCardsOutput1' would use the  
-Linux pulseaudiosink plugin to send sound data to the output named  
-'MyCardsOutput1' via the [PulseAudio](PulseAudio) sound server commonly used on Linux desktop  
-systems.  
+of the parameter: 'AudioSink=pulsesink device=MyCardsOutput1' would use the  
+Linux pulsesink plugin to send sound data to the output named 'MyCardsOutput1'  
+via the [PulseAudio](PulseAudio) sound server commonly used on Linux desktop systems.  
 If you set a [Screen](Screen)() verbosity level of 4 or higher, [Screen](Screen)() will print out  
 the actually used audio output at the end of movie playback on operating systems  
 which support this. This can help debugging issues with audio routing if you  

@@ -12,7 +12,6 @@ so use them at your own risk.
   [MeasureLuminancePrecision](MeasureLuminancePrecision) - Automatically determine visual output luminance precision.  
   [PrintStruct](PrintStruct)               - Print structure & cell array to any depth  
   [PropixxImageUndistortionThrowaway](PropixxImageUndistortionThrowaway) - Experimental demo for [VPixx](VPixx) [ProPixx](ProPixx) projector fast mode.  
-  [ShowHDRDemo](ShowHDRDemo)               - Incomplete demo of how to show HDR images.  
 
 
 
