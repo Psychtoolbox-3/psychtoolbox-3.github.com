@@ -1,0 +1,20 @@
+---
+layout: post
+title: Psychtoolbox updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.19 update "Stupido" was released at 7th June 2024.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.19.13”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.19.13>
+
+This is a bug fix release for macOS only.
+
+### macOS:
+
+- Fix broken SetupPsychtoolbox().
+
+Enjoy!
