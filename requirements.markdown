@@ -24,11 +24,11 @@ Short version
     if you need any kind of reliable timing for visual stimulus presentation or precisely calibrated
     visual output, or use of special visual stimulators, e.g., from VPixx or CRS, or trustworthy
     visual stimulation at all, due to the large and growing number of bugs in the Apple operating system.
-    macOS 14 is completely untested and not officially supported yet.
+    macOS 14 is not officially supported yet.
 
 -   *Runtime environment:*
 
-    64-Bit Matlab version R2023b (other versions will likely work, but are not tested for
+    64-Bit Matlab version R2024a (other versions will likely work, but are not tested for
     compatibility or supported by us in case of trouble), and GNU Octave version 5.2 or
     later versions on Linux, and 64-Bit [Octave version 8.4.0 on macOS][OctavemacOS] and
     [Octave 7.3.0 on MS-Windows.][OctaveForWindows]
@@ -119,16 +119,16 @@ Operating systems
 GNU/Linux is fully supported on Intel compatible PCs and suitable (== older) Apple
 Macintosh computers under
 
--  Matlab 64-bit, version R2023b. Older versions likely work, but are no longer
+-  Matlab 64-bit, version R2024a. Older versions likely work, but are no longer
    tested or testable or supportable by us due to lack of access.
--  GNU Octave 64-bit, versions 5.2, and at least versions v6.1 - v7.3.
+-  GNU Octave 64-bit, versions 5.2, and at least versions v6.1 - v8.3.
 -  Additionally, Psychtoolbox from NeuroDebian supports 32-Bit and 64-Bit
    releases of whatever version of GNU Octave ships by default with your
    distribution, e.g., also Octave 3.2 to 4.4 on older distributions, or
    Octave 5.x, 6.x, 7.x and 8.x on recent distributions.
 
 Psychtoolbox testing and development occurs mainly on the most recent Ubuntu
-Linux LTS releases or flavors of them, currently Ubuntu 22.04.3-LTS. Distributions
+Linux LTS releases or flavors of them, currently Ubuntu 22.04.4-LTS. Distributions
 older than Ubuntu 20.04-LTS are no longer supported since Psychtoolbox 3.0.18. We
 recommend Ubuntu 22.04-LTS at this time.
 
@@ -168,14 +168,14 @@ Psychtoolbox is also being developed and tested under Apple macOS 13.
 Psychtoolbox should "work" in principle on
 
 -  64-bit macOS 13 "Ventura", maybe macOS 10.14 - macOS 12 (no longer tested),
-   maybe partially macOS 10.11-10.13 (no longer tested).
--  64-bit Matlab R2023b, likely older recent versions upwards of R2014b, but those are untested.
+   maybe partially on macOS 10.11-10.13 (no longer tested).
+-  64-bit Matlab R2024a, likely older recent versions upwards of R2014b, but those are untested.
 -  64-bit Octave v8.4, probably also v6.4-v8.3 (expected to work, but untested).
--  As of 2023, [you will need to get Octave 8.4 from a package manager like HomeBrew][OctavemacOS]
+-  As of 2024, [you will need to get Octave 8.4 from a package manager like HomeBrew][OctavemacOS]
    as standalone binary installers are not available.
 
 Limited testing currently only happens on a version of macOS 13 “macOS Ventura”
-with 64-Bit Octave 8.4 from HomeBrew, and with 64-bit Matlab R2023b.
+with 64-Bit Octave 8.4 from HomeBrew, and with 64-bit Matlab R2024a.
 
 Ventura is the only somewhat supported version of macOS at this point in time.
 Psychtoolbox is compatible with it in principle, and it is the only currently
@@ -198,18 +198,18 @@ longer developed or supported by Apple means that Apple will no longer break it 
 respect to our needs, but it is now an attractive target for viruses and hackers,
 a security hazard! Choose your poison...
 
-**macOS 14 is not officially supported or tested at all at the moment!**
+**macOS 14 is not officially supported yet at the moment, but expected to work**
+
 **macOS on machines with Apple's new ARM based SoC's, e.g., the Apple M1 SoC, is not
-working with Psychtoolbox natively at all in any suitable way for data collection.
-There is no timeline for fixing this anytime soon. It is unclear if this is fixable at all,
-given the challenging and disruptive changes Apple made on Apple Silicon, especially switching
-from industry standard AMD, Intel and NVidia graphics to Apples own proprietary graphics chip.
-But also due to the disappointing lack of financial support from most of our users, we con't
-have the funds to investigate this any further at the moment.
-It is possible to run Ubuntu Linux for ARM in a Virtual machine on Apple M1 for training
-and education purpose, according to a user report, ie. not for data collection, only for
-learning on Linux. It is also possible to somewhat run Psychtoolbox on macOS 11/12/13, but
-with completely broken visual stimulation timing. May be good enough for basic training
+working with Psychtoolbox natively at all yet in any suitable way for data collection.**
+
+Work is underway and progressing to provide native support for Apple Silicon Macs soon.
+See the following talk for an update: <https://youtu.be/05gpkP_EMoc>
+
+At the moment it is possible to run Ubuntu Linux for ARM in a Virtual machine on Apple M1
+for training and education purpose, according to a user report, ie. not for data collection,
+only for learning on Linux. It is also possible to somewhat run Psychtoolbox for Intel Macs,
+but with completely broken visual stimulation timing. May be good enough for basic training
 purposes though.**
 [See this link for reference about the current state.][AppleM1]
 
@@ -357,7 +357,7 @@ Basic hardware requirements
     installation of Linux on the internal drive.
     _For these reasons we don't recommend use of any modern Apple hardware._
 
--   Apple ARM Macs, e.g., Apple M1/M2/M3: _Broken! Do not use!_
+-   Apple ARM Macs, e.g., Apple M1/M2/M3: _Broken at the moment! Improvements upcoming._
 
 -   [RaspberryPi models 2B, 3, 4, 400 under the most recent Raspbian operating system.][Raspbian]
     The RaspberryPi 2B and 400 are actively tested for compatibility and work well
