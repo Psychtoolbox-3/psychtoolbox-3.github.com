@@ -23,7 +23,7 @@ supported in case of any trouble!
 folder. Obviously you need to somehow get a copy, either via conventional  
 download from a computer with network connection, visit this URL for that  
 download: http://psychtoolbox.org/download.html  
-Or from a helpful colleague or copied from some other machine.  
+Or from a helpful colleague, or copied from some other machine.  
   
 2. Change your Matlab/Octave working directory to the Psychtoolbox installation  
 folder, e.g., 'cd /Applications/Psychtoolbox'.  
