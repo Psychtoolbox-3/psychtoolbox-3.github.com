@@ -30,7 +30,7 @@ Short version
 
     64-Bit Matlab version R2024a (other versions will likely work, but are not tested for
     compatibility or supported by us in case of trouble), and GNU Octave version 5.2 or
-    later versions on Linux, and 64-Bit [Octave version 8.4.0 on macOS][OctavemacOS] and
+    later versions on Linux, and 64-Bit [Octave version 9.2.0 on macOS][OctavemacOS] and
     [Octave 7.3.0 on MS-Windows.][OctaveForWindows]
 
 -   *Graphics card:*
@@ -170,12 +170,12 @@ Psychtoolbox should "work" in principle on
 -  64-bit macOS 13 "Ventura", maybe macOS 10.14 - macOS 12 (no longer tested),
    maybe partially on macOS 10.11-10.13 (no longer tested).
 -  64-bit Matlab R2024a, likely older recent versions upwards of R2014b, but those are untested.
--  64-bit Octave v8.4, probably also v6.4-v8.3 (expected to work, but untested).
--  As of 2024, [you will need to get Octave 8.4 from a package manager like HomeBrew][OctavemacOS]
+-  64-bit Octave v9.2, probably also v6.4-v9.1 (expected to work, but untested).
+-  As of 2024, [you will need to get Octave 9.2 from a package manager like HomeBrew][OctavemacOS]
    as standalone binary installers are not available.
 
 Limited testing currently only happens on a version of macOS 13 “macOS Ventura”
-with 64-Bit Octave 8.4 from HomeBrew, and with 64-bit Matlab R2024a.
+with 64-Bit Octave 9.2 from HomeBrew, and with 64-bit Matlab R2024a.
 
 Ventura is the only somewhat supported version of macOS at this point in time.
 Psychtoolbox is compatible with it in principle, and it is the only currently
@@ -241,7 +241,7 @@ resolve at least some of these issues on AMD and NVidia graphics cards
 
 Psychtoolbox should work on
 
--   Matlab 64-bit. Currently tested and supported with release R2023b.
+-   Matlab 64-bit. Currently tested and supported with release R2024a.
     External mandatory requirements: Microsoft C MSVC 2015-2019 runtime and
     GStreamer 1.22.5 MSVC or later. Installation of GStreamer _before_ installation
     of Psychtoolbox is mandatory on Matlab or the Screen mex file will not work.

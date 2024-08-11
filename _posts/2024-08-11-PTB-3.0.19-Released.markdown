@@ -1,0 +1,100 @@
+---
+layout: post
+title: Psychtoolbox updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.19 update "Sommerloch" was released at 11th August 2024.
+As usual, the complete development history can be found in our GitHub repository.
+The release tag is “3.0.19.14”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.19.14>
+
+
+### Compatibility changes wrt. Psychtoolbox 3.0.19.13:
+
+- None expected.
+
+### Highlights:
+
+- None.
+
+### All:
+
+- ``Screen('DrawDots')``: Only apply a margin to non-square dot types.
+  Only round dots get trimmed in the fragment shader, and so dot_type=4
+  was left with too much padding from the vertex shader. Bug fix contributed
+  by Alex Forrence @aforren1
+
+- Python extensions built from this release onwards should also work with
+  NumPy 2.x in addition to NumPy 1.x. Changes contributed by Eric Larson.
+
+### Linux:
+
+- Psychtoolbox was built and tested against Matlab R2024a.
+
+- Undo ``Screen('OpenMovie')`` compatibility fix for Ubuntu 24.04-LTS, of
+  using pipewiresink as audio sink. While this does fix the pulseaudio bugs
+  of delayed playback (see Psychtoolbox 3.0.19.12), the pipewiresink plugin
+  itself, as shipping in Ubuntu 24.04-LTS / GStreamer 1.24, has its own bugs,
+  which are worse and impact more frequent use cases, e.g., seeking, change
+  of playback speed, reverse playback, and instabilities or hangs at end of
+  playback for some common movies. Iow. use of pipewiresink causes regressions.
+
+  See forum bug report here:
+
+  <https://psychtoolbox.discourse.group/t/10-second-delay-with-with-gst-state-change-async/3924>
+
+  GStreamer folks know about the problem but there ain't a solution yet.
+
+  As of this release, the pipewiresink can still be used as an active opt-in,
+  accepting other potential types of audio playback problems, and if opted in,
+  should fix the following issue on Ubuntu 24.04-LTS and later, and other
+  distributions that use Pipewire as desktop sound server and have an outdated
+  buggy Pulseaudio 16 installation, instead of the more recent Pulseaudio 17.
+
+  See the following issue for this bug, which is luckily not encountered often:
+
+  <https://github.com/Psychtoolbox-3/Psychtoolbox-3/issues/814>
+
+  On unfixed affected systems (mostly Ubuntu 22.04-LTS), if there is
+  a notable time delay between ``Screen('OpenMovie')`` and start of
+  video+audio playback via ``Screen('PlayMovie')``, then the movie
+  playback will freeze after displaying the 1st video frame for the
+  duration of that delay between OpenMovie and PlayMovie, then
+  continue. Problem didn't exist in earler Linux distributions like
+  Ubuntu 20.04-LTS and is fixed by this bug fix for later distros like
+  Ubuntu 24.04-LTS from April 2024.
+
+  The use of pipewiresink can be enforced as workaround by specifying the
+  following string as 'movieoptions' parameter in ``Screen('Openmovie', ...);``
+  'AudioSink=pipewiresink'.
+
+- RaspberryPi now also allows GetSecs clock selection, like the Intel
+  variants do since a few releases.
+
+### Windows:
+
+- Psychtoolbox was built and lightly tested against Matlab R2024a and
+  Octave 7.3.
+
+- ``GetGitPath()``: Fix path to git on MS-Windows. Bug fix contributed by
+  Alex Forrence @aforren1
+
+### macOS:
+
+- Psychtoolbox was built and tested against Matlab R2024a and against
+  Octave 9.2 from HomeBrew.
+
+- SetupPsychtoolbox(): Try to fix it properly for macOS with xattr calls.
+  Skip xattr calls for .mltbx installed files via Matlab Add-On explorer,
+  as those already have their quarantine flags removed.
+
+  For other (zip file) install locations, handle blanks/spaces in the
+  installation path.
+
+  Also some output text cleanups and fixes. Tested with .mltbx and zip file
+  path install on path with spaces etc. Lets hope this goes better.
+
+Enjoy!
