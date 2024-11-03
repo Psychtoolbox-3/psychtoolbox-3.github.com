@@ -1,7 +1,7 @@
 # [VideoRecordingDemo](VideoRecordingDemo)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)
 
-[VideoRecordingDemo](VideoRecordingDemo)(moviename [, codec=0] [, withsound=1] [, showit=1] [, windowed=1])  
+[VideoRecordingDemo](VideoRecordingDemo)(moviename [, codec=0][, withsound=1][, showit=1][, windowed=1][, deviceId=0])  
   
 Demonstrates simple video capture and recording to a movie file.  
   
@@ -60,6 +60,8 @@ recording on lower end machines.
 the top-left corner of the screen, instead of fullscreen. Windowed  
 display is the default.  
   
+'deviceId' Optional deviceIndex of the video capture device. Defaults to  
+0 for the default video capture device.  
   
 Tip on Linux: If you have an exotic camera which only delivers video in non-standard  
 video formats, and Psychtoolbox does not handle this automatically, but aborts with  
