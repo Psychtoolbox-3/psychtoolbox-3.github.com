@@ -1,0 +1,128 @@
+---
+layout: post
+title: Psychtoolbox updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.19 update "Last free lunch" was released at 3rd November 2024.
+The complete development history can be found in our GitHub repository.
+The release tag is “3.0.19.15”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.19.15>
+
+
+### Compatibility changes wrt. Psychtoolbox 3.0.19.14:
+
+- None.
+
+### Highlights:
+
+- None. Only bug fixes for various 3rd party components, and small improvements.
+
+### All:
+
+- Change enumeration order of video capture devices. This should avoid
+  selection of suboptimal capture devices by preferring more optimal ones,
+  especially on modern Ubuntu 22.04-LTS and later Linux distributions, which
+  often choose the new but immature pipewiresrc as video source plugin for a
+  camera instead of the old and proven/mature more optimal v4l2src as video
+  source. Specifically we hope to avoid VideoRecordingDemo.m problems like
+  the ones encountered in the following thread:
+
+  https://psychtoolbox.discourse.group/t/codecs-in-videorecordingdemo-not-working-on-linux/5441
+
+- PsychImaging: Fix HDR mode with types of PsychColorCorrection() that involve
+  lookup tables and only use one color correction operation in total. E.g,
+  standard LUT based correction, 3D LUT based correction or application of
+  per-pixel gain matrices. See:
+
+  https://psychtoolbox.discourse.group/t/best-approach-for-gamma-correction-in-hdr10/5515
+
+- CI release scripts: Disable building of .mltbx files for releases for now.
+
+  The current approach contributed by Mathworks team is broken. It includes the
+  whole Psychtoolbox-3 tree for some utterly unclear reason, although the project
+  file only specified the Psychtoolbox/ subfolder. Worse, it adds toolbox folders
+  to the Matlab path in randomized (!?!) order, so our carefully selected ordering
+  of MatlabWindowsFilesR2007a/ folder wrt. PsychBasic folder gets screwed up and mex
+  files can't be found on MS-Windows anymore. Even worse, if SetupPsychtoolbox() fixes
+  it, then the Matlab Add-On Manager undos the fix every single time Matlab restarts!
+  This leads to issues like the following linked one:
+
+  https://psychtoolbox.discourse.group/t/problem-with-screen-function-ptb-just-installed/5451/9
+  
+  Apart from that, the Add On manager doesn't allow toolbox updates, and doesn't
+  set things like the Matlab Java path, doesn't deal with GStreamer etc. It has
+  zero benefit for our users, but is a source of hazarads and extra support overhead.
+  Drop it.
+
+- Add Psychtoolbox/PsychBasic/PsychPlugins/ to the search path for dynamic shared
+  libraries for all operating systems, so PTB specific plugin libraries can be found
+  during mex file load time.
+
+### Linux:
+
+- Psychtoolbox was built and tested against Matlab R2024a and R2024b and Octave 5.2
+  and later.
+
+- PsychImaging: Update 'EnableNative16BitFramebuffer' help text for year 2024.
+
+- Screen: Fix Vulkan display backend support with Mesa versions 23.3 and later
+  and thereby for Ubuntu 24.04-LTS and later. The same problem that affected the
+  Broadcom VideoCore 6 of the RaspberryPi 4 and later under Mesa 23.3 now affects
+  at least Intel and AMD under Mesa 24.0 with Ubuntu 24.04.0-LTS.
+
+  It appears a slightly broken GL_EXT_direct_state_access implementation
+  in Mesa was introduced in Mesa 23.3 and later. Work around this in an effective
+  and safe way.
+
+- PsychVulkan: Add workaround against an AMDVLK bug that causes crash if the used
+  Vulkan display monitor has more than 64 video modes. A proper fix, especially
+  for multi-display setups, can only be done in a future AMDVLK driver from AMD's
+  Vulkan team, but for single display stimulation this workaround should prevent
+  crashes and problems, and on some multi-display setups things may still work
+  with a sprinkle of dumb luck - no guarantees for multi-display though!
+  Note that the AMDVLK driver is only used on AMD gpu's if a color depth of more
+  than standard 8 bpc (aka "deep color") or HDR-10 display mode is requested. For
+  other Vulkan use cases, the high quality Mesa radv Vulkan driver is used, which
+  does not suffer such a problem. For context see:
+
+  https://psychtoolbox.discourse.group/t/vulkan-breaks-with-stack-smashing-detected-terminated/5501 
+
+- XOrgConfCreator: Adapt to Ubuntu 24.04-LTS changes in /dev/dri/card enumeration.
+  This broke hybrid graphics laptop detection, at least on three single gpu
+  laptops with AMD gpu's. It reported a dual-gpu config when there was not any.
+  Since Ubuntu 24.04-LTS, or more likely with a recent Linux 6.8 kernel shipping
+  in both Ubuntu 24.04-LTS and in Ubuntu 22.04.5-LTS with HWE stack, the first
+  (and only) gpu on a single gpu machine now has a /dev/dri/card1 device file,
+  instead of a /dev/dri/card0 device file, ie. device file indexing now starts
+  at 1 instead of 0. On multi-gpu machines, the second gpu is now associated
+  with /dev/dri/card2 and so on. This broke some hard-coded assumptions about
+  0-based device numbering. We now use a more robust detection logic for hybrid
+  gpu detection. The fix was successfully tested on single-gpu AMD and Intel
+  graphics machines, and on a dual-gpu Intel + AMD laptop for each gpu and in
+  prime render offload mode.
+
+- Add braces for NetWM reporting to make compiler happier. It caused a weird
+  problem in the Screen mex build for Matlab, in which the "PTB-INFO: ..." lines
+  about the used flip timestamping mechanism are not printed! No clue why, looks
+  like some compiler bug, but adding the - technically not needed - braces fixes
+  it.
+
+### Windows:
+
+- Psychtoolbox was built and lightly tested against Matlab R2024a and Octave 7.3
+  and extensively tested against Matlab R2024b.
+
+- VideoRecordingDemo.m: Remove special case MS-Windows path. It does not seem to
+  be as necessary anymore with the future default MediaFoundation path for capture
+  and recording. Also added some cleanups and ability to specify video capture
+  device as argument.
+
+### macOS:
+
+- Psychtoolbox was built and tested against Matlab R2024a and against Octave 9.2
+  from HomeBrew.
+
+Enjoy!
