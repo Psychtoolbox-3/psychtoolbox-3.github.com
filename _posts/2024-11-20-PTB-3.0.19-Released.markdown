@@ -1,0 +1,68 @@
+---
+layout: post
+title: Psychtoolbox updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.19.16 "Last free dessert" was released at 20th November 2024.
+The complete development history can be found in our GitHub repository.
+The release tag is “3.0.19.16”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.19.16>
+
+[This Psychtoolbox release was sponsored by Mathworks under the year 2024 contract
+for establishing Matlab R2024b compatibility on Ubuntu 24.04 Linux and Windows 10.
+](https://www.mathworks.com/solutions/neuroscience.html)
+
+
+### Highlights:
+
+- None. This is a release with small fixes and tweaks, based on compatibility
+  testing of Psychtoolbox with Ubuntu Linux 24.04.1-LTS and MS Windows-10 22H2
+  with Matlab R2024b under the Mathworks 2024 contract which requires at least
+  one Psychtoolbox release that is compatible with R2024b under Linux and Windows.
+
+  As such, no compatibility testing was performed wrt. macOS, apart from quick
+  spot testing with R2024b, as testing on macOS was not part of the paid contract,
+  and the contract pays way too little to cover any non-mandatory work.
+
+  The total work time spent on R2024b testing and refinement was 42 hours.
+
+  No compatibility issues were found with R2024b, compared to R2024a, iow.
+  no regressions. All improvements in this release are for fixing / working
+  around Microsoft Windows bugs or flaws, or AMD and NVidia graphics driver
+  bugs on Windows. And some small tweaks and enhancements.
+
+### All:
+
+- RenderDemo: Add missing BackupCluts to not annoy the user. Restore the lut's
+  at the end of the demo, so display doesn't look "milky" and dull.
+
+- FlipTimingWithRTBoxPhotoDiodeTest: Let audio card select its preferred sample rate.
+  Some Some recent sound chips don't like our hard-coded 44100 Hz, so let them
+  choose their preferred rate.
+
+- PlayMoviesDemo: Cleanup web movies offering a bit.
+
+- PsychImaging: Some doc update wrt. Intel 10 bpc support on Ubuntu 22.04+.
+
+### Linux:
+
+- Psychtoolbox was extensively tested against Matlab R2024b, under Ubuntu 24.04.1-LTS
+  Linux with AMD Polaris and Intel Kabylake graphics, also in dual-gpu configurations
+  on a dual-gpu hybrid graphics Laptop.
+
+### Windows:
+
+- Psychtoolbox was extensively tested against Matlab R2024b, and lightly tested
+  against Octave 7.3, both under MS-Windows 10 R22H2 with primarily AMD graphics,
+  and spot checked with NVidia graphics.
+
+- MultiWindowLockStepTest: Fix failure in default dual-window 10/20 seconds async
+  flip case on MS-Windows 10, due to interaction with an OpenGL quirk.
+
+- DrawManuallyAntiAliasedTextDemo: Add workaround for AMD OpenGL graphics driver
+  bug on Windows-10. Ditto for TextToStuffColorMismatchTest.m.
+
+Enjoy!
