@@ -61,6 +61,8 @@ soon with more useful infos...
 [MakeTextureDrawShader](MakeTextureDrawShader)         - Create GLSL shader for use with [Screen](Screen)('DrawTexture') and [Screen](Screen)('MakeTexture')  
                                 to apply on-the-fly texture filtering operations during texture draw.  
   
+[PsychColorCorrection](PsychColorCorrection)          - Routines for gpu accelerated color correction via [PsychImaging](PsychImaging)().  
+  
 [PsychHDR](PsychHDR)                      - Support and control stimulus display to HDR "High dynamic range" displays.  
   
 [PsychImaging](PsychImaging)                  - Generic setup routine for the imaging pipeline. Allows to setup  

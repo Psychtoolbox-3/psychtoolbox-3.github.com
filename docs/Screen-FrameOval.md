@@ -1,7 +1,7 @@
 # [Screen('FrameOval')](Screen-FrameOval) 
 ##### [Psychtoolbox](Psychtoolbox)>[Screen](Screen).{mex*} subfunction
 
-Screen('FrameOval', windowPtr [, color] [, rect] [, penWidth] [, penHeight] [, penMode]);
+Screen('FrameOval', windowPtr [,color] [,rect] [,penWidth] [,penHeight] [,penMode]);
 
 Draw the outline of an oval inscribed in "rect". "color" is the clut index  
 (scalar or [r g b] triplet) that you want to poke into each pixel; default  
