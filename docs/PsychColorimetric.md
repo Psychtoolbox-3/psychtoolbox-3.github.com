@@ -90,7 +90,7 @@ radiometric. Apologies if our intuitions don't match yours
   [XYZToLuv](XYZToLuv)            - Convert between XYZ and Luv.  
   [XYZToRGBMatrix](XYZToRGBMatrix)      - Build a 3x3 CSC matrix for converting XYZ space to some RGB color space.  
   [XYZToSRGBPrimary](XYZToSRGBPrimary)    - Convert between XYZ and sRGB primary coordinates.  
-  [[XYZTouv](XYZTouv)][(XYZTouv)]((XYZTouv))             - Compute uv chromaticities from XYZ.  
+  [XYZTouv](XYZTouv)            - Compute uv chromaticities from XYZ.  
   [XYZTouvY](XYZTouvY)            - Convert between XYZ and u'v'Y.  
   [XYZToxyY](XYZToxyY)            - Convert between XYZ and xyY.  
 
