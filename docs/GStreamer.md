@@ -16,7 +16,7 @@ libdc1394, see 'help VideoCaptureDC1394', and [[GStreamer](GStreamer)][(GStreame
 for video recording, not for live capture).  
   
 You will need at least version 1.8 of [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) on Linux, and at least  
-version 1.22.0 on MS-Windows and at least version 1.18.5 on macOS, but  
+version 1.22.0 on MS-Windows and at least version 1.20.0 on macOS, but  
 we recommend to use the latest stable release of the version 1 series  
 tested by us (see links below).  
   
@@ -90,7 +90,7 @@ file:
 <http://gstreamer.freedesktop.org/download/\>  
   
 The following [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) runtime packages have been lightly tested for compatibility  
-with Psychtoolbox 3.0.19.4, as of September 2023:  
+with Psychtoolbox 3.0.20.0, as of December 2024:  
   
 For MS-Windows: 64-Bit Intel MSVC runtime v1.22.5 for use with 64-Bit Matlab/Octave.  
   
@@ -99,14 +99,24 @@ For MS-Windows: 64-Bit Intel MSVC runtime v1.22.5 for use with 64-Bit Matlab/Oct
 You \*must\* install the MSVC variants of [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)), not the [MinGW64](MinGW64) variants!  
   
   
-### For Apple macOS: Oldest runtime v1.18.5:  
+### For Apple macOS: Oldest runtime for Intel Macs v1.18.6:  
   
-<https://gstreamer.freedesktop.org/data/pkg/osx/1.18.5/gstreamer-1.0-1.18.5-x86\_64.pkg\>  
+<https://gstreamer.freedesktop.org/data/pkg/osx/1.18.6/gstreamer-1.0-1.18.6-x86\_64.pkg\>  
   
-also tested, probably higher performance and more modern, but known to crash with  
-[VideoRecordingDemo](VideoRecordingDemo).m at least with the [MacBookPro](MacBookPro) 2017 builtin camera, is v1.22.1.  
+Recommended and tested for both Intel and Apple Silicon as of December  
+2024 is version 1.24.10:  
   
-<https://gstreamer.freedesktop.org/data/pkg/osx/1.22.1/gstreamer-1.0-1.22.1-universal.pkg\>  
+<https://gstreamer.freedesktop.org/data/pkg/osx/1.24.10/gstreamer-1.0-1.24.10-universal.pkg\>  
+  
+However, the following limitations were observed on v1.24.10:  
+On Apple Silicon video recording only works without sound, otherwise  
+hangs will occur. On Intel Macs, video recording does not work at all.  
+  
+With [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) 1.22.0 on Intel Macs, video and audio recording works  
+fine, but playback of some movies fails. Untested on Apple Silicon.  
+  
+These limitations are likely due to some bugs or shortcomings in  
+[[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) for macOS.  
   
 When the installer asks you to select the components it should install,  
 select a "Full installation" or "Complete installation", or if those  

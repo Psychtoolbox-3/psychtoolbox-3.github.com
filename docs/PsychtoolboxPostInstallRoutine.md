@@ -22,7 +22,10 @@ important info to the user, whatever...
    This enables the Java-based [GetChar](GetChar) support on Matlab.  
 3. Add the [PsychStartup](PsychStartup).m routine to Matlab's and Octave's startup.m file on Windows.  
 4. Set the proper pathes to Psychtoolbox and its mex files.  
-4. Perform post-installation checks, configuration and basic troubleshooting.  
+5. Perform post-installation checks, configuration and basic troubleshooting.  
+6. Perform first time software license activation management for user accounts  
+   on operating system and machine setups for which this is needed to use  
+   the software.  
 
 
 

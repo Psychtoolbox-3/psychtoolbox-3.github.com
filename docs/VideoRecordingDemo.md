@@ -1,13 +1,13 @@
 # [VideoRecordingDemo](VideoRecordingDemo)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDemos](PsychDemos)
 
-[VideoRecordingDemo](VideoRecordingDemo)(moviename [, codec=0][, withsound=1][, showit=1][, windowed=1][, deviceId=0])  
+[VideoRecordingDemo](VideoRecordingDemo)(moviename [, codec=0][, withsound=0][, showit=1][, windowed=1][, deviceId=0])  
   
 Demonstrates simple video capture and recording to a movie file.  
   
 Supports [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) on all systems, and DC1394 engine on Linux and OSX.  
   
-Please look at the source code of the demo carefully! Both [MacOSX](MacOSX) and  
+Please look at the source code of the demo carefully! Both macOS and  
 MS-Windows often need special treatment in terms of codec and parameter  
 selection to work reliably (or to be honest: To work at all).  
   
@@ -48,8 +48,7 @@ Some of the other codecs may provide the highest image quality and lowest
 cpu load, but they also produce huge files, e.g., all the [DVxxx](DVxxx) codecs  
 for PAL and NTSC video capture, as well as the component video codecs.  
   
-'withsound' If set to non-zero, sound will be recorded as well. This is  
-the default.  
+'withsound' If set to non-zero, sound will be recorded as well.  
   
 'showit' If non-zero, video will be shown onscreen during recording  
 (default: Show it). Not showing the video during recording will  

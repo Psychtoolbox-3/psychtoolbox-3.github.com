@@ -2,7 +2,16 @@
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDocumentation](PsychDocumentation)
 
   
-If you require paid support regarding Psychtoolbox, or custom feature  
+If you are using a Psychtoolbox variant and version that requires a paid  
+software license key to function, e.g., on Microsoft Windows or Apple  
+macOS, then a few minutes of basic support per year for basic questions  
+may be included in the specific type of software license you bought. If,  
+when, and how much support will be provided is usually at the discretion  
+of the Psychtoolbox team. In any case, if you wanted to ask for this  
+basic support, you'd have to present an authentication token by running  
+this function, or by calling [PsychLicenseHandling](PsychLicenseHandling)('AuthenticationToken').  
+  
+If you require additional paid support regarding Psychtoolbox, or custom feature  
 development (or if you want to buy a Psychtoolbox themed coffee mug, bag or shirt)  
 go to the following website which provides such services:  
   

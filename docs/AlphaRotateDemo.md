@@ -13,7 +13,7 @@ OS X: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
   
 Display a rotating grating using the new [Screen](Screen)('DrawTexture') command.  
 In the OS X Psychtoolbox [Screen](Screen)('DrawTexture') replaces  
-[Screen](Screen)('CopyWindow').       
+[Screen](Screen)('CopyWindow').  
   
 This illustrates an application of Alpha blending by masking the rotating  
 grating with a gaussian transparency mask.  
