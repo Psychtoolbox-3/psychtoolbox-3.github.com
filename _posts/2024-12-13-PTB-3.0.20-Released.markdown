@@ -1,0 +1,209 @@
+---
+layout: post
+title: Psychtoolbox updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.20 "Appletizer" was released at 13th December 2024, at least
+in some time zone. Hopefully Friday 13th will bring us luck instead of horror.
+
+The complete development history can be found in our GitHub repository.
+The release tag is “3.0.20.0”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.20.0>
+
+**This is the first release with beta quality macOS Apple Silicon Mac support**
+for native use on Apple Macintosh computers with 64-Bit ARM Apple proprietary
+M1, M2, M3, ... SoC's.
+
+**We thank the labs of Keith Schneider at the University of Delaware and of**
+**Bas Rokers at NYU Abu Dhabi for substantial sponsorship to push Apple**
+**Silicon support over the finish line.**
+
+Effective immediately, the Psychtoolbox 3.0.19 series has now reached end of life.
+No improvements, bug fixes or user support will be provided for Psychtoolbox 3.0.19
+or earlier versions of Psychtoolbox.
+
+
+### Compatibility changes wrt. Psychtoolbox 3.0.19.16:
+
+- Psychtoolbox 3.0.20 and later on Apple macOS and Microsoft Windows
+  will require purchase of a paid software license key, once the
+  initial time-limited free trial period after first installation and
+  use has expired. Psychtoolbox will not work after the end of the trial
+  period without such a paid license key. The Psychtoolbox variants for
+  Linux on Intel processors and 32-Bit RaspberryPi will remain free to
+  use for the time being.
+
+  The free time-limited trial period will last until the launch of
+  our new online shop, ie. until you will be able to buy software
+  license keys. The estimated date of launch, and end of the free
+  trial, will be likely around early to mid January 2025.
+
+  Follow the news on <http://psychtoolbox.org> and on our Discourse
+  user forum or our social media feeds @psychtoolbox on X / Twitter,
+  <https://neuromatch.social/@psychtoolbox> on Mastodon, or on BlueSky
+  <@psychtoolbox.bsky.social> for announcements of the launch of the
+  software license key sale early in the year 2025, or go to
+  <https://psychtoolbox.net> to find out how to buy a key, once sales
+  has started.
+
+### Highlights:
+
+- Initial "Beta" Apple Silicon support for running Psychtoolbox on macOS
+  for Apple Silicon Macs. Psychtoolbox can now be used with native Octave
+  and Matlab for Apple Silicon ARM Macs, ie. machines with Apple M1,
+  M2, M3, M4, ... SoC's. Most basic functionality should work reasonably
+  well, and substantially better than when using older Psychtoolbox
+  versions via Matlab for IntelMacs, which had various severe limitations
+  which would make them painful to use and deeply hazardous for any real
+  data collection! This versions Apple Silicon support was tested by myself
+  on a Apple MacBookPro early 2023 with 16 inch Liquid Retina XDR display
+  and Apple M2 Pro SoC under macOS 14.5 Sonoma with 64-Bit native Octave 9.2
+  from HomeBrew, and with Matlab R2024a and with Matlab R2024b. It was also
+  more lightly tested by others on a similar 16 inch MacBookPro late 2023 with
+  M3 Pro SoC under the macOS 15.2 Sequoia beta under Matlab R2024b, and a
+  MacBookAir 2020 with M1 SoC, and a Mac Studio 2023 M2 Ultra and MacBookAir
+  M3 13 inch early 2024, the latter two with macOS 15.2 beta and Matlab R2024b.
+  Thanks to our volunteer testers.
+
+  While surely some bugs or limitations still exist, this should be a first good
+  release for basic use and evaluation.
+
+  Known limitations are lack of frame-sequential stereo support in stereo modes
+  1 and 11, Screen Async flips, ie. subfunctions 'AsyncFlipBegin', 'AsyncFlipEnd'
+  and 'AsyncFlipCheckEnd' are unsupported. Certain glitches in frame presentation
+  timing are still observed under certain conditions at least on macOS 14, e.g.,
+  stalls / short freezes after the stimulus image was static for a while, e.g,
+  observable with MouseTraceDemo if not moving the mouse for a while. These may
+  also trigger printing of some warning messages into the Matlab or Octave Window
+  about "...Failed to retrieve ... stimulus onset timestamp! Timed out.". It is
+  not yet clear if these issues are still present on macOS 15 Sequoia as well,
+  testing to be done. These remaining timing glitches are almost certainly due to
+  Apple macOS operating system bugs, which will either need proper fixing by Apple,
+  or need invention of new creative workarounds on our side, if that is needed and
+  possible.
+
+  Apples "ProMotion" display mode on some builtin Retina displays, e.g., of the
+  MacBookPro models, and variable refresh rate modes in general, are not supported
+  and will cause more erratic behaviour. Make sure to switch to a fixed refresh rate
+  mode in display settings instead on such machines.
+
+  Movie playback, movie writing and video capture works well with GStreamer 1.24.10,
+  but due to what seem to be shortcomings or bugs of current GStreamer releases,
+  video recording on Apple Silicon only works for video, not when also trying to
+  record audio - otherwise hangs will occur. On Intel Macs, video recording does
+  not work at all with GStreamer 1.24.10, but does for both video and audio with
+  GStreamer 1.22, however with the downside that playback of some movies fails.
+  So both GStreamer 1.22 and 1.24 have some limitations, pick the variant with
+  limitations you can better live with, until GStreamer is properly fixed in some
+  future GStreamer version.
+
+  You should probably not yet use this release for real data collection if
+  highest reliability of visual stimulus presentation timing is required. Use
+  for less demanding scenarios may be fine, but tread carefully with this early
+  release!
+
+### All:
+
+- Screen: Fix PsychNormalizeTextureOrientation() for multi-window use.
+  Use of multiple onscreen windows could cause the wrong OpenGL context
+  of the wrong onscreen window to be in use during operation. Fix this. Cfe.
+  <https://psychtoolbox.discourse.group/t/unknown-problem-playing-movies-with-gstreamer-on-ubuntu-linux/4876/8>
+
+- Screen: Various improvements to movie playback. E.g., improve reliability of
+  playback with pixelFormat 6 and 8.
+
+- Screen: Reduce chattiness of some status/debug output in general. Generally
+  refine status output a bit.
+
+- AlphaRotateDemo.m: Small fixups for weirdly sized displays and formatting fixes.
+  Especially useful for the Retina displays of 16 inch Apple Silicon MacBookPro,
+  with a horizontal resolution that has an odd pixel count instead of an even count.
+
+- PsychPython/audio.py: Fix 'AttributeError' raised when creating a stream fails.
+  Contributed by GitHub user @mdcutone.
+
+- PsychColorimetric/LMSToMacBoyn(): "Add an example and save the correct version",
+  some poorly documented fixes or improvements by the Brainard lab with commit
+  messages that are mostly void of meaningful information, so I don't know what they
+  did.
+
+- Various other smaller refinements, bug fixes and documentation updates.
+
+### Linux:
+
+- Psychtoolbox was built and tested against Matlab R2024b and Octave 5.2 and later.
+
+- PsychVulkan: Only use workaround against an AMDVLK bug, which causes a crash if a
+  used display monitor has more than 64 video modes, on AMDVLK driver versions
+  before v-2024.Q4.2, as the bug has been fixed by AMD in the upstream driver version
+  v-2024.Q4.2, released by AMD early December 2024.
+
+### Windows:
+
+- Psychtoolbox was built and tested against Matlab R2024b and Octave 7.3.
+
+- Screen: Drop GStreamer DirectShow video capture. Prioritize Mediafoundation.
+  DirectShow video capture is unmaintained and strongly discouraged by GStreamer
+  folks since the year 2022, and indeed testing shows it is quite broken now.
+  WDM-KS kernel streaming is also deprecated since the year 2022. MediaFoundation
+  capture is the only recommended way forward. Limited testing on Windows 10 22H2
+  also shows it to be the most capable and stable right now (tested GStreamer 1.22).
+
+  Drop support for DirectShow dshowvideosrc completely, and prefer Mediafoundation
+  mfvideosrc over the deprecated Kernel Streaming ksvideosrc.
+
+- PsychVulkan/Windows: Disable fullscreen exclusive mode on shoddy AMD Vulkan drivers
+  again. This still does not work reliably and often leads to black screens instead
+  of stimulus display. The error pattern was unpredictable, with fullscreen exclusive
+  mode sometimes working throughout long sessions, then suddenly failing, with no way
+  to fix it (even a reboot doesn't help), then on another day suddenly working again
+  for a streak of runs. Upside is a working display, but downside is impaired visual
+  stimulus presentation timing reliability.
+
+### macOS:
+
+- Psychtoolbox was built and tested against native Matlab R2024b and against native
+  Octave 9.2 from HomeBrew, on macOS 13.7.1 Ventura for Intel Macs, and on macOS 14.5
+  Sonoma for Apple Silicon Macs.
+
+- Initial support for running Psychtoolbox on macOS for Apple Silicon Macs with ARM
+  native Matlab and Octave. See Highlights section above for more details.
+
+- Bump the minimum required macOS version to macOS 10.13 "High Sierra". Effective this
+  means that macOS 10.13 for IntelMacs, and macOS 11 "Big Sur" for Apple Silicon Macs
+  are required to run Psychtoolbox 3.0.20.
+
+  Of course this new minimum is a bit redundant, because all macOS versions older
+  than macOS 13 are completely unsupported by Apple since October 2024, so running
+  anything older is at least a high computer security risk, and has lots of unfixed
+  remaining bugs and is therefore not a good idea. Additionally macOS 13 is needed
+  at a minimum on Apple Silicon Macs to allow proper operation of visual stimulators
+  from VPixx and Cambridge Research Systems.
+
+- Fix video recording on macOS. Works fully with video + audio on macOS for Intel
+  Macs with GStreamer 1.22. Works with video only, no audio, on macOS for Apple
+  Silicon Macs.
+
+- Implement initial pixelFormat 11 movie playback support on macOS for playback of
+  Deep color, Wide color gamut (WCG), and High Dynamic Range (HDR) movies. This
+  provides 10 bpc deep color, WCG and HDR, but at a lower performance than on other
+  operating systems, as Apples prehistoric OpenGL 2.1 implementation forces us to
+  use a less efficient decoding shader, and hardware accelerated video decoding can
+  not be used as of GStreamer 1.24.10, as it would reduce color precision to only 8
+  bpc which is utterly insufficient for WCG and HDR playback, causing significant
+  banding and HDR artefacts.
+
+- Make pixelFormat 6 playback work without crashing.
+
+- Screen: Make Intel iGPU pageflip checking on recent macOS for Intel graphics chips
+  more robust. This may improve robustness of correctness checks on Intel integrated
+  graphics on Intel Macs with PsychtoolboxKernelDriver installed. Problem seen and
+  fixed on Intel Kabylake Gen 9.5 graphics of MacBookPro 2017.
+
+- Fix some crashes on Octave for macOS when using Psychtoolbox after issuing a
+  "clear all", or "clear mex", or "clear Screen", or "clear PsychVulkanCore" command.
+
+Enjoy!
