@@ -24,8 +24,8 @@ pushes out rolling releases.
 Executing the command `PsychtoolboxVersion` should return the *version number,
 flavor and revision number* of your current Psychtoolbox. The command also
 prints a web URL, which points to the online change log where you can read in
-detail what has changed between different revisions. Since 8th January 2024,
-this may no longer be the case for new Psychtoolbox downloads and updates.
+detail what has changed between different revisions. *Since 8th January 2024,
+this may no longer be the case for new Psychtoolbox downloads and updates.*
 
 Before any potentially disruptive changes are merged into the `beta` branch, we
 tag and release a new version of Psychtoolbox following the versioning scheme
@@ -43,6 +43,20 @@ The following releases of old Psychtoolbox versions are available.
 
 *To download and install the following versions, go to our GitHub repository
 and checkout or download the correspondlingly named Git branch.*
+
+`Psychtoolbox-3.0.19`
+   : A snapshot of the code as of 14th December 2024: This was the final 3.0.19 release
+     before start of the 3.0.20 series. 3.0.19 was the last version to support:
+
+      * Last version tested on macOS 12. Future versions may or may not work on the macOS 10.13-10.15 and macOS 11.x/12.x operating systems.
+
+      * Going forward, Ubuntu 20.04 LTS still works for a little while, but testing happens mostly only on Ubuntu 22.04-LTS and 24.04-LTS.
+
+     Required 64-Bit GStreamer 1.22.5 MSVC on Microsoft Windows for both Matlab and Octave. GStreamer 1.18.6 or later recommended on macOS.
+
+     This was the last version that was free of cost to use on Apple macOS and Microsoft Windows.
+     Future versions will require a paid license key for macOS and Windows, whereas the Linux versions
+     remain free to use until future notice.
 
 `Psychtoolbox-3.0.18`
    : A snapshot of the code as of 17th February 2023: This was the final 3.0.18 release

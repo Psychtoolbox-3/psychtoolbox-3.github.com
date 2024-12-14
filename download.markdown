@@ -145,7 +145,7 @@ See section [Alternate Download below for how to download zip files instead.](#a
 ##### After basic Linux installation - further tweaks:
 
 Another recommendation is to install a low-latency Linux kernel for optimized
-timing, e.g., on Ubuntu flavors and probably also Debian flavors:
+timing, e.g., on Ubuntu flavors and maybe also Debian flavors:
 
     sudo apt install linux-lowlatency
 
@@ -155,6 +155,17 @@ and by running the helper scripts `XOrgConfCreator` and `XOrgConfSelector`
 to automatically create and install optimized xorg.conf configuration files
 for the X-Server. This is especially useful for hybrid graphics laptops and
 multi-display setups.
+
+If you have older AMD graphics cards with DCE display engines, ie. AMD Polaris,
+AMD Vega, or earlier, and want to use Psychtoolbox low-level features for extra
+reliability and peace of mind for visual stimulation, or if you are using a
+NVidia graphics card with proprietary driver and want precise visual onset
+timestamping, Psychtoolbox needs low-level gpu access. This is generally only
+possible on modern Linux distributions with EFI secure boot disabled in your
+firmware settings, as EFI secure boot will trigger an additional security
+mechanism in Linux, called "kernel lockdown", which will prevent these low
+level features from working. Disabling secure boot may be also needed if
+you want to access some types of serial or parallel ports.
 
 [Additional tips][using-on-linux] for installing and using Psychtoolbox on
 Linux.
@@ -177,11 +188,16 @@ folders of your liking instead:
     opengl32.dll -- Otherwise hardware accelerated visual stimulation will not work.
 
 2.  [You may also need to install the Microsoft Runtime Libraries for MSVC 2015-2019 if
-    you use Matlab instead of Octave and those have not been installed already by other
+    you use Matlab instead of Octave, and those have not been installed already by other
     software on your system. For a few use cases you may even need those if you use Octave.
     You can find installers for these at Microsoft’s site beforehand. Otherwise, if our
     installer aborted half-ways, follow the instructions it prints to the console. Or simply
     click this link to get a copy bundled with Psychtoolbox][c++ runtime]
+
+3.  Psychtoolbox 3.0.20 and later will require a paid license key to function, except for
+    a time-limited free trial period. Sales of these license keys will start early in the
+    year 2025. The version will require consent to enabling of the software network license
+    manager, but be freely usable until shortly after start of sales.
 
 #### Mac {#Mac}
 
@@ -189,10 +205,15 @@ Execute step 1 and then [skip to Alternate Download below for how to download zi
 
 1.  If you intend to use multi-media functions, or if you want fast, high-quality,
     cross-platform, consistent text rendering with Matlab, you must install the 64-Bit
-    GStreamer-1.18.5 or later runtime from [gstreamer.freedesktop.org][gstreamer-osx].
+    GStreamer-1.18.5 or later runtime from [gstreamer.freedesktop.org][gstreamer-osx] on
+    Intel based Macintosh computers, or GStreamer 1.22.0 or later on ARM based Macs.
     Make absolutely sure that you install all offered packages. [Read `help GStreamer`
     carefully for this purpose, *before downloading and installing GStreamer*.][docs-gstreamer]
 
+2.  Psychtoolbox 3.0.20 and later will require a paid license key to function, except for
+    a time-limited free trial period. Sales of these license keys will start early in the
+    year 2025. The version will require consent to enabling of the software network license
+    manager, but be freely usable until shortly after start of sales.
 
 Download of Psychtoolbox as a zip file {#alternate-download}
 ------------------------------------------------------------
@@ -203,9 +224,9 @@ zip file (or tar.gz file). We provide "Source Code" zip or tar.gz files, which
 contain a given Psychtoolbox release, including the full source code. These are
 large, due to inclusion of the source code.
 
-More often you'll want to download the smaller zip file with the version number
+More often you'll want to download the smaller zip file with the version number,
 for only the Psychtoolbox standard folder (ie. without source code), e.g.,
-something named like `3.0.19.7.zip`.
+something named like `3.0.20.0.zip`.
 
 The "Assets" section of each Psychtoolbox GitHub release contains the download links.
 
@@ -233,7 +254,8 @@ working directory to the Psychtoolbox folder (`cd` command) and then type
 
 (see [SetupPsychtoolbox][docs-setup] or type `help SetupPsychtoolbox`). The
 `SetupPsychtoolbox` script will setup your local Psychtoolbox folder for use
-with Matlab or Octave.
+with Matlab or Octave. It will also allow for first time license manager setup
+on a users computer account on macOS and Windows.
 
 Staying Up-to-Date {#upgrading}
 -------------------------------
