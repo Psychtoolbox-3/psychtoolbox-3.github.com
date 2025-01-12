@@ -1,9 +1,22 @@
 # [IsARM](IsARM)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychOneliners](PsychOneliners)
 
-resultFlag = [IsARM](IsARM)  
+resultFlag = [IsARM](IsARM)([wantTrueHostArch=0])  
   
-Returns true if the processor architecture is ARM.  
+By default (if wantTrueHostArch omitted or false) returns true if the  
+cpu architecture for which Octave or Matlab and Psychtoolbox mex files  
+are built is ARM. Otherwise it returns false.  
+  
+If wantTrueHostArch is true, then return the true machine processor  
+architecture of the host computer and operating system. This matters if  
+one is running Psychtoolbox on a non-native Octave or Matlab on a ARM  
+operating system + machine via some emulation layer, e.g., most commonly  
+Octave/Matlab for Apple Intel Macs on an Apple Silicon Mac via Rosetta2  
+emulation.  
+  
+Note: True machine detection is currently only implemented for macOS,  
+otherwise we assume scripting runtime architecture == true architecture  
+for now.  
 
 
 

@@ -4,9 +4,10 @@
 [VBLTimestamp StimulusOnsetTime FlipTimestamp Missed Beampos] = Screen('AsyncFlipBegin', windowPtr [, when] [, dontclear] [, dontsync] [, multiflip]);
 
 Schedule an asynchronous flip of front and back display surfaces for given  
-onscreen window. "windowPtr" is the id of the onscreen window whose content  
-should be shown at flip time. "when" is the requested stimulus onset time, a  
-value of zero or no argument asks for flip at next possible vertical retrace.  
+onscreen window.  
+"windowPtr" is the id of the onscreen window whose content should be shown at  
+flip time. "when" is the requested stimulus onset time, a value of zero or no  
+argument asks for flip at next possible vertical retrace.  
 For the meaning and explanation of all other parameters, see the help for  
 '[Screen](Screen) [Flip](Flip)?'.  
   

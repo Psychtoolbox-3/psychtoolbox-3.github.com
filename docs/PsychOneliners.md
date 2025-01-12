@@ -50,7 +50,7 @@ Psychtoolbox:[PsychOneliners](PsychOneliners).
   [Ind2Str](Ind2Str)                 - Converts numbers to characters (decimal to base 26 conversion). Useful for character indices.  
   [Interleave](Interleave)              - Interleaves any number of arrays. Can handle different data types.  
   [IsACell](IsACell)                 - Tests (recursively--cells in cells) if a cell satisfies a user-supplied condition.  
-  [IsARM](IsARM)                   - Return if running on a processor with ARM architecture, typically a mobile or embedded system.  
+  [IsARM](IsARM)                   - Return if running on a runtime or processor with ARM architecture.  
   [IsGLES](IsGLES)                  - Return if the current rendering api in use is [OpenGL](OpenGL)-ES, the "[OpenGL](OpenGL) Embedded Subset".  
   [IsGLES1](IsGLES1)                 - Return if the current rendering api in use is [OpenGL](OpenGL)-ES 1.x.  
   [IsGUI](IsGUI)                   - Is the Matlab or Octave GUI enabled in this session?  

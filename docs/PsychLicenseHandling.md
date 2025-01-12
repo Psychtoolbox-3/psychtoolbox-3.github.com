@@ -17,8 +17,8 @@ support authentication token.
 https://www.psychtoolbox.net  
   
 The prebuilt, tested, and supported mex files included in Psychtoolbox  
-are provided by our commercial host company, Medical Innovations  
-Incubator [GmbH](GmbH), as of November 2024. Contact details are as follows:  
+are provided by our commercial host company, the Medical Innovations  
+Incubator [GmbH](GmbH), as of December 2024. Contact details are as follows:  
   
 Medical Innovations Incubator [GmbH](GmbH)  
 Eisenbahnstr. 63  
