@@ -1,0 +1,46 @@
+---
+layout: post
+title: Psychtoolbox updated
+categories: news
+author: kleinerm
+---
+
+Happy New Year!
+
+Psychtoolbox 3.0.20.1 "Appletizer SP1" was released at 12th January 2025.
+
+The complete development history can be found in our GitHub repository.
+The release tag is “3.0.20.1”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.20.1>
+
+### Compatibility changes wrt. Psychtoolbox 3.0.20.0:
+
+- None
+
+### Highlights:
+
+- None. This is a minor macOS Apple Silicon maintenance release.
+
+## macOS:
+
+- Psychtoolbox was built and tested against native Matlab R2024b and against native
+  Octave 9.3 from HomeBrew, on macOS 13.7.1 Ventura for Intel Macs, and on macOS 14.5
+  Sonoma for Apple Silicon Macs.
+
+- Try to execute same code path on Apple Silicon macOS, regardless if running under native
+  Matlab/Octave for Apple Silicon ARM, or running under Intel Matlab/Octave via Rosetta2
+  emulation. Our license management aggregate stats tell us that a non-trivial fraction of
+  users still use Matlab for Intel Macs via Rosetta2 emulation on Apple Silicon, instead of
+  the recommended native Matlab/Octave for Apple Silicon. This would cause PTB to misbehave,
+  as it would think it runs on an Intel Mac and acts accordingly, instead of adapting to the
+  special snowflake that is macOS on Apple Silicon. This will especially cause trouble with
+  visual stimulation timing and some visual stimulus presentation. Note that this fix tries
+  to fix this, but Psychtoolbox is not and will not be tested for proper compatibility and
+  quality when running under Matlab/Octave for Intel via Rosetta2 on Apple Silicon!
+  **Switching to native Matlab/Octave for Apple Silicon / ARM is strongly recommended.**
+
+- Audio demos and tests: Request standard latency instead of larger latency on Apple Silicon.
+  The lose latency requirement was only meant to accomodate RaspberryPi's, not Apple Silicon.
+
+Enjoy!
