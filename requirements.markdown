@@ -32,7 +32,7 @@ Short version
 
     64-Bit Matlab version R2024b (other versions will likely work, but are not tested for
     compatibility or supportable by us in case of trouble), and GNU Octave version 5.2 or
-    later versions on Linux, and 64-Bit [Octave version 9.2.0 on macOS][OctavemacOS] and
+    later versions on Linux, and 64-Bit [Octave version 9.3.0 on macOS][OctavemacOS] and
     [Octave 7.3.0 on MS-Windows.][OctaveForWindows]
 
 -   *Graphics card:*
@@ -193,8 +193,8 @@ Psychtoolbox should work in principle, and is supported and tested on:
    upwards of R2023b on ARM Macs, but those versions are untested and unsupportable
    in case of problems.
 
--  Octave v9.2, probably also on Octave v6.4-v9.1 (expected to work, but no longer tested).
-   [You will need to get Octave 9.2 from a package manager like HomeBrew][OctavemacOS]
+-  Octave v9.3, probably also on Octave v6.4-v9.2 (expected to work, but no longer tested).
+   [You will need to get Octave 9.3 from a package manager like HomeBrew][OctavemacOS]
    as standalone binary installers are not available.
 
 Ventura and Sonoma are the only somewhat supported versions of macOS at this point in time.
