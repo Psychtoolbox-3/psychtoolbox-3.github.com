@@ -1,0 +1,103 @@
+---
+layout: post
+title: Psychtoolbox updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.20.3 "Appletizer SP3" was released at 3rd February 2025.
+
+The complete development history can be found in our GitHub repository.
+The release tag is “3.0.20.3”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.20.3>
+
+
+[This Psychtoolbox release was sponsored by Mathworks under the year 2024/2025
+contract for small enhancements and bug fixes.](https://www.mathworks.com/solutions/neuroscience.html)
+
+### Compatibility changes wrt. Psychtoolbox 3.0.20.2:
+
+- None expected. Identical to 3.0.20.2, except for a small improvement in our
+  statistics for macOS Apple Silicon to account for Rosetta2.
+
+### Highlights:
+
+- None. This release contains minor functional and quality improvements, bug
+  fixes, and refinement of license management support for macOS and Windows in
+  the run-up to the launch of the actual paid license model / end of free trial
+  period.
+
+### All:
+
+- PsychLicenseHandling(): Add auto download and install for LM client libs.
+  Detect absence of required license manager client libraries during 'Setup' and try
+  to auto-download and install the missing crucial libraries.
+    
+  This is relevant for non-standard Psychtoolbox installations via GitHub clone or
+  checkout, download of source tree zip/tgz files, or maybe even when the deficient
+  Matlab Add-On manager will be reenabled and used in a future release, if we are lucky.
+
+  Should fix multiple trouble reports on the forum from both Windows and macOS users,
+  encountered if they download the "wrong" (ie., not recommended for beginners) zip or
+  tar.gz files for a Psychtoolbox release, instead of the recommended zip file.
+
+- Update license management libraries to Cryptlex Runtime v3.31.2.
+  Apart from minor bug fixes, the main improvement is support for system-wide
+  activations on macOS, which should be quite useful for our users on Apple macOS,
+  as one user account on a Apple machine can activate a machine license, and all users
+  on that machine should be able to use it, instead of having to repeat the procedure
+  for each user account on a machine. This was so far only possible on MS-Windows.
+
+- DrawFormattedText() and DrawFormattedText2(): Improve formatting/layout of Unicode text.
+  Make it work with double() encoded unicode under Matlab/Octave with 'wrapat' and
+  'justifytomax' layout, and per-word bounding boxes. And with text wrapping.
+
+  Over 8 hours of tinkering, but seems to work better, as tested on Ubuntu 20.04 with
+  Octave 5.2 and Matlab R2024a.
+
+- PsychtoolboxPostInstallRoutine: Prune pointless Octave path removals.
+  These are dead and pointless since a while.
+
+- Various other smaller refinements, bug fixes and documentation updates.
+
+### Linux:
+
+- Psychtoolbox was built and tested against Matlab R2024b and Octave 5.2 and later.
+
+### Windows:
+
+- Psychtoolbox was built and tested against Matlab R2024b and Octave 7.3.
+
+- Move all Matlab mexw64 mex files into PsychBasic folder, delete the now unused
+  PsychBasic/MatlabWindowsFilesR2007a subfolder, which is obsolete since a long
+  time, so get rid of it and store the Matlab mex files for Windows in the same
+  location as the Matlab mex files for Linux and macOS - the PsychBasic/ folder.
+  The file extension makes sure everything gets sorted. This may make it possible
+  to reenable "Matlab Toolbox Add-On" MLTBX support sometime in the future, although
+  more work will be needed for that.
+
+- Screen(): Improve/Fix per-pixel alpha for onscreen window transparency.
+  This used to work on WindowsXP, but got broken by some later version of
+  MS-Windows. This change should fix it on Windows 10+, at least on the tested
+  gpu's. Right now this improvement is limited to Octave, Matlab will follow in
+  the next release if testing with this does not show problems.
+
+### macOS:
+
+- Psychtoolbox was tested against native Matlab R2024b and against native Octave 9.3
+  from HomeBrew.
+
+- PsychtoolboxPostInstallRoutine: Raise minimum macOS version check to 10.13.
+  We need at least macOS 10.13 for Intel Macs and macOS 11 for Apple Silicon Macs.
+
+- Allow system-wide node-locked machine license activations, so only one user has to
+  do the activation, and then all users on that machine can use Psychtoolbox without
+  need to activate per user account.
+
+- Datapixx mex for Octave/Matlab on macOS Apple Silicon rebuilt against a more recent
+  VPixx release from 2019 instead of 2014. Still outdated, but better than before, to
+  fix possible interop problems of Apple Silicon Macs with VPixx devices. Not yet
+  tested and confirmed to make things work - Awaiting user feedback.
+
+Enjoy!

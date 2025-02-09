@@ -11,6 +11,8 @@ The release tag is “3.0.19.15”, with the full tree and commit logs under the
 
 <https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.19.15>
 
+[This Psychtoolbox release was sponsored by Mathworks under the year 2024/2025
+contract for small enhancements and bug fixes.](https://www.mathworks.com/solutions/neuroscience.html)
 
 ### Compatibility changes wrt. Psychtoolbox 3.0.19.14:
 
