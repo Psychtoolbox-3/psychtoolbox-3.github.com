@@ -220,20 +220,29 @@ Download of Psychtoolbox as a zip file {#alternate-download}
 
 If you don't want to download manually via GitHub (expert approach), or via
 convenient Linux package respositories, the typical approach is download of a
-zip file (or tar.gz file). We provide "Source Code" zip or tar.gz files, which
-contain a given Psychtoolbox release, including the full source code. These are
-large, due to inclusion of the source code.
+zip file (or tar.gz file).
 
-More often you'll want to download the smaller zip file with the version number,
-for only the Psychtoolbox standard folder (ie. without source code), e.g.,
-something named like `3.0.20.0.zip`.
+Usually you'll want to download the zip file whose name is the version number,
+and with a little box symbol to its left, for only the Psychtoolbox standard
+folder (ie. without source code), e.g., for Psychtoolbox version 3.0.20.3, it
+would be named like `3.0.20.3.zip`. See the following screenshot for the location
+of the correct download link for the correct zip file for most users:
 
-The "Assets" section of each Psychtoolbox GitHub release contains the download links.
+![Screenshot of proper zip file download link](/images/ZipFileDownloadLink.png)
+
+The "Assets" section of each Psychtoolbox GitHub release contains these download links,
+as shown in the picture.
 
 [Click this link to go to the downloads page for all official releases.][PTBReleases]
 
 Then read on how to set up your manually downloaded copy of Psychtoolbox in the
 following section. This also applies to a manually git cloned Psychtoolbox.
+
+<small>We also provide "Source Code" zip or tar.gz files, which contain a given
+Psychtoolbox release, including the full source code. These are large, due
+to inclusion of the source code. This is usually not what you want, it is
+only useful for a developers that want to dig deep!</small>
+
 
 Installation without Download or after zip file or GitHub git download {#without-download}
 ----------------------------------------------------------------------
