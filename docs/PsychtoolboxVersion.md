@@ -39,7 +39,7 @@ anything is really much of beta quality about them, they are considered
 the most stable and trustworthy releases.  
   
 \* trunk: Development prototypes, for testing and debugging by developers  
-and really adventureous users, not for production use!  
+and really adventurous users, not for production use!  
   
 \* Psychtoolbox-x.y.z: Old, no longer supported Psychtoolbox versions.  
   

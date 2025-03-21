@@ -336,8 +336,7 @@ runtime. The info struct returned by info = [PsychVRHMD](PsychVRHMD)('GetInfo');
 about hand tracking capabilities as a bitmask in info.articulatedHandTrackingSupported:  
 A value of +1 means that basic [OpenXR](OpenXR) hand tracking of finger and hand joint poses,  
 typically for both hands of a user, is supported. A value of zero means lack of  
-any support. NOTE: Current Psychtoolbox releases do not yet support hand tracking,  
-this help text is preparation for future use and subject to incompatible changes!  
+any support.  
   
 If hand tracking is requested via the keyword, and supported, then the user  
 script can request return of hand tracking sample data by calling the  
@@ -435,13 +434,13 @@ eyeTrackingSupported = Info about eye gaze tracking capabilities of the given VR
                        +1024 means that HTC's proprietary [SRAnipal](SRAnipal) eyetracking is available for  
                        more extensive gaze data reporting.  
   
-articulatedHandTrackingSupported = Info about hand tracking capabilities. A  
-value of +1 means that basic articulated hand tracking is supported, usually  
-for both hands. Zero means no support for articulated hand tracking. The hand  
-tracking methods could be based on cameras and computer-vision markerless optical  
-tracking, or on marker based tracking, or it could be, e.g., with some sensor  
-glove input device, or with any other suitable future modality supported by your  
-[OpenXR](OpenXR) runtime.  
+articulatedHandTrackingSupported = Info about hand tracking capabilities. A value of +1 means that  
+                                   basic articulated hand tracking is supported, usually for both  
+                                   hands. Zero means no support for articulated hand tracking. The  
+                                   hand tracking methods could be based on cameras and computer vision  
+                                   markerless optical tracking, or on marker based tracking, or it  
+                                   could be, e.g., with some sensor glove input device, or with any  
+                                   other suitable future modality supported by your [OpenXR](OpenXR) runtime.  
   
   
 The info struct may contain much more vendor specific information, but the above  
@@ -822,8 +821,6 @@ VR session status:
   
 +8 = Request return of articulated hand tracking information on suitable [OpenXR](OpenXR)  
      systems.  
-  
-     NOTE: This feature is NOT YET IMPLEMENTED in current Psychtoolbox releases!  
   
      Returned information may represent the latest available measured hand and  
      finger configuration data, or it may be predicted configuration information  

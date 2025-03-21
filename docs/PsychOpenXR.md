@@ -3,7 +3,7 @@
 
 [PsychOpenXR](PsychOpenXR) - A high level driver for [OpenXR](OpenXR) supported XR hardware.  
   
-Copyright (c) 2022-2023 Mario Kleiner. Licensed to you under the MIT license.  
+Copyright (c) 2022-2025 Mario Kleiner. Licensed to you under the MIT license.  
 Our underlying [PsychOpenXRCore](PsychOpenXRCore) mex driver builds against the Khronos [OpenXR](OpenXR) SDK public  
 headers, and links against the [OpenXR](OpenXR) open-source dynamic loader, to implement the  
 interface to a system-installed [OpenXR](OpenXR) runtime. These components are dual-licensed by  
@@ -326,8 +326,7 @@ runtime. The info struct returned by info = [PsychVRHMD](PsychVRHMD)('GetInfo');
 about hand tracking capabilities as a bitmask in info.articulatedHandTrackingSupported:  
 A value of +1 means that basic [OpenXR](OpenXR) hand tracking of finger and hand joint poses,  
 typically for both hands of a user, is supported. A value of zero means lack of  
-any support. NOTE: Current Psychtoolbox releases do not yet support hand tracking,  
-this help text is preparation for future use and subject to incompatible changes!  
+any support.  
   
 If hand tracking is requested via the keyword, and supported, then the user  
 script can request return of hand tracking sample data by calling the  
@@ -380,25 +379,47 @@ handle = Driver internal handle for the specific device.
 driver = Function handle to the actual driver for the device, e.g., @[PsychOpenXR](PsychOpenXR).  
 type   = Defines the type/vendor of the device, e.g., 'OpenXR'.  
 modelName = Name string with the name of the model of the device, e.g., 'Rift DK2'.  
+  
 separateEyePosesSupported = 1 if use of [PsychOpenXR](PsychOpenXR)('GetEyePose') will improve  
                             the quality of the VR experience, 0 if no improvement  
                             is to be expected, so 'GetEyePose' can be avoided  
                             to save processing time without a loss of quality.  
                             This \*always\* returns 0 on this [PsychOpenXR](PsychOpenXR) driver.  
   
-eyeTrackingSupported = Info about eye gaze tracking capabilities. A value  
-of +1 means at least one gaze vector is reported. A value of +2 means  
-reporting of binocular per-eye tracking data is supported. A value of  
-+1024 means that HTC's proprietary [SRAnipal](SRAnipal) eyetracking is available for  
-more extensive gaze data reporting.  
   
-articulatedHandTrackingSupported = Info about hand tracking capabilities. A  
-value of +1 means that basic articulated hand tracking is supported, usually  
-for both hands. Zero means no support for articulated hand tracking. The hand  
-tracking methods could be based on cameras and computer-vision markerless optical  
-tracking, or on marker based tracking, or it could be, e.g., with some sensor  
-glove input device, or with any other suitable future modality supported by your  
-[OpenXR](OpenXR) runtime.  
+[VRControllersSupported](VRControllersSupported) = 1 if use of [PsychVRHMD](PsychVRHMD)('GetInputState') will provide input  
+                           from actual dedicated VR controllers. Value is 0 if  
+                           controllers are only emulated to some limited degree,  
+                           e.g., by abusing a regular keyboard as a button controller,  
+                           ie. mapping keyboard keys to OVR.Button\_XXX buttons.  
+  
+handTrackingSupported = 1 if [PsychVRHMD](PsychVRHMD)('PrepareRender') with reqmask +2 will provide  
+                          valid tracked hand controller info, 0 if this is not supported  
+                          and will just report fake values. A driver may report 1 here but  
+                          still don't provide meaningful info at runtime, e.g., if required  
+                          tracking hardware is missing or gets disconnected. The flag  
+                          just aids extra performance optimizations in your code.  
+  
+hapticFeedbackSupported = 1 if basic haptic feedback is supported in principle on some controllers.  
+                            0 otherwise. A flag of zero means no haptic feedback support, but  
+                            a flag of 1 may still mean no actual feedback, e.g., if suitable  
+                            hardware is not configured and present. Flags higher than 1 can  
+                            signal presence of more advanced haptic feedback, so you should  
+                            test for a setting == 1 to know if [PsychVRHMD](PsychVRHMD)('HapticPulse') works  
+                            in principle, which is considered basic feedback ability.  
+  
+eyeTrackingSupported = Info about eye gaze tracking capabilities. A value of +1 means at least one  
+                       gaze vector is reported. A value of +2 means reporting of binocular per-eye  
+                       tracking data is supported. A value of +1024 means that HTC's proprietary  
+                       [SRAnipal](SRAnipal) eyetracking is available for more extensive gaze data reporting.  
+  
+articulatedHandTrackingSupported = Info about hand tracking capabilities. A value of +1 means that  
+                                   basic articulated hand tracking is supported, usually for both  
+                                   hands. Zero means no support for articulated hand tracking. The  
+                                   hand tracking methods could be based on cameras and computer vision  
+                                   markerless optical tracking, or on marker based tracking, or it  
+                                   could be, e.g., with some sensor glove input device, or with any  
+                                   other suitable future modality supported by your [OpenXR](OpenXR) runtime.  
   
   
 The returned struct may contain more information, but the fields mentioned  
@@ -791,8 +812,6 @@ VR session status:
   
 +8 = Request return of articulated hand tracking information on suitable [OpenXR](OpenXR)  
      systems.  
-  
-     NOTE: This feature is NOT YET IMPLEMENTED in current Psychtoolbox releases!  
   
      Returned information may represent the latest available measured hand and  
      finger configuration data, or it may be predicted configuration information  

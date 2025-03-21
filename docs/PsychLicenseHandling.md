@@ -22,7 +22,7 @@ Incubator [GmbH](GmbH), as of December 2024. Contact details are as follows:
   
 Medical Innovations Incubator [GmbH](GmbH)  
 Eisenbahnstr. 63  
-72070 Tübingen  
+72072 Tübingen  
 Germany  
   
 Commercial register: HRB 751684  
