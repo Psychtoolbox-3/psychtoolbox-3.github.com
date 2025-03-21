@@ -1,0 +1,85 @@
+---
+layout: post
+title: Psychtoolbox updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.20.4 "Sleight of Hand" was released at 21st March 2025.
+
+The complete development history can be found in our GitHub repository.
+The release tag is “3.0.20.4”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.20.4>
+
+[This Psychtoolbox release was sponsored by Mathworks under the year 2024/2025
+contract for significant enhancements, sponsoring the OpenXR hand tracking
+support as major new feature.](https://www.mathworks.com/solutions/neuroscience.html)
+
+### Compatibility changes wrt. Psychtoolbox 3.0.20.3:
+
+- None.
+
+### Highlights:
+
+- OpenXR articulated handtracking and fingertracking support for VR applications.
+  Sponsored by Mathworks.
+
+### All:
+
+- We now have OpenXR hand tracking support via our OpenXR driver, utilizing
+  the XR_EXT_hand_tracking OpenXR extension! This works on Linux and Windows
+  with any articulated hand tracking device that has suitable runtime support.
+  Tested with Monado Mercury computer vision hand tracker and UltraLeap
+  Leapmotion v2 vision based hand tracker on Linux Ubuntu 22.04/24.04 and on
+  MS-Windows 10, both with Monado and SteamVR, Octave and Matlab.
+
+  The extended ``VRInputStuffTest.m`` demo demonstrates this new feature on
+  supported VR hand tracking hardware if the optional function parameter
+  `withHandTracking` is provided with a non-zero value. Tracked right and
+  left hands of the user are then visualized.
+
+  Thanks to Mathworks for sponsoring this work!
+
+- PsychLicenseHandling(): Refine auto download and install for LM client libs.
+
+- Various other smaller refinements, bug fixes and documentation updates.
+
+### Linux:
+
+- Psychtoolbox was built and tested against Matlab R2024a and Octave 5.2 and later.
+
+- Our OpenXR VR/AR/MR/XR driver can now use articulated hand trackers to track
+  a users hand and finger movements and configuration. Tested with a Ultraleap
+  Leapmotion v2 controller under SteamVR and Monado runtimes with a real VR HMD
+  and a simulated HMD, as well as under Monado with Monado's Open source Mercury
+  hand tracker on a simulated NorthStar HMD and with a Luxonis W-Pro smart camera.
+
+### Windows:
+
+- Psychtoolbox was built and tested against Matlab R2024a and Octave 7.3.
+
+- Screen(): Improve/Fix per-pixel alpha for onscreen window transparency, now also
+  on Matlab, not just Octave!
+
+  This used to work on WindowsXP, but got broken by some later version of
+  MS-Windows. This change should fix it on Windows 10+, at least on the tested
+  gpu's from Intel, AMD and NVidia.
+
+- Screen(): Whenever GStreamer is used, disallow MMCSS scheduling. This is a
+  workaround for a GStreamer bug present since at least GStreamer 1.22. If `Priority(1)`
+  was called in a script before `Screen('OpenMovie')` to enable Realtime scheduling,
+  it would end with a crash during movie playback. See GitHub issue #857 reported
+  by Diederick Niehorster for the background info.
+
+- Our OpenXR VR/AR/MR/XR driver can now use articulated hand trackers to track
+  a users hand and finger movements and configuration. Tested with a Ultraleap
+  Leapmotion v2 controller under SteamVR runtime with a real VR HMD.
+
+### macOS:
+
+- Psychtoolbox was built and tested against native Matlab R2024a and against native
+  Octave 9.4 from HomeBrew, on macOS 13.7.1 Ventura for Intel Macs, and on macOS 14.5
+  Sonoma for Apple Silicon Macs.
+
+Enjoy!

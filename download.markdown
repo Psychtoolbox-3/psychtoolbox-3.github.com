@@ -220,15 +220,20 @@ Download of Psychtoolbox as a zip file {#alternate-download}
 
 If you don't want to download manually via GitHub (expert approach), or via
 convenient Linux package respositories, the typical approach is download of a
-zip file (or tar.gz file).
+zip file. **You generally do not want to install via the Matlab Add-On package
+manager! The Add-On package manager has serious limitations and can cause
+problems!**
 
-Usually you'll want to download the zip file whose name is the version number,
+**Usually you'll want to download the zip file whose name is the version number,
 and with a little box symbol to its left, for only the Psychtoolbox standard
-folder (ie. without source code), e.g., for Psychtoolbox version 3.0.20.3, it
-would be named like `3.0.20.3.zip`. See the following screenshot for the location
+folder** (ie. without source code), e.g., for Psychtoolbox version 3.0.20.4, it
+would be named like `3.0.20.4.zip`. See the following screenshot for the location
 of the correct download link for the correct zip file for most users:
 
 ![Screenshot of proper zip file download link](/images/ZipFileDownloadLink.png)
+
+[For the latest release zip file, click this link.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/latest/download/3.0.20.4.zip)
+
 
 The "Assets" section of each Psychtoolbox GitHub release contains these download links,
 as shown in the picture.
