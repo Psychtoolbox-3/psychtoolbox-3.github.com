@@ -32,7 +32,7 @@ Short version
 
     64-Bit Matlab version R2024b (other versions will likely work, but are not tested for
     compatibility or supportable by us in case of trouble), and GNU Octave version 5.2 or
-    later versions on Linux, and 64-Bit [Octave version 9.3.0 on macOS][OctavemacOS] and
+    later versions on Linux, and 64-Bit [Octave version 9.4.0 on macOS][OctavemacOS] and
     [Octave 7.3.0 on MS-Windows.][OctaveForWindows]
 
 -   *Graphics card:*
