@@ -1,0 +1,75 @@
+---
+layout: post
+title: Psychtoolbox updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.21.0 "Fruity Aspirational Cashcow" was released at 31st March 2025.
+
+You can download it as a zip file from the following link:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/download/3.0.21.0/3.0.21.0.zip>
+
+**This marks the end of life and any and all support for Psychtoolbox 3.0.20,
+what a short but eventful life it had! This release is strongly recommended
+to upgrade to if you are a user of Psychtoolbox 3.0.20 on macOS or Windows,
+as it allows most reliable and smooth use under the new paid software license
+subscription model that launches today, the 31st of March 2025.**
+
+The complete development history can be found in our GitHub repository.
+The release tag is “3.0.21.0”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.21.0>
+
+[This Psychtoolbox release was sponsored by Mathworks under the year 2024/2025
+contract for significant enhancements, sponsoring the OpenXR hand tracking
+support as major new feature.](https://www.mathworks.com/solutions/neuroscience.html)
+
+### Compatibility changes wrt. Psychtoolbox 3.0.20.4:
+
+- None.
+
+### Highlights:
+
+- Only improvements for license management for a hopefully smooth imminent start
+  of the new software subscription licensing model on Apple macOS and MS-Windows.
+
+- We strongly recommend upgrading from Psychtoolbox 3.0.20 to 3.0.21 at your
+  earliest convenience if you are a macOS or MS-Windows user, which will require
+  a paid subscription license for versions 3.0.20 and later very soon! Previous
+  users of Psychtoolbox 3.0.20 will have until 14th April 2025 to buy a license,
+  as their free trial will run out during that day. New users will have a 14 day
+  free trial on a given machine until they have to buy and activate a license.
+
+- This release is probably one of the very last ones, possibly the last one, to
+  support almost end-of-life Ubuntu 20.04-LTS or other Linux distributions older
+  than Ubuntu 22.04.5-LTS and equivalent, e.g., Debian GNU/Linux 12.0 (Bookworm).
+
+### All:
+
+- Improvements to license management via PsychLicenseManagement(); for imminent
+  launch of the new software licensing business model on MS-Windows and macOS:
+
+  - Allow a configurable maximum offline time (grace period) of more than 30 days.
+  - Improved status messages.
+  - Built in "News" push message support.
+  - Support for offline "air-gapped" activation of licenses for select customers.
+
+- Various other smaller refinements, bug fixes and documentation updates.
+
+### Linux:
+
+- Psychtoolbox was built and tested against Matlab R2024a and Octave 5.2 and later.
+
+### Windows:
+
+- Psychtoolbox was built and tested against Matlab R2024a and Octave 7.3.
+
+### macOS:
+
+- Psychtoolbox was built and tested against native Matlab R2024a and against native
+  Octave 9.4 from HomeBrew, on macOS 13.7.4 Ventura for Intel Macs, and on macOS 14.5
+  Sonoma for Apple Silicon Macs.
+
+Enjoy!
