@@ -173,6 +173,7 @@ Linux.
 #### Windows {#Windows}
 
 Execute steps 1 and 2 below and then [skip to Alternate Download below for how to download zip files instead.](#alternate-download)
+We strongly recommend use of Psychtoolbox 3.0.21 or later, not version 3.0.20.
 
 Filesystem locations given here are examples. You could choose other disc drives or
 folders of your liking instead:
@@ -195,13 +196,15 @@ folders of your liking instead:
     click this link to get a copy bundled with Psychtoolbox][c++ runtime]
 
 3.  Psychtoolbox 3.0.20 and later will require a paid license key to function, except for
-    a time-limited free trial period. Sales of these license keys will start early in the
-    year 2025. The version will require consent to enabling of the software network license
-    manager, but be freely usable until shortly after start of sales.
+    a time-limited 14 days free trial period. The version will require consent to enabling
+    of the software network license manager, and then is freely usable until 14 days after 
+    first use on a machine, or until 14th of April 2025 in case of machines first used
+    before start of April 2025, whatever end date comes later.
 
 #### Mac {#Mac}
 
 Execute step 1 and then [skip to Alternate Download below for how to download zip files instead.](#alternate-download)
+We strongly recommend use of Psychtoolbox 3.0.21 or later, not version 3.0.20.
 
 1.  If you intend to use multi-media functions, or if you want fast, high-quality,
     cross-platform, consistent text rendering with Matlab, you must install the 64-Bit
@@ -211,9 +214,10 @@ Execute step 1 and then [skip to Alternate Download below for how to download zi
     carefully for this purpose, *before downloading and installing GStreamer*.][docs-gstreamer]
 
 2.  Psychtoolbox 3.0.20 and later will require a paid license key to function, except for
-    a time-limited free trial period. Sales of these license keys will start early in the
-    year 2025. The version will require consent to enabling of the software network license
-    manager, but be freely usable until shortly after start of sales.
+    a time-limited 14 days free trial period. The version will require consent to enabling
+    of the software network license manager, and then is freely usable until 14 days after
+    first use on a machine, or until 14th of April 2025 in case of machines first used
+    before start of April 2025, whatever end date comes later.
 
 Download of Psychtoolbox as a zip file {#alternate-download}
 ------------------------------------------------------------
@@ -226,13 +230,13 @@ problems!**
 
 **Usually you'll want to download the zip file whose name is the version number,
 and with a little box symbol to its left, for only the Psychtoolbox standard
-folder** (ie. without source code), e.g., for Psychtoolbox version 3.0.20.4, it
-would be named like `3.0.20.4.zip`. See the following screenshot for the location
+folder** (ie. without source code), e.g., for Psychtoolbox version 3.0.21.0, it
+would be named like `3.0.21.0.zip`. See the following screenshot for the location
 of the correct download link for the correct zip file for most users:
 
 ![Screenshot of proper zip file download link](/images/ZipFileDownloadLink.png)
 
-[For the latest release zip file, click this link.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/latest/download/3.0.20.4.zip)
+[For the latest release zip file, click this link.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/latest/download/3.0.21.0.zip)
 
 
 The "Assets" section of each Psychtoolbox GitHub release contains these download links,
@@ -270,6 +274,10 @@ working directory to the Psychtoolbox folder (`cd` command) and then type
 `SetupPsychtoolbox` script will setup your local Psychtoolbox folder for use
 with Matlab or Octave. It will also allow for first time license manager setup
 on a users computer account on macOS and Windows.
+
+Note that as of Psychtoolbox 3.0.20 or later, you will need to purchase a
+license key for Psychtoolbox on Apple macOS and Microsoft Windows, once
+your 14 days free trial ends for a given machine.
 
 Staying Up-to-Date {#upgrading}
 -------------------------------

@@ -60,9 +60,10 @@ which we can't count.
 The Psychtoolbox [forum][forum] has over 1600 members and about 4 messages a day.
 Principal investigators and their collaborators have identified at least 127
 [#grant-supported projects](../grants) that use it. According to Google scholar,
-over 37947 articles [cite](../citations) it.
+over 40000 articles [cite](../citations) it.
 
-Commercial support and services around Psychtoolbox are available on the commercial
+Paid subscription licenses for the paid Apple macOS and Microsoft Windows editions,
+commercial support, and services around Psychtoolbox are available on the commercial
 companion website [www.psychtoolbox.net](https://www.psychtoolbox.net).
 
 The following link is a PDF file with the slides of a presentation held at ECVP
@@ -74,7 +75,7 @@ about using the new features of Psychtoolbox-3:
 
 Good luck programming.
 
-Mario Kleiner, David Brainard, Denis Pelli, Chris Broussard, Tobias Wolf, Diederick Niehorster
+Mario Kleiner, Celia Foster, David Brainard, Denis Pelli, Chris Broussard, Tobias Wolf, Diederick Niehorster
 
 [The Developers](developers)
 

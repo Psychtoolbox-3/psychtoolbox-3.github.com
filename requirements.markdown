@@ -135,7 +135,7 @@ Macintosh computers under
    Octave 5.x, 6.x, 7.x and 8.x on recent distributions.
 
 Psychtoolbox testing and development occurs mainly on the two most recent Ubuntu
-Linux LTS releases or flavors of them, currently Ubuntu 22.04.5-LTS and 24.04.1-LTS.
+Linux LTS releases or flavors of them, currently Ubuntu 22.04.5-LTS and 24.04.2-LTS.
 
 Distributions older than Ubuntu 20.04-LTS are no longer supported since Psychtoolbox
 3.0.18, and Ubuntu 20.04-LTS support is scheduled for removal soon, as that operating
@@ -180,21 +180,21 @@ Psychtoolbox should work in principle, and is supported and tested on:
 -  macOS 13 "Ventura" for Intel Macs. Maybe it also (partially) works on macOS
    10.13 - macOS 12 (no longer tested), but certainly not on older macOS versions.
    Reasonable presentation timing reliability needs a properly installed and setup
-   PsychtoolboxKernelDriver on Intel, NVidia graphics and on AMD graphics cards up
+   PsychtoolboxKernelDriver on Intel, NVidia graphics, and on AMD graphics cards up
    to Polaris, ie., not the recent AMD Navi RDNA or AMD Vega gpu's used in some year
    2018 and later MacBookPro machines.
 
 -  macOS 14 "Sonoma" for Apple Silicon ARM Macs. It may also work on macOS 11 - 13,
    but with known limitations on any macOS version older than macOS 13, and it is
    not tested or supportable on macOS 13 or earlier. User feedback suggests it works
-   fine on macOS 15 "Sequioa", but this isn't yet tested by us.
+   fine on macOS 15 "Sequoia", but this isn't yet tested by us.
 
 -  Matlab R2024b, likely older recent versions upwards of R2014b on Intel Macs, and
    upwards of R2023b on ARM Macs, but those versions are untested and unsupportable
    in case of problems.
 
--  Octave v9.3, probably also on Octave v6.4-v9.2 (expected to work, but no longer tested).
-   [You will need to get Octave 9.3 from a package manager like HomeBrew][OctavemacOS]
+-  Octave v9.4, probably also on Octave v6.4-v9.3 (expected to work, but no longer tested).
+   [You will need to get Octave 9.4 from a package manager like HomeBrew][OctavemacOS]
    as standalone binary installers are not available.
 
 Ventura and Sonoma are the only somewhat supported versions of macOS at this point in time.
@@ -211,7 +211,7 @@ and would only be fixable by Apple.
 _macOS is sometimes fragile for visual stimulation, or DAQ digital/analog i/o, so running
 real data collection using macOS can bring you unreliable results_.
 
-**macOS 15 is not officially supported yet, but expected to work**
+**macOS 15 is not officially supported and tested yet, but fully expected to work**
 
 [See this link for reference about the current state of Apple Silicon Macs.][AppleM1]
 
@@ -335,8 +335,10 @@ Basic hardware requirements
 -   Intel PCs: Any Intel-compatible PC that is capable of running the
     64-bit versions of Microsoft Windows-10 22H2, or the 64-bit versions of
     GNU/Linux Ubuntu 20.04 LTS or later. Ubuntu 22.04 LTS or 24.04-LTS is
-    recommended, as Ubuntu 20.04 LTS support will be phased out soon, due
-    to lack of resources, and is already only very lightly tested anymore.
+    recommended, as Ubuntu 20.04 LTS support will be phased out very soon,
+    due to lack of resources, and because it will reach end of life in April
+    2025 and thereby lose standard support by its vendor. It is already only
+    very lightly tested anymore.
 
 -   Intel Macs: _Not recommended anymore, but possibly workable for some uses_
     Any Intel-based Macintosh computer that is capable of running 64-Bit macOS
@@ -351,9 +353,9 @@ Basic hardware requirements
     framebuffers are still unfixably broken, and some machines may still have
     problems, e.g., the new MacBookPro 2019 16 inch. So for visual stimulation
     there essentially doesn't exist any supported Apple hardware that would work
-    acceptably under macOS in every configurations, although there exist various
-    Intel based Macs that should work fine in many bread and butter standard
-    configurations if set up correctly by users following our instructions,
+    acceptably under macOS in every configuration, although there exist various
+    Intel based Macs that should work fine in many typical "bread and butter"
+    standard configurations if set up correctly by users following our instructions,
     especially installation of the PsychtoolboxKernelDriver on Intel, NVidia
     and older AMD graphics (not AMD Vega or AMD Navi in the latest Intel Mac
     models - AMD graphics in the 2018 and later models may be of the unsupported
@@ -479,4 +481,3 @@ often even for single-display stimulation on a multi-display setup.
   [AppleM1]: https://psychtoolbox.discourse.group/t/using-toolbox-with-big-sur-and-m1-macbook/3599/17
   [T2Linux]: https://t2linux.org/
   [T1Linux]: https://github.com/Dunedan/mbp-2016-linux
-
