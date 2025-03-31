@@ -48,6 +48,12 @@ use period to its maximum duration. When connected to the internet,
 Psychtoolbox will sync with the server at the first use in a session and  
 periodically every few hours.  
   
+If your local environments firewall prevents online license management from  
+working, see the section at the bottom for how to add firewall exception rules  
+to make it work anyway. Below that section you will also find instructions for  
+operating in a fully offline "air gapped" environment without any internet access.  
+The latter may require specially configured licenses, as our default licenses do  
+not support fully offline use.  
   
 # Subfunctions and their meaning  
   
@@ -99,6 +105,64 @@ currently active license.
 machine has a properly paid, valid and active license associated with it.  
 Our professional support personnel may ask you to provide such a token in  
 some cases.  
+  
+[PsychLicenseHandling](PsychLicenseHandling)('News');  
+- Print latest stored news about Psychtoolbox, and also specifically related to  
+this license and activations. Psychtoolbox prints those messages automatically  
+once when they are new. This function will print them even if they have been  
+printed before.  
+  
+  
+# USE IN STRICTLY FIREWALLED ENVIRONMENTS  
+  
+If your firewall is blocking internet connections to our license servers,  
+you can configure it as follows to allow connecting to the license servers.  
+Follow the most recent instructions on this website for passthrough for EU data centers:  
+  
+https://docs.cryptlex.com/node-locked-licenses/proxies-and-firewall\#for-our-eu-data-center  
+  
+As of March 2025, the following configuration would be needed, but check above  
+website for up to date informations if in doubt:  
+  
+### The following IP addresses and URL should be whitelisted:  
+  
+   IP Addresses to Whitelist:  
+       75.2.113.112  
+       99.83.149.57  
+  
+   Web API URL to Whitelist:  
+       https://api.eu.cryptlex.com:443  
+  
+# OFFLINE USE IN AIR GAPPED ENVIRONMENTS  
+  
+Some non-standard software subscription licenses allow offline activation and  
+deactivation by use of the customer portal and passing forth and back offline  
+activation and deactivation request and response files. This allows use in air-  
+gapped environments without access to the public internet or to our license  
+servers. If your purchased license supports this, the functions are as follows:  
+  
+[PsychLicenseHandling](PsychLicenseHandling)('ActivateEnrolledKeyOffline', pathToOfflineRequestResponseFile);  
+- Either create an offline activation request file under the specified path/filename,  
+which allows creation of an offline activation response file in the customer portal,  
+or reads such an offline activation response file and activates your local machine.  
+  
+E.g., after enrolling a license key via [PsychLicenseHandling](PsychLicenseHandling)('Setup') or  
+[PsychLicenseHandling](PsychLicenseHandling)('Activate', licenseKey); do the following:  
+  
+1. [PsychLicenseHandling](PsychLicenseHandling)('ActivateEnrolledKeyOffline', 'offlineRequest.dat');  
+  
+2. Login to customer portal and upload 'offlineRequest.dat' to create offline  
+   response file, downloaded to the file 'offlineResponse.dat'.  
+  
+3. [PsychLicenseHandling](PsychLicenseHandling)('ActivateEnrolledKeyOffline', 'offlineResponse.dat') to  
+   activate this machine.  
+  
+[PsychLicenseHandling](PsychLicenseHandling)('DeactivateEnrolledKeyOffline', pathToOfflineProofFile);  
+- Deactivate the machine locally and write a deactivation proof file into the  
+path/filename 'pathToOfflineProofFile'. You can upload that proof file into  
+the customer portal to deactivate the machine in the license servers, so the  
+machine activation that has been freed up can be reused on a different machine.  
+Not all licenses allow offline deactivation of once activated machines.  
   
 
 
