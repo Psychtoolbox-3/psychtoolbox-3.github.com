@@ -4,22 +4,12 @@ title: Flavors and Versions
 categories: getting-started
 ---
 
-By default, Psychtoolbox provides the so called **`beta`** branch or flavor.
-The **`beta`** branch provides the latest features, performance enhancements
-and bug fixes. These features have been tested by the [developers][] on the
-system configurations at their disposal and should be reasonably safe for real
-world use.
-
-However, there may be undiscovered bugs, and with the very limited resources
-new stuff needs to see real world use to shake out remaining bugs. We rely on
-*you* for the testing of new features and for feedback about problems or bugs.
-
 Versioned Releases
 ------------------
 
-The `beta` branch of PTB is normally updated for the purpose of introducing
-bug fixes, new features or incremental improvements. Thus the `beta` branch
-pushes out rolling releases.
+Psychtoolbox is normally updated for the purpose of introducing bug fixes, new
+features or incremental improvements. New releases usually habe a bump in the
+4th version number, the `z` in `3.x.y.z`.
 
 Executing the command `PsychtoolboxVersion` should return the *version number,
 flavor and revision number* of your current Psychtoolbox. The command also
@@ -27,26 +17,27 @@ prints a web URL, which points to the online change log where you can read in
 detail what has changed between different revisions. *Since 8th January 2024,
 this may no longer be the case for new Psychtoolbox downloads and updates.*
 
-Before any potentially disruptive changes are merged into the `beta` branch, we
-tag and release a new version of Psychtoolbox following the versioning scheme
+Before any potentially disruptive changes are released, we tag and release a new
+version of Psychtoolbox with the `y` bumped following the versioning scheme
 **`Psychtoolbox-3.x.y`**. Examples of such disruptive changes would be the
 discontinuation of support for an operating system, Matlab version, or a computer
 hardware platform - anything that could introduce functional regressions into your
-existing hardware and software environment. We recommend to stick with the `beta`
-branch, unless you have good reason not to do so, as it is the only officially
+existing hardware and software environment. We recommend to keep up with the latest
+release, unless you have good reason not to do so, as it is the only officially
 tested and supported branch.
 
 Previous Releases
 -----------------
 
-The following releases of old Psychtoolbox versions are available.
+The following releases of old Psychtoolbox 3.x.y versions are available.
 
 *To download and install the following versions, go to our GitHub repository
-and checkout or download the correspondlingly named Git branch.*
+and checkout or download the correspondlingly named Git branch. Or simply download
+the linked zip file with the latest release of a given 3.x.y branch.*
 
 `Psychtoolbox-3.0.20`
-   : A snapshot of the code as of 30th March 2025: This was the final 3.0.20 release
-     before start of the 3.0.21 series. 3.0.20 was the last version to support:
+   : [A snapshot of the code as of 30th March 2025: This was the final 3.0.20 release
+     before start of the 3.0.21 series. 3.0.20 was the last version to support:](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/tag/3.0.20.4)
 
       * Last version tested on macOS 12. Future versions may or may not work on the macOS 10.13-10.15 and macOS 11.x/12.x operating systems.
 
@@ -63,8 +54,8 @@ and checkout or download the correspondlingly named Git branch.*
      identical to the final 3.0.20.4 release in every aspect.
 
 `Psychtoolbox-3.0.19`
-   : A snapshot of the code as of 14th December 2024: This was the final 3.0.19 release
-     before start of the 3.0.20 series. 3.0.19 was the last version to support:
+   : [A snapshot of the code as of 14th December 2024: This was the final 3.0.19 release
+     before start of the 3.0.20 series. 3.0.19 was the last version to support](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/tag/3.0.19.16):
 
       * Last version tested on macOS 12. Future versions may or may not work on the macOS 10.13-10.15 and macOS 11.x/12.x operating systems.
 
@@ -76,9 +67,11 @@ and checkout or download the correspondlingly named Git branch.*
      Future versions will require a paid license key for macOS and Windows, whereas the Linux versions
      remain free to use until future notice.
 
+     [Download link for zip file for 3.0.19.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/download/3.0.19.16/3.0.19.16.zip)
+
 `Psychtoolbox-3.0.18`
-   : A snapshot of the code as of 17th February 2023: This was the final 3.0.18 release
-     before start of the 3.0.19 series. 3.0.18 was the last version to support:
+   : [A snapshot of the code as of 17th February 2023: This was the final 3.0.18 release
+     before start of the 3.0.19 series. 3.0.18 was the last version to support:](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/tag/3.0.18.13)
 
       * 64-Bit Octave-6.3 and 6.4 for MS-Windows and Apple macOS.
 
@@ -92,9 +85,11 @@ and checkout or download the correspondlingly named Git branch.*
 
      Requires 64-Bit GStreamer 1.18.5 MSVC on Microsoft Windows for both Matlab and Octave. GStreamer 1.18 recommended on macOS.
 
+     [Download link for zip file for 3.0.18.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/download/3.0.18.13/3.0.18.13.zip)
+
 `Psychtoolbox-3.0.17`
-   : A snapshot of the code as of beginning of October 2021: This was the final 3.0.17 release
-     before start of the 3.0.18 series. 3.0.17 was the last version to support:
+   : [A snapshot of the code as of beginning of October 2021: This was the final 3.0.17 release
+     before start of the 3.0.18 series. 3.0.17 was the last version to support:](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/tag/3.0.17.12)
 
 
       * 64-Bit Octave-6.1 and 6.2 for MS-Windows and Apple macOS.
@@ -111,8 +106,8 @@ and checkout or download the correspondlingly named Git branch.*
      Requires 64-Bit GStreamer 1.18 MSVC on Microsoft Windows for both Matlab and Octave. GStreamer 1.18 recommended on macOS.
 
 `Psychtoolbox-3.0.16`
-   : A snapshot of the code as of beginning of November 2020: This was the final 3.0.16 release
-     before start of the 3.0.17 series. 3.0.16 was the last version to support:
+   : [A snapshot of the code as of beginning of November 2020: This was the final 3.0.16 release
+     before start of the 3.0.17 series. 3.0.16 was the last version to support:](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/tag/3.0.16.8)
 
 
       * 64-Bit Octave-5 for MS-Windows and Apple macOS.
@@ -130,8 +125,8 @@ and checkout or download the correspondlingly named Git branch.*
       * Official Windows-7, Windows-8 and Windows-8.1 support. However, older versions than Windows-10 should currently continue to work with v3.0.17, but are no longer tested or guaranteed to stay compatible.
 
 `Psychtoolbox-3.0.15`
-   : A snapshot of the code as of beginning of August 2019: This was the final 3.0.15 release
-     before start of the 3.0.16 series. 3.0.15 was the last version to support:
+   : [A snapshot of the code as of beginning of August 2019: This was the final 3.0.15 release
+     before start of the 3.0.16 series. 3.0.15 was the last version to support:](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/tag/PTB_Beta-2019-07-25_V3.0.15)
      
      
       * 64-Bit Octave-4.4.1 for MS-Windows.
@@ -147,8 +142,8 @@ and checkout or download the correspondlingly named Git branch.*
 
 
 `Psychtoolbox-3.0.14`
-   : A snapshot of the code as of beginning of September 2018: This was the final 3.0.14 release
-     before start of the 3.0.15 series. 3.0.14 was the last version to support:
+   : [A snapshot of the code as of beginning of September 2018: This was the final 3.0.14 release
+     before start of the 3.0.15 series. 3.0.14 was the last version to support:](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/tag/PTB_Beta-2018-05-26_V3.0.14)
      
      
       * 64-Bit Octave-4.2 for MS-Windows.
