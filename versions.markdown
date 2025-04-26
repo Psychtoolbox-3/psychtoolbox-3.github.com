@@ -87,6 +87,8 @@ the linked zip file with the latest release of a given 3.x.y branch.*
 
      Requires 64-Bit GStreamer 1.18.5 MSVC on Microsoft Windows for both Matlab and Octave. GStreamer 1.18 recommended on macOS.
 
+     [Download link for zip file for 3.0.18.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/archive/refs/heads/Psychtoolbox-3.0.18.zip)
+
 `Psychtoolbox-3.0.17`
    : [A snapshot of the code as of beginning of October 2021: This was the final 3.0.17 release
      before start of the 3.0.18 series. 3.0.17 was the last version to support:](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/tag/3.0.17.12)
@@ -104,6 +106,8 @@ the linked zip file with the latest release of a given 3.x.y branch.*
       * Due to a bug, this version only runs on macOS 10.14 Mojave and later, instead of 10.11 El Capitan and later.
 
      Requires 64-Bit GStreamer 1.18 MSVC on Microsoft Windows for both Matlab and Octave. GStreamer 1.18 recommended on macOS.
+
+     [Download link for zip file for 3.0.17](https://github.com/Psychtoolbox-3/Psychtoolbox-3/archive/refs/heads/Psychtoolbox-3.0.17.zip)
 
 `Psychtoolbox-3.0.16`
    : [A snapshot of the code as of beginning of November 2020: This was the final 3.0.16 release
@@ -124,6 +128,8 @@ the linked zip file with the latest release of a given 3.x.y branch.*
 
       * Official Windows-7, Windows-8 and Windows-8.1 support. However, older versions than Windows-10 should currently continue to work with v3.0.17, but are no longer tested or guaranteed to stay compatible.
 
+     [Download link for zip file for 3.0.16.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/archive/refs/heads/Psychtoolbox-3.0.16.zip)
+
 `Psychtoolbox-3.0.15`
    : [A snapshot of the code as of beginning of August 2019: This was the final 3.0.15 release
      before start of the 3.0.16 series. 3.0.15 was the last version to support:](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/tag/PTB_Beta-2019-07-25_V3.0.15)
@@ -140,6 +146,7 @@ the linked zip file with the latest release of a given 3.x.y branch.*
       
       * Linux Ubuntu 14.04 LTS or other distributions with GStreamer versions older than 1.4.0.
 
+     [Download link for zip file for 3.0.15.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/archive/refs/heads/Psychtoolbox-3.0.15.zip)
 
 `Psychtoolbox-3.0.14`
    : [A snapshot of the code as of beginning of September 2018: This was the final 3.0.14 release
@@ -157,10 +164,11 @@ the linked zip file with the latest release of a given 3.x.y branch.*
       need to use Psychtoolbox 3.0.15 or later if you want a WASAPI based replacement for reasonably
       good sound support on Windows.][AudioHW]
 
+     [Download link for zip file for 3.0.14.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/archive/refs/heads/Psychtoolbox-3.0.14.zip)
 
 `Psychtoolbox-3.0.13`
-   : A snapshot of the code as of end of December 2016: This was the final 3.0.13 release
-     before start of the 3.0.14 series. 3.0.13 was the last version to support:
+   : [A snapshot of the code as of end of December 2016: This was the final 3.0.13 release
+     before start of the 3.0.14 series. 3.0.13 was the last version to support:](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/tag/PTB_Beta-2016-12-06_V3.0.13)
      
      
       * 64-Bit Octave-4.0 for MS-Windows.
@@ -183,9 +191,11 @@ the linked zip file with the latest release of a given 3.x.y branch.*
       
       * OSX 10.11 El Capitan and OSX 10.12 Sierra. Only macOS Sierra is tested and somewhat supported in case of trouble.
 
+     [Download link for zip file for 3.0.13.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/archive/refs/heads/Psychtoolbox-3.0.13.zip)
+
 `Psychtoolbox-3.0.12`
-   : A snapshot of the code as of June 2016: This was the final 3.0.12 release
-     before start of the 3.0.13 series. 3.0.12 was the last version to support:
+   : [A snapshot of the code as of June 2016: This was the final 3.0.12 release
+     before start of the 3.0.13 series. 3.0.12 was the last version to support:](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/tag/PTB_Beta-2016-05-14_V3.0.12)
      
      
       * 32-Bit Octave-4 for MS-Windows.
@@ -211,8 +221,10 @@ the linked zip file with the latest release of a given 3.x.y branch.*
       
       * On Linux i will no longer provide mex files for 32-Bit Octave for Intel machines for direct download from us. However, NeuroDebian / Debian upstream / Ubuntu upstream will continue to provide these mex files in a convenient fashion in their "app-stores", so this is not really a drawback, just something to be aware of.
 
+     [Download link for zip file for 3.0.12.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/archive/refs/heads/Psychtoolbox-3.0.12.zip)
+
 `Psychtoolbox-3.0.11`
-   : A snapshot of the code as of September 2014: This was the final 3.0.11 release
+   : [A snapshot of the code as of September 2014: This was the final 3.0.11 release
      before start of the 3.0.12 series. It was the last version that supported
      32-Bit Matlab on any operating system (specifically on Linux and Windows, as
      support for 32-Bit Matlab for OSX was cancelled already in 3.0.10). Going on, only
@@ -225,12 +237,16 @@ the linked zip file with the latest release of a given 3.x.y branch.*
      provide official support for the very latest OSX version. Psychtoolbox-3.0.11
      is also the last release to use the GStreamer-0.10 legacy multi-media framework
      for movie playback, movie writing, video capture and video recording. Future
-     releases use and require GStreamer-1.0 or later for multi-media functionality.
+     releases use and require GStreamer-1.0 or later for multi-media functionality.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/Psychtoolbox-3.0.11)
+
+     [Download link for zip file for 3.0.11.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/archive/refs/heads/Psychtoolbox-3.0.11.zip)
 
 `Psychtoolbox-3.0.10`
-   : A snapshot of the code as of July 2013: This was the final 3.0.10 release
+   : [A snapshot of the code as of July 2013: This was the final 3.0.10 release
      before start of the 3.0.11 series. It was the last version that supported
-     32-Bit Matlab on OSX.
+     32-Bit Matlab on OSX.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/Psychtoolbox-3.0.10)
+
+     [Download link for zip file for 3.0.10.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/archive/refs/heads/Psychtoolbox-3.0.10.zip)
 
 *Automated download and installation of the following legacy versions is no longer
 possible!* Click on the download link for a version, if such a link is provided,
