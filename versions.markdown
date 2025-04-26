@@ -33,7 +33,8 @@ The following releases of old Psychtoolbox 3.x.y versions are available.
 
 *To download and install the following versions, go to our GitHub repository
 and checkout or download the correspondlingly named Git branch. Or simply download
-the linked zip file with the latest release of a given 3.x.y branch.*
+the linked zip file with the latest release of a given 3.x.y branch, if any is linked,
+or click on the link to the release page for that version and navigate from there.*
 
 `Psychtoolbox-3.0.20`
    : [A snapshot of the code as of 30th March 2025: This was the final 3.0.20 release
@@ -49,9 +50,9 @@ the linked zip file with the latest release of a given 3.x.y branch.*
      This was the first version that was not free of cost to use on Apple macOS and Microsoft Windows.
      It required a paid license key for macOS and Windows.
 
-     We do not recommend use of Psychtoolbox 3.0.20, but instead recommend use of at least Psychtoolbox 3.0.21.0 if
+     *We do not recommend use of Psychtoolbox 3.0.20, but instead recommend use of at least Psychtoolbox 3.0.21.0 if
      you are on macOS or Windows. The license management has substantial improvements in 3.0.21.0, which is otherwise
-     identical to the final 3.0.20.4 release in every aspect.
+     identical to the final 3.0.20.4 release in every aspect.*
 
      [Download link for zip file for 3.0.20.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/download/3.0.20.4/3.0.20.4.zip)
 
