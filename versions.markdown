@@ -53,7 +53,7 @@ the linked zip file with the latest release of a given 3.x.y branch.*
      you are on macOS or Windows. The license management has substantial improvements in 3.0.21.0, which is otherwise
      identical to the final 3.0.20.4 release in every aspect.
 
-    [Download link for zip file for 3.0.20.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/download/3.0.20.4/3.0.20.4.zip)
+     [Download link for zip file for 3.0.20.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/download/3.0.20.4/3.0.20.4.zip)
 
 `Psychtoolbox-3.0.19`
    : [A snapshot of the code as of 14th December 2024: This was the final 3.0.19 release
