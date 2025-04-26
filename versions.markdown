@@ -53,6 +53,8 @@ the linked zip file with the latest release of a given 3.x.y branch.*
      you are on macOS or Windows. The license management has substantial improvements in 3.0.21.0, which is otherwise
      identical to the final 3.0.20.4 release in every aspect.
 
+    [Download link for zip file for 3.0.20.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/download/3.0.20.4/3.0.20.4.zip)
+
 `Psychtoolbox-3.0.19`
    : [A snapshot of the code as of 14th December 2024: This was the final 3.0.19 release
      before start of the 3.0.20 series. 3.0.19 was the last version to support](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/tag/3.0.19.16):
@@ -84,8 +86,6 @@ the linked zip file with the latest release of a given 3.x.y branch.*
       * Ubuntu Linux 20.04 LTS tested. Going forward, Ubuntu 20.04 LTS still works, but testing happens mostly only on Ubuntu 22.04-LTS.
 
      Requires 64-Bit GStreamer 1.18.5 MSVC on Microsoft Windows for both Matlab and Octave. GStreamer 1.18 recommended on macOS.
-
-     [Download link for zip file for 3.0.18.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/download/3.0.18.13/3.0.18.13.zip)
 
 `Psychtoolbox-3.0.17`
    : [A snapshot of the code as of beginning of October 2021: This was the final 3.0.17 release
