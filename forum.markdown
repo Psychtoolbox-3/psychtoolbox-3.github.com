@@ -4,33 +4,11 @@ title: Psychtoolbox Forum
 categories: getting-help
 ---
 
-### News!
-
-*We have transitioned to a new home for our user forum, after Yahoo shut down all
-their forums on extremely short notice and deleted all posted content!*
-
-The new forum is hosted at Discourse, the link to it is at the bottom of this
-page. This is a way more polished and featureful discussion group system, so
-it should also provide improved usability. We have to figure out all the new
-bells and whistles ourselves, but all the basics should be ready.
-
-People signed up to the old forum may have to (re-)sign up for the new Discourse
-forum. Much of the old content from the old YahooGroups forum has been imported
-into the new forum.
-
 The Psychtoolbox user community is quite active. The old Yahoo Groups forum had
 2,810 subscribers at the time of its shutdown by Yahoo at the end of October 2019,
 and received 24136 messages during its lifetime from 17th January 2000 to 28th
-October 2019. We hope the new forum will show as much user engagement, now that
-it is reestablished since January 2020.
-
-<!--- Disable - It is a bit pointless to show info that is multiple years outdated by now.
-![Histogram of forum postings](images/ForumUsersChart.png)
---->
-
-<!--- This is how you let Google chart api plot the chart:
-![Histogram of forum postings](http://chart.apis.google.com/chart?chxr=0,0,2000|1,2000,2019&chbh=a&chco=A2C180&chd=t:327,398,988,539,771,1084,1498,1911,1439,1524,1219,1614,1618,2076,1451,1596,1218,1212,879,681&chds=0,2000&chs=500x100&cht=bvg&chts=676767,13.5&chtt=Forum+posts+per+year&chxs=1,676767,10,0,lt,676767&chxt=y,x)
---->
+October 2019. We hope the new forum will show as much user engagement, since
+being reestablished since January 2020 on Discourse.
 
 *Please help other PTB users on the forum*. 
 
@@ -53,19 +31,13 @@ Read below how you can assist us in helping you effectively ...
 > include all relevant information 
 > 
 > - Output of `>> PsychtoolboxVersion`
-> - Which platform (Mac OS X, Windows XP/Vista/7, Linux, ...) 
+> - Which platform (macOS, Windows 10/11, Linux, ...) 
 > - A minimal code snippet that exhibits the bug you found
 > - Warnings and Errors that were printed to the console (please read them carefully)
 > - Hardware setup and relevant driver versions
 > 
 > We appreciate it when you **sign with your name and affiliation**.
 >
-> **[Answers on the forum will be provided by volunteers at their leisure, so you might
-> have to wait for quite a while for an answer, or not get an answer at all.
-> If you need expert advice on the use of Psychtoolbox, or for resolving issues,
-> with a guaranteed response in a reasonable amount of time, then please have a
-> look at our commercial paid support by clicking this link.][paid-support]**
-> 
 > **If you are a registered member of the forum, your posts won't be subject to moderation
 > delay. Your questions will show up faster and you might get answers faster. Otherwise
 > it may take between hours and days until your post shows up for others to read.**
@@ -90,4 +62,3 @@ Read below how you can assist us in helping you effectively ...
   [docs-documentation]: http://docs.psychtoolbox.org/PsychDocumentation
   [forum]: https://psychtoolbox.discourse.group
   [faq]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/wiki/FAQ
-  [paid-support]: https://www.psychtoolbox.net/license-key
