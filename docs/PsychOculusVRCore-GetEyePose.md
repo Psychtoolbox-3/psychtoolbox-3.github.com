@@ -1,6 +1,7 @@
 # [PsychOculusVRCore('GetEyePose')](PsychOculusVRCore-GetEyePose) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychOculusVRCore](PsychOculusVRCore).{mex*} subfunction
 
+[eyePose, eyeIndex] = PsychOculusVRCore('GetEyePose', oculusPtr, renderPass);
 
 Return current predicted pose vector for an eye for Oculus device 'oculusPtr'.  
 'renderPass' is the view render pass for which to provide the data: 0 = First  

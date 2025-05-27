@@ -73,6 +73,27 @@ graphics driver. Example call:
 [Screen](Screen)('ConfigureDisplay', 'RequestMinimumOutputPrecision', screenNumber,  
 minBpc);   
   
+'FineGrainedSwitchRefreshRate': Switch the video refresh rate of a given output  
+'outputId' of screen 'screenNumber'.  
+On Linux/X11 this function tries to quickly switch the video refresh rate of an  
+output in a seamless way with no or only minimum visual disruption, in a tiny  
+fraction of a second, e.g., at most one video refresh cycle. Allow for very  
+fine-grained choice of refresh rate, e.g., fractions of 1 Hz. This generally  
+only works well on some graphics cards and Linux kernels while driving Variable  
+Refresh Rate capable displays [(FreeSync]((FreeSync), [GSync](GSync), DP adaptive sync).  
+One limitation at the moment is that in a multi-display setup, your visual  
+stimulation window must be fully or at least predominantly covering the display  
+area of the primary video output monitor, as the refresh rate of only that  
+monitor will be assigned for [Screen](Screen)('[Flip](Flip)', ...) scheduling of stimulus onset  
+time. Otherwise only immediate flips at each video refresh cycle will work with  
+reliable timing. See 'help VRRSupport' for possibly more background and setup  
+info.  
+As of the year 2025 this works with [FreeSync](FreeSync) capable AMD graphics cards and  
+display devices connected via [DisplayPort](DisplayPort). Other graphics cards or display  
+devices (even HDMI VRR!) may not allow fast seamless switching. Example call:  
+actualHz = [Screen](Screen)('ConfigureDisplay', 'FineGrainedSwitchRefreshRate',  
+screenNumber, outputId, requestedHz);   
+  
 'Scanout': Retrieve or set scanout parameters for a given output 'outputId' of  
 screen 'screenNumber'. Returns a struct 'oldSettings' with the current settings  
 for that output. Only supported on Linux.  

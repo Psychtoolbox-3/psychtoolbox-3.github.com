@@ -1,6 +1,7 @@
 # [PsychOculusVRCore('GetHSWState')](PsychOculusVRCore-GetHSWState) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychOculusVRCore](PsychOculusVRCore).{mex*} subfunction
 
+showHSW = PsychOculusVRCore('GetHSWState', oculusPtr [, dismiss]);
 
 Return if health and safety warnings popup should be displayed for Oculus device  
 'oculusPtr'.  

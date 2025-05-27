@@ -64,12 +64,34 @@ to working mex files for license managed Psychtoolboxes. This function
 can be manually called by users, but by default it is called by the  
 Psychtoolbox setup/install/update routines to automate license onboarding.  
   
-[PsychLicenseHandling](PsychLicenseHandling)('Activate' [, licenseKey]);  
+[PsychLicenseHandling](PsychLicenseHandling)('SetupLicense');  
+- Like 'Setup', but always prompts for a new license key, even if a key  
+is already enrolled, or a trial is active at the moment.  
+  
+[PsychLicenseHandling](PsychLicenseHandling)('SetupGlobal');  
+- This behaves mostly like 'Setup', but it is meant for system administrators  
+or IT personnel to create a global configuration file to express consent to  
+license management on behalf of all users of this Psychtoolbox installation,  
+and also to store a license key for automatic node activation. The global  
+configuration file will be stored in the Psychtoolbox main folder, ie. the  
+folder printed by the [PsychtoolboxRoot](PsychtoolboxRoot)() function. You can use this function  
+if you use disc imaging software or similar provisioning tools to install and  
+setup a Psychtoolbox installation once as part of a provisioning image, then  
+clone the provisioning image and Psychtoolbox installation to many physical  
+machines. The global config file will cause each Psychtoolbox on each of the  
+provisioned machines to activate and setup license management and activate that  
+node at first use of Psychtoolbox.  
+  
+[PsychLicenseHandling](PsychLicenseHandling)('Activate' [, licenseKeyOrUserCredential]);  
 - Activate a paid license on a machine + operating system combination.  
 This can either use a previously enrolled license key from earlier calls  
 of [PsychLicenseHandling](PsychLicenseHandling)('Activate') or [PsychLicenseHandling](PsychLicenseHandling)('Setup'), or  
 providing a new license key to activate the machine with a new license,  
-by providing the new key in a string as optional 'licenseKey' parameter.  
+by providing the new key in a string as optional 'licenseKeyOrUserCredential'  
+parameter. Instead of a license key, one can also enter the login credentials  
+of a user account with associated license key, to fetch the associated key  
+automatically, e.g., if the account is jon.doe@doeland.us with password oink,  
+then the credentials would be the following text: jon.doe@doeland.us:oink  
   
 This function can also be used if your machine was offline longer than  
 allowed and your local activation needs to be refreshed, or if your old  

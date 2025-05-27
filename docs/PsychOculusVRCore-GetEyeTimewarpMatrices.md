@@ -1,6 +1,7 @@
 # [PsychOculusVRCore('GetEyeTimewarpMatrices')](PsychOculusVRCore-GetEyeTimewarpMatrices) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychOculusVRCore](PsychOculusVRCore).{mex*} subfunction
 
+[eyeRotStartMatrix, eyeRotEndMatrix] = PsychOculusVRCore('GetEyeTimewarpMatrices', oculusPtr, eye [, waitForTimewarpPoint=0]);
 
 Return eye warp rotation matrices for timewarped undistortion for Oculus device  
 'oculusPtr'.  

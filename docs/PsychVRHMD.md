@@ -831,7 +831,62 @@ VR session status:
      The following fields are mandatory as part of the returned state struct,  
      if hand tracking is supported and enabled and requested:  
   
-     TODO, IMPLEMENTATION OF FEATURE NOT YET FINISHED.  
+     'hand' denotes the id of the tracked hand: 1 for the left hand, 2  
+     for the right hand. 'joint' is the joint id of a specific finger or  
+     hand joint. See the list of 26 defined joints below, with symbolic  
+     names or numeric indices.  
+  
+     state.trackedHandStatus(hand) = Is the given 'hand' tracked, ie. its pose  
+                                     and possible joint configurations are  
+                                     at least partially known? 0 = No, 1 = Yes.  
+  
+     state.trackedJoints(hand, joint) = Is the given 'joint' tracked? 0 = No, 1 = Yes.  
+  
+     state.trackedJointsRadius(hand, joint) = What is the estimated radius of the given 'joint' in meters?  
+  
+     state.trackedJointsPosition(hand, 1:3, joint) = A 3 row matrix with the x, y, and z positions of the 'joint'.  
+  
+     state.trackedJointsOrientationQuat(hand, 1:4, joint) = A 4 component orientation quaternion for the 'joint'.  
+  
+     state.localJointPoseMatrix{hand} = A 3D array of [OpenGL](OpenGL) style 4x4 pose matrices describing joint position  
+                                        and orientation. Format is (:,:,joint) where 'joint' selects a 4x4 matrix  
+                                        slice for joint 'joint' on hand 'hand'.  
+  
+     state.globalJointPoseMatrix{hand} = A 3D array identical in format to localJointPoseMatrix, but transformed  
+                                         via the user supplied global 'userTransformMatrix' transformation matrix to  
+                                         the [PsychVRHMD](PsychVRHMD)('PrepareRender', ...) subfunction.  
+  
+     The following constants allow to index the returned set of 26 hand joints  
+     by symbolic names for the different parts of the fingers and hand, or you  
+     can use the numbers behind each symbolic name:  
+  
+       OVR.XR\_HAND\_JOINT\_PALM = 0 + 1;  
+       OVR.XR\_HAND\_JOINT\_WRIST = 1 + 1;  
+       OVR.XR\_HAND\_JOINT\_THUMB\_METACARPAL = 2 + 1;  
+       OVR.XR\_HAND\_JOINT\_THUMB\_PROXIMAL = 3 + 1;  
+       OVR.XR\_HAND\_JOINT\_THUMB\_DISTAL = 4 + 1;  
+       OVR.XR\_HAND\_JOINT\_THUMB\_TIP = 5 + 1;  
+       OVR.XR\_HAND\_JOINT\_INDEX\_METACARPAL = 6 + 1;  
+       OVR.XR\_HAND\_JOINT\_INDEX\_PROXIMAL = 7 + 1;  
+       OVR.XR\_HAND\_JOINT\_INDEX\_INTERMEDIATE = 8 + 1;  
+       OVR.XR\_HAND\_JOINT\_INDEX\_DISTAL = 9 + 1;  
+       OVR.XR\_HAND\_JOINT\_INDEX\_TIP = 10 + 1;  
+       OVR.XR\_HAND\_JOINT\_MIDDLE\_METACARPAL = 11 + 1;  
+       OVR.XR\_HAND\_JOINT\_MIDDLE\_PROXIMAL = 12 + 1;  
+       OVR.XR\_HAND\_JOINT\_MIDDLE\_INTERMEDIATE = 13 + 1;  
+       OVR.XR\_HAND\_JOINT\_MIDDLE\_DISTAL = 14 + 1;  
+       OVR.XR\_HAND\_JOINT\_MIDDLE\_TIP = 15 + 1;  
+       OVR.XR\_HAND\_JOINT\_RING\_METACARPAL = 16 + 1;  
+       OVR.XR\_HAND\_JOINT\_RING\_PROXIMAL = 17 + 1;  
+       OVR.XR\_HAND\_JOINT\_RING\_INTERMEDIATE = 18 + 1;  
+       OVR.XR\_HAND\_JOINT\_RING\_DISTAL = 19 + 1;  
+       OVR.XR\_HAND\_JOINT\_RING\_TIP = 20 + 1;  
+       OVR.XR\_HAND\_JOINT\_LITTLE\_METACARPAL = 21 + 1;  
+       OVR.XR\_HAND\_JOINT\_LITTLE\_PROXIMAL = 22 + 1;  
+       OVR.XR\_HAND\_JOINT\_LITTLE\_INTERMEDIATE = 23 + 1;  
+       OVR.XR\_HAND\_JOINT\_LITTLE\_DISTAL = 24 + 1;  
+       OVR.XR\_HAND\_JOINT\_LITTLE\_TIP = 25 + 1;  
+  
   
   
 More flags to follow...  

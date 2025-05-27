@@ -4,8 +4,9 @@
 [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) - Installation instructions for the [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) media framework.  
   
 Psychtoolbox uses the [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) multi-media framework for all multi-media  
-related operations. Always on MS-Windows, and on macOS when using Matlab,  
-[[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) is also needed for high quality text rendering via [Screen](Screen)('DrawText').  
+related operations. On MS-Windows, and on macOS when using Matlab,  
+[[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) is also needed for high quality text rendering via  
+[Screen](Screen)('DrawText').  
   
 All movie playback, movie creation, video capture and video recording  
 operations are based on [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)). These functions won't work without a  
@@ -15,17 +16,10 @@ cameras on Linux, where high-performance multi-camera capture works via
 libdc1394, see 'help VideoCaptureDC1394', and [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) is only needed  
 for video recording, not for live capture).  
   
-You will need at least version 1.8 of [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) on Linux, and at least  
+You will need at least version 1.20.0 of [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) on Linux, and at least  
 version 1.22.0 on MS-Windows and at least version 1.20.0 on macOS, but  
 we recommend to use the latest stable release of the version 1 series  
 tested by us (see links below).  
-  
-For limited HDR playback support on Linux, you will need at least [[GStreamer](GStreamer)][(GStreamer)]((GStreamer))  
-version 1.16 + some special modifications to your playback scripts, e.g., as  
-contained in Ubuntu 20.04-LTS. For full HDR playback support on Linux, you will  
-need at least version 1.18, e.g., as contained in Ubuntu 22.04-LTS. HDR playback  
-is not yet supported on macOS due to macOS operating system deficiencies - an  
-insufficiently advanced Apple [OpenGL](OpenGL) implementation.  
   
 ### Installation instructions:  
   
@@ -49,10 +43,7 @@ specifically add them to your system depending on your format needs.
   
 An easy test is to run [SimpleMovieDemo](SimpleMovieDemo). If it fails or only plays sound,  
 but not video, then some of the plugins are missing, e.g., the important  
-"gst-libav" plugins. For minimal HDR playback support, Ubuntu 20.04 LTS  
-would suffice. For full HDR playback support, you need Ubuntu 22.04 LTS,  
-or some 3rd party provided [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) 1.18+ packages, or packages built  
-from source.  
+"gst-libav" plugins.  
   
   
 ### MS-Windows and Apple macOS:  
@@ -90,7 +81,7 @@ file:
 <http://gstreamer.freedesktop.org/download/\>  
   
 The following [[GStreamer](GStreamer)][(GStreamer)]((GStreamer)) runtime packages have been lightly tested for compatibility  
-with Psychtoolbox 3.0.20.0, as of December 2024:  
+with Psychtoolbox 3.0.22.0, as of May 2025:  
   
 For MS-Windows: 64-Bit Intel MSVC runtime v1.22.5 for use with 64-Bit Matlab/Octave.  
   
@@ -103,8 +94,7 @@ You \*must\* install the MSVC variants of [[GStreamer](GStreamer)][(GStreamer)](
   
 <https://gstreamer.freedesktop.org/data/pkg/osx/1.18.6/gstreamer-1.0-1.18.6-x86\_64.pkg\>  
   
-Recommended and tested for both Intel and Apple Silicon as of December  
-2024 is version 1.24.10:  
+### Recommended and tested for both Intel and Apple Silicon as of May 2025 is version 1.24.10:  
   
 <https://gstreamer.freedesktop.org/data/pkg/osx/1.24.10/gstreamer-1.0-1.24.10-universal.pkg\>  
   

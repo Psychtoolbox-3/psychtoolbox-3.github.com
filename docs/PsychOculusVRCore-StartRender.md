@@ -1,6 +1,7 @@
 # [PsychOculusVRCore('StartRender')](PsychOculusVRCore-StartRender) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychOculusVRCore](PsychOculusVRCore).{mex*} subfunction
 
+[eyePoseL, eyePoseR, tracked, frameTiming] = PsychOculusVRCore('StartRender', oculusPtr);
 
 Mark start of a new 3D head tracked render cycle for Oculus device 'oculusPtr'.  
 Return values are the vectors which define the two eye cameras positions and  

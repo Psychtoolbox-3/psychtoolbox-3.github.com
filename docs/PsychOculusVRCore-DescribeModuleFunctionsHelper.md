@@ -1,6 +1,7 @@
 # [PsychOculusVRCore('DescribeModuleFunctionsHelper')](PsychOculusVRCore-DescribeModuleFunctionsHelper) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychOculusVRCore](PsychOculusVRCore).{mex*} subfunction
 
+subfunctionNames = Modulename('DescribeModuleFunctionsHelper' [, mode] [, subfunctionName]);
 
 Return a cell array of strings naming all subfunctions supported by this module  
 if the optional 'subfunctionName' argument is omitted. If 'subfunctionName' is a  

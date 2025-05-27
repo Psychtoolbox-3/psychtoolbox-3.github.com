@@ -1,6 +1,7 @@
 # [PsychOculusVRCore('GetTrackingState')](PsychOculusVRCore-GetTrackingState) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychOculusVRCore](PsychOculusVRCore).{mex*} subfunction
 
+state = PsychOculusVRCore('GetTrackingState', oculusPtr [, predictionTime=0]);
 
 Return current state of head position and orientation tracking for Oculus device  
 'oculusPtr'.  

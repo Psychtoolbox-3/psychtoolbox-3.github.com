@@ -1,6 +1,7 @@
 # [PsychOculusVRCore('Open')](PsychOculusVRCore-Open) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychOculusVRCore](PsychOculusVRCore).{mex*} subfunction
 
+[oculusPtr, modelName] = PsychOculusVRCore('Open' [, deviceIndex=0]);
 
 Open connection to Oculus VR HMD, return a 'oculusPtr' handle to it.  
   

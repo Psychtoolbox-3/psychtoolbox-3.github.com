@@ -82,6 +82,7 @@ Psychtoolbox/[PsychTests](PsychTests)/Contents.m
   [TrolandTest](TrolandTest)                     - Test colorimetric conversions.  
   [VBLSyncTest](VBLSyncTest)                     - Tests visual stimulus onset timing and timestamping.  
   [VREyetrackingTest](VREyetrackingTest)               - Test eye gaze tracking in VR/AR [HMDs](HMDs) and other XR devices.  
+  [VRRFixedRateSwitchingTest](VRRFixedRateSwitchingTest)       - Test support for fast refresh rate switching on AMD+Linux via VRR mechanisms.  
   [VRRTest](VRRTest)                         - Test support of your setup for Variable refresh rate mode.  
   [WavelengthSamplingTest](WavelengthSamplingTest)          - Test conversion between representations of wavelength sampling information.  
 

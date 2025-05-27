@@ -1,6 +1,7 @@
 # [PsychOculusVRCore('GetUndistortionParameters')](PsychOculusVRCore-GetUndistortionParameters) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychOculusVRCore](PsychOculusVRCore).{mex*} subfunction
 
+[width, height, viewPx, viewPy, viewPw, viewPh, pptax, pptay, hmdShiftx, hmdShifty, hmdShiftz, meshVertices, meshIndices, uvScaleX, uvScaleY, uvOffsetX, uvOffsetY] = PsychOculusVRCore('GetUndistortionParameters', oculusPtr, eye [, inputWidth][, inputHeight][, fov]);
 
 Return parameters needed for rendering and undistortion for Oculus device  
 'oculusPtr'.  

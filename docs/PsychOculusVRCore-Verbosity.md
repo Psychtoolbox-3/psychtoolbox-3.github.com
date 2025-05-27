@@ -1,6 +1,7 @@
 # [PsychOculusVRCore('Verbosity')](PsychOculusVRCore-Verbosity) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychOculusVRCore](PsychOculusVRCore).{mex*} subfunction
 
+oldVerbosity = PsychOculusVRCore('Verbosity' [, verbosity]);
 
 Returns and optionally sets level of 'verbosity' for driver debug output.  
 'verbosity' = New level of verbosity: 0 = Silent, 1 = Errors only, 2 = Warnings,  

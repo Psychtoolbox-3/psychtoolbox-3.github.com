@@ -1,6 +1,7 @@
 # [PsychOculusVRCore('LatencyTester')](PsychOculusVRCore-LatencyTester) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychOculusVRCore](PsychOculusVRCore).{mex*} subfunction
 
+result = PsychOculusVRCore('LatencyTester', oculusPtr, cmd);
 
 Drive or query latency tester for Oculus Rift DK2 device 'oculusPtr'.  
 'cmd' is the command code:  

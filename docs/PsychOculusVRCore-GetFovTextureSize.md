@@ -1,6 +1,7 @@
 # [PsychOculusVRCore('GetFovTextureSize')](PsychOculusVRCore-GetFovTextureSize) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychOculusVRCore](PsychOculusVRCore).{mex*} subfunction
 
+[width, height, fovPort] = PsychOculusVRCore('GetFovTextureSize', oculusPtr, eye [, fov=[HMDRecommended]][, pixelsPerDisplay=1]);
 
 Return recommended size of client renderbuffers for Oculus device 'oculusPtr'.  
 'eye' which eye to provide the size for: 0 = Left, 1 = Right.  

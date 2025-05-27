@@ -47,6 +47,5 @@ PsychOculusVRCore('[EndFrameTiming](PsychOculusVRCore-EndFrameTiming)', oculusPt
 result = PsychOculusVRCore('[LatencyTester](PsychOculusVRCore-LatencyTester)', oculusPtr, cmd);  
   
 
-  
 
 
