@@ -26,12 +26,13 @@ Short version
     or want to use special visual stimulators, e.g., from VPixx or CRS. This is due to a large
     number of bugs in the Apple operating system, unfixed by Apple. The situation on new ARM based
     Apple Silicon Macs is not yet clear and will need more evaluation. macOS 15 Sequoia is not yet
-    officially supported.
+    officially supported and tested by us, but many users already use it successfully, so it is
+    likely fine.
 
 -   *Runtime environment:*
 
-    64-Bit Matlab version R2024b (other versions will likely work, but are not tested for
-    compatibility or supportable by us in case of trouble), and GNU Octave version 5.2 or
+    64-Bit Matlab version R2024b (other older versions will likely work, but are not tested for
+    compatibility or supportable by us in case of trouble), and GNU Octave version 6.4 or
     later versions on Linux, and 64-Bit [Octave version 9.4.0 on macOS][OctavemacOS] and
     [Octave 7.3.0 on MS-Windows.][OctaveForWindows]
 
@@ -120,26 +121,26 @@ Operating systems
 ### Linux
 
 GNU/Linux is fully supported on Intel compatible PCs and suitable (== older) Apple
-Macintosh computers under
+Intel Macintosh computers under
 
 -  Matlab version R2024b. Older versions very likely work, but are no longer
    tested, or testable, or supportable by us due to lack of access to these
    versions.
 
--  GNU Octave 64-bit, versions 5.2, and also at least versions v6.1 - v8.3,
+-  GNU Octave 64-bit, versions 6.4, and also at least versions v7.1 - v8.3,
    likely also v9.x.
 
 -  Additionally, Psychtoolbox from NeuroDebian supports 32-Bit and 64-Bit
    releases of whatever version of GNU Octave ships by default with your
    distribution, e.g., also Octave 3.2 to 4.4 on older distributions, or
-   Octave 5.x, 6.x, 7.x and 8.x on recent distributions.
+   Octave 5.x, 6.x, 7.x, 8.x, 9.x and 10.x on recent distributions.
 
 Psychtoolbox testing and development occurs mainly on the two most recent Ubuntu
 Linux LTS releases or flavors of them, currently Ubuntu 22.04.5-LTS and 24.04.2-LTS.
 
-Distributions older than Ubuntu 20.04-LTS are no longer supported since Psychtoolbox
-3.0.18, and Ubuntu 20.04-LTS support is scheduled for removal soon, as that operating
-system will soon reach end-of-life status in April 2025.
+Distributions older than Ubuntu 22.04-LTS are no longer supported since Psychtoolbox
+3.0.22. Ubuntu 20.04-LTS has now reached its regular end of life. Distributions older
+than Ubuntu 20.04-LTS are no longer supported since Psychtoolbox 3.0.18.
 
 We recommend Ubuntu 22.04-LTS or 24.04-LTS at this time.
 
@@ -315,10 +316,8 @@ multimedia functions, or Psychtoolbox won't work. GStreamer 1.22.5 MSVC variant 
 is required. Earlier versions or MinGW variants will not fully work on Windows.
 
 On **Linux** you also need GStreamer, but GStreamer is a de-facto standard component
-that ships with all modern Linux distributions. GStreamer 1.8 should work, GStreamer 1.16
-will work better, and GStreamer 1.18 is required for full convenient support for HDR movie
-playback, whereas GStreamer 1.16 will need some "hand-holding" by user scripts for more
-limited HDR playback support.
+that ships with all modern Linux distributions. At least GStreamer 1.20 is required
+and shipped with Ubuntu 22.04-LTS and later.
 
 See [GStreamer][docs-gstreamer] (or `>> help GStreamer`) for installation
 instructions for the different systems and recommended GStreamer versions.
@@ -334,15 +333,12 @@ Basic hardware requirements
 
 -   Intel PCs: Any Intel-compatible PC that is capable of running the
     64-bit versions of Microsoft Windows-10 22H2, or the 64-bit versions of
-    GNU/Linux Ubuntu 20.04 LTS or later. Ubuntu 22.04 LTS or 24.04-LTS is
-    recommended, as Ubuntu 20.04 LTS support will be phased out very soon,
-    due to lack of resources, and because it will reach end of life in April
-    2025 and thereby lose standard support by its vendor. It is already only
-    very lightly tested anymore.
+    GNU/Linux Ubuntu 22.04 LTS or later. Ubuntu 22.04 LTS or 24.04-LTS is
+    recommended.
 
--   Intel Macs: _Not recommended anymore, but possibly workable for some uses_
+-   Intel Macs:
     Any Intel-based Macintosh computer that is capable of running 64-Bit macOS
-    13 “Ventura”, or a 64 Bit Ubuntu 20.04-LTS or later GNU/Linux distribution.
+    13 “Ventura”, or a 64 Bit Ubuntu 22.04-LTS or later GNU/Linux distribution.
     However: At this point in time, most NVidia graphics cards have broken
     visual stimulation timing under macOS. Most AMD graphics cards under
     macOS 10.12 and later have broken visual stimulation timing under macOS,
