@@ -58,13 +58,13 @@ alone, with additional downloads from Linux distributions or from GitHub directl
 which we can't count.
 
 The Psychtoolbox [forum][forum] has over 1600 members and about 4 messages a day.
-Principal investigators and their collaborators have identified at least 127
-[#grant-supported projects](../grants) that use it. According to Google scholar,
-over 40000 articles [cite](../citations) it.
+As of the year 2000, Principal investigators and their collaborators have identified
+at least 127 [#grant-supported projects](../grants) that use it. According to Google
+scholar, over 40000 articles [cite](../citations) it.
 
 Paid subscription licenses for the paid Apple macOS and Microsoft Windows editions,
-commercial support, and services around Psychtoolbox are available on the commercial
-companion website [www.psychtoolbox.net](https://www.psychtoolbox.net).
+and for the Matlab on Linux edition, commercial support, and services around the
+Psychtoolbox are available on the commercial companion website [www.psychtoolbox.net](https://www.psychtoolbox.net).
 
 The following link is a PDF file with the slides of a presentation held at ECVP
 2013 in Bremen by Mario Kleiner. These slides will give you a quick overview
