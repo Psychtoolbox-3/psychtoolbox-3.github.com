@@ -36,11 +36,21 @@ and checkout or download the correspondlingly named Git branch. Or simply downlo
 the linked zip file with the latest release of a given 3.x.y branch, if any is linked,
 or click on the link to the release page for that version and navigate from there.*
 
+`Psychtoolbox-3.0.21`
+   : [A snapshot of the code as of 28th May 2025: This was the final 3.0.21 release
+     before start of the 3.0.22 series. 3.0.21 was the last version to support:](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/tag/3.0.21.0)
+
+      * Ubuntu 20.04 LTS and Debian GNU/Linux 11. It still works in the 3.0.21.0 release, but is unsupported in case of trouble.
+      Note that Ubuntu 20.04-LTS has reached end-of-life at the end of May 2025. Future Psychtoolbox-3.0.22 requires Debian 12 or
+      Ubuntu 22.04.5 LTS or one of its siblings and derivates, or later versions of these distributions.
+
+     Required 64-Bit GStreamer 1.22.5 MSVC on Microsoft Windows for both Matlab and Octave. GStreamer 1.18.6 or later recommended on macOS.
+
+     [Download link for zip file for 3.0.21.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/download/3.0.21.0/3.0.21.0.zip)
+
 `Psychtoolbox-3.0.20`
    : [A snapshot of the code as of 30th March 2025: This was the final 3.0.20 release
      before start of the 3.0.21 series. 3.0.20 was the last version to support:](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/tag/3.0.20.4)
-
-      * Last version tested on macOS 12. Future versions may or may not work on the macOS 10.13-10.15 and macOS 11.x/12.x operating systems.
 
       * Going forward, Ubuntu 20.04 LTS still works in the 3.0.21.0 release, but is unsupported in case of trouble, and may stop working
         with any future release without warning. Note that Ubuntu 20.04-LTS will reach end-of-life by the end of April 2025.
