@@ -21,7 +21,7 @@ Read below how you can assist us in helping you effectively ...
 > are a new to Psychtoolbox, make sure to read the introductory PDF file in the
 > [`Psychtoolbox/PsychDocumentation`][docs-documentation] folder. 
 > 
-> Also see [docs.psychtoolbox.org](http://docs.psychtoolbox.org) or type `>>
+> Also see [http://psychtoolbox.org/docs](http://psychtoolbox.org/docs) or type `>>
 > help Psychtoolbox` to read our online help.
 > 
 > Please try to find out if similar questions have been asked before.
@@ -58,7 +58,7 @@ Read below how you can assist us in helping you effectively ...
 
 **[Continue to the support Forum on Discourse][forum]**
 
-  [docs-demos]: http://docs.psychtoolbox.org/PsychDemos
-  [docs-documentation]: http://docs.psychtoolbox.org/PsychDocumentation
+  [docs-demos]: http://psychtoolbox.org/docs/PsychDemos
+  [docs-documentation]: http://psychtoolbox.org/docs/PsychDocumentation
   [forum]: https://psychtoolbox.discourse.group
   [faq]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/wiki/FAQ
