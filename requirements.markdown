@@ -132,8 +132,8 @@ Intel Macintosh computers under
 
 -  Additionally, Psychtoolbox from NeuroDebian supports 32-Bit and 64-Bit
    releases of whatever version of GNU Octave ships by default with your
-   distribution, e.g., also Octave 3.2 to 4.4 on older distributions, or
-   Octave 5.x, 6.x, 7.x, 8.x, 9.x and 10.x on recent distributions.
+   distribution, e.g., also Octave 3.2 to 5.2 on older distributions, or
+   Octave 6.x, 7.x, 8.x, 9.x and 10.x on recent distributions.
 
 Psychtoolbox testing and development occurs mainly on the two most recent Ubuntu
 Linux LTS releases or flavors of them, currently Ubuntu 22.04.5-LTS and 24.04.2-LTS.
