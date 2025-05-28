@@ -230,13 +230,13 @@ problems!**
 
 **Usually you'll want to download the zip file whose name is the version number,
 and with a little box symbol to its left, for only the Psychtoolbox standard
-folder** (ie. without source code), e.g., for Psychtoolbox version 3.0.21.0, it
-would be named like `3.0.21.0.zip`. See the following screenshot for the location
+folder** (ie. without source code), e.g., for Psychtoolbox version 3.0.22.0, it
+would be named like `3.0.22.0.zip`. See the following screenshot for the location
 of the correct download link for the correct zip file for most users:
 
 ![Screenshot of proper zip file download link](/images/ZipFileDownloadLink.png)
 
-[For the latest release zip file, click this link.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/latest/download/3.0.21.0.zip)
+[For the latest release zip file, click this link.](https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/latest/download/3.0.22.0.zip)
 
 
 The "Assets" section of each Psychtoolbox GitHub release contains these download links,

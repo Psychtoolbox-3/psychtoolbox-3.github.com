@@ -1,0 +1,123 @@
+---
+layout: post
+title: Psychtoolbox updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.22.0 "Oh wie schoen ist Panama!" was released at 28th May 2025.
+
+You can download it as a zip file from the following link:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/download/3.0.22.0/3.0.22.0.zip>
+
+**This release is strongly recommended to upgrade to if you are a user of
+Psychtoolbox 3.0.20 on macOS or Windows, as it allows most reliable and
+smooth use under the new paid software license subscription model.**
+
+The complete development history can be found in our GitHub repository.
+The release tag is “3.0.22.0”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.22.0>
+
+[This Psychtoolbox release was sponsored by Mathworks under the year 2024/2025
+contract for significant enhancements, sponsoring the OpenXR hand tracking
+support as major new feature.](https://www.mathworks.com/solutions/neuroscience.html)
+
+### Compatibility changes wrt. Psychtoolbox 3.0.21.0:
+
+- This release no longer supports the Ubuntu 20.04-LTS "Focal Fossa" family of
+  Linux operating system distributions, and siblings like Debian GNU/Linux 11
+  "Bullseye". In fact, it requires Ubuntu 22.04.5-LTS "Jammy Jellyfish" with all
+  updates installed, or Debian GNU/Linux 12 "Bookworm" and equivalent distributions,
+  ie. Linux distributions where all software components are at least as modern
+  and recent as those in Ubuntu 22.04.5-LTS. Psychtoolbox Mex files will no
+  longer work on older distributions, or if some would appear to work, they might
+  show various subtle and not so subtle malfunctions - iow. they woud be unfit
+  for research grade data collection.
+
+- Psychtoolbox for Matlab on Linux now also requires a paid software subscription
+  license, while the Octave variant for Linux remains free of cost to use.
+
+### Highlights:
+
+- New fast, mostly seamless fixed refresh rate switching on Linux with AMD graphics.
+
+- Hand tracking performance optimizations.
+
+### All:
+
+- Software subscription licenses can now also be activated during setup with
+  user email+password of the account of the license manager self service portal.
+  Psychtoolbox will fetch the correponding license key automatically.
+
+- License management now contains functionality needed for implementation of
+  campus licenses, unattended auto setup of licenses, and educational licenses.
+
+- Performance optimizations for the articulated hand and finger tracking for
+  OpenXR, which was introduced in Psychtoolbox 3.0.20.4. Now operates 20-30 times
+  faster, doing its job in less than 0.5 msecs on average hardware.
+
+- PR655parsespdstr(): Fix to handle zero values in measurements correctly.
+  Contributed by Danny Garside @da5nsy thanks!
+
+- Various other smaller refinements, bug fixes and documentation updates.
+
+### Linux:
+
+- Psychtoolbox was built and tested against Matlab R2024b and Octave 6.4 under
+  Ubuntu 22.04.5-LTS. Now only works on Ubuntu 22.04-LTS and later.
+
+- Added workarounds for bugs in AMD's Vulkan driver AMDVLK that have been introduced
+  due to mistakes by AMD's developers since version v-2023.Q2.2 and later, starting
+  in May 2023. These bugs prevent 16 bpc ultra-high precision framebuffers to be
+  reported as supported in both SDR and HDR mode of operation, with some driver
+  versions even 10 bpc support is lacking in SDR Standard Dynamic Range mode! The
+  bug prevents all AMD RDNA 3+ graphics cards with Navi 30 or later gpu family
+  from using these 16 bpc framebuffers, and thereby from achieving up to 12 bpc
+  effective output precision. Our new workaround tricks the faulty drivers into
+  supporting these modes anyway and thereby restores the 10 bpc modes in SDR/HDR
+  and tries to restore 16 bpc modes for up to 12 bpc effective output color
+  precision in SDR and HDR again. While this has been confirmed to work on gpu's
+  of the AMD Vega gpu family and earier models, the situation on AMD Navi / RDNA
+  gpu's ist still unclear at time of this release. There might be additional bugs
+  in the AMDVLK drivers still preventing this. Unfortunately the tester for this
+  feature on AMD RDNA gpu's has not reported back in reasonable time and we have
+  to release now, with this question still to be answered.
+
+- Support for rapid, seamless video refresh rate switching on modern FreeSync
+  capable AMD graphics cards, when used with a Variable Refresh Rate capable
+  display device, connected via DisplayPort, e.g. suitable FreeSync, GSync and
+  "Vesa DisplayPort Adaptive Sync"  capable monitors. This can be triggered for
+  a whole X-Screen with one or multiple active outputs via the command
+  ``Screen('Framerate', screenId, 2, reqHz);`` or on a individual per-output basis via
+  ``Screen('ConfigureDisplay', 'FineGrainedSwitchRefreshRate', screenId, outputId, reqHz);``
+  This allows to request an instant switch of the displays to a new video refresh rate
+  `reqHz` within the variable refresh rate range supported by the display monitor,
+  e.g., to run dynamic animations or movie playback at a specific exact rate, and
+  switch that rate on a trial-by-trial basis if needed, with switching times in the
+  range of only one to a few video refresh cycle duration. All AMD graphics cards
+  since the Sea Island gpu family from around the year 2014 should be supported.
+
+  The new test and demo `VRRFixedRateSwitchingTest.m` demonstrates and tests this.
+
+- Fix touchscreen enumeration for touchscreens operated by the "Intel Precision Touch
+  and Stylus Daemon" iptsd version 3 and later. `GetTouchDeviceIndices()` now
+  filters out the wrong touchscreen device and enumerates the correct devices.
+
+### Windows:
+
+- Psychtoolbox was built and tested against Matlab R2024b and Octave 7.3.
+
+### macOS:
+
+- Psychtoolbox was built and tested against native Matlab R2024b and against native
+  Octave 9.4 from HomeBrew, on macOS 13.7.5 Ventura for Intel Macs, and on macOS 14.5
+  Sonoma for Apple Silicon Macs.
+
+- Add a Datapixx mex file for Matlab on Apple Silicon Macs, based on VPixx latest
+  release. This is supposed, but not tested by us, to make basic support for VPixx
+  devices work on macOS for Apple Silicon. Note that the Datapixx mex file for Octave
+  is not ready and most likely broken on Apple Silicon, as of now.
+
+Enjoy!
