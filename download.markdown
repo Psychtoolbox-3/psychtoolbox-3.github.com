@@ -335,7 +335,7 @@ versions since 3.0.10.
   [versions]: /versions
   [using-on-linux]: /linux
   [installer]: https://raw.github.com/Psychtoolbox-3/Psychtoolbox-3/master/Psychtoolbox/DownloadPsychtoolbox.m.zip
-  [gstreamer-win]: https://gstreamer.freedesktop.org/data/pkg/windows/1.22.5/msvc/gstreamer-1.0-msvc-x86_64-1.22.5.msi
+  [gstreamer-win]: https://gstreamer.freedesktop.org/data/pkg/windows/1.22.12/msvc/gstreamer-1.0-msvc-x86_64-1.22.12.msi
   [gstreamer-osx]: http://gstreamer.freedesktop.org/data/pkg/osx/
   [PTBReleases]: https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases
 
