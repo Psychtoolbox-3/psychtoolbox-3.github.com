@@ -27,7 +27,7 @@ You can also run some of your Psychtoolbox studies online, via VPixx Labmaestro 
 [https://vpixx.com/products/labmaestro-packngo.](https://vpixx.com/products/labmaestro-packngo)
 
 Psychtoolbox has many active users, an active [forum](forum), and is widely
-[cited](citations). The current version supports at least Matlab R2024b on Linux, Windows
+[cited](citations). The current version supports at least Matlab R2025a on Linux, Windows
 and macOS, and Octave 6 and later on Linux, and Octave 7.3 on Windows, and Octave 9 on macOS.
 
 Psychtoolbox News
@@ -48,7 +48,7 @@ Psychtoolbox News
 </article>
 {% endfor %}
 
-      
+
 ### [News Archive](news)
 {: .abbrev}
 
