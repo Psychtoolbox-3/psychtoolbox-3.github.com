@@ -17,19 +17,18 @@ or -1 if the system doesn't support brightness control.  If you try to set
 brightness on a system that doesn't support it, the function will abort with an  
 error.  Brightness values are in the range 0.0 to 1.0 from darkest to brightest.  
 Returns old brightness setting.  
-'AutoBrightnessMode': Set the [AutoBrightness](AutoBrightness) mode on supported systems, macOS  
-only at the moment. If you call the function without specifying a new mode, it  
-will return -1 if setting [AutoBrightness](AutoBrightness) is unsupported on the system, otherwise  
-it will return the value 2 to confirm setting [AutoBrightness](AutoBrightness) should be possible.  
+'AutoBrightnessMode': Set the [AutoBrightness](AutoBrightness) mode on supported systems. Doesn't  
+work anywhere at the moment. If you call the function without specifying a new  
+mode, it will return -1 if setting [AutoBrightness](AutoBrightness) is unsupported on the system,  
+otherwise it will return the value 2 to confirm setting [AutoBrightness](AutoBrightness) should be  
+possible.  
 If you try to set [AutoBrightness](AutoBrightness) on a system that doesn't support it, the  
 function will abort with an error. Otherwise it will return 2 to confirm it  
 tried to set [AutoBrightness](AutoBrightness) mode and then try to set the mode you specified: A  
 mode of 1 tries to enable [AutoBrightness](AutoBrightness), a mode of 0 tries to disable  
 [AutoBrightness](AutoBrightness) on the given output. Please note that there isn't any feedback if  
 switching [AutoBrightness](AutoBrightness) worked, or what the current or previous enable state of  
-[AutoBrightness](AutoBrightness) is or was, as queries are not supported by macOS. Neither will  
-there be reliable visual feedback in the macOS display settings GUI! This  
-feature is experimental and may not work at any time for any reason!  
+[AutoBrightness](AutoBrightness) is or was.  
 'NumberOutputs': Return number of active separate display outputs for given  
 screen 'screenNumber'.  
 'Capture': Capture output 'outputId' of a screen 'screenNumber' for exclusive  
