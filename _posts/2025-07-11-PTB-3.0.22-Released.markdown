@@ -1,0 +1,138 @@
+---
+layout: post
+title: Psychtoolbox updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.22.1 "Little Miss Sunshine!" was released at 11th July 2025.
+
+You can download it as a zip file from the following link:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/download/3.0.22.1/3.0.22.1.zip>
+
+**This release is strongly recommended to upgrade to if you are a user of
+Psychtoolbox 3.0.20 on macOS or Windows, as it allows most reliable and
+smooth use under the new paid software license subscription model.
+Also if you are a user of Matlab R2025a, as it fixes various compatibility issues.**
+
+The complete development history can be found in our GitHub repository.
+The release tag is “3.0.22.1”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.22.1>
+
+[This Psychtoolbox release was partially sponsored by Mathworks under the year 2024/2025
+contract for improving compatibility with Matlab R2025a.](https://www.mathworks.com/solutions/neuroscience.html)
+
+### Compatibility changes wrt. Psychtoolbox 3.0.22.0:
+
+- Establish basic compatibility with Matlab version R2025a and later.
+
+- Make use with GStreamer 1.26 on MS-Windows more robust.
+
+### Highlights:
+
+- Compatibility fixes for Matlab R2025a with its new JavaScript based GUI and WebGL based
+  graphics and plotting system, and the split process design between compute and GUI.
+  Substantial work was needed to repair ListenChar, CharAvail, GetChar and FlushEvents,
+  and to avoid annoying beep tones on key presses under macOS + R2025a. GetChar should
+  work mostly as in the past, although limitations persist in some areas, some possibly
+  hard or impossible to fix. A part of this compatibility work was sponsored by Mathworks.
+
+- Brightness control of at least internal displays now also works on Apple Silicon Macs.
+
+### All:
+
+- ``GetChar()/CharAvail()/ListenChar()/FlushEvents()``: Do no longer use the Java path on
+  Matlab R2025a and later. Matlab R2025a and later ditched the Java based GUI in favor of
+  a completely new GUI and graphics backend, based apparently on JavaScript + the Chromium
+  embedded "web browser" framework + WebGL rendering. It also split off all GUI and plotting
+  code into a separate Matlab application process from the main process that executes the
+  Matlab interpreter with all user script code and all of Psychtoolbox, completely isolating
+  these two processes from each other, with only a restricted and proprietary communication
+  link between them (most likely based on local IP loopback connections).
+
+  This makes our GetCharJava implementation completely non-functional, with no known way to
+  salvage it. As of now, I wouldn't know how to do an alternative implementation hooking
+  into the new JavaScript GUI, but first investigation suggests it is likely impossible, at
+  least without significant help from Mathworks - they'd need to implement special purpose
+  functionality for us.
+
+  Therefore we now fall back to our KeyboardQueue based GetChar et al. implementation, just
+  as on Octave, on MS-Windows, and for Matlab in "matlab -nodesktop" mode.
+
+  New limitations caused by this:
+
+  1. The same keyboard queue related restrictions as on MS-Windows, ie. no concurrent use of
+     KbQueues for the default keyboard and GetChar/CharAvail/FlushEvents/ListenChar on macOS
+     and Linux.
+
+  2. Less reliable handling of composed characters, or no such handling at all. Less extra
+     information as aux info, only timestamp, no other modifier keys state reporting etc.
+
+  3. Suppression of typed characters spilling into the Matlab command window does no longer work
+     in GUI mode on Matlab R2025a and later. Such is life...
+
+- IsGUI(): Fix for Matlab R2025a and its non-Java GUI.
+
+- No longer add the Psychtoolbox/PsychJava/ folder to Matlab's Java class path on Matlab
+  R2025a and later, as we can no longer use Java for our purposes, so no point in adding
+  our Java class to the Matlab path.
+
+- PlayMoviesWithoutGapDemo1.m: Refine for more robustness with short movies.
+  This should help issues like described in:
+
+  https://psychtoolbox.discourse.group/t/invalid-movie-handle-provided-error-message/5719
+
+- Add ``MacBoynToLMS()`` to invert ``LMSToMacBoyn()``. Contributed by David Brainard.
+
+- Various other smaller refinements, bug fixes and documentation updates.
+
+### Linux:
+
+- Psychtoolbox was built and tested against Matlab R2025a and Octave 6.4 under
+  Ubuntu 22.04.5-LTS. Now only works on Ubuntu 22.04-LTS and later.
+
+- PsychLinuxConfiguration(): Adapt for Matlab R2025a and later. No need for JOGL
+  "Java OpenGL" related workarounds anymore for R2025a+, now that WebGL is used.
+  Matlab still needs the "broken override Vulkan loader" workaround though.
+
+### Windows:
+
+- Psychtoolbox was built against Matlab R2024b and tested against Matlab R2025a.
+
+- help GStreamer: Update link to MS-Windows MSVC GStreamer 1.22.
+  The old download was removed, so adapt link from 1.22.5 to 1.22.12 as closest
+  to the last tested version.
+
+- Add robustness of GStreamer setup if GStreamer version 1.26 or later is used.
+  GStreamer 1.26 changed the default installation location on MS-Windows. Normally
+  the proper location of GStreamer runtimes is communicated to Psychtoolbox via an
+  environment variable. If this isn't the case in some cases then a probe sequence
+  for common default installation locations was used. The probe sequence is now
+  updated to search and hopefully find GStreamer 1.26+ at its default install locations,
+  avoiding startup failure.
+
+### macOS:
+
+- Psychtoolbox was built and tested against native Matlab R2025a and against native
+  Octave 9.4 from HomeBrew, on macOS 13.7.5 Ventura for Intel Macs, and on macOS 15.5
+  Sequoia for Apple Silicon Macs.
+
+- Fix keyboard input focus restoration after closing opaque fullscreen onscreen windows
+  on Intel Macs. Substantial work was needed to achieve this with the new Matlab R2025a
+  dual-process design (Psychtoolbox process separate from Matlab GUI process).
+
+- Fix a new bug, where in fullscreen window mode on R2025a, every keypress causes an
+  annoying beep tone from macOS. This is also due to the new split dual-process design,
+  but workarounds have been implemented to hopefully fix it.
+
+- Screen: Implement new method for ``Screen('ConfigureDisplay', 'Brightness')`` which
+  also works on (at least) the internal displays of Apple Silicon Macs. Also removed
+  support for 'AutoBrightnessMode' which did not ever work with any macOS release, so
+  give up on it.
+
+- TwoStateQuery(): Cleanup, and reenable good questdlg() for Matlab R2025a+ on macOS
+  for Apple Silicon Macs.
+
+Enjoy!
