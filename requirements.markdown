@@ -185,8 +185,11 @@ Psychtoolbox should work in principle, and is supported and tested on:
 
 -  macOS 14 "Sonoma" for Apple Silicon ARM Macs. It may also work on macOS 11 - 13,
    but with known limitations on any macOS version older than macOS 13, and it is
-   not tested or supportable on macOS 13 or earlier. Light testing and user feedback
-   suggests it works fine on macOS 15 "Sequoia".
+   not tested or supportable on macOS 13 or earlier. Testing and user feedback shows
+   it also works fine on macOS 15 "Sequoia". We strongly advise against using macOS 26
+   Tahoe until further notice! Apple introduced new serious limitations or bugs to
+   macOS 26, which will reduce performance of visual stimulus presentation, cutting
+   achievable framerate in half!
 
 -  Matlab R2025a, likely older recent versions upwards of R2014b on Intel Macs, and
    upwards of R2023b on ARM Macs, but those versions are untested and unsupportable
