@@ -1,7 +1,7 @@
 # [PsychVulkanCore('OpenWindow')](PsychVulkanCore-OpenWindow) 
 ##### [Psychtoolbox](Psychtoolbox)>[PsychVulkanCore](PsychVulkanCore).{mex*} subfunction
 
-vulkanWindow = PsychVulkanCore('OpenWindow', gpuIndex, targetUUID, isFullscreen, screenId, rect, outputHandle, hdrMode, colorPrecision, refreshHz, colorSpace, colorFormat, flags);
+vulkanWindow = PsychVulkanCore('OpenWindow', gpuIndex, targetUUID, isFullscreen, screenId, rect, outputHandle, hdrMode, colorPrecision, refreshHz, colorSpace, colorFormat, flags, displayHandle);
 
 Open a display window on a Vulkan device.  
   
@@ -76,6 +76,12 @@ image. Useful for most basic Vulkan testing and driver bringup if the given gpu
 does not have graphics drivers with [OpenGL](OpenGL)+Vulkan interop capabilities yet.  
 +2 = Do not switch to fullscreen-exclusive mode on MS-Windows, even for  
 fullscreen windows. This is useful as workaround for some buggy Vulkan drivers.  
++4 = Do not use a tiled format for the [OpenGL](OpenGL)-Vulkan interop image, use linear  
+instead.  
+'displayHandle' Handle defining the display server connection to use, if any, in  
+an operating system dependent manner. This is currently unused on all systems  
+except Linux with Wayland display backend, where it encodes the wl\_display  
+handle.  
   
   
 Returns: The 'vulkanWindow' handle of the Vulkan presentation window.  

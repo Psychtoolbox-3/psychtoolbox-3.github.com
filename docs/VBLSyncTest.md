@@ -1,7 +1,7 @@
 # [VBLSyncTest](VBLSyncTest)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychTests](PsychTests)
 
-[VBLSyncTest](VBLSyncTest)([n=600][, numifis=0][, loadjitter=0][, clearmode=0][, stereo=0][, flushpipe=0][, synchronous=0][, usedpixx=0][, usevulkan=0][, screenNumber=max])  
+[VBLSyncTest](VBLSyncTest)([n=600][, numifis=0][, loadjitter=0][, clearmode=0][, stereo=0][, flushpipe=0][, synchronous=0][, usedpixx=0][, usevulkan=0][, gpumeasure=0][, screenNumber=max])  
   
 Tests syncing of Psychtoolbox to the vertical retrace (VBL) and demonstrates  
 how to implement the old [Screen](Screen)('WaitBlanking') behaviour with  
@@ -117,6 +117,8 @@ and [DataPixx](DataPixx) device.
 'usevulkan' If 1, try to use a Vulkan display backend instead of the  
 [OpenGL](OpenGL) display backend. See 'help PsychVulkan'.  
   
+'gpumeasure' If 1, try to measure GPU time spent for all [OpenGL](OpenGL) processing  
+for a given frame.  
   
 screenNumber =  Use a screen other than the default (max) for testing .  
   

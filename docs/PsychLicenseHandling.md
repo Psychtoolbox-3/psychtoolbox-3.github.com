@@ -166,25 +166,28 @@ servers. If your purchased license supports this, the functions are as follows:
 [PsychLicenseHandling](PsychLicenseHandling)('ActivateEnrolledKeyOffline', pathToOfflineRequestResponseFile);  
 - Either create an offline activation request file under the specified path/filename,  
 which allows creation of an offline activation response file in the customer portal,  
-or reads such an offline activation response file and activates your local machine.  
+or read such an offline activation response file downloaded from the customer portal  
+and activates your local machine.  
   
 E.g., after enrolling a license key via [PsychLicenseHandling](PsychLicenseHandling)('Setup') or  
 [PsychLicenseHandling](PsychLicenseHandling)('Activate', licenseKey); do the following:  
   
 1. [PsychLicenseHandling](PsychLicenseHandling)('ActivateEnrolledKeyOffline', 'offlineRequest.dat');  
   
-2. Login to customer portal and upload 'offlineRequest.dat' to create offline  
-   response file, downloaded to the file 'offlineResponse.dat'.  
+2. Login to the customer portal and upload the 'offlineRequest.dat' file  
+   created in step 1 to create and download an offline activation response  
+   file called 'offlineResponse.dat'. Store it on the offline machine.  
   
 3. [PsychLicenseHandling](PsychLicenseHandling)('ActivateEnrolledKeyOffline', 'offlineResponse.dat') to  
-   activate this machine.  
+   activate this machine with the ófflineResponse.dat'file.  
   
 [PsychLicenseHandling](PsychLicenseHandling)('DeactivateEnrolledKeyOffline', pathToOfflineProofFile);  
 - Deactivate the machine locally and write a deactivation proof file into the  
 path/filename 'pathToOfflineProofFile'. You can upload that proof file into  
 the customer portal to deactivate the machine in the license servers, so the  
 machine activation that has been freed up can be reused on a different machine.  
-Not all licenses allow offline deactivation of once activated machines.  
+Not all licenses allow offline deactivation of once activated machines,  
+at least not without help from user support.  
   
 
 

@@ -1,7 +1,7 @@
 # [LMSToMacBoyn](LMSToMacBoyn)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychColorimetric](PsychColorimetric)
 
-ls = [LMSToMacBoyn](LMSToMacBoyn)(LMS,[T\_cones,T\_lum])  
+[ls, factorsLMS] = [LMSToMacBoyn](LMSToMacBoyn)(LMS,[T\_cones,T\_lum],[lumReturnFlag)  
   
 Compute [MacLeod](MacLeod)-Boynton chromaticity from cone exciation coordinates.  
 This is L/Lum and S/Lum, with appropriate normalization as described  
@@ -32,6 +32,24 @@ When you use the CIE cone fundamentals and corresponding luminance
 functions, this procedure yields the [MacLeod](MacLeod)-Boynton chromaticity  
 diagrams as specified in CIE 170-2:2015.  
   
+It would have been smarter to write this routine to return lsY rather  
+than just ls, long ago.  Getting Y back makes it easier to convert back  
+to LMS, and also be consistent with the way other conversions to  
+chromaticity are set up.  Changing this now would probably break some  
+existing code, so instead this routine now takes an optional fourth  
+argument that returns the luminance used in the denominator.  If you ask  
+for this, you need to provide T\_LMS and T\_Y as well, which is recommended  
+for clarity in any case.  Set lumReturnFlag = 1 on call to get back three  
+vectors with Y (the normalizing denominator) as the third coordinate.  In  
+general this will not be the same as L+M in the passed cone system, but  
+rather a weighted combination of L and M, with the weights computed from  
+the passed T\_LMS and T\_Y.  
+  
+The factorsLMS return value is a column vector with three entries that  
+specifies how this routine decided to scale the passed LMS cone  
+fundamentals to best approximate luminance and get the s axis scaling.  
+Note that if you pass LMS as the empty matrix, you can obtain this vector without doing much else.  
+  
 \*\* Legacy Usage: Just pass LMS values. In this case, we assume that the  
 passed LMS values were computed with respect to the Smith-Pokorny  
 fundamentals normalized to a peak of 1 and Judd-Vos luminance (more or  
@@ -56,6 +74,11 @@ the gains of having this work as now specified in the CIE standard.
                seems good to match the standard. Thanks to Danny Garside  
                for pointing out the scaling specified in the 2015  
                standard.  
+06/16/25 dhb   Provide lurReturnFlag and corresponding output option, but  
+               keep code backward compatible when that is not passed.  
+         dhb   Return the factorsLM column vector computed by this  
+               routine, so that it is easily available to the caller if   
+               wanted.  
 
 
 

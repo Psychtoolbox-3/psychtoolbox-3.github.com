@@ -77,7 +77,8 @@ by M-Files belonging to Psychtoolbox itself, e.g., display tests.
 # The info struct contains the following fields  
   
 Beamposition: Current rasterbeam position of the video scanout cycle.  
-[LastVBLTimeOfFlip](LastVBLTimeOfFlip): VBL timestamp of last finished [Screen](Screen)('[Flip](Flip)') operation.  
+[LastVBLTimeOfFlip](LastVBLTimeOfFlip): VBL timestamp of last finished [Screen](Screen)('[Flip](Flip)') operation, or  
+zero if unknown.  
 [TimeAtSwapRequest](TimeAtSwapRequest): Timestamp taken prior to submission of the low-level swap  
 command. Useful for micro-benchmarking.  
 [TimePostSwapRequest](TimePostSwapRequest): Timestamp taken after submission of the low-level swap  
@@ -91,10 +92,9 @@ GPU, if infoType=5 was used.
 [RawSwapTimeOfFlip](RawSwapTimeOfFlip): Raw (uncorrected by high-precision timestamping) timestamp of  
 last finished [Screen](Screen)('[Flip](Flip)') operation.  
 [LastVBLTime](LastVBLTime): System time when last vertical blank happened, or the same as  
-[LastVBLTimeOfFlip](LastVBLTimeOfFlip) if the system doesn't support queries of this property  
-(currently only OS/X does.)  
+[LastVBLTimeOfFlip](LastVBLTimeOfFlip) if the system doesn't support queries of this property.  
 [VBLCount](VBLCount): Running count of vertical blank intervals since (graphics)system  
-startup. Or zero if notsupported by system. Currently only OS/X and Linux do  
+startup. Or zero if notsupported by system. Currently only macOS and Linux do  
 support this with some GPU's.  
 [VideoRefreshFromBeamposition](VideoRefreshFromBeamposition): Estimate of video refresh cycle from beamposition  
 measurement method.  

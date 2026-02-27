@@ -7,8 +7,8 @@ Returns a struct with miscellaneous info about finished flips on the specified
 onscreen window.  
   
 This function is currently only supported on Linux X11/GLX with the free  
-graphics drivers,  
-and on Linux/Wayland with support for the presentation\_feedback extension.  
+graphics drivers, and on Linux/Wayland with support for the  
+presentation\_feedback extension.  
   
 The function allows you to enable logging of timestamps and other status  
 information about all completed bufferswaps, as triggered via [Screen](Screen)('[Flip](Flip)'),  
@@ -29,6 +29,11 @@ If set to 1, logging of flip completion info is enabled.
 If set to 2, logging of flip completion info is disabled.  
 If set to 3, the oldest stored flip completion info is returned in a struct  
 'info'.  
+If set to 4, only with Wayland and use of the Vulkan display backend, some  
+required manual preparation for timestamping is performed. This is not for use  
+by user scripts!  
+If set to 5, only with Wayland and use of the Vulkan display backend, return the  
+present timestamp for the most recently completed present, or zero if unknown.  
   
 # The info struct contains the following fields  
   

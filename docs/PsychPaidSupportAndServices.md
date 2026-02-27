@@ -2,6 +2,13 @@
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychDocumentation](PsychDocumentation)
 
   
+News: Since December 2025, we have discontinued the "paid support  
+membership" program, due to its utter lack of business success. Users who  
+initially bought or renewed such a support membership before end of sale  
+in December 2025 will still get this priority support until their current  
+membership runs out 365 days after purchase or renewal. Purchase of new  
+support memberships or renewal of existing ones is no longer possible.  
+  
 If you are using a Psychtoolbox variant and version that requires a paid  
 software license key to function, e.g., on Microsoft Windows, or Apple  
 macOS, or for Matlab on Linux, then a few minutes of basic support per  
@@ -12,10 +19,10 @@ if you wanted to ask for this basic support, you'd have to present an
 authentication token by running this function, or by calling  
 [PsychLicenseHandling](PsychLicenseHandling)('AuthenticationToken').  
   
-For paid support beyond that, on the user forum or [GitHub](GitHub) issue tracker,  
-you may have bought a "Psychtoolbox paid support membership" in the past.  
-If that membership is still valid, then the following procedure would  
-allow you to use it:  
+For guaranteed support beyond that, on the user forum or [GitHub](GitHub) issue  
+tracker, you may have bought a "Psychtoolbox paid support membership" in  
+the past. If that membership is still valid, then the following procedure  
+would allow you to use it:  
   
 1. As part of your purchase, you will have received a document - an  
    invoice - with a printed "Order Id" or "Order no.", and a printed "License key".  
@@ -35,10 +42,7 @@ allow you to use it:
   
    Please add the "authentication token" to your forum question or [GitHub](GitHub) issue.  
    This will prove to us that you deserve paid support for your question or  
-   issue. Please note that initial activation of your license key may take 5-10  
-   days after date of receipt of payment, so do not buy the paid support last  
-   minute, when the "house is already burning", but ahead of time, like you  
-   would do with a fire insurance.  
+   issue.  
   
 
 

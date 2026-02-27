@@ -42,7 +42,8 @@ radiometric. Apologies if our intuitions don't match yours
   [LumToRadiance](LumToRadiance)       - Get spectral radiance from luminance and relative spectrum of source.  
   [LumToTrolands](LumToTrolands)       - Convert luminance (cd/m2) to trolands.  
   [LuvToXYZ](LuvToXYZ)            - Convert from Luv to XYZ.  
-  [LMSToMacBoyn](LMSToMacBoyn)        - Convert from cones to [MacLeod](MacLeod)-Boynton chromaticity.  
+  [LMSToMacBoyn](LMSToMacBoyn)        - Convert from cones to [MacLeod](MacLeod)-Boynton ls chromaticity. Can be called to also return luminance.  
+  [MacBoynToLMS](MacBoynToLMS)        - Convert Macleod-Boynton ls and luminance to LMS.  Works with [LMSToMacBoyn](LMSToMacBoyn).  
   [MakeFourierBasis](MakeFourierBasis)    - Make a set of Fourier component basis functions.  
   [MakeGaussBasis](MakeGaussBasis)      - Make a set of Gaussian basis functions.  
   [MakeItS](MakeItS)             - Force wavelength sampling spec. to S format.  

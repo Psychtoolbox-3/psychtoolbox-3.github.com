@@ -14,47 +14,54 @@ support both the [OpenGL](OpenGL) and Vulkan rendering api's and also efficient 
 interoperation. Additionally, the Vulkan driver, graphics card, and your display  
 device must support at least the HDR-10 standard for high dynamic range display.  
   
-### As of April 2021, these graphics cards would be suitable:  
+### As of March 2026, these graphics cards would be suitable:  
   
 - Modern AMD (RX 500 "Polaris" and later recommended) and [NVidia](NVidia) [(GeForce]((GeForce) 1000  
   "Pascal" and later recommended) graphics cards under a Microsoft Windows-10  
-  operating system, which is up to date for the year 2021.  
+  operating system or later , which is up to date for the year 2026.  
   
-- Modern AMD graphics cards (like above) under modern GNU/Linux (Ubuntu 18.04.4-LTS  
-  at a minimum (untested!), or better Ubuntu 20.04-LTS and later recommended), with  
-  the AMD open-source Vulkan driver "amdvlk". Install driver release 2020-Q3.5 from  
-  September 2020, which was tested, or any later versions. Note that release  
-  2023-Q3.3 from September 2023 was the last release to support pre-Navi gpu's like  
-  Polaris and Vega. Later versions only support AMD Navi and later with RDNA graphics  
-  architecture.  
+- Modern AMD graphics cards (like above) under modern GNU/Linux (Ubuntu 22.04-LTS  
+  or later recommended), with the AMD open-source Vulkan driver "amdvlk". Install  
+  driver release 2020-Q3.5 from September 2020, which was tested, for old pre-Polaris  
+  graphics cards. Note that release 2023-Q3.3 from September 2023 was the best and  
+  last release to support the pre-Navi gpu's Polaris and Vega. Later versions only  
+  support AMD Navi and later with RDNA graphics architecture.  
   
 ###   The following webpage has amdvlk download and installation instructions:  
   
   https://github.com/[GPUOpen](GPUOpen)-Drivers/AMDVLK/releases  
   
+- Note that some [NVidia](NVidia) graphics drivers, e.g., driver version WHQL 591.74 on  
+  MS-Windows 10 with a [NVidia](NVidia) [GeForce](GeForce) GTX 1650, have some bugs which causes HDR  
+  to not work with default settings anymore: One now needs to change some display  
+  driver setting in the [NVidia](NVidia) control panels "Manage 3D settings" section.  
+  Specifically, the "Vulkan/[OpenGL](OpenGL) present method" must be set to "Prefer layered  
+  on DXGI Swapchain", as the "Automatic" setting is now broken. This, however,  
+  may impair or break visual stimulation timing of standard SDR stimuli, where the  
+  old default settigs work fine.  
+  
 - Some Apple Mac computers, e.g., the [MacBookPro](MacBookPro) 2017 15 inch Retina with AMD  
-  graphics, under macOS 10.15.4 Catalina or later, do now have experimental and  
-  limited HDR support. This has been tested with macOS 10.15.7 Catalina final,  
-  on the MBP 2017 with AMD Radeon Pro 560 in a limited way on an external HDR-10  
-  monitor, connected via USB-C to [DisplayPort](DisplayPort) adapter. Precision of content  
-  reproduction during leight testing was worse than on Linux and Windows. The  
-  presentation timing was awful and unreliable, and performance was bad. Flexibility  
-  and functionality was very limited in comparison to Windows-10, and even more so  
-  compared to Linux. Querying HDR display properties from the HDR display is not  
-  supported due to macOS limitations, and high performance HDR movie playback is  
-  completely missing due to severe deficiencies of Apple's [OpenGL](OpenGL) implementation.  
+  graphics, under macOS 11 or later, do now have experimental and limited HDR  
+  support, as do Apple Silicon Macs. This has been originally tested with macOS  
+  10.15.7 Catalina final, on the MBP 2017 with AMD Radeon Pro 560 in a limited  
+  way on an external HDR-10 monitor, connected via USB-C to [DisplayPort](DisplayPort) adapter.  
+  Precision of content reproduction during light testing was worse than on Linux  
+  and Windows. The presentation timing was awful and unreliable, and performance  
+  was bad. We no longersupport Catalina for HDR, and in the now supported macOS  
+  versions this may have changed for the better or worse, but no retesting has  
+  been done recently, so your mileage may vary.  
+  
+  In general HDR flexibility and functionality was very limited in comparison to  
+  Windows-10, and even more so compared to Linux. Querying HDR display properties  
+  from the HDR display is not supported due to macOS limitations.  
+  
+  HDR movie playback is of lower performance on macOS due to severe deficiencies  
+  of Apple's macOS [OpenGL](OpenGL) implementation.  
+  
   This uses the Apple Metal EDR "Extended dynamic range" support in macOS. Note  
-  that Vulkan and HDR support on macOS is considered alpha quality at best, and  
-  we do not provide any support for this feature. As always, if you care about  
-  the quality of your results, use preferrably Linux, or Windows-10 instead.  
-  
-  You need at least [MoltenVK](MoltenVK) version 1.1.4 and [LunarG](LunarG) Vulkan SDK 1.2.182.0 from  
-  5th July 2021 or later. [MoltenVK](MoltenVK) v1.1.5 or later is recommended at this time.  
-  
-###   Download link for the [MoltenVK](MoltenVK) open-source "Vulkan on Metal" driver:  
-  
-  https://sdk.lunarg.com/sdk/download/latest/mac/vulkan-sdk.dmg  
-  Overview on: https://vulkan.lunarg.com/sdk/home  
+  that HDR support on macOS is considered alpha quality at best, so we do not  
+  provide any support for this feature. As always, if you care about the quality  
+  of your results, use preferrably Linux, or Windows-10 instead.  
   
   
 ### HDR functionality is demonstrated in multiple demos:  
@@ -62,8 +69,9 @@ device must support at least the HDR-10 standard for high dynamic range display.
 [SimpleHDRDemo](SimpleHDRDemo).m as a simple starter for basic image display and rendering.  
 [HDRViewer](HDRViewer).m as a more fancy static image viewer.  
 [HDRTest](HDRTest).m for testing HDR reproduction with a colorimeter supported by Psychtoolbox.  
-[MinimalisticOpenGLDemo](MinimalisticOpenGLDemo).m with the optional 'hdr' parameter set to 1 for most basic [OpenGL](OpenGL) rendering in HDR.  
-[PlayMoviesDemo](PlayMoviesDemo).m with the optional 'hdr' parameter set to 1 for playback of HDR movies.  
+[MinimalisticOpenGLDemo](MinimalisticOpenGLDemo).m with the optional 'hdr' parameter set to 1 for most basic  
+[OpenGL](OpenGL) rendering in HDR. [PlayMoviesDemo](PlayMoviesDemo).m with the optional 'hdr' parameter set  
+to 1 for playback of HDR movies.  
   
 Useful helper functions beyond [PsychImaging](PsychImaging)('AddTask', 'General', 'EnableHDR');  
 for basic HDR setup and configuration, and [PsychHDR](PsychHDR)() for tweaking, are  

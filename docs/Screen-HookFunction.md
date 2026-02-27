@@ -126,12 +126,15 @@ mostly for [Screen](Screen)('TransformTexture'). Returns old imaging mode.
 [leftglHandle, rightglHandle, glTextureTarget, format, multiSample, width,  
 height] = [Screen](Screen)('HookFunction', windowPtr, 'SetDisplayBufferTextures' [,  
 hookname][, leftglHandle][, rightglHandle][, glTextureTarget][, format][,  
-multiSample][, width][, height]);  
+multiSample][, width][, height][, deleteOldTexturesIfPossible=0]);  
 Changes the external backing textures and their parameters for the final output  
 color buffers of the imaging pipeline.  
 Optionally returns the previously used backing textures and their old  
 parameters. All new parameters are optional, the old values are left as they  
-were if a parameter is not provided.  
+were if a parameter is not provided. Note that returned backing textures may no  
+longer exist when these leftglHandle and rightglHandle values are returned if  
+'deleteOldTexturesIfPossible' is set to 1, or the values may be stale after  
+buffer unsharing, so those handles are possibly useless in some usage scenarios.  
 This only works if imagingMode flags kPsychNeedFinalizedFBOSinks and  
 kPsychUseExternalSinkTextures are set, otherwise external changes are rejected.  
 It is not allowed to set a configuration which would cause the underlying  
@@ -166,7 +169,9 @@ renderable format to prevent framebuffer incompleteness.
 GL\_TEXTURE\_2D textures, \> 0 for GL\_TEXTURE\_2D\_MULTISAMPLE textures.  
 'width' and 'height' Width and height of the output framebuffer (=texture) in  
 pixels or texels.  
-  
+'deleteOldTexturesIfPossible' defaults to 0. If set to 1, it will delete  
+potential previously attached textures after assignment of the new ones if this  
+is safely possible, in order to save some memory.  
   
 [leftglHandle, rightglHandle, glTextureTarget, format, multiSample, width,  
 height, leftFboId, rightFboId] = [Screen](Screen)('HookFunction', windowPtr,  

@@ -10,26 +10,28 @@ older variants [RaspberryPi](RaspberryPi) 2 and 3, and the new [RaspberryPi](Ras
 Psychtoolbox is currently only tested with up to date versions of the  
 official [RaspberryPi](RaspberryPi) Linux operating system distribution known as  
 "[RaspberryPi](RaspberryPi) OS" [(RPi]((RPi) OS), also known under its former name "Raspbian".  
-Only the old/legacy 32-Bit [RPi](RPi) OS version 11 is supported by Psychtoolbox  
-at the moment, as provided directly by us via [DownloadPsychtoolbox](DownloadPsychtoolbox) et  
-al., even on 64-Bit processors. Currently the most recent stable [RPi](RPi) OS  
-11 + GNU/Octave is what PTB will support, with some wiggle room, as we do  
-not keep close track of development and updates to [RPi](RPi) OS. [RPi](RPi) OS itself  
-also provides versions of Psychtoolbox, installable via "sudo apt install  
+  
+Only the 32-Bit [RPi](RPi) OS versions are supported by Psychtoolbox at the moment,  
+as provided directly by us via [DownloadPsychtoolbox](DownloadPsychtoolbox) et al., even on 64-Bit  
+processors! Currently only the legacy/older stable [RPi](RPi) OS versions 11 and 12  
+with GNU/Octave are what PTB supports well. While PTB runs in principle on the  
+latest stable [RPi](RPi) OS 13 "Trixie", performance is seriously degraded, so [RPi](RPi) OS  
+13 is currently not recommended at all! [RPi](RPi) OS itself also provides bundled  
+versions of Psychtoolbox, installable via "sudo apt install  
 octave-psychtoolbox-3", and 64-Bit versions of [RPi](RPi) OS would ship such  
 packages as 64-Bit packages. Other Linux distributions for [RaspberryPi](RaspberryPi),  
 like Ubuntu for [RaspberryPi](RaspberryPi), will also ship Psychtoolbox packages as  
 32-Bit or 64-Bit variants via the sudo apt install octave-psychtoolbox-3  
 method. While these packages will likely work just fine, these are  
 currently not tested by the Psychtoolbox developers, or supported in case  
-of questions or problems. These packages are maintained by the  
-[NeuroDebian](NeuroDebian) maintainers, and they are usually quite a bit out of date  
+of questions or problems. These packages are maintained by Debian upstream or  
+the [NeuroDebian](NeuroDebian) maintainers, and they are usually quite a bit out of date  
 wrt. the current PTB beta releases, as the Linux distributions usually  
 ship whatever PTB was the most recent version at a time sometime before  
 the distributions was released. Those packages do not get updates after  
-initial distribution release, not even bug fixes. E.g., [RPi](RPi) OS at late  
-2022 ships some Psychtoolbox 3.0.17 variant, whereas PTB betas are now at  
-version 3.0.19 or later.  
+initial distribution release, not even bug fixes. E.g., latest [RPi](RPi) OS in early  
+2026 ships some Psychtoolbox 3.0.19 variant, whereas most recent PTB betas  
+are now at version 3.0.22 or later.  
   
 The [RaspberryPi](RaspberryPi) 2B is tested for compatibility with Psychtoolbox. The test system  
 is a [RaspberryPi](RaspberryPi) 2B with 1 GB of RAM. Other models of [RaspberryPi](RaspberryPi) 2 and 3 are  
@@ -170,7 +172,7 @@ from providing more RAM and faster processor and graphics, do support:
      to these settings.  
   
   4. On [RPi](RPi) OS 12, when running on a [RaspberryPi](RaspberryPi) 4 / 400 or a later model, a Wayland  
-     display server (named "wayfire") is used by default, instead of a [XOrg](XOrg) X-Server.  
+     display server ("wayfire" or "labwc") is used by default, instead of a [XOrg](XOrg) X-Server.  
      This is currently incompatible with Psychtoolbox or any other vision science  
      toolkit. You have to manually switch back to a desktop GUI which uses the native  
      [XOrg](XOrg) X-Server via the following steps:  
@@ -233,8 +235,8 @@ from providing more RAM and faster processor and graphics, do support:
   
   Further support for improvements to Psychtoolbox wrt. [RaspberryPi](RaspberryPi)  
   devices, and user support will be contingent on labs financially  
-  supporting our work. Until then, consider this work being done on a low  
-  effort basis.  
+  supporting our work. Until then, consider this work being done on  
+  a low effort basis.  
   
 
 

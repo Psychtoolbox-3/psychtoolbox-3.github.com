@@ -4,7 +4,7 @@
 PsychVulkanCore - A Psychtoolbox driver for interfacing with the Vulkan graphics rendering API  
   
 This driver allows to utilize the Vulkan graphics API for special purpose display and compute tasks.  
-Copyright (c) 2020 - 2024 Mario Kleiner. Licensed to you under the terms of the MIT license.  
+Copyright (c) 2020 - 2026 Mario Kleiner. Licensed to you under the terms of the MIT license.  
   
 This driver is used internally by Psychtoolbox. You should not call its functions  
 directly as a regular end-user from your scripts, as the API may change at any time  
@@ -18,7 +18,7 @@ oldVerbosity = PsychVulkanCore('[Verbosity](PsychVulkanCore-Verbosity)' [, verbo
 numDevices = PsychVulkanCore('[GetCount](PsychVulkanCore-GetCount)');  
 devices = PsychVulkanCore('[GetDevices](PsychVulkanCore-GetDevices)');  
 PsychVulkanCore('[Close](PsychVulkanCore-Close)');  
-vulkanWindow = PsychVulkanCore('[OpenWindow](PsychVulkanCore-OpenWindow)', gpuIndex, targetUUID, isFullscreen, screenId, rect, outputHandle, hdrMode, colorPrecision, refreshHz, colorSpace, colorFormat, flags);  
+vulkanWindow = PsychVulkanCore('[OpenWindow](PsychVulkanCore-OpenWindow)', gpuIndex, targetUUID, isFullscreen, screenId, rect, outputHandle, hdrMode, colorPrecision, refreshHz, colorSpace, colorFormat, flags, displayHandle);  
 PsychVulkanCore('[CloseWindow](PsychVulkanCore-CloseWindow)' [, vulkanWindow]);  
 hdr = PsychVulkanCore('[GetHDRProperties](PsychVulkanCore-GetHDRProperties)', vulkanWindow);  
 oldlocalDimmmingEnable = PsychVulkanCore('[HDRLocalDimming](PsychVulkanCore-HDRLocalDimming)', vulkanWindow [, localDimmmingEnable]);  

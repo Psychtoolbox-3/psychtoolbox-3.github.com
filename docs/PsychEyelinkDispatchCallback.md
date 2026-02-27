@@ -67,6 +67,11 @@ History:
                   feedback playback. Apologies to NJ for removing  
                   previous comments where code was previously added, this  
                   was done for easier reading of the code.  
+12.11.2025    Refactor all nested helper functions into non-nested helper  
+              functions, as nested helpers can cause serious failures of  
+              the imaging pipeline, especially with external display  
+              backends like Vulkan, and thereby on macOS for Apple  
+              Silicon Macs!  
 
 
 
