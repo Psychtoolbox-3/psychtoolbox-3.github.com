@@ -1,0 +1,210 @@
+---
+layout: post
+title: Psychtoolbox updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.22.2 "The long long slog" was released on 2nd March 2026.
+
+You can download it as a zip file from the following link:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/download/3.0.22.2/3.0.22.2.zip>
+
+The complete development history can be found in our GitHub repository.
+The release tag is “3.0.22.2”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.22.2>
+
+### Compatibility changes wrt. Psychtoolbox 3.0.22.1:
+
+- Now requires Octave 10 or later on macOS. Octave 9 and earlier will no
+  longer work on macOS.
+
+- HDR support on Intel Macs (via Vulkan display mode) now requires at least macOS 11,
+  ideally at least macOS 13 is recommended for better results.
+
+- Be reminded that macOS 26 Tahoe is currently not recommended for use with
+  Psychtoolbox, due to severe Tahoe operating system performance bugs, caused
+  by Apple and only fixable by Apple. These bugs will affect any software that
+  tries to achieve robust, reliable, trustworthy and accurate visual stimulus
+  presentation timing and timestamping. It causes framerates to be cut in half!
+  Only software with broken timing support will not suffer this degradation, iow.
+  to my knowledge all other toolkits in existence. This is the situation as of
+  macOS 26.0 - 26.2, the status of macOS 26.3 and later is unknown to myself.
+
+### Highlights:
+
+- None. Mostly lots of bug fixes and smaller feature work and refinements. Most
+  of the work done in the last six months is "behind the scenes" work, preparing
+  for the future, but not yet visible to users in the form of new features or
+  obvious improvements, beyond what is listed here.
+
+### All:
+
+- Eyelink: Fix for use with external display backends, most importantly the
+  Vulkan display backed used for macOS on Apple Silicon Macs. This by rewriting
+  PsychEyelinkDispatchCallback.m to abstain from using nested helper functions,
+  and also some refactoring. Nested helper functions don't play well with the
+  Psychtoolbox imaging pipeline - which is always active on Apple Silicon macOS -
+  due to some insane limitation that Matlab imposes onto the parent function of
+  nested functions. Long story short: Avoid nested functions whenever possible for
+  a happier life, and especially don't use them in functions calling `Screen('Flip')`!
+
+  Other parts of Eyelink toolbox and its demos have been refactored to remove use
+  of nested functions in various demos.
+
+- VideoCaptureDemo: Increase windowed size for modern cameras. For a better
+  non-fullscreen viewing experience.
+
+- VBLSyncTest: Add optional measurement of OpenGL gpu processing time. Calling
+  `VBLSyncTest([],[],[],[],[],[],[],[],[],1);` will plot OpenGL per-frame processing
+  time, excluding potential further processing by display backends like Vulkan, VR, etc.
+
+- Vulkan backend: Improved debug output and other help messages. Various bug fixes and
+  refinements. Some important bug fixes.
+
+- HDR support: Skip initial HDR meta data setup during startup when not needed.
+  On a conformant Vulkan driver, it should not ever be needed. Therefore only set it
+  if native display HDR static metadata is available, as queried from Vulkan driver or
+  OS, or if it is needed to workaround bugs in the Vulkan ICD. Currently the only driver
+  known to require this to get HDR mode and HDR signalling going is AMD's proprietary
+  AMDVLK-Pro driver on Windows, and their now deprecated AMDVLK open-source driver for
+  Linux. For these AMD provided ICD's, we call the function always, but on these drivers
+  we should get valid native display HDR metadata, so it should be fine.
+
+- PredictVisualOnsetForTime(): Only query what you need. To avoid some warning message
+  clutter on some system configurations with old graphics hardware.
+
+- PsychLicenseHandling(): Refine some user messages and help text wrt. offline activation.
+
+- Various other smaller refinements, bug fixes and documentation updates.
+
+### Linux:
+
+- Psychtoolbox was built against Matlab R2025b and Octave 6.4 under
+  Ubuntu 22.04.5-LTS. It only works on Ubuntu 22.04-LTS and later.
+
+- Upgraded / Rebuilt the mex files for 32-Bit Octave on RaspberryPi OS 11 for 32-Bit
+  ARM RaspberryPi machines. Those were left at v3.0.20, and are now also at v3.0.22.
+  Other minor fixes for RaspberryPi. Should work on RaspberryPi OS 11 and 12.
+  In principle, it also works on the latest RaspberryPi OS 13 based on Debian GNU
+  Linux 13 "Trixie", but in practice I strongly recommend against using it on
+  RaspberryPi OS 13, as the graphics drivers in that OS version seem to have serious
+  performance problems, leading to much lower framerates for stimulus presentation!
+
+- Screen(): Improve troubleshooting help for Matlab library compatibility problems.
+
+- PsychVulkanCore: Now allow use of Mesa version 25.3 and later Vulkan drivers for
+                   deep color modes on AMD gpu's, 10 bpc, fp16 (~11 bpc) and
+                   16 bpc (= At most 12 bpc on current AMD graphics cards in reality)
+                   modes. So far this required the now deprecated / unmaintainted
+                   AMDVLK driver to be manually downloaded and installed. This
+                   only works for single-display stimulation with Vulkan so far.
+                   For multi-display you'd still need AMD's deprecated AMDVLK
+                   driver.
+
+- PlayMoviesDemo: Use auto-selected pixelFormat on 64-bit ARM Linux.
+
+- PsychLinuxConfiguration: Fix fallback symlinking to libglut.so.3.12 on Ubuntu 24.04-LTS.
+  If users did not install `sudo apt build-dep psychtoolbox-3`, then this did not work.
+  Reported by Github user @qx1147, thanks!
+
+### Windows:
+
+- Psychtoolbox was built against Matlab R2025b and Octave 7.3 under Windows 10.
+
+- Mark Windows 10 and Windows 11 as supported, all older versions as unsupported.
+  This was quite outdated and slipped through the cracks. Note that development
+  and testing still happens almost only on Windows 10, as my only Windows 11 machine
+  is unsuitable for proper testing of visual stimulation, because it uses a known to be
+  broken Intel integrated graphics chip with totally broken visual stimulation timing.
+  Light testing of other features than visual stimulus presentation timing didn't show
+  apparent signs of trouble.
+
+  My current Windows 10 machine can't be upgraded to Windows 11, because Microsoft
+  doesn't allow it, and I don't have the financial resources atm. to buy a suitable
+  machine for Windows 11 testing. However, over 75% of all paying users of Psychtoolbox
+  3.0.20 and later already use Windows 11, less than 25% still use Windows 10, and one
+  single machine still uses Windows 7! The lack of user feedback about problems with
+  Windows 11 suggests that current Psychtoolbox should work fine, or at least as well
+  as on Windows 10, on Windows 11 with suitable hardware and especially graphics
+  hardware + drivers.
+
+- Implement workarounds against the latest bugs in NVidia's recent Vulkan drivers,
+  which caused the Vulkan stimulus window to be hidden behind a static Psychtoolbox
+  welcome screen, making it unusable, or at least neccessary for users to manually
+  ALT+TAB the stimulus window into the foreground.
+
+  Yet another NVidia problem: HDR doesn't work by default anymore. One now needs to
+  change some display driver setting in the NVidia control panels "Manage 3D
+  settings" section. Specifically, the "Vulkan/OpenGL present method" must be set
+  to "Prefer layered on DXGI Swapchain", as the "Automatic" setting is now broken.
+
+  This restores HDR on NVidia - ofc. only until the next time they break it with a
+  new set of bugs... Also, as a new side-effect, it may break OpenGL based stimulus
+  presentation timestamping, the other settings work better for OpenGL. This problem
+  was observed on Windows 10 22H2 with a NVidia GeForce GTX 1650 Turing family gpu
+  and NVidia driver version WHQL 591.74, Vulkan driver version 591.296.0.
+
+### macOS:
+
+- Psychtoolbox was built and tested against Matlab R2025b and Octave 10.2.0 from
+  HomeBrew on macOS 13.7.8 Ventura final update for Intel Macs, and on macOS 15.5
+  Sequoia with R2025b and Octave 10.3.0 for Apple Silicon Macs. The minimum required
+  version of macOS for use of the Vulkan display backend, ie. for HDR support on Intel
+  Macs, is now macOS 11.
+
+  macOS 15 is now marked as somewhat supported and tested, at least on Apple Silicon.
+  Current state of things:
+
+  macOS 13 Ventura: Tested on Intel MacBookPro 2017 with Ventura 13.7.8 final update. No
+                    other macOS versions can be tested anymore on Intel Macs in the future.
+
+  macOS 14 Sonoma: Tested on Silicon MacBookPro 2023 with M2 Pro once. No further testing
+                   will be done with macOS 14 in the future.
+
+  macOS 15 Sequoia: Tested on Silicon MacBookAir 2020 with M1 once, and ongoing testing
+                    with MacBookPro 2023 with M2 Pro.
+
+  The only actively tested macOS versions are now macOS 13 Ventura for Intel Macs, and
+  macOS 15 Sequoia for Apple Silicon Macs. I strongly recommend not upgrading to macOS 26
+  Tahoe at this point, as there are known substantial performance regressions for visual
+  stimulus presentation, due to severe macOS Tahoe operating system flaws which are not
+  fixed by Apple at least as of macOS 26.2. The status on 26.3 and later is unknown at
+  this point.
+
+- Eyelink: Fix for use with macOS on Apple Silicon Macs.
+
+- Switch Vulkan display backend from MoltenVK 1.2 to latest upstream MoltenVK 1.4.2 with
+  some additional fixes by myself. While I hoped this would fix performance problems with
+  macOS 26 Tahoe by increasing efficieny, those hopes were in vain for Apple Silicon Macs.
+  It was worth a shot though. This raises the minimum required macOS version for use of
+  the Vulkan backend to macOS 11, iow. no change for Apple Silicon, higher requirement for
+  Intel Macs, but there it only affects HDR display support.
+
+  Also add some tweaks to improve stability / reduce hangs. This is especially important
+  on Apple Silicon Macs. The reliability of stimulus presentation still isn't on par with
+  Intel Macs yet. Substantially more work is needed. Right now, any `Screen('Flip', win, twhen)`
+  with tWhen more than 1 second into the future, or in general pauses between flips of more
+  than 1 second still cause stutter or timeout warnings.
+
+- Screen: Fix "keypress makes annoying beep" suppression for fullscreen windows on the
+  secondary (screen number > 0) screen on multi-display setups with Matlab R2025a and
+  later on Intel Macs, and with all Matlab and Octave versions in terminal only mode.
+  This beep suppression already worked on single display Intel Macs, or for use of
+  screen 0 (the main screen) on multi-display setups, but failed on other screens of a
+  multi-display Intel Mac.
+
+- Fix SetMouse() and RemapMouse() on Retina displays in Retina compatibility mode.
+
+- Fix panel fitter (e.g., PanelFitterDemo.m) on Apple Silicon Macs with Retina display.
+  It is still somewhat broken on Intel Macs, except if opting to use the Vulkan display
+  backend. Ie. the default high timing precision opaque fullscreen window display mode
+  has somewhat broken panel fitting by default, e.g., in PanelFitterDemo.m. The problem
+  is structural and unlikely to get fixed in the remaining lifetime of Psychtoolbox for
+  Intel Macs. A way to use the panel fitter on such Retina Intel Macs is to manually
+  specify the optional 'fbOverrideRect' parameter to PsychImaging('OpenWindow', ...) to
+  be a rectangle the true size/resolution of the Retina display panel, to help Screen.
+
+Enjoy!
