@@ -16,8 +16,8 @@ Short version
 
 -   *Operating system:*
 
-    GNU Linux is _strongly_ recommended. Also works on Microsoft Windows 10 (Intel), but can not
-    be supported as well as a fully open-source system like Linux in case of problems and will
+    GNU Linux is _strongly_ recommended. Also works on Microsoft Windows 10 and 11 (Intel), but can
+    not be supported as well as a fully open-source system like Linux in case of problems and will
     have restrictions in functionality, reliability, performance and precision for some features,
     compared to Psychtoolbox running on a modern Linux distribution. Especially multi-display
     setups and HiDPI Retina displays under Windows are highly problematic. Use on Apple macOS has
@@ -29,10 +29,19 @@ Short version
 
 -   *Runtime environment:*
 
-    64-Bit Matlab version R2025a (other older versions will likely work, but are not tested for
-    compatibility or supportable by us in case of trouble), and GNU Octave version 6.4 or
-    later versions on Linux, and 64-Bit [Octave version 9.4.0 on macOS][OctavemacOS] and
+    64-Bit Matlab version R2025b (recent older versions will likely work, but are not tested for
+    compatibility or supportable by us in case of trouble anymore), and GNU Octave version 6.4 or
+    later versions on Linux, and 64-Bit [Octave version 10 on macOS][OctavemacOS] and
     [Octave 7.3.0 on MS-Windows.][OctaveForWindows]
+
+    Note that Mathworks fundamentally changed the Matlab GUI implementation with R2025a, and
+    this causes slight restrictions to the Psychtoolbox functions `GetChar()`, `CharAvail()`
+    and `ListenChar()`, but most annoyingly, the printing of characters corresponding to
+    a subjects key presses into the Matlab window can no longer be suppressed by Psychtoolbox
+    in most cases, ie. the `ListenChar(2) and ListenChar(-1)` functions are no longer effective,
+    causing "character spilling" if responses are collected via keyboard. There is no known way
+    to prevent this annoynance on Matlab R2025a and later. Therefore R2024b may be a sweet spot
+    in terms of Matlab versions to use - the most modern Matlab without this annoyance.
 
 -   *Graphics card:*
 
@@ -121,12 +130,11 @@ Operating systems
 GNU/Linux is fully supported on Intel compatible PCs and suitable (== older) Apple
 Intel Macintosh computers under
 
--  Matlab version R2025a. Older versions very likely work, but are no longer
+-  Matlab version R2025b. Older versions very likely work, but are no longer
    tested, or testable, or supportable by us due to lack of access to these
-   versions.
+   versions. See our general recommendations of R2024b as a good choice for many.
 
--  GNU Octave 64-bit, versions 6.4, and also at least versions v7.1 - v8.3,
-   likely also v9.x.
+-  GNU Octave 64-bit, versions 6.4, and also at least versions v7.1 - v9.4.
 
 -  Additionally, Psychtoolbox from NeuroDebian supports 32-Bit and 64-Bit
    releases of whatever version of GNU Octave ships by default with your
@@ -134,13 +142,13 @@ Intel Macintosh computers under
    Octave 6.x, 7.x, 8.x, 9.x and 10.x on recent distributions.
 
 Psychtoolbox testing and development occurs mainly on the two most recent Ubuntu
-Linux LTS releases or flavors of them, currently Ubuntu 22.04.5-LTS and 24.04.2-LTS.
+Linux LTS releases or flavors of them, currently Ubuntu 22.04.5-LTS and 24.04.4-LTS.
 
 Distributions older than Ubuntu 22.04-LTS are no longer supported since Psychtoolbox
 3.0.22. Ubuntu 20.04-LTS has now reached its regular end of life. Distributions older
 than Ubuntu 20.04-LTS are no longer supported since Psychtoolbox 3.0.18.
 
-We recommend Ubuntu 22.04-LTS or 24.04-LTS at this time.
+We recommend the latest Ubuntu 22.04-LTS or 24.04-LTS at this time.
 
 NeuroDebian tests and supports PTB also on Debian GNU/Linux. According to
 user reports, Psychtoolbox seems to work reasonably well on Linux Mint, Arch
@@ -179,27 +187,27 @@ Psychtoolbox should work in principle, and is supported and tested on:
 -  macOS 13 "Ventura" for Intel Macs. Maybe it also (partially) works on macOS
    10.13 - macOS 12 (no longer tested), but certainly not on older macOS versions.
    Reasonable presentation timing reliability needs a properly installed and setup
-   PsychtoolboxKernelDriver on Intel, NVidia graphics, and on AMD graphics cards up
+   PsychtoolboxKernelDriver on Intel and NVidia graphics, and on AMD graphics cards up
    to Polaris, ie., not the recent AMD Navi RDNA or AMD Vega gpu's used in some year
    2018 and later MacBookPro machines.
 
--  macOS 14 "Sonoma" for Apple Silicon ARM Macs. It may also work on macOS 11 - 13,
-   but with known limitations on any macOS version older than macOS 13, and it is
-   not tested or supportable on macOS 13 or earlier. Testing and user feedback shows
-   it also works fine on macOS 15 "Sequoia". We strongly advise against using macOS 26
-   Tahoe until further notice! Apple introduced new serious limitations or bugs to
-   macOS 26, which will reduce performance of visual stimulus presentation, cutting
-   achievable framerate in half!
+-  macOS 15 "Sequoia" for Apple Silicon ARM Macs. It may also work on macOS 11 - 14,
+   but with known limitations on any macOS version older than macOS 13, and it is no
+   longer tested or supportable on macOS 14 or earlier. We strongly advise against
+   using macOS 26 Tahoe until further notice! Apple introduced new serious limitations
+   or bugs into macOS 26, which will reduce performance of visual stimulus presentation,
+   cutting achievable framerate in half!
 
--  Matlab R2025a, likely older recent versions upwards of R2014b on Intel Macs, and
+-  Matlab R2025b, likely older recent versions upwards of R2014b on Intel Macs, and
    upwards of R2023b on ARM Macs, but those versions are untested and unsupportable
-   in case of problems.
+   in case of problems. See our general recommendations of R2024b as a good choice for
+   many use cases.
 
--  Octave v9.4, probably also on Octave v6.4-v9.3 (expected to work, but no longer tested).
-   [You will need to get Octave 9.4 from a package manager like HomeBrew][OctavemacOS]
+-  Octave v10.1 and later, likely also later major versions like 11, but not yet tested.
+   [You will need to get Octave 10.1+ from a package manager like HomeBrew][OctavemacOS]
    as standalone binary installers are not available.
 
-Ventura, Sonoma and Sequoia are the only somewhat supported versions of macOS at this point in time.
+Ventura and Sequoia are the only somewhat supported versions of macOS at this point in time.
 Psychtoolbox is compatible with them in principle, but they inherited many bugs and flaws
 from their predecessors. Also note that Apple stated that the only version of macOS which
 receives all their security updates is the very latest version of macOS.
@@ -212,8 +220,6 @@ and would only be fixable by Apple.
 
 _macOS is sometimes fragile for visual stimulation, or DAQ digital/analog i/o, so running
 real data collection using macOS can bring you unreliable results_.
-
-**macOS 15 is not officially supported and tested yet, but fully expected to work**
 
 [See this link for reference about the current state of Apple Silicon Macs.][AppleM1]
 
@@ -243,9 +249,10 @@ resolve at least some of these issues on AMD and NVidia graphics cards
 
 ### Windows
 
-Psychtoolbox should work on
+Psychtoolbox should work on MS Windows 10 and MS Windows 11 with
 
--   Matlab 64-bit. Currently tested and supported with release R2025a.
+-   Matlab 64-bit. Currently tested and supported with release R2025b.
+    See our general recommendations of R2024b as a good choice for many.
     External mandatory requirements: Microsoft C MSVC 2015-2019 runtime and
     GStreamer 1.22.5 MSVC or later. Installation of GStreamer _before_ installation
     of Psychtoolbox is mandatory on Matlab or the Screen mex file will not work.
@@ -255,7 +262,7 @@ Psychtoolbox should work on
     The current download location for official Octave-7.3.0 64-Bit is reached by
     clicking this link.][OctaveForWindows]
 
-If you choose to use Matlab, you may need to install Microsoft Visual C runtime
+If you choose to use Matlab, in rare cases you may need to install Microsoft Visual C runtime
 libraries to make it work, specifically `vcredist_x64_2015-2019.exe`. The installer should
 give you instructions on how to do that if necessary, ie. on install failure. The
 Psychtoolbox/PsychContributed/ subfolder contains the neccessary `vcredist_x64_2015-2019.exe`
@@ -264,9 +271,12 @@ will have those already installed.
 
 Psychtoolbox-3.0.19 is expected to fail to work fully and reliably on Windows 7 / 8 / 8.1.
 It is only tested on Microsoft Windows 10 Release 22H2 going forward. Windows 10 22H2
-is meant to be the final feature update to Windows 10, according to Microsoft.
-Windows 10 will continue to receive purely security updates by Microsoft until October
-2025 though, so it should not be too unsafe to use until then.
+is meant to be the final feature update to Windows 10, according to Microsoft. It reached
+its end of life for general use in October 2025 though. Users on special long term servicing
+branches may receive longer security updates, and EU customers can get updates until October
+2026 in exchange for their privacy. Recent Psychtoolbox releases should work well on Windows 11,
+at least we didn't hear any significant user feedback to the contrary, and light testing on a
+single Windows 11 machine didn't show worse behavior than on Windows 10.
 
 Psychtoolbox-3.0.17 - 3.0.18 is no longer officially supported for Windows-7 / 8 / 8.1. The
 current expectation is that it still mostly works on these systems, but just as with
@@ -294,7 +304,7 @@ it is also simply not possible to make improvements to the operating system itse
 needed, or to fix various bugs or even diagnose bugs for development of workarounds.
 It is hit and miss...
 
-We cannot recommend Window at for multi-display setups, dual-display stereo stimulus
+We cannot recommend Window for multi-display setups, dual-display stereo stimulus
 presentation, HiDPI setups, or for tasks with a need for high visual timing precision.
 Single display setups on AMD or NVidia graphics cards often work for not too demanding
 use scenarios.
@@ -333,58 +343,59 @@ Basic hardware requirements
 ---------------------------
 
 -   Intel PCs: Any Intel-compatible PC that is capable of running the
-    64-bit versions of Microsoft Windows-10 22H2, or the 64-bit versions of
-    GNU/Linux Ubuntu 22.04 LTS or later. Ubuntu 22.04 LTS or 24.04-LTS is
-    recommended.
+    64-bit versions of Microsoft Windows-10 22H2 or Windows 11, or the 64-bit
+    versions of GNU/Linux Ubuntu 22.04 LTS or later.
 
 -   Intel Macs:
     Any Intel-based Macintosh computer that is capable of running 64-Bit macOS
     13 “Ventura”, or a 64 Bit Ubuntu 22.04-LTS or later GNU/Linux distribution.
-    However: At this point in time, most NVidia graphics cards have broken
-    visual stimulation timing under macOS. Most AMD graphics cards under
-    macOS 10.12 and later have broken visual stimulation timing under macOS,
-    and Intel graphics chips also seem to have trouble under at least macOS
-    10.13 "High Sierra". If you install Psychtoolbox 3.0.16 or later, these timing
-    problems will be worked around at least for standard precision 8 bit per
-    color framebuffers on many gpu + display combinations. Higher precision
-    framebuffers are still unfixably broken, and some machines may still have
-    problems, e.g., the new MacBookPro 2019 16 inch. So for visual stimulation
-    there essentially doesn't exist any supported Apple hardware that would work
-    acceptably under macOS in every configuration, although there exist various
-    Intel based Macs that should work fine in many typical "bread and butter"
-    standard configurations if set up correctly by users following our instructions,
-    especially installation of the PsychtoolboxKernelDriver on Intel, NVidia
-    and older AMD graphics (not AMD Vega or AMD Navi in the latest Intel Mac
-    models - AMD graphics in the 2018 and later models may be of the unsupported
-    type)
 
-    Old hardware may perform fine or even excellent under Linux. Apple MacBook's
+    Note that since macOS 10.12 most NVidia, AMD and Intel graphics cards have
+    broken visual stimulation timing under macOS by default, due to bugs never
+    fixed by Apple in any macOS release since then. If you install Psychtoolbox
+    v3.0.16 or later, these timing problems will be worked around at least for
+    standard precision 8 bit per color framebuffers on many gpu + display
+    combinations. Higher precision framebuffers are still unfixably broken, and
+    some machines may still have problems, e.g., the new MacBookPro 2019 16 inch.
+
+    Therefore, for visual stimulation there essentially doesn't exist any supported
+    Apple hardware that would work acceptably under macOS in every configuration,
+    but there exist various Intel based Macs that should work fine in many typical
+    "bread and butter" standard configurations with current Psychtoolbox versions,
+    if set up correctly by users, following our instructions, especially installation
+    of the PsychtoolboxKernelDriver on Intel, NVidia, and older AMD graphics (not on
+    AMD Vega or AMD Navi in the latest Intel Mac models - AMD graphics in the 2018
+    and later models may be of the unsupported type).
+
+    Old hardware may perform fine or even excellent under Linux. Recent Apple MacBook's
     or MacBookPro's with T1 chip from the year 2016 or later are known to be difficult
     to set up for beginners with Linux for practical purposes, as basic things like
-    wifi, suspend/resume or audio [won't work without extensive configuration that may be beyond the
-    skill levels of Linux beginners.][T1Linux] [Recent 2018 and later Apple hardware with
+    wifi, suspend/resume or audio [won't work without extensive configuration that may
+    be beyond the skill levels of Linux beginners.][T1Linux] [Recent 2018 and later Apple hardware with
     Apple's T2 security processor will have non-trivial setup instructions under
-    this link][T2Linux]
+    this link.][T2Linux]
 
-    _For these reasons we don't recommend use of any modern Apple IntelMac hardware._
+    _For these reasons we don't recommend use of modern Apple IntelMac hardware._
 
--   Apple ARM Macs, also known as "Apple Silicon Macs", e.g., with Apple M1/M2/M3/M4 SoC's:
+-   Apple ARM Macs, also known as "Apple Silicon Macs", e.g., with Apple M1/M2/M3/... SoC's:
     Psychtoolbox 3.0.20.0 has native beta quality support for these machines, ie.,
-    it works with native Octave and Matlab (R2023b and later, R2025a recommended at
+    it works with native Octave and Matlab (R2023b and later, R2025b recommended at
     the moment) for Apple Silicon ARM processors. Most functionality should work
     reasonably well, but some known limitations still exist for visual presentation.
     Psychtoolbox 3.0.20.0 use for general training and education, development of new
     stimulus scripts, and leightweight, not too demanding use cases, but caution is
     still required for real data collection at the time being - Tread lightly!
 
--   [RaspberryPi models 2B, 3, 4, 400 under the most recent Raspbian operating system.][Raspbian]
+-   [RaspberryPi models 2B, 3, 4, 400 under RaspberryPi OS 11 or 12.][Raspbian]
     The RaspberryPi 2B and 400 are actively tested for compatibility and work well
     for not too demanding visual and auditory stimulation tasks, USB i/o
     and digitial i/o via the programmable GPIO pins. The Pi model 3 is not
     tested, but expected to work just as well as the model 2B. Pi models 4 and 400
     are substantial improvements over the older models in hardware capabilities.
     RaspberryPi 5 should be an even more substantial improvement in performance
-    and capabilities, and may work, but is not tested by us yet.
+    and capabilities, and may work, but is not tested by us yet. RaspberryPi OS 13
+    is currently not recommended: While it works in principle, visual stimulus
+    presentation performance is poor as of March 2026!
 
 Graphics hardware requirements
 ------------------------------
