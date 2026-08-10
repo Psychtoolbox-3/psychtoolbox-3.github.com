@@ -10,9 +10,13 @@ nomograms.  This is basically a wrapper routine.
   Govardovskii (Default)  
   Lamb  
   [StockmanSharpe](StockmanSharpe)  
+  [StockmanRider](StockmanRider)  
   
 7/11/03  dhb  Wrote it.  
 7/16/03  dhb  Add [StockmanSharpe](StockmanSharpe).  
+4/10/26  Add  Add [StockmanRider](StockmanRider).  
+         Systematially edit all the individual functions so that if wl  
+         spacing is <= 1, they normalize the return to peak of 1.  
 
 
 

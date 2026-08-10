@@ -106,6 +106,8 @@ used here (with extension by zeros).
   T\_cones\_smj         - Stockman-[MacLeod](MacLeod)-Johnson cone fundamentals.  See CVRL database.  
   T\_cones\_smj10       - Stockman-[MacLeod](MacLeod)-Johnson 10-degree cone fundamentals.  See CVRL database.  
   T\_cones\_ss2         - Stockman-Sharpe (2000) 2-degree cone fundamentals.  Also the CIE 2006 fundamentals. See CVRL database.  
+  T\_cones\_ss2\_extended - Stockman-Sharpe (2000) 2-degree cone fundamentals on extended wavelength support.   
+                           These are not officially sanctioned functions, but are useful sometimes.  
   T\_cones\_ss10        - Stockman-Sharpe (2000) 10-degree cone fundamentals.  Also the CIE 2006 fundamentals. See CVRL database.  
   T\_cones\_sp          - Smith-Pokorny cone fundamentals. Computed using PTB's [JuddVosToSmithPokorny](JuddVosToSmithPokorny). Each fundamental normalized to a max of 1.  
   T\_cones\_sp\_orig     - Original PTB version of Smith-Pokorny cone fundamentals.  Specified between 380 and 780 nm,  

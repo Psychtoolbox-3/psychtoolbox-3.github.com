@@ -93,6 +93,14 @@ devices (even HDMI VRR!) may not allow fast seamless switching. Example call:
 actualHz = [Screen](Screen)('ConfigureDisplay', 'FineGrainedSwitchRefreshRate',  
 screenNumber, outputId, requestedHz);   
   
+'ResetX11ScreenResources': Reset and requery [Screen](Screen) internal resource data  
+structures related to the X-[Screen](Screen) associated with the 'screenNumber'. By  
+default this is only done when running under [XWayland](XWayland), unless the option  
+'outputId' is set to 1. A setting of 2 will trigger a full redetection of all  
+display resources, not just partial updates for the given 'screenNumber' - here  
+be even more dragons!  
+  
+  
 'Scanout': Retrieve or set scanout parameters for a given output 'outputId' of  
 screen 'screenNumber'. Returns a struct 'oldSettings' with the current settings  
 for that output. Only supported on Linux.  

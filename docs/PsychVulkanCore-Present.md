@@ -12,10 +12,11 @@ the appropriate moment.
   
 'doTimestamp' If set to 1 or 2, performs timestamping of stimulus onset, or at  
 least tries to estimate such onset time. If set to 0, do nothing  
-timestamping-wise. A value of 1 always uses a home-made method of scheduling and  
-timestamping. A value of 2 tries to use a Vulkan-provided high-precision method  
-if available and possible, and falls back to method 1 otherwise. Value 2 is the  
-default.  
+timestamping-wise. A value of 1 always uses a home-made method of timestamping.  
+A value of 2 tries to use a Vulkan-provided high-precision method if available  
+and possible, and falls back to method 1 otherwise. Value 2 is the default.  
+A value of -1 will not timestamp or wait (like 0), but also not use Vulkan high  
+precision stimulus onset scheduling.  
   
 'tWhen' If provided, defines the target presentation time, as provided by  
 [Screen](Screen)('[Flip](Flip)', win, tWhen); a value of zero, or omission, means to present as  

@@ -78,6 +78,8 @@ does not have graphics drivers with [OpenGL](OpenGL)+Vulkan interop capabilities
 fullscreen windows. This is useful as workaround for some buggy Vulkan drivers.  
 +4 = Do not use a tiled format for the [OpenGL](OpenGL)-Vulkan interop image, use linear  
 instead.  
++8 = Try to keep mouse pointer hidden over the Vulkan window, typically used as  
+workaround. Linux/X11 only, so far.  
 'displayHandle' Handle defining the display server connection to use, if any, in  
 an operating system dependent manner. This is currently unused on all systems  
 except Linux with Wayland display backend, where it encodes the wl\_display  

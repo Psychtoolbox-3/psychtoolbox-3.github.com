@@ -18,6 +18,7 @@ somewhat blurry.
   [BaylorNomogram](BaylorNomogram)            - Baylor et al. photopigment nomogram.  
   [ComputeCIEConeFundamentals](ComputeCIEConeFundamentals) - Compute cone fundamentals according to CIE 170-1:2006  
   [ComputeRawConeFundamentals](ComputeRawConeFundamentals) - Compute cone fundamentals from specification of various components  
+  [CarrollNeitzNomogram](CarrollNeitzNomogram)      - Carroll-Neitz (2000) photopigment nomogram.  
   [DawisNomogram](DawisNomogram)             - Dawis (1981) photopigment nomogram.  
   [DefaultPhotoreceptors](DefaultPhotoreceptors)     - Set default values for photoreceptors structure.  
   [DegreesToRetinalMM](DegreesToRetinalMM)        - Convert foveal retinal extents from degrees to mm of retina.  
@@ -30,6 +31,7 @@ somewhat blurry.
   [LambNomogram](LambNomogram)              - Lamb's (1995) photopigment nomogram.  
   [LensTransmittance](LensTransmittance)         - Return transmittance of human lens.  
   [MacularTransmittance](MacularTransmittance)      - Return transmittance of human macular pigment.  
+  [ODToTransmission](ODToTransmission)          - Convert optical density to transmission.  
   [PhotopigmantAxialDensity](PhotopigmantAxialDensity)  - Estimate of peak optical density.  
   [PhotopigmantNomogram](PhotopigmantNomogram)      - Encapsulate available nomogram computations.  
   [PhotopigmentSpecificDensity](PhotopigmentSpecificDensity) - Estimates of specific density.  
@@ -40,7 +42,9 @@ somewhat blurry.
   [RetinalEccentricityMMToDegrees](RetinalEccentricityMMToDegrees) - Convert retinal eccentricities from mm of retina to degrees.  
   [RetinalMMToDegrees](RetinalMMToDegrees)        - Convert foveal retinal extents from mm of retina to degrees.  
   [ShiftPhotopigmentAbsorbance](ShiftPhotopigmentAbsorbance) - Shift an absorbance along a log wavelength axis.  
-  [StockmanSharpeNomogram](StockmanSharpeNomogram)    - Stockman/Sharpe photopigment nomogram (not finished).  
+  [StockmanRiderNomogram](StockmanRiderNomogram)     - Stockman/Rider photopigment nomogram and associated functions  
+  [StockmanSharpeNomogram](StockmanSharpeNomogram)    - Stockman/Sharpe photopigment nomogram.  
+  [TransmissionToOD](TransmissionToOD)          - Convert transmission to OD.  
   [ValetonVanNorrenParams](ValetonVanNorrenParams)    - Return parameters of the Valeton-Van Norren model.  
 
 

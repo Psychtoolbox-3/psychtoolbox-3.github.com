@@ -1,7 +1,7 @@
 # [LambNomogram](LambNomogram)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychColorimetricData](PsychColorimetricData)
 
-T = [LambNomogram](LambNomogram)(S,lambdaMax)  
+T\_absorbance = [LambNomogram](LambNomogram)(S,lambdaMax)  
   
 Compute spectral sensitivities according to the  
 nomogram provided in Lamb, 1995, Vision Research,  

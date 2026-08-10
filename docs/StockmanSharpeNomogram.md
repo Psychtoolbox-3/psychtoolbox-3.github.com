@@ -37,6 +37,13 @@ the linear sensitivity is essentially zero.  In any case, though, if you
 are working in the land of the CIE 170-1:2006 fundamentals, this is the  
 probably the best current nomogram to use.  
   
+Good lambda max values (L, M, S): 558.9, 530.3, 420.7 nm.  
+These are the values at which this template best fits the Stockman &  
+Sharpe (2000) tabulated photopigment absorbance spectra, as stated in  
+the function header and used in the CIE 170-1:2006 fundamentals. The  
+agreement is loose, which is why the Asano model shifts the tabulated  
+absorbance and why there is now a better fitting [StockmanRider](StockmanRider) nomogram.  
+  
 See [ComputeCIEConeFundamentals](ComputeCIEConeFundamentals), [CIEConeFundamentalsTest](CIEConeFundamentalsTest),  
 [FitConeFundamentalsFromNomogram](FitConeFundamentalsFromNomogram), [FitConeFundamentalsTest](FitConeFundamentalsTest)  
   

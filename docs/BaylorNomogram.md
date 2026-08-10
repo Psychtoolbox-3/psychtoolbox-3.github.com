@@ -1,7 +1,7 @@
 # [BaylorNomogram](BaylorNomogram)
 ##### >[Psychtoolbox](Psychtoolbox)>[PsychColorimetricData](PsychColorimetricData)
 
-T = [BaylorNomogram](BaylorNomogram)(S,lambdaMax)  
+T\_absorbance = [BaylorNomogram](BaylorNomogram)(S,lambdaMax)  
   
 Compute spectral sensitivities according to the  
 nomogram provided in Baylor, Nunn, and Schnapf, 1987.  

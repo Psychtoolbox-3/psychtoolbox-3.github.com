@@ -100,6 +100,12 @@ input. It contains the following fields:
                                     in line 216 of [ComputeRawConeFundamentals](ComputeRawConeFundamentals) if params.DORODS is true.  
    adjIndDiffParams.absorbance - Photopigment absorbance as given in line 188 of [ComputeRawConeFundamentals](ComputeRawConeFundamentals)  
    adjIndDiffParams.absorptance - Photopigment absorptance as given in line 230 of [ComputeRawConeFundamentals](ComputeRawConeFundamentals)  
+   adjIndDiffParams.photopigmentQuantalEfficiency - Photopigment quantal efficiency as passed to [ComptuteRawConeFundamentals](ComptuteRawConeFundamentals).  
+                                    We have this here in staticParams,  
+                                    but useful to have in adjIndDiffParams as  
+                                    well, sometimes.  
+  adjIndDiffParams.[ISdiameter](ISdiameter) - Inner segment diameter estimate (in microns), taken from  
+                                   [FillInPhotoreceptors](FillInPhotoreceptors) return structure.  
   
 For both adjIndDiffParams.mac and adjIndDiffParams.lens, the wavelength  
 spacing is the same as in the S input variable of this function.  

@@ -120,6 +120,21 @@ Rows 6-9 define the [rx; ry; rz; rw] quaternion, encoding the relative
 orientation of the joint with respect to the tracking reference space.  
 'JointPosesMatrix' A [OpenGL](OpenGL) style RHS transformation matrix which encodes all  
 joints poses: 4-by-4-by-26 matrix, ie. one 4x4 matrix per joint.  
+   
+On some systems, the following fields are returned with valid values for each  
+tracked hand:  
+'AimPoseStatus' Binary status flags, as defined in [XrHandTrackingAimFlagsFB](XrHandTrackingAimFlagsFB) of  
+the [OpenXR](OpenXR) specification. 1 = Aim pose computed, 2 = Aim pose valid, 4 = Index  
+finger -Thumb pinch, 8 = Middle finger -Thumb pinch, 16 = Ring finger - Thumb  
+pinch, 32 = Little finger - Thumb pinch.  
+'AimPoseMatrix' A [OpenGL](OpenGL) style RHS transformation matrix which encodes an aim  
+pose of the tracked hand. An all-zeros matrix if unsupported.  
+'PinchStrengths' A 4-element vector with pinch strengths values, classifying the  
+likelyhood and strenght of a pinch gesture between a finger and the thumb.  
+[PinchStrengths](PinchStrengths)(1) = Index-to-Thumb pinch strenghts, [PinchStrengths](PinchStrengths)(2) =  
+Middle-to-Thumb, [PinchStrengths](PinchStrengths)(3) = Ring--to-Thumb, [PinchStrengths](PinchStrengths)(4) =  
+Little--to-Thumb. The values are between 0.0 for no such gesture recognized to  
+1.0 for fingers pinching each other tightly.  
   
   
 

@@ -89,6 +89,7 @@ See also: [ComputeCIEConeFundamentals](ComputeCIEConeFundamentals), [CIEConeFund
 2/26/16  dhb, ms  Add in Asano et al. (2016) individual observer adjustments  
 3/30/17  ms   Added output argument returning adjusted ind differences  
 6/4/18   ms   Included absorbance spectrum into adjusted ind diff output arg  
+7/25/25  dhb  Return photopigment quantal efficiency in adjIndDiffParams structure.  
 
 
 
