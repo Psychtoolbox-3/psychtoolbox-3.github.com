@@ -1,0 +1,138 @@
+---
+layout: post
+title: Psychtoolbox updated
+categories: news
+author: kleinerm
+---
+
+Psychtoolbox 3.0.22.3 "The most fantastic Matala" was released on 14th August 2026.
+
+You can download it as a zip file from the following link:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/releases/download/3.0.22.3/3.0.22.3.zip>
+
+The complete development history can be found in our GitHub repository.
+The release tag is “3.0.22.3”, with the full tree and commit logs under the URL:
+
+<https://github.com/Psychtoolbox-3/Psychtoolbox-3/tree/3.0.22.3>
+
+### Compatibility changes wrt. Psychtoolbox 3.0.22.2:
+
+- Be reminded that macOS 26 Tahoe is currently not recommended for use with
+  Psychtoolbox, due to severe Tahoe operating system performance bugs, caused
+  by Apple and only fixable by Apple. These bugs will affect any software that
+  tries to achieve robust, reliable, trustworthy and accurate visual stimulus
+  presentation timing and timestamping. It causes framerates to be cut in half!
+  Only software with broken timing support will not suffer this degradation, iow.
+  to my knowledge all other toolkits in existence. This is the situation as of
+  macOS 26.0 - 26.2, the status of current macOS 26 and later is unknown to myself.
+  The same applies to upcoming macOS 27 Golden Gate.
+
+### Highlights:
+
+- None. Mostly lots of bug fixes and smaller feature work and refinements. Most
+  of the work done in the last months is "behind the scenes" work, preparing
+  for the future, but not yet visible to users in the form of new features or
+  obvious improvements, beyond what is listed here.
+
+### All:
+
+- Improvements to OpenXR handtracking for VR applications. We can now make use
+  of the `XR_FB_HAND_TRACKING_AIM` extension on VR devices that support it, to
+  detect, and report properties of, "aim" gestures made by users.
+
+- Procedural noise: Update (classic) Perlin noise to latest version.
+  The functionality is demonstrated by ProceduralNoiseDemo(), now better!
+
+  There were some changes in the upstream shaders circa 2021 that
+  appear to visibly improve randomness/reduce banding artifacts. There
+  may also be a minor performance improvement because some math was simplified,
+  but may be system-dependent (I only saw 10s of microseconds changes).
+  Contributed by Alex Forrence.
+
+- GetGITInfo: Make simpler and more robust. Contributed by Alex Forrence.
+
+- VBLSyncTest: Suppress beamposition plots on beamposition-less systems harder.
+
+- Some improvements to the PsychColorimetric functions by David Brainard, as
+  usually poorly documented in his non-conformant commit messages, so I won't
+  give details. Except: "Added CarrollNeitzNomogram and test." and "Moved in
+  routines from BrainardLabToolbox." Other new functions seem to be
+  TransmissionToOD, ODToTransmission (OD ~ Optical density?), "StockmanRiderNomogram"
+  and "StockmanRiderNomogramDemo", and "PhotopigmentNomogramDemo".
+
+- Various other smaller refinements, bug fixes and documentation updates. Various
+  internal work in the software, not obviously user visible yet.
+
+### Linux:
+
+- Psychtoolbox was built against Matlab R2026a and Octave 6.4 under
+  Ubuntu 22.04.5-LTS. It only works on Ubuntu 22.04-LTS and later.
+
+- RaspberryPi OS 13 is now usable with Psychtoolbox again, after my bug fixes
+  for graphics driver bugs were accepted and integrated into it. RaspberryPi OS 12
+  suffered the same severe performance bugs, but the bug fixes were not applied to
+  it, as the RaspberryPi foundation considers OS version 12 end-of-life. This leaves
+  OS 11 and 13 as the supported versions for Psychtoolbox, but I will probably soon
+  remove support for OS 11 as well. So upgrading to RaspberryPi OS 13 is recommended.
+
+- Add a hack to allow basic HDR-10 mode on RaspberryPi 4 and later, with
+  a very custom software stack: Mesa zink OpenGL driver from Mesa 25.1 or
+  earlier, e.g., Mesa 25.0.7 from RPi OS 13, combined with a Mesa v3dv Vulkan
+  driver from Mesa 25.3.0 or later. Also supports very slow HDR movie playback
+  at ~5 fps for 4k HDR-10 content. Given the complexity of the setup needed,
+  this is more of a "can pigs fly?" proof of concept at the moment, not something
+  that just works out of the box plug & play.
+
+- PsychOpenHMDVR: Fix it by fixing abuse of 'clear Screen' with a new method.
+  Turns out this was broken quite a while. The fact I didn't notice earlier, and
+  nobody else complained, suggests there aren't any users of this driver. Not
+  surprising, given the auto-selected default driver is OpenXR, which is superior
+  in almost any sense. We should probably just retire this driver.
+
+- MultiWindowVulkanTest: Refine further for more stress testing.
+
+### Windows:
+
+- Psychtoolbox was built against Octave 7.3 under Windows 10.
+
+- Due to a lapse in our Matlab licenses, the mex files have only been updated for
+  Octave, whereas the files for Matlab stay the same as in Psychtoolbox 3.0.22.2.
+
+- PsychStartup: Fix GStreamer SDK root definition on MS-Windows better.
+  Use fullfile() for building final path to GStreamer bin directory, based on sdkroot.
+
+  Apparently, for unknown reasons, on some MS-Windows systems, the getenv()
+  call returns a sdkroot without a trailing path separator backslash, whereas on most
+  systems it does. Go figure! Lacking a trailing backslash caused the naive [sdkroot 'bin']
+  concatenation to generate an invalid path. fullfile() deals with this quirk.
+
+  Root of the problem found out, and fix proposed, by our GitHub user @HuwSwan
+  in GitHub issue #669 , thanks!
+
+### macOS:
+
+- Psychtoolbox was built against Octave 10.2.0 from HomeBrew on macOS 13.7.8 Ventura
+  final update for Intel Macs, and on macOS 15.7.7 Sequoia with Octave 11.1.0 for
+  Apple Silicon Macs. The minimum required version of macOS for use of the Vulkan
+  display backend, ie. for HDR support on Intel Macs, is now macOS 11.
+
+- Due to a lapse in our Matlab licenses, the mex files have only been updated for
+  Octave, whereas the files for Matlab stay the same as in Psychtoolbox 3.0.22.2.
+
+- Eyelink mex for 64-Bit Octave on macOS for IntelMacs fixed, and reverted to a
+  over 18 months older version for Matlab. Turns out that Eyelink support was broken
+  since over 1.5 years on macOS for IntelMacs without anybody noticing or complaining!
+  The brokeness was due to IntelMac compatibility bugs in SR-Researchs older Eyelink SDK
+  versions used for building the mex file. The bug is fixed in recent SDK's.
+
+  This gives an indication about how few users with demanding use cases are left on
+  Intel based Macs. Our statistics suggest that less than 7% of all paying macOS users
+  are still using IntelMacs. Both the drastically reduced number of users, and the
+  increasing difficulty in maintaining macOS Intel versions, with all software vendors
+  reducing or cancelling support, means that the days of Psychtoolbox on Apple IntelMacs
+  will probably be limited. Apple's next macOS 27 will no longer support IntelMacs,
+  Matlab R2026a and later don't support them, and Homebrew as provider of Octave also
+  is announcing a phase out likely towards end of this year.
+
+Enjoy!
