@@ -6,10 +6,11 @@ pahandle = PsychPortAudio('Open' [, deviceid][, mode][, reqlatencyclass][, freq]
 Open a [PortAudio](PortAudio) audio device and initialize it. Returns a 'pahandle' device  
 handle for the device.  
   
-On most operating systems you can open each physical sound device only once per  
-running session. If you feel the need to call 'Open' multiple times on the same  
-audio device, read the section about slave devices and the help 'PsychPortAudio  
-[OpenSlave](OpenSlave)?' instead for a suitable solution.  
+On most operating systems you can open only one stream at a time for each 
+physical device. If you feel the need to call 'Open' multiple times on the same 
+audio device without calling 'Close' in-between, read the section about slave 
+devices and the help 'PsychPortAudio [OpenSlave](PsychPortAudio-OpenSlave)?' 
+instead for a suitable solution.  
 All parameters are optional and have reasonable defaults. 'deviceid' Index to  
 select amongst multiple logical audio devices supported by [PortAudio](PortAudio). Defaults  
 to whatever the systems default sound device is. Different device id's may  
